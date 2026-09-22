@@ -12,4 +12,4 @@ Open issues were not inspected; they are not needed to classify this one-file ba
 
 The attached RetailOps_Astra_Master_Development_Prompt.pdf is the design source. Its old Retail_Ops URL is superseded by the user's explicit Retail_Operations URL. The existing README defines no agents; use the nine roles in PDF section 1. No dataset or private business policies were supplied. All application graph nodes are planned, not implemented.
 
-GitHub metadata reported push permission, but create_branch returned HTTP 403 Resource not accessible by integration. Remote branch creation and push are blocked. Do not circumvent this restriction. Main remains unchanged. Preserve this historical baseline when later observing main.
+GitHub metadata reported push permission, but create_branch returned HTTP 403 Resource not accessible by integration. Access was subsequently restored; context/project-knowledge was created and published through the authorized GitHub API at 526b5bbe82e9ca06a64389e37d5cacb9b4a0eca7. Main remains unchanged. Preserve this historical baseline when later observing main.

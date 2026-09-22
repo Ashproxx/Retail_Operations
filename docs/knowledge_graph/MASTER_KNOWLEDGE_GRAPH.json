@@ -5,7 +5,7 @@
     {
       "id": "context/project-knowledge",
       "type": "branch",
-      "status": "local-only"
+      "status": "published"
     },
     {
       "id": "foundation/core-platform",
@@ -409,97 +409,97 @@
     {
       "id": "docs/governance/MAIN_BASELINE.md",
       "type": "file",
-      "status": "local-only",
+      "status": "published",
       "responsibility": "M0 knowledge/governance documentation"
     },
     {
       "id": "docs/governance/BRANCH_POLICY.md",
       "type": "file",
-      "status": "local-only",
+      "status": "published",
       "responsibility": "M0 knowledge/governance documentation"
     },
     {
       "id": "docs/governance/HUMAN_APPROVAL_GATES.md",
       "type": "file",
-      "status": "local-only",
+      "status": "published",
       "responsibility": "M0 knowledge/governance documentation"
     },
     {
       "id": "docs/governance/DEFINITION_OF_DONE.md",
       "type": "file",
-      "status": "local-only",
+      "status": "published",
       "responsibility": "M0 knowledge/governance documentation"
     },
     {
       "id": "docs/governance/MILESTONES.md",
       "type": "file",
-      "status": "local-only",
+      "status": "published",
       "responsibility": "M0 knowledge/governance documentation"
     },
     {
       "id": "docs/knowledge_graph/FILE_OWNERSHIP_MAP.md",
       "type": "file",
-      "status": "local-only",
+      "status": "published",
       "responsibility": "M0 knowledge/governance documentation"
     },
     {
       "id": "docs/knowledge_graph/INTERFACE_REGISTRY.md",
       "type": "file",
-      "status": "local-only",
+      "status": "published",
       "responsibility": "M0 knowledge/governance documentation"
     },
     {
       "id": "docs/knowledge_graph/MASTER_KNOWLEDGE_GRAPH.md",
       "type": "file",
-      "status": "local-only",
+      "status": "published",
       "responsibility": "M0 knowledge/governance documentation"
     },
     {
       "id": "docs/knowledge_graph/DATA_FLOW_GRAPH.md",
       "type": "file",
-      "status": "local-only",
+      "status": "published",
       "responsibility": "M0 knowledge/governance documentation"
     },
     {
       "id": "docs/knowledge_graph/BRANCH_GRAPH.md",
       "type": "file",
-      "status": "local-only",
+      "status": "published",
       "responsibility": "M0 knowledge/governance documentation"
     },
     {
       "id": "docs/knowledge_graph/TEST_COVERAGE_MAP.md",
       "type": "file",
-      "status": "local-only",
+      "status": "published",
       "responsibility": "M0 knowledge/governance documentation"
     },
     {
       "id": "docs/knowledge_graph/BRANCH_KNOWLEDGE_GRAPH.md",
       "type": "file",
-      "status": "local-only",
+      "status": "published",
       "responsibility": "M0 knowledge/governance documentation"
     },
     {
       "id": "BRANCH_README.md",
       "type": "file",
-      "status": "local-only",
+      "status": "published",
       "responsibility": "M0 knowledge/governance documentation"
     },
     {
       "id": "BRANCH_DELIVERABLES.md",
       "type": "file",
-      "status": "local-only",
+      "status": "published",
       "responsibility": "M0 knowledge/governance documentation"
     },
     {
       "id": "docs/knowledge_graph/MASTER_KNOWLEDGE_GRAPH.json",
       "type": "file",
-      "status": "local-only",
+      "status": "published",
       "responsibility": "M0 knowledge/governance documentation"
     },
     {
       "id": "docs/knowledge_graph/BRANCH_KNOWLEDGE_GRAPH.json",
       "type": "file",
-      "status": "local-only",
+      "status": "published",
       "responsibility": "M0 knowledge/governance documentation"
     },
     {
@@ -1177,7 +1177,6 @@
     }
   ],
   "limitations": [
-    "All runtime modules planned; no imports exist to map",
-    "Remote branch publication denied with HTTP 403"
+    "All runtime modules planned; no imports exist to map"
   ]
 }

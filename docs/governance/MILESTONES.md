@@ -1,6 +1,6 @@
 # Hard milestones
 
-Official completion: **0%**. M0 is BLOCKED by remote write authorization; all others NOT STARTED. Only fully passed milestones earn credit.
+Official completion: **5%**. M0 PASS: documentation validated and published; all others NOT STARTED. Only fully passed milestones earn credit.
 
 | Milestone | Weight | Branch | Exit criteria |
 |---|---:|---|---|

@@ -16,11 +16,11 @@
 - [x] Local graph and scope validation passed: 16 documents, 95 nodes, 133 edges, seven views, weights 100%; correct baseline/branch and allowed paths
 - [x] Correct local branch and base
 - [x] No secrets or unrelated source changes
-- [ ] Remote context branch created
-- [ ] Pushed and remote HEAD verified
+- [x] Remote context branch created
+- [x] Published through GitHub API and remote HEAD verified at 526b5bbe82e9ca06a64389e37d5cacb9b4a0eca7
 - [x] Main untouched; no merge performed
 
 ## Human review
-- [ ] Published M0 ready for commit-specific approval
+- [x] Published M0 ready for commit-specific approval
 - [ ] Context commit approved for foundation lineage
 - [ ] Approved for integration (separate later gate)
