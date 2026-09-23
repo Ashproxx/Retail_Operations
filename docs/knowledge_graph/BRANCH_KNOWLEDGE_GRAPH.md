@@ -17,4 +17,4 @@ Interfaces: Query, validated domain records, evaluate(records, query), Agent(Bas
 
 No real orders provided. Fixtures are explicit and unknown orders are never fabricated. Allocation minimizes additive variable unit cost among deadline-feasible supplied sources; it assumes divisible quantities and excludes fixed fees, multi-SKU coupling and live capacity reservations. Recommendations never update orders or shipments. Delay flags use observed deadline/ETA rules, not a trained predictor. Snapshot as_of filtering prevents future status leakage.
 
-29 nodes and 33 edges in JSON. 30 tests passed. Remote savepoint: pending. Official completion 71%. No master graph updates, shared delta or branch integration.
+29 nodes and 33 edges in JSON. 30 tests passed. Remote savepoint: 1a28ffee72407a6937f8f43060668d2b08cc2939. Official completion 78%. No master graph updates, shared delta or branch integration.
