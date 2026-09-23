@@ -52,6 +52,9 @@ def main():
                         if request(base,'/health')['status']=='ok':return
                     except (OSError,ValueError):pass
                     time.sleep(1)
+                state=docker('inspect','--format','{{.State.Status}} / exit {{.State.ExitCode}}',name)
+                print('Container state at health failure:',state)
+                subprocess.run(['docker','logs','--tail','50',name],check=False)
                 raise RuntimeError('Container health timeout')
             ready()
             assert docker('exec',name,'id','-u')=='10001'
@@ -69,7 +72,11 @@ def main():
             if args.with_ollama:assert result['data'].get('unverified_llm_draft'),result['data'].get('llm_warning')
             denied=request(base,'/api/query',token,{'agent':'inventory','session_id':'smoke','parameters':{'store_id':'FORBIDDEN'}})
             assert denied['data']['results']['inventory']['data']['reason']=='access_denied'
-            docker('restart',name);ready()
+            docker('restart',name)
+            # Docker may allocate a new ephemeral host port when the container restarts.
+            port=docker('port',name,'8000/tcp').split(':')[-1]
+            base='http://127.0.0.1:'+port
+            ready()
             follow=request(base,'/api/chat',token,{'message':'What about Andheri?','session_id':'smoke'})
             assert follow['data']['status']=='success'
             assert follow['data']['results']['inventory']['data']['items'][0]['store_id']=='ANDHERI'
