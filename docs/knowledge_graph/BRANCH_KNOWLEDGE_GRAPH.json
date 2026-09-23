@@ -2,9 +2,9 @@
   "branch": "agent/customer-service",
   "base_commit": "77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045",
   "milestone": "M7",
-  "status": "publication-pending",
-  "verified_commit": "pending",
-  "official_completion": 78,
+  "status": "PASS",
+  "verified_commit": "1714eb47e8693df39774aa4ecd7f98afbc93d404",
+  "official_completion": 84,
   "nodes": [
     {
       "id": "app/agents/support/__init__.py",
