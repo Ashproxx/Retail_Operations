@@ -17,4 +17,4 @@ Interfaces: Query, validated domain records, evaluate(records, query), Agent(Bas
 
 Safety stock assumes independent daily demand and fixed lead time: z*sigma*sqrt(lead days). Demand-based target covers lead+review days. Missing demand produces null risk/quantity; missing variability is warned and omitted. On-order timing is unknown and not used to claim immediate availability. Explicit as_of and age_days expose snapshot staleness. Latest valid snapshot selected per store/SKU; duplicate dates rejected. No real-time connector, Bayesian solver or multi-echelon optimizer implemented.
 
-33 nodes and 38 edges in JSON. 31 tests passed. Remote savepoint: pending. Official completion 31%. No master graph updates, shared delta or branch integration.
+33 nodes and 38 edges in JSON. 31 tests passed. Remote savepoint: d28f3016222311454fd7adeccb32b4c72d90eabe. Official completion 40%. No master graph updates, shared delta or branch integration.
