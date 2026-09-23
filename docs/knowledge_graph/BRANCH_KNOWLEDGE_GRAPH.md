@@ -17,4 +17,4 @@ Interfaces: Query, validated domain records, evaluate(records, query), Agent(Bas
 
 No production price mutation or fitted elasticity. Competitor simulation is a bounded one-step undercut rule, not a solved Bertrand equilibrium. Observed competitor data is mandatory for that mode. Conflicting margin and price-change constraints abstain for human review. Recommendation age is explicit; no external price feed or live stock connector.
 
-27 nodes and 31 edges in JSON. 28 tests passed. Remote savepoint: pending. Official completion 55%. No master graph updates, shared delta or branch integration.
+27 nodes and 31 edges in JSON. 28 tests passed. Remote savepoint: 0bf7e4b0f414dab1125ec6d9e163a623ede23622. Official completion 63%. No master graph updates, shared delta or branch integration.
