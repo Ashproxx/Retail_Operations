@@ -18,6 +18,8 @@ M13 INCOMPLETE; weighted completion remains 95%.
 - [x] Docker and read-only CI configurations
 - [x] Setup/API/data/architecture documentation and regenerated graphs
 - [x] Source-preservation/ancestry scope guard
+- [x] Candidate implementation pushed and fetched; file tree/ancestry verified
+- [x] All fourteen pre-existing branch refs, including main, verified unchanged
 - [ ] Live Ollama smoke test with an installed model
 - [ ] Approved pretrained embeddings and labelled retrieval evaluation
 - [ ] Real retail dataset mapping and end-to-end validation

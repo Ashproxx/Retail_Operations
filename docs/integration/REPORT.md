@@ -55,4 +55,4 @@ SHARED DELTA is restricted to this integration branch: central API wiring, depen
 
 No additional approval is needed to retain or review this candidate. Closing M13 requires the outstanding validation; merging into main would require a separate explicit instruction. No branch deletion, force push, source branch update or main update is authorized or performed. Approved merges only target the candidate.
 
-Publication verification: pending final remote tree/ref checks at this report's initial savepoint.
+Publication verified: implementation commit `1b50c1ea9e4a116cc5da04ba9df6efb2e46b9f0c`; tree `620e4deb7965f0ec61568c7c7ba2a786ac7d00e0`. Fetched remote tree equals the tested local tree, all eleven approved sources are ancestors, and all fourteen pre-existing branch heads (including main) are unchanged. GitHub returned no successful commit status checks at review time; remote CI remains unverified. A subsequent documentation-only commit records this evidence; its exact SHA is in the session response.
