@@ -17,4 +17,4 @@ Interfaces: Query, validated domain records, evaluate(records, query), Agent(Bas
 
 Input rows must be daily store/SKU aggregates with duplicates rejected. Revenue excludes unprovided tax/discount/refund adjustments. Turnover is a unit-based proxy over observed stock snapshots, not financial inventory turnover; missing days are not imputed. Audit metrics use full request latency, not isolated agent runtime. No trained anomaly detector, real operational data or dashboard/API integration.
 
-28 nodes and 33 edges in JSON. 28 tests passed. Remote savepoint: pending. Official completion 48%. No master graph updates, shared delta or branch integration.
+28 nodes and 33 edges in JSON. 28 tests passed. Remote savepoint: ffa8d8bd6208ec92a20b49bf914fb8c7513e68d1. Official completion 55%. No master graph updates, shared delta or branch integration.
