@@ -2,8 +2,8 @@
 
 Branch: agent/demand-forecasting
 Parent/base: foundation/core-platform / 77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045
-Milestone: M9 local PASS; publication pending
-Official completion: 40% (only remotely verified passed milestones)
+Milestone: M9 PASS
+Official completion: 48% (only remotely verified passed milestones)
 Owner scope: app/agents/forecasting/*, tests/forecasting/*, branch metadata and knowledge delta
 Human approval: continuation authorized; no integration or main merge approved
 
@@ -53,7 +53,7 @@ Shared loader, router/API wiring and other agent outputs remain explicit integra
 Validate structured input; use trusted RequestContext; never treat JSON role claims as authority. Private data and keys must stay out of git. Returned results may contain source information and must be access-controlled by the integration layer. Statistical or risk recommendations are advisory; no operational writes occur.
 
 ## Last validated commit and remote savepoint
-Pinned base: 77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045. Verified implementation savepoint: pending. Final documentation commit is recorded in the session report. No self-referential commit hash is required.
+Pinned base: 77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045. Verified implementation savepoint: 96ee693724effd96ccad34fab2defcb762f9e8c4. Final documentation commit is recorded in the session report. No self-referential commit hash is required.
 
 ## Latest status and previously verified branches
 - M0: context/project-knowledge @ 3cc1a8df36c49147daac2c3967f37020bb0f5654 (5%)

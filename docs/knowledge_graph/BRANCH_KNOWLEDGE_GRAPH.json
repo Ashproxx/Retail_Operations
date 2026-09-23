@@ -2,9 +2,9 @@
   "branch": "agent/demand-forecasting",
   "base_commit": "77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045",
   "milestone": "M9",
-  "status": "publication-pending",
-  "verified_commit": "pending",
-  "official_completion": 40,
+  "status": "PASS",
+  "verified_commit": "96ee693724effd96ccad34fab2defcb762f9e8c4",
+  "official_completion": 48,
   "nodes": [
     {
       "id": "app/agents/forecasting/__init__.py",
