@@ -1,24 +1,21 @@
-# M1 foundation delta
+# M2 router delta
 
-Approved base: 3cc1a8df36c49147daac2c3967f37020bb0f5654. Master/context graphs remain unchanged. Branch JSON provides file ownership, import and test relationships.
+Base: foundation/core-platform at 77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045. Global graphs remain inherited snapshots; this branch graph records implemented router code only.
 
 ```mermaid
 flowchart TD
-    env[Environment] --> config[Settings]
-    config --> app[FastAPI factory]
-    app --> health[Database health]
-    health --> db[SQLAlchemy lifecycle]
-    app --> logs[Metadata logs]
-    app --> errors[Sanitized errors]
-    contracts[Pydantic contracts] --> agents[BaseAgent interface]
-    contracts --> dataset[DatasetLoader interface]
-    tests[Foundation tests] --> app
-    tests --> db
-    tests --> contracts
+    request[Query and trusted context] --> check[Validate session]
+    check --> classify[Classify clauses and infer dependencies]
+    classify --> gate{Confident and supported}
+    gate -->|Yes| plan[Ordered typed handoff plan]
+    gate -->|No| escalate[Human clarification]
+    plan --> audit[Metadata audit and result]
+    escalate --> audit
+    audit --> sink[Optional private JSONL sink]
 ```
 
-Implemented: validated configuration, API factory/lifespan, root/health, docs/OpenAPI, errors/logging, schemas, BaseAgent and data interfaces, transactional database lifecycle. Tests cover failures as well as normal inputs.
+LangGraph implements the conditional transition. No task is executed; no RAG or domain branch is integrated. Produced interfaces: RouterAgent, RoutingPlan, Task, Intent, RouteSettings and JsonlAuditSink. Foundation interfaces are consumed unchanged.
 
-Only interfaces exist for DatasetLoader, RetailRepository and BaseAgent. No agent/RAG/business source integration. No production retail data. RequestContext is internal and must eventually come from trusted authentication; QueryRequest rejects role claims. AuditEvent is a schema only, with durable audit and integrity owned by later work.
+27 router cases plus 20 foundation cases pass. Demo covers inventory, multi-intent inventory/demand/pricing and escalation. Confidence is heuristic; real-world semantic accuracy remains unevaluated. Security/authorization, downstream invocation and aggregate answers are separate dependencies. No SHARED DELTA.
 
-New dependencies are justified in BRANCH_README.md. No cross-branch propagation or SHARED DELTA. Foundation implementation publication a9a8df42e84a7eff3950cee94b4a5a2760de0c4c verified with git ls-remote. M1 PASS earns 10%; M0 earned 5%; official completion 15%. Main and context unchanged.
+M2 local PASS, remote publication pending. Previous completed milestones M0+M1+M11 total 23%; verified M2 adds 8% for 31%.

@@ -1,420 +1,206 @@
 {
-  "branch": "foundation/core-platform",
-  "base_commit": "3cc1a8df36c49147daac2c3967f37020bb0f5654",
-  "milestone": "M1",
-  "status": "PASS",
+  "branch": "agent/router",
+  "base_commit": "77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045",
+  "milestone": "M2",
+  "status": "local-pass-publication-pending",
   "nodes": [
     {
-      "id": "app/__init__.py",
+      "id": "app/orchestration/router/__init__.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/agents/__init__.py",
+      "id": "app/orchestration/router/agent.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/agents/base_agent.py",
+      "id": "app/orchestration/router/audit.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/api/__init__.py",
+      "id": "app/orchestration/router/check_scope.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/api/schemas.py",
+      "id": "app/orchestration/router/classifier.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/core/__init__.py",
+      "id": "app/orchestration/router/contracts.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/core/config.py",
+      "id": "app/orchestration/router/demo.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/core/exceptions.py",
+      "id": "app/orchestration/router/graph.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/core/logging.py",
+      "id": "app/orchestration/router/requirements.txt",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/main.py",
+      "id": "tests/router/test_router.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/models/__init__.py",
-      "type": "file",
-      "status": "implemented"
-    },
-    {
-      "id": "app/models/database.py",
-      "type": "file",
-      "status": "implemented"
-    },
-    {
-      "id": "app/services/__init__.py",
-      "type": "file",
-      "status": "implemented"
-    },
-    {
-      "id": "app/services/database_service.py",
-      "type": "file",
-      "status": "implemented"
-    },
-    {
-      "id": "app/services/dataset_loader.py",
-      "type": "file",
-      "status": "implemented"
-    },
-    {
-      "id": "tests/foundation/test_foundation.py",
-      "type": "file",
-      "status": "implemented"
-    },
-    {
-      "id": "scripts/check_branch_scope.py",
-      "type": "file",
-      "status": "implemented"
-    },
-    {
-      "id": "requirements.txt",
-      "type": "file",
-      "status": "implemented"
-    },
-    {
-      "id": "requirements-dev.txt",
-      "type": "file",
-      "status": "implemented"
-    },
-    {
-      "id": "pyproject.toml",
-      "type": "file",
-      "status": "implemented"
-    },
-    {
-      "id": ".env.example",
-      "type": "file",
-      "status": "implemented"
-    },
-    {
-      "id": ".gitignore",
-      "type": "file",
-      "status": "implemented"
-    },
-    {
-      "id": "foundation/core-platform",
+      "id": "agent/router",
       "type": "branch",
-      "status": "implemented"
-    },
-    {
-      "id": "/",
-      "type": "endpoint",
-      "status": "implemented"
-    },
-    {
-      "id": "/health",
-      "type": "endpoint",
-      "status": "implemented"
-    },
-    {
-      "id": "/docs",
-      "type": "endpoint",
-      "status": "implemented"
-    },
-    {
-      "id": "/openapi.json",
-      "type": "endpoint",
-      "status": "implemented"
+      "status": "active"
     }
   ],
   "edges": [
     {
-      "source": "foundation/core-platform",
-      "target": "app/__init__.py",
+      "source": "agent/router",
+      "target": "app/orchestration/router/__init__.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/agents/__init__.py",
+      "source": "agent/router",
+      "target": "app/orchestration/router/agent.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/agents/base_agent.py",
+      "source": "agent/router",
+      "target": "app/orchestration/router/audit.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/api/__init__.py",
+      "source": "agent/router",
+      "target": "app/orchestration/router/check_scope.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/api/schemas.py",
+      "source": "agent/router",
+      "target": "app/orchestration/router/classifier.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/core/__init__.py",
+      "source": "agent/router",
+      "target": "app/orchestration/router/contracts.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/core/config.py",
+      "source": "agent/router",
+      "target": "app/orchestration/router/demo.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/core/exceptions.py",
+      "source": "agent/router",
+      "target": "app/orchestration/router/graph.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/core/logging.py",
+      "source": "agent/router",
+      "target": "app/orchestration/router/requirements.txt",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/main.py",
+      "source": "agent/router",
+      "target": "tests/router/test_router.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/models/__init__.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/models/database.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/services/__init__.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/services/database_service.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/services/dataset_loader.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "tests/foundation/test_foundation.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "scripts/check_branch_scope.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "requirements.txt",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "requirements-dev.txt",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "pyproject.toml",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": ".env.example",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": ".gitignore",
-      "type": "owns"
-    },
-    {
-      "source": "app/agents/base_agent.py",
-      "target": "app/api/schemas.py",
+      "source": "app/orchestration/router/agent.py",
+      "target": "app/orchestration/router/contracts.py",
       "type": "imports"
     },
     {
-      "source": "app/main.py",
-      "target": "app/core/config.py",
+      "source": "app/orchestration/router/agent.py",
+      "target": "app/orchestration/router/graph.py",
       "type": "imports"
     },
     {
-      "source": "app/main.py",
-      "target": "app/core/exceptions.py",
+      "source": "app/orchestration/router/classifier.py",
+      "target": "app/orchestration/router/contracts.py",
       "type": "imports"
     },
     {
-      "source": "app/main.py",
-      "target": "app/core/logging.py",
+      "source": "app/orchestration/router/demo.py",
+      "target": "app/orchestration/router/agent.py",
       "type": "imports"
     },
     {
-      "source": "app/main.py",
-      "target": "app/services/database_service.py",
+      "source": "app/orchestration/router/graph.py",
+      "target": "app/orchestration/router/classifier.py",
       "type": "imports"
     },
     {
-      "source": "app/services/dataset_loader.py",
-      "target": "app/api/schemas.py",
+      "source": "app/orchestration/router/graph.py",
+      "target": "app/orchestration/router/contracts.py",
       "type": "imports"
     },
     {
-      "source": "app/services/dataset_loader.py",
-      "target": "app/core/exceptions.py",
+      "source": "tests/router/test_router.py",
+      "target": "app/orchestration/router/agent.py",
       "type": "imports"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/main.py",
+      "source": "tests/router/test_router.py",
+      "target": "app/orchestration/router/contracts.py",
       "type": "imports"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/config.py",
+      "source": "tests/router/test_router.py",
+      "target": "app/orchestration/router/audit.py",
       "type": "imports"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/exceptions.py",
-      "type": "imports"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/logging.py",
-      "type": "imports"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/api/schemas.py",
-      "type": "imports"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/agents/base_agent.py",
-      "type": "imports"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/services/database_service.py",
-      "type": "imports"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/services/dataset_loader.py",
-      "type": "imports"
-    },
-    {
-      "source": "app/main.py",
-      "target": "/",
-      "type": "registers"
-    },
-    {
-      "source": "app/main.py",
-      "target": "/health",
-      "type": "registers"
-    },
-    {
-      "source": "app/main.py",
-      "target": "/docs",
-      "type": "registers"
-    },
-    {
-      "source": "app/main.py",
-      "target": "/openapi.json",
-      "type": "registers"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/agents/base_agent.py",
+      "source": "tests/router/test_router.py",
+      "target": "app/orchestration/router/agent.py",
       "type": "tests"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/api/schemas.py",
+      "source": "tests/router/test_router.py",
+      "target": "app/orchestration/router/audit.py",
       "type": "tests"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/config.py",
+      "source": "tests/router/test_router.py",
+      "target": "app/orchestration/router/classifier.py",
       "type": "tests"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/exceptions.py",
+      "source": "tests/router/test_router.py",
+      "target": "app/orchestration/router/contracts.py",
       "type": "tests"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/logging.py",
-      "type": "tests"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/main.py",
-      "type": "tests"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/models/database.py",
-      "type": "tests"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/services/database_service.py",
-      "type": "tests"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/services/dataset_loader.py",
+      "source": "tests/router/test_router.py",
+      "target": "app/orchestration/router/graph.py",
       "type": "tests"
     }
   ],
-  "dependencies": {
-    "runtime": [
-      "FastAPI",
-      "Pydantic",
-      "pydantic-settings",
-      "SQLAlchemy",
-      "Uvicorn"
-    ],
-    "test": [
-      "pytest",
-      "httpx"
-    ]
-  },
-  "deferred": [
-    "domain models pending dataset",
-    "domain agents",
-    "LangGraph",
-    "ChromaDB",
-    "embeddings",
-    "RBAC",
-    "durable audit",
-    "deployment"
+  "interfaces": [
+    "RouterAgent",
+    "RoutingPlan",
+    "Task",
+    "Intent",
+    "RouteSettings",
+    "JsonlAuditSink"
   ],
-  "official_completion_percent": 15,
-  "verified_implementation_commit": "a9a8df42e84a7eff3950cee94b4a5a2760de0c4c"
+  "dependencies": [
+    "foundation contracts",
+    "LangGraph",
+    "LangSmith tracing suppression",
+    "future agent execution/security adapters"
+  ],
+  "limitations": [
+    "English heuristic classifier",
+    "uncalibrated confidence",
+    "no downstream agent execution",
+    "no API registration",
+    "no cross-branch integration"
+  ]
 }
