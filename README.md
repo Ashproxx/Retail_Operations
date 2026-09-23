@@ -2,7 +2,7 @@
 
 Privacy-first retail operations backend with a LangGraph router, eight domain agents, local Chroma retrieval, and authenticated FastAPI endpoints. This is the human-approved `integration/release-candidate`; it is not deployed and is not merged into `main`.
 
-**Status: M0-M12 PASS (95% weighted milestones); M13 INCOMPLETE pending external validation.** Integrated code, tests and local API demos work. Real retail data, pretrained semantic retrieval evaluation, a running Ollama model, and Docker/remote-CI execution have not been validated in this environment. The percentage measures the project's weighted milestone checklist, not production readiness.
+**Status: M0-M12 PASS (95% weighted milestones); M13 INCOMPLETE pending external validation.** Integrated code, tests and local API demos work. Real retail data, pretrained semantic retrieval evaluation, a running Ollama model, and container runtime validation remains pending. Remote CI and the Docker image build passed on commit `9e939b2` (run 35878697558). The percentage measures the project's weighted milestone checklist, not production readiness.
 
 ## Start locally (Python 3.12)
 
@@ -120,7 +120,7 @@ The demo uses a temporary database, random ephemeral credentials and explicitly 
 
 After local `init`, run `docker compose up --build`. Place an approved local embedding model at `models/embedding` and set its identity in `.env` for RAG. The container exposes port 8000 only on localhost, uses a non-root user, read-only secret/model mounts, a persistent state volume, CPU PyTorch and one worker. On Linux, files generated with mode 0600 must be readable by container UID 10001 through an appropriate owner/group or secret provisioning setup; do not make tokens world-readable. Ollama runs on the host; ensure its local server is reachable from Docker before using optional drafting. No cloud resources are created.
 
-GitHub Actions installs CPU dependencies, runs the full suite, demo, scope guard and Docker build on candidate pushes/PRs with read-only repository permissions. Docker/remote CI execution is pending; configuration existence is not a passing build.
+GitHub Actions installs CPU dependencies, runs the full suite, demo, scope guard and Docker build on candidate pushes/PRs with read-only repository permissions. The original CI and Docker build passed in [run 35878697558](https://github.com/Ashproxx/Retail_Operations/actions/runs/35878697558). The expanded workflow also exercises container runtime and real local-model inference; measured results are recorded in docs/integration/VALIDATION.md.
 
 ## Limits and trust boundaries
 
@@ -132,3 +132,16 @@ GitHub Actions installs CPU dependencies, runs the full suite, demo, scope guard
 - No public internet deployment, TLS termination, rate limiting, enterprise identity, production connectors or operational dataset validation is claimed.
 
 See [ARCHITECTURE.md](ARCHITECTURE.md), [integration report](docs/integration/REPORT.md), [approved source commits](docs/integration/APPROVED_SOURCES.json), and [knowledge graph](docs/knowledge_graph/MASTER_KNOWLEDGE_GRAPH.md). Every original branch README/checklist/graph is preserved under `docs/integration/sources/`.
+
+## Extended validation
+
+The candidate includes explicit development evaluation commands. These download public model weights only when you run the download command; application startup still makes no model downloads. All model inputs below are synthetic. Models and revisions are recorded in `evaluation/models.json`: Apache-2.0 MiniLM-L6-v2 at a pinned commit for embeddings, and SmolLM2 135M through Ollama for a small CPU inference smoke test. No paid service is required.
+
+```bash
+python -m scripts.download_evaluation_model --output models/evaluation-minilm
+python -m scripts.evaluate_retrieval --model-path models/evaluation-minilm --output validation-output/retrieval.json
+python -m scripts.live_ollama_smoke --output validation-output/ollama.json
+python -m scripts.container_smoke --with-ollama --output validation-output/container.json
+```
+
+The last two commands need Ollama listening on port 11434 with `smollm2:135m` installed; the container command additionally needs the built `retailops-candidate` image and Docker. CI provisions both services and archives only non-secret measured reports. Retrieval uses 12 authored positive queries, six synthetic documents and two negative questions. Thresholds are development regression gates, not production accuracy certification. Container validation checks UID 10001, missing-token rejection, empty-database behavior, authorized query, denied store access, real-model draft, persistence across restart and owned feedback. Generated drafts are bounded to 256 tokens and remain separate from deterministic facts.

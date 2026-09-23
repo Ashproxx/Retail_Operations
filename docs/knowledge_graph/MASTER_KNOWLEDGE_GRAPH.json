@@ -1245,6 +1245,46 @@
       "type": "function"
     },
     {
+      "id": "scripts/container_smoke.py",
+      "type": "file"
+    },
+    {
+      "id": "scripts/container_smoke.py::docker",
+      "type": "function"
+    },
+    {
+      "id": "scripts/container_smoke.py::request",
+      "type": "function"
+    },
+    {
+      "id": "scripts/container_smoke.py::main",
+      "type": "function"
+    },
+    {
+      "id": "scripts/download_evaluation_model.py",
+      "type": "file"
+    },
+    {
+      "id": "scripts/download_evaluation_model.py::main",
+      "type": "function"
+    },
+    {
+      "id": "scripts/evaluate_retrieval.py",
+      "type": "file"
+    },
+    {
+      "id": "scripts/evaluate_retrieval.py::main",
+      "type": "function"
+    },
+    {
+      "id": "scripts/live_ollama_smoke.py",
+      "type": "file"
+    },
+    {
+      "id": "scripts/live_ollama_smoke.py::main",
+      "type": "function"
+    },
+    {
       "id": "scripts/update_knowledge_graph.py",
       "type": "file"
     },
@@ -4331,6 +4371,96 @@
     {
       "source": "scripts/check_branch_scope.py",
       "target": "scripts/check_branch_scope.py::main",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "scripts/container_smoke.py",
+      "type": "contains"
+    },
+    {
+      "source": "scripts/container_smoke.py",
+      "target": "scripts/container_smoke.py::docker",
+      "type": "defines"
+    },
+    {
+      "source": "scripts/container_smoke.py",
+      "target": "scripts/container_smoke.py::request",
+      "type": "defines"
+    },
+    {
+      "source": "scripts/container_smoke.py",
+      "target": "scripts/container_smoke.py::main",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "scripts/download_evaluation_model.py",
+      "type": "contains"
+    },
+    {
+      "source": "scripts/download_evaluation_model.py",
+      "target": "scripts/download_evaluation_model.py::main",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "scripts/evaluate_retrieval.py",
+      "type": "contains"
+    },
+    {
+      "source": "scripts/evaluate_retrieval.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "scripts/evaluate_retrieval.py",
+      "target": "app/integration/repository.py",
+      "type": "imports"
+    },
+    {
+      "source": "scripts/evaluate_retrieval.py",
+      "target": "app/integration/rag.py",
+      "type": "imports"
+    },
+    {
+      "source": "scripts/evaluate_retrieval.py",
+      "target": "app/rag/contracts.py",
+      "type": "imports"
+    },
+    {
+      "source": "scripts/evaluate_retrieval.py",
+      "target": "app/rag/embeddings.py",
+      "type": "imports"
+    },
+    {
+      "source": "scripts/evaluate_retrieval.py",
+      "target": "app/rag/store.py",
+      "type": "imports"
+    },
+    {
+      "source": "scripts/evaluate_retrieval.py",
+      "target": "app/services/database_service.py",
+      "type": "imports"
+    },
+    {
+      "source": "scripts/evaluate_retrieval.py",
+      "target": "scripts/evaluate_retrieval.py::main",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "scripts/live_ollama_smoke.py",
+      "type": "contains"
+    },
+    {
+      "source": "scripts/live_ollama_smoke.py",
+      "target": "app/integration/llm.py",
+      "type": "imports"
+    },
+    {
+      "source": "scripts/live_ollama_smoke.py",
+      "target": "scripts/live_ollama_smoke.py::main",
       "type": "defines"
     },
     {

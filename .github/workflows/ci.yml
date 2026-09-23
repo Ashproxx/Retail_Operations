@@ -8,6 +8,7 @@ permissions:
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     env:
       HF_HUB_OFFLINE: '1'
       TRANSFORMERS_OFFLINE: '1'
@@ -28,3 +29,32 @@ jobs:
       - run: cp .env.example .env
       - run: docker compose config --quiet
       - run: docker build -t retailops-candidate .
+      - name: Download pinned public evaluation embedding model
+        env:
+          HF_HUB_OFFLINE: '0'
+          TRANSFORMERS_OFFLINE: '0'
+        run: python -m scripts.download_evaluation_model --output models/evaluation-minilm
+      - name: Measure pretrained retrieval on labelled synthetic cases
+        run: python -m scripts.evaluate_retrieval --model-path models/evaluation-minilm --output validation-output/retrieval.json
+      - name: Start local Ollama for synthetic smoke tests
+        run: |
+          docker run --detach --name retailops-ollama --publish 11434:11434 ollama/ollama:0.34.3
+          for attempt in $(seq 1 60); do
+            if curl --fail --silent http://localhost:11434/api/version; then break; fi
+            sleep 1
+          done
+          docker exec retailops-ollama ollama pull smollm2:135m
+      - name: Verify actual local-model inference
+        run: python -m scripts.live_ollama_smoke --output validation-output/ollama.json
+      - name: Verify authenticated container and restart workflows
+        run: python -m scripts.container_smoke --with-ollama --output validation-output/container.json
+      - name: Preserve measured validation reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: integration-validation
+          path: validation-output/*.json
+          if-no-files-found: warn
+      - name: Stop local model service
+        if: always()
+        run: docker rm --force retailops-ollama || true

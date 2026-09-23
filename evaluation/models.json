@@ -1,0 +1,14 @@
+{
+  "embedding": {
+    "repository": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "license": "Apache-2.0",
+    "source": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2"
+  },
+  "ollama": {
+    "image": "ollama/ollama:0.34.3",
+    "model": "smollm2:135m",
+    "purpose": "Small CPU model for actual provider and container integration smoke tests, not retail answer-quality certification.",
+    "source": "https://ollama.com/library/smollm2:135m"
+  }
+}

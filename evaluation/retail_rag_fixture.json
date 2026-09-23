@@ -1,0 +1,27 @@
+{
+  "fixture": true,
+  "purpose": "Small authored development retrieval set, not a production benchmark or calibrated quality claim.",
+  "documents": [
+    {"id":"returns-window","text":"Customers may return unworn clothing within thirty days of purchase. A purchase receipt and the original tags are required for a refund."},
+    {"id":"delivery-tracking","text":"To track a shipped order, look up its tracking reference with the carrier. The shipment status and estimated delivery date are shown on the order page."},
+    {"id":"stock-replenishment","text":"When available inventory falls below the reorder point, review a replenishment purchase. Consider supplier lead time, forecast demand and safety stock before choosing an order quantity."},
+    {"id":"promotion-rules","text":"A promotional discount can apply only during its start and end dates. The item must be promotion eligible, have available stock and satisfy the minimum profit margin."},
+    {"id":"damaged-items","text":"For a damaged or defective product, collect a photograph of the defect and the order identifier. Send the case for human support review before deciding replacement eligibility."},
+    {"id":"store-hours","text":"The store opens at nine in the morning and closes at five in the evening from Monday to Friday. It is closed on Sunday."}
+  ],
+  "queries": [
+    {"question":"What receipt do I need to return unworn clothing?","relevant_id":"returns-window"},
+    {"question":"How long after purchase can a shopper bring back clothes?","relevant_id":"returns-window"},
+    {"question":"Where can I find the carrier tracking reference?","relevant_id":"delivery-tracking"},
+    {"question":"How do I check when my shipped parcel will arrive?","relevant_id":"delivery-tracking"},
+    {"question":"What happens when stock falls below its reorder point?","relevant_id":"stock-replenishment"},
+    {"question":"Which demand and supplier lead time factors affect replenishment?","relevant_id":"stock-replenishment"},
+    {"question":"When is an item eligible for a promotional discount?","relevant_id":"promotion-rules"},
+    {"question":"What profit margin restrictions apply to a sale promotion?","relevant_id":"promotion-rules"},
+    {"question":"What evidence should support collect for a defective item?","relevant_id":"damaged-items"},
+    {"question":"A customer received a broken product; should a person review replacement?","relevant_id":"damaged-items"},
+    {"question":"What are the weekday store opening hours?","relevant_id":"store-hours"},
+    {"question":"Is the shop open on Sunday?","relevant_id":"store-hours"}
+  ],
+  "unanswerable": ["Describe quantum entanglement experiments.","What is the chief executive's personal telephone number?"]
+}

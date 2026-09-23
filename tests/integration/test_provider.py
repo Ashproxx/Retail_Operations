@@ -11,6 +11,7 @@ def test_ollama_protocol_local_draft():
         assert request.url.path=='/api/chat'
         body=json.loads(request.content)
         assert body['stream'] is False and body['model']=='local-test'
+        assert body['options']['num_predict']==256
         assert len(body['messages'])==2
         return httpx.Response(200,json={'message':{'content':'Source-backed draft'}})
     provider=OllamaProvider('http://localhost:11434','local-test',transport=httpx.MockTransport(handler))

@@ -97,6 +97,10 @@
 | `app/services/database_service.py` | integration/release-candidate; original source ownership preserved in archives |
 | `app/services/dataset_loader.py` | integration/release-candidate; original source ownership preserved in archives |
 | `scripts/check_branch_scope.py` | integration/release-candidate; original source ownership preserved in archives |
+| `scripts/container_smoke.py` | integration/release-candidate; original source ownership preserved in archives |
+| `scripts/download_evaluation_model.py` | integration/release-candidate; original source ownership preserved in archives |
+| `scripts/evaluate_retrieval.py` | integration/release-candidate; original source ownership preserved in archives |
+| `scripts/live_ollama_smoke.py` | integration/release-candidate; original source ownership preserved in archives |
 | `scripts/update_knowledge_graph.py` | integration/release-candidate; original source ownership preserved in archives |
 | `tests/__init__.py` | integration/release-candidate; original source ownership preserved in archives |
 | `tests/analytics/test_analytics.py` | integration/release-candidate; original source ownership preserved in archives |

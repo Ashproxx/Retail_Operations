@@ -23,7 +23,8 @@ M13 INCOMPLETE; weighted completion remains 95%.
 - [ ] Live Ollama smoke test with an installed model
 - [ ] Approved pretrained embeddings and labelled retrieval evaluation
 - [ ] Real retail dataset mapping and end-to-end validation
-- [ ] Docker build/runtime and remote CI success verified
+- [x] Previous remote CI and Docker image build verified (run 35878697558)
+- [ ] Expanded container runtime, real Ollama and pretrained retrieval checks verified
 - [ ] M13 complete / eligible for final human review
 
 Publication evidence and source/main ref checks are recorded in docs/integration/REPORT.md and the session report. No main merge is authorized.
