@@ -1,420 +1,300 @@
 {
-  "branch": "foundation/core-platform",
-  "base_commit": "3cc1a8df36c49147daac2c3967f37020bb0f5654",
-  "milestone": "M1",
-  "status": "PASS",
+  "branch": "agent/analytics-reporting",
+  "base_commit": "77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045",
+  "milestone": "M10",
+  "status": "publication-pending",
+  "verified_commit": "pending",
+  "official_completion": 48,
   "nodes": [
     {
-      "id": "app/__init__.py",
+      "id": "app/agents/analytics/__init__.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/agents/__init__.py",
+      "id": "app/agents/analytics/agent.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/agents/base_agent.py",
+      "id": "app/agents/analytics/check_scope.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/api/__init__.py",
+      "id": "app/agents/analytics/demo.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/api/schemas.py",
+      "id": "app/agents/analytics/domain.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/core/__init__.py",
+      "id": "tests/analytics/test_analytics.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/core/config.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "agent/analytics-reporting",
+      "type": "branch"
     },
     {
-      "id": "app/core/exceptions.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/analytics/agent.py:Agent:8",
+      "type": "class"
     },
     {
-      "id": "app/core/logging.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/analytics/agent.py:__init__:9",
+      "type": "function"
     },
     {
-      "id": "app/main.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/analytics/agent.py:run:12",
+      "type": "function"
     },
     {
-      "id": "app/models/__init__.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/analytics/check_scope.py:git:3",
+      "type": "function"
     },
     {
-      "id": "app/models/database.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/analytics/check_scope.py:main:4",
+      "type": "function"
     },
     {
-      "id": "app/services/__init__.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/analytics/demo.py:main:4",
+      "type": "function"
     },
     {
-      "id": "app/services/database_service.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/analytics/domain.py:Sale:9",
+      "type": "class"
     },
     {
-      "id": "app/services/dataset_loader.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/analytics/domain.py:Query:22",
+      "type": "class"
     },
     {
-      "id": "tests/foundation/test_foundation.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/analytics/domain.py:AnomalyDetector:33",
+      "type": "class"
     },
     {
-      "id": "scripts/check_branch_scope.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/analytics/domain.py:agent_metrics:37",
+      "type": "function"
     },
     {
-      "id": "requirements.txt",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/analytics/domain.py:evaluate:47",
+      "type": "function"
     },
     {
-      "id": "requirements-dev.txt",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/analytics/domain.py:dates:29",
+      "type": "function"
     },
     {
-      "id": "pyproject.toml",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/analytics/domain.py:detect:34",
+      "type": "function"
     },
     {
-      "id": ".env.example",
-      "type": "file",
-      "status": "implemented"
+      "id": "tests/analytics/test_analytics.py:r:5",
+      "type": "function"
     },
     {
-      "id": ".gitignore",
-      "type": "file",
-      "status": "implemented"
+      "id": "tests/analytics/test_analytics.py:q:6",
+      "type": "function"
     },
     {
-      "id": "foundation/core-platform",
-      "type": "branch",
-      "status": "implemented"
+      "id": "tests/analytics/test_analytics.py:test_exact_revenue_and_latest_stock_counts:8",
+      "type": "function"
     },
     {
-      "id": "/",
-      "type": "endpoint",
-      "status": "implemented"
+      "id": "tests/analytics/test_analytics.py:test_grouping_and_rank_ties:15",
+      "type": "function"
     },
     {
-      "id": "/health",
-      "type": "endpoint",
-      "status": "implemented"
+      "id": "tests/analytics/test_analytics.py:test_filters_empty_duplicate_zero_stock:23",
+      "type": "function"
     },
     {
-      "id": "/docs",
-      "type": "endpoint",
-      "status": "implemented"
+      "id": "tests/analytics/test_analytics.py:test_invalid_rows:30",
+      "type": "function"
     },
     {
-      "id": "/openapi.json",
-      "type": "endpoint",
-      "status": "implemented"
+      "id": "tests/analytics/test_analytics.py:test_dates_and_metrics:33",
+      "type": "function"
+    },
+    {
+      "id": "tests/analytics/test_analytics.py:test_agent_empty:42",
+      "type": "function"
     }
   ],
   "edges": [
     {
-      "source": "foundation/core-platform",
-      "target": "app/__init__.py",
+      "source": "agent/analytics-reporting",
+      "target": "app/agents/analytics/__init__.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/agents/__init__.py",
+      "source": "agent/analytics-reporting",
+      "target": "app/agents/analytics/agent.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/agents/base_agent.py",
+      "source": "agent/analytics-reporting",
+      "target": "app/agents/analytics/check_scope.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/api/__init__.py",
+      "source": "agent/analytics-reporting",
+      "target": "app/agents/analytics/demo.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/api/schemas.py",
+      "source": "agent/analytics-reporting",
+      "target": "app/agents/analytics/domain.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/core/__init__.py",
+      "source": "agent/analytics-reporting",
+      "target": "tests/analytics/test_analytics.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/core/config.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/core/exceptions.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/core/logging.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/main.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/models/__init__.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/models/database.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/services/__init__.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/services/database_service.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/services/dataset_loader.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "tests/foundation/test_foundation.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "scripts/check_branch_scope.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "requirements.txt",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "requirements-dev.txt",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "pyproject.toml",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": ".env.example",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": ".gitignore",
-      "type": "owns"
-    },
-    {
-      "source": "app/agents/base_agent.py",
-      "target": "app/api/schemas.py",
+      "source": "app/agents/analytics/agent.py",
+      "target": "app/agents/analytics/domain.py",
       "type": "imports"
     },
     {
-      "source": "app/main.py",
-      "target": "app/core/config.py",
+      "source": "app/agents/analytics/agent.py",
+      "target": "app/agents/analytics/agent.py:Agent:8",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/analytics/agent.py",
+      "target": "app/agents/analytics/agent.py:__init__:9",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/analytics/agent.py",
+      "target": "app/agents/analytics/agent.py:run:12",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/analytics/check_scope.py",
+      "target": "app/agents/analytics/check_scope.py:git:3",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/analytics/check_scope.py",
+      "target": "app/agents/analytics/check_scope.py:main:4",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/analytics/demo.py",
+      "target": "app/agents/analytics/agent.py",
       "type": "imports"
     },
     {
-      "source": "app/main.py",
-      "target": "app/core/exceptions.py",
+      "source": "app/agents/analytics/demo.py",
+      "target": "app/agents/analytics/demo.py:main:4",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/analytics/domain.py",
+      "target": "app/agents/analytics/domain.py:Sale:9",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/analytics/domain.py",
+      "target": "app/agents/analytics/domain.py:Query:22",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/analytics/domain.py",
+      "target": "app/agents/analytics/domain.py:AnomalyDetector:33",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/analytics/domain.py",
+      "target": "app/agents/analytics/domain.py:agent_metrics:37",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/analytics/domain.py",
+      "target": "app/agents/analytics/domain.py:evaluate:47",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/analytics/domain.py",
+      "target": "app/agents/analytics/domain.py:dates:29",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/analytics/domain.py",
+      "target": "app/agents/analytics/domain.py:detect:34",
+      "type": "defines"
+    },
+    {
+      "source": "tests/analytics/test_analytics.py",
+      "target": "app/agents/analytics/domain.py",
       "type": "imports"
     },
     {
-      "source": "app/main.py",
-      "target": "app/core/logging.py",
+      "source": "tests/analytics/test_analytics.py",
+      "target": "tests/analytics/test_analytics.py:r:5",
+      "type": "defines"
+    },
+    {
+      "source": "tests/analytics/test_analytics.py",
+      "target": "tests/analytics/test_analytics.py:q:6",
+      "type": "defines"
+    },
+    {
+      "source": "tests/analytics/test_analytics.py",
+      "target": "tests/analytics/test_analytics.py:test_exact_revenue_and_latest_stock_counts:8",
+      "type": "defines"
+    },
+    {
+      "source": "tests/analytics/test_analytics.py",
+      "target": "tests/analytics/test_analytics.py:test_grouping_and_rank_ties:15",
+      "type": "defines"
+    },
+    {
+      "source": "tests/analytics/test_analytics.py",
+      "target": "tests/analytics/test_analytics.py:test_filters_empty_duplicate_zero_stock:23",
+      "type": "defines"
+    },
+    {
+      "source": "tests/analytics/test_analytics.py",
+      "target": "tests/analytics/test_analytics.py:test_invalid_rows:30",
+      "type": "defines"
+    },
+    {
+      "source": "tests/analytics/test_analytics.py",
+      "target": "tests/analytics/test_analytics.py:test_dates_and_metrics:33",
+      "type": "defines"
+    },
+    {
+      "source": "tests/analytics/test_analytics.py",
+      "target": "tests/analytics/test_analytics.py:test_agent_empty:42",
+      "type": "defines"
+    },
+    {
+      "source": "tests/analytics/test_analytics.py",
+      "target": "app/agents/analytics/agent.py",
       "type": "imports"
     },
     {
-      "source": "app/main.py",
-      "target": "app/services/database_service.py",
-      "type": "imports"
-    },
-    {
-      "source": "app/services/dataset_loader.py",
-      "target": "app/api/schemas.py",
-      "type": "imports"
-    },
-    {
-      "source": "app/services/dataset_loader.py",
-      "target": "app/core/exceptions.py",
-      "type": "imports"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/main.py",
-      "type": "imports"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/config.py",
-      "type": "imports"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/exceptions.py",
-      "type": "imports"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/logging.py",
-      "type": "imports"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/api/schemas.py",
-      "type": "imports"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/agents/base_agent.py",
-      "type": "imports"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/services/database_service.py",
-      "type": "imports"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/services/dataset_loader.py",
-      "type": "imports"
-    },
-    {
-      "source": "app/main.py",
-      "target": "/",
-      "type": "registers"
-    },
-    {
-      "source": "app/main.py",
-      "target": "/health",
-      "type": "registers"
-    },
-    {
-      "source": "app/main.py",
-      "target": "/docs",
-      "type": "registers"
-    },
-    {
-      "source": "app/main.py",
-      "target": "/openapi.json",
-      "type": "registers"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/agents/base_agent.py",
+      "source": "tests/analytics/test_analytics.py",
+      "target": "app/agents/analytics/agent.py",
       "type": "tests"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/api/schemas.py",
-      "type": "tests"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/config.py",
-      "type": "tests"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/exceptions.py",
-      "type": "tests"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/logging.py",
-      "type": "tests"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/main.py",
-      "type": "tests"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/models/database.py",
-      "type": "tests"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/services/database_service.py",
-      "type": "tests"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/services/dataset_loader.py",
+      "source": "tests/analytics/test_analytics.py",
+      "target": "app/agents/analytics/domain.py",
       "type": "tests"
     }
   ],
-  "dependencies": {
-    "runtime": [
-      "FastAPI",
-      "Pydantic",
-      "pydantic-settings",
-      "SQLAlchemy",
-      "Uvicorn"
-    ],
-    "test": [
-      "pytest",
-      "httpx"
-    ]
-  },
-  "deferred": [
-    "domain models pending dataset",
-    "domain agents",
-    "LangGraph",
-    "ChromaDB",
-    "embeddings",
-    "RBAC",
-    "durable audit",
-    "deployment"
-  ],
-  "official_completion_percent": 15,
-  "verified_implementation_commit": "a9a8df42e84a7eff3950cee94b4a5a2760de0c4c"
+  "limitations": "Input rows must be daily store/SKU aggregates with duplicates rejected. Revenue excludes unprovided tax/discount/refund adjustments. Turnover is a unit-based proxy over observed stock snapshots, not financial inventory turnover; missing days are not imputed. Audit metrics use full request latency, not isolated agent runtime. No trained anomaly detector, real operational data or dashboard/API integration.",
+  "dependencies": [
+    "foundation contracts",
+    "future authorized integration"
+  ]
 }

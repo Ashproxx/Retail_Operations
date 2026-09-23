@@ -1,29 +1,14 @@
-# M1 deliverables
+# M10 branch deliverables
 
-## Implementation
-- [x] Python package and dependency/install metadata
-- [x] Settings, environment variables and .env.example
-- [x] Logging and common exceptions
-- [x] Pydantic contracts and abstract BaseAgent
-- [x] SQLAlchemy database lifecycle and transactional abstraction
-- [x] Abstract DatasetLoader and source validation
-- [x] FastAPI skeleton, health probe and OpenAPI
-- [x] Test scaffolding and .gitignore
+- [x] Typed domain implementation and safe missing/invalid-data handling
+- [x] Deterministic tools or documented extensibility contracts
+- [x] Agent adapter/audit metadata as scoped in README
+- [x] 28 passing tests; fixture demo verified
+- [x] Compile, scope, graph and whitespace checks
+- [x] Branch README and Markdown/JSON graph delta
+- [x] No private data/secrets, unrelated changes or merges
+- [ ] Published and remote HEAD verified: pending
+- [ ] Other branch heads unchanged
+- [ ] Human approved for integration (separate gate)
 
-## Validation
-- [x] 20 foundation tests passed; 0 failed; 0 skipped
-- [x] Invalid inputs, missing files, agent failures and database rollback covered
-- [x] Two dependency deprecation warnings documented
-- [x] Branch README, deliverables and graph delta current
-- [x] Final compile, scope, dependency and live Uvicorn startup checks verified
-
-## Git hygiene
-- [x] Branch created from human-approved M0 base
-- [x] No secrets or private business data
-- [x] No changes to context, other development branches or main
-- [x] Committed and published to foundation/core-platform: a9a8df42e84a7eff3950cee94b4a5a2760de0c4c
-- [x] Remote HEAD and unchanged main/context verified with git ls-remote
-
-## Human review
-- [x] Approved context base for M1
-- [ ] Integration approved (separate future gate)
+Official completion: 48%. Partial or unverified milestones earn no credit.
