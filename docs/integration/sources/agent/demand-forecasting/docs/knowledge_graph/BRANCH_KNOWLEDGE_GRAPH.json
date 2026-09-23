@@ -1,0 +1,282 @@
+{
+  "branch": "agent/demand-forecasting",
+  "base_commit": "77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045",
+  "milestone": "M9",
+  "status": "PASS",
+  "verified_commit": "96ee693724effd96ccad34fab2defcb762f9e8c4",
+  "official_completion": 48,
+  "nodes": [
+    {
+      "id": "app/agents/forecasting/__init__.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/agents/forecasting/agent.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/agents/forecasting/check_scope.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/agents/forecasting/demo.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/agents/forecasting/domain.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "tests/forecasting/test_forecasting.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "agent/demand-forecasting",
+      "type": "branch"
+    },
+    {
+      "id": "app/agents/forecasting/agent.py:Agent:8",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/forecasting/agent.py:__init__:9",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/forecasting/agent.py:run:12",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/forecasting/check_scope.py:git:3",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/forecasting/check_scope.py:main:4",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/forecasting/demo.py:main:5",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/forecasting/domain.py:Sale:8",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/forecasting/domain.py:Query:16",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/forecasting/domain.py:BayesianEstimator:25",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/forecasting/domain.py:baseline:29",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/forecasting/domain.py:evaluate:36",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/forecasting/domain.py:posterior:26",
+      "type": "function"
+    },
+    {
+      "id": "tests/forecasting/test_forecasting.py:rows:7",
+      "type": "function"
+    },
+    {
+      "id": "tests/forecasting/test_forecasting.py:q:8",
+      "type": "function"
+    },
+    {
+      "id": "tests/forecasting/test_forecasting.py:test_constant_series:10",
+      "type": "function"
+    },
+    {
+      "id": "tests/forecasting/test_forecasting.py:test_trend_and_no_future_leakage:17",
+      "type": "function"
+    },
+    {
+      "id": "tests/forecasting/test_forecasting.py:test_missing_sparse_stale:23",
+      "type": "function"
+    },
+    {
+      "id": "tests/forecasting/test_forecasting.py:test_invalid_duplicate_and_uncertainty:30",
+      "type": "function"
+    },
+    {
+      "id": "tests/forecasting/test_forecasting.py:test_store_sku_scope:38",
+      "type": "function"
+    }
+  ],
+  "edges": [
+    {
+      "source": "agent/demand-forecasting",
+      "target": "app/agents/forecasting/__init__.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/demand-forecasting",
+      "target": "app/agents/forecasting/agent.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/demand-forecasting",
+      "target": "app/agents/forecasting/check_scope.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/demand-forecasting",
+      "target": "app/agents/forecasting/demo.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/demand-forecasting",
+      "target": "app/agents/forecasting/domain.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/demand-forecasting",
+      "target": "tests/forecasting/test_forecasting.py",
+      "type": "owns"
+    },
+    {
+      "source": "app/agents/forecasting/agent.py",
+      "target": "app/agents/forecasting/domain.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/forecasting/agent.py",
+      "target": "app/agents/forecasting/agent.py:Agent:8",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/forecasting/agent.py",
+      "target": "app/agents/forecasting/agent.py:__init__:9",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/forecasting/agent.py",
+      "target": "app/agents/forecasting/agent.py:run:12",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/forecasting/check_scope.py",
+      "target": "app/agents/forecasting/check_scope.py:git:3",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/forecasting/check_scope.py",
+      "target": "app/agents/forecasting/check_scope.py:main:4",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/forecasting/demo.py",
+      "target": "app/agents/forecasting/agent.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/forecasting/demo.py",
+      "target": "app/agents/forecasting/demo.py:main:5",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/forecasting/domain.py",
+      "target": "app/agents/forecasting/domain.py:Sale:8",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/forecasting/domain.py",
+      "target": "app/agents/forecasting/domain.py:Query:16",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/forecasting/domain.py",
+      "target": "app/agents/forecasting/domain.py:BayesianEstimator:25",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/forecasting/domain.py",
+      "target": "app/agents/forecasting/domain.py:baseline:29",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/forecasting/domain.py",
+      "target": "app/agents/forecasting/domain.py:evaluate:36",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/forecasting/domain.py",
+      "target": "app/agents/forecasting/domain.py:posterior:26",
+      "type": "defines"
+    },
+    {
+      "source": "tests/forecasting/test_forecasting.py",
+      "target": "app/agents/forecasting/domain.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/forecasting/test_forecasting.py",
+      "target": "tests/forecasting/test_forecasting.py:rows:7",
+      "type": "defines"
+    },
+    {
+      "source": "tests/forecasting/test_forecasting.py",
+      "target": "tests/forecasting/test_forecasting.py:q:8",
+      "type": "defines"
+    },
+    {
+      "source": "tests/forecasting/test_forecasting.py",
+      "target": "tests/forecasting/test_forecasting.py:test_constant_series:10",
+      "type": "defines"
+    },
+    {
+      "source": "tests/forecasting/test_forecasting.py",
+      "target": "tests/forecasting/test_forecasting.py:test_trend_and_no_future_leakage:17",
+      "type": "defines"
+    },
+    {
+      "source": "tests/forecasting/test_forecasting.py",
+      "target": "tests/forecasting/test_forecasting.py:test_missing_sparse_stale:23",
+      "type": "defines"
+    },
+    {
+      "source": "tests/forecasting/test_forecasting.py",
+      "target": "tests/forecasting/test_forecasting.py:test_invalid_duplicate_and_uncertainty:30",
+      "type": "defines"
+    },
+    {
+      "source": "tests/forecasting/test_forecasting.py",
+      "target": "tests/forecasting/test_forecasting.py:test_store_sku_scope:38",
+      "type": "defines"
+    },
+    {
+      "source": "tests/forecasting/test_forecasting.py",
+      "target": "app/agents/forecasting/agent.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/forecasting/test_forecasting.py",
+      "target": "app/agents/forecasting/agent.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/forecasting/test_forecasting.py",
+      "target": "app/agents/forecasting/domain.py",
+      "type": "tests"
+    }
+  ],
+  "limitations": "Missing calendar dates are not filled as zero sales; stale or insufficient history returns insufficient_evidence. Future records are excluded. Forecasts are level baselines; weekday aggregates are descriptive, not a fitted seasonal model. Intervals use residual RMSE and sqrt(horizon), are not calibrated, and remain null without evaluation residuals. No promotion covariates, Bayesian posterior, forecast accuracy claim or production connector.",
+  "dependencies": [
+    "foundation contracts",
+    "future authorized integration"
+  ]
+}

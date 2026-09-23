@@ -1,1182 +1,5952 @@
 {
-  "baseline": "c21658e55c96d7adc78b82d2e2f3d2b17d226144",
-  "repository": "Ashproxx/Retail_Operations",
+  "scope": "human-approved integration candidate",
+  "status": "M13 INCOMPLETE / 95%",
   "nodes": [
     {
-      "id": "context/project-knowledge",
+      "id": "integration/release-candidate",
       "type": "branch",
-      "status": "published"
-    },
-    {
-      "id": "foundation/core-platform",
-      "type": "branch",
-      "status": "planned"
+      "base": "77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045"
     },
     {
       "id": "agent/router",
       "type": "branch",
-      "status": "planned"
+      "commit": "034946159557d9e88e2cd591b284f370fa6a9831"
     },
     {
       "id": "agent/inventory",
       "type": "branch",
-      "status": "planned"
+      "commit": "bc1a4d5c1a3c62e81512b0b9cdbc6eceaa58d3ba"
     },
     {
       "id": "agent/order-fulfillment",
       "type": "branch",
-      "status": "planned"
+      "commit": "21acc0898ce8b3f0f130bb21b8b4b2fbafc7851b"
     },
     {
       "id": "agent/supply-chain",
       "type": "branch",
-      "status": "planned"
+      "commit": "bce3f17d4798e121a4c8f3aa1e697b093ab47e0d"
     },
     {
       "id": "agent/pricing-promotions",
       "type": "branch",
-      "status": "planned"
+      "commit": "57ff09d09ad74eb623d28168b63774df25ea3294"
     },
     {
       "id": "agent/customer-service",
       "type": "branch",
-      "status": "planned"
+      "commit": "5ecdbf6eab71715657b1a17e1305ab6702b8704d"
     },
     {
       "id": "agent/returns-refunds",
       "type": "branch",
-      "status": "planned"
+      "commit": "4a0b17d7d071e9cb203ccf3f5b6474e5d5eb61bb"
     },
     {
       "id": "agent/demand-forecasting",
       "type": "branch",
-      "status": "planned"
+      "commit": "7a65d8dab39697ef62be14e5feda945efda55ac9"
     },
     {
       "id": "agent/analytics-reporting",
       "type": "branch",
-      "status": "planned"
+      "commit": "26f58b0600e6df6c8a37523ebff2065f6705d73b"
     },
     {
       "id": "platform/agentic-rag",
       "type": "branch",
-      "status": "planned"
+      "commit": "e3638225a5ea88ab6036ce6148f66d9208cedf5c"
     },
     {
       "id": "security/privacy-integrity",
       "type": "branch",
-      "status": "planned"
-    },
-    {
-      "id": "integration/release-candidate",
-      "type": "branch",
-      "status": "planned"
-    },
-    {
-      "id": "M0",
-      "type": "milestone",
-      "status": "planned",
-      "weight": 5
-    },
-    {
-      "id": "M1",
-      "type": "milestone",
-      "status": "planned",
-      "weight": 10
-    },
-    {
-      "id": "M2",
-      "type": "milestone",
-      "status": "planned",
-      "weight": 8
-    },
-    {
-      "id": "M3",
-      "type": "milestone",
-      "status": "planned",
-      "weight": 9
-    },
-    {
-      "id": "M4",
-      "type": "milestone",
-      "status": "planned",
-      "weight": 7
-    },
-    {
-      "id": "M5",
-      "type": "milestone",
-      "status": "planned",
-      "weight": 8
-    },
-    {
-      "id": "M6",
-      "type": "milestone",
-      "status": "planned",
-      "weight": 8
-    },
-    {
-      "id": "M7",
-      "type": "milestone",
-      "status": "planned",
-      "weight": 6
-    },
-    {
-      "id": "M8",
-      "type": "milestone",
-      "status": "planned",
-      "weight": 6
-    },
-    {
-      "id": "M9",
-      "type": "milestone",
-      "status": "planned",
-      "weight": 8
-    },
-    {
-      "id": "M10",
-      "type": "milestone",
-      "status": "planned",
-      "weight": 7
-    },
-    {
-      "id": "M11",
-      "type": "milestone",
-      "status": "planned",
-      "weight": 8
-    },
-    {
-      "id": "M12",
-      "type": "milestone",
-      "status": "planned",
-      "weight": 5
+      "commit": "e55f640b416d2109bac8fbf9dea2622dbdc78577"
     },
     {
       "id": "M13",
       "type": "milestone",
-      "status": "planned",
-      "weight": 5
+      "status": "INCOMPLETE",
+      "weighted_completion": 95
     },
     {
-      "id": "router",
-      "type": "agent",
-      "status": "planned"
+      "id": "app/__init__.py",
+      "type": "file"
     },
     {
-      "id": "router-tool",
-      "type": "tool",
-      "status": "planned"
+      "id": "app/agents/__init__.py",
+      "type": "file"
     },
     {
-      "id": "router-tests",
-      "type": "test",
-      "status": "planned"
+      "id": "app/agents/analytics/__init__.py",
+      "type": "file"
     },
     {
-      "id": "router-result",
-      "type": "schema",
-      "status": "planned"
+      "id": "app/agents/analytics/agent.py",
+      "type": "file"
     },
     {
-      "id": "inventory",
-      "type": "agent",
-      "status": "planned"
+      "id": "app/agents/analytics/agent.py::Agent",
+      "type": "class"
     },
     {
-      "id": "inventory-tool",
-      "type": "tool",
-      "status": "planned"
+      "id": "app/agents/analytics/check_scope.py",
+      "type": "file"
     },
     {
-      "id": "inventory-tests",
-      "type": "test",
-      "status": "planned"
+      "id": "app/agents/analytics/check_scope.py::git",
+      "type": "function"
     },
     {
-      "id": "inventory-result",
-      "type": "schema",
-      "status": "planned"
+      "id": "app/agents/analytics/check_scope.py::main",
+      "type": "function"
     },
     {
-      "id": "order-fulfillment",
-      "type": "agent",
-      "status": "planned"
+      "id": "app/agents/analytics/demo.py",
+      "type": "file"
     },
     {
-      "id": "order-fulfillment-tool",
-      "type": "tool",
-      "status": "planned"
+      "id": "app/agents/analytics/demo.py::main",
+      "type": "function"
     },
     {
-      "id": "order-fulfillment-tests",
-      "type": "test",
-      "status": "planned"
+      "id": "app/agents/analytics/domain.py",
+      "type": "file"
     },
     {
-      "id": "order-fulfillment-result",
-      "type": "schema",
-      "status": "planned"
+      "id": "app/agents/analytics/domain.py::Sale",
+      "type": "class"
     },
     {
-      "id": "supply-chain",
-      "type": "agent",
-      "status": "planned"
+      "id": "app/agents/analytics/domain.py::Query",
+      "type": "class"
     },
     {
-      "id": "supply-chain-tool",
-      "type": "tool",
-      "status": "planned"
+      "id": "app/agents/analytics/domain.py::AnomalyDetector",
+      "type": "class"
     },
     {
-      "id": "supply-chain-tests",
-      "type": "test",
-      "status": "planned"
+      "id": "app/agents/analytics/domain.py::agent_metrics",
+      "type": "function"
     },
     {
-      "id": "supply-chain-result",
-      "type": "schema",
-      "status": "planned"
+      "id": "app/agents/analytics/domain.py::evaluate",
+      "type": "function"
     },
     {
-      "id": "pricing-promotions",
-      "type": "agent",
-      "status": "planned"
+      "id": "app/agents/base_agent.py",
+      "type": "file"
     },
     {
-      "id": "pricing-promotions-tool",
-      "type": "tool",
-      "status": "planned"
+      "id": "app/agents/base_agent.py::BaseAgent",
+      "type": "class"
     },
     {
-      "id": "pricing-promotions-tests",
-      "type": "test",
-      "status": "planned"
+      "id": "app/agents/forecasting/__init__.py",
+      "type": "file"
     },
     {
-      "id": "pricing-promotions-result",
-      "type": "schema",
-      "status": "planned"
+      "id": "app/agents/forecasting/agent.py",
+      "type": "file"
     },
     {
-      "id": "customer-service",
-      "type": "agent",
-      "status": "planned"
+      "id": "app/agents/forecasting/agent.py::Agent",
+      "type": "class"
     },
     {
-      "id": "customer-service-tool",
-      "type": "tool",
-      "status": "planned"
+      "id": "app/agents/forecasting/check_scope.py",
+      "type": "file"
     },
     {
-      "id": "customer-service-tests",
-      "type": "test",
-      "status": "planned"
+      "id": "app/agents/forecasting/check_scope.py::git",
+      "type": "function"
     },
     {
-      "id": "customer-service-result",
-      "type": "schema",
-      "status": "planned"
+      "id": "app/agents/forecasting/check_scope.py::main",
+      "type": "function"
     },
     {
-      "id": "returns-refunds",
-      "type": "agent",
-      "status": "planned"
+      "id": "app/agents/forecasting/demo.py",
+      "type": "file"
     },
     {
-      "id": "returns-refunds-tool",
-      "type": "tool",
-      "status": "planned"
+      "id": "app/agents/forecasting/demo.py::main",
+      "type": "function"
     },
     {
-      "id": "returns-refunds-tests",
-      "type": "test",
-      "status": "planned"
+      "id": "app/agents/forecasting/domain.py",
+      "type": "file"
     },
     {
-      "id": "returns-refunds-result",
-      "type": "schema",
-      "status": "planned"
+      "id": "app/agents/forecasting/domain.py::Sale",
+      "type": "class"
     },
     {
-      "id": "demand-forecasting",
-      "type": "agent",
-      "status": "planned"
+      "id": "app/agents/forecasting/domain.py::Query",
+      "type": "class"
     },
     {
-      "id": "demand-forecasting-tool",
-      "type": "tool",
-      "status": "planned"
+      "id": "app/agents/forecasting/domain.py::BayesianEstimator",
+      "type": "class"
     },
     {
-      "id": "demand-forecasting-tests",
-      "type": "test",
-      "status": "planned"
+      "id": "app/agents/forecasting/domain.py::baseline",
+      "type": "function"
     },
     {
-      "id": "demand-forecasting-result",
-      "type": "schema",
-      "status": "planned"
+      "id": "app/agents/forecasting/domain.py::evaluate",
+      "type": "function"
     },
     {
-      "id": "analytics-reporting",
-      "type": "agent",
-      "status": "planned"
+      "id": "app/agents/inventory/__init__.py",
+      "type": "file"
     },
     {
-      "id": "analytics-reporting-tool",
-      "type": "tool",
-      "status": "planned"
+      "id": "app/agents/inventory/agent.py",
+      "type": "file"
     },
     {
-      "id": "analytics-reporting-tests",
-      "type": "test",
-      "status": "planned"
+      "id": "app/agents/inventory/agent.py::Agent",
+      "type": "class"
     },
     {
-      "id": "analytics-reporting-result",
-      "type": "schema",
-      "status": "planned"
+      "id": "app/agents/inventory/check_scope.py",
+      "type": "file"
     },
     {
-      "id": "user",
-      "type": "actor",
-      "status": "planned"
+      "id": "app/agents/inventory/check_scope.py::git",
+      "type": "function"
     },
     {
-      "id": "api",
-      "type": "API endpoint",
-      "status": "planned"
+      "id": "app/agents/inventory/check_scope.py::main",
+      "type": "function"
     },
     {
-      "id": "query-schema",
-      "type": "schema",
-      "status": "planned"
+      "id": "app/agents/inventory/demo.py",
+      "type": "file"
     },
     {
-      "id": "orchestrator",
-      "type": "module",
-      "status": "planned"
+      "id": "app/agents/inventory/demo.py::main",
+      "type": "function"
     },
     {
-      "id": "rag",
-      "type": "module",
-      "status": "planned"
+      "id": "app/agents/inventory/domain.py",
+      "type": "file"
     },
     {
-      "id": "chunk",
-      "type": "module",
-      "status": "planned"
+      "id": "app/agents/inventory/domain.py::Snapshot",
+      "type": "class"
     },
     {
-      "id": "embedding",
-      "type": "module",
-      "status": "planned"
+      "id": "app/agents/inventory/domain.py::Query",
+      "type": "class"
     },
     {
-      "id": "chroma",
-      "type": "RAG collection",
-      "status": "planned"
+      "id": "app/agents/inventory/domain.py::AllocationStrategy",
+      "type": "class"
     },
     {
-      "id": "retrieval",
-      "type": "module",
-      "status": "planned"
+      "id": "app/agents/inventory/domain.py::BayesianDemandStrategy",
+      "type": "class"
     },
     {
-      "id": "verification",
-      "type": "security control",
-      "status": "planned"
+      "id": "app/agents/inventory/domain.py::analyze",
+      "type": "function"
     },
     {
-      "id": "dataset",
-      "type": "dataset",
-      "status": "planned"
+      "id": "app/agents/inventory/domain.py::evaluate",
+      "type": "function"
     },
     {
-      "id": "tables",
-      "type": "database table",
-      "status": "planned"
+      "id": "app/agents/orders/__init__.py",
+      "type": "file"
     },
     {
-      "id": "rbac",
-      "type": "security control",
-      "status": "planned"
+      "id": "app/agents/orders/agent.py",
+      "type": "file"
     },
     {
-      "id": "audit",
-      "type": "module",
-      "status": "planned"
+      "id": "app/agents/orders/agent.py::Agent",
+      "type": "class"
     },
     {
-      "id": "docs/governance/MAIN_BASELINE.md",
-      "type": "file",
-      "status": "published",
-      "responsibility": "M0 knowledge/governance documentation"
+      "id": "app/agents/orders/check_scope.py",
+      "type": "file"
     },
     {
-      "id": "docs/governance/BRANCH_POLICY.md",
-      "type": "file",
-      "status": "published",
-      "responsibility": "M0 knowledge/governance documentation"
+      "id": "app/agents/orders/check_scope.py::git",
+      "type": "function"
     },
     {
-      "id": "docs/governance/HUMAN_APPROVAL_GATES.md",
-      "type": "file",
-      "status": "published",
-      "responsibility": "M0 knowledge/governance documentation"
+      "id": "app/agents/orders/check_scope.py::main",
+      "type": "function"
     },
     {
-      "id": "docs/governance/DEFINITION_OF_DONE.md",
-      "type": "file",
-      "status": "published",
-      "responsibility": "M0 knowledge/governance documentation"
+      "id": "app/agents/orders/demo.py",
+      "type": "file"
     },
     {
-      "id": "docs/governance/MILESTONES.md",
-      "type": "file",
-      "status": "published",
-      "responsibility": "M0 knowledge/governance documentation"
+      "id": "app/agents/orders/demo.py::main",
+      "type": "function"
     },
     {
-      "id": "docs/knowledge_graph/FILE_OWNERSHIP_MAP.md",
-      "type": "file",
-      "status": "published",
-      "responsibility": "M0 knowledge/governance documentation"
+      "id": "app/agents/orders/domain.py",
+      "type": "file"
     },
     {
-      "id": "docs/knowledge_graph/INTERFACE_REGISTRY.md",
-      "type": "file",
-      "status": "published",
-      "responsibility": "M0 knowledge/governance documentation"
+      "id": "app/agents/orders/domain.py::validate_transition",
+      "type": "function"
     },
     {
-      "id": "docs/knowledge_graph/MASTER_KNOWLEDGE_GRAPH.md",
-      "type": "file",
-      "status": "published",
-      "responsibility": "M0 knowledge/governance documentation"
+      "id": "app/agents/orders/domain.py::Source",
+      "type": "class"
     },
     {
-      "id": "docs/knowledge_graph/DATA_FLOW_GRAPH.md",
-      "type": "file",
-      "status": "published",
-      "responsibility": "M0 knowledge/governance documentation"
+      "id": "app/agents/orders/domain.py::Order",
+      "type": "class"
     },
     {
-      "id": "docs/knowledge_graph/BRANCH_GRAPH.md",
-      "type": "file",
-      "status": "published",
-      "responsibility": "M0 knowledge/governance documentation"
+      "id": "app/agents/orders/domain.py::Query",
+      "type": "class"
     },
     {
-      "id": "docs/knowledge_graph/TEST_COVERAGE_MAP.md",
-      "type": "file",
-      "status": "published",
-      "responsibility": "M0 knowledge/governance documentation"
+      "id": "app/agents/orders/domain.py::ShippingConnector",
+      "type": "class"
     },
     {
-      "id": "docs/knowledge_graph/BRANCH_KNOWLEDGE_GRAPH.md",
-      "type": "file",
-      "status": "published",
-      "responsibility": "M0 knowledge/governance documentation"
+      "id": "app/agents/orders/domain.py::evaluate",
+      "type": "function"
     },
     {
-      "id": "BRANCH_README.md",
-      "type": "file",
-      "status": "published",
-      "responsibility": "M0 knowledge/governance documentation"
+      "id": "app/agents/pricing/__init__.py",
+      "type": "file"
     },
     {
-      "id": "BRANCH_DELIVERABLES.md",
-      "type": "file",
-      "status": "published",
-      "responsibility": "M0 knowledge/governance documentation"
+      "id": "app/agents/pricing/agent.py",
+      "type": "file"
     },
     {
-      "id": "docs/knowledge_graph/MASTER_KNOWLEDGE_GRAPH.json",
-      "type": "file",
-      "status": "published",
-      "responsibility": "M0 knowledge/governance documentation"
+      "id": "app/agents/pricing/agent.py::Agent",
+      "type": "class"
     },
     {
-      "id": "docs/knowledge_graph/BRANCH_KNOWLEDGE_GRAPH.json",
-      "type": "file",
-      "status": "published",
-      "responsibility": "M0 knowledge/governance documentation"
+      "id": "app/agents/pricing/check_scope.py",
+      "type": "file"
     },
     {
-      "id": "README.md",
-      "type": "file",
-      "status": "existing",
-      "responsibility": "One-line repository title"
+      "id": "app/agents/pricing/check_scope.py::git",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/pricing/check_scope.py::main",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/pricing/demo.py",
+      "type": "file"
+    },
+    {
+      "id": "app/agents/pricing/demo.py::main",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/pricing/domain.py",
+      "type": "file"
+    },
+    {
+      "id": "app/agents/pricing/domain.py::Price",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/pricing/domain.py::Query",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/pricing/domain.py::ElasticityEstimator",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/pricing/domain.py::evaluate",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/returns/__init__.py",
+      "type": "file"
+    },
+    {
+      "id": "app/agents/returns/agent.py",
+      "type": "file"
+    },
+    {
+      "id": "app/agents/returns/agent.py::Agent",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/returns/check_scope.py",
+      "type": "file"
+    },
+    {
+      "id": "app/agents/returns/check_scope.py::git",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/returns/check_scope.py::main",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/returns/demo.py",
+      "type": "file"
+    },
+    {
+      "id": "app/agents/returns/demo.py::main",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/returns/domain.py",
+      "type": "file"
+    },
+    {
+      "id": "app/agents/returns/domain.py::Policy",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/returns/domain.py::ReturnRecord",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/returns/domain.py::Query",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/returns/domain.py::FraudRiskModel",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/returns/domain.py::RefundConnector",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/returns/domain.py::categorize_reason",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/returns/domain.py::evaluate",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/supply/__init__.py",
+      "type": "file"
+    },
+    {
+      "id": "app/agents/supply/agent.py",
+      "type": "file"
+    },
+    {
+      "id": "app/agents/supply/agent.py::Agent",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/supply/check_scope.py",
+      "type": "file"
+    },
+    {
+      "id": "app/agents/supply/check_scope.py::git",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/supply/check_scope.py::main",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/supply/demo.py",
+      "type": "file"
+    },
+    {
+      "id": "app/agents/supply/demo.py::main",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/supply/domain.py",
+      "type": "file"
+    },
+    {
+      "id": "app/agents/supply/domain.py::Negotiation",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/supply/domain.py::Vendor",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/supply/domain.py::Query",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/supply/domain.py::StrategicPlayerModel",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/supply/domain.py::SOPRetriever",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/supply/domain.py::evaluate",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/support/__init__.py",
+      "type": "file"
+    },
+    {
+      "id": "app/agents/support/agent.py",
+      "type": "file"
+    },
+    {
+      "id": "app/agents/support/agent.py::Agent",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/support/check_scope.py",
+      "type": "file"
+    },
+    {
+      "id": "app/agents/support/check_scope.py::git",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/support/check_scope.py::main",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/support/demo.py",
+      "type": "file"
+    },
+    {
+      "id": "app/agents/support/demo.py::main",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/support/domain.py",
+      "type": "file"
+    },
+    {
+      "id": "app/agents/support/domain.py::Policy",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/support/domain.py::Query",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/support/domain.py::EvidenceRetriever",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/support/domain.py::terms",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/support/domain.py::triage",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/support/domain.py::evaluate",
+      "type": "function"
+    },
+    {
+      "id": "app/api/__init__.py",
+      "type": "file"
+    },
+    {
+      "id": "app/api/schemas.py",
+      "type": "file"
+    },
+    {
+      "id": "app/api/schemas.py::Contract",
+      "type": "class"
+    },
+    {
+      "id": "app/api/schemas.py::Role",
+      "type": "class"
+    },
+    {
+      "id": "app/api/schemas.py::QueryRequest",
+      "type": "class"
+    },
+    {
+      "id": "app/api/schemas.py::RequestContext",
+      "type": "class"
+    },
+    {
+      "id": "app/api/schemas.py::Evidence",
+      "type": "class"
+    },
+    {
+      "id": "app/api/schemas.py::AgentResult",
+      "type": "class"
+    },
+    {
+      "id": "app/api/schemas.py::ChatResponse",
+      "type": "class"
+    },
+    {
+      "id": "app/api/schemas.py::AuditEvent",
+      "type": "class"
+    },
+    {
+      "id": "app/api/schemas.py::ErrorResponse",
+      "type": "class"
+    },
+    {
+      "id": "app/core/__init__.py",
+      "type": "file"
+    },
+    {
+      "id": "app/core/config.py",
+      "type": "file"
+    },
+    {
+      "id": "app/core/config.py::Settings",
+      "type": "class"
+    },
+    {
+      "id": "app/core/exceptions.py",
+      "type": "file"
+    },
+    {
+      "id": "app/core/exceptions.py::RetailOpsError",
+      "type": "class"
+    },
+    {
+      "id": "app/core/exceptions.py::NotFoundError",
+      "type": "class"
+    },
+    {
+      "id": "app/core/exceptions.py::DataValidationError",
+      "type": "class"
+    },
+    {
+      "id": "app/core/exceptions.py::ComponentUnavailableError",
+      "type": "class"
+    },
+    {
+      "id": "app/core/logging.py",
+      "type": "file"
+    },
+    {
+      "id": "app/core/logging.py::MetadataFormatter",
+      "type": "class"
+    },
+    {
+      "id": "app/core/logging.py::configure_logging",
+      "type": "function"
+    },
+    {
+      "id": "app/integration/__init__.py",
+      "type": "file"
+    },
+    {
+      "id": "app/integration/cli.py",
+      "type": "file"
+    },
+    {
+      "id": "app/integration/cli.py::private_write",
+      "type": "function"
+    },
+    {
+      "id": "app/integration/cli.py::main",
+      "type": "function"
+    },
+    {
+      "id": "app/integration/config.py",
+      "type": "file"
+    },
+    {
+      "id": "app/integration/config.py::RuntimeSettings",
+      "type": "class"
+    },
+    {
+      "id": "app/integration/contracts.py",
+      "type": "file"
+    },
+    {
+      "id": "app/integration/contracts.py::ChatQuery",
+      "type": "class"
+    },
+    {
+      "id": "app/integration/contracts.py::DirectQuery",
+      "type": "class"
+    },
+    {
+      "id": "app/integration/contracts.py::IngestRequest",
+      "type": "class"
+    },
+    {
+      "id": "app/integration/contracts.py::RagQuery",
+      "type": "class"
+    },
+    {
+      "id": "app/integration/contracts.py::Feedback",
+      "type": "class"
+    },
+    {
+      "id": "app/integration/demo.py",
+      "type": "file"
+    },
+    {
+      "id": "app/integration/demo.py::main",
+      "type": "function"
+    },
+    {
+      "id": "app/integration/fixtures.py",
+      "type": "file"
+    },
+    {
+      "id": "app/integration/fixtures.py::seed",
+      "type": "function"
+    },
+    {
+      "id": "app/integration/llm.py",
+      "type": "file"
+    },
+    {
+      "id": "app/integration/llm.py::Provider",
+      "type": "class"
+    },
+    {
+      "id": "app/integration/llm.py::DeterministicProvider",
+      "type": "class"
+    },
+    {
+      "id": "app/integration/llm.py::OllamaProvider",
+      "type": "class"
+    },
+    {
+      "id": "app/integration/llm.py::provider_for",
+      "type": "function"
+    },
+    {
+      "id": "app/integration/loader.py",
+      "type": "file"
+    },
+    {
+      "id": "app/integration/loader.py::TabularLoader",
+      "type": "class"
+    },
+    {
+      "id": "app/integration/orchestrator.py",
+      "type": "file"
+    },
+    {
+      "id": "app/integration/orchestrator.py::WorkflowState",
+      "type": "class"
+    },
+    {
+      "id": "app/integration/orchestrator.py::aggregate",
+      "type": "function"
+    },
+    {
+      "id": "app/integration/orchestrator.py::cross_agent_actions",
+      "type": "function"
+    },
+    {
+      "id": "app/integration/orchestrator.py::Orchestrator",
+      "type": "class"
+    },
+    {
+      "id": "app/integration/parameters.py",
+      "type": "file"
+    },
+    {
+      "id": "app/integration/parameters.py::Clarification",
+      "type": "class"
+    },
+    {
+      "id": "app/integration/parameters.py::extract",
+      "type": "function"
+    },
+    {
+      "id": "app/integration/parameters.py::prepare",
+      "type": "function"
+    },
+    {
+      "id": "app/integration/parameters.py::routing_text",
+      "type": "function"
+    },
+    {
+      "id": "app/integration/rag.py",
+      "type": "file"
+    },
+    {
+      "id": "app/integration/rag.py::VerifiedStore",
+      "type": "class"
+    },
+    {
+      "id": "app/integration/rag.py::SignedRag",
+      "type": "class"
+    },
+    {
+      "id": "app/integration/rag.py::LazyRag",
+      "type": "class"
+    },
+    {
+      "id": "app/integration/registry.py",
+      "type": "file"
+    },
+    {
+      "id": "app/integration/registry.py::Entry",
+      "type": "class"
+    },
+    {
+      "id": "app/integration/registry.py::contracts",
+      "type": "function"
+    },
+    {
+      "id": "app/integration/repository.py",
+      "type": "file"
+    },
+    {
+      "id": "app/integration/repository.py::DomainRow",
+      "type": "class"
+    },
+    {
+      "id": "app/integration/repository.py::StoreRow",
+      "type": "class"
+    },
+    {
+      "id": "app/integration/repository.py::StateRow",
+      "type": "class"
+    },
+    {
+      "id": "app/integration/repository.py::ReceiptRow",
+      "type": "class"
+    },
+    {
+      "id": "app/integration/repository.py::ManifestRow",
+      "type": "class"
+    },
+    {
+      "id": "app/integration/repository.py::owner",
+      "type": "function"
+    },
+    {
+      "id": "app/integration/repository.py::Repository",
+      "type": "class"
+    },
+    {
+      "id": "app/integration/routes.py",
+      "type": "file"
+    },
+    {
+      "id": "app/integration/routes.py::context",
+      "type": "function"
+    },
+    {
+      "id": "app/integration/routes.py::audit_operation",
+      "type": "function"
+    },
+    {
+      "id": "app/integration/routes.py::chat",
+      "type": "function"
+    },
+    {
+      "id": "app/integration/routes.py::query",
+      "type": "function"
+    },
+    {
+      "id": "app/integration/routes.py::forecast",
+      "type": "function"
+    },
+    {
+      "id": "app/integration/routes.py::low_stock",
+      "type": "function"
+    },
+    {
+      "id": "app/integration/routes.py::inventory",
+      "type": "function"
+    },
+    {
+      "id": "app/integration/routes.py::analytics",
+      "type": "function"
+    },
+    {
+      "id": "app/integration/routes.py::rag_ingest",
+      "type": "function"
+    },
+    {
+      "id": "app/integration/routes.py::rag_query",
+      "type": "function"
+    },
+    {
+      "id": "app/integration/routes.py::audit",
+      "type": "function"
+    },
+    {
+      "id": "app/integration/routes.py::feedback",
+      "type": "function"
+    },
+    {
+      "id": "app/integration/runtime.py",
+      "type": "file"
+    },
+    {
+      "id": "app/integration/runtime.py::Runtime",
+      "type": "class"
+    },
+    {
+      "id": "app/main.py",
+      "type": "file"
+    },
+    {
+      "id": "app/main.py::create_app",
+      "type": "function"
+    },
+    {
+      "id": "app/models/__init__.py",
+      "type": "file"
+    },
+    {
+      "id": "app/models/database.py",
+      "type": "file"
+    },
+    {
+      "id": "app/models/database.py::Base",
+      "type": "class"
+    },
+    {
+      "id": "app/orchestration/router/__init__.py",
+      "type": "file"
+    },
+    {
+      "id": "app/orchestration/router/agent.py",
+      "type": "file"
+    },
+    {
+      "id": "app/orchestration/router/agent.py::RouterAgent",
+      "type": "class"
+    },
+    {
+      "id": "app/orchestration/router/audit.py",
+      "type": "file"
+    },
+    {
+      "id": "app/orchestration/router/audit.py::JsonlAuditSink",
+      "type": "class"
+    },
+    {
+      "id": "app/orchestration/router/check_scope.py",
+      "type": "file"
+    },
+    {
+      "id": "app/orchestration/router/check_scope.py::git",
+      "type": "function"
+    },
+    {
+      "id": "app/orchestration/router/check_scope.py::main",
+      "type": "function"
+    },
+    {
+      "id": "app/orchestration/router/classifier.py",
+      "type": "file"
+    },
+    {
+      "id": "app/orchestration/router/classifier.py::classify",
+      "type": "function"
+    },
+    {
+      "id": "app/orchestration/router/classifier.py::make_plan",
+      "type": "function"
+    },
+    {
+      "id": "app/orchestration/router/contracts.py",
+      "type": "file"
+    },
+    {
+      "id": "app/orchestration/router/contracts.py::Intent",
+      "type": "class"
+    },
+    {
+      "id": "app/orchestration/router/contracts.py::RouteSettings",
+      "type": "class"
+    },
+    {
+      "id": "app/orchestration/router/contracts.py::Task",
+      "type": "class"
+    },
+    {
+      "id": "app/orchestration/router/contracts.py::RoutingPlan",
+      "type": "class"
+    },
+    {
+      "id": "app/orchestration/router/demo.py",
+      "type": "file"
+    },
+    {
+      "id": "app/orchestration/router/demo.py::main",
+      "type": "function"
+    },
+    {
+      "id": "app/orchestration/router/graph.py",
+      "type": "file"
+    },
+    {
+      "id": "app/orchestration/router/graph.py::RouterState",
+      "type": "class"
+    },
+    {
+      "id": "app/orchestration/router/graph.py::build_graph",
+      "type": "function"
+    },
+    {
+      "id": "app/rag/__init__.py",
+      "type": "file"
+    },
+    {
+      "id": "app/rag/check_scope.py",
+      "type": "file"
+    },
+    {
+      "id": "app/rag/check_scope.py::git",
+      "type": "function"
+    },
+    {
+      "id": "app/rag/check_scope.py::main",
+      "type": "function"
+    },
+    {
+      "id": "app/rag/contracts.py",
+      "type": "file"
+    },
+    {
+      "id": "app/rag/contracts.py::RagSettings",
+      "type": "class"
+    },
+    {
+      "id": "app/rag/contracts.py::Document",
+      "type": "class"
+    },
+    {
+      "id": "app/rag/contracts.py::Chunk",
+      "type": "class"
+    },
+    {
+      "id": "app/rag/contracts.py::Hit",
+      "type": "class"
+    },
+    {
+      "id": "app/rag/contracts.py::RagResult",
+      "type": "class"
+    },
+    {
+      "id": "app/rag/demo.py",
+      "type": "file"
+    },
+    {
+      "id": "app/rag/demo.py::main",
+      "type": "function"
+    },
+    {
+      "id": "app/rag/embeddings.py",
+      "type": "file"
+    },
+    {
+      "id": "app/rag/embeddings.py::Embedder",
+      "type": "class"
+    },
+    {
+      "id": "app/rag/embeddings.py::LocalSentenceTransformer",
+      "type": "class"
+    },
+    {
+      "id": "app/rag/ingestion.py",
+      "type": "file"
+    },
+    {
+      "id": "app/rag/ingestion.py::clean",
+      "type": "function"
+    },
+    {
+      "id": "app/rag/ingestion.py::digest",
+      "type": "function"
+    },
+    {
+      "id": "app/rag/ingestion.py::verify",
+      "type": "function"
+    },
+    {
+      "id": "app/rag/ingestion.py::chunk_document",
+      "type": "function"
+    },
+    {
+      "id": "app/rag/pipeline.py",
+      "type": "file"
+    },
+    {
+      "id": "app/rag/pipeline.py::terms",
+      "type": "function"
+    },
+    {
+      "id": "app/rag/pipeline.py::RagPipeline",
+      "type": "class"
+    },
+    {
+      "id": "app/rag/store.py",
+      "type": "file"
+    },
+    {
+      "id": "app/rag/store.py::ChromaStore",
+      "type": "class"
+    },
+    {
+      "id": "app/security/__init__.py",
+      "type": "file"
+    },
+    {
+      "id": "app/security/audit.py",
+      "type": "file"
+    },
+    {
+      "id": "app/security/audit.py::verify_chain",
+      "type": "function"
+    },
+    {
+      "id": "app/security/audit.py::AuditChain",
+      "type": "class"
+    },
+    {
+      "id": "app/security/check_scope.py",
+      "type": "file"
+    },
+    {
+      "id": "app/security/check_scope.py::git",
+      "type": "function"
+    },
+    {
+      "id": "app/security/check_scope.py::main",
+      "type": "function"
+    },
+    {
+      "id": "app/security/config.py",
+      "type": "file"
+    },
+    {
+      "id": "app/security/config.py::SecuritySettings",
+      "type": "class"
+    },
+    {
+      "id": "app/security/demo.py",
+      "type": "file"
+    },
+    {
+      "id": "app/security/demo.py::main",
+      "type": "function"
+    },
+    {
+      "id": "app/security/integrity.py",
+      "type": "file"
+    },
+    {
+      "id": "app/security/integrity.py::IntegrityFailure",
+      "type": "class"
+    },
+    {
+      "id": "app/security/integrity.py::Document",
+      "type": "class"
+    },
+    {
+      "id": "app/security/integrity.py::SealedDocument",
+      "type": "class"
+    },
+    {
+      "id": "app/security/integrity.py::canonical",
+      "type": "function"
+    },
+    {
+      "id": "app/security/integrity.py::seal",
+      "type": "function"
+    },
+    {
+      "id": "app/security/integrity.py::verify",
+      "type": "function"
+    },
+    {
+      "id": "app/security/policy.py",
+      "type": "file"
+    },
+    {
+      "id": "app/security/policy.py::AccessDenied",
+      "type": "class"
+    },
+    {
+      "id": "app/security/policy.py::AuthenticationFailed",
+      "type": "class"
+    },
+    {
+      "id": "app/security/policy.py::Grant",
+      "type": "class"
+    },
+    {
+      "id": "app/security/policy.py::TokenAuthenticator",
+      "type": "class"
+    },
+    {
+      "id": "app/security/policy.py::authorize",
+      "type": "function"
+    },
+    {
+      "id": "app/security/policy.py::ToolRegistry",
+      "type": "class"
+    },
+    {
+      "id": "app/security/retrieval.py",
+      "type": "file"
+    },
+    {
+      "id": "app/security/retrieval.py::retrieve_verified",
+      "type": "function"
+    },
+    {
+      "id": "app/services/__init__.py",
+      "type": "file"
+    },
+    {
+      "id": "app/services/database_service.py",
+      "type": "file"
+    },
+    {
+      "id": "app/services/database_service.py::Database",
+      "type": "class"
+    },
+    {
+      "id": "app/services/dataset_loader.py",
+      "type": "file"
+    },
+    {
+      "id": "app/services/dataset_loader.py::LoadReport",
+      "type": "class"
+    },
+    {
+      "id": "app/services/dataset_loader.py::DatasetLoader",
+      "type": "class"
+    },
+    {
+      "id": "app/services/dataset_loader.py::RetailRepository",
+      "type": "class"
+    },
+    {
+      "id": "scripts/check_branch_scope.py",
+      "type": "file"
+    },
+    {
+      "id": "scripts/check_branch_scope.py::git",
+      "type": "function"
+    },
+    {
+      "id": "scripts/check_branch_scope.py::main",
+      "type": "function"
+    },
+    {
+      "id": "scripts/update_knowledge_graph.py",
+      "type": "file"
+    },
+    {
+      "id": "scripts/update_knowledge_graph.py::main",
+      "type": "function"
+    },
+    {
+      "id": "tests/__init__.py",
+      "type": "test"
+    },
+    {
+      "id": "tests/analytics/test_analytics.py",
+      "type": "test"
+    },
+    {
+      "id": "tests/analytics/test_analytics.py::r",
+      "type": "function"
+    },
+    {
+      "id": "tests/analytics/test_analytics.py::q",
+      "type": "function"
+    },
+    {
+      "id": "tests/analytics/test_analytics.py::test_exact_revenue_and_latest_stock_counts",
+      "type": "function"
+    },
+    {
+      "id": "tests/analytics/test_analytics.py::test_grouping_and_rank_ties",
+      "type": "function"
+    },
+    {
+      "id": "tests/analytics/test_analytics.py::test_filters_empty_duplicate_zero_stock",
+      "type": "function"
+    },
+    {
+      "id": "tests/analytics/test_analytics.py::test_invalid_rows",
+      "type": "function"
+    },
+    {
+      "id": "tests/analytics/test_analytics.py::test_dates_and_metrics",
+      "type": "function"
+    },
+    {
+      "id": "tests/analytics/test_analytics.py::test_agent_empty",
+      "type": "function"
+    },
+    {
+      "id": "tests/forecasting/test_forecasting.py",
+      "type": "test"
+    },
+    {
+      "id": "tests/forecasting/test_forecasting.py::rows",
+      "type": "function"
+    },
+    {
+      "id": "tests/forecasting/test_forecasting.py::q",
+      "type": "function"
+    },
+    {
+      "id": "tests/forecasting/test_forecasting.py::test_constant_series",
+      "type": "function"
+    },
+    {
+      "id": "tests/forecasting/test_forecasting.py::test_trend_and_no_future_leakage",
+      "type": "function"
+    },
+    {
+      "id": "tests/forecasting/test_forecasting.py::test_missing_sparse_stale",
+      "type": "function"
+    },
+    {
+      "id": "tests/forecasting/test_forecasting.py::test_invalid_duplicate_and_uncertainty",
+      "type": "function"
+    },
+    {
+      "id": "tests/forecasting/test_forecasting.py::test_store_sku_scope",
+      "type": "function"
+    },
+    {
+      "id": "tests/foundation/test_foundation.py",
+      "type": "test"
+    },
+    {
+      "id": "tests/foundation/test_foundation.py::test_configuration_reads_environment_and_hides_credentials",
+      "type": "function"
+    },
+    {
+      "id": "tests/foundation/test_foundation.py::test_invalid_configuration",
+      "type": "function"
+    },
+    {
+      "id": "tests/foundation/test_foundation.py::test_reject_invalid_or_privilege_claiming_payload",
+      "type": "function"
+    },
+    {
+      "id": "tests/foundation/test_foundation.py::test_agent_contract_and_collection_isolation",
+      "type": "function"
+    },
+    {
+      "id": "tests/foundation/test_foundation.py::test_agent_confidence_bounds",
+      "type": "function"
+    },
+    {
+      "id": "tests/foundation/test_foundation.py::test_audit_has_timezone_and_rejects_raw_payload",
+      "type": "function"
+    },
+    {
+      "id": "tests/foundation/test_foundation.py::test_transaction_commit_rollback_and_parameter_binding",
+      "type": "function"
+    },
+    {
+      "id": "tests/foundation/test_foundation.py::test_dataset_contract_paths",
+      "type": "function"
+    },
+    {
+      "id": "tests/foundation/test_foundation.py::test_logging_drops_payload_and_exception_details",
+      "type": "function"
+    },
+    {
+      "id": "tests/foundation/test_foundation.py::test_health_root_and_openapi",
+      "type": "function"
+    },
+    {
+      "id": "tests/foundation/test_foundation.py::test_health_reports_database_failure",
+      "type": "function"
+    },
+    {
+      "id": "tests/foundation/test_foundation.py::test_future_adapter_errors_and_validation",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/__init__.py",
+      "type": "test"
+    },
+    {
+      "id": "tests/integration/conftest.py",
+      "type": "test"
+    },
+    {
+      "id": "tests/integration/conftest.py::headers",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/conftest.py::client",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/test_api.py",
+      "type": "test"
+    },
+    {
+      "id": "tests/integration/test_api.py::chat",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/test_api.py::test_authentication_cannot_be_claimed_by_payload",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/test_api.py::test_single_agent_followup_and_owner_isolation",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/test_api.py::test_multi_agent_forecast_and_inventory",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/test_api.py::test_missing_sku_unknown_store_unknown_intent",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/test_api.py::test_authorization_before_repository_data_access",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/test_api.py::test_conflict_escalates_without_mutating_observed_prices",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/test_api.py::test_all_domain_registry_entries_and_endpoints",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/test_api.py::test_audit_feedback_and_provider_fallback",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/test_api.py::test_agent_failure_and_reduced_scope_followup",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/test_api.py::test_openapi_and_rag_missing_configuration",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/test_api.py::test_representative_prompt_queries",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/test_cli.py",
+      "type": "test"
+    },
+    {
+      "id": "tests/integration/test_cli.py::test_local_provisioning_secret_hygiene_and_no_overwrite",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/test_provider.py",
+      "type": "test"
+    },
+    {
+      "id": "tests/integration/test_provider.py::test_ollama_protocol_local_draft",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/test_provider.py::test_unavailable_or_malformed_provider",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/test_rag.py",
+      "type": "test"
+    },
+    {
+      "id": "tests/integration/test_rag.py::embedder",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/test_rag.py::service",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/test_rag.py::context",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/test_rag.py::doc",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/test_rag.py::test_signed_ingestion_scope_and_retrieval",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/test_rag.py::test_rehashed_vector_tampering_fails_signed_manifest",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/test_rag.py::test_manifest_mutation_and_immutable_revision",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/test_rag.py::test_api_and_support_agent_use_signed_rag",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/test_storage.py",
+      "type": "test"
+    },
+    {
+      "id": "tests/integration/test_storage.py::repository",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/test_storage.py::make_csv",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/test_storage.py::admin",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/test_storage.py::test_atomic_mapping_import_persistence_and_idempotency",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/test_storage.py::test_invalid_batch_rolls_back",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/test_storage.py::test_duplicate_headers_and_duplicate_rows",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/test_storage.py::test_xlsx_typed_dates_and_formula_rejection",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/test_storage.py::test_authorization_precedes_any_database_session",
+      "type": "function"
+    },
+    {
+      "id": "tests/inventory/test_inventory.py",
+      "type": "test"
+    },
+    {
+      "id": "tests/inventory/test_inventory.py::row",
+      "type": "function"
+    },
+    {
+      "id": "tests/inventory/test_inventory.py::query",
+      "type": "function"
+    },
+    {
+      "id": "tests/inventory/test_inventory.py::test_known_reorder_calculation",
+      "type": "function"
+    },
+    {
+      "id": "tests/inventory/test_inventory.py::test_safety_stock_and_position",
+      "type": "function"
+    },
+    {
+      "id": "tests/inventory/test_inventory.py::test_bad_input",
+      "type": "function"
+    },
+    {
+      "id": "tests/inventory/test_inventory.py::test_latest_cutoff_and_filter",
+      "type": "function"
+    },
+    {
+      "id": "tests/inventory/test_inventory.py::test_duplicate",
+      "type": "function"
+    },
+    {
+      "id": "tests/inventory/test_inventory.py::test_missing_demand_and_zero",
+      "type": "function"
+    },
+    {
+      "id": "tests/inventory/test_inventory.py::test_stockout_overstock_comparison",
+      "type": "function"
+    },
+    {
+      "id": "tests/inventory/test_inventory.py::test_agent_scope_and_missing_data",
+      "type": "function"
+    },
+    {
+      "id": "tests/orders/test_orders.py",
+      "type": "test"
+    },
+    {
+      "id": "tests/orders/test_orders.py::r",
+      "type": "function"
+    },
+    {
+      "id": "tests/orders/test_orders.py::q",
+      "type": "function"
+    },
+    {
+      "id": "tests/orders/test_orders.py::test_pending_overdue_cancelled",
+      "type": "function"
+    },
+    {
+      "id": "tests/orders/test_orders.py::test_delivered_and_eta_risk",
+      "type": "function"
+    },
+    {
+      "id": "tests/orders/test_orders.py::test_allocation_and_shortfall",
+      "type": "function"
+    },
+    {
+      "id": "tests/orders/test_orders.py::test_late_sources_excluded",
+      "type": "function"
+    },
+    {
+      "id": "tests/orders/test_orders.py::test_invalid_order",
+      "type": "function"
+    },
+    {
+      "id": "tests/orders/test_orders.py::test_missing_and_transitions",
+      "type": "function"
+    },
+    {
+      "id": "tests/pricing/test_pricing.py",
+      "type": "test"
+    },
+    {
+      "id": "tests/pricing/test_pricing.py::row",
+      "type": "function"
+    },
+    {
+      "id": "tests/pricing/test_pricing.py::q",
+      "type": "function"
+    },
+    {
+      "id": "tests/pricing/test_pricing.py::test_promotion_and_margin_floor",
+      "type": "function"
+    },
+    {
+      "id": "tests/pricing/test_pricing.py::test_blocked_promotion",
+      "type": "function"
+    },
+    {
+      "id": "tests/pricing/test_pricing.py::test_missing_competitor_and_simulation",
+      "type": "function"
+    },
+    {
+      "id": "tests/pricing/test_pricing.py::test_scarcity_and_cap_conflict",
+      "type": "function"
+    },
+    {
+      "id": "tests/pricing/test_pricing.py::test_dates_empty_and_duplicate",
+      "type": "function"
+    },
+    {
+      "id": "tests/pricing/test_pricing.py::test_currency_rounding_preserves_change_cap",
+      "type": "function"
+    },
+    {
+      "id": "tests/rag/test_rag.py",
+      "type": "test"
+    },
+    {
+      "id": "tests/rag/test_rag.py::embedder",
+      "type": "function"
+    },
+    {
+      "id": "tests/rag/test_rag.py::store",
+      "type": "function"
+    },
+    {
+      "id": "tests/rag/test_rag.py::doc",
+      "type": "function"
+    },
+    {
+      "id": "tests/rag/test_rag.py::ingest",
+      "type": "function"
+    },
+    {
+      "id": "tests/rag/test_rag.py::test_ingestion_retrieval_persistence_and_sources",
+      "type": "function"
+    },
+    {
+      "id": "tests/rag/test_rag.py::test_empty_store_and_invalid_question",
+      "type": "function"
+    },
+    {
+      "id": "tests/rag/test_rag.py::test_access_filter_excludes_other_documents",
+      "type": "function"
+    },
+    {
+      "id": "tests/rag/test_rag.py::test_irrelevant_evidence_stops_at_limit",
+      "type": "function"
+    },
+    {
+      "id": "tests/rag/test_rag.py::test_tampered_text_rejected_before_reasoning",
+      "type": "function"
+    },
+    {
+      "id": "tests/rag/test_rag.py::test_tampered_source_rejected",
+      "type": "function"
+    },
+    {
+      "id": "tests/rag/test_rag.py::test_idempotency_and_revision_conflict",
+      "type": "function"
+    },
+    {
+      "id": "tests/rag/test_rag.py::test_chunk_overlap_hash_and_whitespace",
+      "type": "function"
+    },
+    {
+      "id": "tests/rag/test_rag.py::test_model_identity_mismatch",
+      "type": "function"
+    },
+    {
+      "id": "tests/rag/test_rag.py::test_top_k_and_relevance",
+      "type": "function"
+    },
+    {
+      "id": "tests/rag/test_rag.py::test_iterative_rewrite_retrieves_missing_concepts",
+      "type": "function"
+    },
+    {
+      "id": "tests/rag/test_rag.py::test_no_download_when_local_model_missing",
+      "type": "function"
+    },
+    {
+      "id": "tests/rag/test_rag.py::test_shortened_revision_does_not_leave_stale_chunks",
+      "type": "function"
+    },
+    {
+      "id": "tests/returns/test_returns.py",
+      "type": "test"
+    },
+    {
+      "id": "tests/returns/test_returns.py::r",
+      "type": "function"
+    },
+    {
+      "id": "tests/returns/test_returns.py::q",
+      "type": "function"
+    },
+    {
+      "id": "tests/returns/test_returns.py::test_inclusive_window_and_amount",
+      "type": "function"
+    },
+    {
+      "id": "tests/returns/test_returns.py::test_policy_rules",
+      "type": "function"
+    },
+    {
+      "id": "tests/returns/test_returns.py::test_missing_policy_order_and_refund",
+      "type": "function"
+    },
+    {
+      "id": "tests/returns/test_returns.py::test_refund_cap_and_flags",
+      "type": "function"
+    },
+    {
+      "id": "tests/returns/test_returns.py::test_validation_and_duplicates",
+      "type": "function"
+    },
+    {
+      "id": "tests/returns/test_returns.py::test_taxonomy_and_delivery_absence",
+      "type": "function"
+    },
+    {
+      "id": "tests/router/test_router.py",
+      "type": "test"
+    },
+    {
+      "id": "tests/router/test_router.py::route",
+      "type": "function"
+    },
+    {
+      "id": "tests/router/test_router.py::test_single_domain",
+      "type": "function"
+    },
+    {
+      "id": "tests/router/test_router.py::test_safe_fallback",
+      "type": "function"
+    },
+    {
+      "id": "tests/router/test_router.py::test_multi_intent_dependencies_and_deduplication",
+      "type": "function"
+    },
+    {
+      "id": "tests/router/test_router.py::test_forward_stock_plans_forecasting",
+      "type": "function"
+    },
+    {
+      "id": "tests/router/test_router.py::test_low_confidence_and_agent_limits",
+      "type": "function"
+    },
+    {
+      "id": "tests/router/test_router.py::test_audit_provenance_has_no_query_payload",
+      "type": "function"
+    },
+    {
+      "id": "tests/router/test_router.py::test_audit_failure_is_not_hidden",
+      "type": "function"
+    },
+    {
+      "id": "tests/router/test_router.py::test_session_mismatch",
+      "type": "function"
+    },
+    {
+      "id": "tests/router/test_router.py::test_concurrent_requests_do_not_share_state",
+      "type": "function"
+    },
+    {
+      "id": "tests/router/test_router.py::test_hyphenated_inventory_and_financial_ambiguity",
+      "type": "function"
+    },
+    {
+      "id": "tests/router/test_router.py::test_environment_tracing_does_not_export_raw_queries",
+      "type": "function"
+    },
+    {
+      "id": "tests/router/test_router.py::test_opt_in_jsonl_audit_persists_decision",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py",
+      "type": "test"
+    },
+    {
+      "id": "tests/security/test_security.py::ctx",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py::doc",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py::event",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py::test_authentication_context_cannot_be_role_claim",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py::test_role_allow",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py::test_deny_unknown_scope_or_role",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py::test_tools_authorize_before_side_effect_and_prevent_context_override",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py::test_document_integrity_binds_text_and_scope",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py::test_retrieval_authorizes_before_provider_and_checks_scope",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py::test_tampered_retrieval_rejected",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py::test_audit_roundtrip_mutation_reorder_truncation_and_anchor",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py::test_bad_log_and_secret_settings",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py::test_expired_grant_and_missing_log_detected",
+      "type": "function"
+    },
+    {
+      "id": "tests/supply/test_supply.py",
+      "type": "test"
+    },
+    {
+      "id": "tests/supply/test_supply.py::r",
+      "type": "function"
+    },
+    {
+      "id": "tests/supply/test_supply.py::q",
+      "type": "function"
+    },
+    {
+      "id": "tests/supply/test_supply.py::test_comparison_and_disruption",
+      "type": "function"
+    },
+    {
+      "id": "tests/supply/test_supply.py::test_shortfall_no_recommendation_and_unknown_history",
+      "type": "function"
+    },
+    {
+      "id": "tests/supply/test_supply.py::test_sop_evidence_or_absence",
+      "type": "function"
+    },
+    {
+      "id": "tests/supply/test_supply.py::test_negotiation_history",
+      "type": "function"
+    },
+    {
+      "id": "tests/supply/test_supply.py::test_invalid",
+      "type": "function"
+    },
+    {
+      "id": "tests/supply/test_supply.py::test_missing_future_duplicate",
+      "type": "function"
+    },
+    {
+      "id": "tests/support/test_support.py",
+      "type": "test"
+    },
+    {
+      "id": "tests/support/test_support.py::r",
+      "type": "function"
+    },
+    {
+      "id": "tests/support/test_support.py::q",
+      "type": "function"
+    },
+    {
+      "id": "tests/support/test_support.py::test_grounded_excerpt_and_sources",
+      "type": "function"
+    },
+    {
+      "id": "tests/support/test_support.py::test_no_fabricated_policy",
+      "type": "function"
+    },
+    {
+      "id": "tests/support/test_support.py::test_tamper_and_conflicting_evidence",
+      "type": "function"
+    },
+    {
+      "id": "tests/support/test_support.py::test_sentiment_negation_and_category",
+      "type": "function"
+    },
+    {
+      "id": "tests/support/test_support.py::test_duplicate_rejected",
+      "type": "function"
+    },
+    {
+      "id": "tests/support/test_support.py::test_adapter_evidence_and_scope",
+      "type": "function"
+    },
+    {
+      "id": "POST /api/chat",
+      "type": "API endpoint"
+    },
+    {
+      "id": "POST /api/query",
+      "type": "API endpoint"
+    },
+    {
+      "id": "POST /api/forecast",
+      "type": "API endpoint"
+    },
+    {
+      "id": "GET /api/inventory/low-stock",
+      "type": "API endpoint"
+    },
+    {
+      "id": "GET /api/inventory/{store_id}",
+      "type": "API endpoint"
+    },
+    {
+      "id": "GET /api/analytics/summary",
+      "type": "API endpoint"
+    },
+    {
+      "id": "POST /api/rag/ingest",
+      "type": "API endpoint"
+    },
+    {
+      "id": "POST /api/rag/query",
+      "type": "API endpoint"
+    },
+    {
+      "id": "GET /api/audit",
+      "type": "API endpoint"
+    },
+    {
+      "id": "POST /api/feedback",
+      "type": "API endpoint"
+    },
+    {
+      "id": "domain_records",
+      "type": "database table"
+    },
+    {
+      "id": "stores",
+      "type": "database table"
+    },
+    {
+      "id": "session_state",
+      "type": "database table"
+    },
+    {
+      "id": "request_receipts",
+      "type": "database table"
+    },
+    {
+      "id": "signed_rag_manifest",
+      "type": "database table"
+    },
+    {
+      "id": "authorization",
+      "type": "security control"
+    },
+    {
+      "id": "signed_evidence",
+      "type": "security control"
+    },
+    {
+      "id": "audit_chain",
+      "type": "security control"
     }
   ],
   "edges": [
     {
-      "source": "M0",
-      "target": "context/project-knowledge",
-      "type": "owned_by"
-    },
-    {
-      "source": "M1",
-      "target": "foundation/core-platform",
-      "type": "owned_by"
-    },
-    {
-      "source": "M2",
-      "target": "agent/router",
-      "type": "owned_by"
-    },
-    {
-      "source": "M3",
-      "target": "agent/inventory",
-      "type": "owned_by"
-    },
-    {
-      "source": "M4",
-      "target": "agent/order-fulfillment",
-      "type": "owned_by"
-    },
-    {
-      "source": "M5",
-      "target": "agent/supply-chain",
-      "type": "owned_by"
-    },
-    {
-      "source": "M6",
-      "target": "agent/pricing-promotions",
-      "type": "owned_by"
-    },
-    {
-      "source": "M7",
-      "target": "agent/customer-service",
-      "type": "owned_by"
-    },
-    {
-      "source": "M8",
-      "target": "agent/returns-refunds",
-      "type": "owned_by"
-    },
-    {
-      "source": "M9",
-      "target": "agent/demand-forecasting",
-      "type": "owned_by"
-    },
-    {
-      "source": "M10",
-      "target": "agent/analytics-reporting",
-      "type": "owned_by"
-    },
-    {
-      "source": "M11",
-      "target": "platform/agentic-rag",
-      "type": "owned_by"
-    },
-    {
-      "source": "M12",
-      "target": "security/privacy-integrity",
-      "type": "owned_by"
-    },
-    {
-      "source": "M13",
-      "target": "integration/release-candidate",
-      "type": "owned_by"
-    },
-    {
       "source": "agent/router",
-      "target": "router",
-      "type": "owns"
-    },
-    {
-      "source": "router",
-      "target": "router-tool",
-      "type": "calls"
-    },
-    {
-      "source": "router-tests",
-      "target": "router",
-      "type": "tests"
-    },
-    {
-      "source": "router",
-      "target": "router-result",
-      "type": "produces"
+      "target": "integration/release-candidate",
+      "type": "approved_for_integration"
     },
     {
       "source": "agent/inventory",
-      "target": "inventory",
-      "type": "owns"
-    },
-    {
-      "source": "inventory",
-      "target": "inventory-tool",
-      "type": "calls"
-    },
-    {
-      "source": "inventory-tests",
-      "target": "inventory",
-      "type": "tests"
-    },
-    {
-      "source": "inventory",
-      "target": "inventory-result",
-      "type": "produces"
-    },
-    {
-      "source": "router",
-      "target": "inventory",
-      "type": "routes_to"
+      "target": "integration/release-candidate",
+      "type": "approved_for_integration"
     },
     {
       "source": "agent/order-fulfillment",
-      "target": "order-fulfillment",
-      "type": "owns"
-    },
-    {
-      "source": "order-fulfillment",
-      "target": "order-fulfillment-tool",
-      "type": "calls"
-    },
-    {
-      "source": "order-fulfillment-tests",
-      "target": "order-fulfillment",
-      "type": "tests"
-    },
-    {
-      "source": "order-fulfillment",
-      "target": "order-fulfillment-result",
-      "type": "produces"
-    },
-    {
-      "source": "router",
-      "target": "order-fulfillment",
-      "type": "routes_to"
+      "target": "integration/release-candidate",
+      "type": "approved_for_integration"
     },
     {
       "source": "agent/supply-chain",
-      "target": "supply-chain",
-      "type": "owns"
-    },
-    {
-      "source": "supply-chain",
-      "target": "supply-chain-tool",
-      "type": "calls"
-    },
-    {
-      "source": "supply-chain-tests",
-      "target": "supply-chain",
-      "type": "tests"
-    },
-    {
-      "source": "supply-chain",
-      "target": "supply-chain-result",
-      "type": "produces"
-    },
-    {
-      "source": "router",
-      "target": "supply-chain",
-      "type": "routes_to"
+      "target": "integration/release-candidate",
+      "type": "approved_for_integration"
     },
     {
       "source": "agent/pricing-promotions",
-      "target": "pricing-promotions",
-      "type": "owns"
-    },
-    {
-      "source": "pricing-promotions",
-      "target": "pricing-promotions-tool",
-      "type": "calls"
-    },
-    {
-      "source": "pricing-promotions-tests",
-      "target": "pricing-promotions",
-      "type": "tests"
-    },
-    {
-      "source": "pricing-promotions",
-      "target": "pricing-promotions-result",
-      "type": "produces"
-    },
-    {
-      "source": "router",
-      "target": "pricing-promotions",
-      "type": "routes_to"
+      "target": "integration/release-candidate",
+      "type": "approved_for_integration"
     },
     {
       "source": "agent/customer-service",
-      "target": "customer-service",
-      "type": "owns"
-    },
-    {
-      "source": "customer-service",
-      "target": "customer-service-tool",
-      "type": "calls"
-    },
-    {
-      "source": "customer-service-tests",
-      "target": "customer-service",
-      "type": "tests"
-    },
-    {
-      "source": "customer-service",
-      "target": "customer-service-result",
-      "type": "produces"
-    },
-    {
-      "source": "router",
-      "target": "customer-service",
-      "type": "routes_to"
+      "target": "integration/release-candidate",
+      "type": "approved_for_integration"
     },
     {
       "source": "agent/returns-refunds",
-      "target": "returns-refunds",
-      "type": "owns"
-    },
-    {
-      "source": "returns-refunds",
-      "target": "returns-refunds-tool",
-      "type": "calls"
-    },
-    {
-      "source": "returns-refunds-tests",
-      "target": "returns-refunds",
-      "type": "tests"
-    },
-    {
-      "source": "returns-refunds",
-      "target": "returns-refunds-result",
-      "type": "produces"
-    },
-    {
-      "source": "router",
-      "target": "returns-refunds",
-      "type": "routes_to"
+      "target": "integration/release-candidate",
+      "type": "approved_for_integration"
     },
     {
       "source": "agent/demand-forecasting",
-      "target": "demand-forecasting",
-      "type": "owns"
-    },
-    {
-      "source": "demand-forecasting",
-      "target": "demand-forecasting-tool",
-      "type": "calls"
-    },
-    {
-      "source": "demand-forecasting-tests",
-      "target": "demand-forecasting",
-      "type": "tests"
-    },
-    {
-      "source": "demand-forecasting",
-      "target": "demand-forecasting-result",
-      "type": "produces"
-    },
-    {
-      "source": "router",
-      "target": "demand-forecasting",
-      "type": "routes_to"
+      "target": "integration/release-candidate",
+      "type": "approved_for_integration"
     },
     {
       "source": "agent/analytics-reporting",
-      "target": "analytics-reporting",
-      "type": "owns"
-    },
-    {
-      "source": "analytics-reporting",
-      "target": "analytics-reporting-tool",
-      "type": "calls"
-    },
-    {
-      "source": "analytics-reporting-tests",
-      "target": "analytics-reporting",
-      "type": "tests"
-    },
-    {
-      "source": "analytics-reporting",
-      "target": "analytics-reporting-result",
-      "type": "produces"
-    },
-    {
-      "source": "router",
-      "target": "analytics-reporting",
-      "type": "routes_to"
-    },
-    {
-      "source": "user",
-      "target": "api",
-      "type": "calls"
-    },
-    {
-      "source": "api",
-      "target": "query-schema",
-      "type": "validates"
-    },
-    {
-      "source": "api",
-      "target": "orchestrator",
-      "type": "calls"
-    },
-    {
-      "source": "orchestrator",
-      "target": "router",
-      "type": "calls"
-    },
-    {
-      "source": "rag",
-      "target": "chunk",
-      "type": "calls"
-    },
-    {
-      "source": "chunk",
-      "target": "embedding",
-      "type": "calls"
-    },
-    {
-      "source": "embedding",
-      "target": "chroma",
-      "type": "writes"
-    },
-    {
-      "source": "retrieval",
-      "target": "chroma",
-      "type": "reads"
-    },
-    {
-      "source": "retrieval",
-      "target": "verification",
-      "type": "calls"
-    },
-    {
-      "source": "dataset",
-      "target": "tables",
-      "type": "produces"
-    },
-    {
-      "source": "api",
-      "target": "rbac",
-      "type": "protected_by"
-    },
-    {
-      "source": "orchestrator",
-      "target": "audit",
-      "type": "produces"
+      "target": "integration/release-candidate",
+      "type": "approved_for_integration"
     },
     {
       "source": "platform/agentic-rag",
-      "target": "rag",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "query-schema",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "orchestrator",
-      "type": "owns"
+      "target": "integration/release-candidate",
+      "type": "approved_for_integration"
     },
     {
       "source": "security/privacy-integrity",
-      "target": "rbac",
-      "type": "owns"
+      "target": "integration/release-candidate",
+      "type": "approved_for_integration"
     },
     {
-      "source": "router",
-      "target": "rag",
-      "type": "calls"
+      "source": "integration/release-candidate",
+      "target": "M13",
+      "type": "implements"
     },
     {
-      "source": "router-tool",
-      "target": "tables",
-      "type": "reads"
+      "source": "integration/release-candidate",
+      "target": "app/__init__.py",
+      "type": "contains"
     },
     {
-      "source": "router-tool",
-      "target": "rbac",
+      "source": "integration/release-candidate",
+      "target": "app/agents/__init__.py",
+      "type": "contains"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/analytics/__init__.py",
+      "type": "contains"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/analytics/agent.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/agents/analytics/agent.py",
+      "target": "app/agents/base_agent.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/analytics/agent.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/analytics/agent.py",
+      "target": "app/core/exceptions.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/analytics/agent.py",
+      "target": "app/agents/analytics/domain.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/analytics/agent.py",
+      "target": "app/agents/analytics/agent.py::Agent",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/analytics/check_scope.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/agents/analytics/check_scope.py",
+      "target": "app/agents/analytics/check_scope.py::git",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/analytics/check_scope.py",
+      "target": "app/agents/analytics/check_scope.py::main",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/analytics/demo.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/agents/analytics/demo.py",
+      "target": "app/agents/analytics/agent.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/analytics/demo.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/analytics/demo.py",
+      "target": "app/agents/analytics/demo.py::main",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/analytics/domain.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/agents/analytics/domain.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/analytics/domain.py",
+      "target": "app/agents/analytics/domain.py::Sale",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/analytics/domain.py",
+      "target": "app/agents/analytics/domain.py::Query",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/analytics/domain.py",
+      "target": "app/agents/analytics/domain.py::AnomalyDetector",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/analytics/domain.py",
+      "target": "app/agents/analytics/domain.py::agent_metrics",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/analytics/domain.py",
+      "target": "app/agents/analytics/domain.py::evaluate",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/base_agent.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/agents/base_agent.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/base_agent.py",
+      "target": "app/agents/base_agent.py::BaseAgent",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/forecasting/__init__.py",
+      "type": "contains"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/forecasting/agent.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/agents/forecasting/agent.py",
+      "target": "app/agents/base_agent.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/forecasting/agent.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/forecasting/agent.py",
+      "target": "app/core/exceptions.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/forecasting/agent.py",
+      "target": "app/agents/forecasting/domain.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/forecasting/agent.py",
+      "target": "app/agents/forecasting/agent.py::Agent",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/forecasting/check_scope.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/agents/forecasting/check_scope.py",
+      "target": "app/agents/forecasting/check_scope.py::git",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/forecasting/check_scope.py",
+      "target": "app/agents/forecasting/check_scope.py::main",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/forecasting/demo.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/agents/forecasting/demo.py",
+      "target": "app/agents/forecasting/agent.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/forecasting/demo.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/forecasting/demo.py",
+      "target": "app/agents/forecasting/demo.py::main",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/forecasting/domain.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/agents/forecasting/domain.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/forecasting/domain.py",
+      "target": "app/agents/forecasting/domain.py::Sale",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/forecasting/domain.py",
+      "target": "app/agents/forecasting/domain.py::Query",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/forecasting/domain.py",
+      "target": "app/agents/forecasting/domain.py::BayesianEstimator",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/forecasting/domain.py",
+      "target": "app/agents/forecasting/domain.py::baseline",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/forecasting/domain.py",
+      "target": "app/agents/forecasting/domain.py::evaluate",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/inventory/__init__.py",
+      "type": "contains"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/inventory/agent.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/agents/inventory/agent.py",
+      "target": "app/agents/base_agent.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/inventory/agent.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/inventory/agent.py",
+      "target": "app/core/exceptions.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/inventory/agent.py",
+      "target": "app/agents/inventory/domain.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/inventory/agent.py",
+      "target": "app/agents/inventory/agent.py::Agent",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/inventory/check_scope.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/agents/inventory/check_scope.py",
+      "target": "app/agents/inventory/check_scope.py::git",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/inventory/check_scope.py",
+      "target": "app/agents/inventory/check_scope.py::main",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/inventory/demo.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/agents/inventory/demo.py",
+      "target": "app/agents/inventory/agent.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/inventory/demo.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/inventory/demo.py",
+      "target": "app/agents/inventory/demo.py::main",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/inventory/domain.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/agents/inventory/domain.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/inventory/domain.py",
+      "target": "app/agents/inventory/domain.py::Snapshot",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/inventory/domain.py",
+      "target": "app/agents/inventory/domain.py::Query",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/inventory/domain.py",
+      "target": "app/agents/inventory/domain.py::AllocationStrategy",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/inventory/domain.py",
+      "target": "app/agents/inventory/domain.py::BayesianDemandStrategy",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/inventory/domain.py",
+      "target": "app/agents/inventory/domain.py::analyze",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/inventory/domain.py",
+      "target": "app/agents/inventory/domain.py::evaluate",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/orders/__init__.py",
+      "type": "contains"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/orders/agent.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/agents/orders/agent.py",
+      "target": "app/agents/base_agent.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/orders/agent.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/orders/agent.py",
+      "target": "app/core/exceptions.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/orders/agent.py",
+      "target": "app/agents/orders/domain.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/orders/agent.py",
+      "target": "app/agents/orders/agent.py::Agent",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/orders/check_scope.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/agents/orders/check_scope.py",
+      "target": "app/agents/orders/check_scope.py::git",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/orders/check_scope.py",
+      "target": "app/agents/orders/check_scope.py::main",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/orders/demo.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/agents/orders/demo.py",
+      "target": "app/agents/orders/agent.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/orders/demo.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/orders/demo.py",
+      "target": "app/agents/orders/demo.py::main",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/orders/domain.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/agents/orders/domain.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/orders/domain.py",
+      "target": "app/agents/orders/domain.py::validate_transition",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/orders/domain.py",
+      "target": "app/agents/orders/domain.py::Source",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/orders/domain.py",
+      "target": "app/agents/orders/domain.py::Order",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/orders/domain.py",
+      "target": "app/agents/orders/domain.py::Query",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/orders/domain.py",
+      "target": "app/agents/orders/domain.py::ShippingConnector",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/orders/domain.py",
+      "target": "app/agents/orders/domain.py::evaluate",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/pricing/__init__.py",
+      "type": "contains"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/pricing/agent.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/agents/pricing/agent.py",
+      "target": "app/agents/base_agent.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/pricing/agent.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/pricing/agent.py",
+      "target": "app/core/exceptions.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/pricing/agent.py",
+      "target": "app/agents/pricing/domain.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/pricing/agent.py",
+      "target": "app/agents/pricing/agent.py::Agent",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/pricing/check_scope.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/agents/pricing/check_scope.py",
+      "target": "app/agents/pricing/check_scope.py::git",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/pricing/check_scope.py",
+      "target": "app/agents/pricing/check_scope.py::main",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/pricing/demo.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/agents/pricing/demo.py",
+      "target": "app/agents/pricing/agent.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/pricing/demo.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/pricing/demo.py",
+      "target": "app/agents/pricing/demo.py::main",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/pricing/domain.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/agents/pricing/domain.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/pricing/domain.py",
+      "target": "app/agents/pricing/domain.py::Price",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/pricing/domain.py",
+      "target": "app/agents/pricing/domain.py::Query",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/pricing/domain.py",
+      "target": "app/agents/pricing/domain.py::ElasticityEstimator",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/pricing/domain.py",
+      "target": "app/agents/pricing/domain.py::evaluate",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/returns/__init__.py",
+      "type": "contains"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/returns/agent.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/agents/returns/agent.py",
+      "target": "app/agents/base_agent.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/returns/agent.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/returns/agent.py",
+      "target": "app/core/exceptions.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/returns/agent.py",
+      "target": "app/agents/returns/domain.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/returns/agent.py",
+      "target": "app/agents/returns/agent.py::Agent",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/returns/check_scope.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/agents/returns/check_scope.py",
+      "target": "app/agents/returns/check_scope.py::git",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/returns/check_scope.py",
+      "target": "app/agents/returns/check_scope.py::main",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/returns/demo.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/agents/returns/demo.py",
+      "target": "app/agents/returns/agent.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/returns/demo.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/returns/demo.py",
+      "target": "app/agents/returns/demo.py::main",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/returns/domain.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/agents/returns/domain.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/returns/domain.py",
+      "target": "app/agents/returns/domain.py::Policy",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/returns/domain.py",
+      "target": "app/agents/returns/domain.py::ReturnRecord",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/returns/domain.py",
+      "target": "app/agents/returns/domain.py::Query",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/returns/domain.py",
+      "target": "app/agents/returns/domain.py::FraudRiskModel",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/returns/domain.py",
+      "target": "app/agents/returns/domain.py::RefundConnector",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/returns/domain.py",
+      "target": "app/agents/returns/domain.py::categorize_reason",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/returns/domain.py",
+      "target": "app/agents/returns/domain.py::evaluate",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/supply/__init__.py",
+      "type": "contains"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/supply/agent.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/agents/supply/agent.py",
+      "target": "app/agents/base_agent.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/supply/agent.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/supply/agent.py",
+      "target": "app/core/exceptions.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/supply/agent.py",
+      "target": "app/agents/supply/domain.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/supply/agent.py",
+      "target": "app/agents/supply/agent.py::Agent",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/supply/check_scope.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/agents/supply/check_scope.py",
+      "target": "app/agents/supply/check_scope.py::git",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/supply/check_scope.py",
+      "target": "app/agents/supply/check_scope.py::main",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/supply/demo.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/agents/supply/demo.py",
+      "target": "app/agents/supply/agent.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/supply/demo.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/supply/demo.py",
+      "target": "app/agents/supply/demo.py::main",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/supply/domain.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/agents/supply/domain.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/supply/domain.py",
+      "target": "app/agents/supply/domain.py::Negotiation",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/supply/domain.py",
+      "target": "app/agents/supply/domain.py::Vendor",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/supply/domain.py",
+      "target": "app/agents/supply/domain.py::Query",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/supply/domain.py",
+      "target": "app/agents/supply/domain.py::StrategicPlayerModel",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/supply/domain.py",
+      "target": "app/agents/supply/domain.py::SOPRetriever",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/supply/domain.py",
+      "target": "app/agents/supply/domain.py::evaluate",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/support/__init__.py",
+      "type": "contains"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/support/agent.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/agents/support/agent.py",
+      "target": "app/agents/base_agent.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/support/agent.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/support/agent.py",
+      "target": "app/core/exceptions.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/support/agent.py",
+      "target": "app/agents/support/domain.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/support/agent.py",
+      "target": "app/agents/support/agent.py::Agent",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/support/check_scope.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/agents/support/check_scope.py",
+      "target": "app/agents/support/check_scope.py::git",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/support/check_scope.py",
+      "target": "app/agents/support/check_scope.py::main",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/support/demo.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/agents/support/demo.py",
+      "target": "app/agents/support/agent.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/support/demo.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/support/demo.py",
+      "target": "app/agents/support/demo.py::main",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/agents/support/domain.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/agents/support/domain.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/support/domain.py",
+      "target": "app/agents/support/domain.py::Policy",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/support/domain.py",
+      "target": "app/agents/support/domain.py::Query",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/support/domain.py",
+      "target": "app/agents/support/domain.py::EvidenceRetriever",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/support/domain.py",
+      "target": "app/agents/support/domain.py::terms",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/support/domain.py",
+      "target": "app/agents/support/domain.py::triage",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/support/domain.py",
+      "target": "app/agents/support/domain.py::evaluate",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/api/__init__.py",
+      "type": "contains"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/api/schemas.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/api/schemas.py",
+      "target": "app/api/schemas.py::Contract",
+      "type": "defines"
+    },
+    {
+      "source": "app/api/schemas.py",
+      "target": "app/api/schemas.py::Role",
+      "type": "defines"
+    },
+    {
+      "source": "app/api/schemas.py",
+      "target": "app/api/schemas.py::QueryRequest",
+      "type": "defines"
+    },
+    {
+      "source": "app/api/schemas.py",
+      "target": "app/api/schemas.py::RequestContext",
+      "type": "defines"
+    },
+    {
+      "source": "app/api/schemas.py",
+      "target": "app/api/schemas.py::Evidence",
+      "type": "defines"
+    },
+    {
+      "source": "app/api/schemas.py",
+      "target": "app/api/schemas.py::AgentResult",
+      "type": "defines"
+    },
+    {
+      "source": "app/api/schemas.py",
+      "target": "app/api/schemas.py::ChatResponse",
+      "type": "defines"
+    },
+    {
+      "source": "app/api/schemas.py",
+      "target": "app/api/schemas.py::AuditEvent",
+      "type": "defines"
+    },
+    {
+      "source": "app/api/schemas.py",
+      "target": "app/api/schemas.py::ErrorResponse",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/core/__init__.py",
+      "type": "contains"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/core/config.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/core/config.py",
+      "target": "app/core/config.py::Settings",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/core/exceptions.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/core/exceptions.py",
+      "target": "app/core/exceptions.py::RetailOpsError",
+      "type": "defines"
+    },
+    {
+      "source": "app/core/exceptions.py",
+      "target": "app/core/exceptions.py::NotFoundError",
+      "type": "defines"
+    },
+    {
+      "source": "app/core/exceptions.py",
+      "target": "app/core/exceptions.py::DataValidationError",
+      "type": "defines"
+    },
+    {
+      "source": "app/core/exceptions.py",
+      "target": "app/core/exceptions.py::ComponentUnavailableError",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/core/logging.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/core/logging.py",
+      "target": "app/core/logging.py::MetadataFormatter",
+      "type": "defines"
+    },
+    {
+      "source": "app/core/logging.py",
+      "target": "app/core/logging.py::configure_logging",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/integration/__init__.py",
+      "type": "contains"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/integration/cli.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/integration/cli.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/cli.py",
+      "target": "app/integration/config.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/cli.py",
+      "target": "app/integration/loader.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/cli.py",
+      "target": "app/integration/registry.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/cli.py",
+      "target": "app/integration/repository.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/cli.py",
+      "target": "app/services/database_service.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/cli.py",
+      "target": "app/integration/cli.py::private_write",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/cli.py",
+      "target": "app/integration/cli.py::main",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/integration/config.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/integration/config.py",
+      "target": "app/core/config.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/config.py",
+      "target": "app/integration/config.py::RuntimeSettings",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/integration/contracts.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/integration/contracts.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/contracts.py",
+      "target": "app/rag/contracts.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/contracts.py",
+      "target": "app/integration/contracts.py::ChatQuery",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/contracts.py",
+      "target": "app/integration/contracts.py::DirectQuery",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/contracts.py",
+      "target": "app/integration/contracts.py::IngestRequest",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/contracts.py",
+      "target": "app/integration/contracts.py::RagQuery",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/contracts.py",
+      "target": "app/integration/contracts.py::Feedback",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/integration/demo.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/integration/demo.py",
+      "target": "app/main.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/demo.py",
+      "target": "app/integration/config.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/demo.py",
+      "target": "app/integration/runtime.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/demo.py",
+      "target": "app/integration/fixtures.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/demo.py",
+      "target": "app/security/policy.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/demo.py",
+      "target": "app/integration/demo.py::main",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/integration/fixtures.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/integration/fixtures.py",
+      "target": "app/integration/fixtures.py::seed",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/integration/llm.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/integration/llm.py",
+      "target": "app/core/exceptions.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/llm.py",
+      "target": "app/integration/llm.py::Provider",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/llm.py",
+      "target": "app/integration/llm.py::DeterministicProvider",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/llm.py",
+      "target": "app/integration/llm.py::OllamaProvider",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/llm.py",
+      "target": "app/integration/llm.py::provider_for",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/integration/loader.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/integration/loader.py",
+      "target": "app/services/dataset_loader.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/loader.py",
+      "target": "app/core/exceptions.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/loader.py",
+      "target": "app/integration/registry.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/loader.py",
+      "target": "app/integration/loader.py::TabularLoader",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/integration/orchestrator.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/integration/orchestrator.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/orchestrator.py",
+      "target": "app/orchestration/router/agent.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/orchestrator.py",
+      "target": "app/orchestration/router/contracts.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/orchestrator.py",
+      "target": "app/integration/registry.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/orchestrator.py",
+      "target": "app/integration/parameters.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/orchestrator.py",
+      "target": "app/core/exceptions.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/orchestrator.py",
+      "target": "app/security/policy.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/orchestrator.py",
+      "target": "app/integration/orchestrator.py::WorkflowState",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/orchestrator.py",
+      "target": "app/integration/orchestrator.py::aggregate",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/orchestrator.py",
+      "target": "app/integration/orchestrator.py::cross_agent_actions",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/orchestrator.py",
+      "target": "app/integration/orchestrator.py::Orchestrator",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/integration/parameters.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/integration/parameters.py",
+      "target": "app/integration/registry.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/parameters.py",
+      "target": "app/integration/parameters.py::Clarification",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/parameters.py",
+      "target": "app/integration/parameters.py::extract",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/parameters.py",
+      "target": "app/integration/parameters.py::prepare",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/parameters.py",
+      "target": "app/integration/parameters.py::routing_text",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/integration/rag.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/integration/rag.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/rag.py",
+      "target": "app/security/policy.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/rag.py",
+      "target": "app/security/integrity.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/rag.py",
+      "target": "app/core/exceptions.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/rag.py",
+      "target": "app/rag/ingestion.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/rag.py",
+      "target": "app/rag/contracts.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/rag.py",
+      "target": "app/rag/pipeline.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/rag.py",
+      "target": "app/integration/repository.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/rag.py",
+      "target": "app/integration/rag.py::VerifiedStore",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/rag.py",
+      "target": "app/integration/rag.py::SignedRag",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/rag.py",
+      "target": "app/integration/rag.py::LazyRag",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/integration/registry.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/integration/registry.py",
+      "target": "app/integration/registry.py::Entry",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/registry.py",
+      "target": "app/integration/registry.py::contracts",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/integration/repository.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/integration/repository.py",
+      "target": "app/models/database.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/repository.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/repository.py",
+      "target": "app/security/policy.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/repository.py",
+      "target": "app/core/exceptions.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/repository.py",
+      "target": "app/integration/registry.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/repository.py",
+      "target": "app/integration/repository.py::DomainRow",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/repository.py",
+      "target": "app/integration/repository.py::StoreRow",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/repository.py",
+      "target": "app/integration/repository.py::StateRow",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/repository.py",
+      "target": "app/integration/repository.py::ReceiptRow",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/repository.py",
+      "target": "app/integration/repository.py::ManifestRow",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/repository.py",
+      "target": "app/integration/repository.py::owner",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/repository.py",
+      "target": "app/integration/repository.py::Repository",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/integration/routes.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/integration/routes.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/routes.py",
+      "target": "app/security/policy.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/routes.py",
+      "target": "app/security/audit.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/routes.py",
+      "target": "app/integration/contracts.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/routes.py",
+      "target": "app/integration/routes.py::context",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/routes.py",
+      "target": "app/integration/routes.py::audit_operation",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/routes.py",
+      "target": "app/integration/routes.py::chat",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/routes.py",
+      "target": "app/integration/routes.py::query",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/routes.py",
+      "target": "app/integration/routes.py::forecast",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/routes.py",
+      "target": "app/integration/routes.py::low_stock",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/routes.py",
+      "target": "app/integration/routes.py::inventory",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/routes.py",
+      "target": "app/integration/routes.py::analytics",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/routes.py",
+      "target": "app/integration/routes.py::rag_ingest",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/routes.py",
+      "target": "app/integration/routes.py::rag_query",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/routes.py",
+      "target": "app/integration/routes.py::audit",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/routes.py",
+      "target": "app/integration/routes.py::feedback",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/integration/runtime.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/integration/runtime.py",
+      "target": "app/security/policy.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/runtime.py",
+      "target": "app/security/audit.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/runtime.py",
+      "target": "app/core/exceptions.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/runtime.py",
+      "target": "app/integration/config.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/runtime.py",
+      "target": "app/integration/repository.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/runtime.py",
+      "target": "app/integration/rag.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/runtime.py",
+      "target": "app/integration/llm.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/runtime.py",
+      "target": "app/integration/orchestrator.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/runtime.py",
+      "target": "app/integration/runtime.py::Runtime",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/main.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/main.py",
+      "target": "app/core/config.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/main.py",
+      "target": "app/integration/config.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/main.py",
+      "target": "app/integration/runtime.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/main.py",
+      "target": "app/integration/routes.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/main.py",
+      "target": "app/core/exceptions.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/main.py",
+      "target": "app/core/logging.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/main.py",
+      "target": "app/services/database_service.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/main.py",
+      "target": "app/main.py::create_app",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/models/__init__.py",
+      "type": "contains"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/models/database.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/models/database.py",
+      "target": "app/models/database.py::Base",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/orchestration/router/__init__.py",
+      "type": "contains"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/orchestration/router/agent.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/orchestration/router/agent.py",
+      "target": "app/agents/base_agent.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/orchestration/router/agent.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/orchestration/router/agent.py",
+      "target": "app/core/config.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/orchestration/router/agent.py",
+      "target": "app/core/exceptions.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/orchestration/router/agent.py",
+      "target": "app/core/logging.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/orchestration/router/agent.py",
+      "target": "app/orchestration/router/contracts.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/orchestration/router/agent.py",
+      "target": "app/orchestration/router/graph.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/orchestration/router/agent.py",
+      "target": "app/orchestration/router/agent.py::RouterAgent",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/orchestration/router/audit.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/orchestration/router/audit.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/orchestration/router/audit.py",
+      "target": "app/orchestration/router/audit.py::JsonlAuditSink",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/orchestration/router/check_scope.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/orchestration/router/check_scope.py",
+      "target": "app/orchestration/router/check_scope.py::git",
+      "type": "defines"
+    },
+    {
+      "source": "app/orchestration/router/check_scope.py",
+      "target": "app/orchestration/router/check_scope.py::main",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/orchestration/router/classifier.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/orchestration/router/classifier.py",
+      "target": "app/orchestration/router/contracts.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/orchestration/router/classifier.py",
+      "target": "app/orchestration/router/classifier.py::classify",
+      "type": "defines"
+    },
+    {
+      "source": "app/orchestration/router/classifier.py",
+      "target": "app/orchestration/router/classifier.py::make_plan",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/orchestration/router/contracts.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/orchestration/router/contracts.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/orchestration/router/contracts.py",
+      "target": "app/orchestration/router/contracts.py::Intent",
+      "type": "defines"
+    },
+    {
+      "source": "app/orchestration/router/contracts.py",
+      "target": "app/orchestration/router/contracts.py::RouteSettings",
+      "type": "defines"
+    },
+    {
+      "source": "app/orchestration/router/contracts.py",
+      "target": "app/orchestration/router/contracts.py::Task",
+      "type": "defines"
+    },
+    {
+      "source": "app/orchestration/router/contracts.py",
+      "target": "app/orchestration/router/contracts.py::RoutingPlan",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/orchestration/router/demo.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/orchestration/router/demo.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/orchestration/router/demo.py",
+      "target": "app/orchestration/router/agent.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/orchestration/router/demo.py",
+      "target": "app/orchestration/router/demo.py::main",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/orchestration/router/graph.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/orchestration/router/graph.py",
+      "target": "app/orchestration/router/classifier.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/orchestration/router/graph.py",
+      "target": "app/orchestration/router/contracts.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/orchestration/router/graph.py",
+      "target": "app/orchestration/router/graph.py::RouterState",
+      "type": "defines"
+    },
+    {
+      "source": "app/orchestration/router/graph.py",
+      "target": "app/orchestration/router/graph.py::build_graph",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/rag/__init__.py",
+      "type": "contains"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/rag/check_scope.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/rag/check_scope.py",
+      "target": "app/rag/check_scope.py::git",
+      "type": "defines"
+    },
+    {
+      "source": "app/rag/check_scope.py",
+      "target": "app/rag/check_scope.py::main",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/rag/contracts.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/rag/contracts.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/rag/contracts.py",
+      "target": "app/rag/contracts.py::RagSettings",
+      "type": "defines"
+    },
+    {
+      "source": "app/rag/contracts.py",
+      "target": "app/rag/contracts.py::Document",
+      "type": "defines"
+    },
+    {
+      "source": "app/rag/contracts.py",
+      "target": "app/rag/contracts.py::Chunk",
+      "type": "defines"
+    },
+    {
+      "source": "app/rag/contracts.py",
+      "target": "app/rag/contracts.py::Hit",
+      "type": "defines"
+    },
+    {
+      "source": "app/rag/contracts.py",
+      "target": "app/rag/contracts.py::RagResult",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/rag/demo.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/rag/demo.py",
+      "target": "app/rag/contracts.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/rag/demo.py",
+      "target": "app/rag/embeddings.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/rag/demo.py",
+      "target": "app/rag/ingestion.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/rag/demo.py",
+      "target": "app/rag/store.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/rag/demo.py",
+      "target": "app/rag/pipeline.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/rag/demo.py",
+      "target": "app/rag/demo.py::main",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/rag/embeddings.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/rag/embeddings.py",
+      "target": "app/rag/embeddings.py::Embedder",
+      "type": "defines"
+    },
+    {
+      "source": "app/rag/embeddings.py",
+      "target": "app/rag/embeddings.py::LocalSentenceTransformer",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/rag/ingestion.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/rag/ingestion.py",
+      "target": "app/rag/contracts.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/rag/ingestion.py",
+      "target": "app/rag/ingestion.py::clean",
+      "type": "defines"
+    },
+    {
+      "source": "app/rag/ingestion.py",
+      "target": "app/rag/ingestion.py::digest",
+      "type": "defines"
+    },
+    {
+      "source": "app/rag/ingestion.py",
+      "target": "app/rag/ingestion.py::verify",
+      "type": "defines"
+    },
+    {
+      "source": "app/rag/ingestion.py",
+      "target": "app/rag/ingestion.py::chunk_document",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/rag/pipeline.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/rag/pipeline.py",
+      "target": "app/rag/contracts.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/rag/pipeline.py",
+      "target": "app/rag/store.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/rag/pipeline.py",
+      "target": "app/rag/pipeline.py::terms",
+      "type": "defines"
+    },
+    {
+      "source": "app/rag/pipeline.py",
+      "target": "app/rag/pipeline.py::RagPipeline",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/rag/store.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/rag/store.py",
+      "target": "app/rag/contracts.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/rag/store.py",
+      "target": "app/rag/embeddings.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/rag/store.py",
+      "target": "app/rag/ingestion.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/rag/store.py",
+      "target": "app/rag/store.py::ChromaStore",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/security/__init__.py",
+      "type": "contains"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/security/audit.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/security/audit.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/security/audit.py",
+      "target": "app/security/integrity.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/security/audit.py",
+      "target": "app/security/audit.py::verify_chain",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/audit.py",
+      "target": "app/security/audit.py::AuditChain",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/security/check_scope.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/security/check_scope.py",
+      "target": "app/security/check_scope.py::git",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/check_scope.py",
+      "target": "app/security/check_scope.py::main",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/security/config.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/security/config.py",
+      "target": "app/security/config.py::SecuritySettings",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/security/demo.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/security/demo.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/security/demo.py",
+      "target": "app/security/policy.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/security/demo.py",
+      "target": "app/security/integrity.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/security/demo.py",
+      "target": "app/security/retrieval.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/security/demo.py",
+      "target": "app/security/audit.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/security/demo.py",
+      "target": "app/security/demo.py::main",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/security/integrity.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/security/integrity.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/security/integrity.py",
+      "target": "app/core/exceptions.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/security/integrity.py",
+      "target": "app/security/integrity.py::IntegrityFailure",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/integrity.py",
+      "target": "app/security/integrity.py::Document",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/integrity.py",
+      "target": "app/security/integrity.py::SealedDocument",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/integrity.py",
+      "target": "app/security/integrity.py::canonical",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/integrity.py",
+      "target": "app/security/integrity.py::seal",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/integrity.py",
+      "target": "app/security/integrity.py::verify",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/security/policy.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/security/policy.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/security/policy.py",
+      "target": "app/core/exceptions.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/security/policy.py",
+      "target": "app/security/policy.py::AccessDenied",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/policy.py",
+      "target": "app/security/policy.py::AuthenticationFailed",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/policy.py",
+      "target": "app/security/policy.py::Grant",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/policy.py",
+      "target": "app/security/policy.py::TokenAuthenticator",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/policy.py",
+      "target": "app/security/policy.py::authorize",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/policy.py",
+      "target": "app/security/policy.py::ToolRegistry",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/security/retrieval.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/security/retrieval.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/security/retrieval.py",
+      "target": "app/security/policy.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/security/retrieval.py",
+      "target": "app/security/integrity.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/security/retrieval.py",
+      "target": "app/security/retrieval.py::retrieve_verified",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/services/__init__.py",
+      "type": "contains"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/services/database_service.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/services/database_service.py",
+      "target": "app/services/database_service.py::Database",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/services/dataset_loader.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/services/dataset_loader.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/services/dataset_loader.py",
+      "target": "app/core/exceptions.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/services/dataset_loader.py",
+      "target": "app/services/dataset_loader.py::LoadReport",
+      "type": "defines"
+    },
+    {
+      "source": "app/services/dataset_loader.py",
+      "target": "app/services/dataset_loader.py::DatasetLoader",
+      "type": "defines"
+    },
+    {
+      "source": "app/services/dataset_loader.py",
+      "target": "app/services/dataset_loader.py::RetailRepository",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "scripts/check_branch_scope.py",
+      "type": "contains"
+    },
+    {
+      "source": "scripts/check_branch_scope.py",
+      "target": "scripts/check_branch_scope.py::git",
+      "type": "defines"
+    },
+    {
+      "source": "scripts/check_branch_scope.py",
+      "target": "scripts/check_branch_scope.py::main",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "scripts/update_knowledge_graph.py",
+      "type": "contains"
+    },
+    {
+      "source": "scripts/update_knowledge_graph.py",
+      "target": "scripts/update_knowledge_graph.py::main",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "tests/__init__.py",
+      "type": "contains"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "tests/analytics/test_analytics.py",
+      "type": "contains"
+    },
+    {
+      "source": "tests/analytics/test_analytics.py",
+      "target": "app/agents/analytics/domain.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/analytics/test_analytics.py",
+      "target": "tests/analytics/test_analytics.py::r",
+      "type": "defines"
+    },
+    {
+      "source": "tests/analytics/test_analytics.py",
+      "target": "tests/analytics/test_analytics.py::q",
+      "type": "defines"
+    },
+    {
+      "source": "tests/analytics/test_analytics.py",
+      "target": "tests/analytics/test_analytics.py::test_exact_revenue_and_latest_stock_counts",
+      "type": "defines"
+    },
+    {
+      "source": "tests/analytics/test_analytics.py",
+      "target": "tests/analytics/test_analytics.py::test_grouping_and_rank_ties",
+      "type": "defines"
+    },
+    {
+      "source": "tests/analytics/test_analytics.py",
+      "target": "tests/analytics/test_analytics.py::test_filters_empty_duplicate_zero_stock",
+      "type": "defines"
+    },
+    {
+      "source": "tests/analytics/test_analytics.py",
+      "target": "tests/analytics/test_analytics.py::test_invalid_rows",
+      "type": "defines"
+    },
+    {
+      "source": "tests/analytics/test_analytics.py",
+      "target": "tests/analytics/test_analytics.py::test_dates_and_metrics",
+      "type": "defines"
+    },
+    {
+      "source": "tests/analytics/test_analytics.py",
+      "target": "tests/analytics/test_analytics.py::test_agent_empty",
+      "type": "defines"
+    },
+    {
+      "source": "tests/analytics/test_analytics.py",
+      "target": "app/agents/analytics/domain.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/analytics/test_analytics.py",
+      "target": "app/api/schemas.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/analytics/test_analytics.py",
+      "target": "app/agents/analytics/agent.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/analytics/test_analytics.py",
+      "target": "app/api/schemas.py",
+      "type": "tests"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "tests/forecasting/test_forecasting.py",
+      "type": "contains"
+    },
+    {
+      "source": "tests/forecasting/test_forecasting.py",
+      "target": "app/agents/forecasting/domain.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/forecasting/test_forecasting.py",
+      "target": "tests/forecasting/test_forecasting.py::rows",
+      "type": "defines"
+    },
+    {
+      "source": "tests/forecasting/test_forecasting.py",
+      "target": "tests/forecasting/test_forecasting.py::q",
+      "type": "defines"
+    },
+    {
+      "source": "tests/forecasting/test_forecasting.py",
+      "target": "tests/forecasting/test_forecasting.py::test_constant_series",
+      "type": "defines"
+    },
+    {
+      "source": "tests/forecasting/test_forecasting.py",
+      "target": "tests/forecasting/test_forecasting.py::test_trend_and_no_future_leakage",
+      "type": "defines"
+    },
+    {
+      "source": "tests/forecasting/test_forecasting.py",
+      "target": "tests/forecasting/test_forecasting.py::test_missing_sparse_stale",
+      "type": "defines"
+    },
+    {
+      "source": "tests/forecasting/test_forecasting.py",
+      "target": "tests/forecasting/test_forecasting.py::test_invalid_duplicate_and_uncertainty",
+      "type": "defines"
+    },
+    {
+      "source": "tests/forecasting/test_forecasting.py",
+      "target": "tests/forecasting/test_forecasting.py::test_store_sku_scope",
+      "type": "defines"
+    },
+    {
+      "source": "tests/forecasting/test_forecasting.py",
+      "target": "app/agents/forecasting/domain.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/forecasting/test_forecasting.py",
+      "target": "app/agents/forecasting/agent.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/forecasting/test_forecasting.py",
+      "target": "app/api/schemas.py",
+      "type": "tests"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "tests/foundation/test_foundation.py",
+      "type": "contains"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "app/main.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "app/core/config.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "app/core/exceptions.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "app/core/logging.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "app/agents/base_agent.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "app/services/database_service.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "app/services/dataset_loader.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "tests/foundation/test_foundation.py::test_configuration_reads_environment_and_hides_credentials",
+      "type": "defines"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "tests/foundation/test_foundation.py::test_invalid_configuration",
+      "type": "defines"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "tests/foundation/test_foundation.py::test_reject_invalid_or_privilege_claiming_payload",
+      "type": "defines"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "tests/foundation/test_foundation.py::test_agent_contract_and_collection_isolation",
+      "type": "defines"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "tests/foundation/test_foundation.py::test_agent_confidence_bounds",
+      "type": "defines"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "tests/foundation/test_foundation.py::test_audit_has_timezone_and_rejects_raw_payload",
+      "type": "defines"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "tests/foundation/test_foundation.py::test_transaction_commit_rollback_and_parameter_binding",
+      "type": "defines"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "tests/foundation/test_foundation.py::test_dataset_contract_paths",
+      "type": "defines"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "tests/foundation/test_foundation.py::test_logging_drops_payload_and_exception_details",
+      "type": "defines"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "tests/foundation/test_foundation.py::test_health_root_and_openapi",
+      "type": "defines"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "tests/foundation/test_foundation.py::test_health_reports_database_failure",
+      "type": "defines"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "tests/foundation/test_foundation.py::test_future_adapter_errors_and_validation",
+      "type": "defines"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "app/main.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "app/core/config.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "app/core/exceptions.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "app/core/logging.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "app/api/schemas.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "app/agents/base_agent.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "app/services/database_service.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "app/services/dataset_loader.py",
+      "type": "tests"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "tests/integration/__init__.py",
+      "type": "contains"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "tests/integration/conftest.py",
+      "type": "contains"
+    },
+    {
+      "source": "tests/integration/conftest.py",
+      "target": "app/main.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/integration/conftest.py",
+      "target": "app/integration/config.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/integration/conftest.py",
+      "target": "app/integration/runtime.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/integration/conftest.py",
+      "target": "app/security/policy.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/integration/conftest.py",
+      "target": "tests/integration/conftest.py::headers",
+      "type": "defines"
+    },
+    {
+      "source": "tests/integration/conftest.py",
+      "target": "app/integration/fixtures.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/integration/conftest.py",
+      "target": "tests/integration/conftest.py::client",
+      "type": "defines"
+    },
+    {
+      "source": "tests/integration/conftest.py",
+      "target": "app/main.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/integration/conftest.py",
+      "target": "app/integration/config.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/integration/conftest.py",
+      "target": "app/integration/runtime.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/integration/conftest.py",
+      "target": "app/security/policy.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/integration/conftest.py",
+      "target": "app/integration/fixtures.py",
+      "type": "tests"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "tests/integration/test_api.py",
+      "type": "contains"
+    },
+    {
+      "source": "tests/integration/test_api.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/integration/test_api.py",
+      "target": "app/integration/orchestrator.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/integration/test_api.py",
+      "target": "tests/integration/conftest.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/integration/test_api.py",
+      "target": "tests/integration/test_api.py::chat",
+      "type": "defines"
+    },
+    {
+      "source": "tests/integration/test_api.py",
+      "target": "tests/integration/test_api.py::test_authentication_cannot_be_claimed_by_payload",
+      "type": "defines"
+    },
+    {
+      "source": "tests/integration/test_api.py",
+      "target": "tests/integration/test_api.py::test_single_agent_followup_and_owner_isolation",
+      "type": "defines"
+    },
+    {
+      "source": "tests/integration/test_api.py",
+      "target": "tests/integration/test_api.py::test_multi_agent_forecast_and_inventory",
+      "type": "defines"
+    },
+    {
+      "source": "tests/integration/test_api.py",
+      "target": "tests/integration/test_api.py::test_missing_sku_unknown_store_unknown_intent",
+      "type": "defines"
+    },
+    {
+      "source": "tests/integration/test_api.py",
+      "target": "tests/integration/test_api.py::test_authorization_before_repository_data_access",
+      "type": "defines"
+    },
+    {
+      "source": "tests/integration/test_api.py",
+      "target": "tests/integration/test_api.py::test_conflict_escalates_without_mutating_observed_prices",
+      "type": "defines"
+    },
+    {
+      "source": "tests/integration/test_api.py",
+      "target": "tests/integration/test_api.py::test_all_domain_registry_entries_and_endpoints",
+      "type": "defines"
+    },
+    {
+      "source": "tests/integration/test_api.py",
+      "target": "tests/integration/test_api.py::test_audit_feedback_and_provider_fallback",
+      "type": "defines"
+    },
+    {
+      "source": "tests/integration/test_api.py",
+      "target": "tests/integration/test_api.py::test_agent_failure_and_reduced_scope_followup",
+      "type": "defines"
+    },
+    {
+      "source": "tests/integration/test_api.py",
+      "target": "tests/integration/test_api.py::test_openapi_and_rag_missing_configuration",
+      "type": "defines"
+    },
+    {
+      "source": "tests/integration/test_api.py",
+      "target": "tests/integration/test_api.py::test_representative_prompt_queries",
+      "type": "defines"
+    },
+    {
+      "source": "tests/integration/test_api.py",
+      "target": "app/api/schemas.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/integration/test_api.py",
+      "target": "app/integration/orchestrator.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/integration/test_api.py",
+      "target": "app/core/exceptions.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/integration/test_api.py",
+      "target": "app/agents/inventory/agent.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/integration/test_api.py",
+      "target": "app/security/policy.py",
+      "type": "tests"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "tests/integration/test_cli.py",
+      "type": "contains"
+    },
+    {
+      "source": "tests/integration/test_cli.py",
+      "target": "tests/integration/test_cli.py::test_local_provisioning_secret_hygiene_and_no_overwrite",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "tests/integration/test_provider.py",
+      "type": "contains"
+    },
+    {
+      "source": "tests/integration/test_provider.py",
+      "target": "app/integration/llm.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/integration/test_provider.py",
+      "target": "app/core/exceptions.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/integration/test_provider.py",
+      "target": "tests/integration/test_provider.py::test_ollama_protocol_local_draft",
+      "type": "defines"
+    },
+    {
+      "source": "tests/integration/test_provider.py",
+      "target": "tests/integration/test_provider.py::test_unavailable_or_malformed_provider",
+      "type": "defines"
+    },
+    {
+      "source": "tests/integration/test_provider.py",
+      "target": "app/integration/llm.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/integration/test_provider.py",
+      "target": "app/core/exceptions.py",
+      "type": "tests"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "tests/integration/test_rag.py",
+      "type": "contains"
+    },
+    {
+      "source": "tests/integration/test_rag.py",
+      "target": "app/integration/rag.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/integration/test_rag.py",
+      "target": "app/integration/repository.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/integration/test_rag.py",
+      "target": "app/services/database_service.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/integration/test_rag.py",
+      "target": "app/rag/contracts.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/integration/test_rag.py",
+      "target": "app/rag/store.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/integration/test_rag.py",
+      "target": "app/rag/ingestion.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/integration/test_rag.py",
+      "target": "app/rag/embeddings.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/integration/test_rag.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/integration/test_rag.py",
+      "target": "app/security/policy.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/integration/test_rag.py",
+      "target": "app/security/integrity.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/integration/test_rag.py",
+      "target": "tests/integration/conftest.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/integration/test_rag.py",
+      "target": "tests/integration/test_rag.py::embedder",
+      "type": "defines"
+    },
+    {
+      "source": "tests/integration/test_rag.py",
+      "target": "tests/integration/test_rag.py::service",
+      "type": "defines"
+    },
+    {
+      "source": "tests/integration/test_rag.py",
+      "target": "tests/integration/test_rag.py::context",
+      "type": "defines"
+    },
+    {
+      "source": "tests/integration/test_rag.py",
+      "target": "tests/integration/test_rag.py::doc",
+      "type": "defines"
+    },
+    {
+      "source": "tests/integration/test_rag.py",
+      "target": "tests/integration/test_rag.py::test_signed_ingestion_scope_and_retrieval",
+      "type": "defines"
+    },
+    {
+      "source": "tests/integration/test_rag.py",
+      "target": "tests/integration/test_rag.py::test_rehashed_vector_tampering_fails_signed_manifest",
+      "type": "defines"
+    },
+    {
+      "source": "tests/integration/test_rag.py",
+      "target": "tests/integration/test_rag.py::test_manifest_mutation_and_immutable_revision",
+      "type": "defines"
+    },
+    {
+      "source": "tests/integration/test_rag.py",
+      "target": "tests/integration/test_rag.py::test_api_and_support_agent_use_signed_rag",
+      "type": "defines"
+    },
+    {
+      "source": "tests/integration/test_rag.py",
+      "target": "app/integration/rag.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/integration/test_rag.py",
+      "target": "app/integration/repository.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/integration/test_rag.py",
+      "target": "app/services/database_service.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/integration/test_rag.py",
+      "target": "app/rag/contracts.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/integration/test_rag.py",
+      "target": "app/rag/store.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/integration/test_rag.py",
+      "target": "app/rag/ingestion.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/integration/test_rag.py",
+      "target": "app/rag/embeddings.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/integration/test_rag.py",
+      "target": "app/api/schemas.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/integration/test_rag.py",
+      "target": "app/security/policy.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/integration/test_rag.py",
+      "target": "app/security/integrity.py",
+      "type": "tests"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "tests/integration/test_storage.py",
+      "type": "contains"
+    },
+    {
+      "source": "tests/integration/test_storage.py",
+      "target": "app/services/database_service.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/integration/test_storage.py",
+      "target": "app/integration/repository.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/integration/test_storage.py",
+      "target": "app/integration/loader.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/integration/test_storage.py",
+      "target": "app/security/policy.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/integration/test_storage.py",
+      "target": "app/core/exceptions.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/integration/test_storage.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/integration/test_storage.py",
+      "target": "tests/integration/test_storage.py::repository",
+      "type": "defines"
+    },
+    {
+      "source": "tests/integration/test_storage.py",
+      "target": "tests/integration/test_storage.py::make_csv",
+      "type": "defines"
+    },
+    {
+      "source": "tests/integration/test_storage.py",
+      "target": "tests/integration/test_storage.py::admin",
+      "type": "defines"
+    },
+    {
+      "source": "tests/integration/test_storage.py",
+      "target": "tests/integration/test_storage.py::test_atomic_mapping_import_persistence_and_idempotency",
+      "type": "defines"
+    },
+    {
+      "source": "tests/integration/test_storage.py",
+      "target": "tests/integration/test_storage.py::test_invalid_batch_rolls_back",
+      "type": "defines"
+    },
+    {
+      "source": "tests/integration/test_storage.py",
+      "target": "tests/integration/test_storage.py::test_duplicate_headers_and_duplicate_rows",
+      "type": "defines"
+    },
+    {
+      "source": "tests/integration/test_storage.py",
+      "target": "tests/integration/test_storage.py::test_xlsx_typed_dates_and_formula_rejection",
+      "type": "defines"
+    },
+    {
+      "source": "tests/integration/test_storage.py",
+      "target": "tests/integration/test_storage.py::test_authorization_precedes_any_database_session",
+      "type": "defines"
+    },
+    {
+      "source": "tests/integration/test_storage.py",
+      "target": "app/services/database_service.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/integration/test_storage.py",
+      "target": "app/integration/repository.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/integration/test_storage.py",
+      "target": "app/integration/loader.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/integration/test_storage.py",
+      "target": "app/security/policy.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/integration/test_storage.py",
+      "target": "app/core/exceptions.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/integration/test_storage.py",
+      "target": "app/api/schemas.py",
+      "type": "tests"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "tests/inventory/test_inventory.py",
+      "type": "contains"
+    },
+    {
+      "source": "tests/inventory/test_inventory.py",
+      "target": "app/agents/inventory/domain.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/inventory/test_inventory.py",
+      "target": "tests/inventory/test_inventory.py::row",
+      "type": "defines"
+    },
+    {
+      "source": "tests/inventory/test_inventory.py",
+      "target": "tests/inventory/test_inventory.py::query",
+      "type": "defines"
+    },
+    {
+      "source": "tests/inventory/test_inventory.py",
+      "target": "tests/inventory/test_inventory.py::test_known_reorder_calculation",
+      "type": "defines"
+    },
+    {
+      "source": "tests/inventory/test_inventory.py",
+      "target": "tests/inventory/test_inventory.py::test_safety_stock_and_position",
+      "type": "defines"
+    },
+    {
+      "source": "tests/inventory/test_inventory.py",
+      "target": "tests/inventory/test_inventory.py::test_bad_input",
+      "type": "defines"
+    },
+    {
+      "source": "tests/inventory/test_inventory.py",
+      "target": "tests/inventory/test_inventory.py::test_latest_cutoff_and_filter",
+      "type": "defines"
+    },
+    {
+      "source": "tests/inventory/test_inventory.py",
+      "target": "tests/inventory/test_inventory.py::test_duplicate",
+      "type": "defines"
+    },
+    {
+      "source": "tests/inventory/test_inventory.py",
+      "target": "tests/inventory/test_inventory.py::test_missing_demand_and_zero",
+      "type": "defines"
+    },
+    {
+      "source": "tests/inventory/test_inventory.py",
+      "target": "tests/inventory/test_inventory.py::test_stockout_overstock_comparison",
+      "type": "defines"
+    },
+    {
+      "source": "tests/inventory/test_inventory.py",
+      "target": "tests/inventory/test_inventory.py::test_agent_scope_and_missing_data",
+      "type": "defines"
+    },
+    {
+      "source": "tests/inventory/test_inventory.py",
+      "target": "app/agents/inventory/domain.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/inventory/test_inventory.py",
+      "target": "app/agents/inventory/agent.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/inventory/test_inventory.py",
+      "target": "app/api/schemas.py",
+      "type": "tests"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "tests/orders/test_orders.py",
+      "type": "contains"
+    },
+    {
+      "source": "tests/orders/test_orders.py",
+      "target": "app/agents/orders/domain.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/orders/test_orders.py",
+      "target": "tests/orders/test_orders.py::r",
+      "type": "defines"
+    },
+    {
+      "source": "tests/orders/test_orders.py",
+      "target": "tests/orders/test_orders.py::q",
+      "type": "defines"
+    },
+    {
+      "source": "tests/orders/test_orders.py",
+      "target": "tests/orders/test_orders.py::test_pending_overdue_cancelled",
+      "type": "defines"
+    },
+    {
+      "source": "tests/orders/test_orders.py",
+      "target": "tests/orders/test_orders.py::test_delivered_and_eta_risk",
+      "type": "defines"
+    },
+    {
+      "source": "tests/orders/test_orders.py",
+      "target": "tests/orders/test_orders.py::test_allocation_and_shortfall",
+      "type": "defines"
+    },
+    {
+      "source": "tests/orders/test_orders.py",
+      "target": "tests/orders/test_orders.py::test_late_sources_excluded",
+      "type": "defines"
+    },
+    {
+      "source": "tests/orders/test_orders.py",
+      "target": "tests/orders/test_orders.py::test_invalid_order",
+      "type": "defines"
+    },
+    {
+      "source": "tests/orders/test_orders.py",
+      "target": "tests/orders/test_orders.py::test_missing_and_transitions",
+      "type": "defines"
+    },
+    {
+      "source": "tests/orders/test_orders.py",
+      "target": "app/agents/orders/domain.py",
+      "type": "tests"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "tests/pricing/test_pricing.py",
+      "type": "contains"
+    },
+    {
+      "source": "tests/pricing/test_pricing.py",
+      "target": "app/agents/pricing/domain.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/pricing/test_pricing.py",
+      "target": "tests/pricing/test_pricing.py::row",
+      "type": "defines"
+    },
+    {
+      "source": "tests/pricing/test_pricing.py",
+      "target": "tests/pricing/test_pricing.py::q",
+      "type": "defines"
+    },
+    {
+      "source": "tests/pricing/test_pricing.py",
+      "target": "tests/pricing/test_pricing.py::test_promotion_and_margin_floor",
+      "type": "defines"
+    },
+    {
+      "source": "tests/pricing/test_pricing.py",
+      "target": "tests/pricing/test_pricing.py::test_blocked_promotion",
+      "type": "defines"
+    },
+    {
+      "source": "tests/pricing/test_pricing.py",
+      "target": "tests/pricing/test_pricing.py::test_missing_competitor_and_simulation",
+      "type": "defines"
+    },
+    {
+      "source": "tests/pricing/test_pricing.py",
+      "target": "tests/pricing/test_pricing.py::test_scarcity_and_cap_conflict",
+      "type": "defines"
+    },
+    {
+      "source": "tests/pricing/test_pricing.py",
+      "target": "tests/pricing/test_pricing.py::test_dates_empty_and_duplicate",
+      "type": "defines"
+    },
+    {
+      "source": "tests/pricing/test_pricing.py",
+      "target": "tests/pricing/test_pricing.py::test_currency_rounding_preserves_change_cap",
+      "type": "defines"
+    },
+    {
+      "source": "tests/pricing/test_pricing.py",
+      "target": "app/agents/pricing/domain.py",
+      "type": "tests"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "tests/rag/test_rag.py",
+      "type": "contains"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "app/rag/contracts.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "app/rag/ingestion.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "app/rag/embeddings.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "app/rag/store.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "app/rag/pipeline.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "tests/rag/test_rag.py::embedder",
+      "type": "defines"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "tests/rag/test_rag.py::store",
+      "type": "defines"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "tests/rag/test_rag.py::doc",
+      "type": "defines"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "tests/rag/test_rag.py::ingest",
+      "type": "defines"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "tests/rag/test_rag.py::test_ingestion_retrieval_persistence_and_sources",
+      "type": "defines"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "tests/rag/test_rag.py::test_empty_store_and_invalid_question",
+      "type": "defines"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "tests/rag/test_rag.py::test_access_filter_excludes_other_documents",
+      "type": "defines"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "tests/rag/test_rag.py::test_irrelevant_evidence_stops_at_limit",
+      "type": "defines"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "tests/rag/test_rag.py::test_tampered_text_rejected_before_reasoning",
+      "type": "defines"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "tests/rag/test_rag.py::test_tampered_source_rejected",
+      "type": "defines"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "tests/rag/test_rag.py::test_idempotency_and_revision_conflict",
+      "type": "defines"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "tests/rag/test_rag.py::test_chunk_overlap_hash_and_whitespace",
+      "type": "defines"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "tests/rag/test_rag.py::test_model_identity_mismatch",
+      "type": "defines"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "tests/rag/test_rag.py::test_top_k_and_relevance",
+      "type": "defines"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "tests/rag/test_rag.py::test_iterative_rewrite_retrieves_missing_concepts",
+      "type": "defines"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "tests/rag/test_rag.py::test_no_download_when_local_model_missing",
+      "type": "defines"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "tests/rag/test_rag.py::test_shortened_revision_does_not_leave_stale_chunks",
+      "type": "defines"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "app/rag/contracts.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "app/rag/ingestion.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "app/rag/embeddings.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "app/rag/store.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "app/rag/pipeline.py",
+      "type": "tests"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "tests/returns/test_returns.py",
+      "type": "contains"
+    },
+    {
+      "source": "tests/returns/test_returns.py",
+      "target": "app/agents/returns/domain.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/returns/test_returns.py",
+      "target": "tests/returns/test_returns.py::r",
+      "type": "defines"
+    },
+    {
+      "source": "tests/returns/test_returns.py",
+      "target": "tests/returns/test_returns.py::q",
+      "type": "defines"
+    },
+    {
+      "source": "tests/returns/test_returns.py",
+      "target": "tests/returns/test_returns.py::test_inclusive_window_and_amount",
+      "type": "defines"
+    },
+    {
+      "source": "tests/returns/test_returns.py",
+      "target": "tests/returns/test_returns.py::test_policy_rules",
+      "type": "defines"
+    },
+    {
+      "source": "tests/returns/test_returns.py",
+      "target": "tests/returns/test_returns.py::test_missing_policy_order_and_refund",
+      "type": "defines"
+    },
+    {
+      "source": "tests/returns/test_returns.py",
+      "target": "tests/returns/test_returns.py::test_refund_cap_and_flags",
+      "type": "defines"
+    },
+    {
+      "source": "tests/returns/test_returns.py",
+      "target": "tests/returns/test_returns.py::test_validation_and_duplicates",
+      "type": "defines"
+    },
+    {
+      "source": "tests/returns/test_returns.py",
+      "target": "tests/returns/test_returns.py::test_taxonomy_and_delivery_absence",
+      "type": "defines"
+    },
+    {
+      "source": "tests/returns/test_returns.py",
+      "target": "app/agents/returns/domain.py",
+      "type": "tests"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "tests/router/test_router.py",
+      "type": "contains"
+    },
+    {
+      "source": "tests/router/test_router.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/router/test_router.py",
+      "target": "app/core/exceptions.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/router/test_router.py",
+      "target": "app/orchestration/router/agent.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/router/test_router.py",
+      "target": "app/orchestration/router/contracts.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/router/test_router.py",
+      "target": "tests/router/test_router.py::route",
+      "type": "defines"
+    },
+    {
+      "source": "tests/router/test_router.py",
+      "target": "tests/router/test_router.py::test_single_domain",
+      "type": "defines"
+    },
+    {
+      "source": "tests/router/test_router.py",
+      "target": "tests/router/test_router.py::test_safe_fallback",
+      "type": "defines"
+    },
+    {
+      "source": "tests/router/test_router.py",
+      "target": "tests/router/test_router.py::test_multi_intent_dependencies_and_deduplication",
+      "type": "defines"
+    },
+    {
+      "source": "tests/router/test_router.py",
+      "target": "tests/router/test_router.py::test_forward_stock_plans_forecasting",
+      "type": "defines"
+    },
+    {
+      "source": "tests/router/test_router.py",
+      "target": "tests/router/test_router.py::test_low_confidence_and_agent_limits",
+      "type": "defines"
+    },
+    {
+      "source": "tests/router/test_router.py",
+      "target": "tests/router/test_router.py::test_audit_provenance_has_no_query_payload",
+      "type": "defines"
+    },
+    {
+      "source": "tests/router/test_router.py",
+      "target": "tests/router/test_router.py::test_audit_failure_is_not_hidden",
+      "type": "defines"
+    },
+    {
+      "source": "tests/router/test_router.py",
+      "target": "tests/router/test_router.py::test_session_mismatch",
+      "type": "defines"
+    },
+    {
+      "source": "tests/router/test_router.py",
+      "target": "tests/router/test_router.py::test_concurrent_requests_do_not_share_state",
+      "type": "defines"
+    },
+    {
+      "source": "tests/router/test_router.py",
+      "target": "tests/router/test_router.py::test_hyphenated_inventory_and_financial_ambiguity",
+      "type": "defines"
+    },
+    {
+      "source": "tests/router/test_router.py",
+      "target": "tests/router/test_router.py::test_environment_tracing_does_not_export_raw_queries",
+      "type": "defines"
+    },
+    {
+      "source": "tests/router/test_router.py",
+      "target": "tests/router/test_router.py::test_opt_in_jsonl_audit_persists_decision",
+      "type": "defines"
+    },
+    {
+      "source": "tests/router/test_router.py",
+      "target": "app/api/schemas.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/router/test_router.py",
+      "target": "app/core/exceptions.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/router/test_router.py",
+      "target": "app/orchestration/router/agent.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/router/test_router.py",
+      "target": "app/orchestration/router/contracts.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/router/test_router.py",
+      "target": "app/orchestration/router/audit.py",
+      "type": "tests"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "tests/security/test_security.py",
+      "type": "contains"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "app/security/policy.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "app/security/integrity.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "app/security/retrieval.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "app/security/audit.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "app/security/config.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py::ctx",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py::doc",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py::event",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py::test_authentication_context_cannot_be_role_claim",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py::test_role_allow",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py::test_deny_unknown_scope_or_role",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py::test_tools_authorize_before_side_effect_and_prevent_context_override",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py::test_document_integrity_binds_text_and_scope",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py::test_retrieval_authorizes_before_provider_and_checks_scope",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py::test_tampered_retrieval_rejected",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py::test_audit_roundtrip_mutation_reorder_truncation_and_anchor",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py::test_bad_log_and_secret_settings",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py::test_expired_grant_and_missing_log_detected",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "app/api/schemas.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "app/security/policy.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "app/security/integrity.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "app/security/retrieval.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "app/security/audit.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "app/security/config.py",
+      "type": "tests"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "tests/supply/test_supply.py",
+      "type": "contains"
+    },
+    {
+      "source": "tests/supply/test_supply.py",
+      "target": "app/agents/supply/domain.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/supply/test_supply.py",
+      "target": "tests/supply/test_supply.py::r",
+      "type": "defines"
+    },
+    {
+      "source": "tests/supply/test_supply.py",
+      "target": "tests/supply/test_supply.py::q",
+      "type": "defines"
+    },
+    {
+      "source": "tests/supply/test_supply.py",
+      "target": "tests/supply/test_supply.py::test_comparison_and_disruption",
+      "type": "defines"
+    },
+    {
+      "source": "tests/supply/test_supply.py",
+      "target": "tests/supply/test_supply.py::test_shortfall_no_recommendation_and_unknown_history",
+      "type": "defines"
+    },
+    {
+      "source": "tests/supply/test_supply.py",
+      "target": "tests/supply/test_supply.py::test_sop_evidence_or_absence",
+      "type": "defines"
+    },
+    {
+      "source": "tests/supply/test_supply.py",
+      "target": "tests/supply/test_supply.py::test_negotiation_history",
+      "type": "defines"
+    },
+    {
+      "source": "tests/supply/test_supply.py",
+      "target": "tests/supply/test_supply.py::test_invalid",
+      "type": "defines"
+    },
+    {
+      "source": "tests/supply/test_supply.py",
+      "target": "tests/supply/test_supply.py::test_missing_future_duplicate",
+      "type": "defines"
+    },
+    {
+      "source": "tests/supply/test_supply.py",
+      "target": "app/agents/supply/domain.py",
+      "type": "tests"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "tests/support/test_support.py",
+      "type": "contains"
+    },
+    {
+      "source": "tests/support/test_support.py",
+      "target": "app/agents/support/domain.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/support/test_support.py",
+      "target": "tests/support/test_support.py::r",
+      "type": "defines"
+    },
+    {
+      "source": "tests/support/test_support.py",
+      "target": "tests/support/test_support.py::q",
+      "type": "defines"
+    },
+    {
+      "source": "tests/support/test_support.py",
+      "target": "tests/support/test_support.py::test_grounded_excerpt_and_sources",
+      "type": "defines"
+    },
+    {
+      "source": "tests/support/test_support.py",
+      "target": "tests/support/test_support.py::test_no_fabricated_policy",
+      "type": "defines"
+    },
+    {
+      "source": "tests/support/test_support.py",
+      "target": "tests/support/test_support.py::test_tamper_and_conflicting_evidence",
+      "type": "defines"
+    },
+    {
+      "source": "tests/support/test_support.py",
+      "target": "tests/support/test_support.py::test_sentiment_negation_and_category",
+      "type": "defines"
+    },
+    {
+      "source": "tests/support/test_support.py",
+      "target": "tests/support/test_support.py::test_duplicate_rejected",
+      "type": "defines"
+    },
+    {
+      "source": "tests/support/test_support.py",
+      "target": "tests/support/test_support.py::test_adapter_evidence_and_scope",
+      "type": "defines"
+    },
+    {
+      "source": "tests/support/test_support.py",
+      "target": "app/agents/support/domain.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/support/test_support.py",
+      "target": "app/agents/support/agent.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/support/test_support.py",
+      "target": "app/api/schemas.py",
+      "type": "tests"
+    },
+    {
+      "source": "POST /api/chat",
+      "target": "app/integration/routes.py::chat",
+      "type": "implemented_by"
+    },
+    {
+      "source": "POST /api/query",
+      "target": "app/integration/routes.py::query",
+      "type": "implemented_by"
+    },
+    {
+      "source": "POST /api/forecast",
+      "target": "app/integration/routes.py::forecast",
+      "type": "implemented_by"
+    },
+    {
+      "source": "GET /api/inventory/low-stock",
+      "target": "app/integration/routes.py::low_stock",
+      "type": "implemented_by"
+    },
+    {
+      "source": "GET /api/inventory/{store_id}",
+      "target": "app/integration/routes.py::inventory",
+      "type": "implemented_by"
+    },
+    {
+      "source": "GET /api/analytics/summary",
+      "target": "app/integration/routes.py::analytics",
+      "type": "implemented_by"
+    },
+    {
+      "source": "POST /api/rag/ingest",
+      "target": "app/integration/routes.py::rag_ingest",
+      "type": "implemented_by"
+    },
+    {
+      "source": "POST /api/rag/query",
+      "target": "app/integration/routes.py::rag_query",
+      "type": "implemented_by"
+    },
+    {
+      "source": "GET /api/audit",
+      "target": "app/integration/routes.py::audit",
+      "type": "implemented_by"
+    },
+    {
+      "source": "POST /api/feedback",
+      "target": "app/integration/routes.py::feedback",
+      "type": "implemented_by"
+    },
+    {
+      "source": "app/integration/repository.py",
+      "target": "domain_records",
+      "type": "reads_writes"
+    },
+    {
+      "source": "app/integration/repository.py",
+      "target": "stores",
+      "type": "reads_writes"
+    },
+    {
+      "source": "app/integration/repository.py",
+      "target": "session_state",
+      "type": "reads_writes"
+    },
+    {
+      "source": "app/integration/repository.py",
+      "target": "request_receipts",
+      "type": "reads_writes"
+    },
+    {
+      "source": "app/integration/repository.py",
+      "target": "signed_rag_manifest",
+      "type": "reads_writes"
+    },
+    {
+      "source": "authorization",
+      "target": "app/security/policy.py",
+      "type": "implemented_by"
+    },
+    {
+      "source": "app/integration/orchestrator.py",
+      "target": "authorization",
       "type": "protected_by"
     },
     {
-      "source": "inventory",
-      "target": "rag",
-      "type": "calls"
+      "source": "signed_evidence",
+      "target": "app/integration/rag.py",
+      "type": "implemented_by"
     },
     {
-      "source": "inventory-tool",
-      "target": "tables",
-      "type": "reads"
-    },
-    {
-      "source": "inventory-tool",
-      "target": "rbac",
+      "source": "app/integration/orchestrator.py",
+      "target": "signed_evidence",
       "type": "protected_by"
     },
     {
-      "source": "order-fulfillment",
-      "target": "rag",
-      "type": "calls"
+      "source": "audit_chain",
+      "target": "app/security/audit.py",
+      "type": "implemented_by"
     },
     {
-      "source": "order-fulfillment-tool",
-      "target": "tables",
-      "type": "reads"
-    },
-    {
-      "source": "order-fulfillment-tool",
-      "target": "rbac",
+      "source": "app/integration/orchestrator.py",
+      "target": "audit_chain",
       "type": "protected_by"
-    },
-    {
-      "source": "supply-chain",
-      "target": "rag",
-      "type": "calls"
-    },
-    {
-      "source": "supply-chain-tool",
-      "target": "tables",
-      "type": "reads"
-    },
-    {
-      "source": "supply-chain-tool",
-      "target": "rbac",
-      "type": "protected_by"
-    },
-    {
-      "source": "pricing-promotions",
-      "target": "rag",
-      "type": "calls"
-    },
-    {
-      "source": "pricing-promotions-tool",
-      "target": "tables",
-      "type": "reads"
-    },
-    {
-      "source": "pricing-promotions-tool",
-      "target": "rbac",
-      "type": "protected_by"
-    },
-    {
-      "source": "customer-service",
-      "target": "rag",
-      "type": "calls"
-    },
-    {
-      "source": "customer-service-tool",
-      "target": "tables",
-      "type": "reads"
-    },
-    {
-      "source": "customer-service-tool",
-      "target": "rbac",
-      "type": "protected_by"
-    },
-    {
-      "source": "returns-refunds",
-      "target": "rag",
-      "type": "calls"
-    },
-    {
-      "source": "returns-refunds-tool",
-      "target": "tables",
-      "type": "reads"
-    },
-    {
-      "source": "returns-refunds-tool",
-      "target": "rbac",
-      "type": "protected_by"
-    },
-    {
-      "source": "demand-forecasting",
-      "target": "rag",
-      "type": "calls"
-    },
-    {
-      "source": "demand-forecasting-tool",
-      "target": "tables",
-      "type": "reads"
-    },
-    {
-      "source": "demand-forecasting-tool",
-      "target": "rbac",
-      "type": "protected_by"
-    },
-    {
-      "source": "analytics-reporting",
-      "target": "rag",
-      "type": "calls"
-    },
-    {
-      "source": "analytics-reporting-tool",
-      "target": "tables",
-      "type": "reads"
-    },
-    {
-      "source": "analytics-reporting-tool",
-      "target": "rbac",
-      "type": "protected_by"
-    },
-    {
-      "source": "context/project-knowledge",
-      "target": "docs/governance/MAIN_BASELINE.md",
-      "type": "owns"
-    },
-    {
-      "source": "docs/governance/MAIN_BASELINE.md",
-      "target": "M0",
-      "type": "satisfies"
-    },
-    {
-      "source": "context/project-knowledge",
-      "target": "docs/governance/BRANCH_POLICY.md",
-      "type": "owns"
-    },
-    {
-      "source": "docs/governance/BRANCH_POLICY.md",
-      "target": "M0",
-      "type": "satisfies"
-    },
-    {
-      "source": "context/project-knowledge",
-      "target": "docs/governance/HUMAN_APPROVAL_GATES.md",
-      "type": "owns"
-    },
-    {
-      "source": "docs/governance/HUMAN_APPROVAL_GATES.md",
-      "target": "M0",
-      "type": "satisfies"
-    },
-    {
-      "source": "context/project-knowledge",
-      "target": "docs/governance/DEFINITION_OF_DONE.md",
-      "type": "owns"
-    },
-    {
-      "source": "docs/governance/DEFINITION_OF_DONE.md",
-      "target": "M0",
-      "type": "satisfies"
-    },
-    {
-      "source": "context/project-knowledge",
-      "target": "docs/governance/MILESTONES.md",
-      "type": "owns"
-    },
-    {
-      "source": "docs/governance/MILESTONES.md",
-      "target": "M0",
-      "type": "satisfies"
-    },
-    {
-      "source": "context/project-knowledge",
-      "target": "docs/knowledge_graph/FILE_OWNERSHIP_MAP.md",
-      "type": "owns"
-    },
-    {
-      "source": "docs/knowledge_graph/FILE_OWNERSHIP_MAP.md",
-      "target": "M0",
-      "type": "satisfies"
-    },
-    {
-      "source": "context/project-knowledge",
-      "target": "docs/knowledge_graph/INTERFACE_REGISTRY.md",
-      "type": "owns"
-    },
-    {
-      "source": "docs/knowledge_graph/INTERFACE_REGISTRY.md",
-      "target": "M0",
-      "type": "satisfies"
-    },
-    {
-      "source": "context/project-knowledge",
-      "target": "docs/knowledge_graph/MASTER_KNOWLEDGE_GRAPH.md",
-      "type": "owns"
-    },
-    {
-      "source": "docs/knowledge_graph/MASTER_KNOWLEDGE_GRAPH.md",
-      "target": "M0",
-      "type": "satisfies"
-    },
-    {
-      "source": "context/project-knowledge",
-      "target": "docs/knowledge_graph/DATA_FLOW_GRAPH.md",
-      "type": "owns"
-    },
-    {
-      "source": "docs/knowledge_graph/DATA_FLOW_GRAPH.md",
-      "target": "M0",
-      "type": "satisfies"
-    },
-    {
-      "source": "context/project-knowledge",
-      "target": "docs/knowledge_graph/BRANCH_GRAPH.md",
-      "type": "owns"
-    },
-    {
-      "source": "docs/knowledge_graph/BRANCH_GRAPH.md",
-      "target": "M0",
-      "type": "satisfies"
-    },
-    {
-      "source": "context/project-knowledge",
-      "target": "docs/knowledge_graph/TEST_COVERAGE_MAP.md",
-      "type": "owns"
-    },
-    {
-      "source": "docs/knowledge_graph/TEST_COVERAGE_MAP.md",
-      "target": "M0",
-      "type": "satisfies"
-    },
-    {
-      "source": "context/project-knowledge",
-      "target": "docs/knowledge_graph/BRANCH_KNOWLEDGE_GRAPH.md",
-      "type": "owns"
-    },
-    {
-      "source": "docs/knowledge_graph/BRANCH_KNOWLEDGE_GRAPH.md",
-      "target": "M0",
-      "type": "satisfies"
-    },
-    {
-      "source": "context/project-knowledge",
-      "target": "BRANCH_README.md",
-      "type": "owns"
-    },
-    {
-      "source": "BRANCH_README.md",
-      "target": "M0",
-      "type": "satisfies"
-    },
-    {
-      "source": "context/project-knowledge",
-      "target": "BRANCH_DELIVERABLES.md",
-      "type": "owns"
-    },
-    {
-      "source": "BRANCH_DELIVERABLES.md",
-      "target": "M0",
-      "type": "satisfies"
-    },
-    {
-      "source": "context/project-knowledge",
-      "target": "docs/knowledge_graph/MASTER_KNOWLEDGE_GRAPH.json",
-      "type": "owns"
-    },
-    {
-      "source": "docs/knowledge_graph/MASTER_KNOWLEDGE_GRAPH.json",
-      "target": "M0",
-      "type": "satisfies"
-    },
-    {
-      "source": "context/project-knowledge",
-      "target": "docs/knowledge_graph/BRANCH_KNOWLEDGE_GRAPH.json",
-      "type": "owns"
-    },
-    {
-      "source": "docs/knowledge_graph/BRANCH_KNOWLEDGE_GRAPH.json",
-      "target": "M0",
-      "type": "satisfies"
     }
-  ],
-  "limitations": [
-    "All runtime modules planned; no imports exist to map"
   ]
 }

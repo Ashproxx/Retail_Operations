@@ -1,0 +1,322 @@
+{
+  "branch": "agent/supply-chain",
+  "base_commit": "77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045",
+  "milestone": "M5",
+  "status": "PASS",
+  "verified_commit": "4c5ab03cf46004d947970f0c5a1d86d94d9787d4",
+  "official_completion": 71,
+  "nodes": [
+    {
+      "id": "app/agents/supply/__init__.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/agents/supply/agent.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/agents/supply/check_scope.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/agents/supply/demo.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/agents/supply/domain.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "tests/supply/test_supply.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "agent/supply-chain",
+      "type": "branch"
+    },
+    {
+      "id": "app/agents/supply/agent.py:Agent:8",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/supply/agent.py:__init__:9",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/supply/agent.py:run:12",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/supply/check_scope.py:git:3",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/supply/check_scope.py:main:4",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/supply/demo.py:main:4",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/supply/domain.py:Negotiation:9",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/supply/domain.py:Vendor:18",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/supply/domain.py:Query:38",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/supply/domain.py:StrategicPlayerModel:49",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/supply/domain.py:SOPRetriever:52",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/supply/domain.py:evaluate:56",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/supply/domain.py:valid:14",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/supply/domain.py:sop:34",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/supply/domain.py:simulate:50",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/supply/domain.py:retrieve:53",
+      "type": "function"
+    },
+    {
+      "id": "tests/supply/test_supply.py:r:5",
+      "type": "function"
+    },
+    {
+      "id": "tests/supply/test_supply.py:q:6",
+      "type": "function"
+    },
+    {
+      "id": "tests/supply/test_supply.py:test_comparison_and_disruption:8",
+      "type": "function"
+    },
+    {
+      "id": "tests/supply/test_supply.py:test_shortfall_no_recommendation_and_unknown_history:15",
+      "type": "function"
+    },
+    {
+      "id": "tests/supply/test_supply.py:test_sop_evidence_or_absence:20",
+      "type": "function"
+    },
+    {
+      "id": "tests/supply/test_supply.py:test_negotiation_history:25",
+      "type": "function"
+    },
+    {
+      "id": "tests/supply/test_supply.py:test_invalid:30",
+      "type": "function"
+    },
+    {
+      "id": "tests/supply/test_supply.py:test_missing_future_duplicate:33",
+      "type": "function"
+    }
+  ],
+  "edges": [
+    {
+      "source": "agent/supply-chain",
+      "target": "app/agents/supply/__init__.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/supply-chain",
+      "target": "app/agents/supply/agent.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/supply-chain",
+      "target": "app/agents/supply/check_scope.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/supply-chain",
+      "target": "app/agents/supply/demo.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/supply-chain",
+      "target": "app/agents/supply/domain.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/supply-chain",
+      "target": "tests/supply/test_supply.py",
+      "type": "owns"
+    },
+    {
+      "source": "app/agents/supply/agent.py",
+      "target": "app/agents/supply/domain.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/supply/agent.py",
+      "target": "app/agents/supply/agent.py:Agent:8",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/supply/agent.py",
+      "target": "app/agents/supply/agent.py:__init__:9",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/supply/agent.py",
+      "target": "app/agents/supply/agent.py:run:12",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/supply/check_scope.py",
+      "target": "app/agents/supply/check_scope.py:git:3",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/supply/check_scope.py",
+      "target": "app/agents/supply/check_scope.py:main:4",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/supply/demo.py",
+      "target": "app/agents/supply/agent.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/supply/demo.py",
+      "target": "app/agents/supply/demo.py:main:4",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/supply/domain.py",
+      "target": "app/agents/supply/domain.py:Negotiation:9",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/supply/domain.py",
+      "target": "app/agents/supply/domain.py:Vendor:18",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/supply/domain.py",
+      "target": "app/agents/supply/domain.py:Query:38",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/supply/domain.py",
+      "target": "app/agents/supply/domain.py:StrategicPlayerModel:49",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/supply/domain.py",
+      "target": "app/agents/supply/domain.py:SOPRetriever:52",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/supply/domain.py",
+      "target": "app/agents/supply/domain.py:evaluate:56",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/supply/domain.py",
+      "target": "app/agents/supply/domain.py:valid:14",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/supply/domain.py",
+      "target": "app/agents/supply/domain.py:sop:34",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/supply/domain.py",
+      "target": "app/agents/supply/domain.py:simulate:50",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/supply/domain.py",
+      "target": "app/agents/supply/domain.py:retrieve:53",
+      "type": "defines"
+    },
+    {
+      "source": "tests/supply/test_supply.py",
+      "target": "app/agents/supply/domain.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/supply/test_supply.py",
+      "target": "tests/supply/test_supply.py:r:5",
+      "type": "defines"
+    },
+    {
+      "source": "tests/supply/test_supply.py",
+      "target": "tests/supply/test_supply.py:q:6",
+      "type": "defines"
+    },
+    {
+      "source": "tests/supply/test_supply.py",
+      "target": "tests/supply/test_supply.py:test_comparison_and_disruption:8",
+      "type": "defines"
+    },
+    {
+      "source": "tests/supply/test_supply.py",
+      "target": "tests/supply/test_supply.py:test_shortfall_no_recommendation_and_unknown_history:15",
+      "type": "defines"
+    },
+    {
+      "source": "tests/supply/test_supply.py",
+      "target": "tests/supply/test_supply.py:test_sop_evidence_or_absence:20",
+      "type": "defines"
+    },
+    {
+      "source": "tests/supply/test_supply.py",
+      "target": "tests/supply/test_supply.py:test_negotiation_history:25",
+      "type": "defines"
+    },
+    {
+      "source": "tests/supply/test_supply.py",
+      "target": "tests/supply/test_supply.py:test_invalid:30",
+      "type": "defines"
+    },
+    {
+      "source": "tests/supply/test_supply.py",
+      "target": "tests/supply/test_supply.py:test_missing_future_duplicate:33",
+      "type": "defines"
+    },
+    {
+      "source": "tests/supply/test_supply.py",
+      "target": "app/agents/supply/agent.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/supply/test_supply.py",
+      "target": "app/agents/supply/domain.py",
+      "type": "tests"
+    }
+  ],
+  "limitations": "Uses only supplied records. Unknown lead-time history stays unknown; contractual lead time is labelled. Scenario multiplier is not a disruption prediction. Vendor ranking is single-source capacity then lead-time then price, not a global logistics optimizer. No repeated-game/Bayesian solver or negotiation automation. SOP text requires source attribution and is returned as evidence, not executed instructions.",
+  "dependencies": [
+    "foundation contracts",
+    "future authorized integration"
+  ]
+}

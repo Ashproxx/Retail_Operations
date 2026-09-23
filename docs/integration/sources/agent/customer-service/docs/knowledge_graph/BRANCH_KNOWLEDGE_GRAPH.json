@@ -1,0 +1,309 @@
+{
+  "branch": "agent/customer-service",
+  "base_commit": "77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045",
+  "milestone": "M7",
+  "status": "PASS",
+  "verified_commit": "1714eb47e8693df39774aa4ecd7f98afbc93d404",
+  "official_completion": 84,
+  "nodes": [
+    {
+      "id": "app/agents/support/__init__.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/agents/support/agent.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/agents/support/check_scope.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/agents/support/demo.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/agents/support/domain.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "tests/support/test_support.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "agent/customer-service",
+      "type": "branch"
+    },
+    {
+      "id": "app/agents/support/agent.py:Agent:8",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/support/agent.py:__init__:9",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/support/agent.py:run:12",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/support/check_scope.py:git:3",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/support/check_scope.py:main:4",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/support/demo.py:main:4",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/support/domain.py:Policy:7",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/support/domain.py:Query:23",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/support/domain.py:EvidenceRetriever:29",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/support/domain.py:terms:33",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/support/domain.py:triage:35",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/support/domain.py:evaluate:48",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/support/domain.py:dates:19",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/support/domain.py:retrieve:30",
+      "type": "function"
+    },
+    {
+      "id": "tests/support/test_support.py:r:4",
+      "type": "function"
+    },
+    {
+      "id": "tests/support/test_support.py:q:5",
+      "type": "function"
+    },
+    {
+      "id": "tests/support/test_support.py:test_grounded_excerpt_and_sources:7",
+      "type": "function"
+    },
+    {
+      "id": "tests/support/test_support.py:test_no_fabricated_policy:14",
+      "type": "function"
+    },
+    {
+      "id": "tests/support/test_support.py:test_tamper_and_conflicting_evidence:18",
+      "type": "function"
+    },
+    {
+      "id": "tests/support/test_support.py:test_sentiment_negation_and_category:24",
+      "type": "function"
+    },
+    {
+      "id": "tests/support/test_support.py:test_duplicate_rejected:29",
+      "type": "function"
+    },
+    {
+      "id": "tests/support/test_support.py:test_adapter_evidence_and_scope:32",
+      "type": "function"
+    }
+  ],
+  "edges": [
+    {
+      "source": "agent/customer-service",
+      "target": "app/agents/support/__init__.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/customer-service",
+      "target": "app/agents/support/agent.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/customer-service",
+      "target": "app/agents/support/check_scope.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/customer-service",
+      "target": "app/agents/support/demo.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/customer-service",
+      "target": "app/agents/support/domain.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/customer-service",
+      "target": "tests/support/test_support.py",
+      "type": "owns"
+    },
+    {
+      "source": "app/agents/support/agent.py",
+      "target": "app/agents/support/domain.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/support/agent.py",
+      "target": "app/agents/support/agent.py:Agent:8",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/support/agent.py",
+      "target": "app/agents/support/agent.py:__init__:9",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/support/agent.py",
+      "target": "app/agents/support/agent.py:run:12",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/support/check_scope.py",
+      "target": "app/agents/support/check_scope.py:git:3",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/support/check_scope.py",
+      "target": "app/agents/support/check_scope.py:main:4",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/support/demo.py",
+      "target": "app/agents/support/agent.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/support/demo.py",
+      "target": "app/agents/support/demo.py:main:4",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/support/domain.py",
+      "target": "app/agents/support/domain.py:Policy:7",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/support/domain.py",
+      "target": "app/agents/support/domain.py:Query:23",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/support/domain.py",
+      "target": "app/agents/support/domain.py:EvidenceRetriever:29",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/support/domain.py",
+      "target": "app/agents/support/domain.py:terms:33",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/support/domain.py",
+      "target": "app/agents/support/domain.py:triage:35",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/support/domain.py",
+      "target": "app/agents/support/domain.py:evaluate:48",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/support/domain.py",
+      "target": "app/agents/support/domain.py:dates:19",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/support/domain.py",
+      "target": "app/agents/support/domain.py:retrieve:30",
+      "type": "defines"
+    },
+    {
+      "source": "tests/support/test_support.py",
+      "target": "app/agents/support/domain.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/support/test_support.py",
+      "target": "tests/support/test_support.py:r:4",
+      "type": "defines"
+    },
+    {
+      "source": "tests/support/test_support.py",
+      "target": "tests/support/test_support.py:q:5",
+      "type": "defines"
+    },
+    {
+      "source": "tests/support/test_support.py",
+      "target": "tests/support/test_support.py:test_grounded_excerpt_and_sources:7",
+      "type": "defines"
+    },
+    {
+      "source": "tests/support/test_support.py",
+      "target": "tests/support/test_support.py:test_no_fabricated_policy:14",
+      "type": "defines"
+    },
+    {
+      "source": "tests/support/test_support.py",
+      "target": "tests/support/test_support.py:test_tamper_and_conflicting_evidence:18",
+      "type": "defines"
+    },
+    {
+      "source": "tests/support/test_support.py",
+      "target": "tests/support/test_support.py:test_sentiment_negation_and_category:24",
+      "type": "defines"
+    },
+    {
+      "source": "tests/support/test_support.py",
+      "target": "tests/support/test_support.py:test_duplicate_rejected:29",
+      "type": "defines"
+    },
+    {
+      "source": "tests/support/test_support.py",
+      "target": "tests/support/test_support.py:test_adapter_evidence_and_scope:32",
+      "type": "defines"
+    },
+    {
+      "source": "tests/support/test_support.py",
+      "target": "app/agents/support/agent.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/support/test_support.py",
+      "target": "app/agents/support/agent.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/support/test_support.py",
+      "target": "app/agents/support/domain.py",
+      "type": "tests"
+    }
+  ],
+  "limitations": "Local lexical evidence adapter only; ChromaDB integration is intentionally deferred across isolated branches. No generated policy text. Distinct relevant documents conservatively trigger conflict review even when potentially compatible. Sentiment and coverage are English heuristics, not learned or calibrated scores. Hashes must come from a trusted manifest and are unkeyed; stronger trust belongs to Security. No ticket is sent or created.",
+  "dependencies": [
+    "foundation contracts",
+    "future authorized integration"
+  ]
+}

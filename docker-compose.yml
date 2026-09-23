@@ -1,0 +1,21 @@
+services:
+  retailops:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    env_file: .env
+    environment:
+      RETAILOPS_DATABASE_URL: sqlite+pysqlite:////app/state/retailops.db
+      RETAILOPS_STATE_DIR: /app/state
+      RETAILOPS_GRANTS_FILE: /app/secrets/grants.json
+      RETAILOPS_EMBEDDING_MODEL_PATH: /app/models/embedding
+      RETAILOPS_OLLAMA_URL: http://host.docker.internal:11434
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - retailops-state:/app/state
+      - ./secrets:/app/secrets:ro
+      - ./models:/app/models:ro
+    restart: unless-stopped
+volumes:
+  retailops-state:

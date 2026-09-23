@@ -1,0 +1,304 @@
+{
+  "branch": "agent/order-fulfillment",
+  "base_commit": "77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045",
+  "milestone": "M4",
+  "status": "PASS",
+  "verified_commit": "1a28ffee72407a6937f8f43060668d2b08cc2939",
+  "official_completion": 78,
+  "nodes": [
+    {
+      "id": "app/agents/orders/__init__.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/agents/orders/agent.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/agents/orders/check_scope.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/agents/orders/demo.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/agents/orders/domain.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "tests/orders/test_orders.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "agent/order-fulfillment",
+      "type": "branch"
+    },
+    {
+      "id": "app/agents/orders/agent.py:Agent:8",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/orders/agent.py:__init__:9",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/orders/agent.py:run:12",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/orders/check_scope.py:git:3",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/orders/check_scope.py:main:4",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/orders/demo.py:main:4",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/orders/domain.py:validate_transition:8",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/orders/domain.py:Source:11",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/orders/domain.py:Order:17",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/orders/domain.py:Query:48",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/orders/domain.py:ShippingConnector:54",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/orders/domain.py:evaluate:58",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/orders/domain.py:timeline:34",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/orders/domain.py:latest:55",
+      "type": "function"
+    },
+    {
+      "id": "tests/orders/test_orders.py:r:5",
+      "type": "function"
+    },
+    {
+      "id": "tests/orders/test_orders.py:q:6",
+      "type": "function"
+    },
+    {
+      "id": "tests/orders/test_orders.py:test_pending_overdue_cancelled:8",
+      "type": "function"
+    },
+    {
+      "id": "tests/orders/test_orders.py:test_delivered_and_eta_risk:13",
+      "type": "function"
+    },
+    {
+      "id": "tests/orders/test_orders.py:test_allocation_and_shortfall:18",
+      "type": "function"
+    },
+    {
+      "id": "tests/orders/test_orders.py:test_late_sources_excluded:26",
+      "type": "function"
+    },
+    {
+      "id": "tests/orders/test_orders.py:test_invalid_order:31",
+      "type": "function"
+    },
+    {
+      "id": "tests/orders/test_orders.py:test_missing_and_transitions:34",
+      "type": "function"
+    }
+  ],
+  "edges": [
+    {
+      "source": "agent/order-fulfillment",
+      "target": "app/agents/orders/__init__.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/order-fulfillment",
+      "target": "app/agents/orders/agent.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/order-fulfillment",
+      "target": "app/agents/orders/check_scope.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/order-fulfillment",
+      "target": "app/agents/orders/demo.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/order-fulfillment",
+      "target": "app/agents/orders/domain.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/order-fulfillment",
+      "target": "tests/orders/test_orders.py",
+      "type": "owns"
+    },
+    {
+      "source": "app/agents/orders/agent.py",
+      "target": "app/agents/orders/domain.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/orders/agent.py",
+      "target": "app/agents/orders/agent.py:Agent:8",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/orders/agent.py",
+      "target": "app/agents/orders/agent.py:__init__:9",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/orders/agent.py",
+      "target": "app/agents/orders/agent.py:run:12",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/orders/check_scope.py",
+      "target": "app/agents/orders/check_scope.py:git:3",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/orders/check_scope.py",
+      "target": "app/agents/orders/check_scope.py:main:4",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/orders/demo.py",
+      "target": "app/agents/orders/agent.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/orders/demo.py",
+      "target": "app/agents/orders/demo.py:main:4",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/orders/domain.py",
+      "target": "app/agents/orders/domain.py:validate_transition:8",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/orders/domain.py",
+      "target": "app/agents/orders/domain.py:Source:11",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/orders/domain.py",
+      "target": "app/agents/orders/domain.py:Order:17",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/orders/domain.py",
+      "target": "app/agents/orders/domain.py:Query:48",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/orders/domain.py",
+      "target": "app/agents/orders/domain.py:ShippingConnector:54",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/orders/domain.py",
+      "target": "app/agents/orders/domain.py:evaluate:58",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/orders/domain.py",
+      "target": "app/agents/orders/domain.py:timeline:34",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/orders/domain.py",
+      "target": "app/agents/orders/domain.py:latest:55",
+      "type": "defines"
+    },
+    {
+      "source": "tests/orders/test_orders.py",
+      "target": "app/agents/orders/domain.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/orders/test_orders.py",
+      "target": "tests/orders/test_orders.py:r:5",
+      "type": "defines"
+    },
+    {
+      "source": "tests/orders/test_orders.py",
+      "target": "tests/orders/test_orders.py:q:6",
+      "type": "defines"
+    },
+    {
+      "source": "tests/orders/test_orders.py",
+      "target": "tests/orders/test_orders.py:test_pending_overdue_cancelled:8",
+      "type": "defines"
+    },
+    {
+      "source": "tests/orders/test_orders.py",
+      "target": "tests/orders/test_orders.py:test_delivered_and_eta_risk:13",
+      "type": "defines"
+    },
+    {
+      "source": "tests/orders/test_orders.py",
+      "target": "tests/orders/test_orders.py:test_allocation_and_shortfall:18",
+      "type": "defines"
+    },
+    {
+      "source": "tests/orders/test_orders.py",
+      "target": "tests/orders/test_orders.py:test_late_sources_excluded:26",
+      "type": "defines"
+    },
+    {
+      "source": "tests/orders/test_orders.py",
+      "target": "tests/orders/test_orders.py:test_invalid_order:31",
+      "type": "defines"
+    },
+    {
+      "source": "tests/orders/test_orders.py",
+      "target": "tests/orders/test_orders.py:test_missing_and_transitions:34",
+      "type": "defines"
+    },
+    {
+      "source": "tests/orders/test_orders.py",
+      "target": "app/agents/orders/agent.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/orders/test_orders.py",
+      "target": "app/agents/orders/domain.py",
+      "type": "tests"
+    }
+  ],
+  "limitations": "No real orders provided. Fixtures are explicit and unknown orders are never fabricated. Allocation minimizes additive variable unit cost among deadline-feasible supplied sources; it assumes divisible quantities and excludes fixed fees, multi-SKU coupling and live capacity reservations. Recommendations never update orders or shipments. Delay flags use observed deadline/ETA rules, not a trained predictor. Snapshot as_of filtering prevents future status leakage.",
+  "dependencies": [
+    "foundation contracts",
+    "future authorized integration"
+  ]
+}

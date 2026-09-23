@@ -1,0 +1,62 @@
+{
+  "base": "77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045",
+  "main_baseline": "c21658e55c96d7adc78b82d2e2f3d2b17d226144",
+  "approval": "User explicitly approved the pinned review and integration candidate; main merge not authorized.",
+  "sources": [
+    {
+      "milestone": "M2",
+      "branch": "agent/router",
+      "sha": "034946159557d9e88e2cd591b284f370fa6a9831"
+    },
+    {
+      "milestone": "M3",
+      "branch": "agent/inventory",
+      "sha": "bc1a4d5c1a3c62e81512b0b9cdbc6eceaa58d3ba"
+    },
+    {
+      "milestone": "M4",
+      "branch": "agent/order-fulfillment",
+      "sha": "21acc0898ce8b3f0f130bb21b8b4b2fbafc7851b"
+    },
+    {
+      "milestone": "M5",
+      "branch": "agent/supply-chain",
+      "sha": "bce3f17d4798e121a4c8f3aa1e697b093ab47e0d"
+    },
+    {
+      "milestone": "M6",
+      "branch": "agent/pricing-promotions",
+      "sha": "57ff09d09ad74eb623d28168b63774df25ea3294"
+    },
+    {
+      "milestone": "M7",
+      "branch": "agent/customer-service",
+      "sha": "5ecdbf6eab71715657b1a17e1305ab6702b8704d"
+    },
+    {
+      "milestone": "M8",
+      "branch": "agent/returns-refunds",
+      "sha": "4a0b17d7d071e9cb203ccf3f5b6474e5d5eb61bb"
+    },
+    {
+      "milestone": "M9",
+      "branch": "agent/demand-forecasting",
+      "sha": "7a65d8dab39697ef62be14e5feda945efda55ac9"
+    },
+    {
+      "milestone": "M10",
+      "branch": "agent/analytics-reporting",
+      "sha": "26f58b0600e6df6c8a37523ebff2065f6705d73b"
+    },
+    {
+      "milestone": "M11",
+      "branch": "platform/agentic-rag",
+      "sha": "e3638225a5ea88ab6036ce6148f66d9208cedf5c"
+    },
+    {
+      "milestone": "M12",
+      "branch": "security/privacy-integrity",
+      "sha": "e55f640b416d2109bac8fbf9dea2622dbdc78577"
+    }
+  ]
+}

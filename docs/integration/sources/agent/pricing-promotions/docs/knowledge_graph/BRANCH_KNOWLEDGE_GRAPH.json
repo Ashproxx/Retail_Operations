@@ -1,0 +1,286 @@
+{
+  "branch": "agent/pricing-promotions",
+  "base_commit": "77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045",
+  "milestone": "M6",
+  "status": "PASS",
+  "verified_commit": "0bf7e4b0f414dab1125ec6d9e163a623ede23622",
+  "official_completion": 63,
+  "nodes": [
+    {
+      "id": "app/agents/pricing/__init__.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/agents/pricing/agent.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/agents/pricing/check_scope.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/agents/pricing/demo.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/agents/pricing/domain.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "tests/pricing/test_pricing.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "agent/pricing-promotions",
+      "type": "branch"
+    },
+    {
+      "id": "app/agents/pricing/agent.py:Agent:8",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/pricing/agent.py:__init__:9",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/pricing/agent.py:run:12",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/pricing/check_scope.py:git:3",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/pricing/check_scope.py:main:4",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/pricing/demo.py:main:4",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/pricing/domain.py:Price:7",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/pricing/domain.py:Query:22",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/pricing/domain.py:ElasticityEstimator:38",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/pricing/domain.py:evaluate:42",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/pricing/domain.py:dates:33",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/pricing/domain.py:estimate:39",
+      "type": "function"
+    },
+    {
+      "id": "tests/pricing/test_pricing.py:row:5",
+      "type": "function"
+    },
+    {
+      "id": "tests/pricing/test_pricing.py:q:6",
+      "type": "function"
+    },
+    {
+      "id": "tests/pricing/test_pricing.py:test_promotion_and_margin_floor:8",
+      "type": "function"
+    },
+    {
+      "id": "tests/pricing/test_pricing.py:test_blocked_promotion:17",
+      "type": "function"
+    },
+    {
+      "id": "tests/pricing/test_pricing.py:test_missing_competitor_and_simulation:20",
+      "type": "function"
+    },
+    {
+      "id": "tests/pricing/test_pricing.py:test_scarcity_and_cap_conflict:24",
+      "type": "function"
+    },
+    {
+      "id": "tests/pricing/test_pricing.py:test_dates_empty_and_duplicate:28",
+      "type": "function"
+    },
+    {
+      "id": "tests/pricing/test_pricing.py:test_currency_rounding_preserves_change_cap:36",
+      "type": "function"
+    }
+  ],
+  "edges": [
+    {
+      "source": "agent/pricing-promotions",
+      "target": "app/agents/pricing/__init__.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/pricing-promotions",
+      "target": "app/agents/pricing/agent.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/pricing-promotions",
+      "target": "app/agents/pricing/check_scope.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/pricing-promotions",
+      "target": "app/agents/pricing/demo.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/pricing-promotions",
+      "target": "app/agents/pricing/domain.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/pricing-promotions",
+      "target": "tests/pricing/test_pricing.py",
+      "type": "owns"
+    },
+    {
+      "source": "app/agents/pricing/agent.py",
+      "target": "app/agents/pricing/domain.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/pricing/agent.py",
+      "target": "app/agents/pricing/agent.py:Agent:8",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/pricing/agent.py",
+      "target": "app/agents/pricing/agent.py:__init__:9",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/pricing/agent.py",
+      "target": "app/agents/pricing/agent.py:run:12",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/pricing/check_scope.py",
+      "target": "app/agents/pricing/check_scope.py:git:3",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/pricing/check_scope.py",
+      "target": "app/agents/pricing/check_scope.py:main:4",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/pricing/demo.py",
+      "target": "app/agents/pricing/agent.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/pricing/demo.py",
+      "target": "app/agents/pricing/demo.py:main:4",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/pricing/domain.py",
+      "target": "app/agents/pricing/domain.py:Price:7",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/pricing/domain.py",
+      "target": "app/agents/pricing/domain.py:Query:22",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/pricing/domain.py",
+      "target": "app/agents/pricing/domain.py:ElasticityEstimator:38",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/pricing/domain.py",
+      "target": "app/agents/pricing/domain.py:evaluate:42",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/pricing/domain.py",
+      "target": "app/agents/pricing/domain.py:dates:33",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/pricing/domain.py",
+      "target": "app/agents/pricing/domain.py:estimate:39",
+      "type": "defines"
+    },
+    {
+      "source": "tests/pricing/test_pricing.py",
+      "target": "app/agents/pricing/domain.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/pricing/test_pricing.py",
+      "target": "tests/pricing/test_pricing.py:row:5",
+      "type": "defines"
+    },
+    {
+      "source": "tests/pricing/test_pricing.py",
+      "target": "tests/pricing/test_pricing.py:q:6",
+      "type": "defines"
+    },
+    {
+      "source": "tests/pricing/test_pricing.py",
+      "target": "tests/pricing/test_pricing.py:test_promotion_and_margin_floor:8",
+      "type": "defines"
+    },
+    {
+      "source": "tests/pricing/test_pricing.py",
+      "target": "tests/pricing/test_pricing.py:test_blocked_promotion:17",
+      "type": "defines"
+    },
+    {
+      "source": "tests/pricing/test_pricing.py",
+      "target": "tests/pricing/test_pricing.py:test_missing_competitor_and_simulation:20",
+      "type": "defines"
+    },
+    {
+      "source": "tests/pricing/test_pricing.py",
+      "target": "tests/pricing/test_pricing.py:test_scarcity_and_cap_conflict:24",
+      "type": "defines"
+    },
+    {
+      "source": "tests/pricing/test_pricing.py",
+      "target": "tests/pricing/test_pricing.py:test_dates_empty_and_duplicate:28",
+      "type": "defines"
+    },
+    {
+      "source": "tests/pricing/test_pricing.py",
+      "target": "tests/pricing/test_pricing.py:test_currency_rounding_preserves_change_cap:36",
+      "type": "defines"
+    },
+    {
+      "source": "tests/pricing/test_pricing.py",
+      "target": "app/agents/pricing/agent.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/pricing/test_pricing.py",
+      "target": "app/agents/pricing/domain.py",
+      "type": "tests"
+    }
+  ],
+  "limitations": "No production price mutation or fitted elasticity. Competitor simulation is a bounded one-step undercut rule, not a solved Bertrand equilibrium. Observed competitor data is mandatory for that mode. Conflicting margin and price-change constraints abstain for human review. Recommendation age is explicit; no external price feed or live stock connector.",
+  "dependencies": [
+    "foundation contracts",
+    "future authorized integration"
+  ]
+}

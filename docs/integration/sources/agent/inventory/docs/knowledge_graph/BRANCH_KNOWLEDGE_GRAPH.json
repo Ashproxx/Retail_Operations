@@ -1,0 +1,345 @@
+{
+  "branch": "agent/inventory",
+  "base_commit": "77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045",
+  "milestone": "M3",
+  "status": "PASS",
+  "verified_commit": "d28f3016222311454fd7adeccb32b4c72d90eabe",
+  "official_completion": 40,
+  "nodes": [
+    {
+      "id": "app/agents/inventory/__init__.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/agents/inventory/agent.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/agents/inventory/check_scope.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/agents/inventory/demo.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/agents/inventory/domain.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "tests/inventory/test_inventory.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "agent/inventory",
+      "type": "branch"
+    },
+    {
+      "id": "app/agents/inventory/agent.py:Agent:8",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/inventory/agent.py:__init__:9",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/inventory/agent.py:run:12",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/inventory/check_scope.py:git:3",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/inventory/check_scope.py:main:4",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/inventory/demo.py:main:5",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/inventory/domain.py:Snapshot:8",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/inventory/domain.py:Query:27",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/inventory/domain.py:AllocationStrategy:36",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/inventory/domain.py:BayesianDemandStrategy:39",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/inventory/domain.py:analyze:43",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/inventory/domain.py:evaluate:64",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/inventory/domain.py:reservations:23",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/inventory/domain.py:allocate:37",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/inventory/domain.py:estimate:40",
+      "type": "function"
+    },
+    {
+      "id": "tests/inventory/test_inventory.py:row:6",
+      "type": "function"
+    },
+    {
+      "id": "tests/inventory/test_inventory.py:query:9",
+      "type": "function"
+    },
+    {
+      "id": "tests/inventory/test_inventory.py:test_known_reorder_calculation:11",
+      "type": "function"
+    },
+    {
+      "id": "tests/inventory/test_inventory.py:test_safety_stock_and_position:19",
+      "type": "function"
+    },
+    {
+      "id": "tests/inventory/test_inventory.py:test_bad_input:26",
+      "type": "function"
+    },
+    {
+      "id": "tests/inventory/test_inventory.py:test_latest_cutoff_and_filter:29",
+      "type": "function"
+    },
+    {
+      "id": "tests/inventory/test_inventory.py:test_duplicate:36",
+      "type": "function"
+    },
+    {
+      "id": "tests/inventory/test_inventory.py:test_missing_demand_and_zero:39",
+      "type": "function"
+    },
+    {
+      "id": "tests/inventory/test_inventory.py:test_stockout_overstock_comparison:45",
+      "type": "function"
+    },
+    {
+      "id": "tests/inventory/test_inventory.py:test_agent_scope_and_missing_data:51",
+      "type": "function"
+    },
+    {
+      "id": "tests/inventory/test_inventory.py:run:56",
+      "type": "function"
+    }
+  ],
+  "edges": [
+    {
+      "source": "agent/inventory",
+      "target": "app/agents/inventory/__init__.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/inventory",
+      "target": "app/agents/inventory/agent.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/inventory",
+      "target": "app/agents/inventory/check_scope.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/inventory",
+      "target": "app/agents/inventory/demo.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/inventory",
+      "target": "app/agents/inventory/domain.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/inventory",
+      "target": "tests/inventory/test_inventory.py",
+      "type": "owns"
+    },
+    {
+      "source": "app/agents/inventory/agent.py",
+      "target": "app/agents/inventory/domain.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/inventory/agent.py",
+      "target": "app/agents/inventory/agent.py:Agent:8",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/inventory/agent.py",
+      "target": "app/agents/inventory/agent.py:__init__:9",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/inventory/agent.py",
+      "target": "app/agents/inventory/agent.py:run:12",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/inventory/check_scope.py",
+      "target": "app/agents/inventory/check_scope.py:git:3",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/inventory/check_scope.py",
+      "target": "app/agents/inventory/check_scope.py:main:4",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/inventory/demo.py",
+      "target": "app/agents/inventory/agent.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/inventory/demo.py",
+      "target": "app/agents/inventory/demo.py:main:5",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/inventory/domain.py",
+      "target": "app/agents/inventory/domain.py:Snapshot:8",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/inventory/domain.py",
+      "target": "app/agents/inventory/domain.py:Query:27",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/inventory/domain.py",
+      "target": "app/agents/inventory/domain.py:AllocationStrategy:36",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/inventory/domain.py",
+      "target": "app/agents/inventory/domain.py:BayesianDemandStrategy:39",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/inventory/domain.py",
+      "target": "app/agents/inventory/domain.py:analyze:43",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/inventory/domain.py",
+      "target": "app/agents/inventory/domain.py:evaluate:64",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/inventory/domain.py",
+      "target": "app/agents/inventory/domain.py:reservations:23",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/inventory/domain.py",
+      "target": "app/agents/inventory/domain.py:allocate:37",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/inventory/domain.py",
+      "target": "app/agents/inventory/domain.py:estimate:40",
+      "type": "defines"
+    },
+    {
+      "source": "tests/inventory/test_inventory.py",
+      "target": "app/agents/inventory/domain.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/inventory/test_inventory.py",
+      "target": "tests/inventory/test_inventory.py:row:6",
+      "type": "defines"
+    },
+    {
+      "source": "tests/inventory/test_inventory.py",
+      "target": "tests/inventory/test_inventory.py:query:9",
+      "type": "defines"
+    },
+    {
+      "source": "tests/inventory/test_inventory.py",
+      "target": "tests/inventory/test_inventory.py:test_known_reorder_calculation:11",
+      "type": "defines"
+    },
+    {
+      "source": "tests/inventory/test_inventory.py",
+      "target": "tests/inventory/test_inventory.py:test_safety_stock_and_position:19",
+      "type": "defines"
+    },
+    {
+      "source": "tests/inventory/test_inventory.py",
+      "target": "tests/inventory/test_inventory.py:test_bad_input:26",
+      "type": "defines"
+    },
+    {
+      "source": "tests/inventory/test_inventory.py",
+      "target": "tests/inventory/test_inventory.py:test_latest_cutoff_and_filter:29",
+      "type": "defines"
+    },
+    {
+      "source": "tests/inventory/test_inventory.py",
+      "target": "tests/inventory/test_inventory.py:test_duplicate:36",
+      "type": "defines"
+    },
+    {
+      "source": "tests/inventory/test_inventory.py",
+      "target": "tests/inventory/test_inventory.py:test_missing_demand_and_zero:39",
+      "type": "defines"
+    },
+    {
+      "source": "tests/inventory/test_inventory.py",
+      "target": "tests/inventory/test_inventory.py:test_stockout_overstock_comparison:45",
+      "type": "defines"
+    },
+    {
+      "source": "tests/inventory/test_inventory.py",
+      "target": "tests/inventory/test_inventory.py:test_agent_scope_and_missing_data:51",
+      "type": "defines"
+    },
+    {
+      "source": "tests/inventory/test_inventory.py",
+      "target": "app/agents/inventory/agent.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/inventory/test_inventory.py",
+      "target": "tests/inventory/test_inventory.py:run:56",
+      "type": "defines"
+    },
+    {
+      "source": "tests/inventory/test_inventory.py",
+      "target": "app/agents/inventory/agent.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/inventory/test_inventory.py",
+      "target": "app/agents/inventory/domain.py",
+      "type": "tests"
+    }
+  ],
+  "limitations": "Safety stock assumes independent daily demand and fixed lead time: z*sigma*sqrt(lead days). Demand-based target covers lead+review days. Missing demand produces null risk/quantity; missing variability is warned and omitted. On-order timing is unknown and not used to claim immediate availability. Explicit as_of and age_days expose snapshot staleness. Latest valid snapshot selected per store/SKU; duplicate dates rejected. No real-time connector, Bayesian solver or multi-echelon optimizer implemented.",
+  "dependencies": [
+    "foundation contracts",
+    "future authorized integration"
+  ]
+}

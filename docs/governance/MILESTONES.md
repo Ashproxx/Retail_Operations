@@ -20,3 +20,8 @@ Official completion: **5%**. M0 PASS: documentation validated and published; all
 | M13 | 5% | integration/release-candidate | Explicit approved commits/base, integration only of those changes, full tests, startup, end-to-end demos, docs, no secrets, main untouched |
 
 Universal definition of done applies to every row. Order: M0, M1, M11, M2, M3, M9, M10, M6, M5, M4, M7, M8, M12, then approved M13. Never advance past failing mandatory criteria without a human-approved exception.
+
+
+## Approved integration-session update
+
+M0-M12 PASS: 95% weighted total, with exact source commits in `docs/integration/APPROVED_SOURCES.json`. M13 INCOMPLETE: local integrated code/tests/startup delivered, external model/data/container/CI validation remains as recorded in `docs/integration/REPORT.md`. Source-branch milestone records are preserved in `docs/integration/sources`. No main merge authorized.

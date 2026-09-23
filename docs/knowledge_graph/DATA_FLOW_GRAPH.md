@@ -1,13 +1,5 @@
-# Planned data flow
+# Data flow
 
-```mermaid
-flowchart TD
- csv[CSV or XLSX] --> validate[Validate and map actual columns]
- validate --> tables[Stores products snapshots sales]
- tables --> tools[Parameterized domain tools]
- tools --> result[AgentResult]
- result --> response[ChatResponse]
- result --> audit[Audit metadata]
-```
+See the implemented system, multi-agent, RAG and security flows in [ARCHITECTURE.md](../../ARCHITECTURE.md).
 
-No source data is present. Infer no actual table columns. Validate dates, numerical values, duplicates, missing values, stock and identifiers at ingestion. SQLite through SQLAlchemy is a proposed local starting point; Azure deployment remains future work. Never expose development fixtures as real data.
+CSV/XLSX -> explicit mapping -> domain validation -> transactional SQL -> authorized records -> domain result -> conflict/aggregation -> audit -> response.

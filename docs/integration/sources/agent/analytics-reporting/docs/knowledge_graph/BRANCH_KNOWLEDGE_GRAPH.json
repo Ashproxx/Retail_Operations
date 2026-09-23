@@ -1,0 +1,300 @@
+{
+  "branch": "agent/analytics-reporting",
+  "base_commit": "77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045",
+  "milestone": "M10",
+  "status": "PASS",
+  "verified_commit": "ffa8d8bd6208ec92a20b49bf914fb8c7513e68d1",
+  "official_completion": 55,
+  "nodes": [
+    {
+      "id": "app/agents/analytics/__init__.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/agents/analytics/agent.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/agents/analytics/check_scope.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/agents/analytics/demo.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/agents/analytics/domain.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "tests/analytics/test_analytics.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "agent/analytics-reporting",
+      "type": "branch"
+    },
+    {
+      "id": "app/agents/analytics/agent.py:Agent:8",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/analytics/agent.py:__init__:9",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/analytics/agent.py:run:12",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/analytics/check_scope.py:git:3",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/analytics/check_scope.py:main:4",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/analytics/demo.py:main:4",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/analytics/domain.py:Sale:9",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/analytics/domain.py:Query:22",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/analytics/domain.py:AnomalyDetector:33",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/analytics/domain.py:agent_metrics:37",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/analytics/domain.py:evaluate:47",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/analytics/domain.py:dates:29",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/analytics/domain.py:detect:34",
+      "type": "function"
+    },
+    {
+      "id": "tests/analytics/test_analytics.py:r:5",
+      "type": "function"
+    },
+    {
+      "id": "tests/analytics/test_analytics.py:q:6",
+      "type": "function"
+    },
+    {
+      "id": "tests/analytics/test_analytics.py:test_exact_revenue_and_latest_stock_counts:8",
+      "type": "function"
+    },
+    {
+      "id": "tests/analytics/test_analytics.py:test_grouping_and_rank_ties:15",
+      "type": "function"
+    },
+    {
+      "id": "tests/analytics/test_analytics.py:test_filters_empty_duplicate_zero_stock:23",
+      "type": "function"
+    },
+    {
+      "id": "tests/analytics/test_analytics.py:test_invalid_rows:30",
+      "type": "function"
+    },
+    {
+      "id": "tests/analytics/test_analytics.py:test_dates_and_metrics:33",
+      "type": "function"
+    },
+    {
+      "id": "tests/analytics/test_analytics.py:test_agent_empty:42",
+      "type": "function"
+    }
+  ],
+  "edges": [
+    {
+      "source": "agent/analytics-reporting",
+      "target": "app/agents/analytics/__init__.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/analytics-reporting",
+      "target": "app/agents/analytics/agent.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/analytics-reporting",
+      "target": "app/agents/analytics/check_scope.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/analytics-reporting",
+      "target": "app/agents/analytics/demo.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/analytics-reporting",
+      "target": "app/agents/analytics/domain.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/analytics-reporting",
+      "target": "tests/analytics/test_analytics.py",
+      "type": "owns"
+    },
+    {
+      "source": "app/agents/analytics/agent.py",
+      "target": "app/agents/analytics/domain.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/analytics/agent.py",
+      "target": "app/agents/analytics/agent.py:Agent:8",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/analytics/agent.py",
+      "target": "app/agents/analytics/agent.py:__init__:9",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/analytics/agent.py",
+      "target": "app/agents/analytics/agent.py:run:12",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/analytics/check_scope.py",
+      "target": "app/agents/analytics/check_scope.py:git:3",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/analytics/check_scope.py",
+      "target": "app/agents/analytics/check_scope.py:main:4",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/analytics/demo.py",
+      "target": "app/agents/analytics/agent.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/analytics/demo.py",
+      "target": "app/agents/analytics/demo.py:main:4",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/analytics/domain.py",
+      "target": "app/agents/analytics/domain.py:Sale:9",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/analytics/domain.py",
+      "target": "app/agents/analytics/domain.py:Query:22",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/analytics/domain.py",
+      "target": "app/agents/analytics/domain.py:AnomalyDetector:33",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/analytics/domain.py",
+      "target": "app/agents/analytics/domain.py:agent_metrics:37",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/analytics/domain.py",
+      "target": "app/agents/analytics/domain.py:evaluate:47",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/analytics/domain.py",
+      "target": "app/agents/analytics/domain.py:dates:29",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/analytics/domain.py",
+      "target": "app/agents/analytics/domain.py:detect:34",
+      "type": "defines"
+    },
+    {
+      "source": "tests/analytics/test_analytics.py",
+      "target": "app/agents/analytics/domain.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/analytics/test_analytics.py",
+      "target": "tests/analytics/test_analytics.py:r:5",
+      "type": "defines"
+    },
+    {
+      "source": "tests/analytics/test_analytics.py",
+      "target": "tests/analytics/test_analytics.py:q:6",
+      "type": "defines"
+    },
+    {
+      "source": "tests/analytics/test_analytics.py",
+      "target": "tests/analytics/test_analytics.py:test_exact_revenue_and_latest_stock_counts:8",
+      "type": "defines"
+    },
+    {
+      "source": "tests/analytics/test_analytics.py",
+      "target": "tests/analytics/test_analytics.py:test_grouping_and_rank_ties:15",
+      "type": "defines"
+    },
+    {
+      "source": "tests/analytics/test_analytics.py",
+      "target": "tests/analytics/test_analytics.py:test_filters_empty_duplicate_zero_stock:23",
+      "type": "defines"
+    },
+    {
+      "source": "tests/analytics/test_analytics.py",
+      "target": "tests/analytics/test_analytics.py:test_invalid_rows:30",
+      "type": "defines"
+    },
+    {
+      "source": "tests/analytics/test_analytics.py",
+      "target": "tests/analytics/test_analytics.py:test_dates_and_metrics:33",
+      "type": "defines"
+    },
+    {
+      "source": "tests/analytics/test_analytics.py",
+      "target": "tests/analytics/test_analytics.py:test_agent_empty:42",
+      "type": "defines"
+    },
+    {
+      "source": "tests/analytics/test_analytics.py",
+      "target": "app/agents/analytics/agent.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/analytics/test_analytics.py",
+      "target": "app/agents/analytics/agent.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/analytics/test_analytics.py",
+      "target": "app/agents/analytics/domain.py",
+      "type": "tests"
+    }
+  ],
+  "limitations": "Input rows must be daily store/SKU aggregates with duplicates rejected. Revenue excludes unprovided tax/discount/refund adjustments. Turnover is a unit-based proxy over observed stock snapshots, not financial inventory turnover; missing days are not imputed. Audit metrics use full request latency, not isolated agent runtime. No trained anomaly detector, real operational data or dashboard/API integration.",
+  "dependencies": [
+    "foundation contracts",
+    "future authorized integration"
+  ]
+}

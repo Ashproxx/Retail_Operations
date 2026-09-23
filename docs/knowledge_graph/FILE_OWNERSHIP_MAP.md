@@ -1,20 +1,120 @@
-# File ownership
+# Integrated file ownership
 
-| Branch | Scope |
+| Path | Integration owner |
 |---|---|
-| context/project-knowledge | knowledge graph and governance |
-| foundation/core-platform | configuration, schemas, database abstractions, FastAPI skeleton |
-| agent/router | router implementation, tools, domain tests |
-| agent/inventory | inventory implementation, tools, domain tests |
-| agent/order-fulfillment | order-fulfillment implementation, tools, domain tests |
-| agent/supply-chain | supply-chain implementation, tools, domain tests |
-| agent/pricing-promotions | pricing-promotions implementation, tools, domain tests |
-| agent/customer-service | customer-service implementation, tools, domain tests |
-| agent/returns-refunds | returns-refunds implementation, tools, domain tests |
-| agent/demand-forecasting | demand-forecasting implementation, tools, domain tests |
-| agent/analytics-reporting | analytics-reporting implementation, tools, domain tests |
-| platform/agentic-rag | ingestion, chunking, embeddings, retrieval, verification |
-| security/privacy-integrity | RBAC, hashes, audit integrity |
-| integration/release-candidate | approved integration and full QA |
-
-Current branch owns docs/governance/*, docs/knowledge_graph/* and branch metadata only. Each later branch owns its own branch metadata and relevant tests. Shared file exceptions require a documented SHARED DELTA; none in M0. README.md remains unchanged.
+| `app/__init__.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/__init__.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/analytics/__init__.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/analytics/agent.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/analytics/check_scope.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/analytics/demo.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/analytics/domain.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/base_agent.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/forecasting/__init__.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/forecasting/agent.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/forecasting/check_scope.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/forecasting/demo.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/forecasting/domain.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/inventory/__init__.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/inventory/agent.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/inventory/check_scope.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/inventory/demo.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/inventory/domain.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/orders/__init__.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/orders/agent.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/orders/check_scope.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/orders/demo.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/orders/domain.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/pricing/__init__.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/pricing/agent.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/pricing/check_scope.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/pricing/demo.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/pricing/domain.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/returns/__init__.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/returns/agent.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/returns/check_scope.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/returns/demo.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/returns/domain.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/supply/__init__.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/supply/agent.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/supply/check_scope.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/supply/demo.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/supply/domain.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/support/__init__.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/support/agent.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/support/check_scope.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/support/demo.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/agents/support/domain.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/api/__init__.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/api/schemas.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/core/__init__.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/core/config.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/core/exceptions.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/core/logging.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/integration/__init__.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/integration/cli.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/integration/config.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/integration/contracts.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/integration/demo.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/integration/fixtures.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/integration/llm.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/integration/loader.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/integration/orchestrator.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/integration/parameters.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/integration/rag.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/integration/registry.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/integration/repository.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/integration/routes.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/integration/runtime.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/main.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/models/__init__.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/models/database.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/orchestration/router/__init__.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/orchestration/router/agent.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/orchestration/router/audit.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/orchestration/router/check_scope.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/orchestration/router/classifier.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/orchestration/router/contracts.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/orchestration/router/demo.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/orchestration/router/graph.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/rag/__init__.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/rag/check_scope.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/rag/contracts.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/rag/demo.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/rag/embeddings.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/rag/ingestion.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/rag/pipeline.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/rag/store.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/security/__init__.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/security/audit.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/security/check_scope.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/security/config.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/security/demo.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/security/integrity.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/security/policy.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/security/retrieval.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/services/__init__.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/services/database_service.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/services/dataset_loader.py` | integration/release-candidate; original source ownership preserved in archives |
+| `scripts/check_branch_scope.py` | integration/release-candidate; original source ownership preserved in archives |
+| `scripts/update_knowledge_graph.py` | integration/release-candidate; original source ownership preserved in archives |
+| `tests/__init__.py` | integration/release-candidate; original source ownership preserved in archives |
+| `tests/analytics/test_analytics.py` | integration/release-candidate; original source ownership preserved in archives |
+| `tests/forecasting/test_forecasting.py` | integration/release-candidate; original source ownership preserved in archives |
+| `tests/foundation/test_foundation.py` | integration/release-candidate; original source ownership preserved in archives |
+| `tests/integration/__init__.py` | integration/release-candidate; original source ownership preserved in archives |
+| `tests/integration/conftest.py` | integration/release-candidate; original source ownership preserved in archives |
+| `tests/integration/test_api.py` | integration/release-candidate; original source ownership preserved in archives |
+| `tests/integration/test_cli.py` | integration/release-candidate; original source ownership preserved in archives |
+| `tests/integration/test_provider.py` | integration/release-candidate; original source ownership preserved in archives |
+| `tests/integration/test_rag.py` | integration/release-candidate; original source ownership preserved in archives |
+| `tests/integration/test_storage.py` | integration/release-candidate; original source ownership preserved in archives |
+| `tests/inventory/test_inventory.py` | integration/release-candidate; original source ownership preserved in archives |
+| `tests/orders/test_orders.py` | integration/release-candidate; original source ownership preserved in archives |
+| `tests/pricing/test_pricing.py` | integration/release-candidate; original source ownership preserved in archives |
+| `tests/rag/test_rag.py` | integration/release-candidate; original source ownership preserved in archives |
+| `tests/returns/test_returns.py` | integration/release-candidate; original source ownership preserved in archives |
+| `tests/router/test_router.py` | integration/release-candidate; original source ownership preserved in archives |
+| `tests/security/test_security.py` | integration/release-candidate; original source ownership preserved in archives |
+| `tests/supply/test_supply.py` | integration/release-candidate; original source ownership preserved in archives |
+| `tests/support/test_support.py` | integration/release-candidate; original source ownership preserved in archives |

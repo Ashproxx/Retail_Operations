@@ -1,0 +1,322 @@
+{
+  "branch": "agent/returns-refunds",
+  "base_commit": "77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045",
+  "milestone": "M8",
+  "status": "PASS",
+  "verified_commit": "86093759aea958cade2c8c680ed51f04db98c76a",
+  "official_completion": 90,
+  "nodes": [
+    {
+      "id": "app/agents/returns/__init__.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/agents/returns/agent.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/agents/returns/check_scope.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/agents/returns/demo.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/agents/returns/domain.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "tests/returns/test_returns.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "agent/returns-refunds",
+      "type": "branch"
+    },
+    {
+      "id": "app/agents/returns/agent.py:Agent:8",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/returns/agent.py:__init__:9",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/returns/agent.py:run:12",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/returns/check_scope.py:git:3",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/returns/check_scope.py:main:4",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/returns/demo.py:main:4",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/returns/domain.py:Policy:9",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/returns/domain.py:ReturnRecord:16",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/returns/domain.py:Query:37",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/returns/domain.py:FraudRiskModel:49",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/returns/domain.py:RefundConnector:52",
+      "type": "class"
+    },
+    {
+      "id": "app/agents/returns/domain.py:categorize_reason:56",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/returns/domain.py:evaluate:63",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/returns/domain.py:totals:31",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/returns/domain.py:assess:50",
+      "type": "function"
+    },
+    {
+      "id": "app/agents/returns/domain.py:lookup:53",
+      "type": "function"
+    },
+    {
+      "id": "tests/returns/test_returns.py:r:5",
+      "type": "function"
+    },
+    {
+      "id": "tests/returns/test_returns.py:q:6",
+      "type": "function"
+    },
+    {
+      "id": "tests/returns/test_returns.py:test_inclusive_window_and_amount:8",
+      "type": "function"
+    },
+    {
+      "id": "tests/returns/test_returns.py:test_policy_rules:15",
+      "type": "function"
+    },
+    {
+      "id": "tests/returns/test_returns.py:test_missing_policy_order_and_refund:17",
+      "type": "function"
+    },
+    {
+      "id": "tests/returns/test_returns.py:test_refund_cap_and_flags:23",
+      "type": "function"
+    },
+    {
+      "id": "tests/returns/test_returns.py:test_validation_and_duplicates:28",
+      "type": "function"
+    },
+    {
+      "id": "tests/returns/test_returns.py:test_taxonomy_and_delivery_absence:34",
+      "type": "function"
+    }
+  ],
+  "edges": [
+    {
+      "source": "agent/returns-refunds",
+      "target": "app/agents/returns/__init__.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/returns-refunds",
+      "target": "app/agents/returns/agent.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/returns-refunds",
+      "target": "app/agents/returns/check_scope.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/returns-refunds",
+      "target": "app/agents/returns/demo.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/returns-refunds",
+      "target": "app/agents/returns/domain.py",
+      "type": "owns"
+    },
+    {
+      "source": "agent/returns-refunds",
+      "target": "tests/returns/test_returns.py",
+      "type": "owns"
+    },
+    {
+      "source": "app/agents/returns/agent.py",
+      "target": "app/agents/returns/domain.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/returns/agent.py",
+      "target": "app/agents/returns/agent.py:Agent:8",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/returns/agent.py",
+      "target": "app/agents/returns/agent.py:__init__:9",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/returns/agent.py",
+      "target": "app/agents/returns/agent.py:run:12",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/returns/check_scope.py",
+      "target": "app/agents/returns/check_scope.py:git:3",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/returns/check_scope.py",
+      "target": "app/agents/returns/check_scope.py:main:4",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/returns/demo.py",
+      "target": "app/agents/returns/agent.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/agents/returns/demo.py",
+      "target": "app/agents/returns/demo.py:main:4",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/returns/domain.py",
+      "target": "app/agents/returns/domain.py:Policy:9",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/returns/domain.py",
+      "target": "app/agents/returns/domain.py:ReturnRecord:16",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/returns/domain.py",
+      "target": "app/agents/returns/domain.py:Query:37",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/returns/domain.py",
+      "target": "app/agents/returns/domain.py:FraudRiskModel:49",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/returns/domain.py",
+      "target": "app/agents/returns/domain.py:RefundConnector:52",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/returns/domain.py",
+      "target": "app/agents/returns/domain.py:categorize_reason:56",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/returns/domain.py",
+      "target": "app/agents/returns/domain.py:evaluate:63",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/returns/domain.py",
+      "target": "app/agents/returns/domain.py:totals:31",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/returns/domain.py",
+      "target": "app/agents/returns/domain.py:assess:50",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/returns/domain.py",
+      "target": "app/agents/returns/domain.py:lookup:53",
+      "type": "defines"
+    },
+    {
+      "source": "tests/returns/test_returns.py",
+      "target": "app/agents/returns/domain.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/returns/test_returns.py",
+      "target": "tests/returns/test_returns.py:r:5",
+      "type": "defines"
+    },
+    {
+      "source": "tests/returns/test_returns.py",
+      "target": "tests/returns/test_returns.py:q:6",
+      "type": "defines"
+    },
+    {
+      "source": "tests/returns/test_returns.py",
+      "target": "tests/returns/test_returns.py:test_inclusive_window_and_amount:8",
+      "type": "defines"
+    },
+    {
+      "source": "tests/returns/test_returns.py",
+      "target": "tests/returns/test_returns.py:test_policy_rules:15",
+      "type": "defines"
+    },
+    {
+      "source": "tests/returns/test_returns.py",
+      "target": "tests/returns/test_returns.py:test_missing_policy_order_and_refund:17",
+      "type": "defines"
+    },
+    {
+      "source": "tests/returns/test_returns.py",
+      "target": "tests/returns/test_returns.py:test_refund_cap_and_flags:23",
+      "type": "defines"
+    },
+    {
+      "source": "tests/returns/test_returns.py",
+      "target": "tests/returns/test_returns.py:test_validation_and_duplicates:28",
+      "type": "defines"
+    },
+    {
+      "source": "tests/returns/test_returns.py",
+      "target": "tests/returns/test_returns.py:test_taxonomy_and_delivery_absence:34",
+      "type": "defines"
+    },
+    {
+      "source": "tests/returns/test_returns.py",
+      "target": "app/agents/returns/agent.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/returns/test_returns.py",
+      "target": "app/agents/returns/domain.py",
+      "type": "tests"
+    }
+  ],
+  "limitations": "No real returns or policies supplied. Policy absence yields insufficient evidence, and refund status is never invented. Amounts allocate payment equally per unit and are capped at unrefunded recorded payment; tax/fee allocation remains integration work. Receipt, condition and serial mismatch are reported inputs requiring verification. Risk thresholds are heuristic review flags, not trained fraud detection. No return, refund or financial transaction executed.",
+  "dependencies": [
+    "foundation contracts",
+    "future authorized integration"
+  ]
+}

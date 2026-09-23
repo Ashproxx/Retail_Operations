@@ -1,29 +1,27 @@
-# M1 deliverables
+# Integration deliverables
 
-## Implementation
-- [x] Python package and dependency/install metadata
-- [x] Settings, environment variables and .env.example
-- [x] Logging and common exceptions
-- [x] Pydantic contracts and abstract BaseAgent
-- [x] SQLAlchemy database lifecycle and transactional abstraction
-- [x] Abstract DatasetLoader and source validation
-- [x] FastAPI skeleton, health probe and OpenAPI
-- [x] Test scaffolding and .gitignore
+M13 INCOMPLETE; weighted completion remains 95%.
 
-## Validation
-- [x] 20 foundation tests passed; 0 failed; 0 skipped
-- [x] Invalid inputs, missing files, agent failures and database rollback covered
-- [x] Two dependency deprecation warnings documented
-- [x] Branch README, deliverables and graph delta current
-- [x] Final compile, scope, dependency and live Uvicorn startup checks verified
+- [x] Explicit approval recorded with pinned sources/base
+- [x] Candidate created from approved foundation
+- [x] Approved source commits integrated; source implementations preserved
+- [x] Original metadata archived by branch
+- [x] Authenticated API and explicit role/store checks before reads
+- [x] All eight domain agents wired through LangGraph and registry
+- [x] Multi-agent aggregation, conflict escalation and bounded execution
+- [x] Conservative natural-language parameter bridge and scoped follow-up memory
+- [x] Atomic CSV/XLSX ingestion with validation and fixture provenance
+- [x] Persistent SQL records, owned feedback, durable audit chain
+- [x] Real Chroma/local-embedding tests and signed-manifest rejection
+- [x] Ollama protocol adapter and tested deterministic failure fallback
+- [x] Full available automated suite and live Uvicorn startup verification
+- [x] Docker and read-only CI configurations
+- [x] Setup/API/data/architecture documentation and regenerated graphs
+- [x] Source-preservation/ancestry scope guard
+- [ ] Live Ollama smoke test with an installed model
+- [ ] Approved pretrained embeddings and labelled retrieval evaluation
+- [ ] Real retail dataset mapping and end-to-end validation
+- [ ] Docker build/runtime and remote CI success verified
+- [ ] M13 complete / eligible for final human review
 
-## Git hygiene
-- [x] Branch created from human-approved M0 base
-- [x] No secrets or private business data
-- [x] No changes to context, other development branches or main
-- [x] Committed and published to foundation/core-platform: a9a8df42e84a7eff3950cee94b4a5a2760de0c4c
-- [x] Remote HEAD and unchanged main/context verified with git ls-remote
-
-## Human review
-- [x] Approved context base for M1
-- [ ] Integration approved (separate future gate)
+Publication evidence and source/main ref checks are recorded in docs/integration/REPORT.md and the session report. No main merge is authorized.

@@ -114,14 +114,14 @@ def test_logging_drops_payload_and_exception_details():
 
 def test_health_root_and_openapi():
     with TestClient(create_app(Settings(_env_file=None))) as client:
-        assert client.get('/').json()['stage'] == 'foundation'
+        assert client.get('/').json()['stage'] == 'integration-candidate'
         health = client.get('/health')
         assert health.status_code == 200
         assert health.json()['database'] == 'ok'
         UUID(health.headers['X-Request-ID'])
         assert '/health' in client.get('/openapi.json').json()['paths']
         assert client.get('/docs').status_code == 200
-        assert client.post('/api/chat', json={'message': 'hello'}).status_code == 404
+        assert client.post('/api/chat', json={'message': 'hello', 'session_id':'test'}).status_code == 401
 
 
 def test_health_reports_database_failure(monkeypatch):

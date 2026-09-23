@@ -1,0 +1,240 @@
+{
+  "branch": "platform/agentic-rag",
+  "base_commit": "77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045",
+  "milestone": "M11",
+  "status": "PASS",
+  "nodes": [
+    {
+      "id": "app/rag/__init__.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/rag/check_scope.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/rag/contracts.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/rag/demo.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/rag/embeddings.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/rag/ingestion.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/rag/pipeline.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/rag/store.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/rag/requirements.txt",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "tests/rag/test_rag.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "platform/agentic-rag",
+      "type": "branch",
+      "status": "active"
+    }
+  ],
+  "edges": [
+    {
+      "source": "platform/agentic-rag",
+      "target": "app/rag/__init__.py",
+      "type": "owns"
+    },
+    {
+      "source": "platform/agentic-rag",
+      "target": "app/rag/check_scope.py",
+      "type": "owns"
+    },
+    {
+      "source": "platform/agentic-rag",
+      "target": "app/rag/contracts.py",
+      "type": "owns"
+    },
+    {
+      "source": "platform/agentic-rag",
+      "target": "app/rag/demo.py",
+      "type": "owns"
+    },
+    {
+      "source": "platform/agentic-rag",
+      "target": "app/rag/embeddings.py",
+      "type": "owns"
+    },
+    {
+      "source": "platform/agentic-rag",
+      "target": "app/rag/ingestion.py",
+      "type": "owns"
+    },
+    {
+      "source": "platform/agentic-rag",
+      "target": "app/rag/pipeline.py",
+      "type": "owns"
+    },
+    {
+      "source": "platform/agentic-rag",
+      "target": "app/rag/store.py",
+      "type": "owns"
+    },
+    {
+      "source": "platform/agentic-rag",
+      "target": "app/rag/requirements.txt",
+      "type": "owns"
+    },
+    {
+      "source": "platform/agentic-rag",
+      "target": "tests/rag/test_rag.py",
+      "type": "owns"
+    },
+    {
+      "source": "app/rag/demo.py",
+      "target": "app/rag/contracts.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/rag/demo.py",
+      "target": "app/rag/embeddings.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/rag/demo.py",
+      "target": "app/rag/ingestion.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/rag/demo.py",
+      "target": "app/rag/store.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/rag/demo.py",
+      "target": "app/rag/pipeline.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/rag/ingestion.py",
+      "target": "app/rag/contracts.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/rag/pipeline.py",
+      "target": "app/rag/contracts.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/rag/pipeline.py",
+      "target": "app/rag/store.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/rag/store.py",
+      "target": "app/rag/contracts.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/rag/store.py",
+      "target": "app/rag/embeddings.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/rag/store.py",
+      "target": "app/rag/ingestion.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "app/rag/contracts.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "app/rag/ingestion.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "app/rag/embeddings.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "app/rag/store.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "app/rag/pipeline.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "app/rag/contracts.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "app/rag/embeddings.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "app/rag/ingestion.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "app/rag/pipeline.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/rag/test_rag.py",
+      "target": "app/rag/store.py",
+      "type": "tests"
+    }
+  ],
+  "interface_changes": [
+    "Document/Chunk/Hit/RagResult",
+    "Embedder",
+    "ChromaStore",
+    "RagPipeline"
+  ],
+  "dependencies": [
+    "foundation Contract",
+    "ChromaDB",
+    "sentence-transformers",
+    "future trusted security scope adapter"
+  ],
+  "limitations": [
+    "lexical fixture evaluation only",
+    "no pretrained semantic-quality evaluation",
+    "no LLM or route integration",
+    "unkeyed hashes are not authentication"
+  ],
+  "verified_implementation_commit": "c31c4e077f7a3e45a19181d6dc2df6fb8cba0837",
+  "official_completion_percent": 23
+}

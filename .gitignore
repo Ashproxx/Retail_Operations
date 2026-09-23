@@ -14,3 +14,6 @@ build/
 dist/
 data/raw/*
 !data/raw/.gitkeep
+.retailops/
+secrets/
+models/

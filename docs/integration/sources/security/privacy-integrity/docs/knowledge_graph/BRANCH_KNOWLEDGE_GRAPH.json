@@ -1,0 +1,583 @@
+{
+  "branch": "security/privacy-integrity",
+  "base_commit": "77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045",
+  "milestone": "M12",
+  "status": "PASS",
+  "official_completion": 95,
+  "verified_commit": "15bdd6eb73f1564a950f167ca1f20fbea09f9f0f",
+  "nodes": [
+    {
+      "id": "app/security/__init__.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/security/audit.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/security/check_scope.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/security/config.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/security/demo.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/security/integrity.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/security/policy.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/security/retrieval.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "tests/security/test_security.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "security/privacy-integrity",
+      "type": "branch"
+    },
+    {
+      "id": "app/security/audit.py:verify_chain:10",
+      "type": "function"
+    },
+    {
+      "id": "app/security/audit.py:AuditChain:26",
+      "type": "class"
+    },
+    {
+      "id": "app/security/audit.py:__init__:27",
+      "type": "function"
+    },
+    {
+      "id": "app/security/audit.py:read:29",
+      "type": "function"
+    },
+    {
+      "id": "app/security/audit.py:append:37",
+      "type": "function"
+    },
+    {
+      "id": "app/security/check_scope.py:git:3",
+      "type": "function"
+    },
+    {
+      "id": "app/security/check_scope.py:main:4",
+      "type": "function"
+    },
+    {
+      "id": "app/security/config.py:SecuritySettings:4",
+      "type": "class"
+    },
+    {
+      "id": "app/security/config.py:key_length:8",
+      "type": "function"
+    },
+    {
+      "id": "app/security/config.py:require_key:12",
+      "type": "function"
+    },
+    {
+      "id": "app/security/demo.py:main:12",
+      "type": "function"
+    },
+    {
+      "id": "app/security/integrity.py:IntegrityFailure:7",
+      "type": "class"
+    },
+    {
+      "id": "app/security/integrity.py:Document:11",
+      "type": "class"
+    },
+    {
+      "id": "app/security/integrity.py:SealedDocument:19",
+      "type": "class"
+    },
+    {
+      "id": "app/security/integrity.py:canonical:25",
+      "type": "function"
+    },
+    {
+      "id": "app/security/integrity.py:seal:29",
+      "type": "function"
+    },
+    {
+      "id": "app/security/integrity.py:verify:36",
+      "type": "function"
+    },
+    {
+      "id": "app/security/policy.py:AccessDenied:9",
+      "type": "class"
+    },
+    {
+      "id": "app/security/policy.py:AuthenticationFailed:13",
+      "type": "class"
+    },
+    {
+      "id": "app/security/policy.py:Grant:27",
+      "type": "class"
+    },
+    {
+      "id": "app/security/policy.py:TokenAuthenticator:34",
+      "type": "class"
+    },
+    {
+      "id": "app/security/policy.py:authorize:52",
+      "type": "function"
+    },
+    {
+      "id": "app/security/policy.py:ToolRegistry:57",
+      "type": "class"
+    },
+    {
+      "id": "app/security/policy.py:__init__:36",
+      "type": "function"
+    },
+    {
+      "id": "app/security/policy.py:authenticate:40",
+      "type": "function"
+    },
+    {
+      "id": "app/security/policy.py:__init__:58",
+      "type": "function"
+    },
+    {
+      "id": "app/security/policy.py:register:59",
+      "type": "function"
+    },
+    {
+      "id": "app/security/policy.py:invoke:62",
+      "type": "function"
+    },
+    {
+      "id": "app/security/retrieval.py:retrieve_verified:11",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py:ctx:14",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py:doc:15",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py:event:16",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py:test_authentication_context_cannot_be_role_claim:19",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py:test_role_allow:28",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py:test_deny_unknown_scope_or_role:31",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py:test_tools_authorize_before_side_effect_and_prevent_context_override:35",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py:test_document_integrity_binds_text_and_scope:46",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py:test_retrieval_authorizes_before_provider_and_checks_scope:55",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py:test_tampered_retrieval_rejected:64",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py:test_audit_roundtrip_mutation_reorder_truncation_and_anchor:69",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py:test_bad_log_and_secret_settings:82",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py:test_expired_grant_and_missing_log_detected:93",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py:provider:57",
+      "type": "function"
+    }
+  ],
+  "edges": [
+    {
+      "source": "security/privacy-integrity",
+      "target": "app/security/__init__.py",
+      "type": "owns"
+    },
+    {
+      "source": "security/privacy-integrity",
+      "target": "app/security/audit.py",
+      "type": "owns"
+    },
+    {
+      "source": "security/privacy-integrity",
+      "target": "app/security/check_scope.py",
+      "type": "owns"
+    },
+    {
+      "source": "security/privacy-integrity",
+      "target": "app/security/config.py",
+      "type": "owns"
+    },
+    {
+      "source": "security/privacy-integrity",
+      "target": "app/security/demo.py",
+      "type": "owns"
+    },
+    {
+      "source": "security/privacy-integrity",
+      "target": "app/security/integrity.py",
+      "type": "owns"
+    },
+    {
+      "source": "security/privacy-integrity",
+      "target": "app/security/policy.py",
+      "type": "owns"
+    },
+    {
+      "source": "security/privacy-integrity",
+      "target": "app/security/retrieval.py",
+      "type": "owns"
+    },
+    {
+      "source": "security/privacy-integrity",
+      "target": "tests/security/test_security.py",
+      "type": "owns"
+    },
+    {
+      "source": "app/security/audit.py",
+      "target": "app/security/integrity.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/security/audit.py",
+      "target": "app/security/audit.py:verify_chain:10",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/audit.py",
+      "target": "app/security/audit.py:AuditChain:26",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/audit.py",
+      "target": "app/security/audit.py:__init__:27",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/audit.py",
+      "target": "app/security/audit.py:read:29",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/audit.py",
+      "target": "app/security/audit.py:append:37",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/check_scope.py",
+      "target": "app/security/check_scope.py:git:3",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/check_scope.py",
+      "target": "app/security/check_scope.py:main:4",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/config.py",
+      "target": "app/security/config.py:SecuritySettings:4",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/config.py",
+      "target": "app/security/config.py:key_length:8",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/config.py",
+      "target": "app/security/config.py:require_key:12",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/demo.py",
+      "target": "app/security/policy.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/security/demo.py",
+      "target": "app/security/integrity.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/security/demo.py",
+      "target": "app/security/retrieval.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/security/demo.py",
+      "target": "app/security/audit.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/security/demo.py",
+      "target": "app/security/demo.py:main:12",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/integrity.py",
+      "target": "app/security/integrity.py:IntegrityFailure:7",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/integrity.py",
+      "target": "app/security/integrity.py:Document:11",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/integrity.py",
+      "target": "app/security/integrity.py:SealedDocument:19",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/integrity.py",
+      "target": "app/security/integrity.py:canonical:25",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/integrity.py",
+      "target": "app/security/integrity.py:seal:29",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/integrity.py",
+      "target": "app/security/integrity.py:verify:36",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/policy.py",
+      "target": "app/security/policy.py:AccessDenied:9",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/policy.py",
+      "target": "app/security/policy.py:AuthenticationFailed:13",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/policy.py",
+      "target": "app/security/policy.py:Grant:27",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/policy.py",
+      "target": "app/security/policy.py:TokenAuthenticator:34",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/policy.py",
+      "target": "app/security/policy.py:authorize:52",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/policy.py",
+      "target": "app/security/policy.py:ToolRegistry:57",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/policy.py",
+      "target": "app/security/policy.py:__init__:36",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/policy.py",
+      "target": "app/security/policy.py:authenticate:40",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/policy.py",
+      "target": "app/security/policy.py:__init__:58",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/policy.py",
+      "target": "app/security/policy.py:register:59",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/policy.py",
+      "target": "app/security/policy.py:invoke:62",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/retrieval.py",
+      "target": "app/security/policy.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/security/retrieval.py",
+      "target": "app/security/integrity.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/security/retrieval.py",
+      "target": "app/security/retrieval.py:retrieve_verified:11",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "app/security/policy.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "app/security/integrity.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "app/security/retrieval.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "app/security/audit.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "app/security/config.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py:ctx:14",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py:doc:15",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py:event:16",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py:test_authentication_context_cannot_be_role_claim:19",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py:test_role_allow:28",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py:test_deny_unknown_scope_or_role:31",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py:test_tools_authorize_before_side_effect_and_prevent_context_override:35",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py:test_document_integrity_binds_text_and_scope:46",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py:test_retrieval_authorizes_before_provider_and_checks_scope:55",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py:test_tampered_retrieval_rejected:64",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py:test_audit_roundtrip_mutation_reorder_truncation_and_anchor:69",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py:test_bad_log_and_secret_settings:82",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py:test_expired_grant_and_missing_log_detected:93",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py:provider:57",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "app/security/audit.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "app/security/config.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "app/security/integrity.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "app/security/policy.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "app/security/retrieval.py",
+      "type": "tests"
+    }
+  ],
+  "dependencies": [
+    "foundation contracts",
+    "future API and agent integration",
+    "trusted external key/anchor provisioning"
+  ]
+}
