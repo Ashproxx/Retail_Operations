@@ -2,7 +2,7 @@
 
 Branch: platform/agentic-rag
 Parent branch / base commit: foundation/core-platform / 77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045
-Milestone: M11; implementation and local validation PASS, publication pending
+Milestone: M11 PASS; official completion 23% (M0 5% + M1 10% + M11 8%)
 Owner scope: ingestion, chunking, embeddings, ChromaDB, retrieval, verification and RAG tests
 Human approval status: user authorized continuation; no cross-branch integration or main merge approved
 
@@ -94,7 +94,7 @@ Filters run inside vector queries before returned text is processed, but caller-
 Pinned foundation base 77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045. The published implementation SHA and final remote SHA are recorded at the savepoint.
 
 ## Latest test result
-33 passed; demo passed. Compile, dependencies, graph and scope validated before publication. Publication verification pending. Official completion remains 15% until M11 remote savepoint is verified; then M11 adds 8% for 23%.
+33 passed; demo passed. Compile, dependencies, graph and scope validated before publication. Implementation savepoint c31c4e077f7a3e45a19181d6dc2df6fb8cba0837 published and verified with git ls-remote. Main, context and foundation remain unchanged. Official completion 23%.
 
 ## Next tasks
 Verify M11 publication; create agent/router from pinned foundation, implement intent plans and escalation on that branch; implement inventory on its own branch; evaluate pretrained embeddings against real approved retail documents. Integration remains a separate human gate.

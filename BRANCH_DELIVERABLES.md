@@ -10,9 +10,9 @@
 - [x] Branch README and knowledge delta
 - [x] 33 passing tests; fixture demo verified
 - [x] Compile/dependency/graph/scope final validation
-- [ ] Commit and publication to platform/agentic-rag verified
-- [ ] Remote HEAD and unchanged main/context/foundation verified
+- [x] Commit and publication to platform/agentic-rag verified: c31c4e077f7a3e45a19181d6dc2df6fb8cba0837
+- [x] Remote HEAD and unchanged main/context/foundation verified
 - [x] No private data, credentials or unrelated branch changes
 - [ ] Approved for integration (separate gate)
 
-Semantic pretrained-model quality and real-data validation are not claimed. Current M11 status: local PASS, publication pending. Previous passed milestones: M0+M1 = 15%; M11 earns 8% only after verified publication.
+Semantic pretrained-model quality and real-data validation are not claimed. M11 PASS with verified publication; official completion 23% (M0 + M1 + M11).

@@ -2,7 +2,7 @@
   "branch": "platform/agentic-rag",
   "base_commit": "77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045",
   "milestone": "M11",
-  "status": "local-pass-publication-pending",
+  "status": "PASS",
   "nodes": [
     {
       "id": "app/rag/__init__.py",
@@ -234,5 +234,7 @@
     "no pretrained semantic-quality evaluation",
     "no LLM or route integration",
     "unkeyed hashes are not authentication"
-  ]
+  ],
+  "verified_implementation_commit": "c31c4e077f7a3e45a19181d6dc2df6fb8cba0837",
+  "official_completion_percent": 23
 }

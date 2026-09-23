@@ -23,4 +23,4 @@ Implemented: ingestion, overlapping chunks, provenance hashes, CPU local embeddi
 
 New interfaces: Document, Chunk, Hit, RagResult, RagSettings, Embedder, ChromaStore, RagPipeline. No modification to foundation interfaces. app/rag/requirements.txt owns additional dependencies. No shared delta or integration. Scope authorization and trusted hash storage remain security-branch dependencies.
 
-Local baseline verified with a sentence-transformers BoW model. Semantic pretrained retrieval quality and production policies are unverified. Coverage is a heuristic and output is an evidence excerpt, not generative reasoning. Publication pending; M11 cannot earn its 8% until verified.
+Local baseline verified with a sentence-transformers BoW model. Semantic pretrained retrieval quality and production policies are unverified. Coverage is a heuristic and output is an evidence excerpt, not generative reasoning. Publication c31c4e077f7a3e45a19181d6dc2df6fb8cba0837 verified. M11 PASS; official completion 23%.
