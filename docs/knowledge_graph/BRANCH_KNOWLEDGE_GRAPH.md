@@ -17,4 +17,4 @@ Interfaces: Query, validated domain records, evaluate(records, query), Agent(Bas
 
 No real returns or policies supplied. Policy absence yields insufficient evidence, and refund status is never invented. Amounts allocate payment equally per unit and are capped at unrefunded recorded payment; tax/fee allocation remains integration work. Receipt, condition and serial mismatch are reported inputs requiring verification. Risk thresholds are heuristic review flags, not trained fraud detection. No return, refund or financial transaction executed.
 
-31 nodes and 35 edges in JSON. 29 tests passed. Remote savepoint: pending. Official completion 84%. No master graph updates, shared delta or branch integration.
+31 nodes and 35 edges in JSON. 29 tests passed. Remote savepoint: 86093759aea958cade2c8c680ed51f04db98c76a. Official completion 90%. No master graph updates, shared delta or branch integration.

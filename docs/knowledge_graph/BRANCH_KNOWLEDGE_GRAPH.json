@@ -2,9 +2,9 @@
   "branch": "agent/returns-refunds",
   "base_commit": "77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045",
   "milestone": "M8",
-  "status": "publication-pending",
-  "verified_commit": "pending",
-  "official_completion": 84,
+  "status": "PASS",
+  "verified_commit": "86093759aea958cade2c8c680ed51f04db98c76a",
+  "official_completion": 90,
   "nodes": [
     {
       "id": "app/agents/returns/__init__.py",

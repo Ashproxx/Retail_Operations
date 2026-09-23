@@ -7,8 +7,8 @@
 - [x] Compile, scope, graph and whitespace checks
 - [x] Branch README and Markdown/JSON graph delta
 - [x] No private data/secrets, unrelated changes or merges
-- [ ] Published and remote HEAD verified: pending
-- [ ] Other branch heads unchanged
+- [x] Published and remote HEAD verified: 86093759aea958cade2c8c680ed51f04db98c76a
+- [x] Other branch heads unchanged
 - [ ] Human approved for integration (separate gate)
 
-Official completion: 84%. Partial or unverified milestones earn no credit.
+Official completion: 90%. Partial or unverified milestones earn no credit.
