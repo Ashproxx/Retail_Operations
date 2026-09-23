@@ -1,24 +1,20 @@
-# M1 foundation delta
+# M3 domain delta
 
-Approved base: 3cc1a8df36c49147daac2c3967f37020bb0f5654. Master/context graphs remain unchanged. Branch JSON provides file ownership, import and test relationships.
+Branch agent/inventory, pinned foundation 77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045. Latest-as-of stock snapshots, low stock, reorder-point comparison, lead-time stockout risk, safety stock, inventory position, reorder quantities, net stock movement, overstock, store/SKU filters and cross-store totals. AllocationStrategy and BayesianDemandStrategy protocols prepare future multi-echelon/game-theory extensions.
 
 ```mermaid
 flowchart TD
-    env[Environment] --> config[Settings]
-    config --> app[FastAPI factory]
-    app --> health[Database health]
-    health --> db[SQLAlchemy lifecycle]
-    app --> logs[Metadata logs]
-    app --> errors[Sanitized errors]
-    contracts[Pydantic contracts] --> agents[BaseAgent interface]
-    contracts --> dataset[DatasetLoader interface]
-    tests[Foundation tests] --> app
-    tests --> db
-    tests --> contracts
+ input[Validated structured request] --> scope[Trusted scope check]
+ records[Validated source records] --> scope
+ scope --> logic[Deterministic domain analysis]
+ logic --> result[Structured result and assumptions]
+ logic --> missing[Missing or insufficient data]
+ result --> audit[Request-linked audit metadata]
+ tests[Domain tests and fixture demo] --> logic
 ```
 
-Implemented: validated configuration, API factory/lifespan, root/health, docs/OpenAPI, errors/logging, schemas, BaseAgent and data interfaces, transactional database lifecycle. Tests cover failures as well as normal inputs.
+Interfaces: Query, validated domain records, evaluate(records, query), Agent(BaseAgent).
 
-Only interfaces exist for DatasetLoader, RetailRepository and BaseAgent. No agent/RAG/business source integration. No production retail data. RequestContext is internal and must eventually come from trusted authentication; QueryRequest rejects role claims. AuditEvent is a schema only, with durable audit and integrity owned by later work.
+Safety stock assumes independent daily demand and fixed lead time: z*sigma*sqrt(lead days). Demand-based target covers lead+review days. Missing demand produces null risk/quantity; missing variability is warned and omitted. On-order timing is unknown and not used to claim immediate availability. Explicit as_of and age_days expose snapshot staleness. Latest valid snapshot selected per store/SKU; duplicate dates rejected. No real-time connector, Bayesian solver or multi-echelon optimizer implemented.
 
-New dependencies are justified in BRANCH_README.md. No cross-branch propagation or SHARED DELTA. Foundation implementation publication a9a8df42e84a7eff3950cee94b4a5a2760de0c4c verified with git ls-remote. M1 PASS earns 10%; M0 earned 5%; official completion 15%. Main and context unchanged.
+33 nodes and 38 edges in JSON. 31 tests passed. Remote savepoint: pending. Official completion 31%. No master graph updates, shared delta or branch integration.
