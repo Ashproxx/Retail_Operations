@@ -17,4 +17,4 @@ Interfaces: Query, validated domain records, evaluate(records, query), Agent(Bas
 
 Uses only supplied records. Unknown lead-time history stays unknown; contractual lead time is labelled. Scenario multiplier is not a disruption prediction. Vendor ranking is single-source capacity then lead-time then price, not a global logistics optimizer. No repeated-game/Bayesian solver or negotiation automation. SOP text requires source attribution and is returned as evidence, not executed instructions.
 
-31 nodes and 35 edges in JSON. 29 tests passed. Remote savepoint: pending. Official completion 63%. No master graph updates, shared delta or branch integration.
+31 nodes and 35 edges in JSON. 29 tests passed. Remote savepoint: 4c5ab03cf46004d947970f0c5a1d86d94d9787d4. Official completion 71%. No master graph updates, shared delta or branch integration.
