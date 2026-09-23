@@ -2,7 +2,7 @@
   "branch": "foundation/core-platform",
   "base_commit": "3cc1a8df36c49147daac2c3967f37020bb0f5654",
   "milestone": "M1",
-  "status": "local-pass-publication-pending",
+  "status": "PASS",
   "nodes": [
     {
       "id": "app/__init__.py",
@@ -414,5 +414,7 @@
     "RBAC",
     "durable audit",
     "deployment"
-  ]
+  ],
+  "official_completion_percent": 15,
+  "verified_implementation_commit": "a9a8df42e84a7eff3950cee94b4a5a2760de0c4c"
 }

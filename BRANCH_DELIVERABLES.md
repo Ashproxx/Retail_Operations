@@ -21,8 +21,8 @@
 - [x] Branch created from human-approved M0 base
 - [x] No secrets or private business data
 - [x] No changes to context, other development branches or main
-- [ ] Committed and published to foundation/core-platform
-- [ ] Remote HEAD and unchanged main verified
+- [x] Committed and published to foundation/core-platform: a9a8df42e84a7eff3950cee94b4a5a2760de0c4c
+- [x] Remote HEAD and unchanged main/context verified with git ls-remote
 
 ## Human review
 - [x] Approved context base for M1

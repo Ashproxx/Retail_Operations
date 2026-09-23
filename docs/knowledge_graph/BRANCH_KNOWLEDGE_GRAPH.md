@@ -21,4 +21,4 @@ Implemented: validated configuration, API factory/lifespan, root/health, docs/Op
 
 Only interfaces exist for DatasetLoader, RetailRepository and BaseAgent. No agent/RAG/business source integration. No production retail data. RequestContext is internal and must eventually come from trusted authentication; QueryRequest rejects role claims. AuditEvent is a schema only, with durable audit and integrity owned by later work.
 
-New dependencies are justified in BRANCH_README.md. No cross-branch propagation or SHARED DELTA. Foundation publication must be verified before M1 earns 10%; M0 already earned 5%.
+New dependencies are justified in BRANCH_README.md. No cross-branch propagation or SHARED DELTA. Foundation implementation publication a9a8df42e84a7eff3950cee94b4a5a2760de0c4c verified with git ls-remote. M1 PASS earns 10%; M0 earned 5%; official completion 15%. Main and context unchanged.

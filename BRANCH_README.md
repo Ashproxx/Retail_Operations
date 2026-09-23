@@ -2,7 +2,7 @@
 
 Branch: foundation/core-platform
 Parent branch / base commit: context/project-knowledge / 3cc1a8df36c49147daac2c3967f37020bb0f5654
-Milestone: M1; local exit criteria PASS, publication verification pending
+Milestone: M1 PASS; official project completion 15% (M0 5% + M1 10%)
 Owner scope: shared configuration, schemas, database abstractions, API skeleton, common errors, logging, contracts and foundation tests
 Human approval status: user approved the exact context base on 2026-09-23; no integration or main merge authorized
 
@@ -77,7 +77,7 @@ Input validation, server-generated request IDs, no raw exception responses, meta
 Approved base 3cc1a8df36c49147daac2c3967f37020bb0f5654. Validation applies to this commit's source tree; the final remote SHA is recorded in the session report.
 
 ## Latest test result
-20 passed; scope and compile checks required before publication. Publication verification pending.
+20 passed, 0 failed, 0 skipped; compile, branch scope, dependency, graph and live startup checks PASS. Implementation savepoint a9a8df42e84a7eff3950cee94b4a5a2760de0c4c published and verified remotely. Main remains c21658e55c96d7adc78b82d2e2f3d2b17d226144 and context remains the approved base.
 
 ## Next tasks
 Pin verified M1 commit; begin platform/agentic-rag on its own branch; then router and inventory branches. Obtain actual CSV/XLSX and policy data before claiming production grounding. No integration is authorized.
