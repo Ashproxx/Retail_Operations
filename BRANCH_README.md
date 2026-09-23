@@ -1,83 +1,73 @@
 # Branch README
 
-Branch: foundation/core-platform
-Parent branch / base commit: context/project-knowledge / 3cc1a8df36c49147daac2c3967f37020bb0f5654
-Milestone: M1 PASS; official project completion 15% (M0 5% + M1 10%)
-Owner scope: shared configuration, schemas, database abstractions, API skeleton, common errors, logging, contracts and foundation tests
-Human approval status: user approved the exact context base on 2026-09-23; no integration or main merge authorized
+Branch: agent/returns-refunds
+Parent/base: foundation/core-platform / 77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045
+Milestone: M8 local PASS; publication pending
+Official completion: 84% (only remotely verified passed milestones)
+Owner scope: app/agents/returns/*, tests/returns/*, branch metadata and knowledge delta
+Human approval: continuation authorized; no integration or main merge approved
 
-## Purpose
-Provide the shared foundation for isolated agent, RAG and security branches. The inherited master graph and governance files are the M0 snapshot; this branch delta is authoritative for M1 status.
-
-## Source-defined responsibilities
-Preserve FastAPI and the planned LangGraph, ChromaDB, sentence-transformers and Ollama architecture. Azure deployment remains later work. M1 installs only dependencies used by the foundation.
+## Purpose and source-defined responsibilities
+Supplied-policy return eligibility, inclusive return-window checks, receipt/condition/reason/quantity rules, observed refund lookup, capped advisory refund amount, return-reason taxonomy, manual-review risk flags and refund/fraud extension protocols.
 
 ## Allowed file scope
-app/*; tests/foundation/*; requirements*.txt; pyproject.toml; .env.example; .gitignore; scripts/check_branch_scope.py; branch README/checklist and branch knowledge delta. No master/context files updated. No SHARED DELTA.
+Only the domain paths above and four branch metadata files. No SHARED DELTA. Inherited foundation/global documentation is unchanged.
 
 ## Interfaces consumed
-Approved M0 design and interface registry. No actual business dataset or policy sources are available.
+Foundation Pydantic Contract, BaseAgent, QueryRequest, RequestContext, AgentResult, AuditEvent, Role and common errors, as used in source. No agent branch imports or integrations.
 
 ## Interfaces produced
-- Settings: RETAILOPS_ environment variables and .env loading, validated confidence/iteration limits, redacted database URL.
-- QueryRequest: message and session_id only. Roles/principal are excluded from client input.
-- RequestContext: internal principal, role, scoped stores and request/session IDs; not an authentication implementation.
-- BaseAgent.run(QueryRequest, RequestContext): async AgentResult including provenance, confidence, warnings, handoffs and timing.
-- AgentResult, ChatResponse, Evidence, AuditEvent and ErrorResponse: typed schemas with independent collection defaults.
-- Database.session(): commit/rollback/close lifecycle through SQLAlchemy; Database.ping() and close().
-- DatasetLoader.load(path, column_mapping): abstract CSV/XLSX load contract and source-file validation. No ingestion implementation yet.
-- RetailRepository: abstract observed-stock and store-inventory lookup. Missing data is None/empty; no generated business values.
-- GET / identifies foundation stage; GET /health probes the database and returns 200 or sanitized 503. GET /docs and /openapi.json are available.
+Query, validated domain records, evaluate(records, query), Agent(BaseAgent).
+Agent.run expects QueryRequest.message containing JSON matching domain.Query. This explicit structured adapter avoids pretending natural-language interpretation is integrated. Constructor validates and copies records. Non-admin callers are restricted to trusted context.store_ids before analysis; a requested store outside that scope escalates. This is not a replacement for the later security policy. Audit metadata records actual tool/agent calls, no raw query. Confidence remains zero until calibrated; computational output and assumptions are explicit.
 
 ## Deliverables
-Modular package, install metadata, configuration, environment example, logging, exceptions, schemas, contracts, SQLAlchemy lifecycle, FastAPI factory/lifespan, tests and branch scope guard.
+Supplied-policy return eligibility, inclusive return-window checks, receipt/condition/reason/quantity rules, observed refund lookup, capped advisory refund amount, return-reason taxonomy, manual-review risk flags and refund/fraud extension protocols.
+Branch graph/checklist, scope guard, executable demo and domain tests are included.
 
-## Dependencies and decisions
-No existing requirements were available to reuse. FastAPI provides the requested API/OpenAPI; Pydantic validates contracts; pydantic-settings loads environment/.env; SQLAlchemy keeps a future PostgreSQL migration path; Uvicorn runs the ASGI server. pytest and httpx are test-only dependencies. No cloud keys, model downloads or paid API calls are needed. Versions are major constrained; this is not a production lockfile.
-SQLite in memory is the default for safe local setup; set RETAILOPS_DATABASE_URL=sqlite+pysqlite:///./retailops.db for persistence. Domain models wait for actual column inspection. Use a trusted authentication adapter before deploying domain routes. Do not expose raw SQL as an API.
+## Tests and reproduction
+Python 3.11+; validated on 3.12. Install existing foundation requirements-dev.txt. No new runtime dependencies.
 
-## Setup and run
-Python 3.11+ (validated with 3.12). From repository root:
-
-```bash
-python -m venv .venv
-# Windows PowerShell: .venv\Scripts\Activate.ps1
-# Linux/macOS: source .venv/bin/activate
-python -m pip install -r requirements-dev.txt
-# Optional: copy .env.example to .env and edit it
-python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
-```
-
-Open http://127.0.0.1:8000/health and http://127.0.0.1:8000/docs.
-
-## Tests
 ```bash
 python -m pytest -q
-python scripts/check_branch_scope.py
-python -m compileall -q app
+python -m app.agents.returns.demo
+python -m app.agents.returns.check_scope
+python -m compileall -q app/agents/returns
 ```
-20 passed, 0 failed, 0 skipped. Third-party warnings: Starlette deprecates httpx TestClient integration and an AnyIO BlockingPortal alias. They do not affect these passing tests; dependency compatibility needs continued monitoring. ASGI startup, database health and OpenAPI exercised with lifespan-enabled TestClient. Live Uvicorn smoke check recorded in the session report.
+
+29 tests passed, 0 failed, 0 skipped, including 20 inherited foundation tests. One inherited Starlette/httpx deprecation warning. Demo, imports, graph consistency, scope and whitespace checks passed. These are branch-local tests, not integrated end-to-end tests. Tests use synthetic fixtures and temporary files, never production records.
 
 ## Knowledge graph changes
-Branch delta maps foundation files, Python imports, endpoints, contracts, tests and ownership. Master graph remains unchanged on its context branch.
+Machine-readable graph records 31 nodes and 35 ownership/definition/import/test edges. Master graph remains unchanged. Branch Markdown records data flow and interface ownership.
 
 ## Data dependencies
-No retail data supplied. Test fixtures are synthetic, in temporary databases only. No CSV/XLSX parser or business data migration is claimed.
+No real retail data supplied. All demos are marked fixture=True. Empty repositories return missing/insufficient-data results rather than synthetic answers. Real sources require an approved loader/mapping and data authorization during integration.
 
-## Known limitations
-No domain agents, LangGraph execution, RAG, embedding models, LLM provider implementation, authentication/RBAC enforcement, durable audit storage, conversation memory, Docker or CI yet. /api/chat and other domain routes intentionally remain unregistered. Metadata logging excludes payloads, raw errors and credentials but is not a tamper-evident audit implementation. M1 does not constitute a deployed production API.
+## Known limitations and assumptions
+No real returns or policies supplied. Policy absence yields insufficient evidence, and refund status is never invented. Amounts allocate payment equally per unit and are capped at unrefunded recorded payment; tax/fee allocation remains integration work. Receipt, condition and serial mismatch are reported inputs requiring verification. Risk thresholds are heuristic review flags, not trained fraud detection. No return, refund or financial transaction executed.
+No production accuracy claims. No API route registration, external calls, paid service or cross-branch merge. No credentials in source. No new dependencies needed beyond the foundation libraries and Python standard library.
 
 ## Cross-branch dependencies
-Subsequent agent/platform/security branches must start from the pinned published foundation commit. All consume these contracts. No merge/cherry-pick/rebase occurred; integration requires separate explicit approval.
+Shared loader, router/API wiring and other agent outputs remain explicit integration dependencies. No changes from another development branch were copied, merged, rebased or cherry-picked. Domain interfaces remain independent until human-approved integration.
 
 ## Security considerations
-Input validation, server-generated request IDs, no raw exception responses, metadata-only logs, hidden SQL parameters and secret-redacted configuration. Environment values and local databases are ignored. Role definitions are a contract, not an authorization grant.
+Validate structured input; use trusted RequestContext; never treat JSON role claims as authority. Private data and keys must stay out of git. Returned results may contain source information and must be access-controlled by the integration layer. Statistical or risk recommendations are advisory; no operational writes occur.
 
-## Last validated commit
-Approved base 3cc1a8df36c49147daac2c3967f37020bb0f5654. Validation applies to this commit's source tree; the final remote SHA is recorded in the session report.
+## Last validated commit and remote savepoint
+Pinned base: 77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045. Verified implementation savepoint: pending. Final documentation commit is recorded in the session report. No self-referential commit hash is required.
 
-## Latest test result
-20 passed, 0 failed, 0 skipped; compile, branch scope, dependency, graph and live startup checks PASS. Implementation savepoint a9a8df42e84a7eff3950cee94b4a5a2760de0c4c published and verified remotely. Main remains c21658e55c96d7adc78b82d2e2f3d2b17d226144 and context remains the approved base.
+## Latest status and previously verified branches
+- M0: context/project-knowledge @ 3cc1a8df36c49147daac2c3967f37020bb0f5654 (5%)
+- M1: foundation/core-platform @ 77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045 (10%)
+- M11: platform/agentic-rag @ e3638225a5ea88ab6036ce6148f66d9208cedf5c (8%)
+- M2: agent/router @ 034946159557d9e88e2cd591b284f370fa6a9831 (8%)
+- M3: agent/inventory @ bc1a4d5c1a3c62e81512b0b9cdbc6eceaa58d3ba (9%)
+- M9: agent/demand-forecasting @ 7a65d8dab39697ef62be14e5feda945efda55ac9 (8%)
+- M10: agent/analytics-reporting @ 26f58b0600e6df6c8a37523ebff2065f6705d73b (7%)
+- M6: agent/pricing-promotions @ 57ff09d09ad74eb623d28168b63774df25ea3294 (8%)
+- M5: agent/supply-chain @ bce3f17d4798e121a4c8f3aa1e697b093ab47e0d (8%)
+- M4: agent/order-fulfillment @ 21acc0898ce8b3f0f130bb21b8b4b2fbafc7851b (7%)
+- M7: agent/customer-service @ 5ecdbf6eab71715657b1a17e1305ab6702b8704d (6%)
 
 ## Next tasks
-Pin verified M1 commit; begin platform/agentic-rag on its own branch; then router and inventory branches. Obtain actual CSV/XLSX and policy data before claiming production grounding. No integration is authorized.
+Publish Returns; implement and verify privacy/security, then present exact branch commits at the mandatory human integration gate.
+Integration requires explicit approval of exact branches/commits; main remains human-controlled.

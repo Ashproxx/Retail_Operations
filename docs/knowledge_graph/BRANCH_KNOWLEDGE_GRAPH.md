@@ -1,24 +1,20 @@
-# M1 foundation delta
+# M8 domain delta
 
-Approved base: 3cc1a8df36c49147daac2c3967f37020bb0f5654. Master/context graphs remain unchanged. Branch JSON provides file ownership, import and test relationships.
+Branch agent/returns-refunds, pinned foundation 77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045. Supplied-policy return eligibility, inclusive return-window checks, receipt/condition/reason/quantity rules, observed refund lookup, capped advisory refund amount, return-reason taxonomy, manual-review risk flags and refund/fraud extension protocols.
 
 ```mermaid
 flowchart TD
-    env[Environment] --> config[Settings]
-    config --> app[FastAPI factory]
-    app --> health[Database health]
-    health --> db[SQLAlchemy lifecycle]
-    app --> logs[Metadata logs]
-    app --> errors[Sanitized errors]
-    contracts[Pydantic contracts] --> agents[BaseAgent interface]
-    contracts --> dataset[DatasetLoader interface]
-    tests[Foundation tests] --> app
-    tests --> db
-    tests --> contracts
+ input[Validated structured request] --> scope[Trusted scope check]
+ records[Validated source records] --> scope
+ scope --> logic[Deterministic domain analysis]
+ logic --> result[Structured result and assumptions]
+ logic --> missing[Missing or insufficient data]
+ result --> audit[Request-linked audit metadata]
+ tests[Domain tests and fixture demo] --> logic
 ```
 
-Implemented: validated configuration, API factory/lifespan, root/health, docs/OpenAPI, errors/logging, schemas, BaseAgent and data interfaces, transactional database lifecycle. Tests cover failures as well as normal inputs.
+Interfaces: Query, validated domain records, evaluate(records, query), Agent(BaseAgent).
 
-Only interfaces exist for DatasetLoader, RetailRepository and BaseAgent. No agent/RAG/business source integration. No production retail data. RequestContext is internal and must eventually come from trusted authentication; QueryRequest rejects role claims. AuditEvent is a schema only, with durable audit and integrity owned by later work.
+No real returns or policies supplied. Policy absence yields insufficient evidence, and refund status is never invented. Amounts allocate payment equally per unit and are capped at unrefunded recorded payment; tax/fee allocation remains integration work. Receipt, condition and serial mismatch are reported inputs requiring verification. Risk thresholds are heuristic review flags, not trained fraud detection. No return, refund or financial transaction executed.
 
-New dependencies are justified in BRANCH_README.md. No cross-branch propagation or SHARED DELTA. Foundation implementation publication a9a8df42e84a7eff3950cee94b4a5a2760de0c4c verified with git ls-remote. M1 PASS earns 10%; M0 earned 5%; official completion 15%. Main and context unchanged.
+31 nodes and 35 edges in JSON. 29 tests passed. Remote savepoint: pending. Official completion 84%. No master graph updates, shared delta or branch integration.
