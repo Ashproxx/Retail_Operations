@@ -1,83 +1,100 @@
 # Branch README
 
-Branch: foundation/core-platform
-Parent branch / base commit: context/project-knowledge / 3cc1a8df36c49147daac2c3967f37020bb0f5654
-Milestone: M1 PASS; official project completion 15% (M0 5% + M1 10%)
-Owner scope: shared configuration, schemas, database abstractions, API skeleton, common errors, logging, contracts and foundation tests
-Human approval status: user approved the exact context base on 2026-09-23; no integration or main merge authorized
+Branch: platform/agentic-rag
+Parent branch / base commit: foundation/core-platform / 77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045
+Milestone: M11; implementation and local validation PASS, publication pending
+Owner scope: ingestion, chunking, embeddings, ChromaDB, retrieval, verification and RAG tests
+Human approval status: user authorized continuation; no cross-branch integration or main merge approved
 
 ## Purpose
-Provide the shared foundation for isolated agent, RAG and security branches. The inherited master graph and governance files are the M0 snapshot; this branch delta is authoritative for M1 status.
+Provide an isolated local Agentic RAG baseline using ChromaDB and sentence-transformers. Inherited master/governance documents are M0 snapshots; this branch delta records M11 implementation.
 
 ## Source-defined responsibilities
-Preserve FastAPI and the planned LangGraph, ChromaDB, sentence-transformers and Ollama architecture. Azure deployment remains later work. M1 installs only dependencies used by the foundation.
+Document ingestion, canonicalization/chunking, provenance metadata, local embeddings, vector storage, top-k retrieval, relevance checks, bounded retrieve/reason/verify/re-retrieve, source evidence and integrity hooks. Reasoning here is deterministic evidence coverage and extractive assembly, not an LLM call.
 
 ## Allowed file scope
-app/*; tests/foundation/*; requirements*.txt; pyproject.toml; .env.example; .gitignore; scripts/check_branch_scope.py; branch README/checklist and branch knowledge delta. No master/context files updated. No SHARED DELTA.
+app/rag/*, tests/rag/*, branch README/checklist and branch graph delta. No SHARED DELTA. Foundation source/config/requirements and all other branches remain unchanged.
 
 ## Interfaces consumed
-Approved M0 design and interface registry. No actual business dataset or policy sources are available.
+Foundation Contract for strict Pydantic validation. No agent implementation is consumed or integrated.
 
 ## Interfaces produced
-- Settings: RETAILOPS_ environment variables and .env loading, validated confidence/iteration limits, redacted database URL.
-- QueryRequest: message and session_id only. Roles/principal are excluded from client input.
-- RequestContext: internal principal, role, scoped stores and request/session IDs; not an authentication implementation.
-- BaseAgent.run(QueryRequest, RequestContext): async AgentResult including provenance, confidence, warnings, handoffs and timing.
-- AgentResult, ChatResponse, Evidence, AuditEvent and ErrorResponse: typed schemas with independent collection defaults.
-- Database.session(): commit/rollback/close lifecycle through SQLAlchemy; Database.ping() and close().
-- DatasetLoader.load(path, column_mapping): abstract CSV/XLSX load contract and source-file validation. No ingestion implementation yet.
-- RetailRepository: abstract observed-stock and store-inventory lookup. Missing data is None/empty; no generated business values.
-- GET / identifies foundation stage; GET /health probes the database and returns 200 or sanitized 503. GET /docs and /openapi.json are available.
+- Document: explicit ID, immutable version, source, domain, access tag, fixture label and text; maximum 200,000 characters.
+- RagSettings: chunk size/overlap, top-k, maximum iterations, cosine threshold and query-coverage threshold.
+- chunk_document: Unicode NFC/whitespace canonicalization, overlapping word chunks, stable IDs, whole-document and content/provenance hashes.
+- LocalSentenceTransformer: CPU model loaded from a local directory, remote code disabled and local_files_only=True. encode normalizes vectors. Caller supplies a pinned identity; collection rejects different identities.
+- ChromaStore: persistent local collection, explicit vectors, cosine distance, scoped query filters, immutable revision checks and idempotent upsert. Use one ingestion writer; concurrent writers are not supported by the revision check. Maximum 1,000 chunks in a batch.
+- RagPipeline.query: trusted access tag/domain, top-k retrieval, hash verification before evidence use, similarity/lexical relevance, missing-concept query rewrite, bounded iterations and conservative final evidence coverage check.
+- RagResult: evidence_found, insufficient_evidence or knowledge_base_empty; quotes with numbered source metadata, iterations, metadata-only trace, and fixture/integrity warnings.
 
 ## Deliverables
-Modular package, install metadata, configuration, environment example, logging, exceptions, schemas, contracts, SQLAlchemy lifecycle, FastAPI factory/lifespan, tests and branch scope guard.
+Persistent Chroma store, local embedding adapter, canonical ingestion, typed results, bounded pipeline, scope guard, offline fixture demo and 13 RAG tests.
 
 ## Dependencies and decisions
-No existing requirements were available to reuse. FastAPI provides the requested API/OpenAPI; Pydantic validates contracts; pydantic-settings loads environment/.env; SQLAlchemy keeps a future PostgreSQL migration path; Uvicorn runs the ASGI server. pytest and httpx are test-only dependencies. No cloud keys, model downloads or paid API calls are needed. Versions are major constrained; this is not a production lockfile.
-SQLite in memory is the default for safe local setup; set RETAILOPS_DATABASE_URL=sqlite+pysqlite:///./retailops.db for persistence. Domain models wait for actual column inspection. Use a trusted authentication adapter before deploying domain routes. Do not expose raw SQL as an API.
+Branch-local app/rag/requirements.txt adds ChromaDB (required vector persistence/filter/query engine) and sentence-transformers (required local embeddings). Foundation has no equivalents. Both are tested with real implementations. sentence-transformers pulls PyTorch; install a CPU build first on a student machine to avoid unnecessary CUDA downloads. No cloud credentials, paid service or model download is needed for the fixture tests. Dependencies are constrained, not a reproducible production lockfile.
 
-## Setup and run
-Python 3.11+ (validated with 3.12). From repository root:
+## Setup and demo
+From this repository root in your activated Python 3.11+ virtual environment (tested with Python 3.12):
 
 ```bash
-python -m venv .venv
-# Windows PowerShell: .venv\Scripts\Activate.ps1
-# Linux/macOS: source .venv/bin/activate
 python -m pip install -r requirements-dev.txt
-# Optional: copy .env.example to .env and edit it
-python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
+# CPU-only PyTorch can be installed before the RAG requirements:
+python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+python -m pip install -r app/rag/requirements.txt
+python -m pytest -q
+python -m app.rag.demo
+python -m app.rag.check_scope
 ```
 
-Open http://127.0.0.1:8000/health and http://127.0.0.1:8000/docs.
+The demo creates a tiny sentence-transformers BoW + Normalize model and a Chroma directory in a temporary folder. Its refund policy is synthetic and explicitly labelled. No pretrained transformer or real policy is claimed. The measured fixture retrieval tests establish wiring and failure handling, not production semantic accuracy.
+
+To use real locally provisioned embeddings and text:
+
+```python
+from pathlib import Path
+from app.rag.contracts import Document, RagSettings
+from app.rag.embeddings import LocalSentenceTransformer
+from app.rag.ingestion import chunk_document
+from app.rag.store import ChromaStore
+from app.rag.pipeline import RagPipeline
+
+# Provision a vetted model separately and pin its identity to its revision.
+embedder = LocalSentenceTransformer('/absolute/path/to/model', 'model-name@revision')
+# Keep private vector databases outside this repository.
+store = ChromaStore(Path('/absolute/private/path/retailops-chroma'), embedder)
+settings = RagSettings()
+# trusted_text is text extracted from an approved local document.
+document = Document(document_id='policy-001', version='v1', source='approved-policy.txt',
+                    domain='support', access_tag='support-team', text=trusted_text)
+store.add(chunk_document(document, settings))
+# Scope must come from a trusted authorization adapter, never untrusted request input.
+result = RagPipeline(store, settings).query('What is the refund policy?',
+                                          access_tag='support-team', domain='support')
+```
 
 ## Tests
-```bash
-python -m pytest -q
-python scripts/check_branch_scope.py
-python -m compileall -q app
-```
-20 passed, 0 failed, 0 skipped. Third-party warnings: Starlette deprecates httpx TestClient integration and an AnyIO BlockingPortal alias. They do not affect these passing tests; dependency compatibility needs continued monitoring. ASGI startup, database health and OpenAPI exercised with lifespan-enabled TestClient. Live Uvicorn smoke check recorded in the session report.
+`python -m pytest -q`: 33 passed, 0 failed, 0 skipped (20 foundation + 13 RAG). Two inherited Starlette/AnyIO deprecation warnings. Test cases: persistence/reopen, source evidence, empty store, invalid query, access filtering, insufficient evidence, iteration bound, missing-concept rewrite, top-k ranking, tampered text/provenance, immutable revisions (including shortened documents), chunk overlap, model identity mismatch and missing local models. Demo completed with evidence_found and explicit fixture warning.
 
 ## Knowledge graph changes
-Branch delta maps foundation files, Python imports, endpoints, contracts, tests and ownership. Master graph remains unchanged on its context branch.
+Branch JSON maps RAG files/imports/contracts, pipeline stages, test relationships and dependencies. Master graph remains unchanged. No other branch metadata updated.
 
 ## Data dependencies
-No retail data supplied. Test fixtures are synthetic, in temporary databases only. No CSV/XLSX parser or business data migration is claimed.
+No real policy documents, SOPs, dataset or pretrained model weights supplied. Tests use a local lexical sentence-transformers model. Pretrained semantic model quality remains unevaluated. The ingestion boundary accepts text, not a PDF/OCR/Word parser.
 
 ## Known limitations
-No domain agents, LangGraph execution, RAG, embedding models, LLM provider implementation, authentication/RBAC enforcement, durable audit storage, conversation memory, Docker or CI yet. /api/chat and other domain routes intentionally remain unregistered. Metadata logging excludes payloads, raw errors and credentials but is not a tamper-evident audit implementation. M1 does not constitute a deployed production API.
+Coverage/similarity are heuristics, not factual entailment or answer confidence. This version quotes evidence rather than generating prose. No LLM reasoning/provider integration, LangGraph orchestration or FastAPI route registration is included. Multiple explicit document versions coexist; latest-version selection/retention is not implemented. Revision conflict protection assumes one ingestion writer. Thresholds need a labelled retail evaluation set. Persisted vectors inherit document sensitivity. No production accuracy claim.
 
 ## Cross-branch dependencies
-Subsequent agent/platform/security branches must start from the pinned published foundation commit. All consume these contracts. No merge/cherry-pick/rebase occurred; integration requires separate explicit approval.
+Domain agents will consume these contracts after explicit integration approval. Security branch must provide authenticated scope mapping, trusted digest storage, stronger authorization and audit integrity. No branch was merged, rebased or cherry-picked.
 
 ## Security considerations
-Input validation, server-generated request IDs, no raw exception responses, metadata-only logs, hidden SQL parameters and secret-redacted configuration. Environment values and local databases are ignored. Role definitions are a contract, not an authorization grant.
+Filters run inside vector queries before returned text is processed, but caller-provided access_tag is a trusted internal input, not authentication. Unkeyed SHA-256 detects mismatches only; an attacker who rewrites content and hashes can evade it. Metadata/provenance are included in the hash. Embedding identity is caller-pinned, not a cryptographic verification of model weights. Retrieved content is quoted data; no tool calls or model instruction execution occurs. Full prompt-injection/RBAC protection is not claimed. Chroma anonymized telemetry is disabled. No credentials/private data committed.
 
 ## Last validated commit
-Approved base 3cc1a8df36c49147daac2c3967f37020bb0f5654. Validation applies to this commit's source tree; the final remote SHA is recorded in the session report.
+Pinned foundation base 77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045. The published implementation SHA and final remote SHA are recorded at the savepoint.
 
 ## Latest test result
-20 passed, 0 failed, 0 skipped; compile, branch scope, dependency, graph and live startup checks PASS. Implementation savepoint a9a8df42e84a7eff3950cee94b4a5a2760de0c4c published and verified remotely. Main remains c21658e55c96d7adc78b82d2e2f3d2b17d226144 and context remains the approved base.
+33 passed; demo passed. Compile, dependencies, graph and scope validated before publication. Publication verification pending. Official completion remains 15% until M11 remote savepoint is verified; then M11 adds 8% for 23%.
 
 ## Next tasks
-Pin verified M1 commit; begin platform/agentic-rag on its own branch; then router and inventory branches. Obtain actual CSV/XLSX and policy data before claiming production grounding. No integration is authorized.
+Verify M11 publication; create agent/router from pinned foundation, implement intent plans and escalation on that branch; implement inventory on its own branch; evaluate pretrained embeddings against real approved retail documents. Integration remains a separate human gate.

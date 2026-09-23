@@ -1,420 +1,238 @@
 {
-  "branch": "foundation/core-platform",
-  "base_commit": "3cc1a8df36c49147daac2c3967f37020bb0f5654",
-  "milestone": "M1",
-  "status": "PASS",
+  "branch": "platform/agentic-rag",
+  "base_commit": "77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045",
+  "milestone": "M11",
+  "status": "local-pass-publication-pending",
   "nodes": [
     {
-      "id": "app/__init__.py",
+      "id": "app/rag/__init__.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/agents/__init__.py",
+      "id": "app/rag/check_scope.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/agents/base_agent.py",
+      "id": "app/rag/contracts.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/api/__init__.py",
+      "id": "app/rag/demo.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/api/schemas.py",
+      "id": "app/rag/embeddings.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/core/__init__.py",
+      "id": "app/rag/ingestion.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/core/config.py",
+      "id": "app/rag/pipeline.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/core/exceptions.py",
+      "id": "app/rag/store.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/core/logging.py",
+      "id": "app/rag/requirements.txt",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/main.py",
+      "id": "tests/rag/test_rag.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/models/__init__.py",
-      "type": "file",
-      "status": "implemented"
-    },
-    {
-      "id": "app/models/database.py",
-      "type": "file",
-      "status": "implemented"
-    },
-    {
-      "id": "app/services/__init__.py",
-      "type": "file",
-      "status": "implemented"
-    },
-    {
-      "id": "app/services/database_service.py",
-      "type": "file",
-      "status": "implemented"
-    },
-    {
-      "id": "app/services/dataset_loader.py",
-      "type": "file",
-      "status": "implemented"
-    },
-    {
-      "id": "tests/foundation/test_foundation.py",
-      "type": "file",
-      "status": "implemented"
-    },
-    {
-      "id": "scripts/check_branch_scope.py",
-      "type": "file",
-      "status": "implemented"
-    },
-    {
-      "id": "requirements.txt",
-      "type": "file",
-      "status": "implemented"
-    },
-    {
-      "id": "requirements-dev.txt",
-      "type": "file",
-      "status": "implemented"
-    },
-    {
-      "id": "pyproject.toml",
-      "type": "file",
-      "status": "implemented"
-    },
-    {
-      "id": ".env.example",
-      "type": "file",
-      "status": "implemented"
-    },
-    {
-      "id": ".gitignore",
-      "type": "file",
-      "status": "implemented"
-    },
-    {
-      "id": "foundation/core-platform",
+      "id": "platform/agentic-rag",
       "type": "branch",
-      "status": "implemented"
-    },
-    {
-      "id": "/",
-      "type": "endpoint",
-      "status": "implemented"
-    },
-    {
-      "id": "/health",
-      "type": "endpoint",
-      "status": "implemented"
-    },
-    {
-      "id": "/docs",
-      "type": "endpoint",
-      "status": "implemented"
-    },
-    {
-      "id": "/openapi.json",
-      "type": "endpoint",
-      "status": "implemented"
+      "status": "active"
     }
   ],
   "edges": [
     {
-      "source": "foundation/core-platform",
-      "target": "app/__init__.py",
+      "source": "platform/agentic-rag",
+      "target": "app/rag/__init__.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/agents/__init__.py",
+      "source": "platform/agentic-rag",
+      "target": "app/rag/check_scope.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/agents/base_agent.py",
+      "source": "platform/agentic-rag",
+      "target": "app/rag/contracts.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/api/__init__.py",
+      "source": "platform/agentic-rag",
+      "target": "app/rag/demo.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/api/schemas.py",
+      "source": "platform/agentic-rag",
+      "target": "app/rag/embeddings.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/core/__init__.py",
+      "source": "platform/agentic-rag",
+      "target": "app/rag/ingestion.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/core/config.py",
+      "source": "platform/agentic-rag",
+      "target": "app/rag/pipeline.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/core/exceptions.py",
+      "source": "platform/agentic-rag",
+      "target": "app/rag/store.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/core/logging.py",
+      "source": "platform/agentic-rag",
+      "target": "app/rag/requirements.txt",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/main.py",
+      "source": "platform/agentic-rag",
+      "target": "tests/rag/test_rag.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/models/__init__.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/models/database.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/services/__init__.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/services/database_service.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/services/dataset_loader.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "tests/foundation/test_foundation.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "scripts/check_branch_scope.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "requirements.txt",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "requirements-dev.txt",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "pyproject.toml",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": ".env.example",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": ".gitignore",
-      "type": "owns"
-    },
-    {
-      "source": "app/agents/base_agent.py",
-      "target": "app/api/schemas.py",
+      "source": "app/rag/demo.py",
+      "target": "app/rag/contracts.py",
       "type": "imports"
     },
     {
-      "source": "app/main.py",
-      "target": "app/core/config.py",
+      "source": "app/rag/demo.py",
+      "target": "app/rag/embeddings.py",
       "type": "imports"
     },
     {
-      "source": "app/main.py",
-      "target": "app/core/exceptions.py",
+      "source": "app/rag/demo.py",
+      "target": "app/rag/ingestion.py",
       "type": "imports"
     },
     {
-      "source": "app/main.py",
-      "target": "app/core/logging.py",
+      "source": "app/rag/demo.py",
+      "target": "app/rag/store.py",
       "type": "imports"
     },
     {
-      "source": "app/main.py",
-      "target": "app/services/database_service.py",
+      "source": "app/rag/demo.py",
+      "target": "app/rag/pipeline.py",
       "type": "imports"
     },
     {
-      "source": "app/services/dataset_loader.py",
-      "target": "app/api/schemas.py",
+      "source": "app/rag/ingestion.py",
+      "target": "app/rag/contracts.py",
       "type": "imports"
     },
     {
-      "source": "app/services/dataset_loader.py",
-      "target": "app/core/exceptions.py",
+      "source": "app/rag/pipeline.py",
+      "target": "app/rag/contracts.py",
       "type": "imports"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/main.py",
+      "source": "app/rag/pipeline.py",
+      "target": "app/rag/store.py",
       "type": "imports"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/config.py",
+      "source": "app/rag/store.py",
+      "target": "app/rag/contracts.py",
       "type": "imports"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/exceptions.py",
+      "source": "app/rag/store.py",
+      "target": "app/rag/embeddings.py",
       "type": "imports"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/logging.py",
+      "source": "app/rag/store.py",
+      "target": "app/rag/ingestion.py",
       "type": "imports"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/api/schemas.py",
+      "source": "tests/rag/test_rag.py",
+      "target": "app/rag/contracts.py",
       "type": "imports"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/agents/base_agent.py",
+      "source": "tests/rag/test_rag.py",
+      "target": "app/rag/ingestion.py",
       "type": "imports"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/services/database_service.py",
+      "source": "tests/rag/test_rag.py",
+      "target": "app/rag/embeddings.py",
       "type": "imports"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/services/dataset_loader.py",
+      "source": "tests/rag/test_rag.py",
+      "target": "app/rag/store.py",
       "type": "imports"
     },
     {
-      "source": "app/main.py",
-      "target": "/",
-      "type": "registers"
+      "source": "tests/rag/test_rag.py",
+      "target": "app/rag/pipeline.py",
+      "type": "imports"
     },
     {
-      "source": "app/main.py",
-      "target": "/health",
-      "type": "registers"
-    },
-    {
-      "source": "app/main.py",
-      "target": "/docs",
-      "type": "registers"
-    },
-    {
-      "source": "app/main.py",
-      "target": "/openapi.json",
-      "type": "registers"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/agents/base_agent.py",
+      "source": "tests/rag/test_rag.py",
+      "target": "app/rag/contracts.py",
       "type": "tests"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/api/schemas.py",
+      "source": "tests/rag/test_rag.py",
+      "target": "app/rag/embeddings.py",
       "type": "tests"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/config.py",
+      "source": "tests/rag/test_rag.py",
+      "target": "app/rag/ingestion.py",
       "type": "tests"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/exceptions.py",
+      "source": "tests/rag/test_rag.py",
+      "target": "app/rag/pipeline.py",
       "type": "tests"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/logging.py",
-      "type": "tests"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/main.py",
-      "type": "tests"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/models/database.py",
-      "type": "tests"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/services/database_service.py",
-      "type": "tests"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/services/dataset_loader.py",
+      "source": "tests/rag/test_rag.py",
+      "target": "app/rag/store.py",
       "type": "tests"
     }
   ],
-  "dependencies": {
-    "runtime": [
-      "FastAPI",
-      "Pydantic",
-      "pydantic-settings",
-      "SQLAlchemy",
-      "Uvicorn"
-    ],
-    "test": [
-      "pytest",
-      "httpx"
-    ]
-  },
-  "deferred": [
-    "domain models pending dataset",
-    "domain agents",
-    "LangGraph",
-    "ChromaDB",
-    "embeddings",
-    "RBAC",
-    "durable audit",
-    "deployment"
+  "interface_changes": [
+    "Document/Chunk/Hit/RagResult",
+    "Embedder",
+    "ChromaStore",
+    "RagPipeline"
   ],
-  "official_completion_percent": 15,
-  "verified_implementation_commit": "a9a8df42e84a7eff3950cee94b4a5a2760de0c4c"
+  "dependencies": [
+    "foundation Contract",
+    "ChromaDB",
+    "sentence-transformers",
+    "future trusted security scope adapter"
+  ],
+  "limitations": [
+    "lexical fixture evaluation only",
+    "no pretrained semantic-quality evaluation",
+    "no LLM or route integration",
+    "unkeyed hashes are not authentication"
+  ]
 }

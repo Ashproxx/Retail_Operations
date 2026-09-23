@@ -1,24 +1,26 @@
-# M1 foundation delta
+# M11 RAG branch delta
 
-Approved base: 3cc1a8df36c49147daac2c3967f37020bb0f5654. Master/context graphs remain unchanged. Branch JSON provides file ownership, import and test relationships.
+Pinned foundation: 77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045. M0 master graph remains unchanged. Runtime and dependency details are in this branch README and machine-readable graph.
 
 ```mermaid
 flowchart TD
-    env[Environment] --> config[Settings]
-    config --> app[FastAPI factory]
-    app --> health[Database health]
-    health --> db[SQLAlchemy lifecycle]
-    app --> logs[Metadata logs]
-    app --> errors[Sanitized errors]
-    contracts[Pydantic contracts] --> agents[BaseAgent interface]
-    contracts --> dataset[DatasetLoader interface]
-    tests[Foundation tests] --> app
-    tests --> db
-    tests --> contracts
+ document[Typed document] --> chunk[Canonical chunks and hashes]
+ chunk --> embedding[Local sentence-transformers]
+ embedding --> store[Persistent ChromaDB]
+ query[Question and trusted scope] --> retrieve[Scoped top-k retrieval]
+ store --> retrieve
+ retrieve --> verify[Verify hashes and relevance]
+ verify --> reason[Evaluate concept coverage]
+ reason --> sufficient{Evidence sufficient}
+ sufficient -->|Yes| answer[Quoted evidence and sources]
+ sufficient -->|No| limit{Iteration budget remains}
+ limit -->|Yes| rewrite[Retrieve missing concepts]
+ rewrite --> retrieve
+ limit -->|No| missing[Insufficient evidence]
 ```
 
-Implemented: validated configuration, API factory/lifespan, root/health, docs/OpenAPI, errors/logging, schemas, BaseAgent and data interfaces, transactional database lifecycle. Tests cover failures as well as normal inputs.
+Implemented: ingestion, overlapping chunks, provenance hashes, CPU local embedding adapter, Chroma persistence, scope filter, relevance thresholds, bounded iterations, extractive result and fixture warnings. 13 real-store/local-model RAG tests and inherited 20 foundation tests pass. Offline demo verifies source evidence.
 
-Only interfaces exist for DatasetLoader, RetailRepository and BaseAgent. No agent/RAG/business source integration. No production retail data. RequestContext is internal and must eventually come from trusted authentication; QueryRequest rejects role claims. AuditEvent is a schema only, with durable audit and integrity owned by later work.
+New interfaces: Document, Chunk, Hit, RagResult, RagSettings, Embedder, ChromaStore, RagPipeline. No modification to foundation interfaces. app/rag/requirements.txt owns additional dependencies. No shared delta or integration. Scope authorization and trusted hash storage remain security-branch dependencies.
 
-New dependencies are justified in BRANCH_README.md. No cross-branch propagation or SHARED DELTA. Foundation implementation publication a9a8df42e84a7eff3950cee94b4a5a2760de0c4c verified with git ls-remote. M1 PASS earns 10%; M0 earned 5%; official completion 15%. Main and context unchanged.
+Local baseline verified with a sentence-transformers BoW model. Semantic pretrained retrieval quality and production policies are unverified. Coverage is a heuristic and output is an evidence excerpt, not generative reasoning. Publication pending; M11 cannot earn its 8% until verified.
