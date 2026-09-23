@@ -1,24 +1,20 @@
-# M1 foundation delta
+# M5 domain delta
 
-Approved base: 3cc1a8df36c49147daac2c3967f37020bb0f5654. Master/context graphs remain unchanged. Branch JSON provides file ownership, import and test relationships.
+Branch agent/supply-chain, pinned foundation 77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045. Vendor/SKU lookup, observed lead-time analysis, historical late-delivery fraction, replenishment requirements and capacity shortfalls, vendor comparison, logistics metadata, attributed SOP excerpts, disruption scenarios, descriptive bargaining history and strategic-player/SOP retrieval extension protocols.
 
 ```mermaid
 flowchart TD
-    env[Environment] --> config[Settings]
-    config --> app[FastAPI factory]
-    app --> health[Database health]
-    health --> db[SQLAlchemy lifecycle]
-    app --> logs[Metadata logs]
-    app --> errors[Sanitized errors]
-    contracts[Pydantic contracts] --> agents[BaseAgent interface]
-    contracts --> dataset[DatasetLoader interface]
-    tests[Foundation tests] --> app
-    tests --> db
-    tests --> contracts
+ input[Validated structured request] --> scope[Trusted scope check]
+ records[Validated source records] --> scope
+ scope --> logic[Deterministic domain analysis]
+ logic --> result[Structured result and assumptions]
+ logic --> missing[Missing or insufficient data]
+ result --> audit[Request-linked audit metadata]
+ tests[Domain tests and fixture demo] --> logic
 ```
 
-Implemented: validated configuration, API factory/lifespan, root/health, docs/OpenAPI, errors/logging, schemas, BaseAgent and data interfaces, transactional database lifecycle. Tests cover failures as well as normal inputs.
+Interfaces: Query, validated domain records, evaluate(records, query), Agent(BaseAgent).
 
-Only interfaces exist for DatasetLoader, RetailRepository and BaseAgent. No agent/RAG/business source integration. No production retail data. RequestContext is internal and must eventually come from trusted authentication; QueryRequest rejects role claims. AuditEvent is a schema only, with durable audit and integrity owned by later work.
+Uses only supplied records. Unknown lead-time history stays unknown; contractual lead time is labelled. Scenario multiplier is not a disruption prediction. Vendor ranking is single-source capacity then lead-time then price, not a global logistics optimizer. No repeated-game/Bayesian solver or negotiation automation. SOP text requires source attribution and is returned as evidence, not executed instructions.
 
-New dependencies are justified in BRANCH_README.md. No cross-branch propagation or SHARED DELTA. Foundation implementation publication a9a8df42e84a7eff3950cee94b4a5a2760de0c4c verified with git ls-remote. M1 PASS earns 10%; M0 earned 5%; official completion 15%. Main and context unchanged.
+31 nodes and 35 edges in JSON. 29 tests passed. Remote savepoint: pending. Official completion 63%. No master graph updates, shared delta or branch integration.
