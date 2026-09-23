@@ -1,26 +1,29 @@
-# Branch deliverables
+# M1 deliverables
 
-## Documentation
-- [x] Baseline repository audited
-- [x] Baseline SHA recorded
-- [x] Seven architecture graph views and JSON graph
-- [x] Ownership, interfaces, data flow, branches, tests mapped
-- [x] Milestones, definition of done and approval gates
-- [x] Branch README and graph delta
+## Implementation
+- [x] Python package and dependency/install metadata
+- [x] Settings, environment variables and .env.example
+- [x] Logging and common exceptions
+- [x] Pydantic contracts and abstract BaseAgent
+- [x] SQLAlchemy database lifecycle and transactional abstraction
+- [x] Abstract DatasetLoader and source validation
+- [x] FastAPI skeleton, health probe and OpenAPI
+- [x] Test scaffolding and .gitignore
 
-## Code and data
-- [x] Missing application and datasets explicitly recorded
-- [ ] Application implementation (outside M0)
+## Validation
+- [x] 20 foundation tests passed; 0 failed; 0 skipped
+- [x] Invalid inputs, missing files, agent failures and database rollback covered
+- [x] Two dependency deprecation warnings documented
+- [x] Branch README, deliverables and graph delta current
+- [x] Final compile, scope, dependency and live Uvicorn startup checks verified
 
-## Validation and Git hygiene
-- [x] Local graph and scope validation passed: 16 documents, 95 nodes, 133 edges, seven views, weights 100%; correct baseline/branch and allowed paths
-- [x] Correct local branch and base
-- [x] No secrets or unrelated source changes
-- [x] Remote context branch created
-- [x] Published through GitHub API and remote HEAD verified at 526b5bbe82e9ca06a64389e37d5cacb9b4a0eca7
-- [x] Main untouched; no merge performed
+## Git hygiene
+- [x] Branch created from human-approved M0 base
+- [x] No secrets or private business data
+- [x] No changes to context, other development branches or main
+- [ ] Committed and published to foundation/core-platform
+- [ ] Remote HEAD and unchanged main verified
 
 ## Human review
-- [x] Published M0 ready for commit-specific approval
-- [ ] Context commit approved for foundation lineage
-- [ ] Approved for integration (separate later gate)
+- [x] Approved context base for M1
+- [ ] Integration approved (separate future gate)

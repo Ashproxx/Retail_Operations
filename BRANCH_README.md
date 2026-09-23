@@ -1,38 +1,83 @@
 # Branch README
 
-Branch: context/project-knowledge
-Parent branch / base commit: main / c21658e55c96d7adc78b82d2e2f3d2b17d226144
-Milestone: M0 — PASS; official completion 5%
-Owner scope: knowledge graph, governance and branch metadata
-Human approval status: context work authorized; foundation context commit approval pending
+Branch: foundation/core-platform
+Parent branch / base commit: context/project-knowledge / 3cc1a8df36c49147daac2c3967f37020bb0f5654
+Milestone: M1; local exit criteria PASS, publication verification pending
+Owner scope: shared configuration, schemas, database abstractions, API skeleton, common errors, logging, contracts and foundation tests
+Human approval status: user approved the exact context base on 2026-09-23; no integration or main merge authorized
 
 ## Purpose
-Establish an auditable implementation plan before application development.
+Provide the shared foundation for isolated agent, RAG and security branches. The inherited master graph and governance files are the M0 snapshot; this branch delta is authoritative for M1 status.
+
 ## Source-defined responsibilities
-Preserve all nine PDF agent roles and FastAPI, LangGraph, ChromaDB, sentence-transformers and Ollama direction. Azure is a later deployment target.
+Preserve FastAPI and the planned LangGraph, ChromaDB, sentence-transformers and Ollama architecture. Azure deployment remains later work. M1 installs only dependencies used by the foundation.
+
 ## Allowed file scope
-docs/knowledge_graph/*, docs/governance/*, BRANCH_README.md, BRANCH_DELIVERABLES.md.
+app/*; tests/foundation/*; requirements*.txt; pyproject.toml; .env.example; .gitignore; scripts/check_branch_scope.py; branch README/checklist and branch knowledge delta. No master/context files updated. No SHARED DELTA.
+
 ## Interfaces consumed
-PDF design specification; baseline README defines no runtime interfaces.
+Approved M0 design and interface registry. No actual business dataset or policy sources are available.
+
 ## Interfaces produced
-Planned contracts in INTERFACE_REGISTRY.md; no executable interface.
+- Settings: RETAILOPS_ environment variables and .env loading, validated confidence/iteration limits, redacted database URL.
+- QueryRequest: message and session_id only. Roles/principal are excluded from client input.
+- RequestContext: internal principal, role, scoped stores and request/session IDs; not an authentication implementation.
+- BaseAgent.run(QueryRequest, RequestContext): async AgentResult including provenance, confidence, warnings, handoffs and timing.
+- AgentResult, ChatResponse, Evidence, AuditEvent and ErrorResponse: typed schemas with independent collection defaults.
+- Database.session(): commit/rollback/close lifecycle through SQLAlchemy; Database.ping() and close().
+- DatasetLoader.load(path, column_mapping): abstract CSV/XLSX load contract and source-file validation. No ingestion implementation yet.
+- RetailRepository: abstract observed-stock and store-inventory lookup. Missing data is None/empty; no generated business values.
+- GET / identifies foundation stage; GET /health probes the database and returns 200 or sanitized 503. GET /docs and /openapi.json are available.
+
 ## Deliverables
-Master graph with seven views and JSON, ownership/interface/data/test/branch maps, baseline audit and governance.
+Modular package, install metadata, configuration, environment example, logging, exceptions, schemas, contracts, SQLAlchemy lifecycle, FastAPI factory/lifespan, tests and branch scope guard.
+
+## Dependencies and decisions
+No existing requirements were available to reuse. FastAPI provides the requested API/OpenAPI; Pydantic validates contracts; pydantic-settings loads environment/.env; SQLAlchemy keeps a future PostgreSQL migration path; Uvicorn runs the ASGI server. pytest and httpx are test-only dependencies. No cloud keys, model downloads or paid API calls are needed. Versions are major constrained; this is not a production lockfile.
+SQLite in memory is the default for safe local setup; set RETAILOPS_DATABASE_URL=sqlite+pysqlite:///./retailops.db for persistence. Domain models wait for actual column inspection. Use a trusted authentication adapter before deploying domain routes. Do not expose raw SQL as an API.
+
+## Setup and run
+Python 3.11+ (validated with 3.12). From repository root:
+
+```bash
+python -m venv .venv
+# Windows PowerShell: .venv\Scripts\Activate.ps1
+# Linux/macOS: source .venv/bin/activate
+python -m pip install -r requirements-dev.txt
+# Optional: copy .env.example to .env and edit it
+python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
+```
+
+Open http://127.0.0.1:8000/health and http://127.0.0.1:8000/docs.
+
 ## Tests
-Documentation validation performed locally; no application tests exist.
+```bash
+python -m pytest -q
+python scripts/check_branch_scope.py
+python -m compileall -q app
+```
+20 passed, 0 failed, 0 skipped. Third-party warnings: Starlette deprecates httpx TestClient integration and an AnyIO BlockingPortal alias. They do not affect these passing tests; dependency compatibility needs continued monitoring. ASGI startup, database health and OpenAPI exercised with lifespan-enabled TestClient. Live Uvicorn smoke check recorded in the session report.
+
 ## Knowledge graph changes
-Planned application, agent, branch, milestone, data and security nodes; existing documentation nodes.
+Branch delta maps foundation files, Python imports, endpoints, contracts, tests and ownership. Master graph remains unchanged on its context branch.
+
 ## Data dependencies
-No dataset, orders, supplier records or policy documents supplied. Production grounding cannot be claimed.
+No retail data supplied. Test fixtures are synthetic, in temporary databases only. No CSV/XLSX parser or business data migration is claimed.
+
 ## Known limitations
-Initial GitHub 403 resolved; M0 published through the authorized API. No application implementation.
+No domain agents, LangGraph execution, RAG, embedding models, LLM provider implementation, authentication/RBAC enforcement, durable audit storage, conversation memory, Docker or CI yet. /api/chat and other domain routes intentionally remain unregistered. Metadata logging excludes payloads, raw errors and credentials but is not a tamper-evident audit implementation. M1 does not constitute a deployed production API.
+
 ## Cross-branch dependencies
-Foundation requires human approval of a published context commit; isolated agent/platform/security work requires pinned foundation. No SHARED DELTA.
+Subsequent agent/platform/security branches must start from the pinned published foundation commit. All consume these contracts. No merge/cherry-pick/rebase occurred; integration requires separate explicit approval.
+
 ## Security considerations
-No credentials or private data included. Retrieved content will be treated as untrusted, with authorization before access and hash checks before reasoning.
+Input validation, server-generated request IDs, no raw exception responses, metadata-only logs, hidden SQL parameters and secret-redacted configuration. Environment values and local databases are ignored. Role definitions are a contract, not an authorization grant.
+
 ## Last validated commit
-Baseline c21658e55c96d7adc78b82d2e2f3d2b17d226144; local M0 validation applies to the commit containing this file. Use git rev-parse HEAD for its identifier.
+Approved base 3cc1a8df36c49147daac2c3967f37020bb0f5654. Validation applies to this commit's source tree; the final remote SHA is recorded in the session report.
+
 ## Latest test result
-PASS: graph JSON, unique node IDs, edge endpoints, 16 documents, seven views, weights 100%, branch/base and allowed paths. Publication commit 526b5bbe82e9ca06a64389e37d5cacb9b4a0eca7; remote verification recorded in session report.
+20 passed; scope and compile checks required before publication. Publication verification pending.
+
 ## Next tasks
-Approve exact M0 commit for lineage; create foundation branch; implement shared contracts and FastAPI health skeleton; validate M1.
+Pin verified M1 commit; begin platform/agentic-rag on its own branch; then router and inventory branches. Obtain actual CSV/XLSX and policy data before claiming production grounding. No integration is authorized.

@@ -1,1184 +1,418 @@
 {
-  "branch": "context/project-knowledge",
-  "base_commit": "c21658e55c96d7adc78b82d2e2f3d2b17d226144",
+  "branch": "foundation/core-platform",
+  "base_commit": "3cc1a8df36c49147daac2c3967f37020bb0f5654",
+  "milestone": "M1",
+  "status": "local-pass-publication-pending",
   "nodes": [
     {
-      "id": "context/project-knowledge",
-      "type": "branch",
-      "status": "published"
+      "id": "app/__init__.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/agents/__init__.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/agents/base_agent.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/api/__init__.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/api/schemas.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/core/__init__.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/core/config.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/core/exceptions.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/core/logging.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/main.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/models/__init__.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/models/database.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/services/__init__.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/services/database_service.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "app/services/dataset_loader.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "tests/foundation/test_foundation.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "scripts/check_branch_scope.py",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "requirements.txt",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "requirements-dev.txt",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": "pyproject.toml",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": ".env.example",
+      "type": "file",
+      "status": "implemented"
+    },
+    {
+      "id": ".gitignore",
+      "type": "file",
+      "status": "implemented"
     },
     {
       "id": "foundation/core-platform",
       "type": "branch",
-      "status": "planned"
+      "status": "implemented"
     },
     {
-      "id": "agent/router",
-      "type": "branch",
-      "status": "planned"
+      "id": "/",
+      "type": "endpoint",
+      "status": "implemented"
     },
     {
-      "id": "agent/inventory",
-      "type": "branch",
-      "status": "planned"
+      "id": "/health",
+      "type": "endpoint",
+      "status": "implemented"
     },
     {
-      "id": "agent/order-fulfillment",
-      "type": "branch",
-      "status": "planned"
+      "id": "/docs",
+      "type": "endpoint",
+      "status": "implemented"
     },
     {
-      "id": "agent/supply-chain",
-      "type": "branch",
-      "status": "planned"
-    },
-    {
-      "id": "agent/pricing-promotions",
-      "type": "branch",
-      "status": "planned"
-    },
-    {
-      "id": "agent/customer-service",
-      "type": "branch",
-      "status": "planned"
-    },
-    {
-      "id": "agent/returns-refunds",
-      "type": "branch",
-      "status": "planned"
-    },
-    {
-      "id": "agent/demand-forecasting",
-      "type": "branch",
-      "status": "planned"
-    },
-    {
-      "id": "agent/analytics-reporting",
-      "type": "branch",
-      "status": "planned"
-    },
-    {
-      "id": "platform/agentic-rag",
-      "type": "branch",
-      "status": "planned"
-    },
-    {
-      "id": "security/privacy-integrity",
-      "type": "branch",
-      "status": "planned"
-    },
-    {
-      "id": "integration/release-candidate",
-      "type": "branch",
-      "status": "planned"
-    },
-    {
-      "id": "M0",
-      "type": "milestone",
-      "status": "planned",
-      "weight": 5
-    },
-    {
-      "id": "M1",
-      "type": "milestone",
-      "status": "planned",
-      "weight": 10
-    },
-    {
-      "id": "M2",
-      "type": "milestone",
-      "status": "planned",
-      "weight": 8
-    },
-    {
-      "id": "M3",
-      "type": "milestone",
-      "status": "planned",
-      "weight": 9
-    },
-    {
-      "id": "M4",
-      "type": "milestone",
-      "status": "planned",
-      "weight": 7
-    },
-    {
-      "id": "M5",
-      "type": "milestone",
-      "status": "planned",
-      "weight": 8
-    },
-    {
-      "id": "M6",
-      "type": "milestone",
-      "status": "planned",
-      "weight": 8
-    },
-    {
-      "id": "M7",
-      "type": "milestone",
-      "status": "planned",
-      "weight": 6
-    },
-    {
-      "id": "M8",
-      "type": "milestone",
-      "status": "planned",
-      "weight": 6
-    },
-    {
-      "id": "M9",
-      "type": "milestone",
-      "status": "planned",
-      "weight": 8
-    },
-    {
-      "id": "M10",
-      "type": "milestone",
-      "status": "planned",
-      "weight": 7
-    },
-    {
-      "id": "M11",
-      "type": "milestone",
-      "status": "planned",
-      "weight": 8
-    },
-    {
-      "id": "M12",
-      "type": "milestone",
-      "status": "planned",
-      "weight": 5
-    },
-    {
-      "id": "M13",
-      "type": "milestone",
-      "status": "planned",
-      "weight": 5
-    },
-    {
-      "id": "router",
-      "type": "agent",
-      "status": "planned"
-    },
-    {
-      "id": "router-tool",
-      "type": "tool",
-      "status": "planned"
-    },
-    {
-      "id": "router-tests",
-      "type": "test",
-      "status": "planned"
-    },
-    {
-      "id": "router-result",
-      "type": "schema",
-      "status": "planned"
-    },
-    {
-      "id": "inventory",
-      "type": "agent",
-      "status": "planned"
-    },
-    {
-      "id": "inventory-tool",
-      "type": "tool",
-      "status": "planned"
-    },
-    {
-      "id": "inventory-tests",
-      "type": "test",
-      "status": "planned"
-    },
-    {
-      "id": "inventory-result",
-      "type": "schema",
-      "status": "planned"
-    },
-    {
-      "id": "order-fulfillment",
-      "type": "agent",
-      "status": "planned"
-    },
-    {
-      "id": "order-fulfillment-tool",
-      "type": "tool",
-      "status": "planned"
-    },
-    {
-      "id": "order-fulfillment-tests",
-      "type": "test",
-      "status": "planned"
-    },
-    {
-      "id": "order-fulfillment-result",
-      "type": "schema",
-      "status": "planned"
-    },
-    {
-      "id": "supply-chain",
-      "type": "agent",
-      "status": "planned"
-    },
-    {
-      "id": "supply-chain-tool",
-      "type": "tool",
-      "status": "planned"
-    },
-    {
-      "id": "supply-chain-tests",
-      "type": "test",
-      "status": "planned"
-    },
-    {
-      "id": "supply-chain-result",
-      "type": "schema",
-      "status": "planned"
-    },
-    {
-      "id": "pricing-promotions",
-      "type": "agent",
-      "status": "planned"
-    },
-    {
-      "id": "pricing-promotions-tool",
-      "type": "tool",
-      "status": "planned"
-    },
-    {
-      "id": "pricing-promotions-tests",
-      "type": "test",
-      "status": "planned"
-    },
-    {
-      "id": "pricing-promotions-result",
-      "type": "schema",
-      "status": "planned"
-    },
-    {
-      "id": "customer-service",
-      "type": "agent",
-      "status": "planned"
-    },
-    {
-      "id": "customer-service-tool",
-      "type": "tool",
-      "status": "planned"
-    },
-    {
-      "id": "customer-service-tests",
-      "type": "test",
-      "status": "planned"
-    },
-    {
-      "id": "customer-service-result",
-      "type": "schema",
-      "status": "planned"
-    },
-    {
-      "id": "returns-refunds",
-      "type": "agent",
-      "status": "planned"
-    },
-    {
-      "id": "returns-refunds-tool",
-      "type": "tool",
-      "status": "planned"
-    },
-    {
-      "id": "returns-refunds-tests",
-      "type": "test",
-      "status": "planned"
-    },
-    {
-      "id": "returns-refunds-result",
-      "type": "schema",
-      "status": "planned"
-    },
-    {
-      "id": "demand-forecasting",
-      "type": "agent",
-      "status": "planned"
-    },
-    {
-      "id": "demand-forecasting-tool",
-      "type": "tool",
-      "status": "planned"
-    },
-    {
-      "id": "demand-forecasting-tests",
-      "type": "test",
-      "status": "planned"
-    },
-    {
-      "id": "demand-forecasting-result",
-      "type": "schema",
-      "status": "planned"
-    },
-    {
-      "id": "analytics-reporting",
-      "type": "agent",
-      "status": "planned"
-    },
-    {
-      "id": "analytics-reporting-tool",
-      "type": "tool",
-      "status": "planned"
-    },
-    {
-      "id": "analytics-reporting-tests",
-      "type": "test",
-      "status": "planned"
-    },
-    {
-      "id": "analytics-reporting-result",
-      "type": "schema",
-      "status": "planned"
-    },
-    {
-      "id": "user",
-      "type": "actor",
-      "status": "planned"
-    },
-    {
-      "id": "api",
-      "type": "API endpoint",
-      "status": "planned"
-    },
-    {
-      "id": "query-schema",
-      "type": "schema",
-      "status": "planned"
-    },
-    {
-      "id": "orchestrator",
-      "type": "module",
-      "status": "planned"
-    },
-    {
-      "id": "rag",
-      "type": "module",
-      "status": "planned"
-    },
-    {
-      "id": "chunk",
-      "type": "module",
-      "status": "planned"
-    },
-    {
-      "id": "embedding",
-      "type": "module",
-      "status": "planned"
-    },
-    {
-      "id": "chroma",
-      "type": "RAG collection",
-      "status": "planned"
-    },
-    {
-      "id": "retrieval",
-      "type": "module",
-      "status": "planned"
-    },
-    {
-      "id": "verification",
-      "type": "security control",
-      "status": "planned"
-    },
-    {
-      "id": "dataset",
-      "type": "dataset",
-      "status": "planned"
-    },
-    {
-      "id": "tables",
-      "type": "database table",
-      "status": "planned"
-    },
-    {
-      "id": "rbac",
-      "type": "security control",
-      "status": "planned"
-    },
-    {
-      "id": "audit",
-      "type": "module",
-      "status": "planned"
-    },
-    {
-      "id": "docs/governance/MAIN_BASELINE.md",
-      "type": "file",
-      "status": "published",
-      "responsibility": "M0 knowledge/governance documentation"
-    },
-    {
-      "id": "docs/governance/BRANCH_POLICY.md",
-      "type": "file",
-      "status": "published",
-      "responsibility": "M0 knowledge/governance documentation"
-    },
-    {
-      "id": "docs/governance/HUMAN_APPROVAL_GATES.md",
-      "type": "file",
-      "status": "published",
-      "responsibility": "M0 knowledge/governance documentation"
-    },
-    {
-      "id": "docs/governance/DEFINITION_OF_DONE.md",
-      "type": "file",
-      "status": "published",
-      "responsibility": "M0 knowledge/governance documentation"
-    },
-    {
-      "id": "docs/governance/MILESTONES.md",
-      "type": "file",
-      "status": "published",
-      "responsibility": "M0 knowledge/governance documentation"
-    },
-    {
-      "id": "docs/knowledge_graph/FILE_OWNERSHIP_MAP.md",
-      "type": "file",
-      "status": "published",
-      "responsibility": "M0 knowledge/governance documentation"
-    },
-    {
-      "id": "docs/knowledge_graph/INTERFACE_REGISTRY.md",
-      "type": "file",
-      "status": "published",
-      "responsibility": "M0 knowledge/governance documentation"
-    },
-    {
-      "id": "docs/knowledge_graph/MASTER_KNOWLEDGE_GRAPH.md",
-      "type": "file",
-      "status": "published",
-      "responsibility": "M0 knowledge/governance documentation"
-    },
-    {
-      "id": "docs/knowledge_graph/DATA_FLOW_GRAPH.md",
-      "type": "file",
-      "status": "published",
-      "responsibility": "M0 knowledge/governance documentation"
-    },
-    {
-      "id": "docs/knowledge_graph/BRANCH_GRAPH.md",
-      "type": "file",
-      "status": "published",
-      "responsibility": "M0 knowledge/governance documentation"
-    },
-    {
-      "id": "docs/knowledge_graph/TEST_COVERAGE_MAP.md",
-      "type": "file",
-      "status": "published",
-      "responsibility": "M0 knowledge/governance documentation"
-    },
-    {
-      "id": "docs/knowledge_graph/BRANCH_KNOWLEDGE_GRAPH.md",
-      "type": "file",
-      "status": "published",
-      "responsibility": "M0 knowledge/governance documentation"
-    },
-    {
-      "id": "BRANCH_README.md",
-      "type": "file",
-      "status": "published",
-      "responsibility": "M0 knowledge/governance documentation"
-    },
-    {
-      "id": "BRANCH_DELIVERABLES.md",
-      "type": "file",
-      "status": "published",
-      "responsibility": "M0 knowledge/governance documentation"
-    },
-    {
-      "id": "docs/knowledge_graph/MASTER_KNOWLEDGE_GRAPH.json",
-      "type": "file",
-      "status": "published",
-      "responsibility": "M0 knowledge/governance documentation"
-    },
-    {
-      "id": "docs/knowledge_graph/BRANCH_KNOWLEDGE_GRAPH.json",
-      "type": "file",
-      "status": "published",
-      "responsibility": "M0 knowledge/governance documentation"
-    },
-    {
-      "id": "README.md",
-      "type": "file",
-      "status": "existing",
-      "responsibility": "One-line repository title"
+      "id": "/openapi.json",
+      "type": "endpoint",
+      "status": "implemented"
     }
   ],
   "edges": [
     {
-      "source": "M0",
-      "target": "context/project-knowledge",
-      "type": "owned_by"
-    },
-    {
-      "source": "M1",
-      "target": "foundation/core-platform",
-      "type": "owned_by"
-    },
-    {
-      "source": "M2",
-      "target": "agent/router",
-      "type": "owned_by"
-    },
-    {
-      "source": "M3",
-      "target": "agent/inventory",
-      "type": "owned_by"
-    },
-    {
-      "source": "M4",
-      "target": "agent/order-fulfillment",
-      "type": "owned_by"
-    },
-    {
-      "source": "M5",
-      "target": "agent/supply-chain",
-      "type": "owned_by"
-    },
-    {
-      "source": "M6",
-      "target": "agent/pricing-promotions",
-      "type": "owned_by"
-    },
-    {
-      "source": "M7",
-      "target": "agent/customer-service",
-      "type": "owned_by"
-    },
-    {
-      "source": "M8",
-      "target": "agent/returns-refunds",
-      "type": "owned_by"
-    },
-    {
-      "source": "M9",
-      "target": "agent/demand-forecasting",
-      "type": "owned_by"
-    },
-    {
-      "source": "M10",
-      "target": "agent/analytics-reporting",
-      "type": "owned_by"
-    },
-    {
-      "source": "M11",
-      "target": "platform/agentic-rag",
-      "type": "owned_by"
-    },
-    {
-      "source": "M12",
-      "target": "security/privacy-integrity",
-      "type": "owned_by"
-    },
-    {
-      "source": "M13",
-      "target": "integration/release-candidate",
-      "type": "owned_by"
-    },
-    {
-      "source": "agent/router",
-      "target": "router",
-      "type": "owns"
-    },
-    {
-      "source": "router",
-      "target": "router-tool",
-      "type": "calls"
-    },
-    {
-      "source": "router-tests",
-      "target": "router",
-      "type": "tests"
-    },
-    {
-      "source": "router",
-      "target": "router-result",
-      "type": "produces"
-    },
-    {
-      "source": "agent/inventory",
-      "target": "inventory",
-      "type": "owns"
-    },
-    {
-      "source": "inventory",
-      "target": "inventory-tool",
-      "type": "calls"
-    },
-    {
-      "source": "inventory-tests",
-      "target": "inventory",
-      "type": "tests"
-    },
-    {
-      "source": "inventory",
-      "target": "inventory-result",
-      "type": "produces"
-    },
-    {
-      "source": "router",
-      "target": "inventory",
-      "type": "routes_to"
-    },
-    {
-      "source": "agent/order-fulfillment",
-      "target": "order-fulfillment",
-      "type": "owns"
-    },
-    {
-      "source": "order-fulfillment",
-      "target": "order-fulfillment-tool",
-      "type": "calls"
-    },
-    {
-      "source": "order-fulfillment-tests",
-      "target": "order-fulfillment",
-      "type": "tests"
-    },
-    {
-      "source": "order-fulfillment",
-      "target": "order-fulfillment-result",
-      "type": "produces"
-    },
-    {
-      "source": "router",
-      "target": "order-fulfillment",
-      "type": "routes_to"
-    },
-    {
-      "source": "agent/supply-chain",
-      "target": "supply-chain",
-      "type": "owns"
-    },
-    {
-      "source": "supply-chain",
-      "target": "supply-chain-tool",
-      "type": "calls"
-    },
-    {
-      "source": "supply-chain-tests",
-      "target": "supply-chain",
-      "type": "tests"
-    },
-    {
-      "source": "supply-chain",
-      "target": "supply-chain-result",
-      "type": "produces"
-    },
-    {
-      "source": "router",
-      "target": "supply-chain",
-      "type": "routes_to"
-    },
-    {
-      "source": "agent/pricing-promotions",
-      "target": "pricing-promotions",
-      "type": "owns"
-    },
-    {
-      "source": "pricing-promotions",
-      "target": "pricing-promotions-tool",
-      "type": "calls"
-    },
-    {
-      "source": "pricing-promotions-tests",
-      "target": "pricing-promotions",
-      "type": "tests"
-    },
-    {
-      "source": "pricing-promotions",
-      "target": "pricing-promotions-result",
-      "type": "produces"
-    },
-    {
-      "source": "router",
-      "target": "pricing-promotions",
-      "type": "routes_to"
-    },
-    {
-      "source": "agent/customer-service",
-      "target": "customer-service",
-      "type": "owns"
-    },
-    {
-      "source": "customer-service",
-      "target": "customer-service-tool",
-      "type": "calls"
-    },
-    {
-      "source": "customer-service-tests",
-      "target": "customer-service",
-      "type": "tests"
-    },
-    {
-      "source": "customer-service",
-      "target": "customer-service-result",
-      "type": "produces"
-    },
-    {
-      "source": "router",
-      "target": "customer-service",
-      "type": "routes_to"
-    },
-    {
-      "source": "agent/returns-refunds",
-      "target": "returns-refunds",
-      "type": "owns"
-    },
-    {
-      "source": "returns-refunds",
-      "target": "returns-refunds-tool",
-      "type": "calls"
-    },
-    {
-      "source": "returns-refunds-tests",
-      "target": "returns-refunds",
-      "type": "tests"
-    },
-    {
-      "source": "returns-refunds",
-      "target": "returns-refunds-result",
-      "type": "produces"
-    },
-    {
-      "source": "router",
-      "target": "returns-refunds",
-      "type": "routes_to"
-    },
-    {
-      "source": "agent/demand-forecasting",
-      "target": "demand-forecasting",
-      "type": "owns"
-    },
-    {
-      "source": "demand-forecasting",
-      "target": "demand-forecasting-tool",
-      "type": "calls"
-    },
-    {
-      "source": "demand-forecasting-tests",
-      "target": "demand-forecasting",
-      "type": "tests"
-    },
-    {
-      "source": "demand-forecasting",
-      "target": "demand-forecasting-result",
-      "type": "produces"
-    },
-    {
-      "source": "router",
-      "target": "demand-forecasting",
-      "type": "routes_to"
-    },
-    {
-      "source": "agent/analytics-reporting",
-      "target": "analytics-reporting",
-      "type": "owns"
-    },
-    {
-      "source": "analytics-reporting",
-      "target": "analytics-reporting-tool",
-      "type": "calls"
-    },
-    {
-      "source": "analytics-reporting-tests",
-      "target": "analytics-reporting",
-      "type": "tests"
-    },
-    {
-      "source": "analytics-reporting",
-      "target": "analytics-reporting-result",
-      "type": "produces"
-    },
-    {
-      "source": "router",
-      "target": "analytics-reporting",
-      "type": "routes_to"
-    },
-    {
-      "source": "user",
-      "target": "api",
-      "type": "calls"
-    },
-    {
-      "source": "api",
-      "target": "query-schema",
-      "type": "validates"
-    },
-    {
-      "source": "api",
-      "target": "orchestrator",
-      "type": "calls"
-    },
-    {
-      "source": "orchestrator",
-      "target": "router",
-      "type": "calls"
-    },
-    {
-      "source": "rag",
-      "target": "chunk",
-      "type": "calls"
-    },
-    {
-      "source": "chunk",
-      "target": "embedding",
-      "type": "calls"
-    },
-    {
-      "source": "embedding",
-      "target": "chroma",
-      "type": "writes"
-    },
-    {
-      "source": "retrieval",
-      "target": "chroma",
-      "type": "reads"
-    },
-    {
-      "source": "retrieval",
-      "target": "verification",
-      "type": "calls"
-    },
-    {
-      "source": "dataset",
-      "target": "tables",
-      "type": "produces"
-    },
-    {
-      "source": "api",
-      "target": "rbac",
-      "type": "protected_by"
-    },
-    {
-      "source": "orchestrator",
-      "target": "audit",
-      "type": "produces"
-    },
-    {
-      "source": "platform/agentic-rag",
-      "target": "rag",
+      "source": "foundation/core-platform",
+      "target": "app/__init__.py",
       "type": "owns"
     },
     {
       "source": "foundation/core-platform",
-      "target": "query-schema",
+      "target": "app/agents/__init__.py",
       "type": "owns"
     },
     {
       "source": "foundation/core-platform",
-      "target": "orchestrator",
+      "target": "app/agents/base_agent.py",
       "type": "owns"
     },
     {
-      "source": "security/privacy-integrity",
-      "target": "rbac",
+      "source": "foundation/core-platform",
+      "target": "app/api/__init__.py",
       "type": "owns"
     },
     {
-      "source": "router",
-      "target": "rag",
-      "type": "calls"
-    },
-    {
-      "source": "router-tool",
-      "target": "tables",
-      "type": "reads"
-    },
-    {
-      "source": "router-tool",
-      "target": "rbac",
-      "type": "protected_by"
-    },
-    {
-      "source": "inventory",
-      "target": "rag",
-      "type": "calls"
-    },
-    {
-      "source": "inventory-tool",
-      "target": "tables",
-      "type": "reads"
-    },
-    {
-      "source": "inventory-tool",
-      "target": "rbac",
-      "type": "protected_by"
-    },
-    {
-      "source": "order-fulfillment",
-      "target": "rag",
-      "type": "calls"
-    },
-    {
-      "source": "order-fulfillment-tool",
-      "target": "tables",
-      "type": "reads"
-    },
-    {
-      "source": "order-fulfillment-tool",
-      "target": "rbac",
-      "type": "protected_by"
-    },
-    {
-      "source": "supply-chain",
-      "target": "rag",
-      "type": "calls"
-    },
-    {
-      "source": "supply-chain-tool",
-      "target": "tables",
-      "type": "reads"
-    },
-    {
-      "source": "supply-chain-tool",
-      "target": "rbac",
-      "type": "protected_by"
-    },
-    {
-      "source": "pricing-promotions",
-      "target": "rag",
-      "type": "calls"
-    },
-    {
-      "source": "pricing-promotions-tool",
-      "target": "tables",
-      "type": "reads"
-    },
-    {
-      "source": "pricing-promotions-tool",
-      "target": "rbac",
-      "type": "protected_by"
-    },
-    {
-      "source": "customer-service",
-      "target": "rag",
-      "type": "calls"
-    },
-    {
-      "source": "customer-service-tool",
-      "target": "tables",
-      "type": "reads"
-    },
-    {
-      "source": "customer-service-tool",
-      "target": "rbac",
-      "type": "protected_by"
-    },
-    {
-      "source": "returns-refunds",
-      "target": "rag",
-      "type": "calls"
-    },
-    {
-      "source": "returns-refunds-tool",
-      "target": "tables",
-      "type": "reads"
-    },
-    {
-      "source": "returns-refunds-tool",
-      "target": "rbac",
-      "type": "protected_by"
-    },
-    {
-      "source": "demand-forecasting",
-      "target": "rag",
-      "type": "calls"
-    },
-    {
-      "source": "demand-forecasting-tool",
-      "target": "tables",
-      "type": "reads"
-    },
-    {
-      "source": "demand-forecasting-tool",
-      "target": "rbac",
-      "type": "protected_by"
-    },
-    {
-      "source": "analytics-reporting",
-      "target": "rag",
-      "type": "calls"
-    },
-    {
-      "source": "analytics-reporting-tool",
-      "target": "tables",
-      "type": "reads"
-    },
-    {
-      "source": "analytics-reporting-tool",
-      "target": "rbac",
-      "type": "protected_by"
-    },
-    {
-      "source": "context/project-knowledge",
-      "target": "docs/governance/MAIN_BASELINE.md",
+      "source": "foundation/core-platform",
+      "target": "app/api/schemas.py",
       "type": "owns"
     },
     {
-      "source": "docs/governance/MAIN_BASELINE.md",
-      "target": "M0",
-      "type": "satisfies"
-    },
-    {
-      "source": "context/project-knowledge",
-      "target": "docs/governance/BRANCH_POLICY.md",
+      "source": "foundation/core-platform",
+      "target": "app/core/__init__.py",
       "type": "owns"
     },
     {
-      "source": "docs/governance/BRANCH_POLICY.md",
-      "target": "M0",
-      "type": "satisfies"
-    },
-    {
-      "source": "context/project-knowledge",
-      "target": "docs/governance/HUMAN_APPROVAL_GATES.md",
+      "source": "foundation/core-platform",
+      "target": "app/core/config.py",
       "type": "owns"
     },
     {
-      "source": "docs/governance/HUMAN_APPROVAL_GATES.md",
-      "target": "M0",
-      "type": "satisfies"
-    },
-    {
-      "source": "context/project-knowledge",
-      "target": "docs/governance/DEFINITION_OF_DONE.md",
+      "source": "foundation/core-platform",
+      "target": "app/core/exceptions.py",
       "type": "owns"
     },
     {
-      "source": "docs/governance/DEFINITION_OF_DONE.md",
-      "target": "M0",
-      "type": "satisfies"
-    },
-    {
-      "source": "context/project-knowledge",
-      "target": "docs/governance/MILESTONES.md",
+      "source": "foundation/core-platform",
+      "target": "app/core/logging.py",
       "type": "owns"
     },
     {
-      "source": "docs/governance/MILESTONES.md",
-      "target": "M0",
-      "type": "satisfies"
-    },
-    {
-      "source": "context/project-knowledge",
-      "target": "docs/knowledge_graph/FILE_OWNERSHIP_MAP.md",
+      "source": "foundation/core-platform",
+      "target": "app/main.py",
       "type": "owns"
     },
     {
-      "source": "docs/knowledge_graph/FILE_OWNERSHIP_MAP.md",
-      "target": "M0",
-      "type": "satisfies"
-    },
-    {
-      "source": "context/project-knowledge",
-      "target": "docs/knowledge_graph/INTERFACE_REGISTRY.md",
+      "source": "foundation/core-platform",
+      "target": "app/models/__init__.py",
       "type": "owns"
     },
     {
-      "source": "docs/knowledge_graph/INTERFACE_REGISTRY.md",
-      "target": "M0",
-      "type": "satisfies"
-    },
-    {
-      "source": "context/project-knowledge",
-      "target": "docs/knowledge_graph/MASTER_KNOWLEDGE_GRAPH.md",
+      "source": "foundation/core-platform",
+      "target": "app/models/database.py",
       "type": "owns"
     },
     {
-      "source": "docs/knowledge_graph/MASTER_KNOWLEDGE_GRAPH.md",
-      "target": "M0",
-      "type": "satisfies"
-    },
-    {
-      "source": "context/project-knowledge",
-      "target": "docs/knowledge_graph/DATA_FLOW_GRAPH.md",
+      "source": "foundation/core-platform",
+      "target": "app/services/__init__.py",
       "type": "owns"
     },
     {
-      "source": "docs/knowledge_graph/DATA_FLOW_GRAPH.md",
-      "target": "M0",
-      "type": "satisfies"
-    },
-    {
-      "source": "context/project-knowledge",
-      "target": "docs/knowledge_graph/BRANCH_GRAPH.md",
+      "source": "foundation/core-platform",
+      "target": "app/services/database_service.py",
       "type": "owns"
     },
     {
-      "source": "docs/knowledge_graph/BRANCH_GRAPH.md",
-      "target": "M0",
-      "type": "satisfies"
-    },
-    {
-      "source": "context/project-knowledge",
-      "target": "docs/knowledge_graph/TEST_COVERAGE_MAP.md",
+      "source": "foundation/core-platform",
+      "target": "app/services/dataset_loader.py",
       "type": "owns"
     },
     {
-      "source": "docs/knowledge_graph/TEST_COVERAGE_MAP.md",
-      "target": "M0",
-      "type": "satisfies"
-    },
-    {
-      "source": "context/project-knowledge",
-      "target": "docs/knowledge_graph/BRANCH_KNOWLEDGE_GRAPH.md",
+      "source": "foundation/core-platform",
+      "target": "tests/foundation/test_foundation.py",
       "type": "owns"
     },
     {
-      "source": "docs/knowledge_graph/BRANCH_KNOWLEDGE_GRAPH.md",
-      "target": "M0",
-      "type": "satisfies"
-    },
-    {
-      "source": "context/project-knowledge",
-      "target": "BRANCH_README.md",
+      "source": "foundation/core-platform",
+      "target": "scripts/check_branch_scope.py",
       "type": "owns"
     },
     {
-      "source": "BRANCH_README.md",
-      "target": "M0",
-      "type": "satisfies"
-    },
-    {
-      "source": "context/project-knowledge",
-      "target": "BRANCH_DELIVERABLES.md",
+      "source": "foundation/core-platform",
+      "target": "requirements.txt",
       "type": "owns"
     },
     {
-      "source": "BRANCH_DELIVERABLES.md",
-      "target": "M0",
-      "type": "satisfies"
-    },
-    {
-      "source": "context/project-knowledge",
-      "target": "docs/knowledge_graph/MASTER_KNOWLEDGE_GRAPH.json",
+      "source": "foundation/core-platform",
+      "target": "requirements-dev.txt",
       "type": "owns"
     },
     {
-      "source": "docs/knowledge_graph/MASTER_KNOWLEDGE_GRAPH.json",
-      "target": "M0",
-      "type": "satisfies"
-    },
-    {
-      "source": "context/project-knowledge",
-      "target": "docs/knowledge_graph/BRANCH_KNOWLEDGE_GRAPH.json",
+      "source": "foundation/core-platform",
+      "target": "pyproject.toml",
       "type": "owns"
     },
     {
-      "source": "docs/knowledge_graph/BRANCH_KNOWLEDGE_GRAPH.json",
-      "target": "M0",
-      "type": "satisfies"
+      "source": "foundation/core-platform",
+      "target": ".env.example",
+      "type": "owns"
+    },
+    {
+      "source": "foundation/core-platform",
+      "target": ".gitignore",
+      "type": "owns"
+    },
+    {
+      "source": "app/agents/base_agent.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/main.py",
+      "target": "app/core/config.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/main.py",
+      "target": "app/core/exceptions.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/main.py",
+      "target": "app/core/logging.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/main.py",
+      "target": "app/services/database_service.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/services/dataset_loader.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/services/dataset_loader.py",
+      "target": "app/core/exceptions.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "app/main.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "app/core/config.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "app/core/exceptions.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "app/core/logging.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "app/api/schemas.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "app/agents/base_agent.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "app/services/database_service.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "app/services/dataset_loader.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/main.py",
+      "target": "/",
+      "type": "registers"
+    },
+    {
+      "source": "app/main.py",
+      "target": "/health",
+      "type": "registers"
+    },
+    {
+      "source": "app/main.py",
+      "target": "/docs",
+      "type": "registers"
+    },
+    {
+      "source": "app/main.py",
+      "target": "/openapi.json",
+      "type": "registers"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "app/agents/base_agent.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "app/api/schemas.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "app/core/config.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "app/core/exceptions.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "app/core/logging.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "app/main.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "app/models/database.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "app/services/database_service.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/foundation/test_foundation.py",
+      "target": "app/services/dataset_loader.py",
+      "type": "tests"
     }
   ],
-  "interface_changes": [],
-  "dependencies": [
-    "Approved context commit before M1"
-  ],
-  "remote_status": "published"
+  "dependencies": {
+    "runtime": [
+      "FastAPI",
+      "Pydantic",
+      "pydantic-settings",
+      "SQLAlchemy",
+      "Uvicorn"
+    ],
+    "test": [
+      "pytest",
+      "httpx"
+    ]
+  },
+  "deferred": [
+    "domain models pending dataset",
+    "domain agents",
+    "LangGraph",
+    "ChromaDB",
+    "embeddings",
+    "RBAC",
+    "durable audit",
+    "deployment"
+  ]
 }
