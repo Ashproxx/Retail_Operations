@@ -1,420 +1,583 @@
 {
-  "branch": "foundation/core-platform",
-  "base_commit": "3cc1a8df36c49147daac2c3967f37020bb0f5654",
-  "milestone": "M1",
-  "status": "PASS",
+  "branch": "security/privacy-integrity",
+  "base_commit": "77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045",
+  "milestone": "M12",
+  "status": "publication-pending",
+  "official_completion": 90,
+  "verified_commit": "publication-pending",
   "nodes": [
     {
-      "id": "app/__init__.py",
+      "id": "app/security/__init__.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/agents/__init__.py",
+      "id": "app/security/audit.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/agents/base_agent.py",
+      "id": "app/security/check_scope.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/api/__init__.py",
+      "id": "app/security/config.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/api/schemas.py",
+      "id": "app/security/demo.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/core/__init__.py",
+      "id": "app/security/integrity.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/core/config.py",
+      "id": "app/security/policy.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/core/exceptions.py",
+      "id": "app/security/retrieval.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/core/logging.py",
+      "id": "tests/security/test_security.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/main.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "security/privacy-integrity",
+      "type": "branch"
     },
     {
-      "id": "app/models/__init__.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/security/audit.py:verify_chain:10",
+      "type": "function"
     },
     {
-      "id": "app/models/database.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/security/audit.py:AuditChain:26",
+      "type": "class"
     },
     {
-      "id": "app/services/__init__.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/security/audit.py:__init__:27",
+      "type": "function"
     },
     {
-      "id": "app/services/database_service.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/security/audit.py:read:29",
+      "type": "function"
     },
     {
-      "id": "app/services/dataset_loader.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/security/audit.py:append:37",
+      "type": "function"
     },
     {
-      "id": "tests/foundation/test_foundation.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/security/check_scope.py:git:3",
+      "type": "function"
     },
     {
-      "id": "scripts/check_branch_scope.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/security/check_scope.py:main:4",
+      "type": "function"
     },
     {
-      "id": "requirements.txt",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/security/config.py:SecuritySettings:4",
+      "type": "class"
     },
     {
-      "id": "requirements-dev.txt",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/security/config.py:key_length:8",
+      "type": "function"
     },
     {
-      "id": "pyproject.toml",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/security/config.py:require_key:12",
+      "type": "function"
     },
     {
-      "id": ".env.example",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/security/demo.py:main:12",
+      "type": "function"
     },
     {
-      "id": ".gitignore",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/security/integrity.py:IntegrityFailure:7",
+      "type": "class"
     },
     {
-      "id": "foundation/core-platform",
-      "type": "branch",
-      "status": "implemented"
+      "id": "app/security/integrity.py:Document:11",
+      "type": "class"
     },
     {
-      "id": "/",
-      "type": "endpoint",
-      "status": "implemented"
+      "id": "app/security/integrity.py:SealedDocument:19",
+      "type": "class"
     },
     {
-      "id": "/health",
-      "type": "endpoint",
-      "status": "implemented"
+      "id": "app/security/integrity.py:canonical:25",
+      "type": "function"
     },
     {
-      "id": "/docs",
-      "type": "endpoint",
-      "status": "implemented"
+      "id": "app/security/integrity.py:seal:29",
+      "type": "function"
     },
     {
-      "id": "/openapi.json",
-      "type": "endpoint",
-      "status": "implemented"
+      "id": "app/security/integrity.py:verify:36",
+      "type": "function"
+    },
+    {
+      "id": "app/security/policy.py:AccessDenied:9",
+      "type": "class"
+    },
+    {
+      "id": "app/security/policy.py:AuthenticationFailed:13",
+      "type": "class"
+    },
+    {
+      "id": "app/security/policy.py:Grant:27",
+      "type": "class"
+    },
+    {
+      "id": "app/security/policy.py:TokenAuthenticator:34",
+      "type": "class"
+    },
+    {
+      "id": "app/security/policy.py:authorize:52",
+      "type": "function"
+    },
+    {
+      "id": "app/security/policy.py:ToolRegistry:57",
+      "type": "class"
+    },
+    {
+      "id": "app/security/policy.py:__init__:36",
+      "type": "function"
+    },
+    {
+      "id": "app/security/policy.py:authenticate:40",
+      "type": "function"
+    },
+    {
+      "id": "app/security/policy.py:__init__:58",
+      "type": "function"
+    },
+    {
+      "id": "app/security/policy.py:register:59",
+      "type": "function"
+    },
+    {
+      "id": "app/security/policy.py:invoke:62",
+      "type": "function"
+    },
+    {
+      "id": "app/security/retrieval.py:retrieve_verified:11",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py:ctx:14",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py:doc:15",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py:event:16",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py:test_authentication_context_cannot_be_role_claim:19",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py:test_role_allow:28",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py:test_deny_unknown_scope_or_role:31",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py:test_tools_authorize_before_side_effect_and_prevent_context_override:35",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py:test_document_integrity_binds_text_and_scope:46",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py:test_retrieval_authorizes_before_provider_and_checks_scope:55",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py:test_tampered_retrieval_rejected:64",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py:test_audit_roundtrip_mutation_reorder_truncation_and_anchor:69",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py:test_bad_log_and_secret_settings:82",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py:test_expired_grant_and_missing_log_detected:93",
+      "type": "function"
+    },
+    {
+      "id": "tests/security/test_security.py:provider:57",
+      "type": "function"
     }
   ],
   "edges": [
     {
-      "source": "foundation/core-platform",
-      "target": "app/__init__.py",
+      "source": "security/privacy-integrity",
+      "target": "app/security/__init__.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/agents/__init__.py",
+      "source": "security/privacy-integrity",
+      "target": "app/security/audit.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/agents/base_agent.py",
+      "source": "security/privacy-integrity",
+      "target": "app/security/check_scope.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/api/__init__.py",
+      "source": "security/privacy-integrity",
+      "target": "app/security/config.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/api/schemas.py",
+      "source": "security/privacy-integrity",
+      "target": "app/security/demo.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/core/__init__.py",
+      "source": "security/privacy-integrity",
+      "target": "app/security/integrity.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/core/config.py",
+      "source": "security/privacy-integrity",
+      "target": "app/security/policy.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/core/exceptions.py",
+      "source": "security/privacy-integrity",
+      "target": "app/security/retrieval.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/core/logging.py",
+      "source": "security/privacy-integrity",
+      "target": "tests/security/test_security.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/main.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/models/__init__.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/models/database.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/services/__init__.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/services/database_service.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/services/dataset_loader.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "tests/foundation/test_foundation.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "scripts/check_branch_scope.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "requirements.txt",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "requirements-dev.txt",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "pyproject.toml",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": ".env.example",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": ".gitignore",
-      "type": "owns"
-    },
-    {
-      "source": "app/agents/base_agent.py",
-      "target": "app/api/schemas.py",
+      "source": "app/security/audit.py",
+      "target": "app/security/integrity.py",
       "type": "imports"
     },
     {
-      "source": "app/main.py",
-      "target": "app/core/config.py",
+      "source": "app/security/audit.py",
+      "target": "app/security/audit.py:verify_chain:10",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/audit.py",
+      "target": "app/security/audit.py:AuditChain:26",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/audit.py",
+      "target": "app/security/audit.py:__init__:27",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/audit.py",
+      "target": "app/security/audit.py:read:29",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/audit.py",
+      "target": "app/security/audit.py:append:37",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/check_scope.py",
+      "target": "app/security/check_scope.py:git:3",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/check_scope.py",
+      "target": "app/security/check_scope.py:main:4",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/config.py",
+      "target": "app/security/config.py:SecuritySettings:4",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/config.py",
+      "target": "app/security/config.py:key_length:8",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/config.py",
+      "target": "app/security/config.py:require_key:12",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/demo.py",
+      "target": "app/security/policy.py",
       "type": "imports"
     },
     {
-      "source": "app/main.py",
-      "target": "app/core/exceptions.py",
+      "source": "app/security/demo.py",
+      "target": "app/security/integrity.py",
       "type": "imports"
     },
     {
-      "source": "app/main.py",
-      "target": "app/core/logging.py",
+      "source": "app/security/demo.py",
+      "target": "app/security/retrieval.py",
       "type": "imports"
     },
     {
-      "source": "app/main.py",
-      "target": "app/services/database_service.py",
+      "source": "app/security/demo.py",
+      "target": "app/security/audit.py",
       "type": "imports"
     },
     {
-      "source": "app/services/dataset_loader.py",
-      "target": "app/api/schemas.py",
+      "source": "app/security/demo.py",
+      "target": "app/security/demo.py:main:12",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/integrity.py",
+      "target": "app/security/integrity.py:IntegrityFailure:7",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/integrity.py",
+      "target": "app/security/integrity.py:Document:11",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/integrity.py",
+      "target": "app/security/integrity.py:SealedDocument:19",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/integrity.py",
+      "target": "app/security/integrity.py:canonical:25",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/integrity.py",
+      "target": "app/security/integrity.py:seal:29",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/integrity.py",
+      "target": "app/security/integrity.py:verify:36",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/policy.py",
+      "target": "app/security/policy.py:AccessDenied:9",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/policy.py",
+      "target": "app/security/policy.py:AuthenticationFailed:13",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/policy.py",
+      "target": "app/security/policy.py:Grant:27",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/policy.py",
+      "target": "app/security/policy.py:TokenAuthenticator:34",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/policy.py",
+      "target": "app/security/policy.py:authorize:52",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/policy.py",
+      "target": "app/security/policy.py:ToolRegistry:57",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/policy.py",
+      "target": "app/security/policy.py:__init__:36",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/policy.py",
+      "target": "app/security/policy.py:authenticate:40",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/policy.py",
+      "target": "app/security/policy.py:__init__:58",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/policy.py",
+      "target": "app/security/policy.py:register:59",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/policy.py",
+      "target": "app/security/policy.py:invoke:62",
+      "type": "defines"
+    },
+    {
+      "source": "app/security/retrieval.py",
+      "target": "app/security/policy.py",
       "type": "imports"
     },
     {
-      "source": "app/services/dataset_loader.py",
-      "target": "app/core/exceptions.py",
+      "source": "app/security/retrieval.py",
+      "target": "app/security/integrity.py",
       "type": "imports"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/main.py",
+      "source": "app/security/retrieval.py",
+      "target": "app/security/retrieval.py:retrieve_verified:11",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "app/security/policy.py",
       "type": "imports"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/config.py",
+      "source": "tests/security/test_security.py",
+      "target": "app/security/integrity.py",
       "type": "imports"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/exceptions.py",
+      "source": "tests/security/test_security.py",
+      "target": "app/security/retrieval.py",
       "type": "imports"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/logging.py",
+      "source": "tests/security/test_security.py",
+      "target": "app/security/audit.py",
       "type": "imports"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/api/schemas.py",
+      "source": "tests/security/test_security.py",
+      "target": "app/security/config.py",
       "type": "imports"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/agents/base_agent.py",
-      "type": "imports"
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py:ctx:14",
+      "type": "defines"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/services/database_service.py",
-      "type": "imports"
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py:doc:15",
+      "type": "defines"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/services/dataset_loader.py",
-      "type": "imports"
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py:event:16",
+      "type": "defines"
     },
     {
-      "source": "app/main.py",
-      "target": "/",
-      "type": "registers"
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py:test_authentication_context_cannot_be_role_claim:19",
+      "type": "defines"
     },
     {
-      "source": "app/main.py",
-      "target": "/health",
-      "type": "registers"
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py:test_role_allow:28",
+      "type": "defines"
     },
     {
-      "source": "app/main.py",
-      "target": "/docs",
-      "type": "registers"
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py:test_deny_unknown_scope_or_role:31",
+      "type": "defines"
     },
     {
-      "source": "app/main.py",
-      "target": "/openapi.json",
-      "type": "registers"
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py:test_tools_authorize_before_side_effect_and_prevent_context_override:35",
+      "type": "defines"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/agents/base_agent.py",
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py:test_document_integrity_binds_text_and_scope:46",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py:test_retrieval_authorizes_before_provider_and_checks_scope:55",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py:test_tampered_retrieval_rejected:64",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py:test_audit_roundtrip_mutation_reorder_truncation_and_anchor:69",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py:test_bad_log_and_secret_settings:82",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py:test_expired_grant_and_missing_log_detected:93",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "tests/security/test_security.py:provider:57",
+      "type": "defines"
+    },
+    {
+      "source": "tests/security/test_security.py",
+      "target": "app/security/audit.py",
       "type": "tests"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/api/schemas.py",
+      "source": "tests/security/test_security.py",
+      "target": "app/security/config.py",
       "type": "tests"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/config.py",
+      "source": "tests/security/test_security.py",
+      "target": "app/security/integrity.py",
       "type": "tests"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/exceptions.py",
+      "source": "tests/security/test_security.py",
+      "target": "app/security/policy.py",
       "type": "tests"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/logging.py",
-      "type": "tests"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/main.py",
-      "type": "tests"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/models/database.py",
-      "type": "tests"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/services/database_service.py",
-      "type": "tests"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/services/dataset_loader.py",
+      "source": "tests/security/test_security.py",
+      "target": "app/security/retrieval.py",
       "type": "tests"
     }
   ],
-  "dependencies": {
-    "runtime": [
-      "FastAPI",
-      "Pydantic",
-      "pydantic-settings",
-      "SQLAlchemy",
-      "Uvicorn"
-    ],
-    "test": [
-      "pytest",
-      "httpx"
-    ]
-  },
-  "deferred": [
-    "domain models pending dataset",
-    "domain agents",
-    "LangGraph",
-    "ChromaDB",
-    "embeddings",
-    "RBAC",
-    "durable audit",
-    "deployment"
-  ],
-  "official_completion_percent": 15,
-  "verified_implementation_commit": "a9a8df42e84a7eff3950cee94b4a5a2760de0c4c"
+  "dependencies": [
+    "foundation contracts",
+    "future API and agent integration",
+    "trusted external key/anchor provisioning"
+  ]
 }

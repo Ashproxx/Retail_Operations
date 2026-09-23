@@ -1,83 +1,70 @@
-# Branch README
+# Security branch README
 
-Branch: foundation/core-platform
-Parent branch / base commit: context/project-knowledge / 3cc1a8df36c49147daac2c3967f37020bb0f5654
-Milestone: M1 PASS; official project completion 15% (M0 5% + M1 10%)
-Owner scope: shared configuration, schemas, database abstractions, API skeleton, common errors, logging, contracts and foundation tests
-Human approval status: user approved the exact context base on 2026-09-23; no integration or main merge authorized
+Branch: security/privacy-integrity
+Parent/base: foundation/core-platform / 77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045
+Milestone: M12 local PASS; publication pending
+Official weighted completion: 90%
+Owner scope: app/security/*, tests/security/* and branch metadata/graph delta
+Human approval: continuation authorized; no M13 integration or main merge authorized
 
-## Purpose
-Provide the shared foundation for isolated agent, RAG and security branches. The inherited master graph and governance files are the M0 snapshot; this branch delta is authoritative for M1 status.
-
-## Source-defined responsibilities
-Preserve FastAPI and the planned LangGraph, ChromaDB, sentence-transformers and Ollama architecture. Azure deployment remains later work. M1 installs only dependencies used by the foundation.
+## Purpose and source-defined responsibilities
+Role-based access before sensitive tools and retrieval; secret-safe configuration; document digest verification; standard keyed authentication of document/provenance metadata; structured metadata-only audit with hash-chain integrity. These branch-local controls still require integration into every operational route.
 
 ## Allowed file scope
-app/*; tests/foundation/*; requirements*.txt; pyproject.toml; .env.example; .gitignore; scripts/check_branch_scope.py; branch README/checklist and branch knowledge delta. No master/context files updated. No SHARED DELTA.
+app/security/*, tests/security/*, BRANCH_README.md, BRANCH_DELIVERABLES.md and branch knowledge graph Markdown/JSON. No shared delta. Foundation/global files and other branches remain unchanged.
 
 ## Interfaces consumed
-Approved M0 design and interface registry. No actual business dataset or policy sources are available.
+Foundation Contract, Role, RequestContext, AuditEvent and RetailOpsError. No imports from other development branches.
 
 ## Interfaces produced
-- Settings: RETAILOPS_ environment variables and .env loading, validated confidence/iteration limits, redacted database URL.
-- QueryRequest: message and session_id only. Roles/principal are excluded from client input.
-- RequestContext: internal principal, role, scoped stores and request/session IDs; not an authentication implementation.
-- BaseAgent.run(QueryRequest, RequestContext): async AgentResult including provenance, confidence, warnings, handoffs and timing.
-- AgentResult, ChatResponse, Evidence, AuditEvent and ErrorResponse: typed schemas with independent collection defaults.
-- Database.session(): commit/rollback/close lifecycle through SQLAlchemy; Database.ping() and close().
-- DatasetLoader.load(path, column_mapping): abstract CSV/XLSX load contract and source-file validation. No ingestion implementation yet.
-- RetailRepository: abstract observed-stock and store-inventory lookup. Missing data is None/empty; no generated business values.
-- GET / identifies foundation stage; GET /health probes the database and returns 200 or sanitized 503. GET /docs and /openapi.json are available.
+- Grant and TokenAuthenticator: opaque random bearer token grants stored as SHA-256 digests; optional expiration; creates context from server-owned principal/role/store mapping. No user role claims accepted. Provision random tokens (at least 32 bytes of entropy recommended) outside source control. This is a local opaque-token adapter, not a password authentication scheme or identity-provider integration.
+- authorize(context, action, store_id): explicit action allowlist and role/store restrictions, deny by default. ADMIN can access all known actions; other roles require permitted action plus explicit store scope.
+- ToolRegistry: trusted registrations, authorization before callbacks and rejection of reserved context overrides. User input cannot register callables.
+- Document/SealedDocument, seal/verify: canonical JSON binds ID/version/store/domain/source/text with SHA-256 and standard HMAC-SHA256. Constant-time HMAC comparison uses Python hmac.compare_digest. Minimum key length 32 bytes; use a cryptographically random secret, not a human password.
+- retrieve_verified: authorize before provider invocation, then validate every returned document's store/domain/digest/HMAC before releasing evidence. Provider must be a trusted configured adapter. No arbitrary tools or document instructions execute.
+- AuditChain and verify_chain: sequenced JSONL metadata audit, SHA-256 linkage, fsync on append, restrictive mode for new files, optional trusted external anchor. The instance retains its latest anchor and detects deletion/truncation during its lifetime. Reopened logs need a separately trusted anchor to detect truncation or full rewrite.
+- SecuritySettings: RETAILOPS_SECURITY_INTEGRITY_KEY from environment as SecretStr; no default secret and no credentials printed.
 
-## Deliverables
-Modular package, install metadata, configuration, environment example, logging, exceptions, schemas, contracts, SQLAlchemy lifecycle, FastAPI factory/lifespan, tests and branch scope guard.
+## Role/action matrix
+| Role | Allowed actions |
+|---|---|
+| ADMIN | All known actions, including audit.read |
+| STORE_MANAGER | All known operational actions; no audit.read |
+| INVENTORY_MANAGER | inventory.read, forecast.read, supply.read |
+| PRICING_ANALYST | pricing.recommend, forecast.read, analytics.read |
+| SUPPORT_AGENT | orders.read, support.read, returns.read |
+| ANALYST | analytics.read, forecast.read |
 
-## Dependencies and decisions
-No existing requirements were available to reuse. FastAPI provides the requested API/OpenAPI; Pydantic validates contracts; pydantic-settings loads environment/.env; SQLAlchemy keeps a future PostgreSQL migration path; Uvicorn runs the ASGI server. pytest and httpx are test-only dependencies. No cloud keys, model downloads or paid API calls are needed. Versions are major constrained; this is not a production lockfile.
-SQLite in memory is the default for safe local setup; set RETAILOPS_DATABASE_URL=sqlite+pysqlite:///./retailops.db for persistence. Domain models wait for actual column inspection. Use a trusted authentication adapter before deploying domain routes. Do not expose raw SQL as an API.
+Non-admin access always requires an authorized store. Routing and request JSON do not confer authorization.
 
-## Setup and run
-Python 3.11+ (validated with 3.12). From repository root:
+## Deliverables and tests
+39 passed, 0 failed, 0 skipped: 20 foundation + 19 security cases. One inherited Starlette/httpx deprecation warning. Tests cover role matrix, unknown actions, out-of-scope stores, token mismatch/expiry, denial before tool/retrieval side effects, document/provenance tampering, wrong keys, source-scope mismatch, audit mutation/reordering/truncation/deletion, persisted anchors and secret-safe settings. Fixture demo generates keys in memory and never prints them.
 
 ```bash
-python -m venv .venv
-# Windows PowerShell: .venv\Scripts\Activate.ps1
-# Linux/macOS: source .venv/bin/activate
 python -m pip install -r requirements-dev.txt
-# Optional: copy .env.example to .env and edit it
-python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
-```
-
-Open http://127.0.0.1:8000/health and http://127.0.0.1:8000/docs.
-
-## Tests
-```bash
 python -m pytest -q
-python scripts/check_branch_scope.py
-python -m compileall -q app
+python -m app.security.demo
+python -m app.security.check_scope
+python -m compileall -q app/security
 ```
-20 passed, 0 failed, 0 skipped. Third-party warnings: Starlette deprecates httpx TestClient integration and an AnyIO BlockingPortal alias. They do not affect these passing tests; dependency compatibility needs continued monitoring. ASGI startup, database health and OpenAPI exercised with lifespan-enabled TestClient. Live Uvicorn smoke check recorded in the session report.
+
+Python 3.11+; validated on 3.12. No additional dependencies: standard hashlib/hmac/secrets/json plus foundation Pydantic suffice. Official primitive reference: https://docs.python.org/3/library/hmac.html .
 
 ## Knowledge graph changes
-Branch delta maps foundation files, Python imports, endpoints, contracts, tests and ownership. Master graph remains unchanged on its context branch.
+53 nodes and 69 relationships map ownership, imports, definitions and tests. Master graph remains inherited; only this branch delta changes. No cross-branch propagation.
 
-## Data dependencies
-No retail data supplied. Test fixtures are synthetic, in temporary databases only. No CSV/XLSX parser or business data migration is claimed.
+## Data dependencies and security limitations
+No real customer records, credentials or business data are included. Demo identities/policies are synthetic. Keys, token grants, audit logs and their anchors must be provisioned outside git. Existing file permissions, retention, key rotation, secret storage and deployment authentication are operator responsibilities. Static grant revocation requires replacing/reloading the authenticator; no external IdP or distributed policy engine is included.
 
-## Known limitations
-No domain agents, LangGraph execution, RAG, embedding models, LLM provider implementation, authentication/RBAC enforcement, durable audit storage, conversation memory, Docker or CI yet. /api/chat and other domain routes intentionally remain unregistered. Metadata logging excludes payloads, raw errors and credentials but is not a tamper-evident audit implementation. M1 does not constitute a deployed production API.
+Audit persistence assumes one writer per file/instance and a trusted filesystem. No multi-process lock is provided. Unanchored hashes cannot detect a complete attacker rewrite, and anchors saved alongside an attacker-writable log are not trusted. HMAC protects documents only while its secret key is protected. This does not encrypt data at rest. Retrieved text remains untrusted evidence; this branch does not send it to an LLM or execute instructions, and it does not claim to solve all prompt injection.
+
+The authentication and authorization helpers are not yet wired into FastAPI or all other agent branches. Their presence alone does not make the full application production-secure.
 
 ## Cross-branch dependencies
-Subsequent agent/platform/security branches must start from the pinned published foundation commit. All consume these contracts. No merge/cherry-pick/rebase occurred; integration requires separate explicit approval.
+Integration must connect authenticated context, registry actions and retrieval wrappers to every endpoint/agent and bridge RAG chunk metadata to signed document/provenance manifests. Domain modules currently expose structured JSON adapters; natural-language routing/execution and aggregation need wiring. No source branch was merged or copied into this branch.
 
-## Security considerations
-Input validation, server-generated request IDs, no raw exception responses, metadata-only logs, hidden SQL parameters and secret-redacted configuration. Environment values and local databases are ignored. Role definitions are a contract, not an authorization grant.
+## Last validated commit and latest result
+Pinned base: 77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045. Verified implementation savepoint: publication-pending. Final remote documentation SHA is recorded in the session report. Tests, demo, compilation, scope and graph checks PASS. Publication verification pending.
 
-## Last validated commit
-Approved base 3cc1a8df36c49147daac2c3967f37020bb0f5654. Validation applies to this commit's source tree; the final remote SHA is recorded in the session report.
-
-## Latest test result
-20 passed, 0 failed, 0 skipped; compile, branch scope, dependency, graph and live startup checks PASS. Implementation savepoint a9a8df42e84a7eff3950cee94b4a5a2760de0c4c published and verified remotely. Main remains c21658e55c96d7adc78b82d2e2f3d2b17d226144 and context remains the approved base.
-
-## Next tasks
-Pin verified M1 commit; begin platform/agentic-rag on its own branch; then router and inventory branches. Obtain actual CSV/XLSX and policy data before claiming production grounding. No integration is authorized.
+## Human review and next tasks
+M13 cannot begin until explicitly approved under PDF sections 2.3, 6.8 and 45. app/security/INTEGRATION_REVIEW.md lists the exact source commits and proposed candidate base. After approval, create integration/release-candidate, reconcile branch metadata and interfaces, complete shared integration requirements, and run full end-to-end verification. Main remains untouched and requires a separate merge instruction.
