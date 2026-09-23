@@ -18,4 +18,4 @@ LangGraph implements the conditional transition. No task is executed; no RAG or 
 
 27 router cases plus 20 foundation cases pass. Demo covers inventory, multi-intent inventory/demand/pricing and escalation. Confidence is heuristic; real-world semantic accuracy remains unevaluated. Security/authorization, downstream invocation and aggregate answers are separate dependencies. No SHARED DELTA.
 
-M2 local PASS, remote publication pending. Previous completed milestones M0+M1+M11 total 23%; verified M2 adds 8% for 31%.
+M2 PASS: published implementation 244d971d40c85cc5e0330dd2c88afd83e5dd1d1c verified. M0+M1+M11+M2 total 31%.

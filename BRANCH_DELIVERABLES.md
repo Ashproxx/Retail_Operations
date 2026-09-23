@@ -10,9 +10,9 @@
 - [x] 47 passing foundation/router tests and offline demo
 - [x] Branch README and Markdown/JSON knowledge delta
 - [x] Final compile, dependency, graph and scope validation
-- [ ] Commit published to agent/router and remote HEAD verified
-- [ ] Main/context/foundation/RAG unchanged verified
+- [x] Commit published to agent/router and remote HEAD verified: 244d971d40c85cc5e0330dd2c88afd83e5dd1d1c
+- [x] Main/context/foundation/RAG unchanged verified
 - [x] No secrets, no unrelated scope changes, no merges
 - [ ] Human approval for integration (separate later gate)
 
-M2 local PASS; publication pending. Official project completion remains 23% pending publication, then 31%. No claim of downstream execution or calibrated classifier accuracy.
+M2 PASS after verified publication; official project completion 31%. No claim of downstream execution or calibrated classifier accuracy.

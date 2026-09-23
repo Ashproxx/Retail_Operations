@@ -2,7 +2,7 @@
 
 Branch: agent/router
 Parent branch / base commit: foundation/core-platform / 77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045
-Milestone: M2; local validation PASS, remote publication pending
+Milestone: M2 PASS; official completion 31% (M0 + M1 + M11 + M2)
 Owner scope: routing, intent classification, planning, router audit and router tests
 Human approval status: continuation authorized; no integration or main merge authorized
 
@@ -70,7 +70,7 @@ Execution of these tasks requires separately implemented agents and approved int
 Pinned foundation base 77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045. Final published SHA is recorded in the session report.
 
 ## Latest test result
-47 tests and the demo PASS; compile, dependency, graph and scope checks required before publication. Official completion remains 23% until M2 publication is verified; then M2 adds 8% to reach 31%.
+47 tests and the demo PASS; compile, dependency, graph and scope checks PASS. Published implementation 244d971d40c85cc5e0330dd2c88afd83e5dd1d1c verified with git ls-remote. Official completion 31%. Other branch heads remain unchanged.
 
 ## Next tasks
 Verify publication; create agent/inventory from pinned foundation; implement stock/reorder tools with tests and missing-data handling; evaluate router paraphrases against a labelled retail query set. Obtain the actual dataset before claiming real-data inventory results. Integration needs separate human approval.

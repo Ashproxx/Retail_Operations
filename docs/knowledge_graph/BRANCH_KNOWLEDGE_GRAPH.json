@@ -2,7 +2,7 @@
   "branch": "agent/router",
   "base_commit": "77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045",
   "milestone": "M2",
-  "status": "local-pass-publication-pending",
+  "status": "PASS",
   "nodes": [
     {
       "id": "app/orchestration/router/__init__.py",
@@ -202,5 +202,7 @@
     "no downstream agent execution",
     "no API registration",
     "no cross-branch integration"
-  ]
+  ],
+  "official_completion_percent": 31,
+  "verified_implementation_commit": "244d971d40c85cc5e0330dd2c88afd83e5dd1d1c"
 }
