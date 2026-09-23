@@ -21,7 +21,7 @@ Proposed target: integration/release-candidate. Never main.
 | M9 | agent/demand-forecasting | 7a65d8dab39697ef62be14e5feda945efda55ac9 | 8% |
 | M10 | agent/analytics-reporting | 26f58b0600e6df6c8a37523ebff2065f6705d73b | 7% |
 | M11 | platform/agentic-rag | e3638225a5ea88ab6036ce6148f66d9208cedf5c | 8% |
-| M12 | security/privacy-integrity | publication-pending (implementation savepoint; final reviewed documentation commit shown in session report) | 5% |
+| M12 | security/privacy-integrity | 15bdd6eb73f1564a950f167ca1f20fbea09f9f0f (implementation savepoint; final reviewed documentation commit shown in session report) | 5% |
 
 
 M0 is inherited through the foundation; do not separately merge it. Merge only specifically approved source commits into the candidate. Preserve source-branch README/checklists/graphs under a branch-specific archive during metadata conflict resolution; build one accurate integrated architecture/knowledge graph in the candidate. Agent IDs differ between some domain adapters and router plan targets; use an explicit registry mapping and verify output provenance.

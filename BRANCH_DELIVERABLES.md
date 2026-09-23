@@ -8,7 +8,7 @@
 - [x] 39 passing tests; fixture demo; compilation and graph/scope checks
 - [x] Branch README and knowledge graph delta
 - [x] No secrets/private data; no unrelated branch changes or merges
-- [ ] Publication and remote HEAD verified: publication-pending
+- [x] Publication and remote HEAD verified: 15bdd6eb73f1564a950f167ca1f20fbea09f9f0f
 - [ ] Human approved M13 integration (required separate gate)
 
-Official weighted completion: 90%. No integrated application or production-security completion claim.
+Official weighted completion: 95%. No integrated application or production-security completion claim.

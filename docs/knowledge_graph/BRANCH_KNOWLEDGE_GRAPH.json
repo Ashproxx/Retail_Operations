@@ -2,9 +2,9 @@
   "branch": "security/privacy-integrity",
   "base_commit": "77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045",
   "milestone": "M12",
-  "status": "publication-pending",
-  "official_completion": 90,
-  "verified_commit": "publication-pending",
+  "status": "PASS",
+  "official_completion": 95,
+  "verified_commit": "15bdd6eb73f1564a950f167ca1f20fbea09f9f0f",
   "nodes": [
     {
       "id": "app/security/__init__.py",

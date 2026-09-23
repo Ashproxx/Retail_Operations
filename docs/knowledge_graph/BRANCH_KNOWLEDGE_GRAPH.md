@@ -14,4 +14,4 @@ flowchart TD
  audit --> anchor[Externally trusted anchor]
 ```
 
-53 nodes / 69 edges. Foundation base 77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045. 39 tests and demo passed. Savepoint publication-pending. Official completion 90%. Interfaces and limitations are in BRANCH_README.md. No source-branch integration or global graph mutation.
+53 nodes / 69 edges. Foundation base 77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045. 39 tests and demo passed. Savepoint 15bdd6eb73f1564a950f167ca1f20fbea09f9f0f. Official completion 95%. Interfaces and limitations are in BRANCH_README.md. No source-branch integration or global graph mutation.

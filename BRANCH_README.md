@@ -2,8 +2,8 @@
 
 Branch: security/privacy-integrity
 Parent/base: foundation/core-platform / 77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045
-Milestone: M12 local PASS; publication pending
-Official weighted completion: 90%
+Milestone: M12 PASS
+Official weighted completion: 95%
 Owner scope: app/security/*, tests/security/* and branch metadata/graph delta
 Human approval: continuation authorized; no M13 integration or main merge authorized
 
@@ -64,7 +64,7 @@ The authentication and authorization helpers are not yet wired into FastAPI or a
 Integration must connect authenticated context, registry actions and retrieval wrappers to every endpoint/agent and bridge RAG chunk metadata to signed document/provenance manifests. Domain modules currently expose structured JSON adapters; natural-language routing/execution and aggregation need wiring. No source branch was merged or copied into this branch.
 
 ## Last validated commit and latest result
-Pinned base: 77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045. Verified implementation savepoint: publication-pending. Final remote documentation SHA is recorded in the session report. Tests, demo, compilation, scope and graph checks PASS. Publication verification pending.
+Pinned base: 77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045. Verified implementation savepoint: 15bdd6eb73f1564a950f167ca1f20fbea09f9f0f. Final remote documentation SHA is recorded in the session report. Tests, demo, compilation, scope and graph checks PASS. Publication verified.
 
 ## Human review and next tasks
 M13 cannot begin until explicitly approved under PDF sections 2.3, 6.8 and 45. app/security/INTEGRATION_REVIEW.md lists the exact source commits and proposed candidate base. After approval, create integration/release-candidate, reconcile branch metadata and interfaces, complete shared integration requirements, and run full end-to-end verification. Main remains untouched and requires a separate merge instruction.
