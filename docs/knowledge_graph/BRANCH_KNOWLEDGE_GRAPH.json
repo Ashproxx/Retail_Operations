@@ -1,420 +1,304 @@
 {
-  "branch": "foundation/core-platform",
-  "base_commit": "3cc1a8df36c49147daac2c3967f37020bb0f5654",
-  "milestone": "M1",
-  "status": "PASS",
+  "branch": "agent/order-fulfillment",
+  "base_commit": "77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045",
+  "milestone": "M4",
+  "status": "publication-pending",
+  "verified_commit": "pending",
+  "official_completion": 71,
   "nodes": [
     {
-      "id": "app/__init__.py",
+      "id": "app/agents/orders/__init__.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/agents/__init__.py",
+      "id": "app/agents/orders/agent.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/agents/base_agent.py",
+      "id": "app/agents/orders/check_scope.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/api/__init__.py",
+      "id": "app/agents/orders/demo.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/api/schemas.py",
+      "id": "app/agents/orders/domain.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/core/__init__.py",
+      "id": "tests/orders/test_orders.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/core/config.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "agent/order-fulfillment",
+      "type": "branch"
     },
     {
-      "id": "app/core/exceptions.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/orders/agent.py:Agent:8",
+      "type": "class"
     },
     {
-      "id": "app/core/logging.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/orders/agent.py:__init__:9",
+      "type": "function"
     },
     {
-      "id": "app/main.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/orders/agent.py:run:12",
+      "type": "function"
     },
     {
-      "id": "app/models/__init__.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/orders/check_scope.py:git:3",
+      "type": "function"
     },
     {
-      "id": "app/models/database.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/orders/check_scope.py:main:4",
+      "type": "function"
     },
     {
-      "id": "app/services/__init__.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/orders/demo.py:main:4",
+      "type": "function"
     },
     {
-      "id": "app/services/database_service.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/orders/domain.py:validate_transition:8",
+      "type": "function"
     },
     {
-      "id": "app/services/dataset_loader.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/orders/domain.py:Source:11",
+      "type": "class"
     },
     {
-      "id": "tests/foundation/test_foundation.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/orders/domain.py:Order:17",
+      "type": "class"
     },
     {
-      "id": "scripts/check_branch_scope.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/orders/domain.py:Query:48",
+      "type": "class"
     },
     {
-      "id": "requirements.txt",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/orders/domain.py:ShippingConnector:54",
+      "type": "class"
     },
     {
-      "id": "requirements-dev.txt",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/orders/domain.py:evaluate:58",
+      "type": "function"
     },
     {
-      "id": "pyproject.toml",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/orders/domain.py:timeline:34",
+      "type": "function"
     },
     {
-      "id": ".env.example",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/orders/domain.py:latest:55",
+      "type": "function"
     },
     {
-      "id": ".gitignore",
-      "type": "file",
-      "status": "implemented"
+      "id": "tests/orders/test_orders.py:r:5",
+      "type": "function"
     },
     {
-      "id": "foundation/core-platform",
-      "type": "branch",
-      "status": "implemented"
+      "id": "tests/orders/test_orders.py:q:6",
+      "type": "function"
     },
     {
-      "id": "/",
-      "type": "endpoint",
-      "status": "implemented"
+      "id": "tests/orders/test_orders.py:test_pending_overdue_cancelled:8",
+      "type": "function"
     },
     {
-      "id": "/health",
-      "type": "endpoint",
-      "status": "implemented"
+      "id": "tests/orders/test_orders.py:test_delivered_and_eta_risk:13",
+      "type": "function"
     },
     {
-      "id": "/docs",
-      "type": "endpoint",
-      "status": "implemented"
+      "id": "tests/orders/test_orders.py:test_allocation_and_shortfall:18",
+      "type": "function"
     },
     {
-      "id": "/openapi.json",
-      "type": "endpoint",
-      "status": "implemented"
+      "id": "tests/orders/test_orders.py:test_late_sources_excluded:26",
+      "type": "function"
+    },
+    {
+      "id": "tests/orders/test_orders.py:test_invalid_order:31",
+      "type": "function"
+    },
+    {
+      "id": "tests/orders/test_orders.py:test_missing_and_transitions:34",
+      "type": "function"
     }
   ],
   "edges": [
     {
-      "source": "foundation/core-platform",
-      "target": "app/__init__.py",
+      "source": "agent/order-fulfillment",
+      "target": "app/agents/orders/__init__.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/agents/__init__.py",
+      "source": "agent/order-fulfillment",
+      "target": "app/agents/orders/agent.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/agents/base_agent.py",
+      "source": "agent/order-fulfillment",
+      "target": "app/agents/orders/check_scope.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/api/__init__.py",
+      "source": "agent/order-fulfillment",
+      "target": "app/agents/orders/demo.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/api/schemas.py",
+      "source": "agent/order-fulfillment",
+      "target": "app/agents/orders/domain.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/core/__init__.py",
+      "source": "agent/order-fulfillment",
+      "target": "tests/orders/test_orders.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/core/config.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/core/exceptions.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/core/logging.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/main.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/models/__init__.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/models/database.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/services/__init__.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/services/database_service.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/services/dataset_loader.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "tests/foundation/test_foundation.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "scripts/check_branch_scope.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "requirements.txt",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "requirements-dev.txt",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "pyproject.toml",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": ".env.example",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": ".gitignore",
-      "type": "owns"
-    },
-    {
-      "source": "app/agents/base_agent.py",
-      "target": "app/api/schemas.py",
+      "source": "app/agents/orders/agent.py",
+      "target": "app/agents/orders/domain.py",
       "type": "imports"
     },
     {
-      "source": "app/main.py",
-      "target": "app/core/config.py",
+      "source": "app/agents/orders/agent.py",
+      "target": "app/agents/orders/agent.py:Agent:8",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/orders/agent.py",
+      "target": "app/agents/orders/agent.py:__init__:9",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/orders/agent.py",
+      "target": "app/agents/orders/agent.py:run:12",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/orders/check_scope.py",
+      "target": "app/agents/orders/check_scope.py:git:3",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/orders/check_scope.py",
+      "target": "app/agents/orders/check_scope.py:main:4",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/orders/demo.py",
+      "target": "app/agents/orders/agent.py",
       "type": "imports"
     },
     {
-      "source": "app/main.py",
-      "target": "app/core/exceptions.py",
+      "source": "app/agents/orders/demo.py",
+      "target": "app/agents/orders/demo.py:main:4",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/orders/domain.py",
+      "target": "app/agents/orders/domain.py:validate_transition:8",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/orders/domain.py",
+      "target": "app/agents/orders/domain.py:Source:11",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/orders/domain.py",
+      "target": "app/agents/orders/domain.py:Order:17",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/orders/domain.py",
+      "target": "app/agents/orders/domain.py:Query:48",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/orders/domain.py",
+      "target": "app/agents/orders/domain.py:ShippingConnector:54",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/orders/domain.py",
+      "target": "app/agents/orders/domain.py:evaluate:58",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/orders/domain.py",
+      "target": "app/agents/orders/domain.py:timeline:34",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/orders/domain.py",
+      "target": "app/agents/orders/domain.py:latest:55",
+      "type": "defines"
+    },
+    {
+      "source": "tests/orders/test_orders.py",
+      "target": "app/agents/orders/domain.py",
       "type": "imports"
     },
     {
-      "source": "app/main.py",
-      "target": "app/core/logging.py",
-      "type": "imports"
+      "source": "tests/orders/test_orders.py",
+      "target": "tests/orders/test_orders.py:r:5",
+      "type": "defines"
     },
     {
-      "source": "app/main.py",
-      "target": "app/services/database_service.py",
-      "type": "imports"
+      "source": "tests/orders/test_orders.py",
+      "target": "tests/orders/test_orders.py:q:6",
+      "type": "defines"
     },
     {
-      "source": "app/services/dataset_loader.py",
-      "target": "app/api/schemas.py",
-      "type": "imports"
+      "source": "tests/orders/test_orders.py",
+      "target": "tests/orders/test_orders.py:test_pending_overdue_cancelled:8",
+      "type": "defines"
     },
     {
-      "source": "app/services/dataset_loader.py",
-      "target": "app/core/exceptions.py",
-      "type": "imports"
+      "source": "tests/orders/test_orders.py",
+      "target": "tests/orders/test_orders.py:test_delivered_and_eta_risk:13",
+      "type": "defines"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/main.py",
-      "type": "imports"
+      "source": "tests/orders/test_orders.py",
+      "target": "tests/orders/test_orders.py:test_allocation_and_shortfall:18",
+      "type": "defines"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/config.py",
-      "type": "imports"
+      "source": "tests/orders/test_orders.py",
+      "target": "tests/orders/test_orders.py:test_late_sources_excluded:26",
+      "type": "defines"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/exceptions.py",
-      "type": "imports"
+      "source": "tests/orders/test_orders.py",
+      "target": "tests/orders/test_orders.py:test_invalid_order:31",
+      "type": "defines"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/logging.py",
-      "type": "imports"
+      "source": "tests/orders/test_orders.py",
+      "target": "tests/orders/test_orders.py:test_missing_and_transitions:34",
+      "type": "defines"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/api/schemas.py",
-      "type": "imports"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/agents/base_agent.py",
-      "type": "imports"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/services/database_service.py",
-      "type": "imports"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/services/dataset_loader.py",
-      "type": "imports"
-    },
-    {
-      "source": "app/main.py",
-      "target": "/",
-      "type": "registers"
-    },
-    {
-      "source": "app/main.py",
-      "target": "/health",
-      "type": "registers"
-    },
-    {
-      "source": "app/main.py",
-      "target": "/docs",
-      "type": "registers"
-    },
-    {
-      "source": "app/main.py",
-      "target": "/openapi.json",
-      "type": "registers"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/agents/base_agent.py",
+      "source": "tests/orders/test_orders.py",
+      "target": "app/agents/orders/agent.py",
       "type": "tests"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/api/schemas.py",
-      "type": "tests"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/config.py",
-      "type": "tests"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/exceptions.py",
-      "type": "tests"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/logging.py",
-      "type": "tests"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/main.py",
-      "type": "tests"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/models/database.py",
-      "type": "tests"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/services/database_service.py",
-      "type": "tests"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/services/dataset_loader.py",
+      "source": "tests/orders/test_orders.py",
+      "target": "app/agents/orders/domain.py",
       "type": "tests"
     }
   ],
-  "dependencies": {
-    "runtime": [
-      "FastAPI",
-      "Pydantic",
-      "pydantic-settings",
-      "SQLAlchemy",
-      "Uvicorn"
-    ],
-    "test": [
-      "pytest",
-      "httpx"
-    ]
-  },
-  "deferred": [
-    "domain models pending dataset",
-    "domain agents",
-    "LangGraph",
-    "ChromaDB",
-    "embeddings",
-    "RBAC",
-    "durable audit",
-    "deployment"
-  ],
-  "official_completion_percent": 15,
-  "verified_implementation_commit": "a9a8df42e84a7eff3950cee94b4a5a2760de0c4c"
+  "limitations": "No real orders provided. Fixtures are explicit and unknown orders are never fabricated. Allocation minimizes additive variable unit cost among deadline-feasible supplied sources; it assumes divisible quantities and excludes fixed fees, multi-SKU coupling and live capacity reservations. Recommendations never update orders or shipments. Delay flags use observed deadline/ETA rules, not a trained predictor. Snapshot as_of filtering prevents future status leakage.",
+  "dependencies": [
+    "foundation contracts",
+    "future authorized integration"
+  ]
 }

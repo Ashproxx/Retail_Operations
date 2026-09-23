@@ -1,24 +1,20 @@
-# M1 foundation delta
+# M4 domain delta
 
-Approved base: 3cc1a8df36c49147daac2c3967f37020bb0f5654. Master/context graphs remain unchanged. Branch JSON provides file ownership, import and test relationships.
+Branch agent/order-fulfillment, pinned foundation 77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045. Structured observed-order lookup, validated fulfillment state transitions and aware timestamps, shipping connector interface, SLA compliance and supplied-ETA risk flags, plus deadline/capacity-aware single-SKU split-allocation recommendations.
 
 ```mermaid
 flowchart TD
-    env[Environment] --> config[Settings]
-    config --> app[FastAPI factory]
-    app --> health[Database health]
-    health --> db[SQLAlchemy lifecycle]
-    app --> logs[Metadata logs]
-    app --> errors[Sanitized errors]
-    contracts[Pydantic contracts] --> agents[BaseAgent interface]
-    contracts --> dataset[DatasetLoader interface]
-    tests[Foundation tests] --> app
-    tests --> db
-    tests --> contracts
+ input[Validated structured request] --> scope[Trusted scope check]
+ records[Validated source records] --> scope
+ scope --> logic[Deterministic domain analysis]
+ logic --> result[Structured result and assumptions]
+ logic --> missing[Missing or insufficient data]
+ result --> audit[Request-linked audit metadata]
+ tests[Domain tests and fixture demo] --> logic
 ```
 
-Implemented: validated configuration, API factory/lifespan, root/health, docs/OpenAPI, errors/logging, schemas, BaseAgent and data interfaces, transactional database lifecycle. Tests cover failures as well as normal inputs.
+Interfaces: Query, validated domain records, evaluate(records, query), Agent(BaseAgent).
 
-Only interfaces exist for DatasetLoader, RetailRepository and BaseAgent. No agent/RAG/business source integration. No production retail data. RequestContext is internal and must eventually come from trusted authentication; QueryRequest rejects role claims. AuditEvent is a schema only, with durable audit and integrity owned by later work.
+No real orders provided. Fixtures are explicit and unknown orders are never fabricated. Allocation minimizes additive variable unit cost among deadline-feasible supplied sources; it assumes divisible quantities and excludes fixed fees, multi-SKU coupling and live capacity reservations. Recommendations never update orders or shipments. Delay flags use observed deadline/ETA rules, not a trained predictor. Snapshot as_of filtering prevents future status leakage.
 
-New dependencies are justified in BRANCH_README.md. No cross-branch propagation or SHARED DELTA. Foundation implementation publication a9a8df42e84a7eff3950cee94b4a5a2760de0c4c verified with git ls-remote. M1 PASS earns 10%; M0 earned 5%; official completion 15%. Main and context unchanged.
+29 nodes and 33 edges in JSON. 30 tests passed. Remote savepoint: pending. Official completion 71%. No master graph updates, shared delta or branch integration.
