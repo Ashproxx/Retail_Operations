@@ -1,420 +1,286 @@
 {
-  "branch": "foundation/core-platform",
-  "base_commit": "3cc1a8df36c49147daac2c3967f37020bb0f5654",
-  "milestone": "M1",
-  "status": "PASS",
+  "branch": "agent/pricing-promotions",
+  "base_commit": "77c8c9217fa45d9028fbe8ad1fb22c4ea53e3045",
+  "milestone": "M6",
+  "status": "publication-pending",
+  "verified_commit": "pending",
+  "official_completion": 55,
   "nodes": [
     {
-      "id": "app/__init__.py",
+      "id": "app/agents/pricing/__init__.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/agents/__init__.py",
+      "id": "app/agents/pricing/agent.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/agents/base_agent.py",
+      "id": "app/agents/pricing/check_scope.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/api/__init__.py",
+      "id": "app/agents/pricing/demo.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/api/schemas.py",
+      "id": "app/agents/pricing/domain.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/core/__init__.py",
+      "id": "tests/pricing/test_pricing.py",
       "type": "file",
       "status": "implemented"
     },
     {
-      "id": "app/core/config.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "agent/pricing-promotions",
+      "type": "branch"
     },
     {
-      "id": "app/core/exceptions.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/pricing/agent.py:Agent:8",
+      "type": "class"
     },
     {
-      "id": "app/core/logging.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/pricing/agent.py:__init__:9",
+      "type": "function"
     },
     {
-      "id": "app/main.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/pricing/agent.py:run:12",
+      "type": "function"
     },
     {
-      "id": "app/models/__init__.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/pricing/check_scope.py:git:3",
+      "type": "function"
     },
     {
-      "id": "app/models/database.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/pricing/check_scope.py:main:4",
+      "type": "function"
     },
     {
-      "id": "app/services/__init__.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/pricing/demo.py:main:4",
+      "type": "function"
     },
     {
-      "id": "app/services/database_service.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/pricing/domain.py:Price:7",
+      "type": "class"
     },
     {
-      "id": "app/services/dataset_loader.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/pricing/domain.py:Query:22",
+      "type": "class"
     },
     {
-      "id": "tests/foundation/test_foundation.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/pricing/domain.py:ElasticityEstimator:38",
+      "type": "class"
     },
     {
-      "id": "scripts/check_branch_scope.py",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/pricing/domain.py:evaluate:42",
+      "type": "function"
     },
     {
-      "id": "requirements.txt",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/pricing/domain.py:dates:33",
+      "type": "function"
     },
     {
-      "id": "requirements-dev.txt",
-      "type": "file",
-      "status": "implemented"
+      "id": "app/agents/pricing/domain.py:estimate:39",
+      "type": "function"
     },
     {
-      "id": "pyproject.toml",
-      "type": "file",
-      "status": "implemented"
+      "id": "tests/pricing/test_pricing.py:row:5",
+      "type": "function"
     },
     {
-      "id": ".env.example",
-      "type": "file",
-      "status": "implemented"
+      "id": "tests/pricing/test_pricing.py:q:6",
+      "type": "function"
     },
     {
-      "id": ".gitignore",
-      "type": "file",
-      "status": "implemented"
+      "id": "tests/pricing/test_pricing.py:test_promotion_and_margin_floor:8",
+      "type": "function"
     },
     {
-      "id": "foundation/core-platform",
-      "type": "branch",
-      "status": "implemented"
+      "id": "tests/pricing/test_pricing.py:test_blocked_promotion:17",
+      "type": "function"
     },
     {
-      "id": "/",
-      "type": "endpoint",
-      "status": "implemented"
+      "id": "tests/pricing/test_pricing.py:test_missing_competitor_and_simulation:20",
+      "type": "function"
     },
     {
-      "id": "/health",
-      "type": "endpoint",
-      "status": "implemented"
+      "id": "tests/pricing/test_pricing.py:test_scarcity_and_cap_conflict:24",
+      "type": "function"
     },
     {
-      "id": "/docs",
-      "type": "endpoint",
-      "status": "implemented"
+      "id": "tests/pricing/test_pricing.py:test_dates_empty_and_duplicate:28",
+      "type": "function"
     },
     {
-      "id": "/openapi.json",
-      "type": "endpoint",
-      "status": "implemented"
+      "id": "tests/pricing/test_pricing.py:test_currency_rounding_preserves_change_cap:36",
+      "type": "function"
     }
   ],
   "edges": [
     {
-      "source": "foundation/core-platform",
-      "target": "app/__init__.py",
+      "source": "agent/pricing-promotions",
+      "target": "app/agents/pricing/__init__.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/agents/__init__.py",
+      "source": "agent/pricing-promotions",
+      "target": "app/agents/pricing/agent.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/agents/base_agent.py",
+      "source": "agent/pricing-promotions",
+      "target": "app/agents/pricing/check_scope.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/api/__init__.py",
+      "source": "agent/pricing-promotions",
+      "target": "app/agents/pricing/demo.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/api/schemas.py",
+      "source": "agent/pricing-promotions",
+      "target": "app/agents/pricing/domain.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/core/__init__.py",
+      "source": "agent/pricing-promotions",
+      "target": "tests/pricing/test_pricing.py",
       "type": "owns"
     },
     {
-      "source": "foundation/core-platform",
-      "target": "app/core/config.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/core/exceptions.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/core/logging.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/main.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/models/__init__.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/models/database.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/services/__init__.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/services/database_service.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "app/services/dataset_loader.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "tests/foundation/test_foundation.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "scripts/check_branch_scope.py",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "requirements.txt",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "requirements-dev.txt",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": "pyproject.toml",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": ".env.example",
-      "type": "owns"
-    },
-    {
-      "source": "foundation/core-platform",
-      "target": ".gitignore",
-      "type": "owns"
-    },
-    {
-      "source": "app/agents/base_agent.py",
-      "target": "app/api/schemas.py",
+      "source": "app/agents/pricing/agent.py",
+      "target": "app/agents/pricing/domain.py",
       "type": "imports"
     },
     {
-      "source": "app/main.py",
-      "target": "app/core/config.py",
+      "source": "app/agents/pricing/agent.py",
+      "target": "app/agents/pricing/agent.py:Agent:8",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/pricing/agent.py",
+      "target": "app/agents/pricing/agent.py:__init__:9",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/pricing/agent.py",
+      "target": "app/agents/pricing/agent.py:run:12",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/pricing/check_scope.py",
+      "target": "app/agents/pricing/check_scope.py:git:3",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/pricing/check_scope.py",
+      "target": "app/agents/pricing/check_scope.py:main:4",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/pricing/demo.py",
+      "target": "app/agents/pricing/agent.py",
       "type": "imports"
     },
     {
-      "source": "app/main.py",
-      "target": "app/core/exceptions.py",
+      "source": "app/agents/pricing/demo.py",
+      "target": "app/agents/pricing/demo.py:main:4",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/pricing/domain.py",
+      "target": "app/agents/pricing/domain.py:Price:7",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/pricing/domain.py",
+      "target": "app/agents/pricing/domain.py:Query:22",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/pricing/domain.py",
+      "target": "app/agents/pricing/domain.py:ElasticityEstimator:38",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/pricing/domain.py",
+      "target": "app/agents/pricing/domain.py:evaluate:42",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/pricing/domain.py",
+      "target": "app/agents/pricing/domain.py:dates:33",
+      "type": "defines"
+    },
+    {
+      "source": "app/agents/pricing/domain.py",
+      "target": "app/agents/pricing/domain.py:estimate:39",
+      "type": "defines"
+    },
+    {
+      "source": "tests/pricing/test_pricing.py",
+      "target": "app/agents/pricing/domain.py",
       "type": "imports"
     },
     {
-      "source": "app/main.py",
-      "target": "app/core/logging.py",
-      "type": "imports"
+      "source": "tests/pricing/test_pricing.py",
+      "target": "tests/pricing/test_pricing.py:row:5",
+      "type": "defines"
     },
     {
-      "source": "app/main.py",
-      "target": "app/services/database_service.py",
-      "type": "imports"
+      "source": "tests/pricing/test_pricing.py",
+      "target": "tests/pricing/test_pricing.py:q:6",
+      "type": "defines"
     },
     {
-      "source": "app/services/dataset_loader.py",
-      "target": "app/api/schemas.py",
-      "type": "imports"
+      "source": "tests/pricing/test_pricing.py",
+      "target": "tests/pricing/test_pricing.py:test_promotion_and_margin_floor:8",
+      "type": "defines"
     },
     {
-      "source": "app/services/dataset_loader.py",
-      "target": "app/core/exceptions.py",
-      "type": "imports"
+      "source": "tests/pricing/test_pricing.py",
+      "target": "tests/pricing/test_pricing.py:test_blocked_promotion:17",
+      "type": "defines"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/main.py",
-      "type": "imports"
+      "source": "tests/pricing/test_pricing.py",
+      "target": "tests/pricing/test_pricing.py:test_missing_competitor_and_simulation:20",
+      "type": "defines"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/config.py",
-      "type": "imports"
+      "source": "tests/pricing/test_pricing.py",
+      "target": "tests/pricing/test_pricing.py:test_scarcity_and_cap_conflict:24",
+      "type": "defines"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/exceptions.py",
-      "type": "imports"
+      "source": "tests/pricing/test_pricing.py",
+      "target": "tests/pricing/test_pricing.py:test_dates_empty_and_duplicate:28",
+      "type": "defines"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/logging.py",
-      "type": "imports"
+      "source": "tests/pricing/test_pricing.py",
+      "target": "tests/pricing/test_pricing.py:test_currency_rounding_preserves_change_cap:36",
+      "type": "defines"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/api/schemas.py",
-      "type": "imports"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/agents/base_agent.py",
-      "type": "imports"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/services/database_service.py",
-      "type": "imports"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/services/dataset_loader.py",
-      "type": "imports"
-    },
-    {
-      "source": "app/main.py",
-      "target": "/",
-      "type": "registers"
-    },
-    {
-      "source": "app/main.py",
-      "target": "/health",
-      "type": "registers"
-    },
-    {
-      "source": "app/main.py",
-      "target": "/docs",
-      "type": "registers"
-    },
-    {
-      "source": "app/main.py",
-      "target": "/openapi.json",
-      "type": "registers"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/agents/base_agent.py",
+      "source": "tests/pricing/test_pricing.py",
+      "target": "app/agents/pricing/agent.py",
       "type": "tests"
     },
     {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/api/schemas.py",
-      "type": "tests"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/config.py",
-      "type": "tests"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/exceptions.py",
-      "type": "tests"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/core/logging.py",
-      "type": "tests"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/main.py",
-      "type": "tests"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/models/database.py",
-      "type": "tests"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/services/database_service.py",
-      "type": "tests"
-    },
-    {
-      "source": "tests/foundation/test_foundation.py",
-      "target": "app/services/dataset_loader.py",
+      "source": "tests/pricing/test_pricing.py",
+      "target": "app/agents/pricing/domain.py",
       "type": "tests"
     }
   ],
-  "dependencies": {
-    "runtime": [
-      "FastAPI",
-      "Pydantic",
-      "pydantic-settings",
-      "SQLAlchemy",
-      "Uvicorn"
-    ],
-    "test": [
-      "pytest",
-      "httpx"
-    ]
-  },
-  "deferred": [
-    "domain models pending dataset",
-    "domain agents",
-    "LangGraph",
-    "ChromaDB",
-    "embeddings",
-    "RBAC",
-    "durable audit",
-    "deployment"
-  ],
-  "official_completion_percent": 15,
-  "verified_implementation_commit": "a9a8df42e84a7eff3950cee94b4a5a2760de0c4c"
+  "limitations": "No production price mutation or fitted elasticity. Competitor simulation is a bounded one-step undercut rule, not a solved Bertrand equilibrium. Observed competitor data is mandatory for that mode. Conflicting margin and price-change constraints abstain for human review. Recommendation age is explicit; no external price feed or live stock connector.",
+  "dependencies": [
+    "foundation contracts",
+    "future authorized integration"
+  ]
 }
