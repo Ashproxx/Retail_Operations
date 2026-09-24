@@ -44,6 +44,13 @@ def main():
         node(table,'database table');edge('app/integration/repository.py',table,'reads_writes')
     for id,path in [('authorization','app/security/policy.py'),('signed_evidence','app/integration/rag.py'),('audit_chain','app/security/audit.py')]:
         node(id,'security control');edge(id,path,'implemented_by');edge('app/integration/orchestrator.py',id,'protected_by')
+    node('evaluation/retail_rag_fixture.json','dataset',fixture=True,positive_queries=12,negative_queries=2)
+    node('evaluation/models.json','model registry',pinned=True)
+    edge('scripts/evaluate_retrieval.py','evaluation/retail_rag_fixture.json','evaluates_on')
+    edge('scripts/download_evaluation_model.py','evaluation/models.json','reads')
+    edge('scripts/evaluate_retrieval.py','app/integration/rag.py','tests')
+    edge('scripts/container_smoke.py','app/main.py','tests')
+    edge('scripts/live_ollama_smoke.py','app/integration/llm.py','tests')
     payload={'scope':'human-approved integration candidate','status':'M13 INCOMPLETE / 95%','nodes':list(nodes.values()),'edges':edges}
     folder=ROOT/'docs/knowledge_graph'
     for name in ['MASTER_KNOWLEDGE_GRAPH.json','BRANCH_KNOWLEDGE_GRAPH.json']:(folder/name).write_text(json.dumps(payload,indent=2)+'\n')
@@ -84,7 +91,7 @@ Exact definitions are indexed in the machine-readable graph. Original branch con
 | tests/integration/test_rag.py | Real local Chroma and sentence-transformers fixture, rehashed tampering, manifest corruption, support/API integration |
 | tests/integration/test_provider.py | Mocked Ollama wire protocol and unavailable/malformed responses |
 
-Latest numerical results and outstanding runtime checks: [integration report](../integration/REPORT.md). Fixture tests do not establish pretrained semantic quality or production performance.
+Extended real-dependency checks: scripts/evaluate_retrieval.py (pinned pretrained MiniLM and labelled synthetic cases), scripts/live_ollama_smoke.py (actual Ollama inference), scripts/container_smoke.py (non-root container and restart workflows).\n\nMeasured evidence: [validation report](../integration/VALIDATION.md) and docs/integration/measurements/. The authored synthetic set is not production-quality certification.
 ''')
     print(f'Indexed {len(nodes)} nodes / {len(edges)} edges')
 

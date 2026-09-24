@@ -1,0 +1,16 @@
+{
+  "fixture": true,
+  "provider": "ollama",
+  "server_version": "0.34.3",
+  "model": "smollm2:135m",
+  "model_digest": "9077fe9d2ae1a4a41a868836b56b8163731a8fe16621397028c2c76f838c6907",
+  "nonempty_response": true,
+  "response_characters": 101,
+  "claim": "Actual local-model transport/inference works. Generated answer factuality is not certified.",
+  "evidence": {
+    "run_id": 35909119561,
+    "commit": "8d0d2b444a6cc3382f11bc3720000e7c93ba1f26",
+    "conclusion": "success",
+    "artifact_id": 10772063773
+  }
+}

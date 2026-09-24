@@ -2,7 +2,8 @@
 
 Privacy-first retail operations backend with a LangGraph router, eight domain agents, local Chroma retrieval, and authenticated FastAPI endpoints. This is the human-approved `integration/release-candidate`; it is not deployed and is not merged into `main`.
 
-**Status: M0-M12 PASS (95% weighted milestones); M13 INCOMPLETE pending external validation.** Integrated code, tests and local API demos work. Real retail data, pretrained semantic retrieval evaluation, a running Ollama model, and container runtime validation remains pending. Remote CI and the Docker image build passed on commit `9e939b2` (run 35878697558). The percentage measures the project's weighted milestone checklist, not production readiness.
+**Status: M0-M12 PASS (95% weighted milestones); M13 INCOMPLETE pending real-data validation.** The integrated code, all 178 tests, Docker build/runtime/restart, real local Ollama inference and pinned pretrained retrieval checks pass. Measurements use labelled synthetic data; no real retail dataset was supplied, so operational business outputs and dataset-specific mappings are unverified. The percentage measures the project checklist, not production readiness. See [validation evidence](docs/integration/VALIDATION.md).
+
 
 ## Start locally (Python 3.12)
 
@@ -114,13 +115,13 @@ python scripts/check_branch_scope.py
 python -m app.integration.demo
 ```
 
-The demo uses a temporary database, random ephemeral credentials and explicitly synthetic records. It does not modify your database. Tests cover all isolated agent suites plus authenticated API execution, follow-ups, role/store denials, feedback ownership, atomic CSV/XLSX imports, Ollama protocol/failure via mocked transport, actual Chroma/local-model retrieval, and signed-manifest tampering. Neither a live Ollama response nor pretrained retrieval quality is established by these tests.
+The demo uses a temporary database, random ephemeral credentials and explicitly synthetic records. It does not modify your database. Tests cover all isolated agent suites plus authenticated API execution, follow-ups, role/store denials, feedback ownership, atomic CSV/XLSX imports, Ollama protocol/failure via mocked transport, actual Chroma/local-model retrieval, and signed-manifest tampering. The unit suite alone does not establish live-model behavior. Separate executed validation scripts verify real Ollama transport/inference and pretrained retrieval on the small synthetic set; neither establishes production answer quality.
 
 ## Docker and CI
 
 After local `init`, run `docker compose up --build`. Place an approved local embedding model at `models/embedding` and set its identity in `.env` for RAG. The container exposes port 8000 only on localhost, uses a non-root user, read-only secret/model mounts, a persistent state volume, CPU PyTorch and one worker. On Linux, files generated with mode 0600 must be readable by container UID 10001 through an appropriate owner/group or secret provisioning setup; do not make tokens world-readable. Ollama runs on the host; ensure its local server is reachable from Docker before using optional drafting. No cloud resources are created.
 
-GitHub Actions installs CPU dependencies, runs the full suite, demo, scope guard and Docker build on candidate pushes/PRs with read-only repository permissions. The original CI and Docker build passed in [run 35878697558](https://github.com/Ashproxx/Retail_Operations/actions/runs/35878697558). The expanded workflow also exercises container runtime and real local-model inference; measured results are recorded in docs/integration/VALIDATION.md.
+GitHub Actions installs CPU dependencies, runs the full suite, demo, scope guard and Docker build on candidate pushes/PRs with read-only repository permissions. [Expanded CI run 35909119561](https://github.com/Ashproxx/Retail_Operations/actions/runs/35909119561) passed all 178 tests, Docker build, real local-model inference and non-root authenticated container/restart workflows. Measured reports are recorded in docs/integration/VALIDATION.md.
 
 ## Limits and trust boundaries
 

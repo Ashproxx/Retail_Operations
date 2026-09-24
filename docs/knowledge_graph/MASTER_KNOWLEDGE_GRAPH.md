@@ -1,6 +1,6 @@
 # Integrated knowledge graph
 
-510 nodes / 804 edges. M13 INCOMPLETE; 95% weighted completion. See `docs/integration/REPORT.md` for validation and blockers. Source records are immutable under `docs/integration/sources/`; their milestone statements are historical.
+512 nodes / 809 edges. M13 INCOMPLETE; 95% weighted completion. See `docs/integration/REPORT.md` for validation and blockers. Source records are immutable under `docs/integration/sources/`; their milestone statements are historical.
 
 # Integrated architecture
 

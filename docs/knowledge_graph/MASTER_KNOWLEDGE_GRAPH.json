@@ -2055,6 +2055,18 @@
     {
       "id": "audit_chain",
       "type": "security control"
+    },
+    {
+      "id": "evaluation/retail_rag_fixture.json",
+      "type": "dataset",
+      "fixture": true,
+      "positive_queries": 12,
+      "negative_queries": 2
+    },
+    {
+      "id": "evaluation/models.json",
+      "type": "model registry",
+      "pinned": true
     }
   ],
   "edges": [
@@ -6077,6 +6089,31 @@
       "source": "app/integration/orchestrator.py",
       "target": "audit_chain",
       "type": "protected_by"
+    },
+    {
+      "source": "scripts/evaluate_retrieval.py",
+      "target": "evaluation/retail_rag_fixture.json",
+      "type": "evaluates_on"
+    },
+    {
+      "source": "scripts/download_evaluation_model.py",
+      "target": "evaluation/models.json",
+      "type": "reads"
+    },
+    {
+      "source": "scripts/evaluate_retrieval.py",
+      "target": "app/integration/rag.py",
+      "type": "tests"
+    },
+    {
+      "source": "scripts/container_smoke.py",
+      "target": "app/main.py",
+      "type": "tests"
+    },
+    {
+      "source": "scripts/live_ollama_smoke.py",
+      "target": "app/integration/llm.py",
+      "type": "tests"
     }
   ]
 }

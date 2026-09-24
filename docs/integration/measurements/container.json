@@ -1,0 +1,21 @@
+{
+  "fixture": true,
+  "image": "retailops-candidate",
+  "image_id": "sha256:d0954340afaabc080b210f8bf18f3d15eba9e9dca804d28f1b6a87479644c412",
+  "nonroot_uid": 10001,
+  "startup": "PASS",
+  "authentication": "PASS",
+  "empty_database": "PASS",
+  "authorized_query": "PASS",
+  "scope_denial": "PASS",
+  "restart_persistence": "PASS",
+  "followup_memory": "PASS",
+  "owned_feedback": "PASS",
+  "live_ollama_draft": "PASS",
+  "evidence": {
+    "run_id": 35909119561,
+    "commit": "8d0d2b444a6cc3382f11bc3720000e7c93ba1f26",
+    "conclusion": "success",
+    "artifact_id": 10772063773
+  }
+}

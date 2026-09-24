@@ -1,0 +1,203 @@
+{
+  "fixture": true,
+  "model": {
+    "repository": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "license": "Apache-2.0",
+    "source": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2"
+  },
+  "queries": 12,
+  "top1_accuracy": 1.0,
+  "recall_at_3": 1.0,
+  "pipeline_answers": 8,
+  "unanswerable_abstentions": 2,
+  "scope_leaks": 0,
+  "results": [
+    {
+      "question": "What receipt do I need to return unworn clothing?",
+      "expected": "returns-window",
+      "ranked": [
+        "returns-window",
+        "damaged-items",
+        "stock-replenishment"
+      ],
+      "top1_correct": true,
+      "recall_at_3": true,
+      "pipeline_status": "evidence_found",
+      "iterations": 1,
+      "integrity_rejections": 0
+    },
+    {
+      "question": "How long after purchase can a shopper bring back clothes?",
+      "expected": "returns-window",
+      "ranked": [
+        "returns-window",
+        "stock-replenishment",
+        "store-hours"
+      ],
+      "top1_correct": true,
+      "recall_at_3": true,
+      "pipeline_status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "question": "Where can I find the carrier tracking reference?",
+      "expected": "delivery-tracking",
+      "ranked": [
+        "delivery-tracking",
+        "damaged-items",
+        "stock-replenishment"
+      ],
+      "top1_correct": true,
+      "recall_at_3": true,
+      "pipeline_status": "evidence_found",
+      "iterations": 1,
+      "integrity_rejections": 0
+    },
+    {
+      "question": "How do I check when my shipped parcel will arrive?",
+      "expected": "delivery-tracking",
+      "ranked": [
+        "delivery-tracking",
+        "stock-replenishment",
+        "damaged-items"
+      ],
+      "top1_correct": true,
+      "recall_at_3": true,
+      "pipeline_status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "question": "What happens when stock falls below its reorder point?",
+      "expected": "stock-replenishment",
+      "ranked": [
+        "stock-replenishment",
+        "promotion-rules",
+        "store-hours"
+      ],
+      "top1_correct": true,
+      "recall_at_3": true,
+      "pipeline_status": "evidence_found",
+      "iterations": 1,
+      "integrity_rejections": 0
+    },
+    {
+      "question": "Which demand and supplier lead time factors affect replenishment?",
+      "expected": "stock-replenishment",
+      "ranked": [
+        "stock-replenishment",
+        "returns-window",
+        "promotion-rules"
+      ],
+      "top1_correct": true,
+      "recall_at_3": true,
+      "pipeline_status": "evidence_found",
+      "iterations": 1,
+      "integrity_rejections": 0
+    },
+    {
+      "question": "When is an item eligible for a promotional discount?",
+      "expected": "promotion-rules",
+      "ranked": [
+        "promotion-rules",
+        "returns-window",
+        "stock-replenishment"
+      ],
+      "top1_correct": true,
+      "recall_at_3": true,
+      "pipeline_status": "evidence_found",
+      "iterations": 1,
+      "integrity_rejections": 0
+    },
+    {
+      "question": "What profit margin restrictions apply to a sale promotion?",
+      "expected": "promotion-rules",
+      "ranked": [
+        "promotion-rules",
+        "stock-replenishment",
+        "store-hours"
+      ],
+      "top1_correct": true,
+      "recall_at_3": true,
+      "pipeline_status": "evidence_found",
+      "iterations": 1,
+      "integrity_rejections": 0
+    },
+    {
+      "question": "What evidence should support collect for a defective item?",
+      "expected": "damaged-items",
+      "ranked": [
+        "damaged-items",
+        "stock-replenishment",
+        "returns-window"
+      ],
+      "top1_correct": true,
+      "recall_at_3": true,
+      "pipeline_status": "evidence_found",
+      "iterations": 1,
+      "integrity_rejections": 0
+    },
+    {
+      "question": "A customer received a broken product; should a person review replacement?",
+      "expected": "damaged-items",
+      "ranked": [
+        "damaged-items",
+        "stock-replenishment",
+        "returns-window"
+      ],
+      "top1_correct": true,
+      "recall_at_3": true,
+      "pipeline_status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "question": "What are the weekday store opening hours?",
+      "expected": "store-hours",
+      "ranked": [
+        "store-hours",
+        "promotion-rules",
+        "returns-window"
+      ],
+      "top1_correct": true,
+      "recall_at_3": true,
+      "pipeline_status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "question": "Is the shop open on Sunday?",
+      "expected": "store-hours",
+      "ranked": [
+        "store-hours",
+        "promotion-rules",
+        "returns-window"
+      ],
+      "top1_correct": true,
+      "recall_at_3": true,
+      "pipeline_status": "evidence_found",
+      "iterations": 1,
+      "integrity_rejections": 0
+    }
+  ],
+  "unanswerable": [
+    {
+      "question": "Describe quantum entanglement experiments.",
+      "status": "insufficient_evidence"
+    },
+    {
+      "question": "What is the chief executive's personal telephone number?",
+      "status": "insufficient_evidence"
+    }
+  ],
+  "limitations": "12 authored positive queries and 2 negatives; no held-out production distribution, calibration or generalization claim.",
+  "evidence": {
+    "local_execution": "PASS",
+    "ci_run_id": 35909119561,
+    "ci_commit": "8d0d2b444a6cc3382f11bc3720000e7c93ba1f26",
+    "ci_conclusion": "success",
+    "artifact_id": 10772063773
+  }
+}

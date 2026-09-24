@@ -10,4 +10,6 @@
 | tests/integration/test_rag.py | Real local Chroma and sentence-transformers fixture, rehashed tampering, manifest corruption, support/API integration |
 | tests/integration/test_provider.py | Mocked Ollama wire protocol and unavailable/malformed responses |
 
-Latest numerical results and outstanding runtime checks: [integration report](../integration/REPORT.md). Fixture tests do not establish pretrained semantic quality or production performance.
+Extended real-dependency checks: scripts/evaluate_retrieval.py (pinned pretrained MiniLM and labelled synthetic cases), scripts/live_ollama_smoke.py (actual Ollama inference), scripts/container_smoke.py (non-root container and restart workflows).
+
+Measured evidence: [validation report](../integration/VALIDATION.md) and docs/integration/measurements/. The authored synthetic set is not production-quality certification.

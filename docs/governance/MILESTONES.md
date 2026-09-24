@@ -25,3 +25,5 @@ Universal definition of done applies to every row. Order: M0, M1, M11, M2, M3, M
 ## Approved integration-session update
 
 M0-M12 PASS: 95% weighted total, with exact source commits in `docs/integration/APPROVED_SOURCES.json`. M13 INCOMPLETE: local integrated code/tests/startup delivered, external model/data/container/CI validation remains as recorded in `docs/integration/REPORT.md`. Source-branch milestone records are preserved in `docs/integration/sources`. No main merge authorized.
+
+Remaining-work evidence update: CI run 35909119561 passes full tests, container restart/runtime, live Ollama and pretrained synthetic retrieval. Real-data mapping/expected business outputs remain unverified; M13 stays INCOMPLETE / weighted total 95%. See docs/integration/VALIDATION.md.

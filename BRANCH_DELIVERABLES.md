@@ -20,11 +20,11 @@ M13 INCOMPLETE; weighted completion remains 95%.
 - [x] Source-preservation/ancestry scope guard
 - [x] Candidate implementation pushed and fetched; file tree/ancestry verified
 - [x] All fourteen pre-existing branch refs, including main, verified unchanged
-- [ ] Live Ollama smoke test with an installed model
-- [ ] Approved pretrained embeddings and labelled retrieval evaluation
+- [x] Live Ollama smoke test with an installed model (SmolLM2 135M)
+- [x] Pinned pretrained embeddings and labelled synthetic retrieval evaluation (MiniLM, 12 positive / 2 negative queries)
 - [ ] Real retail dataset mapping and end-to-end validation
 - [x] Previous remote CI and Docker image build verified (run 35878697558)
-- [ ] Expanded container runtime, real Ollama and pretrained retrieval checks verified
+- [x] Expanded container runtime, real Ollama and pretrained retrieval checks verified (run 35909119561)
 - [ ] M13 complete / eligible for final human review
 
 Publication evidence and source/main ref checks are recorded in docs/integration/REPORT.md and the session report. No main merge is authorized.

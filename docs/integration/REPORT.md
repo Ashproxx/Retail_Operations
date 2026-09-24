@@ -37,12 +37,13 @@ Important files: `app/integration/`, `app/main.py`, `tests/integration/`, `scrip
 
 The first full run hit a native CUDA-wheel bus error. CPU PyTorch fixed the environment. A Chroma tamper-test initially omitted explicit embeddings during its direct mutation; the test was corrected to actually mutate stored evidence, after which signature rejection passed. Neither failure was hidden or skipped.
 
-## Remaining validation
+## Remaining validation and newly closed gates
 
 1. Supply an approved real dataset; inspect its columns, map them explicitly and validate outputs against known observations. No production dataset or business results were fabricated.
-2. Install approved pretrained local embedding weights and a labelled retail retrieval set. Existing real Chroma tests use a local sentence-transformers BoW fixture, not semantic quality claims.
-3. Run a local Ollama model and validate optional draft behavior on approved data. HTTP transport/failure behavior is tested with mocks.
-4. Execute the Docker build/runtime and GitHub Actions workflow. Docker is unavailable locally, and no remote CI success is assumed from files alone.
+2. CLOSED: pinned pretrained MiniLM retrieval executed locally and in CI. On the authored synthetic set, 12/12 relevant documents ranked first, 8/12 answers met conservative evidence coverage, 2/2 unrelated questions abstained, and no scope leak occurred. This is not production recall/answer-quality certification.
+3. CLOSED: actual Ollama v0.34.3 with SmolLM2 135M returned a non-empty local response; the container also exercised optional drafting. Deterministic facts remain separate from generated text.
+4. CLOSED: expanded [CI run 35909119561](https://github.com/Ashproxx/Retail_Operations/actions/runs/35909119561) passed all 178 tests, Docker build/runtime, authentication, scoped reads, restart persistence, session memory and owned feedback. The first expanded run failed a stale ephemeral-port probe; the corrected smoke script passed. Exact model/image identities and per-query metrics are retained in `measurements/` and summarized in `VALIDATION.md`.
+
 5. Before deployment, establish trusted audit-anchor retention, secret provisioning, single-writer operational constraints, data retention and enterprise authentication/network controls. Azure deployment remains later work.
 
 ## Knowledge graph / shared scope
@@ -56,3 +57,11 @@ SHARED DELTA is restricted to this integration branch: central API wiring, depen
 No additional approval is needed to retain or review this candidate. Closing M13 requires the outstanding validation; merging into main would require a separate explicit instruction. No branch deletion, force push, source branch update or main update is authorized or performed. Approved merges only target the candidate.
 
 Publication verified: implementation commit `1b50c1ea9e4a116cc5da04ba9df6efb2e46b9f0c`; tree `620e4deb7965f0ec61568c7c7ba2a786ac7d00e0`. Fetched remote tree equals the tested local tree, all eleven approved sources are ancestors, and all fourteen pre-existing branch heads (including main) are unchanged. GitHub returned no successful commit status checks at review time; remote CI remains unverified. A subsequent documentation-only commit records this evidence; its exact SHA is in the session response.
+
+## Remaining-work session result
+
+Validated runtime commit: `8d0d2b444a6cc3382f11bc3720000e7c93ba1f26`; Actions run 35909119561 and job 107344177255 both SUCCESS. Artifact 10772063773 contains three non-secret JSON measurements. All 178 tests pass, with no failures/skips. The runner reported non-blocking Node-action deprecation warnings. Local CPU PyTorch reinstallation was verified and `pip check` reports no broken requirements.
+
+The technical integration checks in PDF section 6.8 now have executable evidence, including actual container and model behavior. Dataset sections 11-12 still cannot be validated against the user's source data because only the project PDF was supplied. Keep the overall M13 checklist incomplete / official 95% until real-data mapping and expected business outputs are verified; do not equate synthetic regression results with operational validation. No approval request is needed to continue once the dataset is provided.
+
+The original `app/security/INTEGRATION_REVIEW.md` and archived branch records are historical source documents retained unchanged; this report and the current checklist describe the live candidate.
