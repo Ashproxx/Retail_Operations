@@ -39,9 +39,10 @@ async function until(check){for(let i=0;i<100;i++){if(await check())return;await
   assert.equal(await page.locator('#token').inputValue(),'');
   assert.equal(await page.evaluate(()=>localStorage.length+sessionStorage.length),0);
   await page.screenshot({path:path.join(output,'desktop.png'),fullPage:true});
-  await page.locator('#store').fill('ANDHERI');await page.locator('#store').dispatchEvent('change');
+  await page.locator('#store').fill('ANDHERI');await page.locator('#store').press('Tab');
   await until(async()=>await page.locator('#stock').textContent()==='245');
   await page.locator('[data-view="inventory"]').click();
+  await until(async()=>await page.locator('#inventory-table tbody tr').count()===6);
   assert.equal(await page.locator('#inventory-table tbody tr').count(),6);
   await page.locator('#low-only').check();
   assert.equal(await page.locator('#inventory-table tbody tr').count(),2);
@@ -50,7 +51,7 @@ async function until(check){for(let i=0;i<100;i++){if(await check())return;await
   await page.waitForSelector('.forecast-column');
   assert.equal(await page.locator('.forecast-column').count(),7);
   await page.locator('[data-view="assistant"]').click();
-  await page.locator('#store').fill('');await page.locator('#store').dispatchEvent('change');
+  await page.locator('#store').fill('');await page.locator('#store').press('Tab');
   await until(async()=>await page.locator('#refresh').isEnabled());
   await page.locator('#message').fill('Which products are low in Bandra?');
   await page.getByRole('button',{name:'Send',exact:false}).click();

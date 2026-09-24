@@ -14,7 +14,7 @@ git pull --ff-only
 
 Open `http://127.0.0.1:8000/dashboard?demo=1`. Paste the temporary access token printed in the terminal into **Connect workspace**. Keep the terminal running. If port 8000 is occupied, use `--port 8001` and open the matching URL.
 
-The opt-in launcher binds to 127.0.0.1, creates a disposable SQLite database, seeds three stores / six product lines with synthetic records, and creates a temporary administrator grant. It does not read the existing `.env` or overwrite operational data. All data, feedback and audit events from this showcase disappear when the process stops. The token remains in browser memory only; refresh requires reconnection. Never publish the token. This mode is for a local presentation, not deployment.
+The opt-in launcher binds to 127.0.0.1, creates a disposable SQLite database, seeds three stores / six product lines with synthetic records, and creates a temporary administrator grant. It uses a separate database and grant without overwriting operational data or existing configuration. All data, feedback and audit events from this showcase disappear when the process stops. The token remains in browser memory only; refresh requires reconnection. Never publish the token. This mode is for a local presentation, not deployment.
 
 ## Suggested five-minute presentation
 
@@ -48,3 +48,5 @@ Local Python suite: **180 passed**. One upstream Starlette/AnyIO deprecation war
 M13 real-data validation remains incomplete; synthetic showcase results are not production accuracy evidence.
 
 Initial browser CI run 35957553940 reached the connected page but failed because Playwright's `waitForFunction` uses evaluation blocked by the dashboard's strict CSP. The browser harness now polls DOM locators without changing application CSP. The local environment prohibits browser socket startup, so browser interaction and screenshots are validated in GitHub Actions.
+
+The second browser run (35957849781) verified authentication and overview rendering, then exposed a test timing race: dispatching a synthetic change event followed by native blur triggered a second refresh. The harness now changes filters through normal keyboard blur and waits for the rendered table.
