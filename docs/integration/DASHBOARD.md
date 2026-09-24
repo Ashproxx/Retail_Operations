@@ -47,6 +47,17 @@ Local Python suite: **180 passed**. One upstream Starlette/AnyIO deprecation war
 
 M13 real-data validation remains incomplete; synthetic showcase results are not production accuracy evidence.
 
+## Final verification — September 24, 2026
+
+[CI run 35958130738](https://github.com/Ashproxx/Retail_Operations/actions/runs/35958130738) passed both jobs at commit `fda3dea1a434c14c69bc5d99da51693a8e273115`:
+
+- 180 Python tests passed; dependency and source-preservation checks passed.
+- Docker build, real Ollama inference, pretrained retrieval, and authenticated container/restart checks passed.
+- Chromium exercised invalid and valid authentication, the three-store overview, inventory filtering, seven-day forecast, chat and follow-up, feedback, audit display, mobile overflow checks, and disconnect clearing. No browser page errors were recorded.
+- Desktop, assistant and mobile screenshots were captured in the [dashboard-validation artifact](https://github.com/Ashproxx/Retail_Operations/actions/runs/35958130738/artifacts/10791516228). Local artifact download was denied by the file host; screenshots were captured by CI but not visually inspected in this workspace.
+
+The runnable dashboard is ready for a local synthetic-data showcase. This is not a public deployment or a claim of validated real-world retail accuracy. Main and source branches were not changed.
+
 Initial browser CI run 35957553940 reached the connected page but failed because Playwright's `waitForFunction` uses evaluation blocked by the dashboard's strict CSP. The browser harness now polls DOM locators without changing application CSP. The local environment prohibits browser socket startup, so browser interaction and screenshots are validated in GitHub Actions.
 
 The second browser run (35957849781) verified authentication and overview rendering, then exposed a test timing race: dispatching a synthetic change event followed by native blur triggered a second refresh. The harness now changes filters through normal keyboard blur and waits for the rendered table.
