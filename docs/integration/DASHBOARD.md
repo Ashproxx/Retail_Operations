@@ -46,3 +46,5 @@ Open `/dashboard` and connect with your existing local bearer token. The normal 
 Local Python suite: **180 passed**. One upstream Starlette/AnyIO deprecation warning. An initial environment restoration installed CUDA PyTorch and failed during native import; reinstalling CPU PyTorch restored the full passing run. No application workaround or test skip was used. Source preservation guard passes. Browser validation results are recorded below when completed.
 
 M13 real-data validation remains incomplete; synthetic showcase results are not production accuracy evidence.
+
+Initial browser CI run 35957553940 reached the connected page but failed because Playwright's `waitForFunction` uses evaluation blocked by the dashboard's strict CSP. The browser harness now polls DOM locators without changing application CSP. The local environment prohibits browser socket startup, so browser interaction and screenshots are validated in GitHub Actions.

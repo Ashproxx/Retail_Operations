@@ -1,6 +1,6 @@
 # Integrated knowledge graph
 
-523 nodes / 832 edges. M13 INCOMPLETE; 95% weighted completion. See `docs/integration/REPORT.md` for validation and blockers. Source records are immutable under `docs/integration/sources/`; their milestone statements are historical.
+528 nodes / 846 edges. M13 INCOMPLETE; 95% weighted completion. See `docs/integration/REPORT.md` for validation and blockers. Source records are immutable under `docs/integration/sources/`; their milestone statements are historical.
 
 # Integrated architecture
 
@@ -94,6 +94,12 @@ API body roles are rejected. Store access is rechecked after memory lookup. Secr
 SQLAlchemy transactions make imports all-or-nothing. CSV/XLSX mappings target existing domain schemas explicitly; fixture/source metadata comes from the importer. Tables remain empty until an operator imports data. SQLite is the development default; the repository uses SQLAlchemy for future database adaptation.
 
 Ollama is optional for a separate unverified narrative draft. It receives only the already-produced answer and has no tools or authority. Core facts and escalation remain deterministic. Hosted Azure/OpenAI adapters and Azure deployment are extension work, not implemented services.
+
+## Interactive dashboard
+
+The same FastAPI application serves `/dashboard` and `/dashboard-assets`. Browser fetches call the existing `/api/query`, `/api/chat`, `/api/feedback`, and `/api/audit` routes with an in-memory bearer token. No frontend server, external CDN, or new operational data endpoint is required. The UI renders backend text as text nodes and exposes missing evidence, authorization failures and human review states.
+
+The opt-in `app.integration.showcase` launcher binds only to localhost, creates a disposable database and grant, and loads explicitly synthetic records through the repository. Normal application startup still creates empty tables. See [dashboard guide](docs/integration/DASHBOARD.md).
 
 ## Branch ownership
 

@@ -2111,6 +2111,26 @@
       "id": "evaluation/models.json",
       "type": "model registry",
       "pinned": true
+    },
+    {
+      "id": "app/dashboard/static/app.js",
+      "type": "dashboard asset"
+    },
+    {
+      "id": "app/dashboard/static/index.html",
+      "type": "dashboard asset"
+    },
+    {
+      "id": "app/dashboard/static/style.css",
+      "type": "dashboard asset"
+    },
+    {
+      "id": "scripts/check_dashboard.cjs",
+      "type": "browser test"
+    },
+    {
+      "id": "GET /dashboard",
+      "type": "UI endpoint"
     }
   ],
   "edges": [
@@ -6273,6 +6293,76 @@
       "source": "scripts/live_ollama_smoke.py",
       "target": "app/integration/llm.py",
       "type": "tests"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/dashboard/static/app.js",
+      "type": "contains"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/dashboard/static/index.html",
+      "type": "contains"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/dashboard/static/style.css",
+      "type": "contains"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "scripts/check_dashboard.cjs",
+      "type": "contains"
+    },
+    {
+      "source": "GET /dashboard",
+      "target": "app/dashboard/routes.py",
+      "type": "implemented_by"
+    },
+    {
+      "source": "app/dashboard/routes.py",
+      "target": "app/dashboard/static/index.html",
+      "type": "serves"
+    },
+    {
+      "source": "app/dashboard/static/index.html",
+      "target": "app/dashboard/static/app.js",
+      "type": "loads"
+    },
+    {
+      "source": "app/dashboard/static/index.html",
+      "target": "app/dashboard/static/style.css",
+      "type": "loads"
+    },
+    {
+      "source": "app/dashboard/static/app.js",
+      "target": "POST /api/chat",
+      "type": "calls_with_bearer"
+    },
+    {
+      "source": "app/dashboard/static/app.js",
+      "target": "POST /api/query",
+      "type": "calls_with_bearer"
+    },
+    {
+      "source": "app/dashboard/static/app.js",
+      "target": "POST /api/feedback",
+      "type": "calls_with_bearer"
+    },
+    {
+      "source": "app/dashboard/static/app.js",
+      "target": "GET /api/audit",
+      "type": "calls_with_bearer"
+    },
+    {
+      "source": "scripts/check_dashboard.cjs",
+      "target": "GET /dashboard",
+      "type": "tests"
+    },
+    {
+      "source": "app/integration/showcase.py",
+      "target": "app/dashboard/fixtures.py",
+      "type": "explicit_synthetic_seed"
     }
   ]
 }

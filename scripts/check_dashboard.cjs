@@ -12,6 +12,7 @@ let startup = '';
 server.stdout.on('data',chunk=>{startup+=chunk.toString();});
 server.stderr.on('data',()=>{}); // Do not persist credentials or request logs.
 const delay = ms=>new Promise(resolve=>setTimeout(resolve,ms));
+async function until(check){for(let i=0;i<100;i++){if(await check())return;await delay(100);}throw Error('UI update timed out');}
 (async()=>{
  let browser;
  try {
@@ -33,13 +34,13 @@ const delay = ms=>new Promise(resolve=>setTimeout(resolve,ms));
   await page.getByText('Access token rejected. Reconnect with a valid token.').waitFor();
   await page.locator('#token').fill(token);
   await page.getByRole('button',{name:'Connect workspace'}).click();
-  await page.waitForFunction(()=>document.querySelector('#sales').textContent!=='—');
+  await until(async()=>await page.locator('#sales').textContent()!=='—');
   assert.equal(await page.locator('#sales-chart .bar-row').count(),3);
   assert.equal(await page.locator('#token').inputValue(),'');
   assert.equal(await page.evaluate(()=>localStorage.length+sessionStorage.length),0);
   await page.screenshot({path:path.join(output,'desktop.png'),fullPage:true});
   await page.locator('#store').fill('ANDHERI');await page.locator('#store').dispatchEvent('change');
-  await page.waitForFunction(()=>document.querySelector('#stock').textContent==='245');
+  await until(async()=>await page.locator('#stock').textContent()==='245');
   await page.locator('[data-view="inventory"]').click();
   assert.equal(await page.locator('#inventory-table tbody tr').count(),6);
   await page.locator('#low-only').check();
@@ -50,7 +51,7 @@ const delay = ms=>new Promise(resolve=>setTimeout(resolve,ms));
   assert.equal(await page.locator('.forecast-column').count(),7);
   await page.locator('[data-view="assistant"]').click();
   await page.locator('#store').fill('');await page.locator('#store').dispatchEvent('change');
-  await page.waitForFunction(()=>!document.querySelector('#refresh').disabled);
+  await until(async()=>await page.locator('#refresh').isEnabled());
   await page.locator('#message').fill('Which products are low in Bandra?');
   await page.getByRole('button',{name:'Send',exact:false}).click();
   await page.getByText('Inspect evidence, parameters & warnings').waitFor();
@@ -59,7 +60,7 @@ const delay = ms=>new Promise(resolve=>setTimeout(resolve,ms));
   await page.getByText('Feedback recorded').waitFor();
   await page.locator('#message').fill('What about Andheri?');
   await page.getByRole('button',{name:'Send',exact:false}).click();
-  await page.waitForFunction(()=>document.querySelectorAll('#messages details').length===2);
+  await until(async()=>await page.locator('#messages details').count()===2);
   await page.screenshot({path:path.join(output,'assistant.png'),fullPage:true});
   await page.locator('[data-view="activity"]').click();
   await page.getByRole('button',{name:'Load activity',exact:true}).click();

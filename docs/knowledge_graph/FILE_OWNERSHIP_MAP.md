@@ -127,3 +127,7 @@
 | `tests/security/test_security.py` | integration/release-candidate; original source ownership preserved in archives |
 | `tests/supply/test_supply.py` | integration/release-candidate; original source ownership preserved in archives |
 | `tests/support/test_support.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/dashboard/static/app.js` | integration/release-candidate; original source ownership preserved in archives |
+| `app/dashboard/static/index.html` | integration/release-candidate; original source ownership preserved in archives |
+| `app/dashboard/static/style.css` | integration/release-candidate; original source ownership preserved in archives |
+| `scripts/check_dashboard.cjs` | integration/release-candidate; original source ownership preserved in archives |

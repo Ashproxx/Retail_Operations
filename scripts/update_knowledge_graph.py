@@ -51,6 +51,20 @@ def main():
     edge('scripts/evaluate_retrieval.py','app/integration/rag.py','tests')
     edge('scripts/container_smoke.py','app/main.py','tests')
     edge('scripts/live_ollama_smoke.py','app/integration/llm.py','tests')
+    dashboard_paths = sorted(ROOT.glob('app/dashboard/static/*')) + [ROOT/'scripts/check_dashboard.cjs']
+    for path in dashboard_paths:
+        relative = str(path.relative_to(ROOT))
+        node(relative, 'browser test' if path.suffix == '.cjs' else 'dashboard asset')
+        edge('integration/release-candidate', relative, 'contains')
+    node('GET /dashboard', 'UI endpoint')
+    edge('GET /dashboard', 'app/dashboard/routes.py', 'implemented_by')
+    edge('app/dashboard/routes.py', 'app/dashboard/static/index.html', 'serves')
+    edge('app/dashboard/static/index.html', 'app/dashboard/static/app.js', 'loads')
+    edge('app/dashboard/static/index.html', 'app/dashboard/static/style.css', 'loads')
+    for endpoint in ['POST /api/chat', 'POST /api/query', 'POST /api/feedback', 'GET /api/audit']:
+        edge('app/dashboard/static/app.js', endpoint, 'calls_with_bearer')
+    edge('scripts/check_dashboard.cjs', 'GET /dashboard', 'tests')
+    edge('app/integration/showcase.py', 'app/dashboard/fixtures.py', 'explicit_synthetic_seed')
     payload={'scope':'human-approved integration candidate','status':'M13 INCOMPLETE / 95%','nodes':list(nodes.values()),'edges':edges}
     folder=ROOT/'docs/knowledge_graph'
     for name in ['MASTER_KNOWLEDGE_GRAPH.json','BRANCH_KNOWLEDGE_GRAPH.json']:(folder/name).write_text(json.dumps(payload,indent=2)+'\n')
@@ -59,7 +73,7 @@ def main():
     extra='''\n## Branch ownership\n\n```mermaid\nflowchart TD\n foundation[Pinned foundation] --> agents[Approved agent commits]\n foundation --> platform[Approved RAG commit]\n foundation --> security[Approved security commit]\n agents --> integration[Integration candidate]\n platform --> integration\n security --> integration\n integration --> shared[Shared adapters and API wiring]\n shared --> qa[Full QA and review]\n```\n\n## Test relationships\n\n```mermaid\nflowchart TD\n unit[Original branch suites] --> domains[Domain logic and contracts]\n api[Integration API tests] --> orchestration[Auth execution and memory]\n storage[Storage tests] --> sql[Atomic imports and scope]\n evidence[RAG integration tests] --> signed[Signed Chroma evidence]\n provider[Provider tests] --> ollama[Ollama protocol and fallback]\n domains --> full[Full candidate suite]\n orchestration --> full\n sql --> full\n signed --> full\n ollama --> full\n```\n'''
     for name in ['MASTER_KNOWLEDGE_GRAPH.md','BRANCH_KNOWLEDGE_GRAPH.md']:(folder/name).write_text(intro+body+extra)
     ownership=['# Integrated file ownership','', '| Path | Integration owner |','|---|---|']
-    for path in paths:ownership.append(f'| `{path.relative_to(ROOT)}` | integration/release-candidate; original source ownership preserved in archives |')
+    for path in paths + dashboard_paths:ownership.append(f'| `{path.relative_to(ROOT)}` | integration/release-candidate; original source ownership preserved in archives |')
     (folder/'FILE_OWNERSHIP_MAP.md').write_text('\n'.join(ownership)+'\n')
     (folder/'DATA_FLOW_GRAPH.md').write_text('# Data flow\n\nSee the implemented system, multi-agent, RAG and security flows in [ARCHITECTURE.md](../../ARCHITECTURE.md).\n\nCSV/XLSX -> explicit mapping -> domain validation -> transactional SQL -> authorized records -> domain result -> conflict/aggregation -> audit -> response.\n')
     (folder/'INTERFACE_REGISTRY.md').write_text('''# Integrated interface registry
