@@ -32,6 +32,8 @@ def create_app(settings: Settings | None = None, runtime_factory=None) -> FastAP
     api = FastAPI(title=config.app_name, version="0.1.0", lifespan=lifespan)
 
     api.include_router(router)
+    from app.dashboard.routes import mount_dashboard
+    mount_dashboard(api)
 
     @api.middleware("http")
     async def request_metadata(request: Request, call_next):

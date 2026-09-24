@@ -28,3 +28,11 @@ M13 INCOMPLETE; weighted completion remains 95%.
 - [ ] M13 complete / eligible for final human review
 
 Publication evidence and source/main ref checks are recorded in docs/integration/REPORT.md and the session report. No main merge is authorized.
+
+## Interactive showcase extension
+
+- [x] Responsive same-origin dashboard connected to authenticated inventory, analytics, forecast, chat, feedback and audit APIs.
+- [x] Opt-in, localhost-only temporary synthetic database; normal operational startup remains empty.
+- [x] Windows launch and presentation guide: [DASHBOARD.md](docs/integration/DASHBOARD.md).
+- [x] Full local Python suite: 180 passed; source-preservation guard passed.
+- [ ] Real dataset mapping and business validation (unchanged M13 requirement).

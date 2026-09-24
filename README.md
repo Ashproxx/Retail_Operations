@@ -5,6 +5,18 @@ Privacy-first retail operations backend with a LangGraph router, eight domain ag
 **Status: M0-M12 PASS (95% weighted milestones); M13 INCOMPLETE pending real-data validation.** The integrated code, all 178 tests, Docker build/runtime/restart, real local Ollama inference and pinned pretrained retrieval checks pass. Measurements use labelled synthetic data; no real retail dataset was supplied, so operational business outputs and dataset-specific mappings are unverified. The percentage measures the project checklist, not production readiness. See [validation evidence](docs/integration/VALIDATION.md).
 
 
+## Interactive dashboard / showcase
+
+A responsive dashboard is now available at `/dashboard`: overview, inventory, seven-day forecast, operations chat with evidence and feedback, and administrator audit activity. No frontend build or Node installation is required.
+
+For a disposable demo with synthetic data, stop the existing server and run:
+
+```powershell
+.\.venv\Scripts\python.exe -m app.integration.showcase
+```
+
+Open `http://127.0.0.1:8000/dashboard?demo=1` and enter the temporary token printed in the terminal. Existing configuration and databases remain untouched. See [the showcase guide](docs/integration/DASHBOARD.md) for the presentation flow and normal-data mode.
+
 ## Start locally (Python 3.12)
 
 ```bash

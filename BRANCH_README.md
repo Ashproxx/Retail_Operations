@@ -28,3 +28,11 @@ Published implementation: `1b50c1ea9e4a116cc5da04ba9df6efb2e46b9f0c`. Fetched tr
 Previous remote CI including Docker build is verified successful: run 35878697558 at `9e939b2519f314281cf246e224206aefa6eaff8d`. Added explicit pinned pretrained-model evaluation, real Ollama smoke and authenticated container/restart tests to CI. The only provider behavior change bounds optional drafts to 256 tokens. No source agent branch is edited. `evaluation/models.json` records free public model choices; `evaluation/retail_rag_fixture.json` is labelled synthetic and cannot stand in for the user's operational data. Measured results are tracked in docs/integration/VALIDATION.md.
 
 Final validation evidence: `8d0d2b444a6cc3382f11bc3720000e7c93ba1f26`, successful Actions run 35909119561. 178 tests pass; graph now 512 nodes / 809 edges. Runtime inputs and retrieval labels used only synthetic records. M13 remains incomplete for real-data validation under dataset requirements; no main merge is authorized.
+
+## Interactive showcase extension
+
+- [x] Responsive same-origin dashboard connected to authenticated inventory, analytics, forecast, chat, feedback and audit APIs.
+- [x] Opt-in, localhost-only temporary synthetic database; normal operational startup remains empty.
+- [x] Windows launch and presentation guide: [DASHBOARD.md](docs/integration/DASHBOARD.md).
+- [x] Full local Python suite: 180 passed; source-preservation guard passed.
+- [ ] Real dataset mapping and business validation (unchanged M13 requirement).

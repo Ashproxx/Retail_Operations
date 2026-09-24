@@ -641,6 +641,26 @@
       "type": "function"
     },
     {
+      "id": "app/dashboard/__init__.py",
+      "type": "file"
+    },
+    {
+      "id": "app/dashboard/fixtures.py",
+      "type": "file"
+    },
+    {
+      "id": "app/dashboard/fixtures.py::seed_showcase",
+      "type": "function"
+    },
+    {
+      "id": "app/dashboard/routes.py",
+      "type": "file"
+    },
+    {
+      "id": "app/dashboard/routes.py::mount_dashboard",
+      "type": "function"
+    },
+    {
       "id": "app/integration/__init__.py",
       "type": "file"
     },
@@ -891,6 +911,18 @@
     {
       "id": "app/integration/runtime.py::Runtime",
       "type": "class"
+    },
+    {
+      "id": "app/integration/showcase.py",
+      "type": "file"
+    },
+    {
+      "id": "app/integration/showcase.py::showcase_app",
+      "type": "function"
+    },
+    {
+      "id": "app/integration/showcase.py::main",
+      "type": "function"
     },
     {
       "id": "app/main.py",
@@ -1490,6 +1522,18 @@
     },
     {
       "id": "tests/integration/test_cli.py::test_local_provisioning_secret_hygiene_and_no_overwrite",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/test_dashboard.py",
+      "type": "test"
+    },
+    {
+      "id": "tests/integration/test_dashboard.py::test_showcase_is_authenticated_and_uses_disposable_fixtures",
+      "type": "function"
+    },
+    {
+      "id": "tests/integration/test_dashboard.py::test_normal_dashboard_never_seeds_data",
       "type": "function"
     },
     {
@@ -3132,6 +3176,36 @@
     },
     {
       "source": "integration/release-candidate",
+      "target": "app/dashboard/__init__.py",
+      "type": "contains"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/dashboard/fixtures.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/dashboard/fixtures.py",
+      "target": "app/integration/fixtures.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/dashboard/fixtures.py",
+      "target": "app/dashboard/fixtures.py::seed_showcase",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/dashboard/routes.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/dashboard/routes.py",
+      "target": "app/dashboard/routes.py::mount_dashboard",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
       "target": "app/integration/__init__.py",
       "type": "contains"
     },
@@ -3698,6 +3772,46 @@
     {
       "source": "app/integration/runtime.py",
       "target": "app/integration/runtime.py::Runtime",
+      "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "app/integration/showcase.py",
+      "type": "contains"
+    },
+    {
+      "source": "app/integration/showcase.py",
+      "target": "app/main.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/showcase.py",
+      "target": "app/integration/config.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/showcase.py",
+      "target": "app/integration/runtime.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/showcase.py",
+      "target": "app/dashboard/fixtures.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/showcase.py",
+      "target": "app/security/policy.py",
+      "type": "imports"
+    },
+    {
+      "source": "app/integration/showcase.py",
+      "target": "app/integration/showcase.py::showcase_app",
+      "type": "defines"
+    },
+    {
+      "source": "app/integration/showcase.py",
+      "target": "app/integration/showcase.py::main",
       "type": "defines"
     },
     {
@@ -4949,6 +5063,51 @@
       "source": "tests/integration/test_cli.py",
       "target": "tests/integration/test_cli.py::test_local_provisioning_secret_hygiene_and_no_overwrite",
       "type": "defines"
+    },
+    {
+      "source": "integration/release-candidate",
+      "target": "tests/integration/test_dashboard.py",
+      "type": "contains"
+    },
+    {
+      "source": "tests/integration/test_dashboard.py",
+      "target": "app/main.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/integration/test_dashboard.py",
+      "target": "app/integration/config.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/integration/test_dashboard.py",
+      "target": "app/integration/showcase.py",
+      "type": "imports"
+    },
+    {
+      "source": "tests/integration/test_dashboard.py",
+      "target": "tests/integration/test_dashboard.py::test_showcase_is_authenticated_and_uses_disposable_fixtures",
+      "type": "defines"
+    },
+    {
+      "source": "tests/integration/test_dashboard.py",
+      "target": "tests/integration/test_dashboard.py::test_normal_dashboard_never_seeds_data",
+      "type": "defines"
+    },
+    {
+      "source": "tests/integration/test_dashboard.py",
+      "target": "app/main.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/integration/test_dashboard.py",
+      "target": "app/integration/config.py",
+      "type": "tests"
+    },
+    {
+      "source": "tests/integration/test_dashboard.py",
+      "target": "app/integration/showcase.py",
+      "type": "tests"
     },
     {
       "source": "integration/release-candidate",

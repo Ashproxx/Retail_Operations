@@ -51,6 +51,9 @@
 | `app/core/config.py` | integration/release-candidate; original source ownership preserved in archives |
 | `app/core/exceptions.py` | integration/release-candidate; original source ownership preserved in archives |
 | `app/core/logging.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/dashboard/__init__.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/dashboard/fixtures.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/dashboard/routes.py` | integration/release-candidate; original source ownership preserved in archives |
 | `app/integration/__init__.py` | integration/release-candidate; original source ownership preserved in archives |
 | `app/integration/cli.py` | integration/release-candidate; original source ownership preserved in archives |
 | `app/integration/config.py` | integration/release-candidate; original source ownership preserved in archives |
@@ -66,6 +69,7 @@
 | `app/integration/repository.py` | integration/release-candidate; original source ownership preserved in archives |
 | `app/integration/routes.py` | integration/release-candidate; original source ownership preserved in archives |
 | `app/integration/runtime.py` | integration/release-candidate; original source ownership preserved in archives |
+| `app/integration/showcase.py` | integration/release-candidate; original source ownership preserved in archives |
 | `app/main.py` | integration/release-candidate; original source ownership preserved in archives |
 | `app/models/__init__.py` | integration/release-candidate; original source ownership preserved in archives |
 | `app/models/database.py` | integration/release-candidate; original source ownership preserved in archives |
@@ -110,6 +114,7 @@
 | `tests/integration/conftest.py` | integration/release-candidate; original source ownership preserved in archives |
 | `tests/integration/test_api.py` | integration/release-candidate; original source ownership preserved in archives |
 | `tests/integration/test_cli.py` | integration/release-candidate; original source ownership preserved in archives |
+| `tests/integration/test_dashboard.py` | integration/release-candidate; original source ownership preserved in archives |
 | `tests/integration/test_provider.py` | integration/release-candidate; original source ownership preserved in archives |
 | `tests/integration/test_rag.py` | integration/release-candidate; original source ownership preserved in archives |
 | `tests/integration/test_storage.py` | integration/release-candidate; original source ownership preserved in archives |

@@ -58,3 +58,34 @@ jobs:
       - name: Stop local model service
         if: always()
         run: docker rm --force retailops-ollama || true
+
+  dashboard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      HF_HUB_OFFLINE: '1'
+      TRANSFORMERS_OFFLINE: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - run: python -m pip install -r requirements-dev.txt
+      - run: npm install --prefix /tmp/dashboard-browser playwright@1.51.1 --no-audit --no-fund
+      - run: node /tmp/dashboard-browser/node_modules/playwright/cli.js install --with-deps chromium
+      - name: Verify dashboard with real browser and backend
+        env:
+          NODE_PATH: /tmp/dashboard-browser/node_modules
+        run: node scripts/check_dashboard.cjs
+      - name: Preserve desktop and mobile screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dashboard-validation
+          path: validation-output/dashboard/*.png
+          if-no-files-found: warn
