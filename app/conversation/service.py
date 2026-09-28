@@ -1,0 +1,235 @@
+"""Progressive clarification and bounded evidence-led orchestration."""
+import asyncio
+import json
+import re
+from time import perf_counter
+from datetime import datetime
+from app.api.schemas import AuditEvent
+from app.conversation.contracts import Context
+from app.conversation.catalog import Catalog
+from app.conversation.taxonomy import key, mentioned_category
+from app.conversation import dates, analytics, charts
+from app.conversation.forecast import forecast
+from app.conversation.competition import compare
+from app.security.policy import AccessDenied
+from app.core.exceptions import ComponentUnavailableError
+from app.integration.contracts import DirectQuery
+
+INTENTS=['sales','inventory','forecast','diagnose','recommendations','competition','support','pricing','orders','supply','returns']
+CHART_WORDS={'stacked bar':'stacked_bar','grouped bar':'grouped_bar','horizontal bar':'horizontal_bar','multi-line':'multi_line',
+             'doughnut':'doughnut','donut':'doughnut','heatmap':'heatmap','scatter':'scatter','pie':'pie','area':'area','line':'line','bar':'bar'}
+
+
+def intent_of(message):
+    text=key(message)
+    if re.search(r'\b(refund|return)\b',text):return 'returns'
+    if re.search(r'\b(order|delivery|shipping)\b',text):return 'orders'
+    if re.search(r'\b(supplier|supply chain|vendor|lead time)\b',text):return 'supply'
+    if re.search(r'\b(policy|faq|opening hours|customer service|sop)\b',text):return 'support'
+    if re.search(r'\b(compete|competes|competition|competitors?|similar products?|substitutes?)\b',text):return 'competition'
+    if re.search(r'\b(forecast|predict|next \d+ days)\b',text):return 'forecast'
+    if re.search(r'\b(should|recommend|suggest|actions?|improve|do about)\b',text):return 'recommendations'
+    if re.search(r'\b(why|poorly|poor|worst|low sales|not selling|declin|underperform)',text):return 'diagnose'
+    if re.search(r'\b(stock|inventory|reorder|availability)\b',text):return 'inventory'
+    if re.search(r'\b(price|pricing|discount|promotion)\b',text):return 'pricing'
+    if re.search(r'\b(sales|sold|selling|revenue|units|performance|perform|doing|did we|show|shirts|shorts|pants|clothing)\b',text):return 'sales'
+    return None
+
+
+def options(values):return [{'label':str(v),'value':str(v)} for v in values]
+
+
+def public_context(ctx):
+    return ctx.model_dump(exclude={'store_id','sku_id','pending','previous_intent'})
+
+
+class ConversationService:
+    def __init__(self,runtime,clock=None):
+        self.runtime=runtime;self.clock=clock;self.lock=asyncio.Lock()
+
+    async def run(self,turn,principal):
+        async with self.lock:
+            started=perf_counter();response=None
+            try:
+                response=await self._run(turn,principal)
+                if not response.pop('legacy_receipt',False):self.runtime.repository.receipt(principal)
+                response['request_id']=str(principal.request_id)
+                return response
+            finally:
+                self.runtime.audit.append(AuditEvent(request_id=principal.request_id,session_id=principal.session_id,
+                    user_role=principal.role,agents_called=(response or {}).get('agents',[]),
+                    tools_called=['conversation.authorized_tools'],confidence=0,
+                    latency_ms=(perf_counter()-started)*1000,final_status=(response or {}).get('status','error')))
+
+    async def _run(self,turn,principal):
+        state_owner=principal.model_copy(update={'session_id':'conversation:'+principal.session_id})
+        saved=self.runtime.repository.memory(state_owner)
+        ctx=Context.model_validate(saved['context']) if saved and saved.get('version')==2 else Context()
+        if turn.action=='reset':ctx=Context()
+        message=turn.message.strip();text=key(message)
+        selected_chart = turn.action=='select' and ctx.pending=='chart'
+        if turn.action=='select' and ctx.pending=='intent' and turn.value in INTENTS:
+            ctx.intent=turn.value;ctx.pending=None
+        catalog=Catalog(self.runtime,principal)
+        intent=intent_of(message)
+        if turn.action in INTENTS:intent=turn.action
+        if re.search(r'\b(it|that|why|what about|graph|chart|pie|line|bar|area)\b',text) and ctx.intent and not intent:
+            intent=ctx.intent
+        if intent:ctx.intent=intent
+        if not ctx.intent:
+            # Optional local language model only classifies an allowlisted intent; no facts or authority.
+            if message and self.runtime.provider is not None:
+                try:
+                    raw=await self.runtime.provider.draft('Classify the following retail request. Return ONLY JSON with intent and confidence. Allowed intents: '+','.join(INTENTS)+'. Unknown requests use null. Request: '+message[:1500])
+                    guess=json.loads(raw)
+                    if guess.get('intent') in INTENTS and isinstance(guess.get('confidence'),(int,float)) and guess['confidence']>=.85:ctx.intent=guess['intent']
+                except (ValueError,TypeError,ComponentUnavailableError):pass
+            if not ctx.intent:
+                ctx.pending='intent'
+                return self.clarify(ctx,state_owner,'What would you like to explore?','intent',options(['sales','inventory','forecast','competition','recommendations']))
+        action='inventory.read' if ctx.intent=='inventory' else 'forecast.read' if ctx.intent=='forecast' else 'analytics.read'
+        # Support/order policies keep the original scoped agent tools; catalog disclosure is not required.
+        if ctx.intent in ['support','orders','returns','supply','pricing']:
+            return await self.legacy(turn,ctx,state_owner,principal)
+        rows=catalog.observations(action=action)
+        if not rows:
+            ctx.pending=None
+            return self.save(ctx,state_owner,{'status':'no_data','summary':'No authorized retail observations are loaded for this operation. Import your dataset or start the explicitly synthetic showcase.','actions':[]})
+        stores={r['store_id']:r['store_location'] for r in rows}
+        # Reauthorization also invalidates selections from a formerly permitted scope.
+        if ctx.store_id and ctx.store_id not in stores:
+            ctx.store_id=ctx.location=ctx.sku_id=ctx.product=None
+        available=(min(r['date'] for r in rows),max(r['date'] for r in rows))
+        period=dates.resolve(message,now=self.clock() if self.clock else None,timezone=ctx.timezone,available=available) if message else None
+        if period:
+            if re.search(r'compare|compared',text) and ctx.period:ctx.comparison_period=period
+            else:ctx.period=period;ctx.comparison_period=None
+        if re.search(r'\bunits\b',text):ctx.metric='units'
+        elif re.search(r'\brevenue|price|sales\b',text):ctx.metric='revenue'
+        horizon=re.search(r'(?:next|forecast)\s+(\d+)\s+days?',text)
+        if horizon:
+            number=int(horizon.group(1))
+            if not 1<=number<=90:return self.clarify(ctx,state_owner,'Choose a forecast horizon from 1 to 90 days.','horizon',options(['7','14','30']))
+            ctx.horizon=number
+        if turn.action=='locations':ctx.store_id=ctx.location=None;ctx.pending='location'
+        if turn.action=='period':ctx.period=None;ctx.pending='period'
+        if turn.action=='products':ctx.sku_id=ctx.product=None;ctx.pending='product'
+        if turn.action=='compare':ctx.store_id=None;ctx.location='All authorized locations';ctx.group_by='store_category'
+        matches=[(sid,name) for sid,name in stores.items() if re.search(r'(?<!\w)'+re.escape(key(name))+r'(?!\w)',text)]
+        if len(matches)==1:ctx.store_id,ctx.location=matches[0]
+        elif len(matches)>1 or re.search(r'compare (?:stores|locations)|all (?:stores|locations)',text):
+            ctx.store_id=None;ctx.location='All authorized locations';ctx.group_by='store_category'
+        local=[r for r in rows if not ctx.store_id or r['store_id']==ctx.store_id]
+        products=catalog.products(local)
+        cats=catalog.discover('normalized_category',local)
+        category=mentioned_category(message,cats)
+        if category and category!=ctx.category:ctx.category=category;ctx.sku_id=ctx.product=None
+        product_matches=[p for p in products if len(p['label'])>2 and key(p['label']) in text]
+        if len(product_matches)==1:ctx.sku_id=product_matches[0]['value'];ctx.product=product_matches[0]['label'];ctx.category=None
+        for dimension in ['gender','size','color']:
+            matched=[v for v in catalog.discover(dimension,local) if re.search(r'(?<!\w)'+re.escape(key(v))+r'(?!\w)',text)]
+            if len(matched)==1:setattr(ctx,dimension,matched[0])
+        if turn.action=='select' and not (turn.value in INTENTS and ctx.pending is None):
+            value=turn.value or ''
+            if ctx.pending=='intent' and value in INTENTS:ctx.intent=value
+            elif ctx.pending=='location' and value in stores:ctx.store_id=value;ctx.location=stores[value]
+            elif ctx.pending=='period':
+                ctx.period=dates.resolve(value,now=self.clock() if self.clock else None,timezone=ctx.timezone,available=available)
+                if not ctx.period:raise ValueError('Choose a listed period or provide YYYY-MM-DD to YYYY-MM-DD.')
+            elif ctx.pending=='product' and any(p['value']==value for p in products):
+                p=next(p for p in products if p['value']==value);ctx.sku_id=p['value'];ctx.product=p['label'];ctx.category=None
+            elif ctx.pending=='chart':ctx.chart_type=value
+            elif ctx.pending=='horizon' and value in ['7','14','30']:ctx.horizon=int(value)
+            else:return self.clarify(ctx,state_owner,'That option is no longer available. Please choose again.','location',[{'label':n,'value':s} for s,n in stores.items()])
+            ctx.pending=None
+        elif ctx.pending=='intent' and text in INTENTS:ctx.intent=text;ctx.pending=None
+        elif ctx.pending=='product' and not ctx.sku_id:
+            exact=[p for p in products if key(p['label'])==text]
+            if len(exact)==1:ctx.sku_id=exact[0]['value'];ctx.product=exact[0]['label'];ctx.category=None;ctx.pending=None
+        if not ctx.location:
+            return self.clarify(ctx,state_owner,'Which location would you like to analyse?','location',[{'label':n,'value':s} for s,n in stores.items()])
+        if ctx.store_id and ctx.store_id not in stores:raise AccessDenied('Store scope changed')
+        if not ctx.period:
+            return self.clarify(ctx,state_owner,'Which period would you like to analyse?','period',options(dates.PERIODS))
+        filtered=analytics.select_rows(rows,ctx)
+        if ctx.pending=='product' or ctx.intent=='competition' and not ctx.sku_id:
+            scoped_products=catalog.products(analytics.select_rows(rows,ctx.model_copy(update={'sku_id':None})))
+            return self.clarify(ctx,state_owner,'Which product would you like to investigate?','product',scoped_products)
+        if ctx.sku_id and not any(r['sku_id']==ctx.sku_id for r in local):
+            ctx.sku_id=ctx.product=None
+            return self.clarify(ctx,state_owner,'That product is unavailable in this location. Which product?','product',catalog.products(local))
+        if not filtered:
+            return self.save(ctx,state_owner,{'status':'no_data','summary':f"No observations match {ctx.period['label']} at {ctx.location}. Available data runs from {available[0]} to {available[1]}. Missing records are not zero sales.",
+                'actions':[{'label':'Change period','action':'period'},{'label':'Change location','action':'locations'}],
+                'available_dates':available})
+        if ctx.intent=='inventory':
+            current=analytics.latest(filtered)
+            result={'status':'success','summary':f"{len(current)} observed product/location snapshots; {sum(r.get('closing_stock') or 0 for r in current)} units of closing stock.",
+                    'inventory':[{'product':r['product_label'],'location':r['store_location'],'stock':r.get('closing_stock'),
+                                  'reorder_point':r.get('reorder_point'),'observed':r['date']} for r in current],
+                    'agents':['inventory'],'warnings':['Closing stock is an observed snapshot, not a live reservation-adjusted availability promise.']}
+        elif ctx.intent=='forecast':
+            result=forecast(rows,ctx);result['agents']=['demand-forecasting']
+        elif ctx.intent=='competition':
+            result=compare(rows,ctx,catalog);result['agents']=['competition-intelligence']
+        else:
+            result=analytics.analyze(rows,ctx);result['agents']=['analytics']
+            if ctx.intent in ['diagnose','recommendations']:
+                result['agents']+=['inventory','pricing','demand-forecasting','competition-intelligence','market-calendar']
+                result['demand']=forecast(rows,ctx)
+                if not ctx.sku_id and result['diagnostics']:
+                    chosen=result['diagnostics'][0];ctx.sku_id=chosen['sku_id'];ctx.product=chosen['label']
+                result['competition']=compare(rows,ctx,catalog) if ctx.sku_id else {'status':'insufficient_data'}
+                result['pricing_context']={'observed_average_price_inr':result['key_numbers'].get('average_selling_price_inr'),
+                    'limitation':'Costs, margins and approved discount policy may be missing; no discount is authorized.'}
+                try:
+                    policy=self.runtime.rag.query('marketing promotion pricing policy',principal,ctx.store_id,'pricing') if ctx.store_id else None
+                    if policy:result['policy_evidence']=policy.model_dump(mode='json')
+                except ComponentUnavailableError:result['rag_status']='Local policy RAG is not configured; no external fallback or policy claim.'
+                except AccessDenied:result['rag_status']='Policy evidence is outside this role scope.'
+                if result['diagnostics']:result['findings'].append(result['diagnostics'][0]['explanation'])
+        wants_chart=selected_chart or turn.action in ['visualize','chart'] or bool(re.search(r'graph|chart|visuali[sz]|\bpie\b|\bdoughnut\b',text)) or ctx.pending=='chart'
+        for phrase,kind in CHART_WORDS.items():
+            if re.search(r'(?<!\w)'+re.escape(phrase)+r'(?!\w)',text):ctx.chart_type=kind;wants_chart=True;break
+        if turn.action=='chart':ctx.chart_type=turn.value;wants_chart=True
+        if re.search(r'over time|daily|trend line',text):ctx.group_by='date'
+        if re.search(r'price.*units|scatter',text):ctx.group_by='price_units'
+        if re.search(r'by (?:store|location)',text):ctx.group_by='store'
+        if ctx.group_by=='store_category' and len({r['store_id'] for r in filtered})==1:ctx.group_by='category'
+        if wants_chart and ctx.intent in ['sales','diagnose','recommendations']:
+            allowed=charts.compatible(ctx.group_by,filtered)
+            if ctx.chart_type not in allowed:
+                return self.clarify(ctx,state_owner,'How would you like to visualize these results?','chart',options(allowed),result)
+            result['visualization']=charts.specification(rows,ctx)
+        result.setdefault('actions',[{'label':label,'action':action} for label,action in [('View graph','visualize'),('Change period','period'),('Compare locations','compare'),('Products','products'),('Low sales','diagnose'),('Forecast','forecast'),('Competition','competition'),('Suggest actions','recommendations'),('Inventory','inventory')]])
+        if ctx.intent=='forecast':result['actions']=[{'label':'Change period','action':'period'},{'label':'Sales analysis','action':'sales'},{'label':'Select product','action':'products'}]
+        result['fixture']=any(r.get('fixture') for r in filtered)
+        result.setdefault('sources',sorted({r['source'] for r in filtered}))
+        ctx.pending=None
+        return self.save(ctx,state_owner,result)
+
+    def save(self,ctx,owner,result):
+        self.runtime.repository.remember(owner,{'version':2,'context':ctx.model_dump()})
+        return {**result,'context':public_context(ctx),'operational_write_performed':False}
+
+    def clarify(self,ctx,owner,question,field,choices,result=None):
+        ctx.pending=field
+        return self.save(ctx,owner,{**(result or {}),'status':'needs_clarification','summary':question,
+            'clarification':{'field':field,'question':question,'options':choices[:100]},'agents':['router','clarification'],
+            'actions':[],'requires_human':False})
+
+    async def legacy(self,turn,ctx,owner,principal):
+        stores=self.runtime.repository.stores(principal)
+        names=[(s,n) for s,n in stores.items() if key(n) in key(turn.message)]
+        if len(names)==1:ctx.store_id,ctx.location=names[0]
+        if turn.action=='select' and ctx.pending=='location' and turn.value in stores:
+            ctx.store_id=turn.value;ctx.location=stores[turn.value];ctx.pending=None
+        if not ctx.store_id:return self.clarify(ctx,owner,'Which location?','location',[{'label':n,'value':s} for s,n in stores.items()])
+        if ctx.intent!='support':
+            return self.save(ctx,owner,{'status':'needs_clarification','summary':'This workflow needs additional verified business details. Use the existing authorized operational API; no order, refund or price change was executed.',
+                'actions':[{'label':'Sales analysis','action':'sales'}],'agents':['router']})
+        response=await self.runtime.orchestrator.run(DirectQuery(session_id=principal.session_id,agent='customer-service',
+            parameters={'store_id':ctx.store_id,'question':turn.message or 'Customer service FAQ','as_of':dates.today().isoformat()}),principal)
+        # Original orchestrator owns its receipt; the conversational entry owns another request only if distinct.
+        return self.save(ctx,owner,{'status':response.data['status'],'summary':response.answer,'sources':[s.model_dump() for s in response.sources],
+            'evidence':response.data['results'],'agents':response.agents_used,'legacy_receipt':True,'actions':[]})
