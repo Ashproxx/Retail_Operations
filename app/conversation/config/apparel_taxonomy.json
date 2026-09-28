@@ -1,0 +1,15 @@
+{
+ "version": 1,
+ "rules": [
+  {"category":"T-shirts","family":"Tops","aliases":["t-shirt","t-shirts","tshirt","tshirts","tee","tees"]},
+  {"category":"Shirts","family":"Tops","aliases":["shirt","shirts","formal shirt","formal shirts","casual shirt","casual shirts"]},
+  {"category":"Polos","family":"Tops","aliases":["polo","polos"]},
+  {"category":"Blouses","family":"Tops","aliases":["blouse","blouses"]},
+  {"category":"Jeans","family":"Bottoms","aliases":["jeans","denim","denim jeans"]},
+  {"category":"Trousers","family":"Bottoms","aliases":["pants","pant","trouser","trousers","chino","chinos"]},
+  {"category":"Shorts","family":"Bottoms","aliases":["short","shorts"]},
+  {"category":"Skirts","family":"Bottoms","aliases":["skirt","skirts"]},
+  {"category":"Dresses","family":"Dresses","aliases":["dress","dresses"]},
+  {"category":"Jackets","family":"Outerwear","aliases":["jacket","jackets","coat","coats","outerwear"]}
+ ]
+}
