@@ -1,0 +1,1 @@
+{"weights":{"normalized_category":0.35,"apparel_family":0.15,"gender":0.1,"color":0.05,"price":0.2,"store_overlap":0.15},"limitation":"Explainable heuristic similarity, not a validated substitution probability or causal competition model."}
