@@ -74,3 +74,32 @@ def test_business_agents_progressively_resolve_identifiers(tmp_path):
             result=ask('returns',action='select',value=value)
         assert 'returns-refunds' in result['agents']
         assert result['evidence']['returns-refunds']['data']['parameters_used']['reason']=='defect'
+
+
+def test_store_forecast_and_category_comparison(tmp_path):
+    with TestClient(showcase_app(tmp_path,TOKEN)) as client:
+        headers={'Authorization':'Bearer '+TOKEN}
+        r=client.post('/api/conversation',headers=headers,json={'session_id':'forecast','message':'Forecast next 7 days in Bandra today'}).json()
+        assert len(r['forecast'])==7
+        r=client.post('/api/conversation',headers=headers,json={'session_id':'categories','message':'Compare shirts and shorts in Bandra today'}).json()
+        assert set(r['context']['categories'])=={'Shirts','Shorts'}
+        assert {g['label'] for g in r['groups']['normalized_category']}=={'Shirts','Shorts'}
+
+
+def test_multi_intent_composition_and_policy_audit(tmp_path):
+    from types import SimpleNamespace
+    class PolicyRag:
+        def query(self,*args):
+            return SimpleNamespace(model_dump=lambda **kw:{'status':'evidence_found','answer':'Supplied test policy only','iterations':1,'sources':[{'chunk':{'document_id':'test-policy','source':'synthetic-policy'}}]})
+    with TestClient(showcase_app(tmp_path,TOKEN)) as client:
+        headers={'Authorization':'Bearer '+TOKEN}
+        result=client.post('/api/conversation',headers=headers,json={'session_id':'combined','message':'Show sales and inventory and forecast in Bandra today'}).json()
+        assert result['key_numbers'] and result['inventory'] and result['demand']['forecast']
+        assert {'analytics','inventory','demand-forecasting'}<=set(result['agents'])
+        client.app.state.runtime.rag=PolicyRag()
+        result=client.post('/api/conversation',headers=headers,json={'session_id':'policy','message':'Why are shorts not selling in Bandra last week?'}).json()
+        assert result['policy_evidence']['sources'][0]['chunk']['document_id']=='test-policy'
+        assert 'pricing-promotions' in result['agents']
+        audit=client.app.state.runtime.audit.read()[-1]['event']
+        assert audit['documents_retrieved']==['test-policy']
+        assert 'rag.retrieve_verified' in audit['tools_called']

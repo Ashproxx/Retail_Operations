@@ -27,7 +27,7 @@ def intent_of(message):
     if re.search(r'\b(suppliers?|supply chain|vendors?|lead time)\b',text):return 'supply'
     if re.search(r'\b(policy|faq|opening hours|customer service|sop)\b',text):return 'support'
     if re.search(r'\b(compete|competes|competition|competitors?|similar products?|substitutes?)\b',text):return 'competition'
-    if re.search(r'\b(forecast|predict|next \d+ days)\b',text):return 'forecast'
+    if re.search(r'\b(forecast|predict|season|seasonality|next \d+ days)\b',text):return 'forecast'
     if re.search(r'\b(should|recommend|suggest|actions?|improve|do about)\b',text):return 'recommendations'
     if re.search(r'\b(why|poorly|poor|worst|low sales|not selling|declin|underperform)',text):return 'diagnose'
     if re.search(r'\b(stock|inventory|reorder|availability)\b',text):return 'inventory'
@@ -58,7 +58,9 @@ class ConversationService:
             finally:
                 self.runtime.audit.append(AuditEvent(request_id=principal.request_id,session_id=principal.session_id,
                     user_role=principal.role,agents_called=(response or {}).get('agents',[]),
-                    tools_called=['conversation.authorized_tools'],confidence=0,
+                    tools_called=['conversation.authorized_tools']+(['rag.retrieve_verified'] if (response or {}).get('policy_evidence') else []),
+                    documents_retrieved=[h['chunk']['document_id'] for h in (response or {}).get('policy_evidence',{}).get('sources',[])],
+                    rag_iterations=(response or {}).get('policy_evidence',{}).get('iterations',0),confidence=0,
                     latency_ms=(perf_counter()-started)*1000,final_status=(response or {}).get('status','error')))
 
     async def _run(self,turn,principal):
@@ -75,8 +77,14 @@ class ConversationService:
         if turn.action in INTENTS:intent=turn.action
         if re.search(r'\b(it|that|why|what about|graph|chart|pie|line|bar|area)\b',text) and ctx.intent and not intent:
             intent=ctx.intent
+        combined=[intent_of(part) for part in re.split(r'\band\b|\bplus\b|\balso\b|;',message,flags=re.I)]
+        combined=list(dict.fromkeys(i for i in combined if i in ['sales','inventory','forecast','pricing','competition','recommendations','diagnose']))
+        if len(combined)>1:
+            ctx.requested_intents=combined;intent='recommendations' if 'recommendations' in combined or 'diagnose' in combined else 'sales'
+        elif intent and ctx.pending is None:ctx.requested_intents=[]
         if intent:
             if intent!=ctx.intent:ctx.business_details={};ctx.order_id=None
+            ctx.previous_intent=ctx.intent
             ctx.intent=intent
             if message:ctx.original_question=message
         if not ctx.intent:
@@ -85,7 +93,7 @@ class ConversationService:
                 try:
                     raw=await self.runtime.provider.draft('Classify the following retail request. Return ONLY JSON with intent and confidence. Allowed intents: '+','.join(INTENTS)+'. Unknown requests use null. Request: '+message[:1500])
                     guess=json.loads(raw)
-                    if guess.get('intent') in INTENTS and isinstance(guess.get('confidence'),(int,float)) and guess['confidence']>=.85:ctx.intent=guess['intent']
+                    if isinstance(guess,dict) and guess.get('intent') in INTENTS and isinstance(guess.get('confidence'),(int,float)) and guess['confidence']>=.85:ctx.intent=guess['intent']
                 except (ValueError,TypeError,ComponentUnavailableError):pass
             if not ctx.intent:
                 ctx.pending='intent'
@@ -162,6 +170,8 @@ class ConversationService:
         if not ctx.period:
             return self.clarify(ctx,state_owner,'Which period would you like to analyse?','period',options(dates.PERIODS))
         filtered=analytics.select_rows(rows,ctx)
+        if ctx.previous_intent=='competition' and ctx.intent=='diagnose' and re.search(r'\b(that one|this one)\b',text):
+            ctx.sku_id=ctx.product=ctx.category=None;ctx.categories=[];ctx.pending='product'
         if ctx.pending=='product' or ctx.intent=='competition' and not ctx.sku_id:
             scoped_products=catalog.products(analytics.select_rows(rows,ctx.model_copy(update={'sku_id':None})))
             return self.clarify(ctx,state_owner,'Which product would you like to investigate?','product',scoped_products)
@@ -198,6 +208,23 @@ class ConversationService:
                 except ComponentUnavailableError:result['rag_status']='Local policy RAG is not configured; no external fallback or policy claim.'
                 except AccessDenied:result['rag_status']='Policy evidence is outside this role scope.'
                 if result['diagnostics']:result['findings'].append(result['diagnostics'][0]['explanation'])
+        if ctx.intent in ['diagnose','recommendations'] or len(ctx.requested_intents)>1:
+            if 'forecast' in ctx.requested_intents and 'demand' not in result:
+                try:result['demand']=forecast(catalog.observations(action='forecast.read'),ctx);result['agents'].append('demand-forecasting')
+                except AccessDenied:result['demand']={'status':'denied','summary':'Forecasting is outside this role scope.'}
+            if 'inventory' in ctx.requested_intents:
+                try:
+                    snapshots=analytics.latest(analytics.select_rows(catalog.observations(action='inventory.read'),ctx))
+                    result['inventory']=[{'product':r['product_label'],'location':r['store_location'],'stock':r.get('closing_stock'),'reorder_point':r.get('reorder_point'),'observed':r['date']} for r in snapshots]
+                    result['agents'].append('inventory')
+                except AccessDenied:result.setdefault('warnings',[]).append('Inventory is outside this role scope.')
+            if ctx.store_id and ctx.sku_id:
+                executed=await self.runtime.orchestrator.execute({'context':principal,'targets':['pricing-promotions'],'message':'Read-only pricing evidence',
+                    'parameters':{'store_id':ctx.store_id,'sku_id':ctx.sku_id,'as_of':ctx.period['end']}})
+                result['pricing_evidence']=executed['results'][0]['result'].model_dump(mode='json')
+                result['agents'].append('pricing-promotions')
+            elif 'pricing' in ctx.requested_intents:
+                result['pricing_context']={'status':'needs_product','limitation':'Select a product to inspect its authorized pricing observations. No cost or margin was inferred.'}
         wants_chart=selected_chart or turn.action in ['visualize','chart'] or bool(re.search(r'graph|chart|visuali[sz]|\bpie\b|\bdoughnut\b',text)) or ctx.pending=='chart'
         for phrase,kind in CHART_WORDS.items():
             if re.search(r'(?<!\w)'+re.escape(phrase)+r'(?!\w)',text):ctx.chart_type=kind;wants_chart=True;break
@@ -213,7 +240,7 @@ class ConversationService:
             result['visualization']=charts.specification(rows,ctx)
         result.setdefault('actions',[{'label':label,'action':action} for label,action in [('View graph','visualize'),('Change period','period'),('Compare locations','compare'),('Products','products'),('Low sales','diagnose'),('Forecast','forecast'),('Competition','competition'),('Suggest actions','recommendations'),('Inventory','inventory')]])
         if ctx.intent=='forecast':result['actions']=[{'label':'Change period','action':'period'},{'label':'Sales analysis','action':'sales'},{'label':'Select product','action':'products'}]
-        if ctx.sku_id:result['product360']=catalog.product360(filtered,ctx.sku_id)
+        if ctx.sku_id:result['product360']=catalog.product360(analytics.select_rows(rows,ctx.model_copy(update={'sku_id':None,'category':None,'categories':[],'gender':None,'color':None,'size':None})),ctx.sku_id)
         result['fixture']=any(r.get('fixture') for r in filtered)
         result.setdefault('sources',sorted({r['source'] for r in filtered}))
         ctx.pending=None

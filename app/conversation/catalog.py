@@ -11,6 +11,7 @@ from app.models.database import Base
 from app.api.schemas import Role
 from app.security.policy import authorize, AccessDenied
 from app.conversation.taxonomy import normalize
+from app.conversation.dates import season
 
 
 class Observation(BaseModel):
@@ -110,7 +111,23 @@ class Catalog:
         observations = [r for r in rows if r['sku_id'] == sku]
         if not observations: return None
         latest = max(observations, key=lambda r:r['date'])
+        from app.conversation.analytics import statistics,grouped,latest as snapshots
+        facts=statistics(observations)
+        history=grouped(observations,'date','units');history.sort(key=lambda x:x['label'])
+        def rank(population):
+            ranked=grouped(population,'sku_id','units')
+            return next((i+1 for i,r in enumerate(ranked) if r['label']==sku),None)
+        category=latest.get('normalized_category')
         return {'label':next(x['label'] for x in self.products(rows) if x['value']==sku),
+            'identity':{'sku_id':sku,'style_code':latest.get('style_code')},
+            'performance':facts,'daily_units':history[-366:],
+            'unit_rank_in_category':rank([r for r in rows if r.get('normalized_category')==category]) if category else None,
+            'unit_rank_by_location':{name:rank([r for r in rows if r['store_location']==name]) for name in {r['store_location'] for r in observations}},
+            'rank_basis':'Observed unit totals in the supplied authorized population and period; ties use stable product-ID order.',
+            'observed_prices':sorted({str(r['unit_price_inr']) for r in observations if r.get('unit_price_inr') is not None},key=Decimal),
+            'inventory_by_location':[{'location':r['store_location'],'date':r['date'],'opening_stock':r.get('opening_stock'),'closing_stock':r.get('closing_stock'),'reorder_point':r.get('reorder_point'),'stockout_risk':r.get('stockout_risk_flag')} for r in snapshots(observations)],
+            'promotion_data':None,'supplier_performance':None,
+            'coverage':{'start':min(r['date'] for r in observations),'end':latest['date'],'history_display_limit':366},
             'attributes':{k:latest.get(k) for k in ['style_name','apparel_family','normalized_category','gender','color','size','supplier']},
             'observed_through':latest['date'], 'price_inr':latest.get('unit_price_inr'),
             'closing_stock':latest.get('closing_stock'), 'lead_days':latest.get('vendor_lead_time_days'),
@@ -127,7 +144,10 @@ def import_observations(database, records, *, source, fixture=False, raw_sources
         normalized.update(raw=dict(raw), source=source, fixture=fixture)
         if raw_sources is not None: normalized['raw_source'] = json.loads(json.dumps(raw_sources[index], default=str))
         d = date.fromisoformat(clean['date'])
-        normalized.update(weekday=d.weekday(), month=d.month, quarter=(d.month-1)//3+1, year=d.year)
+        price=Decimal(clean['unit_price_inr'])
+        normalized.update(weekday=d.weekday(),month=d.month,quarter=(d.month-1)//3+1,year=d.year,
+            date_dimension=d.isoformat(),season_key=season(d.isoformat()).get('season'),
+            price_band='under_1000_inr' if price<1000 else '1000_to_1999_inr' if price<2000 else '2000_inr_and_above')
         identity = hashlib.sha256(json.dumps(row_key(clean)).encode()).hexdigest()
         prepared.append(ObservationRow(identity=identity, store_id=clean['store_id'], payload=normalized))
     if len({r.identity for r in prepared}) != len(prepared): raise ValueError('Duplicate store/product/date observations')

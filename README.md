@@ -1,9 +1,14 @@
 # RetailOps AI
 
-Privacy-first retail operations backend with a LangGraph router, eight domain agents, local Chroma retrieval, and authenticated FastAPI endpoints. This is the human-approved `integration/release-candidate`; it is not deployed and is not merged into `main`.
+Conversation-first retail intelligence with authenticated local tools, inline charts, apparel forecasts, stock-aware recommendations and the original eight operational agents. This candidate is on `integration/conversational-retailops`; `main` and the prior release remain unchanged.
 
-**Status: M0-M12 PASS (95% weighted milestones); M13 INCOMPLETE pending real-data validation.** The integrated code, all 178 tests, Docker build/runtime/restart, real local Ollama inference and pinned pretrained retrieval checks pass. Measurements use labelled synthetic data; no real retail dataset was supplied, so operational business outputs and dataset-specific mappings are unverified. The percentage measures the project checklist, not production readiness. See [validation evidence](docs/integration/VALIDATION.md).
+**Start the complete website:** [Windows, macOS/Linux and presentation guide](docs/conversation/RUN.md). The new `/assistant` works with a disposable, clearly labelled synthetic demo. No real retail dataset has been supplied; real-data mappings and business accuracy remain unverified. See the [current milestone ledger](docs/knowledge/MILESTONE_LEDGER.md), [import guide](docs/conversation/IMPORT.md) and [methods](docs/conversation/METHODS.md).
 
+```powershell
+.\.venv\Scripts\python.exe -m app.conversation.showcase
+```
+
+Open the printed `/assistant?demo=1` link, click Connect and paste the temporary token from the terminal. Keep the server running.
 
 ## Interactive dashboard / showcase
 
@@ -20,7 +25,7 @@ Open `http://127.0.0.1:8000/dashboard?demo=1` and enter the temporary token prin
 ## Start locally (Python 3.12)
 
 ```bash
-git clone --branch integration/release-candidate https://github.com/Ashproxx/Retail_Operations.git
+git clone --branch integration/conversational-retailops https://github.com/Ashproxx/Retail_Operations.git
 cd Retail_Operations
 python -m venv .venv
 ```
@@ -36,13 +41,14 @@ python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --workers 1
 
 Open `http://127.0.0.1:8000/docs` and `/health`. Startup creates empty tables; it never loads demo inventory. `init` generates a random local admin token in `secrets/admin-token.txt`, its SHA-256 grant in `secrets/grants.json`, and configuration in `.env`. These are ignored by git and excluded from Docker builds. Do not upload them. For PowerShell, load the token into memory with `$token = (Get-Content secrets/admin-token.txt -Raw).Trim()` and send `Authorization: Bearer $token`. Tokens are opaque random secrets, not passwords. Provision separate grants with role, store IDs and optional timezone-aware `expires_at`; revoke by removing the grant and restarting.
 
-Without a grants file the default runtime denies all authenticated API calls. An explicitly configured missing/malformed grants file fails startup. API payloads cannot claim a role or principal. All date-only defaults use the current UTC day and are disclosed in results. Order queries require a timezone-aware timestamp when supplied.
+Without a grants file the default runtime denies all authenticated API calls. An explicitly configured missing/malformed grants file fails startup. API payloads cannot claim a role or principal. Legacy operational date defaults use the current UTC day; the conversational business calendar uses configured Asia/Kolkata dates, shown in context. Order queries require a timezone-aware timestamp when supplied.
 
 ## APIs
 
 | Endpoint | Purpose |
 |---|---|
 | `GET /`, `GET /health` | Public service and database health |
+| `POST /api/conversation`, `GET /api/conversation/options` | Progressive conversation and authorized choices |
 | `POST /api/chat` | Conservative English routing, execution, aggregation and follow-ups |
 | `POST /api/query` | Explicit registered agent ID and typed parameters |
 | `POST /api/forecast` | Forecast parameters (same envelope as chat) |

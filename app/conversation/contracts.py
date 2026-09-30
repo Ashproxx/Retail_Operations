@@ -33,6 +33,7 @@ class Context(BaseModel):
     pending: str | None = None
     group_by: str = 'category'
     previous_intent: str | None = None
+    requested_intents: list[str] = Field(default_factory=list)
     categories: list[str] = Field(default_factory=list)
     original_question: str | None = None
     order_id: str | None = None

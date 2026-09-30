@@ -26,6 +26,9 @@ def test_atomic_import_raw_product360_and_scoped_discovery(tmp_path):
     catalog=Catalog(SimpleNamespace(repository=repo),ctx)
     rows=catalog.observations()
     assert catalog.discover('store_location',rows)==['Bandra']
+    assert rows[0]['price_band']=='under_1000_inr'
+    assert rows[0]['season_key']=='Monsoon'
+    assert catalog.product360(rows,'P1')['performance']['revenue_inr']=='2998.50'
     assert rows[0]['raw_source']=={'Original price':'999.50'}
     assert catalog.product360(rows,'P1')['attributes']['style_name']=='Oxford'
     assert 'supplier' in catalog.product360(rows,'P1')['unknown_attributes']

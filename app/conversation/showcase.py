@@ -10,14 +10,14 @@ from app.main import create_app
 from app.integration.config import RuntimeSettings
 from app.integration.runtime import Runtime
 from app.security.policy import Grant
-from app.dashboard.fixtures import seed_showcase
+from app.integration.fixtures import seed
 from app.conversation.catalog import import_observations
 from app.conversation.dates import today
 
 
 def seed_conversation(database):
     rows=[]
-    products=[('C1','shirt','Oxford Shirt','Men','Blue','M',1299),
+    products=[('SHIRT-1','shirt','Oxford Shirt','Men','Blue','M',1299),
               ('C2','shirt','Linen Shirt','Men','White','L',1599),
               ('C3','shorts','Cotton Shorts','Women','Beige','M',799),
               ('C4','shorts','Weekend Shorts','Women','Blue','L',899),
@@ -45,7 +45,7 @@ def showcase_app(directory,token):
     grant=Grant(token_sha256=hashlib.sha256(token.encode()).hexdigest(),principal_id='showcase-admin',role='ADMIN')
     def factory(database,settings):
         runtime=Runtime(database,settings,grants=[grant])
-        seed_showcase(runtime.repository)
+        seed(runtime.repository)
         seed_conversation(database)
         return runtime
     return create_app(config,factory)

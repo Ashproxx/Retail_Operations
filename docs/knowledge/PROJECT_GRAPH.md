@@ -8,13 +8,15 @@ The PDF's Retail_Ops / codex baseline reference is superseded by the user's repo
 
 app/main.py -> app/integration/routes.py -> authenticated Runtime -> LangGraph Orchestrator -> eight domain adapters -> authorized Repository -> SQL.
 RAG: SignedRag -> Chroma + local sentence-transformers -> signed manifest. AuditChain and scoped 24-hour memory remain in place.
-Dashboard: app/dashboard/static -> authenticated API. Current limitations: hard-coded showcase choices, explicit SKU/date forms, narrow follow-ups, baseline-only forecasting, no conversational chart selection.
+Prior dashboard: app/dashboard/static -> authenticated API. Baseline limitations addressed by the new `/assistant` workspace: hard-coded showcase choices, explicit SKU/date forms, narrow follow-ups, baseline-only forecasting, no conversational chart selection.
 Existing full index: docs/knowledge_graph/MASTER_KNOWLEDGE_GRAPH.json on the baseline (528 nodes / 846 edges).
 
-## New flow (planned until verified)
+## Implemented conversational flow
 
 Conversation UI -> conversational API -> scope-aware dimension discovery -> natural-language router -> progressive clarification -> typed context -> deterministic analytics / inventory / forecast / competition -> grounded synthesis -> structured charts -> optional RAG policy evidence -> audit.
 
 Business numbers always come from database tools. Product/location options are authorized database values. Unknown fields stay null. The prior operational API and RAG are retained for compatibility.
 
 See project_graph.json, INTERFACES.md, DATA_DICTIONARY.md and BRANCH_REGISTRY.md for ownership and contracts. Milestones must be verified end to end before completion credit.
+
+`app/conversation/routes.py` provides the authenticated API and same-origin `/assistant` mount. `app/conversation/static` renders local ECharts and accessible data tables. `showcase.py` supplies disposable labelled current-date fixtures. `tests/conversation` and `scripts/check_conversation.cjs` exercise the composed system. Original agents and RAG remain byte-preserved and guarded by `scripts/check_branch_scope.py`.
