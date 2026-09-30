@@ -10,6 +10,7 @@ def select_rows(rows, ctx, period=None):
     period = period or ctx.period
     return [r for r in rows if (not ctx.store_id or r['store_id']==ctx.store_id)
             and (not ctx.sku_id or r['sku_id']==ctx.sku_id)
+            and (not ctx.categories or r.get('normalized_category') in ctx.categories)
             and (not ctx.category or r.get('normalized_category')==ctx.category or r.get('apparel_family')==ctx.category)
             and all(not getattr(ctx,k,None) or r.get(k)==getattr(ctx,k) for k in ['gender','size','color'])
             and (not period or period['start']<=r['date']<=period['end'])]
@@ -66,7 +67,9 @@ def diagnose(rows, ctx):
         prior_period=ctx.comparison_period or comparison(ctx.period)
         expected_prior=(date.fromisoformat(prior_period['end'])-date.fromisoformat(prior_period['start'])).days+1
         change=None
-        if len(now_days)==expected and len(prior_days)==expected_prior and prior_units>0:
+        stores={r['store_id'] for r in observed+prior}
+        complete=all(sum(r['store_id']==store and r.get('units_sold') is not None for r in observed)==expected and sum(r['store_id']==store and r.get('units_sold') is not None for r in prior)==expected_prior for store in stores)
+        if complete and len(now_days)==expected and len(prior_days)==expected_prior and prior_units>0:
             change=(now_units/len(now_days)/(prior_units/len(prior_days))-1)*100
         constrained=any(r.get('closing_stock')==0 or r.get('stockout_risk_flag') is True for r in observed)
         if constrained:status='STOCK_CONSTRAINED';why='Observed stockouts or stock-risk flags can constrain sales; low sales do not establish low demand.'

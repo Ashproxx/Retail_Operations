@@ -23,7 +23,7 @@ def seed_conversation(database):
               ('C4','shorts','Weekend Shorts','Women','Blue','L',899),
               ('C5','tshirt','Essential Tee','Unisex','Black','M',599),
               ('C6','jeans','Straight Jeans','Women','Blue','M',1999)]
-    for store,name,factor in [('DEMO-BANDRA','Bandra',1),('DEMO-ANDHERI','Andheri',2),('DEMO-POWAI','Powai',3)]:
+    for store,name,factor in [('BANDRA','Bandra',1),('ANDHERI','Andheri',2),('POWAI','Powai',3)]:
         for index in range(120):
             day=today()-timedelta(days=119-index)
             for n,(sku,category,style,gender,color,size,price) in enumerate(products):

@@ -7,6 +7,7 @@ from app.integration.routes import context, audit_operation
 from app.conversation.contracts import Turn
 from app.conversation.service import ConversationService
 from app.conversation.catalog import Catalog
+from app.security.policy import PERMISSIONS
 
 router = APIRouter(prefix='/api/conversation')
 
@@ -24,7 +25,16 @@ async def conversation(body: Turn, request: Request):
 def discover(request: Request, session_id: str = 'discovery'):
     principal = context(request, session_id)
     catalog = Catalog(request.app.state.runtime, principal)
-    rows = catalog.observations()
+    allowed=PERMISSIONS[principal.role]
+    action=next((a for a in ['analytics.read','inventory.read','forecast.read'] if a in allowed),None)
+    if action:
+        rows=catalog.observations(action=action)
+    else:
+        agent='customer-service' if 'support.read' in allowed else 'order-fulfillment'
+        records=request.app.state.runtime.repository.records(agent,principal)
+        stores=request.app.state.runtime.repository.stores(principal)
+        audit_operation(request.app.state.runtime, principal, 'conversation.discover')
+        return {'locations':sorted({stores.get(r['store_id'],'Authorized location') for r in records}), 'categories':[], 'date_range':None,'fixture':any(r.get('fixture') for r in records)}
     audit_operation(request.app.state.runtime, principal, 'conversation.discover')
     return {'locations': catalog.discover('store_location', rows),
             'categories': catalog.discover('normalized_category', rows),

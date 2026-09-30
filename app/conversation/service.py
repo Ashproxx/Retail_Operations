@@ -7,7 +7,7 @@ from datetime import datetime
 from app.api.schemas import AuditEvent
 from app.conversation.contracts import Context
 from app.conversation.catalog import Catalog
-from app.conversation.taxonomy import key, mentioned_category
+from app.conversation.taxonomy import key, mentioned_category, mentioned_categories
 from app.conversation import dates, analytics, charts
 from app.conversation.forecast import forecast
 from app.conversation.competition import compare
@@ -24,7 +24,7 @@ def intent_of(message):
     text=key(message)
     if re.search(r'\b(refund|return)\b',text):return 'returns'
     if re.search(r'\b(order|delivery|shipping)\b',text):return 'orders'
-    if re.search(r'\b(supplier|supply chain|vendor|lead time)\b',text):return 'supply'
+    if re.search(r'\b(suppliers?|supply chain|vendors?|lead time)\b',text):return 'supply'
     if re.search(r'\b(policy|faq|opening hours|customer service|sop)\b',text):return 'support'
     if re.search(r'\b(compete|competes|competition|competitors?|similar products?|substitutes?)\b',text):return 'competition'
     if re.search(r'\b(forecast|predict|next \d+ days)\b',text):return 'forecast'
@@ -40,7 +40,7 @@ def options(values):return [{'label':str(v),'value':str(v)} for v in values]
 
 
 def public_context(ctx):
-    return ctx.model_dump(exclude={'store_id','sku_id','pending','previous_intent'})
+    return ctx.model_dump(exclude={'store_id','sku_id','pending','previous_intent','order_id','original_question','business_details'})
 
 
 class ConversationService:
@@ -75,7 +75,10 @@ class ConversationService:
         if turn.action in INTENTS:intent=turn.action
         if re.search(r'\b(it|that|why|what about|graph|chart|pie|line|bar|area)\b',text) and ctx.intent and not intent:
             intent=ctx.intent
-        if intent:ctx.intent=intent
+        if intent:
+            if intent!=ctx.intent:ctx.business_details={};ctx.order_id=None
+            ctx.intent=intent
+            if message:ctx.original_question=message
         if not ctx.intent:
             # Optional local language model only classifies an allowlisted intent; no facts or authority.
             if message and self.runtime.provider is not None:
@@ -122,8 +125,15 @@ class ConversationService:
         local=[r for r in rows if not ctx.store_id or r['store_id']==ctx.store_id]
         products=catalog.products(local)
         cats=catalog.discover('normalized_category',local)
-        category=mentioned_category(message,cats)
-        if category and category!=ctx.category:ctx.category=category;ctx.sku_id=ctx.product=None
+        mentioned=mentioned_categories(message)
+        if mentioned:
+            missing=[c for c in mentioned if c not in cats]
+            if missing:return self.save(ctx,state_owner,{'status':'no_data','summary':'No authorized observations for '+', '.join(missing)+'. Available categories: '+', '.join(cats)+'.','actions':[{'label':'Choose a product','action':'products'}]})
+            ctx.categories=mentioned if len(mentioned)>1 else []
+            ctx.category=mentioned[0] if len(mentioned)==1 else None
+            ctx.sku_id=ctx.product=None
+        if re.search(r'\ball products\b|\ball categories\b',text):
+            ctx.category=ctx.sku_id=ctx.product=ctx.gender=ctx.size=ctx.color=None;ctx.categories=[]
         product_matches=[p for p in products if len(p['label'])>2 and key(p['label']) in text]
         if len(product_matches)==1:ctx.sku_id=product_matches[0]['value'];ctx.product=product_matches[0]['label'];ctx.category=None
         for dimension in ['gender','size','color']:
@@ -137,7 +147,7 @@ class ConversationService:
                 ctx.period=dates.resolve(value,now=self.clock() if self.clock else None,timezone=ctx.timezone,available=available)
                 if not ctx.period:raise ValueError('Choose a listed period or provide YYYY-MM-DD to YYYY-MM-DD.')
             elif ctx.pending=='product' and any(p['value']==value for p in products):
-                p=next(p for p in products if p['value']==value);ctx.sku_id=p['value'];ctx.product=p['label'];ctx.category=None
+                p=next(p for p in products if p['value']==value);ctx.sku_id=p['value'];ctx.product=p['label'];ctx.category=None;ctx.categories=[]
             elif ctx.pending=='chart':ctx.chart_type=value
             elif ctx.pending=='horizon' and value in ['7','14','30']:ctx.horizon=int(value)
             else:return self.clarify(ctx,state_owner,'That option is no longer available. Please choose again.','location',[{'label':n,'value':s} for s,n in stores.items()])
@@ -175,7 +185,7 @@ class ConversationService:
         else:
             result=analytics.analyze(rows,ctx);result['agents']=['analytics']
             if ctx.intent in ['diagnose','recommendations']:
-                result['agents']+=['inventory','pricing','demand-forecasting','competition-intelligence','market-calendar']
+                result['agents']+=['inventory-diagnostics','pricing-context','demand-forecasting','competition-intelligence','market-calendar']
                 result['demand']=forecast(rows,ctx)
                 if not ctx.sku_id and result['diagnostics']:
                     chosen=result['diagnostics'][0];ctx.sku_id=chosen['sku_id'];ctx.product=chosen['label']
@@ -203,6 +213,7 @@ class ConversationService:
             result['visualization']=charts.specification(rows,ctx)
         result.setdefault('actions',[{'label':label,'action':action} for label,action in [('View graph','visualize'),('Change period','period'),('Compare locations','compare'),('Products','products'),('Low sales','diagnose'),('Forecast','forecast'),('Competition','competition'),('Suggest actions','recommendations'),('Inventory','inventory')]])
         if ctx.intent=='forecast':result['actions']=[{'label':'Change period','action':'period'},{'label':'Sales analysis','action':'sales'},{'label':'Select product','action':'products'}]
+        if ctx.sku_id:result['product360']=catalog.product360(filtered,ctx.sku_id)
         result['fixture']=any(r.get('fixture') for r in filtered)
         result.setdefault('sources',sorted({r['source'] for r in filtered}))
         ctx.pending=None
@@ -215,21 +226,72 @@ class ConversationService:
     def clarify(self,ctx,owner,question,field,choices,result=None):
         ctx.pending=field
         return self.save(ctx,owner,{**(result or {}),'status':'needs_clarification','summary':question,
-            'clarification':{'field':field,'question':question,'options':choices[:100]},'agents':['router','clarification'],
+            'clarification':{'field':field,'question':question,'options':choices[:1000]},'agents':['router','clarification'],
             'actions':[],'requires_human':False})
 
     async def legacy(self,turn,ctx,owner,principal):
-        stores=self.runtime.repository.stores(principal)
-        names=[(s,n) for s,n in stores.items() if key(n) in key(turn.message)]
-        if len(names)==1:ctx.store_id,ctx.location=names[0]
+        """Read-only domain adapters with progressive, scoped business choices."""
+        agent={'support':'customer-service','orders':'order-fulfillment','returns':'returns-refunds',
+               'supply':'supply-chain','pricing':'pricing-promotions'}[ctx.intent]
+        records=self.runtime.repository.records(agent,principal)
+        known=self.runtime.repository.stores(principal)
+        stores={r['store_id']:known.get(r['store_id'],'Location '+str(i+1)) for i,r in enumerate(records)}
+        if not stores:
+            return self.save(ctx,owner,{'status':'no_data','summary':'No authorized '+ctx.intent+' records are loaded. No business facts were inferred.','actions':[],'agents':['router']})
+        matches=[(s,n) for s,n in stores.items() if re.search(r'(?<!\w)'+re.escape(key(n))+r'(?!\w)',key(turn.message))]
+        if len(matches)==1:
+            if ctx.store_id!=matches[0][0]:ctx.order_id=ctx.sku_id=None;ctx.business_details={}
+            ctx.store_id,ctx.location=matches[0]
+        if ctx.store_id not in stores:ctx.store_id=ctx.location=None
         if turn.action=='select' and ctx.pending=='location' and turn.value in stores:
             ctx.store_id=turn.value;ctx.location=stores[turn.value];ctx.pending=None
         if not ctx.store_id:return self.clarify(ctx,owner,'Which location?','location',[{'label':n,'value':s} for s,n in stores.items()])
-        if ctx.intent!='support':
-            return self.save(ctx,owner,{'status':'needs_clarification','summary':'This workflow needs additional verified business details. Use the existing authorized operational API; no order, refund or price change was executed.',
-                'actions':[{'label':'Sales analysis','action':'sales'}],'agents':['router']})
-        response=await self.runtime.orchestrator.run(DirectQuery(session_id=principal.session_id,agent='customer-service',
-            parameters={'store_id':ctx.store_id,'question':turn.message or 'Customer service FAQ','as_of':dates.today().isoformat()}),principal)
-        # Original orchestrator owns its receipt; the conversational entry owns another request only if distinct.
-        return self.save(ctx,owner,{'status':response.data['status'],'summary':response.answer,'sources':[s.model_dump() for s in response.sources],
-            'evidence':response.data['results'],'agents':response.agents_used,'legacy_receipt':True,'actions':[]})
+        records=[r for r in records if r['store_id']==ctx.store_id]
+        params={'store_id':ctx.store_id,'as_of':dates.today().isoformat()}
+        if ctx.intent=='support':params['question']=ctx.original_question or turn.message or 'Customer service FAQ'
+        if ctx.intent in ['pricing','supply']:
+            products={r['sku_id']:None for r in records}
+            # Human labels come from authorized catalog data where that role permits it.
+            try:
+                action='forecast.read' if ctx.intent=='pricing' else 'inventory.read'
+                catalog=Catalog(self.runtime,principal)
+                names={p['value']:p['label'] for p in catalog.products(catalog.observations(ctx.store_id,action=action))}
+            except AccessDenied:names={}
+            choices=[{'value':sku,'label':names.get(sku,'Product '+str(i+1))} for i,sku in enumerate(products)]
+            if turn.action=='select' and ctx.pending=='business_product' and turn.value in products:
+                ctx.sku_id=turn.value;ctx.pending=None
+            matches=[p for p in choices if key(p['label']) in key(turn.message)]
+            if len(matches)==1:ctx.sku_id=matches[0]['value']
+            if ctx.sku_id not in products:return self.clarify(ctx,owner,'Which product?','business_product',choices)
+            params['sku_id']=ctx.sku_id
+            params['mode']='recommend' if ctx.intent=='pricing' else 'compare'
+        if ctx.intent in ['orders','returns']:
+            orders={r['order_id']:r for r in sorted(records,key=lambda r:r.get('updated_at',r.get('observed_on','')))}
+            choices=[{'value':oid,'label':f"Purchase {i+1} · {(r.get('placed_at') or r.get('delivered_on') or r.get('observed_on',''))[:10]} · {r.get('state',r.get('refund_status') or 'return record')}"} for i,(oid,r) in enumerate(orders.items())]
+            if turn.action=='select' and ctx.pending=='order' and turn.value in orders:
+                ctx.order_id=turn.value;ctx.pending=None;ctx.business_details={}
+            if ctx.order_id not in orders:return self.clarify(ctx,owner,'Which purchase would you like to check?','order',choices)
+            params['order_id']=ctx.order_id
+            if ctx.intent=='orders':params.update(as_of=datetime.now().astimezone().isoformat(),mode='status')
+            elif 'refund' in key(ctx.original_question):params['mode']='refund_status'
+            else:
+                questions=[('reason','What is the reason for the return?',options(['defect','wrong_item','change_of_mind','other'])),
+                           ('has_receipt','Do you have the receipt?',options(['Yes','No'])),
+                           ('opened','Has the item been opened?',options(['Yes','No'])),
+                           ('units_requested','How many units do you want to return?',options([str(i) for i in range(1,min(orders[ctx.order_id]['purchased_units']-orders[ctx.order_id]['previously_returned_units'],100)+1)]))]
+                if turn.action=='select' and ctx.pending in {q[0] for q in questions}:
+                    valid=next(q[2] for q in questions if q[0]==ctx.pending)
+                    if turn.value in {v['value'] for v in valid}:
+                        value=turn.value
+                        ctx.business_details[ctx.pending]=(value=='Yes') if ctx.pending in ['has_receipt','opened'] else int(value) if ctx.pending=='units_requested' else value
+                        ctx.pending=None
+                for field,question,choices in questions:
+                    if field not in ctx.business_details:
+                        if not choices:return self.save(ctx,owner,{'status':'no_data','summary':'No remaining purchased units are recorded for return.','actions':[]})
+                        return self.clarify(ctx,owner,question,field,choices)
+                params.update(mode='eligibility',**ctx.business_details)
+        response=await self.runtime.orchestrator.run(DirectQuery(session_id=principal.session_id,agent=agent,parameters=params),principal)
+        return self.save(ctx,owner,{'status':response.data['status'],'summary':response.answer,
+            'sources':[s.model_dump() for s in response.sources],'evidence':response.data['results'],
+            'agents':response.agents_used,'legacy_receipt':True,'fixture':any(r.get('fixture') for r in records),
+            'actions':[{'label':'Sales analysis','action':'sales'}]})

@@ -82,10 +82,16 @@ jobs:
         env:
           NODE_PATH: /tmp/dashboard-browser/node_modules
         run: node scripts/check_dashboard.cjs
+      - name: Verify conversational workspace with real browser and backend
+        env:
+          NODE_PATH: /tmp/dashboard-browser/node_modules
+        run: node scripts/check_conversation.cjs
       - name: Preserve desktop and mobile screenshots
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: dashboard-validation
-          path: validation-output/dashboard/*.png
+          path: |
+            validation-output/dashboard/*.png
+            validation-output/conversation/*.png
           if-no-files-found: warn

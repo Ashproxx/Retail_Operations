@@ -51,3 +51,16 @@ def normalize(raw):
     parts = [raw.get('gender'), raw.get('color'), raw.get('style_name') or raw.get('category'), raw.get('size')]
     result['product_label'] = ' · '.join(str(x) for x in parts if x) or 'Unnamed product'
     return result
+
+
+def mentioned_categories(message):
+    """Longest nonoverlapping aliases; a T-shirt must not also become a shirt."""
+    matches=[]
+    for rule in taxonomy():
+        for alias in [rule['category'], *rule['aliases']]:
+            for found in re.finditer(r'(?<!\w)'+re.escape(key(alias))+r'(?!\w)',key(message)):
+                matches.append((found.start(),found.end(),rule['category']))
+    accepted=[]
+    for match in sorted(matches,key=lambda m:-(m[1]-m[0])):
+        if not any(match[0]<m[1] and m[0]<match[1] for m in accepted):accepted.append(match)
+    return list(dict.fromkeys(m[2] for m in sorted(accepted)))
