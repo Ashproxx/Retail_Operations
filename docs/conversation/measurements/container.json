@@ -1,0 +1,15 @@
+{
+  "fixture": true,
+  "image": "retailops-candidate",
+  "image_id": "sha256:d212dbd05078a7639d5155f7da2f38b3f1244fa64611ae1adc16eba7d65190af",
+  "nonroot_uid": 10001,
+  "startup": "PASS",
+  "authentication": "PASS",
+  "empty_database": "PASS",
+  "authorized_query": "PASS",
+  "scope_denial": "PASS",
+  "restart_persistence": "PASS",
+  "followup_memory": "PASS",
+  "owned_feedback": "PASS",
+  "live_ollama_draft": "PASS"
+}

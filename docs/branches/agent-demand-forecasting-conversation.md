@@ -11,3 +11,5 @@ Limitations: observed-sales proxy; no fitted promotion/price causality; changing
 Knowledge delta: Catalog -> forecast profile -> chronological candidates -> selection -> forecast + evidence + calendar.
 
 Integrated verification (2026-09-30): local Python suite and both real-browser gates passed. See `docs/conversation/VALIDATION.md` for tested scope and commit evidence. Feature checkpoints remain unchanged; this annotation belongs to the integration candidate.
+
+Remote feature/checkpoint SHA: `c4b0d7e77f7eb10c42f35fe7c4cad40c4e2b156f`. Integration verification target: `c613603e503f675d9da2651d05e3af07438f54f1`; final CI evidence is recorded in `docs/conversation/VALIDATION.md`.

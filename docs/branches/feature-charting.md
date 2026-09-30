@@ -10,3 +10,5 @@ Limits: category groups capped at 30, time points at 366; ask to narrow rather t
 Knowledge delta: analytics groups -> typed chart spec -> frontend chart library -> text interpretation.
 
 Integrated verification (2026-09-30): local Python suite and both real-browser gates passed. See `docs/conversation/VALIDATION.md` for tested scope and commit evidence. Feature checkpoints remain unchanged; this annotation belongs to the integration candidate.
+
+Remote feature/checkpoint SHA: `3aa2812c9a6ae4375462128edd0bbd1c4cfebec7`. Integration verification target: `c613603e503f675d9da2651d05e3af07438f54f1`; final CI evidence is recorded in `docs/conversation/VALIDATION.md`.

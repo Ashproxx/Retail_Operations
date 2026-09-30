@@ -11,3 +11,5 @@ Limitations: observational heuristic, not causal attribution; missing fields and
 Knowledge delta: catalog -> analyze -> diagnostics -> recommendations; charts consume the same groups.
 
 Integrated verification (2026-09-30): local Python suite and both real-browser gates passed. See `docs/conversation/VALIDATION.md` for tested scope and commit evidence. Feature checkpoints remain unchanged; this annotation belongs to the integration candidate.
+
+Remote feature/checkpoint SHA: `b48be07849b00c0046826dd19bb14f8634fc1ab6`. Integration verification target: `c613603e503f675d9da2651d05e3af07438f54f1`; final CI evidence is recorded in `docs/conversation/VALIDATION.md`.

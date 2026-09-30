@@ -13,3 +13,5 @@ Limitations: no external competitor feed; no real dataset supplied. Synthetic da
 Vendor: Apache ECharts 5.6.0, Apache-2.0, retained license in static/vendor. No CDN or Node installation is needed to run the website.
 
 Integrated verification (2026-09-30): local Python suite and both real-browser gates passed. See `docs/conversation/VALIDATION.md` for tested scope and commit evidence. Feature checkpoints remain unchanged; this annotation belongs to the integration candidate.
+
+Remote feature/checkpoint SHA: `b1d0a7ad32877a65b17ec82899a794b9cd456c12`. Integration verification target: `c613603e503f675d9da2651d05e3af07438f54f1`; final CI evidence is recorded in `docs/conversation/VALIDATION.md`.

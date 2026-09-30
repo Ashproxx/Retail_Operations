@@ -10,3 +10,5 @@ Limitations: no external feed; no causal claim from higher sales. Incomplete att
 Knowledge delta: Catalog + Product360 -> internal similarity -> competition evidence -> deep-dive response.
 
 Integrated verification (2026-09-30): local Python suite and both real-browser gates passed. See `docs/conversation/VALIDATION.md` for tested scope and commit evidence. Feature checkpoints remain unchanged; this annotation belongs to the integration candidate.
+
+Remote feature/checkpoint SHA: `b65e8be0ab09ed8bb20cd52fb2087a55782bee7c`. Integration verification target: `c613603e503f675d9da2651d05e3af07438f54f1`; final CI evidence is recorded in `docs/conversation/VALIDATION.md`.

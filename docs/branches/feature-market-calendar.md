@@ -11,3 +11,5 @@ Baseline: taxonomy 1b8b360; integration consumes date contracts without modifyin
 Knowledge delta: market JSON -> dates -> slot filling / forecast context.
 
 Integrated verification (2026-09-30): local Python suite and both real-browser gates passed. See `docs/conversation/VALIDATION.md` for tested scope and commit evidence. Feature checkpoints remain unchanged; this annotation belongs to the integration candidate.
+
+Remote feature/checkpoint SHA: `d36f97a4a4a03d77815e7c1aa8e558d80359918c`. Integration verification target: `c613603e503f675d9da2651d05e3af07438f54f1`; final CI evidence is recorded in `docs/conversation/VALIDATION.md`.

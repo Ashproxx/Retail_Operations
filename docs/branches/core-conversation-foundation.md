@@ -12,3 +12,5 @@ Baseline: market-calendar d36f97a; branch dependencies are immutable parent hist
 Knowledge delta: retail_observations + legacy Repository -> authorized Catalog -> discover/Product 360 -> conversation context.
 
 Integrated verification (2026-09-30): local Python suite and both real-browser gates passed. See `docs/conversation/VALIDATION.md` for tested scope and commit evidence. Feature checkpoints remain unchanged; this annotation belongs to the integration candidate.
+
+Remote feature/checkpoint SHA: `d885093282c6532c135d33d9c4e020f9feb236b5`. Integration verification target: `c613603e503f675d9da2651d05e3af07438f54f1`; final CI evidence is recorded in `docs/conversation/VALIDATION.md`.

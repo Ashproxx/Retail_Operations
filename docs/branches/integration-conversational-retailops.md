@@ -2,7 +2,7 @@
 
 Branch: `integration/conversational-retailops`. Preserved baseline: b74a06df9753e7e20f66c4c6bb8874114fe50a9f. No `main` update or old agent branch rewrite.
 
-Composition: taxonomy → calendar → scoped foundation → analytics/diagnostics → forecasting → competition → chart specs → conversational router → authenticated API/showcase → UI. Each feature has its own remote checkpoint and branch document. Corrections and cross-feature acceptance tests are owned here.
+Composition: taxonomy â†’ calendar â†’ scoped foundation â†’ analytics/diagnostics â†’ forecasting â†’ competition â†’ chart specs â†’ conversational router â†’ authenticated API/showcase â†’ UI. Each feature has its own remote checkpoint and branch document. Corrections and cross-feature acceptance tests are owned here.
 
 New entry points: `/assistant`, `POST /api/conversation`, `GET /api/conversation/options`, `python -m app.conversation.showcase`, `python -m app.conversation.ingest`.
 
@@ -14,4 +14,6 @@ Validation: original source guard; full Python suite; original and conversationa
 
 Limitations: actual retail files were not supplied; no real-data accuracy or source mapping sign-off. External competition is unconfigured. Forecast intervals/similarity/diagnostic thresholds are explained heuristics. No Azure deployment or main merge. See the methods and run guides.
 
-2026-09-30 checkpoint: verified 201 local tests and both browser gates. Corrected Windows timezone/CRLF portability, duplicate-name clarification and peer evidence. Reconciled milestone/feature records; updated remote CI pending. Latest published baseline verified: `299126c6c2e1c3a75d9f01b3f13e1bc364f5dd76`.
+2026-09-30 checkpoint: verified 201 local tests and both browser gates. Corrected Windows timezone/CRLF portability, duplicate-name clarification and peer evidence. Reconciled milestone/feature records; updated remote CI passed (36731448837). Latest published baseline verified: `299126c6c2e1c3a75d9f01b3f13e1bc364f5dd76`.
+
+Remote feature/checkpoint SHA: `c613603e503f675d9da2651d05e3af07438f54f1`. Integration verification target: `c613603e503f675d9da2651d05e3af07438f54f1`; final CI evidence is recorded in `docs/conversation/VALIDATION.md`.

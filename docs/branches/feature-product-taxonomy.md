@@ -11,3 +11,5 @@ Integration: consume from the conversation foundation; M2 requires Product 360 a
 Knowledge delta: taxonomy config -> classify -> normalize -> Product 360; tests cover preservation and unknown values.
 
 Integrated verification (2026-09-30): local Python suite and both real-browser gates passed. See `docs/conversation/VALIDATION.md` for tested scope and commit evidence. Feature checkpoints remain unchanged; this annotation belongs to the integration candidate.
+
+Remote feature/checkpoint SHA: `1b8b3602a38b7e7befaf865fdd731b989b177f05`. Integration verification target: `c613603e503f675d9da2651d05e3af07438f54f1`; final CI evidence is recorded in `docs/conversation/VALIDATION.md`.

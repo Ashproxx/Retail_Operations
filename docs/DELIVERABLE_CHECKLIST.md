@@ -9,7 +9,7 @@
 - [x] M6 apparel profiles, chronological backtesting and model selection.
 - [x] M7 explainable internal competition and external-data limitation.
 - [x] M8 multi-agent synthesis, bounded RAG, citations and audit.
-- [~] M9 local acceptance/browser tests and documentation pass; updated remote CI pending.
+- [x] M9 local acceptance/browser tests, documentation and final Linux CI 36731448837 pass.
 - [!] Real dataset absent; business accuracy and actual mappings unverified.
 
 Evidence: [validation report](conversation/VALIDATION.md), [milestone ledger](knowledge/MILESTONE_LEDGER.md).

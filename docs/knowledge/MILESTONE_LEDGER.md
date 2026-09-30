@@ -13,8 +13,8 @@ Verified on 2026-09-30 against the synthetic integration acceptance scope. Evide
 | M6 Apparel forecasting | 15 | VERIFIED | Profile, chronological folds, model selection, seasonal baselines/calendar |
 | M7 Internal competition | 10 | VERIFIED | Observed similarity, price/performance, deep dive and external-data limitation |
 | M8 Multi-agent + RAG | 5 | VERIFIED | Combined evidence, preserved agents/RAG, citations, memory and audit |
-| M9 End-to-end UX + documentation | 10 | IN PROGRESS | 201 local tests and both browser gates pass; updated remote CI pending |
+| M9 End-to-end UX + documentation | 10 | VERIFIED | 201 local tests, both browser gates and final Linux CI 36731448837 passed |
 
-Verified completion: **90%**. Whole gates only. This measures documented engineering acceptance, not production readiness or validated commercial accuracy.
+Verified completion: **100%**. Whole gates only. This measures documented engineering acceptance, not production readiness or validated commercial accuracy.
 
 No real apparel file was supplied. Real-data mappings, forecast accuracy, calibrated uncertainty, external competitor feeds and production load qualification remain unverified. Calendar context is not proof of seasonal causation. Main remains human-controlled.

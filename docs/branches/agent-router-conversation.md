@@ -10,3 +10,5 @@ Limitations: operational order/refund/pricing workflows still defer to the exist
 Knowledge delta: Turn -> intent/entity/period -> pending slot -> Catalog -> analytical tools -> RAG context -> response/actions -> namespaced state/audit.
 
 Integrated verification (2026-09-30): local Python suite and both real-browser gates passed. See `docs/conversation/VALIDATION.md` for tested scope and commit evidence. Feature checkpoints remain unchanged; this annotation belongs to the integration candidate.
+
+Remote feature/checkpoint SHA: `68511819585296c47b6002c4f1f875808d221f7b`. Integration verification target: `c613603e503f675d9da2651d05e3af07438f54f1`; final CI evidence is recorded in `docs/conversation/VALIDATION.md`.

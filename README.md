@@ -2,6 +2,8 @@
 
 Conversation-first retail intelligence with authenticated local tools, inline charts, apparel forecasts, stock-aware recommendations and the original eight operational agents. This candidate is on `integration/conversational-retailops`; `main` and the prior release remain unchanged.
 
+**Review status: READY FOR HUMAN REVIEW.** All engineering milestones pass against labelled synthetic data: 201 local tests and full Linux CI at `c613603`. [Final report](docs/conversation/FINAL_REPORT.md) and [validation evidence](docs/conversation/VALIDATION.md). Real-data accuracy is unverified; main is unchanged.
+
 **Start the complete website:** [Windows, macOS/Linux and presentation guide](docs/conversation/RUN.md). The new `/assistant` works with a disposable, clearly labelled synthetic demo. No real retail dataset has been supplied; real-data mappings and business accuracy remain unverified. See the [current milestone ledger](docs/knowledge/MILESTONE_LEDGER.md), [import guide](docs/conversation/IMPORT.md) and [methods](docs/conversation/METHODS.md).
 
 ```powershell

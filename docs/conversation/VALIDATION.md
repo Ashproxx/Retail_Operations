@@ -4,7 +4,7 @@ Date: 2026-09-30. Repository: Ashproxx/Retail_Operations. Branch: `integration/c
 
 ## Scope and status
 
-Recovered published commit `299126c6c2e1c3a75d9f01b3f13e1bc364f5dd76`. Its ledger and branch checklists were stale; this referenced report was missing. This checkpoint repairs those records and verifies the candidate locally. Updated remote CI is pending; the milestone ledger holds at 90%.
+Recovered published commit `299126c6c2e1c3a75d9f01b3f13e1bc364f5dd76`. Its ledger and branch checklists were stale; this referenced report was missing. This checkpoint repairs those records and verifies the candidate locally. Updated remote CI now passes at c613603e503f675d9da2651d05e3af07438f54f1; all documented engineering gates are verified (100%). Status: READY FOR HUMAN REVIEW.
 
 ## Reproduced local checks
 
@@ -55,3 +55,11 @@ Forecasts compare naive, moving-average, exponential and eligible weekly/weekday
 No real business dataset was supplied. Demo/acceptance numbers are labelled synthetic; source mappings and actual accuracy require real-data validation. External competition is unconfigured. Parsing is bounded, similarity/diagnostic thresholds are heuristics, and missing attributes remain unknown. Run one server worker; in-memory scans/state coordination are intended for bounded local datasets.
 
 No Azure deployment, commercial operation, main merge or main push occurred. Main was checked at `d39db70d0a8b429052340d691f01ca2769c1e8cc`. Review the candidate and obtain explicit human approval before merging into main.
+
+## Final candidate CI and retained measurements
+
+[Run 36731448837](https://github.com/Ashproxx/Retail_Operations/actions/runs/36731448837) completed successfully at `c613603e503f675d9da2651d05e3af07438f54f1`. Both jobs and their final step states were checked. Full tests, browser acceptance, Docker build/restart, model-backed retrieval and local Ollama inference passed.
+
+The integration-validation artifact (11105612100) was downloaded and inspected. Exact reports: [container](measurements/container.json), [Ollama](measurements/ollama.json), [retrieval](measurements/retrieval.json). Container runs as UID 10001 and passed authentication, empty-database, scope-denial, persistence, memory and owned-feedback checks. Actual smollm2:135m inference returned a nonempty answer; factual accuracy is not certified. Retrieval ranked the correct source first on 12/12 authored positive queries, answered 8/12 and abstained on four positives plus both negative queries; scope leaks were zero. This tiny synthetic set does not establish production generalization.
+
+The subsequent documentation-only savepoint records this result; application/test/dependency contents remain exactly those tested at `c613603e503f675d9da2651d05e3af07438f54f1`. Main merge still requires explicit human approval.

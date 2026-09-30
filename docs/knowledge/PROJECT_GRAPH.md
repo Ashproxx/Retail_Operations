@@ -21,4 +21,4 @@ See project_graph.json, INTERFACES.md, DATA_DICTIONARY.md and BRANCH_REGISTRY.md
 
 `app/conversation/routes.py` provides the authenticated API and same-origin `/assistant` mount. `app/conversation/static` renders local ECharts and accessible data tables. `showcase.py` supplies disposable labelled current-date fixtures. `tests/conversation` and `scripts/check_conversation.cjs` exercise the composed system. Original agents and RAG remain byte-preserved and guarded by `scripts/check_branch_scope.py`.
 
-2026-09-30 knowledge delta: Windows timezone dependency declared; source guard uses Git-cleaned hashes; browser token parsing accepts CRLF; duplicate style names route to product choice; diagnostics expose category/store peers. Local suite: 201 passed. Both browser gates passed. Updated remote gate pending; see VALIDATION.md.
+2026-09-30 knowledge delta: Windows timezone dependency declared; source guard uses Git-cleaned hashes; browser token parsing accepts CRLF; duplicate style names route to product choice; diagnostics expose category/store peers. Local suite: 201 passed. Both browser gates passed. Final remote gate passed: CI 36731448837; see VALIDATION.md.
