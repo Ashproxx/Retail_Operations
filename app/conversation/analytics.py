@@ -115,7 +115,7 @@ def analyze(rows, ctx):
     numbers['comparison_period']=ctx.comparison_period or comparison(ctx.period)
     diag=diagnose(rows,ctx)
     money='unavailable' if numbers['revenue_inr'] is None else f"INR {Decimal(numbers['revenue_inr']):,.2f}"
-    summary=f"{ctx.location or 'Authorized locations'} · {ctx.period['label']}: {numbers['units'] or 'unknown'} units sold, {money} observed sales across {numbers['products']} selling products."
+    summary=f"{ctx.location or 'Authorized locations'} · {ctx.period['label']}: {numbers['units'] if numbers['units'] is not None else 'unknown'} units sold, {money} observed sales across {numbers['products']} selling products."
     finding=[]
     ranked=groups['normalized_category']
     if ranked:finding.append(f"{ranked[0]['label']} has the highest observed {ctx.metric} in this selection; {ranked[-1]['label']} has the lowest. Rank alone is not a low-demand diagnosis.")

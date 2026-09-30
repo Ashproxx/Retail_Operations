@@ -32,6 +32,9 @@ def create_app(settings: Settings | None = None, runtime_factory=None) -> FastAP
     api = FastAPI(title=config.app_name, version="0.1.0", lifespan=lifespan)
 
     api.include_router(router)
+    from app.conversation.routes import router as conversation_router, mount_assistant
+    api.include_router(conversation_router)
+    mount_assistant(api)
     from app.dashboard.routes import mount_dashboard
     mount_dashboard(api)
 

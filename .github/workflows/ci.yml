@@ -1,7 +1,7 @@
 name: Integration candidate QA
 on:
   push:
-    branches: [integration/release-candidate]
+    branches: [integration/release-candidate, integration/conversational-retailops]
   pull_request:
 permissions:
   contents: read
