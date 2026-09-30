@@ -142,8 +142,12 @@ class ConversationService:
             ctx.sku_id=ctx.product=None
         if re.search(r'\ball products\b|\ball categories\b',text):
             ctx.category=ctx.sku_id=ctx.product=ctx.gender=ctx.size=ctx.color=None;ctx.categories=[]
-        product_matches=[p for p in products if len(p['label'])>2 and key(p['label']) in text]
-        if len(product_matches)==1:ctx.sku_id=product_matches[0]['value'];ctx.product=product_matches[0]['label'];ctx.category=None
+        product_text=text+' '+key(ctx.original_question) if ctx.pending in ['location','period'] else text
+        product_matches=[p for p in products if len(p['label'])>2 and key(p['label']) in product_text]
+        if not product_matches:
+            product_matches=[p for p in products if p['attributes'].get('style_name') and re.search(r'(?<!\w)'+re.escape(key(p['attributes']['style_name']))+r'(?!\w)',product_text)]
+        if len(product_matches)==1:ctx.sku_id=product_matches[0]['value'];ctx.product=product_matches[0]['label'];ctx.category=None;ctx.categories=[]
+        elif len(product_matches)>1:ctx.sku_id=ctx.product=None
         for dimension in ['gender','size','color']:
             matched=[v for v in catalog.discover(dimension,local) if re.search(r'(?<!\w)'+re.escape(key(v))+r'(?!\w)',text)]
             if len(matched)==1:setattr(ctx,dimension,matched[0])
@@ -170,10 +174,12 @@ class ConversationService:
         if not ctx.period:
             return self.clarify(ctx,state_owner,'Which period would you like to analyse?','period',options(dates.PERIODS))
         filtered=analytics.select_rows(rows,ctx)
+        if len(product_matches)>1:ctx.pending='product'
         if ctx.previous_intent=='competition' and ctx.intent=='diagnose' and re.search(r'\b(that one|this one)\b',text):
             ctx.sku_id=ctx.product=ctx.category=None;ctx.categories=[];ctx.pending='product'
         if ctx.pending=='product' or ctx.intent=='competition' and not ctx.sku_id:
             scoped_products=catalog.products(analytics.select_rows(rows,ctx.model_copy(update={'sku_id':None})))
+            if len(product_matches)>1:scoped_products=[p for p in scoped_products if p['value'] in {m['value'] for m in product_matches}]
             return self.clarify(ctx,state_owner,'Which product would you like to investigate?','product',scoped_products)
         if ctx.sku_id and not any(r['sku_id']==ctx.sku_id for r in local):
             ctx.sku_id=ctx.product=None

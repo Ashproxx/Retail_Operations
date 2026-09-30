@@ -1,4 +1,4 @@
-# Conversational interfaces (planned contracts)
+# Conversational interfaces (implemented contracts)
 
 POST /api/conversation: authenticated message or structured action, session_id, no client authority fields. Response: status, summary, context, one clarification with database options, key numbers, findings, recommendations, compatible charts, provenance and actions.
 

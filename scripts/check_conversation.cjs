@@ -8,7 +8,7 @@ let startup='';server.stdout.on('data',c=>startup+=c);server.stderr.on('data',()
 const delay=ms=>new Promise(r=>setTimeout(r,ms));
 (async()=>{let browser;try{
 let ready=false;for(let i=0;i<100;i++){if(server.exitCode!==null)throw Error('Server exited');try{if((await fetch('http://127.0.0.1:18766/health')).ok){ready=true;break;}}catch{}await delay(300);}assert(ready,'startup');
-const token=startup.split('launch):\n')[1]?.split('\n')[0]?.trim();assert(token?.length>=32);
+const token=startup.replace(/\r\n/g,'\n').split('launch):\n')[1]?.split('\n')[0]?.trim();assert(token?.length>=32);
 browser=await chromium.launch({headless:true});const page=await browser.newPage({viewport:{width:1440,height:1050}});const errors=[];page.on('pageerror',e=>errors.push(e.message));
 await page.goto('http://127.0.0.1:18766/assistant?demo=1');await page.screenshot({path:path.join(output,'welcome-desktop.png'),fullPage:true});
 await page.locator('#connect').click();await page.locator('#token').fill('invalid');await page.getByRole('button',{name:'Connect workspace'}).click();await page.getByText('Token not accepted.',{exact:false}).waitFor();await page.locator('#token').fill(token);await page.getByRole('button',{name:'Connect workspace'}).click();await page.getByText('Connected ✓',{exact:true}).waitFor();assert.equal(await page.locator('#token').inputValue(),'');

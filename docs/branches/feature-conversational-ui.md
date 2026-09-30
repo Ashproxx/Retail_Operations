@@ -11,3 +11,5 @@ Validation: `scripts/check_conversation.cjs` tests the real server, progressive 
 Limitations: no external competitor feed; no real dataset supplied. Synthetic data is prominently labelled. Voice input, attachments and operational write actions are not claimed.
 
 Vendor: Apache ECharts 5.6.0, Apache-2.0, retained license in static/vendor. No CDN or Node installation is needed to run the website.
+
+Integrated verification (2026-09-30): local Python suite and both real-browser gates passed. See `docs/conversation/VALIDATION.md` for tested scope and commit evidence. Feature checkpoints remain unchanged; this annotation belongs to the integration candidate.

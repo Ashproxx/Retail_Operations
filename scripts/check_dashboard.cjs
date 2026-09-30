@@ -23,7 +23,7 @@ async function until(check){for(let i=0;i<100;i++){if(await check())return;await
    await delay(500);
   }
   assert.ok(ready,'Showcase startup timed out');
-  const token=startup.split('dialog:\n')[1]?.split('\n')[0]?.trim();
+  const token=startup.replace(/\r\n/g,'\n').split('dialog:\n')[1]?.split('\n')[0]?.trim();
   assert.ok(token && token.length>=32,'Missing temporary token');
   browser=await chromium.launch({headless:true});
   const page=await browser.newPage({viewport:{width:1440,height:1050}});

@@ -56,7 +56,9 @@ def statistics(rows):
 def diagnose(rows, ctx):
     current=select_rows(rows,ctx)
     before=select_rows(rows,ctx,ctx.comparison_period or comparison(ctx.period))
+    population=select_rows(rows,ctx.model_copy(update={'sku_id':None,'category':None,'categories':[]}))
     results=[]
+    # ponytail: in-memory peer scans suit bounded imports; group in SQL for larger datasets.
     for sku in sorted({r['sku_id'] for r in current}):
         observed=[r for r in current if r['sku_id']==sku]
         prior=[r for r in before if r['sku_id']==sku]
@@ -78,7 +80,20 @@ def diagnose(rows, ctx):
         elif change<=-20:status='DECLINING';why='Observed daily unit sales are at least 20% below the complete comparison baseline.'
         elif change>=20:status='STRONG';why='Observed daily unit sales are at least 20% above the complete comparison baseline.'
         else:status='NORMAL';why='Observed daily unit sales are within 20% of the comparison baseline.'
+        current_stores={r['store_id'] for r in observed}
+        peers=[r for r in population if r['sku_id']!=sku and r['store_id'] in current_stores and r.get('units_sold') is not None]
+        category=observed[0].get('normalized_category')
+        category_peers=[r for r in peers if category is not None and r.get('normalized_category')==category]
+        known=[r['units_sold'] for r in observed if r.get('units_sold') is not None]
+        peer_comparison={'product_daily_units':mean(known) if known else None,
+            'category_peer_daily_units':mean(r['units_sold'] for r in category_peers) if category_peers else None,
+            'store_peer_daily_units':mean(r['units_sold'] for r in peers) if peers else None,
+            'category_observations':len(category_peers),'store_observations':len(peers),
+            'basis':'Mean per observed product/store/day, excluding the selected product. Missing days are not zero; differing coverage is not evidence of causation.'}
+        if category_peers and known:
+            why+=f" Category peers averaged {peer_comparison['category_peer_daily_units']:.2f} units per observed product/store/day versus {mean(known):.2f} for this product."
         result={'sku_id':sku,'label':max(observed,key=lambda r:r['date'])['product_label'],'status':status,
+                'peer_comparison':peer_comparison,
                 'units':now_units,'change_pct':change,'explanation':why,'comparison':prior_period,
                 'category':observed[0].get('normalized_category'),'observed_days':len(now_days),
                 'stock':sum(r.get('closing_stock') or 0 for r in latest(observed)),

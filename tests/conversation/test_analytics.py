@@ -22,3 +22,15 @@ def test_decline_requires_comparable_history_and_unknown_is_not_zero():
     assert analyze([row('2026-09-28',3,20)],ctx)['diagnostics'][0]['status']=='INSUFFICIENT_DATA'
     assert analyze([row('2026-09-27',10,20),row('2026-09-28',3,20)],ctx)['diagnostics'][0]['status']=='LOW_SALES'
     assert analyze([],ctx)['status']=='no_data'
+
+
+def test_peer_comparisons_exclude_target_other_stores_and_unknown_sales():
+    ctx=Context(store_id='A',sku_id='P',period={'start':'2026-09-28','end':'2026-09-28','label':'Today','timezone':'Asia/Kolkata'})
+    base=row('2026-09-28',3,20)
+    rows=[base,{**base,'sku_id':'Q','units_sold':9},{**base,'sku_id':'R','normalized_category':'Shirts','units_sold':15},
+          {**base,'sku_id':'U','units_sold':None},{**base,'store_id':'B','sku_id':'V','units_sold':999}]
+    peers=analyze(rows,ctx)['diagnostics'][0]['peer_comparison']
+    assert peers['category_peer_daily_units']==9
+    assert peers['store_peer_daily_units']==12
+    assert peers['category_observations']==1 and peers['store_observations']==2
+    assert analyze([base],ctx)['diagnostics'][0]['peer_comparison']['category_peer_daily_units'] is None

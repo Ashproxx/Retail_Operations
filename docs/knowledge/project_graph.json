@@ -65,7 +65,7 @@
     {
       "id": "acceptance",
       "path": "scripts/check_conversation.cjs",
-      "status": "verification-pending"
+      "status": "local-verified"
     }
   ],
   "edges": [
@@ -117,5 +117,12 @@
       "acceptance",
       "ui"
     ]
-  ]
+  ],
+  "verification": {
+    "date": "2026-09-30",
+    "local_tests_passed": 201,
+    "browser_gates": "both passed",
+    "remote_ci": "pending updated candidate",
+    "report": "docs/conversation/VALIDATION.md"
+  }
 }

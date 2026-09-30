@@ -6,3 +6,5 @@
 - Local-first; no Azure deployment, paid infrastructure or external competitor scraping.
 - Database-derived options and deterministic calculations precede optional language-model interpretation. Unsupported language asks a useful clarification rather than fabricating facts.
 - Real dataset absent: retain and label showcase fixtures; implement imports and validation without claiming real business validation.
+
+- 2026-09-30: Continue the existing integration branch. Verify earlier CI directly, not from pasted claims. Integration-owned corrections preserve original agent branches. Declare timezone data for Windows; compare source through Git clean filters.

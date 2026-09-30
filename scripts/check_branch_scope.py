@@ -18,11 +18,11 @@ def main():
         paths=git('diff','--name-only',manifest['base'],source['sha']).splitlines()
         for path in paths:
             if path.startswith('app/') or (path.startswith('tests/') and not path.startswith('tests/foundation/')):
-                if Path(path).read_bytes()!=subprocess.check_output(['git','show',source['sha']+':'+path]):
+                if git('hash-object','--path',path,path)!=git('rev-parse',source['sha']+':'+path):
                     raise SystemExit('FAIL: source implementation changed: '+path)
         archive=Path('docs/integration/sources')/source['branch']
         for path in ['BRANCH_README.md','BRANCH_DELIVERABLES.md','docs/knowledge_graph/BRANCH_KNOWLEDGE_GRAPH.md','docs/knowledge_graph/BRANCH_KNOWLEDGE_GRAPH.json']:
-            if (archive/path).read_bytes()!=subprocess.check_output(['git','show',source['sha']+':'+path]):
+            if git('hash-object','--path',str(archive/path),str(archive/path))!=git('rev-parse',source['sha']+':'+path):
                 raise SystemExit('FAIL: branch record archive differs')
     print('PASS: approved ancestry, 11 source implementations and archives preserved; changes confined to integration checkout.')
 

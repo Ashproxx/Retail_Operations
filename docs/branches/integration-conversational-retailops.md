@@ -13,3 +13,5 @@ Integration corrections include progressive operational choices, compound intent
 Validation: original source guard; full Python suite; original and conversational real-browser flows; Docker build/config/start/restart; local Ollama; pinned retrieval evaluation. Exact measured runs and final gate status are in `docs/conversation/VALIDATION.md` and the milestone ledger.
 
 Limitations: actual retail files were not supplied; no real-data accuracy or source mapping sign-off. External competition is unconfigured. Forecast intervals/similarity/diagnostic thresholds are explained heuristics. No Azure deployment or main merge. See the methods and run guides.
+
+2026-09-30 checkpoint: verified 201 local tests and both browser gates. Corrected Windows timezone/CRLF portability, duplicate-name clarification and peer evidence. Reconciled milestone/feature records; updated remote CI pending. Latest published baseline verified: `299126c6c2e1c3a75d9f01b3f13e1bc364f5dd76`.

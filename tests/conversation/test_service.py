@@ -56,3 +56,22 @@ def test_options_reauthorize_and_context_is_principal_scoped(tmp_path):
     assert r['context']['location'] is None
     assert [x['label'] for x in r['clarification']['options']]==['Andheri']
     db.close()
+
+
+def test_duplicate_product_names_require_selection(tmp_path):
+    import asyncio
+    from uuid import uuid4
+    db,rt=seeded(tmp_path)
+    import_observations(db,[dict(date='2026-09-28',store_id='A',store_location='Bandra',sku_id='P4',category='shirt',
+        style_name='Oxford Shirt',units_sold=7,unit_price_inr='100',closing_stock=20,reorder_point=10)],source='duplicate-fixture',fixture=True)
+    svc=ConversationService(rt,clock=lambda:datetime(2026,9,28,10,tzinfo=timezone.utc))
+    principal=RequestContext(session_id='duplicate',principal_id='manager',role='STORE_MANAGER',store_ids=['A'])
+    result=asyncio.run(svc.run(Turn(session_id='duplicate',message='Show Oxford Shirt sales today'),principal))
+    assert result['clarification']['field']=='location'
+    result=asyncio.run(svc.run(Turn(session_id='duplicate',action='select',value='A'),principal.model_copy(update={'request_id':uuid4()})))
+    assert result['clarification']['field']=='product'
+    assert {p['value'] for p in result['clarification']['options']}=={'P1','P4'}
+    assert len({p['label'] for p in result['clarification']['options']})==2
+    result=asyncio.run(svc.run(Turn(session_id='duplicate',action='select',value='P4'),principal.model_copy(update={'request_id':uuid4()})))
+    assert result['key_numbers']['units']=='7'
+    db.close()
