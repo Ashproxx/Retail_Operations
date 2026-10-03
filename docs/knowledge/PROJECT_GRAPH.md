@@ -36,3 +36,5 @@ Employee import checkpoint: shared stores -> employees/search_name + store_staff
 HR security checkpoint: server grants -> role/store filter -> allowlisted profile -> audit field names. HR scopes do not grant retail permissions.
 
 Retail Model 1 checkpoint: scoped SQL -> net sales/groups + distinct-order delivery + weekly competitor estimates + reused forecast backtests -> structured charts. Retail memory is phase3:retail; HR questions route to Employee360.
+
+Employee360 checkpoint: authorized Employee rows -> name resolver/clarification -> redacted profile + staffing aggregates -> namespaced memory -> field-only audit. Cross-domain prompts route to the corresponding workspace.
