@@ -30,3 +30,5 @@ Baseline f81bce0 is preserved. Root selector -> RetailOperations + Employee360. 
 Reuse authentication, scoped session storage, audit hash chain, taxonomy, chart renderer and forecasting candidates. Retail transactions use net_amount_inr, never fabricated stock. Employee responses are server-redacted by role before serialization and log field names, not sensitive values. No new cloud dependency.
 
 Phase 3 sales checkpoint: imports -> indexed Sales/Product/CompetitorSale/StoreMetadata/ImportBatch; actual workbook imported; net source amounts verified and no inventory created.
+
+Employee import checkpoint: shared stores -> employees/search_name + store_staffing; 150 supplied records imported; optional ratings stay null. HR access control is the next dependency.
