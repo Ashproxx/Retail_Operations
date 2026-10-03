@@ -7,3 +7,7 @@ GET /api/conversation/options: dimension discovery filtered to current principal
 Catalog -> canonical observations + raw metadata; taxonomy -> explicit normalized labels; analytics -> decimal-safe facts; diagnostics -> fact/analysis/recommendation separation; forecast -> chronological folds and model metrics; competition -> documented heuristic score; charts -> typed labels/datasets, never arbitrary script.
 
 Keep existing /api/chat, /api/query, /api/rag and feedback contracts intact. RAG facts are cited; structured numerical facts come only from SQL.
+
+## Phase 3
+
+Phase 3 plan: /models (root selector), /retail, /employees; authenticated /api/retail/options + /chat and /api/employees/options + /search + /chat + /overview. Server-owned roles/scope, separate memory namespaces; structured cards, compatible chart specs, evidence and no automatic business writes.

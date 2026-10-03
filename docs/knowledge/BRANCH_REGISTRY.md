@@ -53,3 +53,7 @@ These are the implementation checkpoint heads. A subsequent integration document
 | main | `d39db70d0a8b429052340d691f01ca2769c1e8cc` |
 | platform/agentic-rag | `e3638225a5ea88ab6036ce6148f66d9208cedf5c` |
 | security/privacy-integrity | `e55f640b416d2109bac8fbf9dea2622dbdc78577` |
+
+## Phase 3
+
+Phase 3 dependency sequence from f81bce0: codex/phase3-knowledge -> data/navi-mumbai-sales -> data/navi-mumbai-employees -> core/hr-access-control -> model/retail-operations -> model/employee-360 -> feature/model-selector-dashboard -> integration/dual-model-retailops. Each branch owns its named scope; later branches compose earlier checkpoints. Existing branch heads are preserved. UI branch owns both workspaces and selector to keep shared rendering consistent.

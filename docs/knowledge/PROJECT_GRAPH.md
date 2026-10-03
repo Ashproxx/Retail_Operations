@@ -22,3 +22,9 @@ See project_graph.json, INTERFACES.md, DATA_DICTIONARY.md and BRANCH_REGISTRY.md
 `app/conversation/routes.py` provides the authenticated API and same-origin `/assistant` mount. `app/conversation/static` renders local ECharts and accessible data tables. `showcase.py` supplies disposable labelled current-date fixtures. `tests/conversation` and `scripts/check_conversation.cjs` exercise the composed system. Original agents and RAG remain byte-preserved and guarded by `scripts/check_branch_scope.py`.
 
 2026-09-30 knowledge delta: Windows timezone dependency declared; source guard uses Git-cleaned hashes; browser token parsing accepts CRLF; duplicate style names route to product choice; diagnostics expose category/store peers. Local suite: 201 passed. Both browser gates passed. Final remote gate passed: CI 36731448837; see VALIDATION.md.
+
+## Phase 3 plan (2026-10-03)
+
+Baseline f81bce0 is preserved. Root selector -> RetailOperations + Employee360. EmployeeWorkEfficiency and ManagementIntelligence are informational Coming Soon pages only. New SQL tables import the two supplied synthetic workbooks once; runtime queries never reopen Excel. Shared Store links Sales, Products, CompetitorSales, Employees and StoreStaffing. Employee -> Manager and Department; no employee-to-sale attribution.
+
+Reuse authentication, scoped session storage, audit hash chain, taxonomy, chart renderer and forecasting candidates. Retail transactions use net_amount_inr, never fabricated stock. Employee responses are server-redacted by role before serialization and log field names, not sensitive values. No new cloud dependency.

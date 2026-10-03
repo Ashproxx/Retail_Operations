@@ -11,3 +11,7 @@ Revenue = observed units * observed price; not inferred net revenue. Sell-throug
 Derived import dimensions: `date_dimension` (ISO business date), weekday (Monday=0), month, quarter, year, configured `season_key`, and `price_band` (under INR 1,000; INR 1,000â€“1,999.99; INR 2,000+). These are descriptive bins, not economic market positioning. Unknown source attributes remain null. Product 360 includes scoped observed prices, daily units, inventory snapshots, performance and unit ranks; ranking scope and tie handling are exposed.
 
 Diagnostic peer averages exclude the selected SKU and retain authorized store/period/variant scope. They report mean known units per observed product/store/day with sample counts; missing peers stay null.
+
+## Phase 3
+
+Phase 3 source columns, null counts and workbook SHA-256 identities: docs/phase3/DATA_AUDIT.json. Sales revenue uses source net_amount_inr (discounted), competitor metrics are synthetic estimates. Employee optional ratings remain null. Dates/tenure are source snapshot observations, not live HR status. New indexed SQL facts retain raw payloads. No individual employee sales attribution.

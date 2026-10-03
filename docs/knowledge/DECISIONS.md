@@ -8,3 +8,7 @@
 - Real dataset absent: retain and label showcase fixtures; implement imports and validation without claiming real business validation.
 
 - 2026-09-30: Continue the existing integration branch. Verify earlier CI directly, not from pasted claims. Integration-owned corrections preserve original agent branches. Declare timezone data for Windows; compare source through Git clean filters.
+
+## Phase 3
+
+2026-10-03: User authorized Phase 3 website upgrade and new component. Continue Retail_Operations as previously selected; PDF Retail_Ops reference is superseded. Supplied workbooks found in Downloads and audited. Synthetic source records stay local, not in Git. Import actual files; never replace them with a tiny generated fixture for acceptance. Models 3/4 remain Coming Soon. Reuse Python/FastAPI/SQLAlchemy/ECharts. Main stays read-only.
