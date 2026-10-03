@@ -32,3 +32,5 @@ Reuse authentication, scoped session storage, audit hash chain, taxonomy, chart 
 Phase 3 sales checkpoint: imports -> indexed Sales/Product/CompetitorSale/StoreMetadata/ImportBatch; actual workbook imported; net source amounts verified and no inventory created.
 
 Employee import checkpoint: shared stores -> employees/search_name + store_staffing; 150 supplied records imported; optional ratings stay null. HR access control is the next dependency.
+
+HR security checkpoint: server grants -> role/store filter -> allowlisted profile -> audit field names. HR scopes do not grant retail permissions.

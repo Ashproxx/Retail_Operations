@@ -12,6 +12,8 @@ class Contract(BaseModel):
 
 class Role(str, Enum):
     ADMIN = "ADMIN"
+    HR_ADMIN = "HR_ADMIN"
+    HR_USER = "HR_USER"
     STORE_MANAGER = "STORE_MANAGER"
     INVENTORY_MANAGER = "INVENTORY_MANAGER"
     PRICING_ANALYST = "PRICING_ANALYST"
@@ -77,6 +79,9 @@ class AuditEvent(Contract):
     confidence: float = Field(ge=0, le=1)
     latency_ms: float = Field(ge=0)
     final_status: str
+    actor_id: str | None = None
+    subject_ids: list[str] = Field(default_factory=list)
+    fields_accessed: list[str] = Field(default_factory=list)
 
 
 class ErrorResponse(Contract):
