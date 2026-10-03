@@ -34,3 +34,5 @@ Phase 3 sales checkpoint: imports -> indexed Sales/Product/CompetitorSale/StoreM
 Employee import checkpoint: shared stores -> employees/search_name + store_staffing; 150 supplied records imported; optional ratings stay null. HR access control is the next dependency.
 
 HR security checkpoint: server grants -> role/store filter -> allowlisted profile -> audit field names. HR scopes do not grant retail permissions.
+
+Retail Model 1 checkpoint: scoped SQL -> net sales/groups + distinct-order delivery + weekly competitor estimates + reused forecast backtests -> structured charts. Retail memory is phase3:retail; HR questions route to Employee360.
