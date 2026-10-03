@@ -10,6 +10,7 @@
   {"category":"Shorts","family":"Bottoms","aliases":["short","shorts"]},
   {"category":"Skirts","family":"Bottoms","aliases":["skirt","skirts"]},
   {"category":"Dresses","family":"Dresses","aliases":["dress","dresses"]},
+  {"category":"Ethnic","family":"Ethnic","aliases":["ethnic","kurta","kurtas","kurti","kurtis"]},
   {"category":"Jackets","family":"Outerwear","aliases":["jacket","jackets","coat","coats","outerwear"]}
  ]
 }

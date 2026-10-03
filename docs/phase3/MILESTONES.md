@@ -3,7 +3,7 @@
 | Gate | Weight | Status |
 |---|---:|---|
 | M0 Repository + dataset audit | 10 | VERIFIED |
-| M1 Sales dataset migration | 15 | NOT STARTED |
+| M1 Sales dataset migration | 15 | IN PROGRESS |
 | M2 Retail Operations update | 15 | NOT STARTED |
 | M3 Four-model dashboard | 10 | NOT STARTED |
 | M4 Employee foundation | 15 | NOT STARTED |

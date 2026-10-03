@@ -28,3 +28,5 @@ See project_graph.json, INTERFACES.md, DATA_DICTIONARY.md and BRANCH_REGISTRY.md
 Baseline f81bce0 is preserved. Root selector -> RetailOperations + Employee360. EmployeeWorkEfficiency and ManagementIntelligence are informational Coming Soon pages only. New SQL tables import the two supplied synthetic workbooks once; runtime queries never reopen Excel. Shared Store links Sales, Products, CompetitorSales, Employees and StoreStaffing. Employee -> Manager and Department; no employee-to-sale attribution.
 
 Reuse authentication, scoped session storage, audit hash chain, taxonomy, chart renderer and forecasting candidates. Retail transactions use net_amount_inr, never fabricated stock. Employee responses are server-redacted by role before serialization and log field names, not sensitive values. No new cloud dependency.
+
+Phase 3 sales checkpoint: imports -> indexed Sales/Product/CompetitorSale/StoreMetadata/ImportBatch; actual workbook imported; net source amounts verified and no inventory created.
