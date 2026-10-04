@@ -15,8 +15,8 @@ const delay=ms=>new Promise(r=>setTimeout(r,ms));
   browser=await chromium.launch({headless:true});const page=await browser.newPage({viewport:{width:1440,height:1050}});const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('http://127.0.0.1:18767/models');assert.equal(await page.locator('.model-card').count(),4);await page.screenshot({path:path.join(output,'models-desktop.png'),fullPage:true});
   await page.locator('.model-card[href="/retail"]').click();await page.locator('#connect').click();await page.locator('#token').fill(token);await page.getByRole('button',{name:'Connect workspace',exact:true}).click();await page.locator('#connection').waitFor({state:'hidden'});
-  async function ask(text){const count=await page.locator('.turn').count();await page.locator('#message').fill(text);await page.locator('#message').press('Enter');await page.waitForFunction(n=>document.querySelectorAll('.turn').length>n,count);}
-  async function choose(text){const count=await page.locator('.turn').count();await page.locator('.answer').last().getByRole('button',{name:text,exact:true}).click();await page.waitForFunction(n=>document.querySelectorAll('.turn').length>n,count);}
+  async function ask(text){const count=await page.locator('.turn').count();await page.locator('#message').fill(text);await page.locator('#message').press('Enter');await page.locator('.turn').nth(count).waitFor();}
+  async function choose(text){const count=await page.locator('.turn').count();await page.locator('.answer').last().getByRole('button',{name:text,exact:true}).click();await page.locator('.turn').nth(count).waitFor();}
   await ask('How were sales?');await choose(options.locations[0].label);await choose('Latest available day');assert.match(await page.locator('.answer').last().textContent(),/net sales/);
   await ask('Show pie chart');assert.equal(await page.locator('.answer').last().locator('.chart canvas').count(),1);
   await page.screenshot({path:path.join(output,'retail-desktop.png'),fullPage:true});
