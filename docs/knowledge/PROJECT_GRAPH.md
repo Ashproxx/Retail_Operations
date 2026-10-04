@@ -38,3 +38,5 @@ HR security checkpoint: server grants -> role/store filter -> allowlisted profil
 Retail Model 1 checkpoint: scoped SQL -> net sales/groups + distinct-order delivery + weekly competitor estimates + reused forecast backtests -> structured charts. Retail memory is phase3:retail; HR questions route to Employee360.
 
 Employee360 checkpoint: authorized Employee rows -> name resolver/clarification -> redacted profile + staffing aggregates -> namespaced memory -> field-only audit. Cross-domain prompts route to the corresponding workspace.
+
+Website checkpoint: /models -> /retail or /employees -> authenticated workspace routes -> corresponding scoped service. Models 3/4 are public informational shells only. Source data never enters the static bundle. Browser rendering uses textContent, local ECharts, scoped server responses and memory-only credentials. The launch command connects the actual imported SQLite database; CI fixtures live only under tests.

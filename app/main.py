@@ -11,6 +11,8 @@ from app.integration.routes import router
 from app.core.exceptions import RetailOpsError
 from app.core.logging import configure_logging
 from app.services.database_service import Database
+from app.enterprise.retail import RetailService
+from app.employees.service import EmployeeService
 
 
 def create_app(settings: Settings | None = None, runtime_factory=None) -> FastAPI:
@@ -25,6 +27,11 @@ def create_app(settings: Settings | None = None, runtime_factory=None) -> FastAP
         api.state.database = database
         try:
             api.state.runtime = runtime_factory(database, config) if runtime_factory else Runtime(database, config)
+            from threading import Lock
+            api.state.retail=RetailService(api.state.runtime)
+            api.state.employees=EmployeeService(api.state.runtime)
+            # ponytail: one-worker turn lock; use per-session distributed locks for multi-worker deployment.
+            api.state.workspace_lock=Lock()
             yield
         finally:
             database.close()
@@ -37,6 +44,8 @@ def create_app(settings: Settings | None = None, runtime_factory=None) -> FastAP
     mount_assistant(api)
     from app.dashboard.routes import mount_dashboard
     mount_dashboard(api)
+    from app.enterprise.routes import mount as mount_enterprise, page as enterprise_page
+    mount_enterprise(api)
 
     @api.middleware("http")
     async def request_metadata(request: Request, call_next):
@@ -67,7 +76,8 @@ def create_app(settings: Settings | None = None, runtime_factory=None) -> FastAP
         return error(request, 422, "invalid_request", "Request does not match the required schema.")
 
     @api.get("/")
-    def root():
+    def root(request: Request):
+        if 'text/html' in request.headers.get('accept',''):return enterprise_page()
         return {"service": config.app_name, "stage": "integration-candidate", "docs": "/docs"}
 
     @api.get("/health")
