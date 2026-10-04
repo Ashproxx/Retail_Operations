@@ -40,3 +40,5 @@ Retail Model 1 checkpoint: scoped SQL -> net sales/groups + distinct-order deliv
 Employee360 checkpoint: authorized Employee rows -> name resolver/clarification -> redacted profile + staffing aggregates -> namespaced memory -> field-only audit. Cross-domain prompts route to the corresponding workspace.
 
 Website checkpoint: /models -> /retail or /employees -> authenticated workspace routes -> corresponding scoped service. Models 3/4 are public informational shells only. Source data never enters the static bundle. Browser rendering uses textContent, local ECharts, scoped server responses and memory-only credentials. The launch command connects the actual imported SQLite database; CI fixtures live only under tests.
+
+Final Phase 3 verification, 2026-10-04: a45b809 passed 209 Python tests, full supplied-workbook reconciliation, all three local browser gates and complete Linux CI 37178457687. The graph includes four explicit model nodes and selector edges. Models 1/2 are active; Models 3/4 remain Coming Soon. Current hard milestone ledger: docs/phase3/MILESTONES.md (100% verified POC scope). Main merge still requires human review.

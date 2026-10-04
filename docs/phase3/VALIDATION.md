@@ -1,6 +1,6 @@
 # Phase 3 development report
 
-Status: integration validation in progress. Verified completion: 95%, M0-M6 passed; M7 pending final integration checks. The acceptance scope is the supplied synthetic POC workbooks, not production HR or commercially validated forecasts.
+Status: **READY FOR HUMAN REVIEW**. Overall verified completion: **100%**, M0-M7 passed. The acceptance scope is the supplied synthetic POC workbooks, not production HR or commercially validated forecasts.
 
 | Component | Status |
 |---|---|
@@ -20,7 +20,8 @@ Status: integration validation in progress. Verified completion: 95%, M0-M6 pass
 - Actual source reconciliation: net sales INR 97,196,007; all 120 store/category totals, record counts, order counts and authorized source payroll match. Committed summary: SOURCE_RECONCILIATION.json. No employee names, salaries or source rows are committed.
 - Full-workbook browser acceptance passed: selector/navigation, progressive choices, ten retail chart types, date fallback, inventory boundary, employee search/profiles/follow-ups, human-decision boundary, future pages, responsive layout and memory-only credentials. Disposable CI browser fixture also passed. These are separate checks; CI's small fixture is not substituted for full source acceptance.
 - Source guard passed: all 11 original source implementations and archived branch records preserved. Main is unchanged.
-- Initial remote run 37178249424 passed Python/source checks and both legacy browser gates, but its pinned older Playwright rejected the new test's waitForFunction under strict CSP. Locator-based waiting fixes the harness without weakening application security. Final CI evidence follows when complete.
+- Initial remote run 37178249424 passed Python/source checks and both legacy browser gates, but its pinned older Playwright rejected the new test's waitForFunction under strict CSP. Locator-based waiting fixed the harness without weakening application security.
+- **Final Linux CI passed:** [run 37178457687](https://github.com/Ashproxx/Retail_Operations/actions/runs/37178457687), code/test commit `a45b809ce4071b3f135aa90784b225886e9ddb88`. Both jobs succeeded: 209 Python tests, original source guard, dependencies, demo, Docker build, pinned pretrained retrieval, actual local Ollama inference, authenticated container/restart workflows and all three real-browser suites. Verified 2026-10-04. Subsequent final-report changes are documentation only.
 - Actual records span 2025-09-29 through 2026-09-29. Out-of-range dates return unavailable observations and an explicit latest-data option, never invented zero revenue.
 
 ## Checkpoints
@@ -34,7 +35,7 @@ Status: integration validation in progress. Verified completion: 95%, M0-M6 pass
 | model/retail-operations | dd34fc0 |
 | model/employee-360 | df44da7 |
 | feature/model-selector-dashboard | faeae6e |
-| integration/dual-model-retailops | Current integration candidate; final evidence below |
+| integration/dual-model-retailops | a45b809ce4071b3f135aa90784b225886e9ddb88 (verified code/test checkpoint) |
 
 ## Limitations and review
 

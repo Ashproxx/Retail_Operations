@@ -1,6 +1,6 @@
 # Conversational rework milestone ledger
 
-Current Phase 3 gates are tracked separately in [Phase 3 milestones](../phase3/MILESTONES.md). The ledger below is the historical Phase 2 acceptance and is not reused as Phase 3 completion credit.
+Current Phase 3 gates are tracked separately in [Phase 3 milestones](../phase3/MILESTONES.md): M0-M7 VERIFIED, 100% of supplied synthetic POC scope, code a45b809 and CI 37178457687. The ledger below is the historical Phase 2 acceptance and is not reused as Phase 3 completion credit.
 
 Verified on 2026-09-30 against the synthetic integration acceptance scope. Evidence: [validation report](../conversation/VALIDATION.md). Previous-release completion is not reused.
 

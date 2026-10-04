@@ -66,6 +66,35 @@
       "id": "acceptance",
       "path": "scripts/check_conversation.cjs",
       "status": "verified"
+    },
+    {
+      "id": "RetailOperations",
+      "path": "app/enterprise/retail.py",
+      "type": "model",
+      "status": "active"
+    },
+    {
+      "id": "Employee360",
+      "path": "app/employees/service.py",
+      "type": "model",
+      "status": "active"
+    },
+    {
+      "id": "EmployeeWorkEfficiency",
+      "path": "/employee-work",
+      "type": "model",
+      "status": "coming-soon"
+    },
+    {
+      "id": "ManagementIntelligence",
+      "path": "/management",
+      "type": "model",
+      "status": "coming-soon"
+    },
+    {
+      "id": "phase3-selector",
+      "path": "app/enterprise/static",
+      "status": "implemented"
     }
   ],
   "edges": [
@@ -116,6 +145,22 @@
     [
       "acceptance",
       "ui"
+    ],
+    [
+      "phase3-selector",
+      "RetailOperations"
+    ],
+    [
+      "phase3-selector",
+      "Employee360"
+    ],
+    [
+      "phase3-selector",
+      "EmployeeWorkEfficiency"
+    ],
+    [
+      "phase3-selector",
+      "ManagementIntelligence"
     ]
   ],
   "verification": {
@@ -178,8 +223,12 @@
       "local_tests_passed": 209,
       "full_source_reconciliation": "passed",
       "full_source_browser": "passed",
-      "ci": "pending",
-      "milestones": "docs/phase3/MILESTONES.md"
+      "ci": "passed",
+      "milestones": "docs/phase3/MILESTONES.md",
+      "ci_url": "https://github.com/Ashproxx/Retail_Operations/actions/runs/37178457687",
+      "code_sha": "a45b809ce4071b3f135aa90784b225886e9ddb88",
+      "verified_completion": 100,
+      "date": "2026-10-04"
     },
     "modules": {
       "sales_import": "app/enterprise/imports.py",

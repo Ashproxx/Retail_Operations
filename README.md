@@ -4,6 +4,8 @@ Four-model enterprise workspace with **Retail Operations** and **Employee 360** 
 
 The two supplied synthetic Navi Mumbai workbooks now power persistent SQL-backed sales and HR queries: 75,000 sales lines, 150 employees, and 20 stores. The new website provides progressive sales questions, charts, delivery and competitor estimates, name-based HR profiles and role-controlled staffing statistics. No on-hand stock or individual employee sales contribution is invented.
 
+**Phase 3 review status: READY FOR HUMAN REVIEW.** All eight hard milestones passed: 209 tests, full-workbook reconciliation, responsive browser acceptance and complete [Linux CI](https://github.com/Ashproxx/Retail_Operations/actions/runs/37178457687) at a45b809. Main has not been merged.
+
 **Start the current website:** [Phase 3 runbook](docs/phase3/RUNBOOK.md). Run `.venv/Scripts/python.exe -m app.enterprise.launch` after importing the workbooks, then open `http://127.0.0.1:8000/models`. Use the temporary local token printed by the launcher. See [current validation report](docs/phase3/VALIDATION.md), [hard milestones](docs/phase3/MILESTONES.md) and [source audit](docs/phase3/DATA_AUDIT.json). Source files and runtime data stay outside Git.
 
 ## Historical Phase 2 compatibility

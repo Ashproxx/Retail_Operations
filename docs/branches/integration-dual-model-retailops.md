@@ -7,3 +7,5 @@ Purpose: compose the supplied synthetic sales/HR imports, separate scoped SQL as
 Contracts and tables: docs/knowledge/INTERFACES.md and DATA_DICTIONARY.md. Deliverables, exact checkpoints, current checks and limitations: docs/phase3/VALIDATION.md. The latest verified pre-integration checkpoint is faeae6e; final verified commit/CI are recorded in the report after completion. New tests include malformed name matching and numeric HR fields; existing 201-test baseline is retained. No paid deployment or main merge is performed.
 
 Integration d057765 passed all 209 local tests, source reconciliation and all three browser gates. First Linux browser run exposed Playwright 1.51 waitForFunction using eval under strict CSP. The integration-only test correction uses locator waits; application CSP remains unchanged.
+
+Final verified code/test commit: a45b809ce4071b3f135aa90784b225886e9ddb88. Linux CI 37178457687 passed both jobs and every required check. M0-M7 verified at 100% of supplied synthetic POC acceptance. Final reporting changes are documentation only; main remains at the stated unchanged SHA. Review/merge authorization remains with the user.

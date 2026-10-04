@@ -3,6 +3,7 @@
 Run from the repository with Python 3.12 and the existing requirements installed. No new service or cloud account is required. The source workbooks are explicitly synthetic POC data and are intentionally absent from Git. Import your supplied files once:
 
 ```powershell
+New-Item -ItemType Directory -Force .retailops/phase3
 .venv/Scripts/python.exe -m scripts.import_sales_data --file C:/Users/User/Downloads/RetailOps_NaviMumbai_Sales_Dataset.xlsx --database sqlite:///.retailops/phase3/retailops.db
 .venv/Scripts/python.exe -m scripts.import_employee_data --file C:/Users/User/Downloads/RetailOps_NaviMumbai_Employee_Dataset.xlsx --database sqlite:///.retailops/phase3/retailops.db
 .venv/Scripts/python.exe -m app.enterprise.launch
