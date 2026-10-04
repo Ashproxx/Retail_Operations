@@ -1,5 +1,9 @@
 # Integration deliverables
 
+Current Phase 3 deliverables: [development report](docs/phase3/VALIDATION.md) and [hard milestone ledger](docs/phase3/MILESTONES.md). Source SQL importers, separate retail/HR services, HR permissions, four-model selector and responsive website are implemented. Main merge requires explicit final authorization. Historical M13 below describes the earlier release only.
+
+## Historical release candidate
+
 M13 INCOMPLETE; weighted completion remains 95%.
 
 - [x] Explicit approval recorded with pinned sources/base

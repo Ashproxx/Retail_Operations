@@ -23,14 +23,12 @@ def candidates(text,rows):
     query=name_key(text);padded=' '+query+' '
     exact=[r for r in rows if ' '+name_key(r['full_name'])+' ' in padded]
     if exact:return exact,False
-    tokens=set(query.split())
-    names={token for r in rows for token in name_key(r['full_name']).split()}
-    wanted=tokens&names
-    if wanted:
-        found=[r for r in rows if wanted<=set(name_key(r['full_name']).split())]
+    cleaned=re.sub(r'\b(tell|me|about|show|employee|profile|please|find|search|for|what|is|the|s|attendance|performance|rating|salary|of)\b',' ',query)
+    cleaned=' '.join(cleaned.split());tokens=set(cleaned.split())
+    if tokens:
+        # Match every supplied name token, not silently discard an unknown surname.
+        found=[r for r in rows if tokens<=set(name_key(r['full_name']).split())]
         if found:return found,False
-    cleaned=re.sub(r'\b(tell|me|about|show|employee|profile|please|find|search|for)\b',' ',query)
-    cleaned=' '.join(cleaned.split())
     if len(cleaned)<3:return [],False
     scored=[(SequenceMatcher(None,cleaned,name_key(r['full_name'])).ratio(),r) for r in rows]
     best=max((score for score,_ in scored),default=0)
@@ -102,7 +100,7 @@ class EmployeeService:
         if re.search(r'\b(fire|fired|firing|dismiss|terminate|demote|promote|hire|hiring|discipline|punish)\b|who deserves|cut (?:pay|salary)',text):
             return done({'status':'human_review','summary':'Employee 360 provides recorded HR information. It does not recommend or execute hiring, firing, promotion, discipline or compensation decisions. An authorized human must handle those decisions.'})
         if re.search(r'\b(sales|revenue|inventory|competitor|delivery orders)\b',text):
-            if re.search(r'\b(her|his|their|employee)\b',text):return done({'status':'unavailable','summary':'Sales transactions do not identify individual employees. Store-level sales cannot be attributed to a person.'})
+            if re.search(r'\b(her|his|their|employee|she|he|they)\b',text) or candidates(turn.message,all_rows)[0]:return done({'status':'unavailable','summary':'Sales transactions do not identify individual employees. Store-level sales cannot be attributed to a person.'})
             return done({'status':'route','summary':'That question belongs to Retail Operations. Open that workspace to continue.','workspace':'/retail'})
         if re.search(r'\b(policy|policies|handbook|rules)\b',text):return done({'status':'unavailable','summary':'HR policy documents have not been supplied. No leave, benefits or employment policy is inferred from employee records. The existing signed RAG service is retained for authorized documents.'})
         selected={}
@@ -145,7 +143,7 @@ class EmployeeService:
         sections={title:{k:public[k] for k in keys if k in public} for title,keys in SECTIONS.items()}
         sections={k:v for k,v in sections.items() if v}
         summary=f"{public['full_name']} · {public['designation']} · {public['city']}. Recorded status: {public['employment_status']}."
-        if 'attendance' in text:summary+=f" Recorded 90-day attendance: {public['attendance_pct_last_90d']}%." if public['attendance_pct_last_90d'] is not None else ' No attendance percentage is recorded.'
+        if 'attendance' in text:summary+=f" Recorded 90-day attendance: {public['attendance_pct_last_90d']:g}%." if public['attendance_pct_last_90d'] is not None else ' No attendance percentage is recorded.'
         if 'performance' in text or 'rating' in text:summary+=f" Recorded performance rating: {public['performance_rating']}." if public['performance_rating'] is not None else ' No performance rating is currently recorded for this employee.'
         if 'salary' in text and ctx.role in FULL:summary+=f" Recorded monthly gross salary: INR {public['monthly_gross_salary_inr']:,}." if public['monthly_gross_salary_inr'] is not None else ' No salary is recorded.'
         store_rows=[r for r in all_rows if r['store_id']==row['store_id']]

@@ -29,7 +29,9 @@ def test_name_followups_ambiguity_missing_rating_and_scope(tmp_path,monkeypatch)
     assert '20,000' in ask('What about her salary?')['summary']
     assert 'No performance rating' in ask('What is her performance rating?')['summary']
     assert ask('Who should be fired?')['status']=='human_review'
-    assert ask('How much sales did she generate?')['status']=='route' or ask('Her sales contribution')['status']=='unavailable'
+    assert ask('How much sales did she generate?')['status']=='unavailable'
+    assert ask('Tell me about Anjali CompletelyUnknown')['status']=='needs_clarification'
+    assert 'profile' not in ask('Tell me about Nonexistent Person')
     assert ask('Show Anjali salary',role='ANALYST')['status']=='denied'
     assert 'Compensation' not in ask('Tell me about Anjali Example',role='STORE_MANAGER')['profile']
     assert ask('What is her attendance?',role='HR_USER',stores=['S2'])['status']=='needs_clarification'

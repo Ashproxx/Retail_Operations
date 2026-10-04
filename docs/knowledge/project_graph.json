@@ -130,8 +130,8 @@
   "phase3": {
     "baseline": "f81bce0424fce00620b236d6f5423758fa305272",
     "models": {
-      "RetailOperations": "planned",
-      "Employee360": "planned",
+      "RetailOperations": "active",
+      "Employee360": "active",
       "EmployeeWorkEfficiency": "coming-soon",
       "ManagementIntelligence": "coming-soon"
     },
@@ -167,7 +167,29 @@
       [
         "Product",
         "CompetitorComparison"
+      ],
+      [
+        "Employee",
+        "StoreStaffing"
       ]
-    ]
+    ],
+    "integration_branch": "integration/dual-model-retailops",
+    "verification": {
+      "local_tests_passed": 209,
+      "full_source_reconciliation": "passed",
+      "full_source_browser": "passed",
+      "ci": "pending",
+      "milestones": "docs/phase3/MILESTONES.md"
+    },
+    "modules": {
+      "sales_import": "app/enterprise/imports.py",
+      "employee_import": "app/employees/data.py",
+      "retail": "app/enterprise/retail.py",
+      "employee_360": "app/employees/service.py",
+      "hr_access": "app/employees/security.py",
+      "api": "app/enterprise/routes.py",
+      "website": "app/enterprise/static",
+      "launcher": "app/enterprise/launch.py"
+    }
   }
 }

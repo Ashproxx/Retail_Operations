@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "source": "Actual supplied synthetic workbooks, not generated acceptance fixtures",
+  "sales_lines": 75000,
+  "orders": 59088,
+  "competitor_rows": 24804,
+  "employees": 150,
+  "staffing_rows": 20,
+  "net_revenue_inr": "97196007",
+  "store_category_totals_reconciled": 120,
+  "checks": [
+    "row counts",
+    "source net amounts",
+    "all store/category totals",
+    "all-source chat total",
+    "future-date fallback",
+    "inventory unavailable",
+    "chronological forecast",
+    "weekly competitor estimates",
+    "distinct-order delivery",
+    "missing employee rating",
+    "city employee filtering",
+    "authorized source payroll"
+  ]
+}

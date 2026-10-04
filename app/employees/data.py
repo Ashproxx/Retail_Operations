@@ -56,9 +56,9 @@ def import_employees(database,path):
         for k in ['date_of_birth','hire_date','last_working_date']:
             if r[k] is not None:r[k]=day(r[k])
         for k in ['age','weekly_hours','monthly_gross_salary_inr','avg_monthly_incentive_inr','tenure_years']:
-            if r[k] is not None:number(r[k],minimum=0)
-        if r['performance_rating'] is not None:number(r['performance_rating'],minimum=1,maximum=5)
-        if r['attendance_pct_last_90d'] is not None:number(r['attendance_pct_last_90d'],minimum=0,maximum=100)
+            if r[k] is not None:r[k]=float(number(r[k],minimum=0))
+        if r['performance_rating'] is not None:r['performance_rating']=float(number(r['performance_rating'],minimum=1,maximum=5))
+        if r['attendance_pct_last_90d'] is not None:r['attendance_pct_last_90d']=float(number(r['attendance_pct_last_90d'],minimum=0,maximum=100))
         if r['reports_to_id'] is not None and r['reports_to_id'] not in ids:raise ValueError('Unknown reporting manager ID')
         if r['last_working_date'] and r['hire_date'] and r['last_working_date']<r['hire_date']:raise ValueError('Last working date precedes hire')
         employees.append(dict(employee_id=r['employee_id'],store_id=r['store_id'],search_name=name_key(r['full_name']),payload=r))
@@ -66,7 +66,7 @@ def import_employees(database,path):
         actual=[e['payload'] for e in employees if e['store_id']==r['store_id']]
         if integer(r['headcount'])!=len(actual):raise ValueError('Staffing headcount disagrees with employee records')
         if integer(r['active_headcount'])!=sum(e['employment_status']=='Active' for e in actual):raise ValueError('Active headcount mismatch')
-        for k in ['monthly_payroll_inr','avg_gross_salary_inr','store_area_sqft','avg_tenure_years','staff_per_1000_sqft']:number(r[k],minimum=0)
+        for k in ['monthly_payroll_inr','avg_gross_salary_inr','store_area_sqft','avg_tenure_years','staff_per_1000_sqft']:r[k]=float(number(r[k],minimum=0))
     with database.session() as session:
         save_stores(session,staffing)
         session.flush()

@@ -1,7 +1,7 @@
 name: Integration candidate QA
 on:
   push:
-    branches: [integration/release-candidate, integration/conversational-retailops]
+    branches: [integration/release-candidate, integration/conversational-retailops, integration/dual-model-retailops]
   pull_request:
 permissions:
   contents: read
@@ -86,6 +86,10 @@ jobs:
         env:
           NODE_PATH: /tmp/dashboard-browser/node_modules
         run: node scripts/check_conversation.cjs
+      - name: Verify four-model selector and active workspaces
+        env:
+          NODE_PATH: /tmp/dashboard-browser/node_modules
+        run: node scripts/check_phase3.cjs
       - name: Preserve desktop and mobile screenshots
         if: always()
         uses: actions/upload-artifact@v4
@@ -94,4 +98,6 @@ jobs:
           path: |
             validation-output/dashboard/*.png
             validation-output/conversation/*.png
+            validation-output/phase3/*.png
+            validation-output/phase3/browser.json
           if-no-files-found: warn

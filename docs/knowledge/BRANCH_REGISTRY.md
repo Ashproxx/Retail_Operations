@@ -57,3 +57,5 @@ These are the implementation checkpoint heads. A subsequent integration document
 ## Phase 3
 
 Phase 3 dependency sequence from f81bce0: codex/phase3-knowledge -> data/navi-mumbai-sales -> data/navi-mumbai-employees -> core/hr-access-control -> model/retail-operations -> model/employee-360 -> feature/model-selector-dashboard -> integration/dual-model-retailops. Each branch owns its named scope; later branches compose earlier checkpoints. Existing branch heads are preserved. UI branch owns both workspaces and selector to keep shared rendering consistent.
+
+Published Phase 3 checkpoints: ac11d80 (knowledge), 177417f (sales), 216cdd1 (employees), ee72eb4 (HR security), dd34fc0 (retail), df44da7 (Employee 360), faeae6e (website). Final integration owns validation-only composition corrections and CI. See docs/phase3/VALIDATION.md for immutable final verification evidence.

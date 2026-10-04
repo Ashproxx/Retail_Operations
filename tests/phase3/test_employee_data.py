@@ -13,12 +13,14 @@ def small_employees():
 
 def test_nullable_rating_atomicity_and_name_key(tmp_path,monkeypatch):
     db=Database('sqlite:///'+str(tmp_path/'db'));path=tmp_path/'employees.xlsx';path.write_bytes(b'fixture')
-    rows=small_employees();monkeypatch.setattr(data,'sheets',lambda *a:rows)
+    rows=small_employees();rows['Employee_Master'][0]['monthly_gross_salary_inr']='20000';monkeypatch.setattr(data,'sheets',lambda *a:rows)
     result=data.import_employees(db,path)
     assert result['missing']['Employee_Master']['performance_rating']==1
     assert data.import_employees(db,path)['already_imported']
     path.write_bytes(b'changed');rows['Employee_Master'][0]['performance_rating']=6
     with pytest.raises(ValueError):data.import_employees(db,path)
-    with db.session() as s:assert s.scalar(select(func.count()).select_from(data.Employee))==1
+    with db.session() as s:
+        assert s.scalar(select(func.count()).select_from(data.Employee))==1
+        assert s.scalar(select(data.Employee)).payload['monthly_gross_salary_inr']==20000
     assert data.name_key('  José D’Souza ')==data.name_key("Jose D'Souza")
     db.close()

@@ -1,6 +1,14 @@
 # RetailOps AI
 
-Conversation-first retail intelligence with authenticated local tools, inline charts, apparel forecasts, stock-aware recommendations and the original eight operational agents. This candidate is on `integration/conversational-retailops`; `main` and the prior release remain unchanged.
+Four-model enterprise workspace with **Retail Operations** and **Employee 360** active. Work & Efficiency and Management are Coming Soon. Current candidate: `integration/dual-model-retailops`; main and prior feature checkpoints remain unchanged.
+
+The two supplied synthetic Navi Mumbai workbooks now power persistent SQL-backed sales and HR queries: 75,000 sales lines, 150 employees, and 20 stores. The new website provides progressive sales questions, charts, delivery and competitor estimates, name-based HR profiles and role-controlled staffing statistics. No on-hand stock or individual employee sales contribution is invented.
+
+**Start the current website:** [Phase 3 runbook](docs/phase3/RUNBOOK.md). Run `.venv/Scripts/python.exe -m app.enterprise.launch` after importing the workbooks, then open `http://127.0.0.1:8000/models`. Use the temporary local token printed by the launcher. See [current validation report](docs/phase3/VALIDATION.md), [hard milestones](docs/phase3/MILESTONES.md) and [source audit](docs/phase3/DATA_AUDIT.json). Source files and runtime data stay outside Git.
+
+## Historical Phase 2 compatibility
+
+The prior conversational interface, original eight agents and signed RAG remain available. The following setup/evidence describe that retained Phase 2 interface rather than the new Phase 3 source workspaces.
 
 **Review status: READY FOR HUMAN REVIEW.** All engineering milestones pass against labelled synthetic data: 201 local tests and full Linux CI at `c613603`. [Final report](docs/conversation/FINAL_REPORT.md) and [validation evidence](docs/conversation/VALIDATION.md). Real-data accuracy is unverified; main is unchanged.
 
