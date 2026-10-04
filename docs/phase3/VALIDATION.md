@@ -1,5 +1,7 @@
 # Phase 3 development report
 
+Dynamic-chat follow-up: the reported lowest-sale question now ranks individual imported products, retaining the date/location scope. Highest/lowest, top-N, ties, units/revenue/orders, selected-product references and matching charts have regression coverage. Local suite: 210 passed; full-source browser acceptance and direct running-preview check passed. Historical acceptance evidence below refers to the previous code checkpoint; this follow-up will receive its own CI run.
+
 Status: **READY FOR HUMAN REVIEW**. Overall verified completion: **100%**, M0-M7 passed. The acceptance scope is the supplied synthetic POC workbooks, not production HR or commercially validated forecasts.
 
 | Component | Status |

@@ -11,9 +11,10 @@ from app.conversation import dates
 from app.conversation.taxonomy import key,mentioned_categories
 from app.conversation.forecast import backtest,predict
 
-DIMENSIONS={'category':Sale.category,'date':Sale.day,'location':StoreRow.name,'channel':Sale.channel,
+DIMENSIONS={'product':Sale.sku_id,'category':Sale.category,'date':Sale.day,'location':StoreRow.name,'channel':Sale.channel,
     **{k:Sale.payload[k].as_string() for k in ['style_name','gender','color','size','zone','payment_mode','customer_type','fulfillment_type','time_slot']}}
 GROUP_WORDS={'payment':'payment_mode','channel':'channel','website':'channel','style':'style_name','gender':'gender','color':'color','size':'size','zone':'zone','customer':'customer_type','fulfillment':'fulfillment_type','time slot':'time_slot','daily':'date','over time':'date','location':'location','store':'location','category':'category'}
+ENTITIES={'product':r'\b(products?|items?|skus?)\b','category':r'\b(categor(?:y|ies))\b','location':r'\b(stores?|locations?)\b','channel':r'\bchannels?\b','style_name':r'\bstyles?\b'}
 CHARTS={'pie':'pie','doughnut':'doughnut','donut':'doughnut','horizontal bar':'horizontal_bar','stacked bar':'stacked_bar','grouped bar':'grouped_bar','multi-line':'multi_line','heatmap':'heatmap','scatter':'scatter','area':'area','line':'line','bar':'bar'}
 
 
@@ -71,7 +72,7 @@ class RetailService:
         if state.get('store_id') and state['store_id'] not in stores:state.pop('store_id',None);state.pop('location',None)
         def finish(result):
             self.runtime.repository.remember(owner,state)
-            return {**result,'context':{k:v for k,v in state.items() if k not in ['store_id','sku_id','pending']},'synthetic':True,'source':opts['source'],'request_id':str(ctx.request_id),'operational_write_performed':False}
+            return {**result,'context':{k:v for k,v in state.items() if k not in ['store_id','sku_id','pending','last_products']},'synthetic':True,'source':opts['source'],'request_id':str(ctx.request_id),'operational_write_performed':False}
         def ask(field,question,choices):
             state['pending']=field
             return finish({'status':'needs_clarification','summary':question,'choices':choices})
@@ -83,7 +84,7 @@ class RetailService:
         elif re.search(r'forecast|predict|next \d+ days',text):state['intent']='forecast'
         elif re.search(r'compet|price position|expensive',text) or any(key(n) in text for n in opts['competitors']):state['intent']='competition'
         elif re.search(r'delivery|shipment|shipping|delays',text):state['intent']='delivery'
-        elif re.search(r'\bsales|revenue|sold|perform|selling|doing\b',text):state['intent']='sales'
+        elif re.search(r'\b(sales?|revenue|sold|perform|selling|doing|lowest|highest|least|most|best|worst|top|bottom|products?|units?)\b',text):state['intent']='sales'
         if state['intent']=='inventory':return finish({'status':'unavailable','summary':'Current stock data is unavailable. This sales workbook contains no measured on-hand, opening or closing inventory. Sales are not stock balances.','actions':[{'label':'Sales analysis','action':'sales'}]})
         if turn.action=='location':state.pop('location',None);state.pop('store_id',None)
         if turn.action=='period':state.pop('period',None)
@@ -103,6 +104,30 @@ class RetailService:
         for word,dim in GROUP_WORDS.items():
             if re.search(r'\bby '+re.escape(word)+r'|\bcompare '+re.escape(word)+r'|'+('daily|over time' if dim=='date' else r'(?!)'),text):state['group']=dim;break
         if turn.action=='group' and turn.value in DIMENSIONS:state['group']=turn.value
+        # Interpret the requested analysis independently from retained scope. No generated SQL or business facts.
+        low=re.search(r'\b(lowest|least|worst|bottom|slowest)\b',text)
+        high=re.search(r'\b(highest|most|best|top)\b',text)
+        entity=next((dim for dim,pattern in ENTITIES.items() if re.search(pattern,text)),None)
+        if (low or high) and state['intent']=='sales':
+            state['intent']='sales';state['rank']='lowest' if low else 'highest'
+            n=re.search(r'\b(?:top|bottom|lowest|highest|best|worst)\s+(\d+)\b',text)
+            state['limit']=min(50,max(1,int(n.group(1)))) if n else 1
+            if entity:state['group']=entity
+            if state['group']=='product':state.pop('sku_id',None)
+        elif entity and re.search(r'\b(by|compare|breakdown|each|list|all)\b',text):
+            state['group']=entity
+            if re.search(r'\b(compare|breakdown|each|list|all)\b',text):state.pop('rank',None)
+        elif entity and state.get('rank') and re.search(r'\b(what about|and|instead)\b',text):state['group']=entity
+        if re.search(r'\b(units?|quantity|quantities|pieces)\b',text):state['metric']='units'
+        elif re.search(r'\b(revenue|value|amount|money)\b',text):state['metric']='net_revenue_inr'
+        elif (low or high) and re.search(r'\b(sold|selling)\b',text):state['metric']='units'
+        elif re.search(r'\borders?\b',text) and state['intent']=='sales':state['metric']='orders'
+        if re.search(r'\b(overall|summary|total sales|all sales)\b',text) or turn.action=='sales':state.pop('rank',None)
+        focus=re.search(r'\b(that product|this product|about it|about that|its sales)\b',text)
+        if focus:
+            candidates=[p for p in opts['products'] if p['value'] in state.get('last_products',[])]
+            if len(candidates)!=1:return ask('product','Which product do you mean?',candidates or opts['products'])
+            state.update(sku_id=candidates[0]['value'],group='product',intent='sales');state.pop('rank',None)
         period=dates.resolve(turn.message,available=opts['date_range']) if turn.message else None
         if period:state['period']=period
         if 'latest' in text or turn.action=='latest':
@@ -115,10 +140,15 @@ class RetailService:
             elif state.get('pending')=='period':
                 state['period']=dates.resolve(opts['date_range'][1] if turn.value=='latest' else turn.value,available=opts['date_range'])
             elif state.get('pending')=='chart':state['chart']=turn.value
+            elif state.get('pending')=='product' and turn.value in {p['value'] for p in opts['products']}:
+                state.update(sku_id=turn.value,group='product',intent='sales');state.pop('rank',None)
             else:raise ValueError('Invalid selection')
             state.pop('pending',None)
         if not state.get('location'):return ask('location','Which location would you like to analyse?',opts['locations']+[{'label':'All authorized locations','value':'*'}])
         if not state.get('period'):return ask('period','Which period? The available sales dates are '+ ' to '.join(opts['date_range'])+'.',[{'label':'Latest available day','value':'latest'}]+[{'label':x,'value':x} for x in ['Today','Last 7 days','Last month','Available data']])
+        explain=bool(state.get('rank') and re.search(r'\b(why|reason|explain)\b',text))
+        recognized=turn.action or period or matches or categories or low or high or focus or explain or entity or any(re.search(r'(?<!\w)'+re.escape(key(v))+r'(?!\w)',text) for values in opts['dimensions'].values() for v in values) or re.search(r'\b(sales?|revenue|sold|selling|perform|doing|units?|quantity|orders?|forecast|predict|compet\w*|delivery|shipment|shipping|delays|latest|chart|graph|bar|line|area|pie|doughnut|donut|heatmap|daily|compare|clear filters|summary|overall)\b',text)
+        if text and not recognized:return finish({'status':'needs_clarification','summary':'I could not map that question to a retail analysis. You can ask for a highest/lowest product, compare stores, change the period, or request a chart. Your location and period are still selected.','actions':[{'label':'Sales summary','action':'sales'},{'label':'Change period','action':'period'}]})
         with self.db.session() as s:
             count=s.scalar(select(func.count()).select_from(Sale).where(*filters(ctx,state)))
             latest=s.scalar(select(func.max(Sale.day)).where(*filters(ctx,state,period=False)))
@@ -126,7 +156,7 @@ class RetailService:
         if state['intent']=='competition':result=self.competition(ctx,state,text)
         elif state['intent']=='delivery':result=self.delivery(ctx,state)
         elif state['intent']=='forecast':result=self.forecast(ctx,state,text)
-        else:result=self.sales(ctx,state)
+        else:result=self.sales(ctx,state,explain=explain)
         wants=turn.action=='chart' or 'graph' in text or 'chart' in text or turn.action=='select' and state.get('chart')
         for word,kind in CHARTS.items():
             if re.search(r'(?<!\w)'+re.escape(word)+r'(?!\w)',text):state['chart']=kind;wants=True;break
@@ -139,22 +169,46 @@ class RetailService:
         result['evidence']={'source':'Sales_Transactions / Competitor_Sales','period':state['period'],'inventory':'Not available','revenue_basis':'Sum of source net_amount_inr, after source discounts; source amounts rounded to whole INR.'}
         return finish(result)
 
-    def sales(self,ctx,state):
+    def sales(self,ctx,state,explain=False):
         clauses=filters(ctx,state);dim=DIMENSIONS[state.get('group','category')]
         with self.db.session() as s:
             total,units,orders=s.execute(select(func.sum(Sale.net_paise),func.sum(Sale.quantity),func.count(func.distinct(Sale.order_id))).where(*clauses)).one()
-            grouped=s.execute(select(dim,func.sum(Sale.net_paise),func.sum(Sale.quantity)).select_from(Sale).join(StoreRow,StoreRow.id==Sale.store_id).where(*clauses).group_by(dim).order_by(dim if state.get('group')=='date' else func.sum(Sale.net_paise).desc())).all()
-        rows=[{'group':name or 'Not recorded','net_revenue_inr':str(Decimal(money)/100),'units':n} for name,money,n in grouped]
+            grouped=s.execute(select(dim,func.sum(Sale.net_paise),func.sum(Sale.quantity),func.count(func.distinct(Sale.order_id))).select_from(Sale).join(StoreRow,StoreRow.id==Sale.store_id).where(*clauses).group_by(dim).order_by(dim if state.get('group')=='date' else func.sum(Sale.net_paise).desc())).all()
+            products={p.sku_id:p.payload for p in s.scalars(select(Product).where(Product.sku_id.in_([r[0] for r in grouped])))} if state['group']=='product' else {}
+        labels={sku:' · '.join(str(p[k]) for k in ['style_name','gender','color','size'] if p.get(k)) or sku for sku,p in products.items()}
+        rows=[{'group':labels.get(name,name) or 'Not recorded','net_revenue_inr':str(Decimal(money)/100),'units':n,'orders':count} for name,money,n,count in grouped]
+        metric=state.get('metric','net_revenue_inr');metric_label={'net_revenue_inr':'net revenue (INR)','units':'units sold','orders':'orders'}[metric]
+        rank=state.get('rank');population=len(rows)
+        if rank:
+            paired=sorted(zip(grouped,rows),key=lambda pair:(Decimal(pair[1][metric])*(1 if rank=='lowest' else -1),str(pair[0][0])))
+            boundary=Decimal(paired[min(state.get('limit',1),len(paired))-1][1][metric])
+            chosen=[pair for pair in paired if Decimal(pair[1][metric])<=boundary] if rank=='lowest' else [pair for pair in paired if Decimal(pair[1][metric])>=boundary]
+            rows=[r for _,r in chosen]
+            state['last_products']=[raw[0] for raw,_ in chosen] if state['group']=='product' else []
+        elif state['group']=='product':state['last_products']=[raw[0] for raw in grouped]
         best=max(rows,key=lambda r:Decimal(r['net_revenue_inr']));worst=min(rows,key=lambda r:Decimal(r['net_revenue_inr']))
         explanation=f"{best['group']} has the highest recorded net revenue and {worst['group']} the lowest. Low recorded sales alone do not establish weak demand; inventory is unavailable."
         result={'status':'success','summary':f"{state['location']} · {state['period']['label']}: INR {Decimal(total)/100:,.2f} net sales, {units:,} units, {orders:,} orders.",
             'metrics':{'Net sales (INR)':str(Decimal(total)/100),'Units':units,'Orders':orders},'table':rows,'findings':[explanation],
             'chart_data':{'time':state.get('group')=='date','title':'Net sales by '+state.get('group','category').replace('_',' '),'labels':[r['group'] for r in rows],
-                'datasets':[{'label':'Net revenue (INR)','values':[float(r['net_revenue_inr']) for r in rows]}],'interpretation':explanation}}
-        if state.get('group') in ['location','channel']:
+                'datasets':[{'label':metric_label,'values':[float(r[metric]) for r in rows]}],'interpretation':explanation}}
+        result['chart_data']['title']=metric_label.capitalize()+' by '+state['group'].replace('_',' ')
+        if state.get('sku_id') and len(rows)==1:result['summary']=rows[0]['group']+'. '+result['summary']
+        if rank:
+            top=rows[0];value=Decimal(top[metric]);shown=f'INR {value:,.2f}' if metric=='net_revenue_inr' else f'{value:,} {metric_label}'
+            subject=state['group'].replace('_',' ')
+            result['summary']=(f"{top['group']} had the {rank} {metric_label}: {shown}." if len(rows)==1 else f"{len(rows)} {subject} results with the {rank} {metric_label} are shown below, including ties at the cutoff.")+f" Scope: {state['location']} · {state['period']['label']}."
+            result['metrics']={'Matching '+subject+' results':len(rows),'Compared '+subject+' groups':population}
+            explanation=f"Ranked by {metric_label} among {population} {subject} groups with recorded transactions. Products without transactions are not assumed to have zero sales. Change the metric by asking ‘by units’ or ‘by revenue’."
+            result['findings']=[explanation];result['chart_data']['interpretation']=explanation
+            result['actions']=[{'label':'View graph','action':'chart'},{'label':'Change period','action':'period'},{'label':'Change location','action':'location'},{'label':'Sales summary','action':'sales'}]
+        if explain:
+            result['summary']='The records show the sales outcome, but they do not establish why it happened. '+result['summary']
+            result['findings'].append('Price, availability and demand could affect sales, but this workbook does not establish causation or provide inventory balances. Compare units and net revenue across periods before drawing a conclusion.')
+        if state.get('group') in ['location','channel'] and not rank and metric in ['net_revenue_inr','units']:
             with self.db.session() as s:
-                cells=s.execute(select(dim,Sale.category,func.sum(Sale.net_paise)).select_from(Sale).join(StoreRow,StoreRow.id==Sale.store_id).where(*clauses).group_by(dim,Sale.category)).all()
-            matrix={(label,category):float(Decimal(amount)/100) for label,category,amount in cells}
+                cells=s.execute(select(dim,Sale.category,func.sum(Sale.net_paise if metric=='net_revenue_inr' else Sale.quantity)).select_from(Sale).join(StoreRow,StoreRow.id==Sale.store_id).where(*clauses).group_by(dim,Sale.category)).all()
+            matrix={(label,category):float(Decimal(amount)/(100 if metric=='net_revenue_inr' else 1)) for label,category,amount in cells}
             result['chart_data'].update(comparison=True,datasets=[{'label':category,'values':[matrix.get((r['group'],category)) for r in rows]} for category in sorted({c for _,c,_ in cells})])
         return result
 

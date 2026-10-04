@@ -19,6 +19,10 @@ const delay=ms=>new Promise(r=>setTimeout(r,ms));
   async function choose(text){const count=await page.locator('.turn').count();await page.locator('.answer').last().getByRole('button',{name:text,exact:true}).click();await page.locator('.turn').nth(count).waitFor();}
   await ask('How were sales?');await choose(options.locations[0].label);await choose('Latest available day');assert.match(await page.locator('.answer').last().textContent(),/net sales/);
   await ask('Show pie chart');assert.equal(await page.locator('.answer').last().locator('.chart canvas').count(),1);
+  await ask('which product had the lowest sale');assert.match(await page.locator('.answer').last().locator('.summary').textContent(),/lowest net revenue/);
+  await ask('and the highest?');assert.match(await page.locator('.answer').last().locator('.summary').textContent(),/highest net revenue/);
+  await ask('by units');assert.match(await page.locator('.answer').last().locator('.summary').textContent(),/units sold/);
+  await ask('show all sales by category');
   await page.screenshot({path:path.join(output,'retail-desktop.png'),fullPage:true});
   for(const type of ['bar','horizontal bar','doughnut']){await ask('Show '+type+' chart');assert.equal(await page.locator('.answer').last().locator('.chart canvas').count(),1);}
   await ask('Show daily line chart');await ask('Show area chart');
