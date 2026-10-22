@@ -6,6 +6,12 @@ from fastapi.staticfiles import StaticFiles
 from app.integration.routes import context,audit_operation
 from app.enterprise.contracts import WorkspaceTurn
 from app.employees.security import audit
+from typing import Literal
+from collections import Counter
+from sqlalchemy import select
+from app.api.schemas import Role
+from app.enterprise.data import Product, Sale
+from app.enterprise.retail import filters
 
 router=APIRouter(prefix='/api')
 ASSETS=Path(__file__).parent/'static'
@@ -19,8 +25,42 @@ def page():
 def mount(api):
     api.include_router(router)
     api.mount('/workspace-assets',StaticFiles(directory=ASSETS),name='workspace-assets')
-    for path in ['/models','/retail','/employees','/employee-work','/management']:
+    for path in ['/models','/retail','/employees','/employee-work','/management','/datasets']:
         api.add_api_route(path,page,methods=['GET'],include_in_schema=False)
+
+
+@router.get('/datasets/{kind}')
+def dataset(request:Request,kind:Literal['products','employees'],offset:int=Query(0,ge=0),limit:int=Query(25,ge=1,le=100)):
+    ctx=context(request,'dataset-browser');runtime=request.app.state.runtime
+    subjects=[];fields=[];status='denied'
+    try:
+        if kind=='products':
+            clauses=filters(ctx,{})
+            with request.app.state.database.session() as s:
+                records=list(s.scalars(select(Product).where(Product.sku_id.in_(select(Sale.sku_id).where(*clauses))).order_by(Product.sku_id)))
+            counts=dict(Counter(r.payload.get('normalized_category') or r.payload.get('category') or 'Not recorded' for r in records))
+            fields=['category','style_name','gender','color','size']
+            rows=[{'sku_id':r.sku_id,**{k:r.payload.get(k) for k in fields}} for r in records[offset:offset+limit]]
+            result={'total':len(records),'metrics':{'Catalog products':len(records)},'groups':counts,'rows':rows,
+                    'note':'Products recorded in authorized sales history. On-hand inventory was not supplied; these counts are distinct SKUs, not stock units.',
+                    'chart_title':'Product catalog by category','source':'POC Navi Mumbai Sales Dataset'}
+        else:
+            service=request.app.state.employees
+            overview=service.overview(ctx)
+            records=service.rows(ctx,detail=True) if ctx.role!=Role.ANALYST else []
+            page=records[offset:offset+limit]
+            fields=['full_name','store_location','city','department','designation','shift','employment_status']
+            subjects=[r['employee_id'] for r in page]
+            result={'total':len(records) if ctx.role!=Role.ANALYST else None,
+                    'metrics':{k:v for k,v in overview['metrics'].items() if k in ['Employees','Active employees','Privacy']},
+                    'groups':overview['groups'].get('employment_status',{}),
+                    'rows':[{k:r.get(k) for k in fields} for r in page],
+                    'note':'Recorded employment status from the supplied HR snapshot, not live attendance or who is on duty.' + (' Your role allows aggregates only.' if ctx.role==Role.ANALYST else ''),
+                    'chart_title':'Staff by recorded employment status','source':'POC Navi Mumbai Employee Dataset'}
+        status='success'
+        return {**result,'offset':offset,'limit':limit,'synthetic':True}
+    finally:
+        audit(runtime,ctx,'dataset.'+kind,status,subjects,fields if status=='success' else [])
 
 
 @router.get('/retail/options')

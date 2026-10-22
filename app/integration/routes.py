@@ -9,6 +9,11 @@ from app.integration.contracts import ChatQuery, DirectQuery, IngestRequest, Rag
 router=APIRouter(prefix='/api')
 
 def context(request,session_id):
+    if request.app.state.email_auth is not None:
+        from app.enterprise.email_auth import COOKIE
+        ctx=request.app.state.email_auth.authenticate(request.cookies.get(COOKIE,''),session_id)
+        ctx.request_id=UUID(request.state.request_id)
+        return ctx
     authorization=request.headers.get('Authorization','')
     scheme,_,token=authorization.partition(' ')
     if scheme.lower()!='bearer' or not token:raise AuthenticationFailed('Authentication required')

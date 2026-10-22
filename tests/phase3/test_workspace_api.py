@@ -20,15 +20,32 @@ def test_authenticated_workspaces_and_cross_model_memory(tmp_path,monkeypatch):
     monkeypatch.setattr(data,'sheets',lambda *a:small_employees());data.import_employees(db,employees);db.close()
     tokens={role:(role+'x'*40) for role in ['ADMIN','HR_ADMIN','STORE_MANAGER','ANALYST']}
     grants=[Grant(token_sha256=hashlib.sha256(token.encode()).hexdigest(),principal_id=role,role=role,store_ids=['S1']) for role,token in tokens.items()]
+    tokens['OUTSIDE']='outside'+'x'*40
+    grants.append(Grant(token_sha256=hashlib.sha256(tokens['OUTSIDE'].encode()).hexdigest(),principal_id='outside',role='STORE_MANAGER',store_ids=['S2']))
     app=create_app(RuntimeSettings(_env_file=None,database_url=SecretStr(url),state_dir=tmp_path/'state'),runtime_factory=lambda db,cfg:Runtime(db,cfg,grants=grants))
     with TestClient(app) as client:
         def headers(role='ADMIN'):return {'Authorization':'Bearer '+tokens[role]}
         def turn(model,message='',role='ADMIN',**extra):return client.post('/api/'+model+'/chat',headers=headers(role),json={'session_id':'shared-id','message':message,**extra})
-        for path in ['/','/models','/retail','/employees','/employee-work','/management']:
+        for path in ['/','/models','/retail','/employees','/employee-work','/management','/datasets']:
             response=client.get(path,headers={'Accept':'text/html'});assert response.status_code==200
             assert 'script-src \'self\'' in response.headers['content-security-policy']
-        for path in ['/api/retail/options','/api/employees/options','/api/employees/search?q=Test','/api/employees/overview']:
+        for path in ['/api/retail/options','/api/employees/options','/api/employees/search?q=Test','/api/employees/overview','/api/datasets/products','/api/datasets/employees']:
             assert client.get(path).status_code==401
+        for kind in ['products','employees']:
+            outside=client.get('/api/datasets/'+kind,headers=headers('OUTSIDE')).json()
+            assert outside['total']==0 and outside['rows']==[] and outside['groups']=={}
+        products=client.get('/api/datasets/products',headers=headers()).json()
+        assert products['total']==1 and products['groups']=={'Shirts':1}
+        assert products['rows'][0]['sku_id']=='P1' and 'not stock units' in products['note']
+        assert client.get('/api/datasets/products?offset=1',headers=headers()).json()['rows']==[]
+        assert client.get('/api/datasets/products?limit=101',headers=headers()).status_code==422
+        assert client.get('/api/datasets/products',headers=headers('HR_ADMIN')).status_code==403
+        employees=client.get('/api/datasets/employees',headers=headers('STORE_MANAGER')).json()
+        assert employees['rows'][0]['full_name']=='Test Person'
+        assert 'monthly_gross_salary_inr' not in str(employees) and 'date_of_birth' not in str(employees)
+        analyst=client.get('/api/datasets/employees',headers=headers('ANALYST')).json()
+        assert analyst['rows']==[] and analyst['groups']=={} and analyst['total'] is None
+        assert 'Test Person' not in str(analyst)
         assert turn('retail','Show latest sales in Test City').json()['metrics']['Net sales (INR)']=='1199'
         assert turn('employees','Tell me about Test Person').json()['profile']['Profile']['full_name']=='Test Person'
         assert turn('retail','Show pie chart').json()['visualization']['type']=='pie'

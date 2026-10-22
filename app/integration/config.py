@@ -12,3 +12,10 @@ class RuntimeSettings(Settings):
     ollama_url: str = 'http://localhost:11434'
     ollama_model: str = ''
     llm_timeout_seconds: float = Field(default=20,gt=0,le=120)
+
+    email_login: bool = False
+    smtp_host: str = ''
+    smtp_port: int = 587
+    smtp_username: str = ''
+    smtp_password: SecretStr | None = None
+    smtp_sender: str = ''

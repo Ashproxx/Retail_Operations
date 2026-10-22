@@ -1,5 +1,27 @@
 # Phase 3 local workspace
 
+## Showcase on another Windows laptop
+
+Install Git and Python 3.12, then run in PowerShell:
+
+```powershell
+git clone --branch integration/dual-model-retailops --single-branch https://github.com/Ashproxx/Retail_Operations.git
+cd Retail_Operations
+py -3.12 -m venv .venv
+.venv/Scripts/python.exe -m pip install -r requirements.txt
+New-Item -ItemType Directory -Force .retailops/phase3
+```
+
+The imported database and source workbooks are not stored on GitHub. Transfer a SQLite backup of `.retailops/phase3/retailops.db` from the original laptop into the same location on the new laptop, or import both source workbooks using the commands below. If using the prepared `RetailOps_Showcase_Data_2026-10-22.zip`, extract its `retailops.db` into `.retailops/phase3/`.
+
+```powershell
+.venv/Scripts/python.exe -m app.enterprise.launch --port 8000
+```
+
+Open http://127.0.0.1:8000/models and click **Connect**, then paste the new token printed in that laptop's terminal. Tokens from the old laptop will not work. Keep the terminal running during the presentation. Email sign-in is disabled by default; it can be enabled later with `--email-login` after following [EMAIL_LOGIN.md](EMAIL_LOGIN.md). Do not transfer `.env`, old tokens, or runtime audit/signing keys.
+
+The home page includes product-category and employee-status pie charts with paginated datasets, also accessible through the Datasets navigation link. Product counts describe the catalog, not on-hand stock; staff status is the imported snapshot, not live attendance.
+
 Run from the repository with Python 3.12 and the existing requirements installed. No new service or cloud account is required. The source workbooks are explicitly synthetic POC data and are intentionally absent from Git. Import your supplied files once:
 
 ```powershell

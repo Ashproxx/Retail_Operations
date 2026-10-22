@@ -25,6 +25,8 @@ def create_app(settings: Settings | None = None, runtime_factory=None) -> FastAP
     async def lifespan(api: FastAPI):
         database = Database(config.database_url.get_secret_value())
         api.state.database = database
+        from app.enterprise.email_auth import EmailAuth
+        api.state.email_auth = EmailAuth(config) if config.email_login else None
         try:
             api.state.runtime = runtime_factory(database, config) if runtime_factory else Runtime(database, config)
             from threading import Lock
@@ -39,6 +41,8 @@ def create_app(settings: Settings | None = None, runtime_factory=None) -> FastAP
     api = FastAPI(title=config.app_name, version="0.1.0", lifespan=lifespan)
 
     api.include_router(router)
+    from app.enterprise.email_auth import router as auth_router
+    api.include_router(auth_router)
     from app.conversation.routes import router as conversation_router, mount_assistant
     api.include_router(conversation_router)
     mount_assistant(api)
@@ -51,6 +55,15 @@ def create_app(settings: Settings | None = None, runtime_factory=None) -> FastAP
     async def request_metadata(request: Request, call_next):
         request.state.request_id = str(uuid4())
         try:
+            from app.enterprise.email_auth import COOKIE
+            from app.security.policy import AuthenticationFailed
+            from fastapi.responses import RedirectResponse
+            auth = request.app.state.email_auth
+            if auth and request.url.path in ['/', '/models', '/retail', '/employees', '/employee-work', '/management', '/datasets', '/assistant', '/dashboard']:
+                try:
+                    auth.authenticate(request.cookies.get(COOKIE, ''), 'page')
+                except AuthenticationFailed:
+                    return RedirectResponse('/login', status_code=303)
             response = await call_next(request)
         except Exception:
             # Never return or log raw exception text, payloads or credentials.
