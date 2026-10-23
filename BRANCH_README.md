@@ -1,3 +1,17 @@
+# M15 ML core
+
+Branch: platform/ml-core. Base: integration/dual-model-retailops@c27fef0a0c5cf7c84551a5940ef3ced8e9f00b93. User approved work on all four addendum areas on 2026-10-23. M14 design is on docs/ml-methodology@e8f8280; no source-branch merge is performed.
+
+Scope: app/ml, tests/ml, configs/ml_baseline.yaml, scripts/ml_run.py, scripts/ml_report.py, requirements-ml.txt and docs/ml. SHARED DELTA: add seven branch names to check_branch_scope.py, add isolated --ml-delta mode to update_knowledge_graph.py, ignore local experiment logs. No model download, new dependency or web-service change.
+
+Implemented: cutoff-safe features and role-filtered SQL extraction; baseline protocol/adapter; numerical parity; expanding validation with horizon gap; metrics and block bootstrap; data-only baseline registry; seeded permutation importance; freshness/error/drift summaries; reproducible baseline command and honest scorecard. Future covariates await M16 data and M17 adapters. Every scorecard pillar remains UNVERIFIED for independent test performance.
+
+Run `.venv/Scripts/python.exe -m scripts.ml_run --config configs/ml_baseline.yaml` then `python -m scripts.ml_report`. Config uses JSON syntax, a YAML subset, without another dependency. Source DB is local and required. Outputs contain validation evidence, not final-test scores. See docs/ml/CORE_VALIDATION.md for checks and limits. M20 integration remains human-gated.
+
+---
+
+## Inherited historical record
+
 # integration/dual-model-retailops
 
 Current Phase 3 integration: [branch ownership](docs/branches/integration-dual-model-retailops.md), [validation report](docs/phase3/VALIDATION.md), [runbook](docs/phase3/RUNBOOK.md). Composes imported sales and employees with two active workspaces and two Coming Soon models. Main remains human-controlled. Earlier release records below are retained as historical evidence and do not determine Phase 3 completion.

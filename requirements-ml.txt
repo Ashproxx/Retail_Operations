@@ -1,0 +1,2 @@
+# M15 baseline core uses only requirements.txt and the Python standard library.
+# M17 owns justified, pinned optional statistical/ML dependencies.
