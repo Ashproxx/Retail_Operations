@@ -13,7 +13,7 @@ Proposed base: integration/dual-model-retailops@c27fef0a0c5cf7c84551a5940ef3ced8
 | platform/realtime-data | c944c3edb03eb98fcbb451096a47bb5d5bbc34f9 |
 | ml/forecasting-models | 6b86795e4cf7e2b3bc54f807f87813921c7539b5 |
 | ml/auxiliary-models | 70b02411c3f07782a135111d168f10f2129785ab |
-| ui/ml-dashboard | fe6de1886b592e04719eef2dcbb3f5bcf1bfa764 |
+| ui/ml-dashboard | d351f28477a582b3573eaf4dcc171222c096cc0c |
 
 ## Assembly and verification after approval
 
