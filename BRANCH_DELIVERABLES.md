@@ -1,3 +1,17 @@
+# M14 documentary deliverables
+
+Active branch: `docs/ml-methodology`. Base: `integration/dual-model-retailops` at `c27fef0a0c5cf7c84551a5940ef3ced8e9f00b93`, the published version preceding the user's approval to start M14 on 23 October 2026.
+
+Owned scope: `docs/ml/`, this branch's README/deliverables, and branch-only knowledge-graph delta. No application, database, dependency, CI, shared guard or source-branch changes. No new dependencies or external data/model calls.
+
+Delivered: methodology/report chapter and Mermaid pipeline, data card, feature availability contract, reproducible aggregate audit, and separate M14–M20 ledger. Local documentation checks are recorded in `docs/ml/VALIDATION.md`. M14's specific documentation is ready; full inherited acceptance is pending (see `docs/ml/MILESTONES.md`). No M15 implementation is authorized by this branch.
+
+Graph delta: `docs/ml/KNOWLEDGE_GRAPH_DELTA.json`. Integration requires later human approval; main remains untouched. Existing source branches and demo checkpoint remain usable.
+
+---
+
+## Historical inherited record (unchanged below)
+
 # Integration deliverables
 
 Current Phase 3 deliverables: [development report](docs/phase3/VALIDATION.md) and [hard milestone ledger](docs/phase3/MILESTONES.md). Source SQL importers, separate retail/HR services, HR permissions, four-model selector and responsive website are implemented. Main merge requires explicit final authorization. Historical M13 below describes the earlier release only.

@@ -1,0 +1,104 @@
+{
+  "audited_on": "2026-10-23",
+  "code_base": "c27fef0a0c5cf7c84551a5940ef3ced8e9f00b93",
+  "source_label": "synthetic-workbook",
+  "read_only": true,
+  "scope": "aggregate coverage only; no model fitting or test scoring",
+  "source_imports": [
+    {
+      "domain": "sales",
+      "source": "RetailOps_NaviMumbai_Sales_Dataset.xlsx",
+      "sha256": "88da0500b3f3c27bba210a1608f524a3ccdf2365570b9d2c115ca9a06d686c01",
+      "counts": {
+        "Sales_Transactions": 75000,
+        "Competitor_Sales": 24804,
+        "Store_Master": 20
+      }
+    },
+    {
+      "domain": "employees",
+      "source": "RetailOps_NaviMumbai_Employee_Dataset.xlsx",
+      "sha256": "474322a5116171fc73b6418499e1302b44824cbbd07793712243432be53c174b",
+      "counts": {
+        "Employee_Master": 150,
+        "Store_Staffing": 20
+      }
+    }
+  ],
+  "queries": {
+    "facts": {
+      "sql": "SELECT count(*) AS sales_lines,count(distinct order_id) AS orders,count(distinct store_id) AS stores,count(distinct sku_id) AS skus,count(distinct day) AS observed_dates,min(day) AS first_date,max(day) AS last_date,sum(quantity) AS units,sum(net_paise) AS net_paise,min(quantity) AS min_line_quantity,max(quantity) AS max_line_quantity FROM sales_transactions",
+      "rows": [
+        {
+          "sales_lines": 75000,
+          "orders": 59088,
+          "stores": 20,
+          "skus": 85,
+          "observed_dates": 366,
+          "first_date": "2025-09-29",
+          "last_date": "2026-09-29",
+          "units": 87784,
+          "net_paise": 9719600700,
+          "min_line_quantity": 1,
+          "max_line_quantity": 3
+        }
+      ]
+    },
+    "store_coverage": {
+      "sql": "SELECT min(n) AS min_days,max(n) AS max_days,count(*) AS series FROM (SELECT store_id,count(distinct day) n FROM sales_transactions GROUP BY store_id)",
+      "rows": [
+        {
+          "min_days": 348,
+          "max_days": 366,
+          "series": 20
+        }
+      ]
+    },
+    "store_category_coverage": {
+      "sql": "SELECT min(n) AS min_days,max(n) AS max_days,count(*) AS series FROM (SELECT store_id,category,count(distinct day) n FROM sales_transactions GROUP BY store_id,category)",
+      "rows": [
+        {
+          "min_days": 73,
+          "max_days": 354,
+          "series": 120
+        }
+      ]
+    },
+    "store_sku_coverage": {
+      "sql": "SELECT min(n) AS min_days,max(n) AS max_days,count(*) AS series FROM (SELECT store_id,sku_id,count(distinct day) n FROM sales_transactions GROUP BY store_id,sku_id)",
+      "rows": [
+        {
+          "min_days": 1,
+          "max_days": 152,
+          "series": 1700
+        }
+      ]
+    },
+    "daily_distribution": {
+      "sql": "SELECT min(units) AS minimum,max(units) AS maximum,avg(units) AS mean FROM (SELECT day,sum(quantity) units FROM sales_transactions GROUP BY day)",
+      "rows": [
+        {
+          "minimum": 128,
+          "maximum": 592,
+          "mean": 239.84699453551912
+        }
+      ]
+    },
+    "zero_or_negative_lines": {
+      "sql": "SELECT count(*) AS count FROM sales_transactions WHERE quantity<=0",
+      "rows": [
+        {
+          "count": 0
+        }
+      ]
+    },
+    "competitors": {
+      "sql": "SELECT count(*) AS rows FROM competitor_sales",
+      "rows": [
+        {
+          "rows": 24804
+        }
+      ]
+    }
+  }
+}
