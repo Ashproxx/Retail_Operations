@@ -1,0 +1,350 @@
+{
+  "source": "synthetic-workbook",
+  "seed": 42,
+  "source_sha256": "8bbe80bd15e42b6a8ea94e042e6bf9dabe110e65722d729f52391238cb668c4e",
+  "code_commit": "6dbcf827be36c3484b5cdb5d5a50013c8ceadd1e",
+  "python": "3.12.10",
+  "versions": {
+    "scikit-learn": "1.9.1",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1"
+  },
+  "delivery": {
+    "status": "MEASURED_SYNTHETIC",
+    "train_orders": 17174,
+    "excluded": {
+      "unresolved_or_missing_actual": 2807,
+      "label_unavailable_at_partition_end": 602
+    },
+    "features": [
+      "store",
+      "channel",
+      "partner",
+      "weekday",
+      "promised_lead_days",
+      "order_units"
+    ],
+    "fixed_threshold": 0.5,
+    "results": {
+      "validation": {
+        "prevalence_baseline": {
+          "n": 11275,
+          "positive_rate": 0.4492239467849224,
+          "roc_auc": 0.5,
+          "pr_auc_average_precision": 0.4492239467849224,
+          "brier": 0.2488806999608616,
+          "f1_at_fixed_half": 0.0,
+          "confusion_labels_0_1": [
+            [
+              6210,
+              0
+            ],
+            [
+              5065,
+              0
+            ]
+          ],
+          "calibration_bins": [
+            {
+              "count": 11275,
+              "mean_probability": 0.4110282985908932,
+              "observed_rate": 0.4492239467849224
+            }
+          ],
+          "ece_10_bins": 0.03819564819402921
+        },
+        "logistic": {
+          "n": 11275,
+          "positive_rate": 0.4492239467849224,
+          "roc_auc": 0.6443870584177035,
+          "pr_auc_average_precision": 0.5842444380112537,
+          "brier": 0.2327164062803205,
+          "f1_at_fixed_half": 0.3829612381865498,
+          "confusion_labels_0_1": [
+            [
+              5372,
+              838
+            ],
+            [
+              3667,
+              1398
+            ]
+          ],
+          "calibration_bins": [
+            {
+              "count": 806,
+              "mean_probability": 0.29275559042429883,
+              "observed_rate": 0.31389578163771714
+            },
+            {
+              "count": 4573,
+              "mean_probability": 0.33257375368751774,
+              "observed_rate": 0.3323857424010496
+            },
+            {
+              "count": 3660,
+              "mean_probability": 0.45542201509976693,
+              "observed_rate": 0.5174863387978142
+            },
+            {
+              "count": 1724,
+              "mean_probability": 0.5463940762224969,
+              "observed_rate": 0.6026682134570766
+            },
+            {
+              "count": 512,
+              "mean_probability": 0.6587727708768625,
+              "observed_rate": 0.701171875
+            }
+          ],
+          "ece_10_bins": 0.03226422601945443
+        },
+        "forest": {
+          "n": 11275,
+          "positive_rate": 0.4492239467849224,
+          "roc_auc": 0.6283568043772344,
+          "pr_auc_average_precision": 0.5613208089405419,
+          "brier": 0.2365836333052295,
+          "f1_at_fixed_half": 0.28584392014519056,
+          "confusion_labels_0_1": [
+            [
+              5608,
+              602
+            ],
+            [
+              4120,
+              945
+            ]
+          ],
+          "calibration_bins": [
+            {
+              "count": 23,
+              "mean_probability": 0.29860657868665935,
+              "observed_rate": 0.21739130434782608
+            },
+            {
+              "count": 4670,
+              "mean_probability": 0.3316621175570178,
+              "observed_rate": 0.3158458244111349
+            },
+            {
+              "count": 5035,
+              "mean_probability": 0.45377764303633966,
+              "observed_rate": 0.5243296921549155
+            },
+            {
+              "count": 1520,
+              "mean_probability": 0.5361519428534851,
+              "observed_rate": 0.6098684210526316
+            },
+            {
+              "count": 27,
+              "mean_probability": 0.6140136938627664,
+              "observed_rate": 0.6666666666666666
+            }
+          ],
+          "ece_10_bins": 0.04828649975534401
+        }
+      },
+      "test": {
+        "prevalence_baseline": {
+          "n": 4826,
+          "positive_rate": 0.47596353087443016,
+          "roc_auc": 0.5,
+          "pr_auc_average_precision": 0.47596353087443016,
+          "brier": 0.2536388325436924,
+          "f1_at_fixed_half": 0.0,
+          "confusion_labels_0_1": [
+            [
+              2529,
+              0
+            ],
+            [
+              2297,
+              0
+            ]
+          ],
+          "calibration_bins": [
+            {
+              "count": 4826,
+              "mean_probability": 0.41102829859089324,
+              "observed_rate": 0.47596353087443016
+            }
+          ],
+          "ece_10_bins": 0.06493523228353693
+        },
+        "logistic": {
+          "n": 4826,
+          "positive_rate": 0.47596353087443016,
+          "roc_auc": 0.5644721491904185,
+          "pr_auc_average_precision": 0.5366060501541927,
+          "brier": 0.2596852451231514,
+          "f1_at_fixed_half": 0.14214749713412303,
+          "confusion_labels_0_1": [
+            [
+              2395,
+              134
+            ],
+            [
+              2111,
+              186
+            ]
+          ],
+          "calibration_bins": [
+            {
+              "count": 563,
+              "mean_probability": 0.2926804696996793,
+              "observed_rate": 0.43872113676731794
+            },
+            {
+              "count": 2997,
+              "mean_probability": 0.33156861415099076,
+              "observed_rate": 0.4457791124457791
+            },
+            {
+              "count": 946,
+              "mean_probability": 0.42984443915844595,
+              "observed_rate": 0.5581395348837209
+            },
+            {
+              "count": 320,
+              "mean_probability": 0.5192254797159632,
+              "observed_rate": 0.58125
+            }
+          ],
+          "ece_10_bins": 0.11722436096053941
+        },
+        "forest": {
+          "n": 4826,
+          "positive_rate": 0.47596353087443016,
+          "roc_auc": 0.5572724269608803,
+          "pr_auc_average_precision": 0.5310182758143767,
+          "brier": 0.25566278290052674,
+          "f1_at_fixed_half": 0.21530758226037197,
+          "confusion_labels_0_1": [
+            [
+              2331,
+              198
+            ],
+            [
+              1996,
+              301
+            ]
+          ],
+          "calibration_bins": [
+            {
+              "count": 15,
+              "mean_probability": 0.2988791401157171,
+              "observed_rate": 0.6
+            },
+            {
+              "count": 3131,
+              "mean_probability": 0.33088139464909466,
+              "observed_rate": 0.43596295113382305
+            },
+            {
+              "count": 1181,
+              "mean_probability": 0.4475678743118331,
+              "observed_rate": 0.5266723116003387
+            },
+            {
+              "count": 499,
+              "mean_probability": 0.5355663491483732,
+              "observed_rate": 0.6032064128256514
+            }
+          ],
+          "ece_10_bins": 0.09546247378048814
+        }
+      }
+    },
+    "limitations": [
+      "Resolved delivered orders only; cancellation/failure risk is not measured.",
+      "Snapshot order fields are assumed known at checkout; no revision history validates that assumption.",
+      "No validation tuning, refitting or automatic deployment; training ends March 31."
+    ]
+  },
+  "segmentation": {
+    "status": "MEASURED_DESCRIPTIVE",
+    "eligible_products": 85,
+    "excluded_products": 0,
+    "features": [
+      "log_observed_units",
+      "log_realized_unit_price",
+      "observed_sale_dates",
+      "observed_store_count"
+    ],
+    "silhouette": 0.39735138509974116,
+    "cluster_sizes": {
+      "1": 47,
+      "0": 37,
+      "2": 1
+    },
+    "limitations": [
+      "In-sample silhouette is descriptive, not held-out predictive accuracy.",
+      "Observed sales and exposure differ; missing dates are not zero sales.",
+      "No relevance labels exist for similarity ranking agreement."
+    ]
+  },
+  "anomalies": {
+    "status": "MEASURED_INJECTED_PROXY",
+    "test_days": 56,
+    "injected_days": 5,
+    "results": {
+      "isolation_forest": {
+        "roc_auc": 1.0,
+        "average_precision": 1.0,
+        "f1_at_train_95_percentile": 1.0,
+        "confusion_labels_0_1": [
+          [
+            51,
+            0
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "clean_holdout_alert_rate": 0.0,
+        "threshold": 0.5996777170050016
+      },
+      "median_absolute_deviation": {
+        "roc_auc": 1.0,
+        "average_precision": 1.0,
+        "f1_at_train_95_percentile": 1.0,
+        "confusion_labels_0_1": [
+          [
+            51,
+            0
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "clean_holdout_alert_rate": 0.0,
+        "threshold": 4.00377358490566
+      }
+    },
+    "limitations": [
+      "Only seeded upward spikes are labelled; natural anomalies are unknown.",
+      "Clean alert rate is not a false-positive rate without reviewed anomaly labels.",
+      "This univariate comparison does not evaluate seasonal STL or multivariate anomaly detection."
+    ]
+  },
+  "routing": {
+    "status": "UNVERIFIED",
+    "reason": "200+ human-reviewed queries are not supplied."
+  },
+  "retrieval": {
+    "status": "UNVERIFIED",
+    "reason": "Expanded 50-positive/15-negative benchmark not evaluated."
+  },
+  "elasticity": {
+    "status": "UNVERIFIED",
+    "reason": "Observed transaction prices have selection/exposure confounding; no causal effect is established."
+  },
+  "reorder_risk": {
+    "status": "UNVERIFIED",
+    "reason": "No stock or lead-time ground truth."
+  }
+}

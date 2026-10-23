@@ -1,6 +1,8 @@
-# M18 auxiliary evaluations - frozen protocol
+# M18 auxiliary evaluations - measured partial checkpoint
 
 Branch ml/auxiliary-models, based on showcase c27fef0a0c5cf7c84551a5940ef3ced8e9f00b93. No cross-branch merge, runtime hook or protected-branch change.
+
+Measured results: docs/auxiliary/VALIDATION.md and RESULTS.json. Delivery candidates have worse Brier scores than the prevalence baseline; no promotion. Clustering is descriptive; anomaly metrics apply only to five large injected spikes. M18 remains partial.
 
 Scope: app/auxiliary, tests/auxiliary, scripts/evaluate_auxiliary.py, requirements-auxiliary.txt, docs/auxiliary and these branch records. Read-only local CLI; results contain aggregate metrics, no customer/employee records. Dependencies are already installed and pinned separately.
 
