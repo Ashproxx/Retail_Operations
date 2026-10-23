@@ -1,10 +1,14 @@
-# M17 forecasting models — in progress
+# M17 forecasting models - measured checkpoint
 
-Active branch: ml/forecasting-models. Human-authorized dependency base: platform/ml-core@ca22a9f; permission to continue without routine confirmations was given on 2026-10-23. Main and integration/dual-model-retailops are untouched.
+Active branch: ml/forecasting-models. Authorized dependency base: platform/ml-core@ca22a9f. Main and integration/dual-model-retailops remain untouched.
 
-Checkpoint: Croston, SBA, TSB and Gamma–Poisson observed-count adapters; finite-sample split-conformal radius/bands, empirical interval coverage and pinball metrics. Seven focused ML tests pass (five inherited, two new). Missing dates are rejected; sparse workbook transactions are not relabelled as zero sales. Intervals require sufficient separate out-of-sample calibration residuals; nominal coverage is not a guarantee for dependent time-series data.
+Implemented: five inherited baselines; four observed-count methods; ETS, SARIMA and calendar SARIMAX; Ridge, Lasso and histogram boosting; tested forest and quantile adapters; separate conformal calibration. Optional dependencies are pinned in requirements-ml.txt. The frozen primary comparison covers 15 methods; forest and quantile adapters are not claimed as benchmarked.
 
-NOT COMPLETE: ETS/SARIMA/SARIMAX, linear/boosting models, independent holdout benchmarks, weather ablation, technique survey and comparisons remain to implement. No new model score or M17 completion is claimed. No dependency added at this checkpoint. Source code and tests only; no model weights or retail data sent externally.
+Evidence: [measured comparison](docs/ml/MODEL_COMPARISON.md), [scorecard](docs/ml/AIML_SCORECARD.md), [technique survey](docs/ml/TECHNIQUE_SURVEY.md). Final test was opened once after configuration and two-block design were committed at c1e872f. Do not tune on or reopen this test as a fresh holdout. Full regression: 232 passed; focused ML suite: 18 passed.
+
+Chain h=28 selected the weekday baseline before test: WAPE 13.5636%, versus histogram boosting 14.8524%, across 56 test observations. Empirical 80%/95% band coverage was only 67.86%/85.71%. Twelve series were eligible; 1,829 series were excluded without zero-filling. All 60 test fit/coverage failures are retained. Four candidates qualify for exploratory review; none is promoted.
+
+M17 PARTIAL: time-safe weather/festival ablation, global pooled boosting, measured quantile comparison, expanded importance, real benchmark and independent review remain outstanding. M18/M19 are separate pending branches. M20 integration requires exact-commit approval. No source records or weights were sent externally.
 
 ---
 
