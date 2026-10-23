@@ -1,2 +1,9 @@
-# M15 baseline core uses only requirements.txt and the Python standard library.
-# M17 owns justified, pinned optional statistical/ML dependencies.
+# Optional M17 dependencies; normal application requirements remain unchanged.
+# statsmodels provides established ETS/SARIMAX solvers; no equivalent exists in the baseline core.
+# scikit-learn supplies linear/tree/boosting estimators and train-only preprocessing.
+statsmodels==0.14.6
+scikit-learn==1.9.1
+numpy==2.5.3
+scipy==1.18.1
+pandas==3.1.0
+patsy==1.0.3
