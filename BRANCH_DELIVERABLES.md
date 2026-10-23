@@ -56,3 +56,5 @@ Publication evidence and source/main ref checks are recorded in docs/integration
 - [ ] Real dataset mapping and business validation (unchanged M13 requirement).
 
 Checks: 5 dashboard tests; 219 full regression tests. Desktop browser verified; mobile acceptance pending. See docs/ml-dashboard/VALIDATION.md.
+
+Chart correction: time axes preserve elapsed dates and null breaks prevent lines across unscored windows. Genuine zero values remain zero; missing values remain null. Node assert-based regression passed; 5 dashboard API tests passed. Browser verified h=7 separated windows and unchanged metrics. Screenshot: validation-output/ml-dashboard/dashboard-gaps.png. Full suite was not repeated for this isolated chart-only correction.
