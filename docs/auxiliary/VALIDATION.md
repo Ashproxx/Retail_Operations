@@ -31,3 +31,12 @@ Run: `python -m scripts.evaluate_auxiliary` with the existing imported local dat
 Validation: 7 focused tests; full regression result recorded in branch deliverables. Only owned auxiliary paths and branch records changed; inherited source implementations are untouched.
 
 Measured checks: 7 auxiliary tests passed; full regression 221 passed in 23.20 seconds.
+
+
+## Seasonal anomaly supplement
+
+SEASONAL_RESULTS.json records fixed implementation e384d6c on April 1-May 26 development validation, with training ending March 31. STL weekly residuals, Isolation Forest and median deviation each detected all five large mixed-sign injections (AUROC/AP/F1 1.0; confusion 51/0/0/5; clean alert rate 0). This easy proxy shows no superiority of STL over simpler methods. It is not natural anomaly accuracy, independent final-test evidence or a false-positive-rate estimate. The original RESULTS.json remains untouched. No tuning, model promotion or production wiring occurred.
+
+Tests verify that changing validation values cannot change any training threshold, source arrays remain unchanged, missing days are rejected, and later dates cannot enter the supplement. Nine focused auxiliary tests pass. See SEASONAL_PROTOCOL.md for reproduction scope and assumptions.
+
+Supplement regression: 223 passed in 29.66 seconds. Existing final-test evidence was not rerun.

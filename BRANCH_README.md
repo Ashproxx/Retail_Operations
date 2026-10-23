@@ -4,13 +4,13 @@ Branch ml/auxiliary-models, based on showcase c27fef0a0c5cf7c84551a5940ef3ced8e9
 
 Measured results: docs/auxiliary/VALIDATION.md and RESULTS.json. Delivery candidates have worse Brier scores than the prevalence baseline; no promotion. Clustering is descriptive; anomaly metrics apply only to five large injected spikes. M18 remains partial.
 
-Scope: app/auxiliary, tests/auxiliary, scripts/evaluate_auxiliary.py, requirements-auxiliary.txt, docs/auxiliary and these branch records. Read-only local CLI; results contain aggregate metrics, no customer/employee records. Dependencies are already installed and pinned separately.
+Scope: app/auxiliary, tests/auxiliary, scripts/evaluate_auxiliary.py, scripts/evaluate_seasonal_anomalies.py, requirements-auxiliary.txt, docs/auxiliary and these branch records. Read-only local CLI; results contain aggregate metrics, no customer/employee records. Dependencies are already installed and pinned separately.
 
 Fixed protocol before first test evaluation: delivery models train on resolved delivered orders sold and resolved by March 31; validation April 1-August 4, test August 5-September 29. Labels must be resolved by each partition end. No tuning or refitting. Logistic C=1 and forest 100 trees/depth 8/min-leaf 20 compare with training prevalence. Threshold .5. Preprocessors fit only training rows; each order counted once; conflicting lines excluded. Record ROC-AUC, average precision, Brier, calibration bins, ECE and confusion matrices. Missing outcome labels are not negatives.
 
 Segmentation: train-period observed product features, fixed k=3 and seed 42; report descriptive in-sample silhouette, not held-out accuracy. Anomalies: train-period daily counts; five seeded upward spikes in a copy of the 56-day test block; fixed IsolationForest versus median-absolute-deviation baseline, thresholds from training 95th percentile. No natural anomaly labels, no false-positive-rate claim. This separate proxy task does not retune M17 forecasting.
 
-Pending/unverified: human-reviewed router labels, expanded signed-RAG benchmark, STL seasonal anomaly comparison, similarity ranking agreement, price-effect uncertainty and stockout labels. No acceptance or real-world performance claim before measurement. M20 requires exact-commit approval.
+Pending/unverified: human-reviewed router labels, expanded signed-RAG benchmark, independent natural-anomaly validation, similarity ranking agreement, price-effect uncertainty and stockout labels. No acceptance or real-world performance claim before measurement. M20 requires exact-commit approval.
 
 ---
 
@@ -58,3 +58,10 @@ Final validation evidence: `8d0d2b444a6cc3382f11bc3720000e7c93ba1f26`, successfu
 - [x] Windows launch and presentation guide: [DASHBOARD.md](docs/integration/DASHBOARD.md).
 - [x] Full local Python suite: 180 passed; source-preservation guard passed.
 - [ ] Real dataset mapping and business validation (unchanged M13 requirement).
+
+
+## Seasonal anomaly supplement
+
+SEASONAL_RESULTS.json records fixed implementation e384d6c on April 1-May 26 development validation, with training ending March 31. STL weekly residuals, Isolation Forest and median deviation each detected all five large mixed-sign injections (AUROC/AP/F1 1.0; confusion 51/0/0/5; clean alert rate 0). This easy proxy shows no superiority of STL over simpler methods. It is not natural anomaly accuracy, independent final-test evidence or a false-positive-rate estimate. The original RESULTS.json remains untouched. No tuning, model promotion or production wiring occurred.
+
+Tests verify that changing validation values cannot change any training threshold, source arrays remain unchanged, missing days are rejected, and later dates cannot enter the supplement. Nine focused auxiliary tests pass. See SEASONAL_PROTOCOL.md for reproduction scope and assumptions.
