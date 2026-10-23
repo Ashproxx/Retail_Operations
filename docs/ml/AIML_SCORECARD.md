@@ -1,7 +1,7 @@
 # AIML scorecard
 
 Generated from validation-output\ml\baseline.json.
-Source: synthetic-workbook; code: c27fef0a0c5cf7c84551a5940ef3ced8e9f00b93; run: 2026-10-23T07:15:49.142605+00:00.
+Source: synthetic-workbook; code: 9db3ba47058abf37c86c6c40195db3f70bf5525f; run: 2026-10-23T07:18:10.564964+00:00.
 
 No independent test accuracy is verified by a validation-only run.
 
