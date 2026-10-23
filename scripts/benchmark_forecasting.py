@@ -115,11 +115,13 @@ def run(database,output,phase):
                 candidates=[r for r in validation if r['series']==identity and len(r.get('folds',[]))==4]
                 for chosen_row in chosen:
                     h=chosen_row['horizon'];origin=TEST_START-timedelta(days=h+1)
-                    targets=[TEST_START+timedelta(days=i) for i in range(h)]
+                    targets=[TEST_START+timedelta(days=block+i) for block in (0,28) for i in range(h)]
                     for candidate in candidates:
                         name=candidate['model'];row={'series':identity,'model':name,'horizon':h,'selected_before_test':name==chosen_row['candidate']}
                         try:
                             row.update(evaluate(factory(name),days,values,origin,targets))
+                            _,train=training(days,values,origin)
+                            row['blocks']=[{'start':row['targets'][offset], 'metrics':metrics(row['actual'][offset:offset+h],row['predicted'][offset:offset+h],train)} for offset in (0,h)]
                             calibration=candidate['folds'][3]
                             residuals=[a-p for t,a,p in zip(calibration['targets'],calibration['actual'],calibration['predicted']) if date.fromisoformat(t)<=origin]
                             for coverage in (.8,.95):
@@ -130,7 +132,7 @@ def run(database,output,phase):
                         results.append(row)
     payload={'phase':phase,'source_label':'synthetic-workbook','seed':42,'code_commit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
              'implementation_hash':implementation_hash(),'training_hash':training_hash,'results':results,'excluded':excluded,
-             'test_window':'2026-08-05 to 2026-09-29 reserved; first h-day block scored with h-day embargo',
+             'test_window':'2026-08-05 to 2026-09-29 reserved; two h-day blocks starting Aug 5 and Sep 2; fixed pre-test origin and explicit h-day first-block embargo',
              'weather_ablation':'UNVERIFIED: no as-of historical forecast vintages; future observed ERA5 must not be leaked',
              'promotion':'No automatic promotion; independent significance and segment review required'}
     results_file.write_text(json.dumps(payload,indent=2,allow_nan=False),encoding='utf-8')
