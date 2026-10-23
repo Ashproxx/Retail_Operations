@@ -20,3 +20,21 @@ def test_embedding_vocabulary_is_document_only():
     before=dict(embedder.vectorizer.vocabulary_)
     assert not any(embedder.encode(['unseenword'])[0])
     assert embedder.vectorizer.vocabulary_==before
+
+
+def test_persistent_store_releases_windows_files():
+    from pathlib import Path
+    from tempfile import TemporaryDirectory
+    from app.rag.store import ChromaStore
+    from app.rag.contracts import Document
+    from app.rag.ingestion import chunk_document
+    from app.rag.contracts import RagSettings
+    with TemporaryDirectory() as folder:
+        store=ChromaStore(Path(folder)/'chroma',LexicalEmbedder(['return clothing with receipt']))
+        try:
+            document=Document(document_id='test',version='1',source='fixture://test',domain='support',
+                              access_tag='FIXTURE',text='return clothing with receipt',fixture=True)
+            store.add(chunk_document(document,RagSettings()))
+            assert store.count()==1
+        finally:store.client.close()
+    assert not Path(folder).exists()

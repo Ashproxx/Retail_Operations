@@ -1,0 +1,690 @@
+{
+  "status": "MEASURED_AUTHORED_FIXTURE",
+  "human_reviewed": false,
+  "embedder": "auxiliary-tfidf-unigram-bigram-v1",
+  "fixture_sha256": "6b100647f7f6de09a2cb9d02ee4804da6023670836ce89158bf86f9962524446",
+  "code_commit": "72282a4b1e5adb1913b682f4b9e765b039f20b3c",
+  "metrics": {
+    "positive_queries": 50,
+    "negative_queries": 15,
+    "recall_at_1": 0.98,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 0.99,
+    "ndcg_at_3": 0.9926185950714291,
+    "abstention_precision": 0.3125,
+    "negative_abstention_rate": 1.0,
+    "positive_evidence_rate": 0.34
+  },
+  "scope_leaks": 0,
+  "positive_results": [
+    {
+      "id": "01-1",
+      "expected": "returns-window",
+      "ranked": [
+        "returns-window",
+        "store-pickup",
+        "damaged-items"
+      ],
+      "status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "01-2",
+      "expected": "returns-window",
+      "ranked": [
+        "returns-window",
+        "damaged-items",
+        "store-pickup"
+      ],
+      "status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "01-3",
+      "expected": "returns-window",
+      "ranked": [
+        "returns-window",
+        "exchange-size",
+        "promotion-rules"
+      ],
+      "status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "01-4",
+      "expected": "returns-window",
+      "ranked": [
+        "returns-window",
+        "payment-receipt",
+        "promotion-rules"
+      ],
+      "status": "evidence_found",
+      "iterations": 1,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "01-5",
+      "expected": "returns-window",
+      "ranked": [
+        "returns-window",
+        "exchange-size",
+        "store-pickup"
+      ],
+      "status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "02-1",
+      "expected": "delivery-tracking",
+      "ranked": [
+        "delivery-tracking",
+        "store-hours",
+        "exchange-size"
+      ],
+      "status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "02-2",
+      "expected": "delivery-tracking",
+      "ranked": [
+        "delivery-tracking",
+        "store-pickup",
+        "damaged-items"
+      ],
+      "status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "02-3",
+      "expected": "delivery-tracking",
+      "ranked": [
+        "delivery-tracking",
+        "payment-receipt",
+        "promotion-rules"
+      ],
+      "status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "02-4",
+      "expected": "delivery-tracking",
+      "ranked": [
+        "delivery-tracking",
+        "payment-receipt",
+        "promotion-rules"
+      ],
+      "status": "evidence_found",
+      "iterations": 1,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "02-5",
+      "expected": "delivery-tracking",
+      "ranked": [
+        "delivery-tracking",
+        "store-pickup",
+        "damaged-items"
+      ],
+      "status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "03-1",
+      "expected": "stock-replenishment",
+      "ranked": [
+        "stock-replenishment",
+        "payment-receipt",
+        "promotion-rules"
+      ],
+      "status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "03-2",
+      "expected": "stock-replenishment",
+      "ranked": [
+        "stock-replenishment",
+        "store-pickup",
+        "damaged-items"
+      ],
+      "status": "evidence_found",
+      "iterations": 1,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "03-3",
+      "expected": "stock-replenishment",
+      "ranked": [
+        "stock-replenishment",
+        "payment-receipt",
+        "promotion-rules"
+      ],
+      "status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "03-4",
+      "expected": "stock-replenishment",
+      "ranked": [
+        "stock-replenishment",
+        "returns-window",
+        "payment-receipt"
+      ],
+      "status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "03-5",
+      "expected": "stock-replenishment",
+      "ranked": [
+        "stock-replenishment",
+        "promotion-rules",
+        "delivery-tracking"
+      ],
+      "status": "evidence_found",
+      "iterations": 1,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "04-1",
+      "expected": "promotion-rules",
+      "ranked": [
+        "promotion-rules",
+        "damaged-items",
+        "store-pickup"
+      ],
+      "status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "04-2",
+      "expected": "promotion-rules",
+      "ranked": [
+        "promotion-rules",
+        "exchange-size",
+        "stock-replenishment"
+      ],
+      "status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "04-3",
+      "expected": "promotion-rules",
+      "ranked": [
+        "promotion-rules",
+        "store-pickup",
+        "damaged-items"
+      ],
+      "status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "04-4",
+      "expected": "promotion-rules",
+      "ranked": [
+        "promotion-rules",
+        "store-pickup",
+        "damaged-items"
+      ],
+      "status": "evidence_found",
+      "iterations": 1,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "04-5",
+      "expected": "promotion-rules",
+      "ranked": [
+        "promotion-rules",
+        "exchange-size",
+        "privacy-request"
+      ],
+      "status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "05-1",
+      "expected": "damaged-items",
+      "ranked": [
+        "damaged-items",
+        "store-pickup",
+        "returns-window"
+      ],
+      "status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "05-2",
+      "expected": "damaged-items",
+      "ranked": [
+        "damaged-items",
+        "stock-replenishment",
+        "promotion-rules"
+      ],
+      "status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "05-3",
+      "expected": "damaged-items",
+      "ranked": [
+        "damaged-items",
+        "stock-replenishment",
+        "payment-receipt"
+      ],
+      "status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "05-4",
+      "expected": "damaged-items",
+      "ranked": [
+        "damaged-items",
+        "store-pickup",
+        "privacy-request"
+      ],
+      "status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "05-5",
+      "expected": "damaged-items",
+      "ranked": [
+        "damaged-items",
+        "store-pickup",
+        "exchange-size"
+      ],
+      "status": "evidence_found",
+      "iterations": 1,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "06-1",
+      "expected": "store-hours",
+      "ranked": [
+        "store-hours",
+        "store-pickup",
+        "delivery-tracking"
+      ],
+      "status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "06-2",
+      "expected": "store-hours",
+      "ranked": [
+        "store-hours",
+        "store-pickup",
+        "delivery-tracking"
+      ],
+      "status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "06-3",
+      "expected": "store-hours",
+      "ranked": [
+        "store-hours",
+        "store-pickup",
+        "delivery-tracking"
+      ],
+      "status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "06-4",
+      "expected": "store-hours",
+      "ranked": [
+        "store-hours",
+        "store-pickup",
+        "delivery-tracking"
+      ],
+      "status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "06-5",
+      "expected": "store-hours",
+      "ranked": [
+        "store-hours",
+        "store-pickup",
+        "damaged-items"
+      ],
+      "status": "evidence_found",
+      "iterations": 1,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "07-1",
+      "expected": "store-pickup",
+      "ranked": [
+        "store-pickup",
+        "damaged-items",
+        "store-hours"
+      ],
+      "status": "evidence_found",
+      "iterations": 1,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "07-2",
+      "expected": "store-pickup",
+      "ranked": [
+        "store-pickup",
+        "store-hours",
+        "privacy-request"
+      ],
+      "status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "07-3",
+      "expected": "store-pickup",
+      "ranked": [
+        "store-pickup",
+        "damaged-items",
+        "delivery-tracking"
+      ],
+      "status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "07-4",
+      "expected": "store-pickup",
+      "ranked": [
+        "store-pickup",
+        "damaged-items",
+        "returns-window"
+      ],
+      "status": "evidence_found",
+      "iterations": 1,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "07-5",
+      "expected": "store-pickup",
+      "ranked": [
+        "store-pickup",
+        "stock-replenishment",
+        "damaged-items"
+      ],
+      "status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "08-1",
+      "expected": "payment-receipt",
+      "ranked": [
+        "payment-receipt",
+        "promotion-rules",
+        "privacy-request"
+      ],
+      "status": "evidence_found",
+      "iterations": 1,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "08-2",
+      "expected": "payment-receipt",
+      "ranked": [
+        "returns-window",
+        "payment-receipt",
+        "store-pickup"
+      ],
+      "status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "08-3",
+      "expected": "payment-receipt",
+      "ranked": [
+        "payment-receipt",
+        "returns-window",
+        "exchange-size"
+      ],
+      "status": "evidence_found",
+      "iterations": 1,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "08-4",
+      "expected": "payment-receipt",
+      "ranked": [
+        "payment-receipt",
+        "privacy-request",
+        "damaged-items"
+      ],
+      "status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "08-5",
+      "expected": "payment-receipt",
+      "ranked": [
+        "payment-receipt",
+        "returns-window",
+        "privacy-request"
+      ],
+      "status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "09-1",
+      "expected": "exchange-size",
+      "ranked": [
+        "exchange-size",
+        "promotion-rules",
+        "store-hours"
+      ],
+      "status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "09-2",
+      "expected": "exchange-size",
+      "ranked": [
+        "exchange-size",
+        "returns-window",
+        "store-pickup"
+      ],
+      "status": "evidence_found",
+      "iterations": 2,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "09-3",
+      "expected": "exchange-size",
+      "ranked": [
+        "exchange-size",
+        "payment-receipt",
+        "store-hours"
+      ],
+      "status": "evidence_found",
+      "iterations": 1,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "09-4",
+      "expected": "exchange-size",
+      "ranked": [
+        "exchange-size",
+        "stock-replenishment",
+        "store-hours"
+      ],
+      "status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "09-5",
+      "expected": "exchange-size",
+      "ranked": [
+        "exchange-size",
+        "payment-receipt",
+        "returns-window"
+      ],
+      "status": "evidence_found",
+      "iterations": 1,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "10-1",
+      "expected": "privacy-request",
+      "ranked": [
+        "privacy-request",
+        "stock-replenishment",
+        "payment-receipt"
+      ],
+      "status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "10-2",
+      "expected": "privacy-request",
+      "ranked": [
+        "privacy-request",
+        "payment-receipt",
+        "promotion-rules"
+      ],
+      "status": "evidence_found",
+      "iterations": 1,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "10-3",
+      "expected": "privacy-request",
+      "ranked": [
+        "privacy-request",
+        "store-pickup",
+        "damaged-items"
+      ],
+      "status": "insufficient_evidence",
+      "iterations": 3,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "10-4",
+      "expected": "privacy-request",
+      "ranked": [
+        "privacy-request",
+        "returns-window",
+        "damaged-items"
+      ],
+      "status": "evidence_found",
+      "iterations": 1,
+      "integrity_rejections": 0
+    },
+    {
+      "id": "10-5",
+      "expected": "privacy-request",
+      "ranked": [
+        "privacy-request",
+        "returns-window",
+        "damaged-items"
+      ],
+      "status": "evidence_found",
+      "iterations": 1,
+      "integrity_rejections": 0
+    }
+  ],
+  "negative_results": [
+    {
+      "question": "What is the exact refund processing fee?",
+      "status": "insufficient_evidence"
+    },
+    {
+      "question": "What is the store manager personal phone number?",
+      "status": "insufficient_evidence"
+    },
+    {
+      "question": "What is my current order tracking number?",
+      "status": "insufficient_evidence"
+    },
+    {
+      "question": "How many blue shirts are in stock right now?",
+      "status": "insufficient_evidence"
+    },
+    {
+      "question": "What are the store opening hours on Saturday?",
+      "status": "insufficient_evidence"
+    },
+    {
+      "question": "What is the exact price of size medium jeans?",
+      "status": "insufficient_evidence"
+    },
+    {
+      "question": "What is the maximum monetary value of a refund?",
+      "status": "insufficient_evidence"
+    },
+    {
+      "question": "Which courier has my parcel today?",
+      "status": "insufficient_evidence"
+    },
+    {
+      "question": "What is the employee salary for this month?",
+      "status": "insufficient_evidence"
+    },
+    {
+      "question": "Will a supplier shipment arrive tomorrow?",
+      "status": "insufficient_evidence"
+    },
+    {
+      "question": "What is the support account password?",
+      "status": "insufficient_evidence"
+    },
+    {
+      "question": "What is the customer card PIN?",
+      "status": "insufficient_evidence"
+    },
+    {
+      "question": "How many days does account deletion take?",
+      "status": "insufficient_evidence"
+    },
+    {
+      "question": "Can I combine three discount coupons?",
+      "status": "insufficient_evidence"
+    },
+    {
+      "question": "What is the address of the pickup counter?",
+      "status": "insufficient_evidence"
+    }
+  ],
+  "limitations": [
+    "Lexical TF-IDF baseline, not pretrained semantic embedding performance.",
+    "50 authored positives and 15 negatives across 10 invented policy documents; not human reviewed.",
+    "No held-out natural query distribution, parameter tuning, or deployment-quality claim.",
+    "Pipeline evidence-found status does not establish answer correctness or entailment.",
+    "Abstention and ranking are measured separately; failures are retained without changing labels."
+  ]
+}

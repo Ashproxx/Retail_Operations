@@ -5,7 +5,8 @@
     "offline delivery evaluation",
     "descriptive product clusters",
     "injected anomaly proxy",
-    "training-only STL validation supplement"
+    "training-only STL validation supplement",
+    "authored lexical signed-RAG evaluation"
   ],
   "edges": [
     [
@@ -15,6 +16,10 @@
     [
       "pre-test daily sales",
       "training-only STL validation supplement"
+    ],
+    [
+      "fifty positive and fifteen negative fixtures",
+      "authored lexical signed-RAG evaluation"
     ]
   ],
   "runtime_integration": false

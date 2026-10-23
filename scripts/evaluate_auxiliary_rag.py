@@ -22,8 +22,10 @@ def main():
     embedder=LexicalEmbedder([r['text'] for r in dataset['documents']])
     with TemporaryDirectory() as folder:
         root=Path(folder);db=Database('sqlite:///'+(root/'evaluation.db').as_posix());Repository(db)
+        store=None
         try:
-            service=SignedRag(db,secrets.token_bytes(32),ChromaStore(root/'chroma',embedder))
+            store=ChromaStore(root/'chroma',embedder)
+            service=SignedRag(db,secrets.token_bytes(32),store)
             admin=RequestContext(session_id='evaluation',principal_id='fixture-admin',role='ADMIN')
             user=RequestContext(session_id='evaluation',principal_id='fixture-support',role='SUPPORT_AGENT',store_ids=['FIXTURE'])
             for row in dataset['documents']:
@@ -57,7 +59,10 @@ def main():
                     'Abstention and ranking are measured separately; failures are retained without changing labels.']}
             output.write_text(json.dumps(report,indent=2,allow_nan=False)+'\n',encoding='utf-8')
             print(json.dumps(report['metrics'],indent=2))
-        finally:db.close()
+        finally:
+            try:
+                if store is not None:store.client.close()
+            finally:db.close()
 
 
 if __name__=='__main__':main()

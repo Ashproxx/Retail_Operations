@@ -40,3 +40,12 @@ SEASONAL_RESULTS.json records fixed implementation e384d6c on April 1-May 26 dev
 Tests verify that changing validation values cannot change any training threshold, source arrays remain unchanged, missing days are rejected, and later dates cannot enter the supplement. Nine focused auxiliary tests pass. See SEASONAL_PROTOCOL.md for reproduction scope and assumptions.
 
 Supplement regression: 223 passed in 29.66 seconds. Existing final-test evidence was not rerun.
+
+
+## Expanded retrieval development fixture
+
+Frozen implementation 72282a4 measured 50 authored positives and 15 negatives over ten fictional policy documents using a local TF-IDF baseline and the unchanged signed RAG pipeline. Recall@1 0.98, Recall@3 1.00, MRR@3 0.99, nDCG@3 0.9926. All 15 negatives abstained, but only 17/50 positives returned evidence: abstention precision is 0.3125. Strong raw retrieval does not establish usable answer coverage. No thresholds or labels were changed after observing these results. No scope leaks were observed with the forbidden-store decoy. These labels are NOT human-reviewed and are not actual retail policy.
+
+The first run wrote complete results but exited with a Windows file-lock cleanup error. The evaluator now explicitly closes the Chroma client before temporary-directory cleanup; a focused lifecycle test verifies removal after an indexed document. Frozen metrics were preserved and were not rerun to conceal failures. Automatic approval review rejected a later cleanup command as blocked by policy, so the original temporary artifact was left alone. See RAG_RESULTS.json, RAG_FIXTURE.json and RAG_PROTOCOL.md. No model download, external request or production wiring.
+
+Expanded retrieval checks: 12 auxiliary tests in total; full regression 226 passed in 28.15 seconds. Chroma lifecycle test passed on Windows.

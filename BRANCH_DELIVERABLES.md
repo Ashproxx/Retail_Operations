@@ -10,7 +10,7 @@ Fixed protocol before first test evaluation: delivery models train on resolved d
 
 Segmentation: train-period observed product features, fixed k=3 and seed 42; report descriptive in-sample silhouette, not held-out accuracy. Anomalies: train-period daily counts; five seeded upward spikes in a copy of the 56-day test block; fixed IsolationForest versus median-absolute-deviation baseline, thresholds from training 95th percentile. No natural anomaly labels, no false-positive-rate claim. This separate proxy task does not retune M17 forecasting.
 
-Pending/unverified: human-reviewed router labels, expanded signed-RAG benchmark, independent natural-anomaly validation, similarity ranking agreement, price-effect uncertainty and stockout labels. No acceptance or real-world performance claim before measurement. M20 requires exact-commit approval.
+Pending/unverified: human-reviewed router labels, human-reviewed semantic retrieval acceptance, independent natural-anomaly validation, similarity ranking agreement, price-effect uncertainty and stockout labels. No acceptance or real-world performance claim before measurement. M20 requires exact-commit approval.
 
 ---
 
@@ -67,3 +67,10 @@ Measured checks: 7 auxiliary tests passed; full regression 221 passed in 23.20 s
 SEASONAL_RESULTS.json records fixed implementation e384d6c on April 1-May 26 development validation, with training ending March 31. STL weekly residuals, Isolation Forest and median deviation each detected all five large mixed-sign injections (AUROC/AP/F1 1.0; confusion 51/0/0/5; clean alert rate 0). This easy proxy shows no superiority of STL over simpler methods. It is not natural anomaly accuracy, independent final-test evidence or a false-positive-rate estimate. The original RESULTS.json remains untouched. No tuning, model promotion or production wiring occurred.
 
 Tests verify that changing validation values cannot change any training threshold, source arrays remain unchanged, missing days are rejected, and later dates cannot enter the supplement. Nine focused auxiliary tests pass. See SEASONAL_PROTOCOL.md for reproduction scope and assumptions.
+
+
+## Expanded retrieval development fixture
+
+Frozen implementation 72282a4 measured 50 authored positives and 15 negatives over ten fictional policy documents using a local TF-IDF baseline and the unchanged signed RAG pipeline. Recall@1 0.98, Recall@3 1.00, MRR@3 0.99, nDCG@3 0.9926. All 15 negatives abstained, but only 17/50 positives returned evidence: abstention precision is 0.3125. Strong raw retrieval does not establish usable answer coverage. No thresholds or labels were changed after observing these results. No scope leaks were observed with the forbidden-store decoy. These labels are NOT human-reviewed and are not actual retail policy.
+
+The first run wrote complete results but exited with a Windows file-lock cleanup error. The evaluator now explicitly closes the Chroma client before temporary-directory cleanup; a focused lifecycle test verifies removal after an indexed document. Frozen metrics were preserved and were not rerun to conceal failures. Automatic approval review rejected a later cleanup command as blocked by policy, so the original temporary artifact was left alone. See RAG_RESULTS.json, RAG_FIXTURE.json and RAG_PROTOCOL.md. No model download, external request or production wiring.
