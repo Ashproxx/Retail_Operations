@@ -4,9 +4,9 @@ Branch ui/ml-dashboard from c27fef0a0c5cf7c84551a5940ef3ced8e9f00b93. Scope: app
 
 Candidate `/ml` shows frozen selected-before-test curves, 80% interval limits, measured 80%/95% coverage, metrics, comparison tables, exclusions and auxiliary status. Coffee/bronze styling, responsive layout, reduced-motion support and accessible table alternatives. Tokens remain in memory only. APIs authenticate and audit reads; managers/analysts see authorized stores only; global aggregate leaderboard and auxiliary evidence are ADMIN-only; HR roles denied. No client-supplied scope is trusted.
 
-Reports are exported as local data from pinned commits: M17 6b86795 and M18 70b0241. Source code is not merged. Checksums detect accidental report changes; this is not a signature against a malicious local administrator. Missing evidence fails closed. Independent launcher port 8002; normal server remains unchanged. Live feed honestly reports unavailable until M20 integration approval.
+Reports are exported as local data from pinned commits: M17 primary 6b86795, supplement 7ad9a4a and M18 4a26af9. Source code is not merged. Checksums detect accidental report changes; this is not a signature against a malicious local administrator. Missing evidence fails closed. Independent launcher port 8002; normal server remains unchanged. Live feed honestly reports unavailable until M20 integration approval.
 
-Remaining M19 scope: actual live freshness/stream wiring, missing-data/feature-importance views and real benchmark comparisons cannot be demonstrated by the current evidence. M20 still needs exact-commit approval. No training, promotion or external transmission occurs in the dashboard.
+Remaining M19 scope: actual live freshness/stream wiring, missing-data and broader importance views and real benchmark comparisons cannot be demonstrated by the current evidence. M20 still needs exact-commit approval. No training, promotion or external transmission occurs in the dashboard.
 
 ---
 
@@ -54,3 +54,10 @@ Final validation evidence: `8d0d2b444a6cc3382f11bc3720000e7c93ba1f26`, successfu
 - [x] Windows launch and presentation guide: [DASHBOARD.md](docs/integration/DASHBOARD.md).
 - [x] Full local Python suite: 180 passed; source-preservation guard passed.
 - [ ] Real dataset mapping and business validation (unchanged M13 requirement).
+
+
+## Supplemental evidence panel
+
+Admin-only feature-importance and quantile checks now read the pinned M17 supplement at 7ad9a4a. The panel explicitly labels the fourteen-day exploratory validation window and retains negative feature-importance values. Global chain evidence is omitted entirely from manager/analyst responses. Existing frozen test charts are unchanged. Re-run the local export script to add supplement.json; missing/corrupt evidence still fails closed.
+
+Five dashboard API tests passed, including supplement suppression for scoped roles and ADMIN access. JavaScript syntax check passed. Visual browser acceptance of this added table remains pending; no new mobile acceptance is claimed. Real-time wiring still awaits M20 approval. No model is promoted.

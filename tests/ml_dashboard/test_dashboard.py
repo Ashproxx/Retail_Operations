@@ -24,7 +24,8 @@ def dashboard(tmp_path):
         leaderboard=[{'global':'private'}],test_failures=[{'series':['store','S2']}],
         excluded_by_level={'store':9},limitations=['fixture only'])
     manifest={}
-    for name,data in [('forecast.json',report),('auxiliary.json',{'private':'global'})]:
+    for name,data in [('forecast.json',report),('auxiliary.json',{'private':'global'}),
+                      ('supplement.json',{'importance':{'private':'chain-only'}})]:
         raw=json.dumps(data).encode();(tmp_path/name).write_bytes(raw)
         manifest[name]={'sha256':hashlib.sha256(raw).hexdigest()}
     (tmp_path/'manifest.json').write_text(json.dumps(manifest))
@@ -51,6 +52,7 @@ def test_authorization_filters_every_series_and_global_aggregate(dashboard,role)
     assert [r['series'] for r in data['decisions']]==[['store','S1']]
     assert data['leaderboard']==[] and data['test_failures']==[]
     assert data['auxiliary'] is None and data['excluded_by_level'] is None
+    assert data['supplement'] is None
     assert 'S2' not in response.text and 'private' not in response.text
 
 
@@ -58,6 +60,7 @@ def test_admin_and_hr_permissions(dashboard):
     client,headers,_=dashboard
     assert len(client.get('/api/ml/results',headers=headers('ADMIN')).json()['curves'])==3
     assert client.get('/api/ml/results',headers=headers('HR_ADMIN')).status_code==403
+    assert client.get('/api/ml/results',headers=headers('ADMIN')).json()['supplement']['importance']['private']=='chain-only'
 
 
 def test_corrupt_or_missing_evidence_fails_closed(dashboard):

@@ -1,1 +1,25 @@
-{"branch":"ui/ml-dashboard","base":"c27fef0a0c5cf7c84551a5940ef3ced8e9f00b93","nodes":["authenticated model results","scoped forecast curves","aggregate research evidence"],"edges":[["pinned local report exports","authorized dashboard API"],["authorized dashboard API","accessible charts and tables"]],"production_integration":false}
+{
+  "branch": "ui/ml-dashboard",
+  "base": "c27fef0a0c5cf7c84551a5940ef3ced8e9f00b93",
+  "nodes": [
+    "authenticated model results",
+    "scoped forecast curves",
+    "aggregate research evidence",
+    "admin-only exploratory importance panel"
+  ],
+  "edges": [
+    [
+      "pinned local report exports",
+      "authorized dashboard API"
+    ],
+    [
+      "authorized dashboard API",
+      "accessible charts and tables"
+    ],
+    [
+      "pinned M17 supplement",
+      "admin-only exploratory importance panel"
+    ]
+  ],
+  "production_integration": false
+}

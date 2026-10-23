@@ -5,7 +5,8 @@ from pathlib import Path
 import subprocess
 
 SOURCES = {'forecast.json': ('6b86795e4cf7e2b3bc54f807f87813921c7539b5','docs/ml/FORECAST_RESULTS.json'),
-           'auxiliary.json': ('70b02411c3f07782a135111d168f10f2129785ab','docs/auxiliary/RESULTS.json')}
+           'auxiliary.json': ('4a26af9b20958f7d4f160979ceb94f23067ed0d2','docs/auxiliary/RESULTS.json'),
+           'supplement.json': ('7ad9a4adaeccd18da383502739aa7a9020fc9381','docs/ml/QUANTILE_IMPORTANCE_RESULTS.json')}
 
 
 def main():

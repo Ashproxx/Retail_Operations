@@ -54,6 +54,7 @@ def install(api, reports=Path('validation-output/ml-dashboard')):
                 report = evidence(reports, 'forecast.json')
                 data = scoped_report(report, ctx)
                 data['auxiliary'] = evidence(reports, 'auxiliary.json') if ctx.role == Role.ADMIN else None
+                data['supplement'] = evidence(reports, 'supplement.json') if ctx.role == Role.ADMIN else None
             except (OSError, ValueError, KeyError, TypeError):
                 raise HTTPException(503, 'Verified research reports are unavailable. Export the pinned evidence locally.') from None
             data['live'] = {'status': 'unavailable', 'message': 'Live feed is not connected on this isolated review branch.'}

@@ -9,3 +9,10 @@ Responsive CSS and reduced-motion behavior are implemented. Mobile viewport/brow
 Reports are checksum-checked local data exports, not merged source code. Their measured results retain synthetic/injected/descriptive labels, selection-before-test status, failures and exclusions. No model is promoted. Local file checksums do not protect against an administrator replacing both data and manifest.
 
 Chart correction: time axes preserve elapsed dates and null breaks prevent lines across unscored windows. Genuine zero values remain zero; missing values remain null. Node assert-based regression passed; 5 dashboard API tests passed. Browser verified h=7 separated windows and unchanged metrics. Screenshot: validation-output/ml-dashboard/dashboard-gaps.png. Full suite was not repeated for this isolated chart-only correction.
+
+
+## Supplemental evidence panel
+
+Admin-only feature-importance and quantile checks now read the pinned M17 supplement at 7ad9a4a. The panel explicitly labels the fourteen-day exploratory validation window and retains negative feature-importance values. Global chain evidence is omitted entirely from manager/analyst responses. Existing frozen test charts are unchanged. Re-run the local export script to add supplement.json; missing/corrupt evidence still fails closed.
+
+Five dashboard API tests passed, including supplement suppression for scoped roles and ADMIN access. JavaScript syntax check passed. Visual browser acceptance of this added table remains pending; no new mobile acceptance is claimed. Real-time wiring still awaits M20 approval. No model is promoted.
