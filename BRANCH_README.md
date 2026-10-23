@@ -1,3 +1,15 @@
+# M17 forecasting models — in progress
+
+Active branch: ml/forecasting-models. Human-authorized dependency base: platform/ml-core@ca22a9f; permission to continue without routine confirmations was given on 2026-10-23. Main and integration/dual-model-retailops are untouched.
+
+Checkpoint: Croston, SBA, TSB and Gamma–Poisson observed-count adapters; finite-sample split-conformal radius/bands, empirical interval coverage and pinball metrics. Seven focused ML tests pass (five inherited, two new). Missing dates are rejected; sparse workbook transactions are not relabelled as zero sales. Intervals require sufficient separate out-of-sample calibration residuals; nominal coverage is not a guarantee for dependent time-series data.
+
+NOT COMPLETE: ETS/SARIMA/SARIMAX, linear/boosting models, independent holdout benchmarks, weather ablation, technique survey and comparisons remain to implement. No new model score or M17 completion is claimed. No dependency added at this checkpoint. Source code and tests only; no model weights or retail data sent externally.
+
+---
+
+## Inherited branch record
+
 # M15 ML core
 
 Branch: platform/ml-core. Base: integration/dual-model-retailops@c27fef0a0c5cf7c84551a5940ef3ced8e9f00b93. User approved work on all four addendum areas on 2026-10-23. M14 design is on docs/ml-methodology@e8f8280; no source-branch merge is performed.

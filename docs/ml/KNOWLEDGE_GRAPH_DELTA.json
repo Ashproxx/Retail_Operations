@@ -1,5 +1,5 @@
 {
-  "branch": "platform/ml-core",
+  "branch": "ml/forecasting-models",
   "status": "framework only; no test accuracy claim",
   "node_types": [
     "ml_model",
@@ -31,6 +31,14 @@
       "type": "file"
     },
     {
+      "id": "app/ml/intermittent.py",
+      "type": "file"
+    },
+    {
+      "id": "app/ml/intervals.py",
+      "type": "file"
+    },
+    {
       "id": "app/ml/models.py",
       "type": "file"
     },
@@ -53,57 +61,76 @@
     {
       "id": "tests/ml/test_core.py",
       "type": "file"
+    },
+    {
+      "id": "tests/ml/test_forecasting_extensions.py",
+      "type": "file"
     }
   ],
   "edges": [
     {
-      "source": "platform/ml-core",
+      "source": "ml/forecasting-models",
       "target": "app/ml/__init__.py",
       "type": "owns"
     },
     {
-      "source": "platform/ml-core",
+      "source": "ml/forecasting-models",
       "target": "app/ml/evaluation.py",
       "type": "owns"
     },
     {
-      "source": "platform/ml-core",
+      "source": "ml/forecasting-models",
       "target": "app/ml/explain.py",
       "type": "owns"
     },
     {
-      "source": "platform/ml-core",
+      "source": "ml/forecasting-models",
       "target": "app/ml/features.py",
       "type": "owns"
     },
     {
-      "source": "platform/ml-core",
+      "source": "ml/forecasting-models",
+      "target": "app/ml/intermittent.py",
+      "type": "owns"
+    },
+    {
+      "source": "ml/forecasting-models",
+      "target": "app/ml/intervals.py",
+      "type": "owns"
+    },
+    {
+      "source": "ml/forecasting-models",
       "target": "app/ml/models.py",
       "type": "owns"
     },
     {
-      "source": "platform/ml-core",
+      "source": "ml/forecasting-models",
       "target": "app/ml/monitor.py",
       "type": "owns"
     },
     {
-      "source": "platform/ml-core",
+      "source": "ml/forecasting-models",
       "target": "app/ml/registry.py",
       "type": "owns"
     },
     {
-      "source": "platform/ml-core",
+      "source": "ml/forecasting-models",
       "target": "scripts/ml_report.py",
       "type": "owns"
     },
     {
-      "source": "platform/ml-core",
+      "source": "ml/forecasting-models",
       "target": "scripts/ml_run.py",
       "type": "owns"
     },
     {
-      "source": "platform/ml-core",
+      "source": "ml/forecasting-models",
       "target": "tests/ml/test_core.py",
+      "type": "owns"
+    },
+    {
+      "source": "ml/forecasting-models",
+      "target": "tests/ml/test_forecasting_extensions.py",
       "type": "owns"
     }
   ]
