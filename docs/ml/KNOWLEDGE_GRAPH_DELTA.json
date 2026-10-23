@@ -31,6 +31,10 @@
       "type": "file"
     },
     {
+      "id": "app/ml/forecasting.py",
+      "type": "file"
+    },
+    {
       "id": "app/ml/intermittent.py",
       "type": "file"
     },
@@ -63,6 +67,10 @@
       "type": "file"
     },
     {
+      "id": "tests/ml/test_forecasting_adapters.py",
+      "type": "file"
+    },
+    {
       "id": "tests/ml/test_forecasting_extensions.py",
       "type": "file"
     }
@@ -86,6 +94,11 @@
     {
       "source": "ml/forecasting-models",
       "target": "app/ml/features.py",
+      "type": "owns"
+    },
+    {
+      "source": "ml/forecasting-models",
+      "target": "app/ml/forecasting.py",
       "type": "owns"
     },
     {
@@ -126,6 +139,11 @@
     {
       "source": "ml/forecasting-models",
       "target": "tests/ml/test_core.py",
+      "type": "owns"
+    },
+    {
+      "source": "ml/forecasting-models",
+      "target": "tests/ml/test_forecasting_adapters.py",
       "type": "owns"
     },
     {

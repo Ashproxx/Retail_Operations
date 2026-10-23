@@ -1,27 +1,18 @@
 # AIML scorecard
 
-Generated from validation-output\ml\baseline.json.
-Source: synthetic-workbook; code: 9db3ba47058abf37c86c6c40195db3f70bf5525f; run: 2026-10-23T07:18:10.564964+00:00.
+Source: synthetic-workbook. Measured final-test implementation: c1e872fd5f331f42010b56a7c3019dd1d597c278. Date: 2026-10-23.
 
-No independent test accuracy is verified by a validation-only run.
+| Pillar | Evidence / metric | Status |
+|---|---|---|
+| Forecasting | Frozen chain/store comparison, MAE/RMSE/WAPE/MASE/bias and empirical interval coverage in MODEL_COMPARISON.md | VERIFIED for the explicitly scored subset only |
+| Routing | Human-reviewed benchmark not yet complete | UNVERIFIED |
+| RAG | Expanded benchmark not yet evaluated | UNVERIFIED |
+| Anomaly detection | No new measured benchmark yet | UNVERIFIED |
+| Similarity/segmentation | No new measured benchmark yet | UNVERIFIED |
+| Forecast-driven decisions | No measured stockout or causal pricing evidence | UNVERIFIED |
 
-| Pillar | Dataset | Test metric | Status |
-|---|---|---|---|
-| Forecasting | synthetic-workbook | Not evaluated | UNVERIFIED |
-| Intent routing | Not evaluated | Not evaluated | UNVERIFIED |
-| RAG retrieval | Not evaluated | Not evaluated | UNVERIFIED |
-| Anomaly detection | Not evaluated | Not evaluated | UNVERIFIED |
-| Product similarity | Not evaluated | Not evaluated | UNVERIFIED |
-| Forecast-driven decisions | Not evaluated | Not evaluated | UNVERIFIED |
+Chain h=28: selected-before-test weekday_mean_28 baseline, test WAPE 13.5636%, MAE 30.8839 units across 56 observations. This uses the required embargo and two test blocks, not ordinary next-day operational accuracy. Its empirical 80% band covered 67.86% and 95% band covered 85.71%; nominal coverage was not achieved. Do not hide this calibration weakness. Histogram boosting was worse on this comparison (WAPE 14.8524%).
 
-## Baseline parity diagnostics (not test accuracy)
+180 validation model records were attempted across 12 eligible series (chain plus 11 stores); 716 model/horizon test attempts include 60 missing-coverage/fit failures. 9 stores, all 120 store/category series and all 1,700 store/SKU series were excluded under the predeclared complete-window requirement. Four candidates are eligible for review under exploratory gates; none is promoted. Four series/horizon choices lack paired final-test coverage. No real-world accuracy claim.
 
-| Series | Model | One-step MAE | WAPE |
-|---|---|---:|---:|
-| chain | weekday_mean_28 | 17.339286 | 0.07423547400611621 |
-| chain | seasonal_naive_7 | 24.785714 | 0.10611620795107034 |
-| chain | naive | 50.571429 | 0.21651376146788992 |
-| chain | moving_average_7 | 52.632653 | 0.2253385757972914 |
-| chain | exponential_0.3 | 58.754514 | 0.2515483766868294 |
-
-Forecast baselines reproduce the existing algorithm; this does not certify new ML performance. No automatic model promotion.
+M17 is not fully accepted: time-safe weather/festival ablation, global pooled boosting, quantile comparison, full feature-importance coverage, real benchmark and independent review remain outstanding. See FORECAST_RESULTS.json for exact failures, per-series decisions and limitations.
