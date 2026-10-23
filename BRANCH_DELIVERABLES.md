@@ -74,3 +74,12 @@ Tests verify that changing validation values cannot change any training threshol
 Frozen implementation 72282a4 measured 50 authored positives and 15 negatives over ten fictional policy documents using a local TF-IDF baseline and the unchanged signed RAG pipeline. Recall@1 0.98, Recall@3 1.00, MRR@3 0.99, nDCG@3 0.9926. All 15 negatives abstained, but only 17/50 positives returned evidence: abstention precision is 0.3125. Strong raw retrieval does not establish usable answer coverage. No thresholds or labels were changed after observing these results. No scope leaks were observed with the forbidden-store decoy. These labels are NOT human-reviewed and are not actual retail policy.
 
 The first run wrote complete results but exited with a Windows file-lock cleanup error. The evaluator now explicitly closes the Chroma client before temporary-directory cleanup; a focused lifecycle test verifies removal after an indexed document. Frozen metrics were preserved and were not rerun to conceal failures. Automatic approval review rejected a later cleanup command as blocked by policy, so the original temporary artifact was left alone. See RAG_RESULTS.json, RAG_FIXTURE.json and RAG_PROTOCOL.md. No model download, external request or production wiring.
+
+
+## Router review preparation
+
+ROUTER_REVIEW.json contains 200 draft-labelled cases across all ten intents, organized into 100 paired groups kept together in deterministic partitions. Human review fields are blank. The reviewed-evaluation mode rejects missing review fields and insufficient case counts; the agent has not certified its own labels.
+
+Frozen rule diagnostic at e3b60f8: accuracy 0.51, ten-label macro-F1 0.5871, 116 abstentions. A separate courtesy sentence ("Please.") is treated as an unsupported clause by the existing conservative router and drives many abstentions. This finding is preserved, not hidden by editing queries, labels or thresholds after evaluation. Some semantic labels also need human adjudication. Neither these authored queries nor the split names establish natural-query or independent test accuracy. The original protected source implementation is unchanged. Confidence remains a heuristic, not a calibrated probability.
+
+Run `python -m scripts.evaluate_auxiliary_router`; frozen draft output refuses overwrite. After actual human review, `--reviewed` writes separate evidence. See ROUTER_PROTOCOL.md. This prepares a concrete review queue while retaining the human-review acceptance gate.

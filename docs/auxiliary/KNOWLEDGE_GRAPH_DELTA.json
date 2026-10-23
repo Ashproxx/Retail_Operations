@@ -6,7 +6,8 @@
     "descriptive product clusters",
     "injected anomaly proxy",
     "training-only STL validation supplement",
-    "authored lexical signed-RAG evaluation"
+    "authored lexical signed-RAG evaluation",
+    "grouped unreviewed router queue"
   ],
   "edges": [
     [
@@ -20,6 +21,10 @@
     [
       "fifty positive and fifteen negative fixtures",
       "authored lexical signed-RAG evaluation"
+    ],
+    [
+      "grouped unreviewed router queue",
+      "human review gate"
     ]
   ],
   "runtime_integration": false
