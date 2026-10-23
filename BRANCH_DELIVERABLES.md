@@ -8,7 +8,7 @@ Evidence: [measured comparison](docs/ml/MODEL_COMPARISON.md), [scorecard](docs/m
 
 Chain h=28 selected the weekday baseline before test: WAPE 13.5636%, versus histogram boosting 14.8524%, across 56 test observations. Empirical 80%/95% band coverage was only 67.86%/85.71%. Twelve series were eligible; 1,829 series were excluded without zero-filling. All 60 test fit/coverage failures are retained. Four candidates qualify for exploratory review; none is promoted.
 
-M17 PARTIAL: time-safe weather/festival ablation, global pooled boosting, measured quantile comparison, expanded importance, real benchmark and independent review remain outstanding. M18/M19 are separate pending branches. M20 integration requires exact-commit approval. No source records or weights were sent externally.
+M17 PARTIAL: time-safe weather/festival ablation, global pooled boosting, measured quantile comparison, expanded importance, real benchmark and independent review remain outstanding. M18/M19 have separate development branches; acceptance remains pending. M20 integration requires exact-commit approval. No source records or weights were sent externally.
 
 ---
 
@@ -70,3 +70,10 @@ Publication evidence and source/main ref checks are recorded in docs/integration
 - [x] Windows launch and presentation guide: [DASHBOARD.md](docs/integration/DASHBOARD.md).
 - [x] Full local Python suite: 180 passed; source-preservation guard passed.
 - [ ] Real dataset mapping and business validation (unchanged M13 requirement).
+
+
+## Pre-test quantile / importance supplement
+
+At frozen code 4e17558, one chain h=14 origin (March 31, scoring April 15-28) measured .1/.5/.9 quantile pinball losses of 4.8149 / 9.7629 / 8.6392. No crossing occurred. Both quantile and baseline conformal 80% bands covered all 14 observations; mean widths were 134.54 and 139 units respectively. This tiny development validation window does not establish calibration or improvement; primary final-test undercoverage remains unchanged.
+
+All eleven existing Poisson-boosting features have measured permutation MAE changes in QUANTILE_IMPORTANCE_RESULTS.json. They describe fixed recursive feature rows and correlated predictive associations, not causal importance or full rollout perturbations. Models never saw validation target labels during fitting or recursive feature generation. Existing final-test artifacts were neither reopened nor changed. Global pooling, broader independent comparisons, real benchmark and weather/festival-vintage evidence remain pending.

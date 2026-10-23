@@ -55,6 +55,10 @@
       "type": "file"
     },
     {
+      "id": "app/ml/supplement.py",
+      "type": "file"
+    },
+    {
       "id": "scripts/ml_report.py",
       "type": "file"
     },
@@ -72,6 +76,10 @@
     },
     {
       "id": "tests/ml/test_forecasting_extensions.py",
+      "type": "file"
+    },
+    {
+      "id": "tests/ml/test_supplement.py",
       "type": "file"
     }
   ],
@@ -128,6 +136,11 @@
     },
     {
       "source": "ml/forecasting-models",
+      "target": "app/ml/supplement.py",
+      "type": "owns"
+    },
+    {
+      "source": "ml/forecasting-models",
       "target": "scripts/ml_report.py",
       "type": "owns"
     },
@@ -149,6 +162,11 @@
     {
       "source": "ml/forecasting-models",
       "target": "tests/ml/test_forecasting_extensions.py",
+      "type": "owns"
+    },
+    {
+      "source": "ml/forecasting-models",
+      "target": "tests/ml/test_supplement.py",
       "type": "owns"
     }
   ]
