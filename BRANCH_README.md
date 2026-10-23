@@ -1,3 +1,17 @@
+# M16 real-time data branch
+
+Branch: platform/realtime-data. Base: integration/dual-model-retailops@c27fef0a0c5cf7c84551a5940ef3ced8e9f00b93. User authorized the four areas, restricted work to branches, and approved suitable educational weather calls after terms review.
+
+Owned: app/realtime, scripts/backfill_weather.py, tests/realtime, docs/realtime, and documented .env.example settings. No normal app startup change; composition is explicit via app.realtime.launch/install. Only isolated candidate DB was used. Existing integration/main refs and historical source code remain unchanged.
+
+Delivered: approved weather connector and ERA5 backfill (8,784/8,784 hours), seeded synthetic stream, validated append-only deduplication, signed webhook, scoped SSE, freshness and online features, explicit one-worker lifespan, offline tests and live smoke. Detailed setup, attribution and safety limits: docs/realtime/RUNBOOK.md. M19 UI and M20 integration are still separate work; no accuracy or full milestone completion is claimed.
+
+No dependency added. Configuration uses existing pydantic-settings/httpx/SQLAlchemy. Branch guard shared delta remains solely on platform/ml-core; no cross-branch copy occurred. Graph is a branch-local delta. Integration requires human approval.
+
+---
+
+## Historical inherited record
+
 # integration/dual-model-retailops
 
 Current Phase 3 integration: [branch ownership](docs/branches/integration-dual-model-retailops.md), [validation report](docs/phase3/VALIDATION.md), [runbook](docs/phase3/RUNBOOK.md). Composes imported sales and employees with two active workspaces and two Coming Soon models. Main remains human-controlled. Earlier release records below are retained as historical evidence and do not determine Phase 3 completion.
