@@ -11,9 +11,9 @@ Proposed base: integration/dual-model-retailops@c27fef0a0c5cf7c84551a5940ef3ced8
 | docs/ml-methodology | e8f8280caa98d4a8f1bb504b64bc864699c9e7ed |
 | platform/ml-core | ca22a9f755504de656093eba1f026c6aee620efa |
 | platform/realtime-data | c944c3edb03eb98fcbb451096a47bb5d5bbc34f9 |
-| ml/forecasting-models | 6b86795e4cf7e2b3bc54f807f87813921c7539b5 |
-| ml/auxiliary-models | 70b02411c3f07782a135111d168f10f2129785ab |
-| ui/ml-dashboard | d351f28477a582b3573eaf4dcc171222c096cc0c |
+| ml/forecasting-models | 7ad9a4adaeccd18da383502739aa7a9020fc9381 |
+| ml/auxiliary-models | 4a26af9b20958f7d4f160979ceb94f23067ed0d2 |
+| ui/ml-dashboard | b20323252a68e6da3b82f95396783b231ac6b43b |
 
 ## Assembly and verification after approval
 
@@ -34,3 +34,5 @@ M18: human-reviewed router labels, expanded RAG benchmark, seasonal anomaly comp
 M19: actual live panels, missingness/importance views and mobile browser acceptance. Current separate launcher serves /ml at port 8002 and does not modify the default website.
 
 These are partial checkpoints, not M17-M20 completion. No real-world accuracy or universal acceptance claim is justified.
+
+Latest supplemental development measurements and draft router/retrieval diagnostics do not satisfy independent accuracy or human-review gates. The new importance panel still requires browser verification.
