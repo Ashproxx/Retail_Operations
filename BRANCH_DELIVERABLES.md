@@ -83,3 +83,8 @@ ROUTER_REVIEW.json contains 200 draft-labelled cases across all ten intents, org
 Frozen rule diagnostic at e3b60f8: accuracy 0.51, ten-label macro-F1 0.5871, 116 abstentions. A separate courtesy sentence ("Please.") is treated as an unsupported clause by the existing conservative router and drives many abstentions. This finding is preserved, not hidden by editing queries, labels or thresholds after evaluation. Some semantic labels also need human adjudication. Neither these authored queries nor the split names establish natural-query or independent test accuracy. The original protected source implementation is unchanged. Confidence remains a heuristic, not a calibrated probability.
 
 Run `python -m scripts.evaluate_auxiliary_router`; frozen draft output refuses overwrite. After actual human review, `--reviewed` writes separate evidence. See ROUTER_PROTOCOL.md. This prepares a concrete review queue while retaining the human-review acceptance gate.
+
+
+## Descriptive price association supplement
+
+Owned additions: app/auxiliary/price.py, scripts/evaluate_price_association.py, tests/auxiliary/test_price.py and docs/auxiliary/PRICE_PROTOCOL.md. Frozen before measurement: training-only SKU/day log-price association with SKU/weekday controls and calendar trend, week-cluster uncertainty. Missing dates remain absent, no test labels are read, no pricing action or causal elasticity claim. Three focused checks pass (coefficient recovery, rank/missingness behavior and invalid/test-period input rejection). Measurement pending.

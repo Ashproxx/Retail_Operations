@@ -7,7 +7,8 @@
     "injected anomaly proxy",
     "training-only STL validation supplement",
     "authored lexical signed-RAG evaluation",
-    "grouped unreviewed router queue"
+    "grouped unreviewed router queue",
+    "training-only descriptive price association"
   ],
   "edges": [
     [
@@ -25,6 +26,10 @@
     [
       "grouped unreviewed router queue",
       "human review gate"
+    ],
+    [
+      "observed SKU/day revenue and units",
+      "training-only descriptive price association"
     ]
   ],
   "runtime_integration": false
