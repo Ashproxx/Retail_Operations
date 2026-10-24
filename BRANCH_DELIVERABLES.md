@@ -77,3 +77,10 @@ INTEGRATION_PLAN.md now pins forecasting c35c0ca, auxiliary aa9bdd0 and verified
 ## Malformed evidence handling
 
 The shared store-scope filter now rejects non-object evidence rows with the existing unavailable-report response (503), even when a local manifest checksum matches. Previously a null row raised an unhandled attribute error. Regression covers ADMIN, STORE_MANAGER and ANALYST and preserves fail-closed behavior. Six focused dashboard tests passed; full regression 220 passed in 23.27 seconds. No browser rendering changed, so visual tests were not repeated.
+
+
+## Scoped observation coverage
+
+Added an imported-data coverage panel backed by existing authorized retail SQL filters. Its 28-day window ends at the latest sale in the caller's own scope, so another store cannot leak its dates. Days without transactions remain unknown (null); explicitly recorded zero quantity stays zero. Empty scope returns no observations, not fabricated zero sales. Store aggregation does not establish complete imports, closure, stock or current live freshness. No M16 source or stream is integrated.
+
+Eight focused dashboard checks passed, including a later private-store date, zero versus missing values and empty history. Full regression: 222 passed in 23.06 seconds. Desktop browser verified September 2-29 snapshot, twenty admin store rows and one unknown day for ST02/ST15/ST18/ST20; disconnect clears the panel. Local screenshot: validation-output/ml-dashboard/dashboard-coverage.png. Mobile acceptance remains open.

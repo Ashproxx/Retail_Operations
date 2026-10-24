@@ -82,3 +82,34 @@ def test_checksum_valid_malformed_rows_fail_closed(dashboard):
     (root/'manifest.json').write_text(json.dumps(manifest))
     for role in ['ADMIN','STORE_MANAGER','ANALYST']:
         assert client.get('/api/ml/results',headers=headers(role)).status_code==503
+
+
+def test_coverage_scopes_window_and_preserves_unknown_vs_zero(dashboard):
+    from app.enterprise.data import Sale, Product
+    from app.integration.repository import StoreRow
+    client,headers,_=dashboard
+    database=client.app.state.runtime.repository.database
+    with database.session() as session:
+        session.add_all([StoreRow(id='S1',name='One'),StoreRow(id='S2',name='Two'),
+                         Product(sku_id='P',payload={})])
+        session.flush()
+        for i,(store,day,quantity) in enumerate([('S1','2026-03-01',0),
+                                                ('S1','2026-03-03',5),('S2','2026-06-01',8)]):
+            session.add(Sale(txn_id=str(i),order_id=str(i),store_id=store,sku_id='P',day=day,
+                             category='fixture',channel='fixture',quantity=quantity,net_paise=0,payload={}))
+    for role in ['STORE_MANAGER','ANALYST']:
+        response=client.get('/api/ml/results',headers=headers(role))
+        assert response.status_code==200
+        quality=response.json()['data_quality']
+        assert quality['end']=='2026-03-03'
+        assert [s['store_id'] for s in quality['stores']]==['S1']
+        row=quality['stores'][0]
+        assert row['observed_days']==2 and row['unknown_days']==26
+        assert row['units'][-3:]==[0,None,5]
+    assert client.get('/api/ml/results',headers=headers('ADMIN')).json()['data_quality']['end']=='2026-06-01'
+
+
+def test_empty_coverage_does_not_invent_zero(dashboard):
+    client,headers,_=dashboard
+    quality=client.get('/api/ml/results',headers=headers('STORE_MANAGER')).json()['data_quality']
+    assert quality=={'status':'no_observations','start':None,'end':None,'stores':[]}

@@ -6,6 +6,7 @@ from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from app.api.schemas import Role
 from app.integration.routes import context, audit_operation
+from app.ml_dashboard.quality import observation_coverage
 
 ASSETS = Path(__file__).parent/'static'
 
@@ -60,6 +61,7 @@ def install(api, reports=Path('validation-output/ml-dashboard')):
             except (OSError, ValueError, KeyError, TypeError):
                 raise HTTPException(503, 'Verified research reports are unavailable. Export the pinned evidence locally.') from None
             data['live'] = {'status': 'unavailable', 'message': 'Live feed is not connected on this isolated review branch.'}
+            data['data_quality'] = observation_coverage(request.app.state.runtime.repository.database, ctx)
             status = 'success'
             return JSONResponse(data, headers={'Cache-Control': 'no-store'})
         finally:

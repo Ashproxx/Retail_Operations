@@ -31,7 +31,7 @@ M17: store/category pooling remains blocked by missing observations; store-level
 
 M18: human-reviewed router labels and natural-query RAG benchmark, natural anomaly labels beyond the completed injected seasonal comparison, human similarity relevance and genuine stock/lead-time labels remain open. Price association with uncertainty and geometric ranking agreement are measured; neither establishes causality or semantic relevance. Current metrics are synthetic, descriptive or injected proxies only.
 
-M19: actual live panels, missingness views, broader importance evidence and mobile browser acceptance. Current separate launcher serves /ml at port 8002 and does not modify the default website.
+M19: actual live panels, broader importance evidence and mobile browser acceptance. Current separate launcher serves /ml at port 8002 and does not modify the default website.
 
 These are partial checkpoints, not M17-M20 completion. No real-world accuracy or universal acceptance claim is justified.
 
@@ -44,3 +44,5 @@ Latest supplemental development measurements and draft router/retrieval diagnost
 - Dashboard f492adf: 219 tests passed and desktop supplement verified. The current export still intentionally pins earlier primary/quantile data artifacts; these new supplemental results are not yet displayed. Updating this plan does not merge code or imply M20 approval.
 
 Public benchmark preparation encountered an automatic approval rejection while writing its protocol. The rejection gave only "blocked by policy"; no download or scoring occurred. Do not bypass that rejection or describe the public benchmark as complete. Independent dashboard work can continue.
+
+Imported store/day missingness is now available on the isolated dashboard using existing scoped SQL. It is a snapshot ending at the latest authorized record, not a live feed or proof of complete data. No M20 assembly occurred.

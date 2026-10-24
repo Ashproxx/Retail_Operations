@@ -5,7 +5,8 @@
     "authenticated model results",
     "scoped forecast curves",
     "aggregate research evidence",
-    "admin-only exploratory importance panel"
+    "admin-only exploratory importance panel",
+    "scoped imported observation coverage"
   ],
   "edges": [
     [
@@ -19,6 +20,10 @@
     [
       "pinned M17 supplement",
       "admin-only exploratory importance panel"
+    ],
+    [
+      "existing authorized retail SQL filters",
+      "scoped imported observation coverage"
     ]
   ],
   "production_integration": false
