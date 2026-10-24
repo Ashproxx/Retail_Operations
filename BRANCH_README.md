@@ -63,3 +63,8 @@ Admin-only feature-importance and quantile checks now read the pinned M17 supple
 Five dashboard API tests passed, including supplement suppression for scoped roles and ADMIN access. JavaScript syntax check passed.
 
 Desktop supplement acceptance completed on 2026-10-24 at localhost:8002/ml: terminal-token login displayed all eleven feature rows, including lag_1 = -11.74; quantile and conformal 80% coverage were both 100.00%, with widths 134.54 and 139.00 units. The fourteen-day exploratory label and limitations were visible. Disconnect removed the results from the accessible page. Screenshot saved locally as validation-output/ml-dashboard/dashboard-supplement.png (ignored). Full regression: 219 passed in 41.84 seconds. Mobile acceptance remains unperformed; live wiring still awaits M20 approval. No model is promoted.
+
+
+## October 24 integration handoff refresh
+
+INTEGRATION_PLAN.md now pins forecasting c35c0ca, auxiliary aa9bdd0 and verified dashboard f492adf, and records the measured supplements and remaining evidence gaps. This is documentation only: no source merge, export change or M20 approval. Runbook desktop-acceptance status corrected to match VALIDATION.md. Public benchmark protocol creation was rejected by automatic approval review; it was not retried or bypassed. Existing 219-test dashboard result remains the applicable code validation; no redundant regression was run for this documentation update.

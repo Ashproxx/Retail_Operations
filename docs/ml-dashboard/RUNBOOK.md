@@ -27,4 +27,4 @@ Evidence dependencies are data-only exports from the isolated M17 and M18 branch
 
 Admin-only feature-importance and quantile checks now read the pinned M17 supplement at 7ad9a4a. The panel explicitly labels the fourteen-day exploratory validation window and retains negative feature-importance values. Global chain evidence is omitted entirely from manager/analyst responses. Existing frozen test charts are unchanged. Re-run the local export script to add supplement.json; missing/corrupt evidence still fails closed.
 
-Five dashboard API tests passed, including supplement suppression for scoped roles and ADMIN access. JavaScript syntax check passed. Visual browser acceptance of this added table remains pending; no new mobile acceptance is claimed. Real-time wiring still awaits M20 approval. No model is promoted.
+Five dashboard API tests passed, including supplement suppression for scoped roles and ADMIN access. JavaScript syntax check passed. Desktop browser acceptance completed on October 24 and full regression passed 219 tests; see VALIDATION.md. Mobile acceptance remains unperformed. Real-time wiring still awaits M20 approval. No model is promoted.
