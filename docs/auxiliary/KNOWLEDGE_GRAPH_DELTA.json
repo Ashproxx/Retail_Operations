@@ -8,7 +8,8 @@
     "training-only STL validation supplement",
     "authored lexical signed-RAG evaluation",
     "grouped unreviewed router queue",
-    "training-only descriptive price association"
+    "training-only descriptive price association",
+    "training-only geometric ranking agreement"
   ],
   "edges": [
     [
@@ -30,6 +31,10 @@
     [
       "observed SKU/day revenue and units",
       "training-only descriptive price association"
+    ],
+    [
+      "training-only geometric ranking agreement",
+      "unlabeled product relevance review queue"
     ]
   ],
   "runtime_integration": false

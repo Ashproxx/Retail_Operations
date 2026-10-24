@@ -95,3 +95,8 @@ Frozen implementation 7356baec0a120c11b3b5b9354f569e5b16672eb6 read 12,862 posit
 The installed statsmodels emits pandas deprecation warnings; execution succeeds with the pinned versions. No dependency upgrade was introduced. Human causal identification and real-data validation remain open.
 
 Price supplement regression: 232 passed in 22.48 seconds (69 dependency deprecation warnings). Owned-path check found no changes to inherited app, scripts or tests outside auxiliary scope.
+
+
+## Product ranking agreement supplement
+
+Owned additions: app/auxiliary/similarity.py, scripts/evaluate_similarity.py, focused tests and SIMILARITY_PROTOCOL.md. Fixed training-only standardized features compare Euclidean and cosine full rankings/top-five overlap. Review fields stay blank; agreement between algorithms is not human relevance accuracy. Two focused tests cover deterministic ranks, self exclusion, label blanks, invalid input and missing-direction/short-history exclusions. Measurement pending.
