@@ -51,6 +51,10 @@
       "type": "file"
     },
     {
+      "id": "app/ml/pooled.py",
+      "type": "file"
+    },
+    {
       "id": "app/ml/registry.py",
       "type": "file"
     },
@@ -76,6 +80,10 @@
     },
     {
       "id": "tests/ml/test_forecasting_extensions.py",
+      "type": "file"
+    },
+    {
+      "id": "tests/ml/test_pooled.py",
       "type": "file"
     },
     {
@@ -131,6 +139,11 @@
     },
     {
       "source": "ml/forecasting-models",
+      "target": "app/ml/pooled.py",
+      "type": "owns"
+    },
+    {
+      "source": "ml/forecasting-models",
       "target": "app/ml/registry.py",
       "type": "owns"
     },
@@ -162,6 +175,11 @@
     {
       "source": "ml/forecasting-models",
       "target": "tests/ml/test_forecasting_extensions.py",
+      "type": "owns"
+    },
+    {
+      "source": "ml/forecasting-models",
+      "target": "tests/ml/test_pooled.py",
       "type": "owns"
     },
     {

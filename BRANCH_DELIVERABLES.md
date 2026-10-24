@@ -77,3 +77,8 @@ Publication evidence and source/main ref checks are recorded in docs/integration
 At frozen code 4e17558, one chain h=14 origin (March 31, scoring April 15-28) measured .1/.5/.9 quantile pinball losses of 4.8149 / 9.7629 / 8.6392. No crossing occurred. Both quantile and baseline conformal 80% bands covered all 14 observations; mean widths were 134.54 and 139 units respectively. This tiny development validation window does not establish calibration or improvement; primary final-test undercoverage remains unchanged.
 
 All eleven existing Poisson-boosting features have measured permutation MAE changes in QUANTILE_IMPORTANCE_RESULTS.json. They describe fixed recursive feature rows and correlated predictive associations, not causal importance or full rollout perturbations. Models never saw validation target labels during fitting or recursive feature generation. Existing final-test artifacts were neither reopened nor changed. Global pooling, broader independent comparisons, real benchmark and weather/festival-vintage evidence remain pending.
+
+
+## Pooled boosting supplement protocol
+
+Added app/ml/pooled.py and scripts/evaluate_pooled_forecasting.py with a fixed development comparison on 56 observed training days ending March 31, scoring April 15-28 after embargo. Shared boosting adds one-hot series identity and reuses existing past-only features/configuration. Local boosting and weekday baseline use identical training windows. Incomplete series are excluded, not zero-filled. Two tests verify recursion/history preservation, unknown-series rejection, common origins, gaps and later-date refusal. No primary-test rerun or runtime integration. See POOLED_PROTOCOL.md; measurement pending.

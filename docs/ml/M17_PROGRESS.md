@@ -24,3 +24,8 @@ All eleven existing Poisson-boosting features have measured permutation MAE chan
 Supplement point comparison: quantile median WAPE 8.8295% versus weekday baseline 10.1744% on the same fourteen development observations, without a significance or deployment claim. Negative permutation values are retained: they can indicate harmful/redundant features on this small sample, not causal effects. No feature was removed or model retuned.
 
 Supplement verification: 20 focused ML tests including two new checks; full regression 234 passed in 28.77 seconds. Branch-scope/source-preservation guard passed.
+
+
+## Pooled boosting supplement protocol
+
+Added app/ml/pooled.py and scripts/evaluate_pooled_forecasting.py with a fixed development comparison on 56 observed training days ending March 31, scoring April 15-28 after embargo. Shared boosting adds one-hot series identity and reuses existing past-only features/configuration. Local boosting and weekday baseline use identical training windows. Incomplete series are excluded, not zero-filled. Two tests verify recursion/history preservation, unknown-series rejection, common origins, gaps and later-date refusal. No primary-test rerun or runtime integration. See POOLED_PROTOCOL.md; measurement pending.
