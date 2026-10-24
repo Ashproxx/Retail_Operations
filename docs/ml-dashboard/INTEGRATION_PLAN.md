@@ -27,12 +27,12 @@ Proposed base: integration/dual-model-retailops@c27fef0a0c5cf7c84551a5940ef3ced8
 
 ## Unresolved acceptance gaps
 
-M17: global pooled boosting, measured quantile/feature-importance comparison, forecast-vintage weather/festival ablation, real benchmark and independent review. The synthetic test is already opened: future tuning cannot claim independence by reusing it. Calibration undercoverage must remain visible.
+M17: global pooled boosting, broader independent quantile/feature-importance evaluation, forecast-vintage weather/festival ablation, real benchmark and independent review. The synthetic test is already opened: future tuning cannot claim independence by reusing it. Calibration undercoverage must remain visible.
 
-M18: human-reviewed router labels, expanded RAG benchmark, seasonal anomaly comparison, similarity ranking relevance, price-effect uncertainty and genuine stock/lead-time labels. Current metrics are synthetic, descriptive or injected proxies only.
+M18: human-reviewed router labels and natural-query RAG benchmark, natural anomaly labels beyond the completed injected seasonal comparison, similarity ranking relevance, price-effect uncertainty and genuine stock/lead-time labels. Current metrics are synthetic, descriptive or injected proxies only.
 
-M19: actual live panels, missingness/importance views and mobile browser acceptance. Current separate launcher serves /ml at port 8002 and does not modify the default website.
+M19: actual live panels, missingness views, broader importance evidence and mobile browser acceptance. Current separate launcher serves /ml at port 8002 and does not modify the default website.
 
 These are partial checkpoints, not M17-M20 completion. No real-world accuracy or universal acceptance claim is justified.
 
-Latest supplemental development measurements and draft router/retrieval diagnostics do not satisfy independent accuracy or human-review gates. The new importance panel still requires browser verification.
+Latest supplemental development measurements and draft router/retrieval diagnostics do not satisfy independent accuracy or human-review gates. The new importance panel passed desktop browser verification on 2026-10-24; full regression passed 219 tests. Mobile acceptance remains open.
