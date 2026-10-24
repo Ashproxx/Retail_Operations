@@ -86,3 +86,12 @@ Run `python -m scripts.evaluate_auxiliary_router`; frozen draft output refuses o
 ## Descriptive price association supplement
 
 Owned additions: app/auxiliary/price.py, scripts/evaluate_price_association.py, tests/auxiliary/test_price.py and docs/auxiliary/PRICE_PROTOCOL.md. Frozen before measurement: training-only SKU/day log-price association with SKU/weekday controls and calendar trend, week-cluster uncertainty. Missing dates remain absent, no test labels are read, no pricing action or causal elasticity claim. Three focused checks pass (coefficient recovery, rank/missingness behavior and invalid/test-period input rejection). Measurement pending.
+
+
+## Measured price association (development only)
+
+Frozen implementation 7356baec0a120c11b3b5b9354f569e5b16672eb6 read 12,862 positive observed SKU/day aggregates for 85 products, September 29-March 31, across 27 week clusters. The log-price association coefficient is -0.2484 with a week-cluster 95% t interval [-0.3862, -0.1106] (26 degrees of freedom). SKU, weekday and linear calendar trend controls do not remove stock, promotion, exposure, selection or price/quantity coupling. This is synthetic descriptive evidence, not causal elasticity or a price recommendation. Missing dates were left absent. No final-test labels or existing frozen metrics were reread or altered. PRICE_RESULTS.json records versions and source digest; PRICE_PROTOCOL.md documents assumptions.
+
+The installed statsmodels emits pandas deprecation warnings; execution succeeds with the pinned versions. No dependency upgrade was introduced. Human causal identification and real-data validation remain open.
+
+Price supplement regression: 232 passed in 22.48 seconds (69 dependency deprecation warnings). Owned-path check found no changes to inherited app, scripts or tests outside auxiliary scope.

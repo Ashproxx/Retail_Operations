@@ -1,0 +1,37 @@
+{
+  "status": "MEASURED_DESCRIPTIVE_ASSOCIATION",
+  "observed_product_days": 12862,
+  "products": 85,
+  "excluded_short_history_products": 0,
+  "week_clusters": 27,
+  "first_day": "2025-09-29",
+  "last_day": "2026-03-31",
+  "log_price_coefficient": -0.2483976426829343,
+  "cluster_week_standard_error": 0.06704554583781942,
+  "cluster_week_t_interval_95": [
+    -0.3862117358824523,
+    -0.11058354948341628
+  ],
+  "interval_degrees_of_freedom": 26,
+  "controls": [
+    "SKU fixed effects",
+    "weekday fixed effects",
+    "linear calendar trend"
+  ],
+  "limitations": [
+    "Synthetic training data only; no held-out prediction or real-world accuracy claim.",
+    "Realized price is revenue divided by sold units; quantity weighting and mathematical coupling can distort association.",
+    "Only positive observed sales days enter; missing days are unknown, never zero-filled.",
+    "Stock availability, promotions, changing store exposure and customer selection are unobserved confounders.",
+    "Week-cluster intervals allow within-week dependence; across-week dependence and few clusters can invalidate coverage.",
+    "This coefficient is not causal demand elasticity and must not drive price recommendations."
+  ],
+  "source": "synthetic-workbook",
+  "code_commit": "7356baec0a120c11b3b5b9354f569e5b16672eb6",
+  "aggregate_source_sha256": "a9be32639b7c1b31efa46fdbfdbc2a68eabc66cab6e8bad3c14e87932e7d4d12",
+  "versions": {
+    "numpy": "2.5.3",
+    "pandas": "3.1.0",
+    "statsmodels": "0.14.6"
+  }
+}
