@@ -29,3 +29,10 @@ Supplement verification: 20 focused ML tests including two new checks; full regr
 ## Pooled boosting supplement protocol
 
 Added app/ml/pooled.py and scripts/evaluate_pooled_forecasting.py with a fixed development comparison on 56 observed training days ending March 31, scoring April 15-28 after embargo. Shared boosting adds one-hot series identity and reuses existing past-only features/configuration. Local boosting and weekday baseline use identical training windows. Incomplete series are excluded, not zero-filled. Two tests verify recursion/history preservation, unknown-series rejection, common origins, gaps and later-date refusal. No primary-test rerun or runtime integration. See POOLED_PROTOCOL.md; measurement pending.
+
+
+## Measured pooled forecasting supplement
+
+Frozen implementation 22156f0 compared thirteen eligible stores on April 15-28 development data. Seven stores and all 120 store/category series were excluded for missing training/scoring dates, without zero-filling. Unweighted mean store WAPE: pooled boosting 40.1802%, local boosting 46.0297%, weekday baseline 40.2994%. Pooled boosting has lower WAPE than the baseline in only six of thirteen stores. This tiny mean difference is not evidence of superiority; no significance, promotion, calibrated pooled interval or independent final-test accuracy is claimed. Store/category pooling remains unverified due to coverage. POOLED_RESULTS.json records every per-store metric and exclusion. Existing primary evidence is unchanged.
+
+Pooled supplement validation: full regression 236 passed in 22.71 seconds; source-preservation guard passed. Real benchmark, weather/festival-vintage ablation, independent review and integration remain pending.
