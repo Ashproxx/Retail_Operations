@@ -1,0 +1,4306 @@
+{
+  "status": "MEASURED_METHOD_AGREEMENT",
+  "eligible_products": 85,
+  "excluded_short_history": 0,
+  "excluded_zero_direction": 0,
+  "mean_top5_overlap_fraction": 0.7435294117647059,
+  "mean_full_ranking_spearman": 0.7956240582696582,
+  "features": [
+    "log_observed_units",
+    "log_realized_unit_price",
+    "observed_sale_dates",
+    "observed_store_count"
+  ],
+  "relevance_status": "UNVERIFIED_NO_HUMAN_LABELS",
+  "review_queue": [
+    {
+      "query_sku": "DRSS-CAS-05-BLA-L",
+      "candidate_sku": "DRSS-CAS-05-BLA-M",
+      "euclidean_rank": 4,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-BLA-L",
+      "candidate_sku": "DRSS-CAS-05-FLO-L",
+      "euclidean_rank": 5,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-BLA-L",
+      "candidate_sku": "DRSS-CAS-05-FLO-M",
+      "euclidean_rank": 3,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-BLA-L",
+      "candidate_sku": "DRSS-CAS-05-RED-L",
+      "euclidean_rank": 2,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-BLA-L",
+      "candidate_sku": "DRSS-CAS-05-RED-M",
+      "euclidean_rank": 1,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-BLA-M",
+      "candidate_sku": "DRSS-CAS-05-BLA-L",
+      "euclidean_rank": 3,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-BLA-M",
+      "candidate_sku": "DRSS-CAS-05-FLO-L",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-BLA-M",
+      "candidate_sku": "DRSS-CAS-05-FLO-M",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-BLA-M",
+      "candidate_sku": "DRSS-CAS-05-RED-M",
+      "euclidean_rank": 4,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-BLA-M",
+      "candidate_sku": "JEAN-SLM-03-BLA-XL",
+      "euclidean_rank": 5,
+      "cosine_rank": 7,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-BLA-M",
+      "candidate_sku": "JEAN-SLM-03-BLU-XL",
+      "euclidean_rank": 6,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-BLA-S",
+      "candidate_sku": "DRSS-CAS-05-BLA-XL",
+      "euclidean_rank": 4,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-BLA-S",
+      "candidate_sku": "DRSS-CAS-05-RED-S",
+      "euclidean_rank": 2,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-BLA-S",
+      "candidate_sku": "JEAN-SLM-03-BLA-XXL",
+      "euclidean_rank": 3,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-BLA-S",
+      "candidate_sku": "JEAN-SLM-03-BLU-XXL",
+      "euclidean_rank": 1,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-BLA-S",
+      "candidate_sku": "KURTA-WMN-04-GRE-S",
+      "euclidean_rank": 9,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-BLA-S",
+      "candidate_sku": "KURTA-WMN-04-MAR-S",
+      "euclidean_rank": 5,
+      "cosine_rank": 13,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-BLA-XL",
+      "candidate_sku": "DRSS-CAS-05-BLA-S",
+      "euclidean_rank": 3,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-BLA-XL",
+      "candidate_sku": "DRSS-CAS-05-FLO-XL",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-BLA-XL",
+      "candidate_sku": "DRSS-CAS-05-RED-XL",
+      "euclidean_rank": 2,
+      "cosine_rank": 8,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-BLA-XL",
+      "candidate_sku": "JEAN-SLM-03-BLA-XXL",
+      "euclidean_rank": 11,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-BLA-XL",
+      "candidate_sku": "JEAN-SLM-03-BLU-XXL",
+      "euclidean_rank": 8,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-BLA-XL",
+      "candidate_sku": "JKT-DNM-06-BLA-S",
+      "euclidean_rank": 14,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-BLA-XL",
+      "candidate_sku": "KURTA-WMN-04-GRE-S",
+      "euclidean_rank": 4,
+      "cosine_rank": 12,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-BLA-XL",
+      "candidate_sku": "KURTA-WMN-04-GRE-XL",
+      "euclidean_rank": 5,
+      "cosine_rank": 13,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-BLA-XXL",
+      "candidate_sku": "DRSS-CAS-05-FLO-S",
+      "euclidean_rank": 10,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-BLA-XXL",
+      "candidate_sku": "DRSS-CAS-05-FLO-XXL",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-BLA-XXL",
+      "candidate_sku": "DRSS-CAS-05-RED-XXL",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-BLA-XXL",
+      "candidate_sku": "KURTA-WMN-04-GRE-XXL",
+      "euclidean_rank": 4,
+      "cosine_rank": 7,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-BLA-XXL",
+      "candidate_sku": "KURTA-WMN-04-MAR-S",
+      "euclidean_rank": 15,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-BLA-XXL",
+      "candidate_sku": "KURTA-WMN-04-MAR-XXL",
+      "euclidean_rank": 3,
+      "cosine_rank": 6,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-BLA-XXL",
+      "candidate_sku": "KURTA-WMN-04-YEL-XXL",
+      "euclidean_rank": 5,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-FLO-L",
+      "candidate_sku": "DRSS-CAS-05-BLA-L",
+      "euclidean_rank": 3,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-FLO-L",
+      "candidate_sku": "DRSS-CAS-05-BLA-M",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-FLO-L",
+      "candidate_sku": "DRSS-CAS-05-FLO-M",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-FLO-L",
+      "candidate_sku": "DRSS-CAS-05-RED-M",
+      "euclidean_rank": 5,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-FLO-L",
+      "candidate_sku": "JEAN-SLM-03-BLA-XL",
+      "euclidean_rank": 4,
+      "cosine_rank": 6,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-FLO-L",
+      "candidate_sku": "JEAN-SLM-03-BLU-XL",
+      "euclidean_rank": 6,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-FLO-M",
+      "candidate_sku": "DRSS-CAS-05-BLA-L",
+      "euclidean_rank": 3,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-FLO-M",
+      "candidate_sku": "DRSS-CAS-05-BLA-M",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-FLO-M",
+      "candidate_sku": "DRSS-CAS-05-FLO-L",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-FLO-M",
+      "candidate_sku": "DRSS-CAS-05-RED-L",
+      "euclidean_rank": 7,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-FLO-M",
+      "candidate_sku": "DRSS-CAS-05-RED-M",
+      "euclidean_rank": 4,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-FLO-M",
+      "candidate_sku": "JEAN-SLM-03-BLA-XL",
+      "euclidean_rank": 5,
+      "cosine_rank": 7,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-FLO-S",
+      "candidate_sku": "DRSS-CAS-05-BLA-S",
+      "euclidean_rank": 3,
+      "cosine_rank": 15,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-FLO-S",
+      "candidate_sku": "DRSS-CAS-05-BLA-XXL",
+      "euclidean_rank": 21,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-FLO-S",
+      "candidate_sku": "DRSS-CAS-05-FLO-XXL",
+      "euclidean_rank": 18,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-FLO-S",
+      "candidate_sku": "DRSS-CAS-05-RED-S",
+      "euclidean_rank": 1,
+      "cosine_rank": 10,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-FLO-S",
+      "candidate_sku": "DRSS-CAS-05-RED-XXL",
+      "euclidean_rank": 11,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-FLO-S",
+      "candidate_sku": "JEAN-SLM-03-BLA-XXL",
+      "euclidean_rank": 2,
+      "cosine_rank": 13,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-FLO-S",
+      "candidate_sku": "JEAN-SLM-03-BLU-XXL",
+      "euclidean_rank": 5,
+      "cosine_rank": 18,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-FLO-S",
+      "candidate_sku": "JKT-DNM-06-BLA-XXL",
+      "euclidean_rank": 8,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-FLO-S",
+      "candidate_sku": "KURTA-WMN-04-MAR-S",
+      "euclidean_rank": 4,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-FLO-XL",
+      "candidate_sku": "DRSS-CAS-05-BLA-XL",
+      "euclidean_rank": 2,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-FLO-XL",
+      "candidate_sku": "DRSS-CAS-05-RED-XL",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-FLO-XL",
+      "candidate_sku": "JKT-DNM-06-BLA-S",
+      "euclidean_rank": 17,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-FLO-XL",
+      "candidate_sku": "JKT-DNM-06-BLU-S",
+      "euclidean_rank": 11,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-FLO-XL",
+      "candidate_sku": "KURTA-WMN-04-GRE-S",
+      "euclidean_rank": 4,
+      "cosine_rank": 15,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-FLO-XL",
+      "candidate_sku": "KURTA-WMN-04-GRE-XL",
+      "euclidean_rank": 5,
+      "cosine_rank": 16,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-FLO-XL",
+      "candidate_sku": "KURTA-WMN-04-MAR-XL",
+      "euclidean_rank": 3,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-FLO-XXL",
+      "candidate_sku": "DRSS-CAS-05-BLA-XXL",
+      "euclidean_rank": 1,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-FLO-XXL",
+      "candidate_sku": "DRSS-CAS-05-RED-XXL",
+      "euclidean_rank": 2,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-FLO-XXL",
+      "candidate_sku": "KURTA-WMN-04-GRE-XXL",
+      "euclidean_rank": 4,
+      "cosine_rank": 6,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-FLO-XXL",
+      "candidate_sku": "KURTA-WMN-04-MAR-S",
+      "euclidean_rank": 15,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-FLO-XXL",
+      "candidate_sku": "KURTA-WMN-04-MAR-XXL",
+      "euclidean_rank": 3,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-FLO-XXL",
+      "candidate_sku": "KURTA-WMN-04-YEL-XXL",
+      "euclidean_rank": 5,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-RED-L",
+      "candidate_sku": "DRSS-CAS-05-BLA-L",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-RED-L",
+      "candidate_sku": "DRSS-CAS-05-BLA-M",
+      "euclidean_rank": 4,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-RED-L",
+      "candidate_sku": "DRSS-CAS-05-FLO-L",
+      "euclidean_rank": 5,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-RED-L",
+      "candidate_sku": "DRSS-CAS-05-FLO-M",
+      "euclidean_rank": 3,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-RED-L",
+      "candidate_sku": "DRSS-CAS-05-RED-M",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-RED-M",
+      "candidate_sku": "DRSS-CAS-05-BLA-L",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-RED-M",
+      "candidate_sku": "DRSS-CAS-05-BLA-M",
+      "euclidean_rank": 4,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-RED-M",
+      "candidate_sku": "DRSS-CAS-05-FLO-L",
+      "euclidean_rank": 5,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-RED-M",
+      "candidate_sku": "DRSS-CAS-05-FLO-M",
+      "euclidean_rank": 3,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-RED-M",
+      "candidate_sku": "DRSS-CAS-05-RED-L",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-RED-S",
+      "candidate_sku": "DRSS-CAS-05-BLA-S",
+      "euclidean_rank": 2,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-RED-S",
+      "candidate_sku": "DRSS-CAS-05-FLO-S",
+      "euclidean_rank": 4,
+      "cosine_rank": 9,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-RED-S",
+      "candidate_sku": "JEAN-SLM-03-BLA-XXL",
+      "euclidean_rank": 1,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-RED-S",
+      "candidate_sku": "JEAN-SLM-03-BLU-XXL",
+      "euclidean_rank": 3,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-RED-S",
+      "candidate_sku": "KURTA-WMN-04-GRE-S",
+      "euclidean_rank": 9,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-RED-S",
+      "candidate_sku": "KURTA-WMN-04-GRE-XL",
+      "euclidean_rank": 8,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-RED-S",
+      "candidate_sku": "KURTA-WMN-04-MAR-S",
+      "euclidean_rank": 5,
+      "cosine_rank": 11,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-RED-XL",
+      "candidate_sku": "DRSS-CAS-05-BLA-XL",
+      "euclidean_rank": 2,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-RED-XL",
+      "candidate_sku": "DRSS-CAS-05-FLO-XL",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-RED-XL",
+      "candidate_sku": "JEAN-SLM-03-BLU-S",
+      "euclidean_rank": 3,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-RED-XL",
+      "candidate_sku": "JKT-DNM-06-BLA-S",
+      "euclidean_rank": 18,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-RED-XL",
+      "candidate_sku": "JKT-DNM-06-BLU-S",
+      "euclidean_rank": 13,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-RED-XL",
+      "candidate_sku": "KURTA-WMN-04-GRE-S",
+      "euclidean_rank": 5,
+      "cosine_rank": 16,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-RED-XL",
+      "candidate_sku": "KURTA-WMN-04-MAR-XL",
+      "euclidean_rank": 4,
+      "cosine_rank": 8,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-RED-XXL",
+      "candidate_sku": "DRSS-CAS-05-BLA-XXL",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-RED-XXL",
+      "candidate_sku": "DRSS-CAS-05-FLO-S",
+      "euclidean_rank": 8,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-RED-XXL",
+      "candidate_sku": "DRSS-CAS-05-FLO-XXL",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-RED-XXL",
+      "candidate_sku": "KURTA-WMN-04-GRE-XXL",
+      "euclidean_rank": 5,
+      "cosine_rank": 7,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-RED-XXL",
+      "candidate_sku": "KURTA-WMN-04-MAR-S",
+      "euclidean_rank": 15,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-RED-XXL",
+      "candidate_sku": "KURTA-WMN-04-MAR-XXL",
+      "euclidean_rank": 3,
+      "cosine_rank": 6,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "DRSS-CAS-05-RED-XXL",
+      "candidate_sku": "KURTA-WMN-04-YEL-XXL",
+      "euclidean_rank": 4,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLA-L",
+      "candidate_sku": "DRSS-CAS-05-BLA-L",
+      "euclidean_rank": 9,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLA-L",
+      "candidate_sku": "DRSS-CAS-05-RED-L",
+      "euclidean_rank": 7,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLA-L",
+      "candidate_sku": "JEAN-SLM-03-BLA-M",
+      "euclidean_rank": 3,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLA-L",
+      "candidate_sku": "JEAN-SLM-03-BLU-L",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLA-L",
+      "candidate_sku": "JEAN-SLM-03-BLU-M",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLA-L",
+      "candidate_sku": "JKT-DNM-06-BLA-L",
+      "euclidean_rank": 4,
+      "cosine_rank": 9,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLA-L",
+      "candidate_sku": "JKT-DNM-06-BLU-M",
+      "euclidean_rank": 5,
+      "cosine_rank": 16,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLA-M",
+      "candidate_sku": "DRSS-CAS-05-BLA-L",
+      "euclidean_rank": 8,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLA-M",
+      "candidate_sku": "DRSS-CAS-05-RED-L",
+      "euclidean_rank": 7,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLA-M",
+      "candidate_sku": "JEAN-SLM-03-BLA-L",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLA-M",
+      "candidate_sku": "JEAN-SLM-03-BLU-L",
+      "euclidean_rank": 3,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLA-M",
+      "candidate_sku": "JEAN-SLM-03-BLU-M",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLA-M",
+      "candidate_sku": "JKT-DNM-06-BLA-L",
+      "euclidean_rank": 4,
+      "cosine_rank": 16,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLA-M",
+      "candidate_sku": "JKT-DNM-06-BLU-M",
+      "euclidean_rank": 5,
+      "cosine_rank": 19,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLA-S",
+      "candidate_sku": "DRSS-CAS-05-BLA-M",
+      "euclidean_rank": 3,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLA-S",
+      "candidate_sku": "DRSS-CAS-05-FLO-L",
+      "euclidean_rank": 4,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLA-S",
+      "candidate_sku": "DRSS-CAS-05-FLO-M",
+      "euclidean_rank": 5,
+      "cosine_rank": 7,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLA-S",
+      "candidate_sku": "JEAN-SLM-03-BLA-XL",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLA-S",
+      "candidate_sku": "JEAN-SLM-03-BLU-S",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLA-S",
+      "candidate_sku": "JEAN-SLM-03-BLU-XL",
+      "euclidean_rank": 6,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLA-XL",
+      "candidate_sku": "DRSS-CAS-05-BLA-L",
+      "euclidean_rank": 5,
+      "cosine_rank": 6,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLA-XL",
+      "candidate_sku": "DRSS-CAS-05-BLA-M",
+      "euclidean_rank": 4,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLA-XL",
+      "candidate_sku": "DRSS-CAS-05-FLO-L",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLA-XL",
+      "candidate_sku": "DRSS-CAS-05-FLO-M",
+      "euclidean_rank": 3,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLA-XL",
+      "candidate_sku": "JEAN-SLM-03-BLU-XL",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLA-XL",
+      "candidate_sku": "JKT-DNM-06-BLA-L",
+      "euclidean_rank": 19,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLA-XXL",
+      "candidate_sku": "DRSS-CAS-05-BLA-S",
+      "euclidean_rank": 3,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLA-XXL",
+      "candidate_sku": "DRSS-CAS-05-BLA-XL",
+      "euclidean_rank": 5,
+      "cosine_rank": 6,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLA-XXL",
+      "candidate_sku": "DRSS-CAS-05-FLO-S",
+      "euclidean_rank": 4,
+      "cosine_rank": 9,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLA-XXL",
+      "candidate_sku": "DRSS-CAS-05-RED-S",
+      "euclidean_rank": 1,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLA-XXL",
+      "candidate_sku": "JEAN-SLM-03-BLU-XXL",
+      "euclidean_rank": 2,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLA-XXL",
+      "candidate_sku": "JKT-DNM-06-BLA-XXL",
+      "euclidean_rank": 15,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLA-XXL",
+      "candidate_sku": "JKT-DNM-06-BLU-XXL",
+      "euclidean_rank": 11,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLU-L",
+      "candidate_sku": "DRSS-CAS-05-BLA-L",
+      "euclidean_rank": 9,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLU-L",
+      "candidate_sku": "DRSS-CAS-05-RED-L",
+      "euclidean_rank": 7,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLU-L",
+      "candidate_sku": "JEAN-SLM-03-BLA-L",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLU-L",
+      "candidate_sku": "JEAN-SLM-03-BLA-M",
+      "euclidean_rank": 3,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLU-L",
+      "candidate_sku": "JEAN-SLM-03-BLU-M",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLU-L",
+      "candidate_sku": "JKT-DNM-06-BLA-L",
+      "euclidean_rank": 4,
+      "cosine_rank": 9,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLU-L",
+      "candidate_sku": "JKT-DNM-06-BLU-M",
+      "euclidean_rank": 5,
+      "cosine_rank": 16,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLU-M",
+      "candidate_sku": "DRSS-CAS-05-BLA-L",
+      "euclidean_rank": 8,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLU-M",
+      "candidate_sku": "DRSS-CAS-05-RED-L",
+      "euclidean_rank": 7,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLU-M",
+      "candidate_sku": "JEAN-SLM-03-BLA-L",
+      "euclidean_rank": 1,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLU-M",
+      "candidate_sku": "JEAN-SLM-03-BLA-M",
+      "euclidean_rank": 3,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLU-M",
+      "candidate_sku": "JEAN-SLM-03-BLU-L",
+      "euclidean_rank": 2,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLU-M",
+      "candidate_sku": "JKT-DNM-06-BLA-L",
+      "euclidean_rank": 4,
+      "cosine_rank": 14,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLU-M",
+      "candidate_sku": "JKT-DNM-06-BLU-M",
+      "euclidean_rank": 5,
+      "cosine_rank": 19,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLU-S",
+      "candidate_sku": "DRSS-CAS-05-FLO-XL",
+      "euclidean_rank": 3,
+      "cosine_rank": 7,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLU-S",
+      "candidate_sku": "DRSS-CAS-05-RED-XL",
+      "euclidean_rank": 2,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLU-S",
+      "candidate_sku": "JEAN-SLM-03-BLA-S",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLU-S",
+      "candidate_sku": "JEAN-SLM-03-BLA-XL",
+      "euclidean_rank": 7,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLU-S",
+      "candidate_sku": "JKT-DNM-06-BLA-XL",
+      "euclidean_rank": 5,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLU-S",
+      "candidate_sku": "JKT-DNM-06-BLU-XL",
+      "euclidean_rank": 4,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLU-XL",
+      "candidate_sku": "DRSS-CAS-05-BLA-L",
+      "euclidean_rank": 5,
+      "cosine_rank": 6,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLU-XL",
+      "candidate_sku": "DRSS-CAS-05-BLA-M",
+      "euclidean_rank": 4,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLU-XL",
+      "candidate_sku": "DRSS-CAS-05-FLO-L",
+      "euclidean_rank": 3,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLU-XL",
+      "candidate_sku": "DRSS-CAS-05-FLO-M",
+      "euclidean_rank": 2,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLU-XL",
+      "candidate_sku": "JEAN-SLM-03-BLA-XL",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLU-XL",
+      "candidate_sku": "JKT-DNM-06-BLA-L",
+      "euclidean_rank": 17,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLU-XXL",
+      "candidate_sku": "DRSS-CAS-05-BLA-S",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLU-XXL",
+      "candidate_sku": "DRSS-CAS-05-BLA-XL",
+      "euclidean_rank": 4,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLU-XXL",
+      "candidate_sku": "DRSS-CAS-05-FLO-XL",
+      "euclidean_rank": 5,
+      "cosine_rank": 7,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLU-XXL",
+      "candidate_sku": "DRSS-CAS-05-RED-S",
+      "euclidean_rank": 3,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLU-XXL",
+      "candidate_sku": "JEAN-SLM-03-BLA-XXL",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JEAN-SLM-03-BLU-XXL",
+      "candidate_sku": "KURTA-WMN-04-GRE-S",
+      "euclidean_rank": 9,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLA-L",
+      "candidate_sku": "JEAN-SLM-03-BLA-L",
+      "euclidean_rank": 5,
+      "cosine_rank": 9,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLA-L",
+      "candidate_sku": "JEAN-SLM-03-BLA-XL",
+      "euclidean_rank": 9,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLA-L",
+      "candidate_sku": "JEAN-SLM-03-BLU-L",
+      "euclidean_rank": 4,
+      "cosine_rank": 8,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLA-L",
+      "candidate_sku": "JEAN-SLM-03-BLU-XL",
+      "euclidean_rank": 7,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLA-L",
+      "candidate_sku": "JKT-DNM-06-BLA-M",
+      "euclidean_rank": 3,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLA-L",
+      "candidate_sku": "JKT-DNM-06-BLU-L",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLA-L",
+      "candidate_sku": "JKT-DNM-06-BLU-M",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLA-M",
+      "candidate_sku": "JEAN-SLM-03-BLA-XL",
+      "euclidean_rank": 5,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLA-M",
+      "candidate_sku": "JEAN-SLM-03-BLU-XL",
+      "euclidean_rank": 4,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLA-M",
+      "candidate_sku": "JKT-DNM-06-BLA-L",
+      "euclidean_rank": 3,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLA-M",
+      "candidate_sku": "JKT-DNM-06-BLU-L",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLA-M",
+      "candidate_sku": "JKT-DNM-06-BLU-M",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLA-S",
+      "candidate_sku": "DRSS-CAS-05-BLA-S",
+      "euclidean_rank": 5,
+      "cosine_rank": 10,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLA-S",
+      "candidate_sku": "DRSS-CAS-05-BLA-XL",
+      "euclidean_rank": 4,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLA-S",
+      "candidate_sku": "DRSS-CAS-05-FLO-XL",
+      "euclidean_rank": 7,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLA-S",
+      "candidate_sku": "JEAN-SLM-03-BLA-XXL",
+      "euclidean_rank": 2,
+      "cosine_rank": 8,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLA-S",
+      "candidate_sku": "JEAN-SLM-03-BLU-XXL",
+      "euclidean_rank": 3,
+      "cosine_rank": 9,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLA-S",
+      "candidate_sku": "JKT-DNM-06-BLU-S",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLA-S",
+      "candidate_sku": "JKT-DNM-06-BLU-XXL",
+      "euclidean_rank": 8,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLA-S",
+      "candidate_sku": "KURTA-WMN-04-MAR-XL",
+      "euclidean_rank": 19,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLA-XL",
+      "candidate_sku": "JEAN-SLM-03-BLA-S",
+      "euclidean_rank": 4,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLA-XL",
+      "candidate_sku": "JEAN-SLM-03-BLU-S",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLA-XL",
+      "candidate_sku": "JKT-DNM-06-BLA-M",
+      "euclidean_rank": 5,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLA-XL",
+      "candidate_sku": "JKT-DNM-06-BLU-S",
+      "euclidean_rank": 3,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLA-XL",
+      "candidate_sku": "JKT-DNM-06-BLU-XL",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLA-XXL",
+      "candidate_sku": "DRSS-CAS-05-BLA-S",
+      "euclidean_rank": 13,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLA-XXL",
+      "candidate_sku": "DRSS-CAS-05-BLA-XXL",
+      "euclidean_rank": 5,
+      "cosine_rank": 7,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLA-XXL",
+      "candidate_sku": "DRSS-CAS-05-FLO-S",
+      "euclidean_rank": 3,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLA-XXL",
+      "candidate_sku": "DRSS-CAS-05-FLO-XXL",
+      "euclidean_rank": 4,
+      "cosine_rank": 8,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLA-XXL",
+      "candidate_sku": "DRSS-CAS-05-RED-S",
+      "euclidean_rank": 8,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLA-XXL",
+      "candidate_sku": "DRSS-CAS-05-RED-XXL",
+      "euclidean_rank": 2,
+      "cosine_rank": 6,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLA-XXL",
+      "candidate_sku": "JEAN-SLM-03-BLA-XXL",
+      "euclidean_rank": 6,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLA-XXL",
+      "candidate_sku": "JKT-DNM-06-BLU-XXL",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLU-L",
+      "candidate_sku": "JEAN-SLM-03-BLA-XL",
+      "euclidean_rank": 5,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLU-L",
+      "candidate_sku": "JEAN-SLM-03-BLU-XL",
+      "euclidean_rank": 4,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLU-L",
+      "candidate_sku": "JKT-DNM-06-BLA-L",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLU-L",
+      "candidate_sku": "JKT-DNM-06-BLA-M",
+      "euclidean_rank": 3,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLU-L",
+      "candidate_sku": "JKT-DNM-06-BLU-M",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLU-M",
+      "candidate_sku": "JEAN-SLM-03-BLA-XL",
+      "euclidean_rank": 7,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLU-M",
+      "candidate_sku": "JEAN-SLM-03-BLU-L",
+      "euclidean_rank": 4,
+      "cosine_rank": 6,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLU-M",
+      "candidate_sku": "JEAN-SLM-03-BLU-XL",
+      "euclidean_rank": 5,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLU-M",
+      "candidate_sku": "JKT-DNM-06-BLA-L",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLU-M",
+      "candidate_sku": "JKT-DNM-06-BLA-M",
+      "euclidean_rank": 3,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLU-M",
+      "candidate_sku": "JKT-DNM-06-BLU-L",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLU-S",
+      "candidate_sku": "DRSS-CAS-05-BLA-XL",
+      "euclidean_rank": 5,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLU-S",
+      "candidate_sku": "DRSS-CAS-05-FLO-XL",
+      "euclidean_rank": 4,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLU-S",
+      "candidate_sku": "DRSS-CAS-05-RED-XL",
+      "euclidean_rank": 7,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLU-S",
+      "candidate_sku": "JKT-DNM-06-BLA-S",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLU-S",
+      "candidate_sku": "JKT-DNM-06-BLA-XL",
+      "euclidean_rank": 3,
+      "cosine_rank": 7,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLU-S",
+      "candidate_sku": "JKT-DNM-06-BLU-XL",
+      "euclidean_rank": 2,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLU-XL",
+      "candidate_sku": "DRSS-CAS-05-RED-XL",
+      "euclidean_rank": 5,
+      "cosine_rank": 6,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLU-XL",
+      "candidate_sku": "JEAN-SLM-03-BLA-S",
+      "euclidean_rank": 4,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLU-XL",
+      "candidate_sku": "JEAN-SLM-03-BLU-S",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLU-XL",
+      "candidate_sku": "JKT-DNM-06-BLA-M",
+      "euclidean_rank": 8,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLU-XL",
+      "candidate_sku": "JKT-DNM-06-BLA-XL",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLU-XL",
+      "candidate_sku": "JKT-DNM-06-BLU-S",
+      "euclidean_rank": 3,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLU-XXL",
+      "candidate_sku": "DRSS-CAS-05-BLA-S",
+      "euclidean_rank": 10,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLU-XXL",
+      "candidate_sku": "DRSS-CAS-05-FLO-S",
+      "euclidean_rank": 2,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLU-XXL",
+      "candidate_sku": "DRSS-CAS-05-RED-S",
+      "euclidean_rank": 5,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLU-XXL",
+      "candidate_sku": "JEAN-SLM-03-BLA-XXL",
+      "euclidean_rank": 3,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLU-XXL",
+      "candidate_sku": "JKT-DNM-06-BLA-S",
+      "euclidean_rank": 4,
+      "cosine_rank": 7,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "JKT-DNM-06-BLU-XXL",
+      "candidate_sku": "JKT-DNM-06-BLA-XXL",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-GRE-L",
+      "candidate_sku": "KURTA-WMN-04-GRE-M",
+      "euclidean_rank": 1,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-GRE-L",
+      "candidate_sku": "KURTA-WMN-04-MAR-L",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-GRE-L",
+      "candidate_sku": "KURTA-WMN-04-MAR-M",
+      "euclidean_rank": 5,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-GRE-L",
+      "candidate_sku": "KURTA-WMN-04-YEL-L",
+      "euclidean_rank": 4,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-GRE-L",
+      "candidate_sku": "KURTA-WMN-04-YEL-M",
+      "euclidean_rank": 3,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-GRE-M",
+      "candidate_sku": "KURTA-WMN-04-GRE-L",
+      "euclidean_rank": 1,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-GRE-M",
+      "candidate_sku": "KURTA-WMN-04-MAR-L",
+      "euclidean_rank": 2,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-GRE-M",
+      "candidate_sku": "KURTA-WMN-04-MAR-M",
+      "euclidean_rank": 4,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-GRE-M",
+      "candidate_sku": "KURTA-WMN-04-YEL-L",
+      "euclidean_rank": 5,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-GRE-M",
+      "candidate_sku": "KURTA-WMN-04-YEL-M",
+      "euclidean_rank": 3,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-GRE-S",
+      "candidate_sku": "DRSS-CAS-05-BLA-S",
+      "euclidean_rank": 10,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-GRE-S",
+      "candidate_sku": "DRSS-CAS-05-BLA-XL",
+      "euclidean_rank": 5,
+      "cosine_rank": 14,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-GRE-S",
+      "candidate_sku": "DRSS-CAS-05-RED-S",
+      "euclidean_rank": 14,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-GRE-S",
+      "candidate_sku": "JEAN-SLM-03-BLA-XXL",
+      "euclidean_rank": 18,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-GRE-S",
+      "candidate_sku": "KURTA-WMN-04-GRE-XL",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-GRE-S",
+      "candidate_sku": "KURTA-WMN-04-MAR-S",
+      "euclidean_rank": 4,
+      "cosine_rank": 6,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-GRE-S",
+      "candidate_sku": "KURTA-WMN-04-MAR-XL",
+      "euclidean_rank": 3,
+      "cosine_rank": 18,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-GRE-S",
+      "candidate_sku": "KURTA-WMN-04-YEL-S",
+      "euclidean_rank": 2,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-GRE-XL",
+      "candidate_sku": "DRSS-CAS-05-BLA-XL",
+      "euclidean_rank": 5,
+      "cosine_rank": 18,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-GRE-XL",
+      "candidate_sku": "DRSS-CAS-05-RED-S",
+      "euclidean_rank": 14,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-GRE-XL",
+      "candidate_sku": "DRSS-CAS-05-RED-XXL",
+      "euclidean_rank": 60,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-GRE-XL",
+      "candidate_sku": "KURTA-WMN-04-GRE-S",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-GRE-XL",
+      "candidate_sku": "KURTA-WMN-04-MAR-S",
+      "euclidean_rank": 4,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-GRE-XL",
+      "candidate_sku": "KURTA-WMN-04-MAR-XL",
+      "euclidean_rank": 3,
+      "cosine_rank": 20,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-GRE-XL",
+      "candidate_sku": "KURTA-WMN-04-YEL-S",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-GRE-XXL",
+      "candidate_sku": "DRSS-CAS-05-BLA-XXL",
+      "euclidean_rank": 6,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-GRE-XXL",
+      "candidate_sku": "DRSS-CAS-05-FLO-XXL",
+      "euclidean_rank": 4,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-GRE-XXL",
+      "candidate_sku": "DRSS-CAS-05-RED-XXL",
+      "euclidean_rank": 3,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-GRE-XXL",
+      "candidate_sku": "KURTA-WMN-04-MAR-XXL",
+      "euclidean_rank": 2,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-GRE-XXL",
+      "candidate_sku": "KURTA-WMN-04-YEL-XXL",
+      "euclidean_rank": 1,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-GRE-XXL",
+      "candidate_sku": "SHRT-CTN-01-BLU-XXL",
+      "euclidean_rank": 5,
+      "cosine_rank": 7,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-MAR-L",
+      "candidate_sku": "KURTA-WMN-04-GRE-L",
+      "euclidean_rank": 2,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-MAR-L",
+      "candidate_sku": "KURTA-WMN-04-GRE-M",
+      "euclidean_rank": 4,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-MAR-L",
+      "candidate_sku": "KURTA-WMN-04-MAR-M",
+      "euclidean_rank": 5,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-MAR-L",
+      "candidate_sku": "KURTA-WMN-04-YEL-L",
+      "euclidean_rank": 3,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-MAR-L",
+      "candidate_sku": "KURTA-WMN-04-YEL-M",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-MAR-M",
+      "candidate_sku": "KURTA-WMN-04-GRE-L",
+      "euclidean_rank": 5,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-MAR-M",
+      "candidate_sku": "KURTA-WMN-04-GRE-M",
+      "euclidean_rank": 4,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-MAR-M",
+      "candidate_sku": "KURTA-WMN-04-MAR-L",
+      "euclidean_rank": 2,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-MAR-M",
+      "candidate_sku": "KURTA-WMN-04-YEL-L",
+      "euclidean_rank": 1,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-MAR-M",
+      "candidate_sku": "KURTA-WMN-04-YEL-M",
+      "euclidean_rank": 3,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-MAR-S",
+      "candidate_sku": "DRSS-CAS-05-BLA-S",
+      "euclidean_rank": 4,
+      "cosine_rank": 17,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-MAR-S",
+      "candidate_sku": "DRSS-CAS-05-BLA-XXL",
+      "euclidean_rank": 48,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-MAR-S",
+      "candidate_sku": "DRSS-CAS-05-FLO-XXL",
+      "euclidean_rank": 42,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-MAR-S",
+      "candidate_sku": "DRSS-CAS-05-RED-S",
+      "euclidean_rank": 5,
+      "cosine_rank": 11,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-MAR-S",
+      "candidate_sku": "DRSS-CAS-05-RED-XXL",
+      "euclidean_rank": 36,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-MAR-S",
+      "candidate_sku": "KURTA-WMN-04-GRE-S",
+      "euclidean_rank": 3,
+      "cosine_rank": 10,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-MAR-S",
+      "candidate_sku": "KURTA-WMN-04-GRE-XL",
+      "euclidean_rank": 2,
+      "cosine_rank": 9,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-MAR-S",
+      "candidate_sku": "KURTA-WMN-04-YEL-S",
+      "euclidean_rank": 1,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-MAR-S",
+      "candidate_sku": "KURTA-WMN-04-YEL-XXL",
+      "euclidean_rank": 26,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-MAR-XL",
+      "candidate_sku": "DRSS-CAS-05-BLA-XL",
+      "euclidean_rank": 6,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-MAR-XL",
+      "candidate_sku": "DRSS-CAS-05-FLO-XL",
+      "euclidean_rank": 3,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-MAR-XL",
+      "candidate_sku": "DRSS-CAS-05-RED-XL",
+      "euclidean_rank": 4,
+      "cosine_rank": 11,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-MAR-XL",
+      "candidate_sku": "JEAN-SLM-03-BLA-XXL",
+      "euclidean_rank": 20,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-MAR-XL",
+      "candidate_sku": "JKT-DNM-06-BLA-S",
+      "euclidean_rank": 32,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-MAR-XL",
+      "candidate_sku": "JKT-DNM-06-BLU-XXL",
+      "euclidean_rank": 57,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-MAR-XL",
+      "candidate_sku": "KURTA-WMN-04-GRE-S",
+      "euclidean_rank": 1,
+      "cosine_rank": 12,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-MAR-XL",
+      "candidate_sku": "KURTA-WMN-04-GRE-XL",
+      "euclidean_rank": 2,
+      "cosine_rank": 14,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-MAR-XL",
+      "candidate_sku": "KURTA-WMN-04-YEL-S",
+      "euclidean_rank": 5,
+      "cosine_rank": 15,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-MAR-XXL",
+      "candidate_sku": "DRSS-CAS-05-BLA-XXL",
+      "euclidean_rank": 5,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-MAR-XXL",
+      "candidate_sku": "DRSS-CAS-05-FLO-XXL",
+      "euclidean_rank": 3,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-MAR-XXL",
+      "candidate_sku": "DRSS-CAS-05-RED-XXL",
+      "euclidean_rank": 4,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-MAR-XXL",
+      "candidate_sku": "KURTA-WMN-04-GRE-XXL",
+      "euclidean_rank": 1,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-MAR-XXL",
+      "candidate_sku": "KURTA-WMN-04-YEL-XXL",
+      "euclidean_rank": 2,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-YEL-L",
+      "candidate_sku": "KURTA-WMN-04-GRE-L",
+      "euclidean_rank": 4,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-YEL-L",
+      "candidate_sku": "KURTA-WMN-04-GRE-M",
+      "euclidean_rank": 5,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-YEL-L",
+      "candidate_sku": "KURTA-WMN-04-MAR-L",
+      "euclidean_rank": 3,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-YEL-L",
+      "candidate_sku": "KURTA-WMN-04-MAR-M",
+      "euclidean_rank": 1,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-YEL-L",
+      "candidate_sku": "KURTA-WMN-04-YEL-M",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-YEL-M",
+      "candidate_sku": "KURTA-WMN-04-GRE-L",
+      "euclidean_rank": 2,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-YEL-M",
+      "candidate_sku": "KURTA-WMN-04-GRE-M",
+      "euclidean_rank": 4,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-YEL-M",
+      "candidate_sku": "KURTA-WMN-04-MAR-L",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-YEL-M",
+      "candidate_sku": "KURTA-WMN-04-MAR-M",
+      "euclidean_rank": 5,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-YEL-M",
+      "candidate_sku": "KURTA-WMN-04-YEL-L",
+      "euclidean_rank": 3,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-YEL-S",
+      "candidate_sku": "DRSS-CAS-05-BLA-XL",
+      "euclidean_rank": 5,
+      "cosine_rank": 19,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-YEL-S",
+      "candidate_sku": "DRSS-CAS-05-FLO-XXL",
+      "euclidean_rank": 58,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-YEL-S",
+      "candidate_sku": "DRSS-CAS-05-RED-XXL",
+      "euclidean_rank": 53,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-YEL-S",
+      "candidate_sku": "KURTA-WMN-04-GRE-S",
+      "euclidean_rank": 3,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-YEL-S",
+      "candidate_sku": "KURTA-WMN-04-GRE-XL",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-YEL-S",
+      "candidate_sku": "KURTA-WMN-04-MAR-S",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-YEL-S",
+      "candidate_sku": "KURTA-WMN-04-MAR-XL",
+      "euclidean_rank": 4,
+      "cosine_rank": 20,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-YEL-XL",
+      "candidate_sku": "DRSS-CAS-05-BLA-L",
+      "euclidean_rank": 20,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-YEL-XL",
+      "candidate_sku": "DRSS-CAS-05-BLA-M",
+      "euclidean_rank": 9,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-YEL-XL",
+      "candidate_sku": "DRSS-CAS-05-FLO-M",
+      "euclidean_rank": 13,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-YEL-XL",
+      "candidate_sku": "DRSS-CAS-05-RED-L",
+      "euclidean_rank": 28,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-YEL-XL",
+      "candidate_sku": "DRSS-CAS-05-RED-M",
+      "euclidean_rank": 19,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-YEL-XL",
+      "candidate_sku": "DRSS-CAS-05-RED-XL",
+      "euclidean_rank": 4,
+      "cosine_rank": 33,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-YEL-XL",
+      "candidate_sku": "JEAN-SLM-03-BLU-S",
+      "euclidean_rank": 5,
+      "cosine_rank": 16,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-YEL-XL",
+      "candidate_sku": "KURTA-WMN-04-MAR-XL",
+      "euclidean_rank": 2,
+      "cosine_rank": 52,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-YEL-XL",
+      "candidate_sku": "SHRT-CTN-01-BLU-XL",
+      "euclidean_rank": 3,
+      "cosine_rank": 47,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-YEL-XL",
+      "candidate_sku": "SHRT-CTN-01-WHI-XL",
+      "euclidean_rank": 1,
+      "cosine_rank": 31,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-YEL-XXL",
+      "candidate_sku": "DRSS-CAS-05-BLA-XXL",
+      "euclidean_rank": 5,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-YEL-XXL",
+      "candidate_sku": "DRSS-CAS-05-FLO-XXL",
+      "euclidean_rank": 4,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-YEL-XXL",
+      "candidate_sku": "DRSS-CAS-05-RED-XXL",
+      "euclidean_rank": 3,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-YEL-XXL",
+      "candidate_sku": "KURTA-WMN-04-GRE-XXL",
+      "euclidean_rank": 1,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "KURTA-WMN-04-YEL-XXL",
+      "candidate_sku": "KURTA-WMN-04-MAR-XXL",
+      "euclidean_rank": 2,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-L",
+      "candidate_sku": "SHRT-CTN-01-BLA-M",
+      "euclidean_rank": 3,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-L",
+      "candidate_sku": "SHRT-CTN-01-BLU-L",
+      "euclidean_rank": 4,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-L",
+      "candidate_sku": "SHRT-CTN-01-BLU-M",
+      "euclidean_rank": 2,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-L",
+      "candidate_sku": "SHRT-CTN-01-WHI-L",
+      "euclidean_rank": 5,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-L",
+      "candidate_sku": "SHRT-CTN-01-WHI-M",
+      "euclidean_rank": 1,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-M",
+      "candidate_sku": "SHRT-CTN-01-BLA-L",
+      "euclidean_rank": 3,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-M",
+      "candidate_sku": "SHRT-CTN-01-BLU-L",
+      "euclidean_rank": 4,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-M",
+      "candidate_sku": "SHRT-CTN-01-BLU-M",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-M",
+      "candidate_sku": "SHRT-CTN-01-WHI-L",
+      "euclidean_rank": 5,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-M",
+      "candidate_sku": "SHRT-CTN-01-WHI-M",
+      "euclidean_rank": 2,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-S",
+      "candidate_sku": "KURTA-WMN-04-YEL-S",
+      "euclidean_rank": 4,
+      "cosine_rank": 18,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-S",
+      "candidate_sku": "SHRT-CTN-01-BLA-XL",
+      "euclidean_rank": 3,
+      "cosine_rank": 9,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-S",
+      "candidate_sku": "SHRT-CTN-01-BLU-S",
+      "euclidean_rank": 1,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-S",
+      "candidate_sku": "SHRT-CTN-01-BLU-XL",
+      "euclidean_rank": 5,
+      "cosine_rank": 22,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-S",
+      "candidate_sku": "SHRT-CTN-01-WHI-S",
+      "euclidean_rank": 2,
+      "cosine_rank": 6,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-S",
+      "candidate_sku": "TSHRT-RND-02-BLA-XXL",
+      "euclidean_rank": 46,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-S",
+      "candidate_sku": "TSHRT-RND-02-GRE-XXL",
+      "euclidean_rank": 58,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-S",
+      "candidate_sku": "TSHRT-RND-02-NAV-XXL",
+      "euclidean_rank": 40,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-S",
+      "candidate_sku": "TSHRT-RND-02-WHI-XXL",
+      "euclidean_rank": 53,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-XL",
+      "candidate_sku": "SHRT-CTN-01-BLA-S",
+      "euclidean_rank": 4,
+      "cosine_rank": 7,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-XL",
+      "candidate_sku": "SHRT-CTN-01-BLU-S",
+      "euclidean_rank": 3,
+      "cosine_rank": 11,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-XL",
+      "candidate_sku": "SHRT-CTN-01-BLU-XL",
+      "euclidean_rank": 2,
+      "cosine_rank": 14,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-XL",
+      "candidate_sku": "SHRT-CTN-01-WHI-S",
+      "euclidean_rank": 1,
+      "cosine_rank": 10,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-XL",
+      "candidate_sku": "SHRT-CTN-01-WHI-XL",
+      "euclidean_rank": 5,
+      "cosine_rank": 27,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-XL",
+      "candidate_sku": "TSHRT-RND-02-BLA-S",
+      "euclidean_rank": 20,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-XL",
+      "candidate_sku": "TSHRT-RND-02-BLA-XXL",
+      "euclidean_rank": 69,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-XL",
+      "candidate_sku": "TSHRT-RND-02-GRE-XXL",
+      "euclidean_rank": 71,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-XL",
+      "candidate_sku": "TSHRT-RND-02-NAV-XXL",
+      "euclidean_rank": 66,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-XL",
+      "candidate_sku": "TSHRT-RND-02-WHI-S",
+      "euclidean_rank": 21,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-XXL",
+      "candidate_sku": "KURTA-WMN-04-GRE-XXL",
+      "euclidean_rank": 3,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-XXL",
+      "candidate_sku": "KURTA-WMN-04-MAR-XXL",
+      "euclidean_rank": 4,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-XXL",
+      "candidate_sku": "KURTA-WMN-04-YEL-XXL",
+      "euclidean_rank": 2,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-XXL",
+      "candidate_sku": "SHRT-CTN-01-BLU-XXL",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-XXL",
+      "candidate_sku": "TSHRT-RND-02-GRE-XXL",
+      "euclidean_rank": 9,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLA-XXL",
+      "candidate_sku": "TSHRT-RND-02-NAV-XXL",
+      "euclidean_rank": 5,
+      "cosine_rank": 8,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLU-L",
+      "candidate_sku": "SHRT-CTN-01-BLA-L",
+      "euclidean_rank": 3,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLU-L",
+      "candidate_sku": "SHRT-CTN-01-BLA-M",
+      "euclidean_rank": 4,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLU-L",
+      "candidate_sku": "SHRT-CTN-01-BLU-M",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLU-L",
+      "candidate_sku": "SHRT-CTN-01-WHI-L",
+      "euclidean_rank": 2,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLU-L",
+      "candidate_sku": "SHRT-CTN-01-WHI-M",
+      "euclidean_rank": 5,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLU-M",
+      "candidate_sku": "SHRT-CTN-01-BLA-L",
+      "euclidean_rank": 2,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLU-M",
+      "candidate_sku": "SHRT-CTN-01-BLA-M",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLU-M",
+      "candidate_sku": "SHRT-CTN-01-BLU-L",
+      "euclidean_rank": 4,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLU-M",
+      "candidate_sku": "SHRT-CTN-01-WHI-L",
+      "euclidean_rank": 5,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLU-M",
+      "candidate_sku": "SHRT-CTN-01-WHI-M",
+      "euclidean_rank": 3,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLU-S",
+      "candidate_sku": "KURTA-WMN-04-GRE-XL",
+      "euclidean_rank": 5,
+      "cosine_rank": 20,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLU-S",
+      "candidate_sku": "SHRT-CTN-01-BLA-S",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLU-S",
+      "candidate_sku": "SHRT-CTN-01-BLA-XL",
+      "euclidean_rank": 3,
+      "cosine_rank": 7,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLU-S",
+      "candidate_sku": "SHRT-CTN-01-BLU-XL",
+      "euclidean_rank": 4,
+      "cosine_rank": 14,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLU-S",
+      "candidate_sku": "SHRT-CTN-01-WHI-S",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLU-S",
+      "candidate_sku": "TSHRT-RND-02-BLA-XXL",
+      "euclidean_rank": 64,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLU-S",
+      "candidate_sku": "TSHRT-RND-02-NAV-XXL",
+      "euclidean_rank": 59,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLU-S",
+      "candidate_sku": "TSHRT-RND-02-WHI-XXL",
+      "euclidean_rank": 70,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLU-XL",
+      "candidate_sku": "SHRT-CTN-01-BLA-S",
+      "euclidean_rank": 5,
+      "cosine_rank": 13,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLU-XL",
+      "candidate_sku": "SHRT-CTN-01-BLA-XL",
+      "euclidean_rank": 3,
+      "cosine_rank": 12,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLU-XL",
+      "candidate_sku": "SHRT-CTN-01-BLU-S",
+      "euclidean_rank": 4,
+      "cosine_rank": 11,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLU-XL",
+      "candidate_sku": "SHRT-CTN-01-WHI-S",
+      "euclidean_rank": 2,
+      "cosine_rank": 7,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLU-XL",
+      "candidate_sku": "SHRT-CTN-01-WHI-XL",
+      "euclidean_rank": 1,
+      "cosine_rank": 8,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLU-XL",
+      "candidate_sku": "TSHRT-RND-02-BLA-XL",
+      "euclidean_rank": 13,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLU-XL",
+      "candidate_sku": "TSHRT-RND-02-GRE-S",
+      "euclidean_rank": 18,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLU-XL",
+      "candidate_sku": "TSHRT-RND-02-GRE-XL",
+      "euclidean_rank": 16,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLU-XL",
+      "candidate_sku": "TSHRT-RND-02-NAV-S",
+      "euclidean_rank": 19,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLU-XL",
+      "candidate_sku": "TSHRT-RND-02-NAV-XL",
+      "euclidean_rank": 20,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLU-XXL",
+      "candidate_sku": "DRSS-CAS-05-RED-XXL",
+      "euclidean_rank": 5,
+      "cosine_rank": 11,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLU-XXL",
+      "candidate_sku": "KURTA-WMN-04-GRE-XXL",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLU-XXL",
+      "candidate_sku": "KURTA-WMN-04-MAR-XXL",
+      "euclidean_rank": 4,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLU-XXL",
+      "candidate_sku": "KURTA-WMN-04-YEL-XXL",
+      "euclidean_rank": 3,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLU-XXL",
+      "candidate_sku": "SHRT-CTN-01-BLA-XXL",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-BLU-XXL",
+      "candidate_sku": "TSHRT-RND-02-WHI-XXL",
+      "euclidean_rank": 8,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-WHI-L",
+      "candidate_sku": "SHRT-CTN-01-BLA-L",
+      "euclidean_rank": 2,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-WHI-L",
+      "candidate_sku": "SHRT-CTN-01-BLA-M",
+      "euclidean_rank": 5,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-WHI-L",
+      "candidate_sku": "SHRT-CTN-01-BLU-L",
+      "euclidean_rank": 1,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-WHI-L",
+      "candidate_sku": "SHRT-CTN-01-BLU-M",
+      "euclidean_rank": 3,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-WHI-L",
+      "candidate_sku": "SHRT-CTN-01-WHI-M",
+      "euclidean_rank": 4,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-WHI-M",
+      "candidate_sku": "SHRT-CTN-01-BLA-L",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-WHI-M",
+      "candidate_sku": "SHRT-CTN-01-BLA-M",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-WHI-M",
+      "candidate_sku": "SHRT-CTN-01-BLU-L",
+      "euclidean_rank": 4,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-WHI-M",
+      "candidate_sku": "SHRT-CTN-01-BLU-M",
+      "euclidean_rank": 3,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-WHI-M",
+      "candidate_sku": "SHRT-CTN-01-WHI-L",
+      "euclidean_rank": 5,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-WHI-S",
+      "candidate_sku": "KURTA-WMN-04-GRE-XL",
+      "euclidean_rank": 5,
+      "cosine_rank": 24,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-WHI-S",
+      "candidate_sku": "SHRT-CTN-01-BLA-S",
+      "euclidean_rank": 3,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-WHI-S",
+      "candidate_sku": "SHRT-CTN-01-BLA-XL",
+      "euclidean_rank": 2,
+      "cosine_rank": 7,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-WHI-S",
+      "candidate_sku": "SHRT-CTN-01-BLU-S",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-WHI-S",
+      "candidate_sku": "SHRT-CTN-01-BLU-XL",
+      "euclidean_rank": 4,
+      "cosine_rank": 9,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-WHI-S",
+      "candidate_sku": "TSHRT-RND-02-BLA-XXL",
+      "euclidean_rank": 68,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-WHI-S",
+      "candidate_sku": "TSHRT-RND-02-GRE-S",
+      "euclidean_rank": 15,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-WHI-S",
+      "candidate_sku": "TSHRT-RND-02-WHI-S",
+      "euclidean_rank": 19,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-WHI-XL",
+      "candidate_sku": "KURTA-WMN-04-YEL-XL",
+      "euclidean_rank": 4,
+      "cosine_rank": 26,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-WHI-XL",
+      "candidate_sku": "SHRT-CTN-01-BLA-XL",
+      "euclidean_rank": 2,
+      "cosine_rank": 25,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-WHI-XL",
+      "candidate_sku": "SHRT-CTN-01-BLU-S",
+      "euclidean_rank": 5,
+      "cosine_rank": 28,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-WHI-XL",
+      "candidate_sku": "SHRT-CTN-01-BLU-XL",
+      "euclidean_rank": 1,
+      "cosine_rank": 11,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-WHI-XL",
+      "candidate_sku": "SHRT-CTN-01-WHI-S",
+      "euclidean_rank": 3,
+      "cosine_rank": 24,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-WHI-XL",
+      "candidate_sku": "TSHRT-RND-02-BLA-L",
+      "euclidean_rank": 44,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-WHI-XL",
+      "candidate_sku": "TSHRT-RND-02-GRE-XL",
+      "euclidean_rank": 15,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-WHI-XL",
+      "candidate_sku": "TSHRT-RND-02-NAV-L",
+      "euclidean_rank": 41,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-WHI-XL",
+      "candidate_sku": "TSHRT-RND-02-NAV-XL",
+      "euclidean_rank": 17,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-WHI-XL",
+      "candidate_sku": "TSHRT-RND-02-WHI-M",
+      "euclidean_rank": 48,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-WHI-XXL",
+      "candidate_sku": "KURTA-WMN-04-GRE-XXL",
+      "euclidean_rank": 3,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-WHI-XXL",
+      "candidate_sku": "KURTA-WMN-04-MAR-XXL",
+      "euclidean_rank": 5,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-WHI-XXL",
+      "candidate_sku": "KURTA-WMN-04-YEL-XXL",
+      "euclidean_rank": 4,
+      "cosine_rank": 6,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-WHI-XXL",
+      "candidate_sku": "SHRT-CTN-01-BLA-XXL",
+      "euclidean_rank": 2,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-WHI-XXL",
+      "candidate_sku": "SHRT-CTN-01-BLU-XXL",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "SHRT-CTN-01-WHI-XXL",
+      "candidate_sku": "TSHRT-RND-02-WHI-XXL",
+      "euclidean_rank": 9,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-BLA-L",
+      "candidate_sku": "TSHRT-RND-02-BLA-M",
+      "euclidean_rank": 5,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-BLA-L",
+      "candidate_sku": "TSHRT-RND-02-GRE-L",
+      "euclidean_rank": 4,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-BLA-L",
+      "candidate_sku": "TSHRT-RND-02-GRE-M",
+      "euclidean_rank": 3,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-BLA-L",
+      "candidate_sku": "TSHRT-RND-02-NAV-L",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-BLA-L",
+      "candidate_sku": "TSHRT-RND-02-WHI-M",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-BLA-M",
+      "candidate_sku": "TSHRT-RND-02-GRE-L",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-BLA-M",
+      "candidate_sku": "TSHRT-RND-02-GRE-M",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-BLA-M",
+      "candidate_sku": "TSHRT-RND-02-NAV-L",
+      "euclidean_rank": 5,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-BLA-M",
+      "candidate_sku": "TSHRT-RND-02-NAV-M",
+      "euclidean_rank": 3,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-BLA-M",
+      "candidate_sku": "TSHRT-RND-02-WHI-M",
+      "euclidean_rank": 4,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-BLA-S",
+      "candidate_sku": "SHRT-CTN-01-BLA-XL",
+      "euclidean_rank": 10,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-BLA-S",
+      "candidate_sku": "TSHRT-RND-02-BLA-XL",
+      "euclidean_rank": 5,
+      "cosine_rank": 12,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-BLA-S",
+      "candidate_sku": "TSHRT-RND-02-GRE-S",
+      "euclidean_rank": 3,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-BLA-S",
+      "candidate_sku": "TSHRT-RND-02-NAV-S",
+      "euclidean_rank": 2,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-BLA-S",
+      "candidate_sku": "TSHRT-RND-02-NAV-XXL",
+      "euclidean_rank": 13,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-BLA-S",
+      "candidate_sku": "TSHRT-RND-02-WHI-S",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-BLA-S",
+      "candidate_sku": "TSHRT-RND-02-WHI-XL",
+      "euclidean_rank": 4,
+      "cosine_rank": 7,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-BLA-XL",
+      "candidate_sku": "TSHRT-RND-02-GRE-S",
+      "euclidean_rank": 5,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-BLA-XL",
+      "candidate_sku": "TSHRT-RND-02-GRE-XL",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-BLA-XL",
+      "candidate_sku": "TSHRT-RND-02-NAV-S",
+      "euclidean_rank": 4,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-BLA-XL",
+      "candidate_sku": "TSHRT-RND-02-NAV-XL",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-BLA-XL",
+      "candidate_sku": "TSHRT-RND-02-WHI-XL",
+      "euclidean_rank": 3,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-BLA-XXL",
+      "candidate_sku": "SHRT-CTN-01-BLA-S",
+      "euclidean_rank": 13,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-BLA-XXL",
+      "candidate_sku": "SHRT-CTN-01-BLA-XXL",
+      "euclidean_rank": 5,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-BLA-XXL",
+      "candidate_sku": "SHRT-CTN-01-BLU-XXL",
+      "euclidean_rank": 4,
+      "cosine_rank": 7,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-BLA-XXL",
+      "candidate_sku": "TSHRT-RND-02-GRE-XXL",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-BLA-XXL",
+      "candidate_sku": "TSHRT-RND-02-NAV-XXL",
+      "euclidean_rank": 3,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-BLA-XXL",
+      "candidate_sku": "TSHRT-RND-02-WHI-XXL",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-GRE-L",
+      "candidate_sku": "TSHRT-RND-02-BLA-M",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-GRE-L",
+      "candidate_sku": "TSHRT-RND-02-GRE-M",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-GRE-L",
+      "candidate_sku": "TSHRT-RND-02-NAV-L",
+      "euclidean_rank": 5,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-GRE-L",
+      "candidate_sku": "TSHRT-RND-02-NAV-M",
+      "euclidean_rank": 4,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-GRE-L",
+      "candidate_sku": "TSHRT-RND-02-WHI-M",
+      "euclidean_rank": 3,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-GRE-M",
+      "candidate_sku": "TSHRT-RND-02-BLA-M",
+      "euclidean_rank": 1,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-GRE-M",
+      "candidate_sku": "TSHRT-RND-02-GRE-L",
+      "euclidean_rank": 2,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-GRE-M",
+      "candidate_sku": "TSHRT-RND-02-NAV-L",
+      "euclidean_rank": 5,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-GRE-M",
+      "candidate_sku": "TSHRT-RND-02-NAV-M",
+      "euclidean_rank": 4,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-GRE-M",
+      "candidate_sku": "TSHRT-RND-02-WHI-M",
+      "euclidean_rank": 3,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-GRE-S",
+      "candidate_sku": "SHRT-CTN-01-BLU-XL",
+      "euclidean_rank": 11,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-GRE-S",
+      "candidate_sku": "TSHRT-RND-02-BLA-S",
+      "euclidean_rank": 3,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-GRE-S",
+      "candidate_sku": "TSHRT-RND-02-BLA-XL",
+      "euclidean_rank": 4,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-GRE-S",
+      "candidate_sku": "TSHRT-RND-02-NAV-S",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-GRE-S",
+      "candidate_sku": "TSHRT-RND-02-WHI-S",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-GRE-S",
+      "candidate_sku": "TSHRT-RND-02-WHI-XL",
+      "euclidean_rank": 5,
+      "cosine_rank": 6,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-GRE-XL",
+      "candidate_sku": "TSHRT-RND-02-BLA-XL",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-GRE-XL",
+      "candidate_sku": "TSHRT-RND-02-GRE-S",
+      "euclidean_rank": 5,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-GRE-XL",
+      "candidate_sku": "TSHRT-RND-02-NAV-S",
+      "euclidean_rank": 4,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-GRE-XL",
+      "candidate_sku": "TSHRT-RND-02-NAV-XL",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-GRE-XL",
+      "candidate_sku": "TSHRT-RND-02-WHI-XL",
+      "euclidean_rank": 3,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-GRE-XXL",
+      "candidate_sku": "SHRT-CTN-01-BLA-S",
+      "euclidean_rank": 13,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-GRE-XXL",
+      "candidate_sku": "SHRT-CTN-01-BLA-XXL",
+      "euclidean_rank": 5,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-GRE-XXL",
+      "candidate_sku": "SHRT-CTN-01-BLU-XXL",
+      "euclidean_rank": 4,
+      "cosine_rank": 6,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-GRE-XXL",
+      "candidate_sku": "TSHRT-RND-02-BLA-XXL",
+      "euclidean_rank": 2,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-GRE-XXL",
+      "candidate_sku": "TSHRT-RND-02-NAV-XXL",
+      "euclidean_rank": 3,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-GRE-XXL",
+      "candidate_sku": "TSHRT-RND-02-WHI-XXL",
+      "euclidean_rank": 1,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-NAV-L",
+      "candidate_sku": "TSHRT-RND-02-BLA-L",
+      "euclidean_rank": 3,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-NAV-L",
+      "candidate_sku": "TSHRT-RND-02-BLA-M",
+      "euclidean_rank": 5,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-NAV-L",
+      "candidate_sku": "TSHRT-RND-02-GRE-L",
+      "euclidean_rank": 4,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-NAV-L",
+      "candidate_sku": "TSHRT-RND-02-GRE-M",
+      "euclidean_rank": 1,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-NAV-L",
+      "candidate_sku": "TSHRT-RND-02-WHI-M",
+      "euclidean_rank": 2,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-NAV-M",
+      "candidate_sku": "TSHRT-RND-02-BLA-M",
+      "euclidean_rank": 2,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-NAV-M",
+      "candidate_sku": "TSHRT-RND-02-GRE-L",
+      "euclidean_rank": 1,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-NAV-M",
+      "candidate_sku": "TSHRT-RND-02-GRE-M",
+      "euclidean_rank": 3,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-NAV-M",
+      "candidate_sku": "TSHRT-RND-02-NAV-L",
+      "euclidean_rank": 6,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-NAV-M",
+      "candidate_sku": "TSHRT-RND-02-WHI-L",
+      "euclidean_rank": 5,
+      "cosine_rank": 6,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-NAV-M",
+      "candidate_sku": "TSHRT-RND-02-WHI-M",
+      "euclidean_rank": 4,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-NAV-S",
+      "candidate_sku": "TSHRT-RND-02-BLA-S",
+      "euclidean_rank": 3,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-NAV-S",
+      "candidate_sku": "TSHRT-RND-02-BLA-XL",
+      "euclidean_rank": 5,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-NAV-S",
+      "candidate_sku": "TSHRT-RND-02-GRE-S",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-NAV-S",
+      "candidate_sku": "TSHRT-RND-02-WHI-S",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-NAV-S",
+      "candidate_sku": "TSHRT-RND-02-WHI-XL",
+      "euclidean_rank": 4,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-NAV-XL",
+      "candidate_sku": "SHRT-CTN-01-WHI-XL",
+      "euclidean_rank": 14,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-NAV-XL",
+      "candidate_sku": "TSHRT-RND-02-BLA-XL",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-NAV-XL",
+      "candidate_sku": "TSHRT-RND-02-GRE-S",
+      "euclidean_rank": 5,
+      "cosine_rank": 6,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-NAV-XL",
+      "candidate_sku": "TSHRT-RND-02-GRE-XL",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-NAV-XL",
+      "candidate_sku": "TSHRT-RND-02-NAV-S",
+      "euclidean_rank": 4,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-NAV-XL",
+      "candidate_sku": "TSHRT-RND-02-WHI-XL",
+      "euclidean_rank": 3,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-NAV-XXL",
+      "candidate_sku": "SHRT-CTN-01-BLA-S",
+      "euclidean_rank": 13,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-NAV-XXL",
+      "candidate_sku": "SHRT-CTN-01-BLA-XL",
+      "euclidean_rank": 22,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-NAV-XXL",
+      "candidate_sku": "SHRT-CTN-01-BLA-XXL",
+      "euclidean_rank": 4,
+      "cosine_rank": 6,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-NAV-XXL",
+      "candidate_sku": "SHRT-CTN-01-BLU-XXL",
+      "euclidean_rank": 5,
+      "cosine_rank": 7,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-NAV-XXL",
+      "candidate_sku": "TSHRT-RND-02-BLA-XXL",
+      "euclidean_rank": 1,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-NAV-XXL",
+      "candidate_sku": "TSHRT-RND-02-GRE-XXL",
+      "euclidean_rank": 2,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-NAV-XXL",
+      "candidate_sku": "TSHRT-RND-02-WHI-XXL",
+      "euclidean_rank": 3,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-WHI-L",
+      "candidate_sku": "TSHRT-RND-02-BLA-M",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-WHI-L",
+      "candidate_sku": "TSHRT-RND-02-GRE-L",
+      "euclidean_rank": 3,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-WHI-L",
+      "candidate_sku": "TSHRT-RND-02-GRE-M",
+      "euclidean_rank": 4,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-WHI-L",
+      "candidate_sku": "TSHRT-RND-02-NAV-M",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-WHI-L",
+      "candidate_sku": "TSHRT-RND-02-WHI-M",
+      "euclidean_rank": 5,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-WHI-M",
+      "candidate_sku": "TSHRT-RND-02-BLA-L",
+      "euclidean_rank": 4,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-WHI-M",
+      "candidate_sku": "TSHRT-RND-02-BLA-M",
+      "euclidean_rank": 3,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-WHI-M",
+      "candidate_sku": "TSHRT-RND-02-GRE-L",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-WHI-M",
+      "candidate_sku": "TSHRT-RND-02-GRE-M",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-WHI-M",
+      "candidate_sku": "TSHRT-RND-02-NAV-L",
+      "euclidean_rank": 5,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-WHI-S",
+      "candidate_sku": "SHRT-CTN-01-BLA-XL",
+      "euclidean_rank": 11,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-WHI-S",
+      "candidate_sku": "TSHRT-RND-02-BLA-S",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-WHI-S",
+      "candidate_sku": "TSHRT-RND-02-BLA-XL",
+      "euclidean_rank": 5,
+      "cosine_rank": 8,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-WHI-S",
+      "candidate_sku": "TSHRT-RND-02-GRE-S",
+      "euclidean_rank": 3,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-WHI-S",
+      "candidate_sku": "TSHRT-RND-02-NAV-S",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-WHI-S",
+      "candidate_sku": "TSHRT-RND-02-WHI-XL",
+      "euclidean_rank": 4,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-WHI-XL",
+      "candidate_sku": "TSHRT-RND-02-BLA-XL",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-WHI-XL",
+      "candidate_sku": "TSHRT-RND-02-GRE-S",
+      "euclidean_rank": 5,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-WHI-XL",
+      "candidate_sku": "TSHRT-RND-02-GRE-XL",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-WHI-XL",
+      "candidate_sku": "TSHRT-RND-02-NAV-S",
+      "euclidean_rank": 4,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-WHI-XL",
+      "candidate_sku": "TSHRT-RND-02-NAV-XL",
+      "euclidean_rank": 3,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-WHI-XXL",
+      "candidate_sku": "SHRT-CTN-01-BLA-S",
+      "euclidean_rank": 13,
+      "cosine_rank": 4,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-WHI-XXL",
+      "candidate_sku": "SHRT-CTN-01-BLA-XXL",
+      "euclidean_rank": 5,
+      "cosine_rank": 5,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-WHI-XXL",
+      "candidate_sku": "SHRT-CTN-01-BLU-XXL",
+      "euclidean_rank": 4,
+      "cosine_rank": 6,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-WHI-XXL",
+      "candidate_sku": "TSHRT-RND-02-BLA-XXL",
+      "euclidean_rank": 1,
+      "cosine_rank": 1,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-WHI-XXL",
+      "candidate_sku": "TSHRT-RND-02-GRE-XXL",
+      "euclidean_rank": 2,
+      "cosine_rank": 2,
+      "reviewer": null,
+      "relevant": null
+    },
+    {
+      "query_sku": "TSHRT-RND-02-WHI-XXL",
+      "candidate_sku": "TSHRT-RND-02-NAV-XXL",
+      "euclidean_rank": 3,
+      "cosine_rank": 3,
+      "reviewer": null,
+      "relevant": null
+    }
+  ],
+  "source": "synthetic-workbook",
+  "training_end": "2026-03-31",
+  "code_commit": "1699a0139435ae826e2c0f54f6940c203e1437cc",
+  "aggregate_source_sha256": "1808e2e6e3c2569933778aa701ad8876758a64d288e0887b56e76ae3284981d0",
+  "versions": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1"
+  },
+  "limitations": [
+    "Method agreement is not semantic relevance, substitution or competitive accuracy.",
+    "Observed exposure and realized price confound these descriptive rankings.",
+    "Standardization is fit on training products only; missing days are not zero-filled.",
+    "Ties break by SKU; arbitrary tie order can affect Spearman agreement.",
+    "The union of two top-five lists is a biased review pool, not an independent retrieval test.",
+    "No human labels, runtime integration, promotion or external data transmission."
+  ]
+}

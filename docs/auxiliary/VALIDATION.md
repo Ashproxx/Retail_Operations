@@ -69,3 +69,10 @@ Frozen implementation 7356baec0a120c11b3b5b9354f569e5b16672eb6 read 12,862 posit
 The installed statsmodels emits pandas deprecation warnings; execution succeeds with the pinned versions. No dependency upgrade was introduced. Human causal identification and real-data validation remain open.
 
 Price supplement regression: 232 passed in 22.48 seconds (69 dependency deprecation warnings). Owned-path check found no changes to inherited app, scripts or tests outside auxiliary scope.
+
+
+## Measured geometric ranking agreement
+
+Frozen implementation 1699a0139435ae826e2c0f54f6940c203e1437cc compared 85 training-period products. Mean top-five overlap is 0.743529 and full-ranking Spearman is 0.795624. No product was excluded for short history or zero direction. SIMILARITY_RESULTS.json includes 534 directed candidate pairs with blank human review fields. These values measure agreement between two geometric methods, not semantic relevance, customer substitution, or human ranking agreement. No final-test labels, runtime behavior or production similarity code changed. Independent judged relevance remains an acceptance gate.
+
+Similarity supplement regression: 234 passed in 34.01 seconds (69 existing dependency deprecation warnings). Source-scope inspection confirms only owned auxiliary code/scripts/tests changed relative to the showcase base.

@@ -100,3 +100,10 @@ Price supplement regression: 232 passed in 22.48 seconds (69 dependency deprecat
 ## Product ranking agreement supplement
 
 Owned additions: app/auxiliary/similarity.py, scripts/evaluate_similarity.py, focused tests and SIMILARITY_PROTOCOL.md. Fixed training-only standardized features compare Euclidean and cosine full rankings/top-five overlap. Review fields stay blank; agreement between algorithms is not human relevance accuracy. Two focused tests cover deterministic ranks, self exclusion, label blanks, invalid input and missing-direction/short-history exclusions. Measurement pending.
+
+
+## Measured geometric ranking agreement
+
+Frozen implementation 1699a0139435ae826e2c0f54f6940c203e1437cc compared 85 training-period products. Mean top-five overlap is 0.743529 and full-ranking Spearman is 0.795624. No product was excluded for short history or zero direction. SIMILARITY_RESULTS.json includes 534 directed candidate pairs with blank human review fields. These values measure agreement between two geometric methods, not semantic relevance, customer substitution, or human ranking agreement. No final-test labels, runtime behavior or production similarity code changed. Independent judged relevance remains an acceptance gate.
+
+Similarity supplement regression: 234 passed in 34.01 seconds (69 existing dependency deprecation warnings). Source-scope inspection confirms only owned auxiliary code/scripts/tests changed relative to the showcase base.
