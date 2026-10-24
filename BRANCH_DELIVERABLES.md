@@ -84,3 +84,8 @@ The shared store-scope filter now rejects non-object evidence rows with the exis
 Added an imported-data coverage panel backed by existing authorized retail SQL filters. Its 28-day window ends at the latest sale in the caller's own scope, so another store cannot leak its dates. Days without transactions remain unknown (null); explicitly recorded zero quantity stays zero. Empty scope returns no observations, not fabricated zero sales. Store aggregation does not establish complete imports, closure, stock or current live freshness. No M16 source or stream is integrated.
 
 Eight focused dashboard checks passed, including a later private-store date, zero versus missing values and empty history. Full regression: 222 passed in 23.06 seconds. Desktop browser verified September 2-29 snapshot, twenty admin store rows and one unknown day for ST02/ST15/ST18/ST20; disconnect clears the panel. Local screenshot: validation-output/ml-dashboard/dashboard-coverage.png. Mobile acceptance remains open.
+
+
+## Unattended handoff
+
+See docs/ml-dashboard/HANDOFF.md for verified exact published checkpoints, branch-specific test counts and concrete approval/evidence gates. M17-M20 remain partially accepted; no integration or main update occurred. This handoff changes documentation only and uses the recorded 222-test dashboard result.

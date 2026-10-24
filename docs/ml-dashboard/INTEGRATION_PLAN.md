@@ -13,7 +13,7 @@ Proposed base: integration/dual-model-retailops@c27fef0a0c5cf7c84551a5940ef3ced8
 | platform/realtime-data | c944c3edb03eb98fcbb451096a47bb5d5bbc34f9 |
 | ml/forecasting-models | c35c0cab0d4df2742ce4b39cb53f833cbfef9b9e |
 | ml/auxiliary-models | aa9bdd0c538af7a80eb99522d2f826930138f8f9 |
-| ui/ml-dashboard | f492adffdb0a774442e9a4c53a960602e0cb2274 |
+| ui/ml-dashboard | 30586c66973d2737853c30805031b8ecee917529 |
 
 ## Assembly and verification after approval
 
@@ -46,3 +46,5 @@ Latest supplemental development measurements and draft router/retrieval diagnost
 Public benchmark preparation encountered an automatic approval rejection while writing its protocol. The rejection gave only "blocked by policy"; no download or scoring occurred. Do not bypass that rejection or describe the public benchmark as complete. Independent dashboard work can continue.
 
 Imported store/day missingness is now available on the isolated dashboard using existing scoped SQL. It is a snapshot ending at the latest authorized record, not a live feed or proof of complete data. No M20 assembly occurred.
+
+The final unattended checkpoint and concrete remaining gates are recorded in HANDOFF.md. Candidate assembly remains unapproved.
