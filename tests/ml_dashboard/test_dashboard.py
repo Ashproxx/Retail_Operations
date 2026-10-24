@@ -69,3 +69,16 @@ def test_corrupt_or_missing_evidence_fails_closed(dashboard):
     assert client.get('/api/ml/results',headers=headers('ADMIN')).status_code==503
     (root/'forecast.json').unlink()
     assert client.get('/api/ml/results',headers=headers('ADMIN')).status_code==503
+
+
+def test_checksum_valid_malformed_rows_fail_closed(dashboard):
+    client,headers,root=dashboard
+    report=json.loads((root/'forecast.json').read_text())
+    report['curves']=[None]
+    raw=json.dumps(report).encode()
+    (root/'forecast.json').write_bytes(raw)
+    manifest=json.loads((root/'manifest.json').read_text())
+    manifest['forecast.json']['sha256']=hashlib.sha256(raw).hexdigest()
+    (root/'manifest.json').write_text(json.dumps(manifest))
+    for role in ['ADMIN','STORE_MANAGER','ANALYST']:
+        assert client.get('/api/ml/results',headers=headers(role)).status_code==503

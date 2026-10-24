@@ -18,3 +18,8 @@ Admin-only feature-importance and quantile checks now read the pinned M17 supple
 Five dashboard API tests passed, including supplement suppression for scoped roles and ADMIN access. JavaScript syntax check passed.
 
 Desktop supplement acceptance completed on 2026-10-24 at localhost:8002/ml: terminal-token login displayed all eleven feature rows, including lag_1 = -11.74; quantile and conformal 80% coverage were both 100.00%, with widths 134.54 and 139.00 units. The fourteen-day exploratory label and limitations were visible. Disconnect removed the results from the accessible page. Screenshot saved locally as validation-output/ml-dashboard/dashboard-supplement.png (ignored). Full regression: 219 passed in 41.84 seconds. Mobile acceptance remains unperformed; live wiring still awaits M20 approval. No model is promoted.
+
+
+## Malformed evidence handling
+
+The shared store-scope filter now rejects non-object evidence rows with the existing unavailable-report response (503), even when a local manifest checksum matches. Previously a null row raised an unhandled attribute error. Regression covers ADMIN, STORE_MANAGER and ANALYST and preserves fail-closed behavior. Six focused dashboard tests passed; full regression 220 passed in 23.27 seconds. No browser rendering changed, so visual tests were not repeated.

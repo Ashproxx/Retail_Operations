@@ -23,6 +23,8 @@ def scoped_report(report, ctx):
         raise HTTPException(403, 'This role cannot view retail model results.')
     admin = ctx.role == Role.ADMIN
     def permitted(row):
+        if not isinstance(row, dict):
+            raise ValueError('Invalid evidence row')
         series = row.get('series', [])
         return admin or len(series) == 2 and series[0] == 'store' and series[1] in ctx.store_ids
     return {'source_label': report['source_label'], 'code_commit': report['code_commit'],

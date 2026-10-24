@@ -72,3 +72,8 @@ Desktop supplement acceptance completed on 2026-10-24 at localhost:8002/ml: term
 ## October 24 integration handoff refresh
 
 INTEGRATION_PLAN.md now pins forecasting c35c0ca, auxiliary aa9bdd0 and verified dashboard f492adf, and records the measured supplements and remaining evidence gaps. This is documentation only: no source merge, export change or M20 approval. Runbook desktop-acceptance status corrected to match VALIDATION.md. Public benchmark protocol creation was rejected by automatic approval review; it was not retried or bypassed. Existing 219-test dashboard result remains the applicable code validation; no redundant regression was run for this documentation update.
+
+
+## Malformed evidence handling
+
+The shared store-scope filter now rejects non-object evidence rows with the existing unavailable-report response (503), even when a local manifest checksum matches. Previously a null row raised an unhandled attribute error. Regression covers ADMIN, STORE_MANAGER and ANALYST and preserves fail-closed behavior. Six focused dashboard tests passed; full regression 220 passed in 23.27 seconds. No browser rendering changed, so visual tests were not repeated.
