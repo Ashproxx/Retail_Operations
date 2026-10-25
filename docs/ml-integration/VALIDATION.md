@@ -1,5 +1,7 @@
 # Candidate validation — October 25, 2026
 
+Validated implementation commit: `24e28ffc29431fb2974de1787d53eea447fc2487`.
+
 Validated assembly: all sources in SOURCES.json, merge head bfe81dd, plus the integration change containing this report. Source model implementations and frozen research artifacts were not retuned. This is engineering verification, not real-world model acceptance.
 
 - Full Python regression: **270 passed**, 69 upstream statsmodels/Pandas deprecation warnings, 55.39 seconds.
