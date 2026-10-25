@@ -1,0 +1,41 @@
+{
+  "branch": "ml/auxiliary-models",
+  "base": "c27fef0a0c5cf7c84551a5940ef3ced8e9f00b93",
+  "nodes": [
+    "offline delivery evaluation",
+    "descriptive product clusters",
+    "injected anomaly proxy",
+    "training-only STL validation supplement",
+    "authored lexical signed-RAG evaluation",
+    "grouped unreviewed router queue",
+    "training-only descriptive price association",
+    "training-only geometric ranking agreement"
+  ],
+  "edges": [
+    [
+      "read-only synthetic sales",
+      "aggregate metrics"
+    ],
+    [
+      "pre-test daily sales",
+      "training-only STL validation supplement"
+    ],
+    [
+      "fifty positive and fifteen negative fixtures",
+      "authored lexical signed-RAG evaluation"
+    ],
+    [
+      "grouped unreviewed router queue",
+      "human review gate"
+    ],
+    [
+      "observed SKU/day revenue and units",
+      "training-only descriptive price association"
+    ],
+    [
+      "training-only geometric ranking agreement",
+      "unlabeled product relevance review queue"
+    ]
+  ],
+  "runtime_integration": false
+}

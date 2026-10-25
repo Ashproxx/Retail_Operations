@@ -1,0 +1,366 @@
+{
+  "fixture": true,
+  "human_reviewed": false,
+  "purpose": "Agent-authored development fixture; invented policies, not actual store policies or independent accuracy evidence. No model tuning against results.",
+  "documents": [
+    {
+      "id": "returns-window",
+      "text": "Customers may return unworn clothing within thirty days of purchase. A purchase receipt and the original tags are required for a refund."
+    },
+    {
+      "id": "delivery-tracking",
+      "text": "To track a shipped order, look up its tracking reference with the carrier. The shipment status and estimated delivery date are shown on the order page."
+    },
+    {
+      "id": "stock-replenishment",
+      "text": "When available inventory falls below the reorder point, review a replenishment purchase. Consider supplier lead time, forecast demand and safety stock before choosing an order quantity."
+    },
+    {
+      "id": "promotion-rules",
+      "text": "A promotional discount can apply only during its start and end dates. The item must be promotion eligible, have available stock and satisfy the minimum profit margin."
+    },
+    {
+      "id": "damaged-items",
+      "text": "For a damaged or defective product, collect a photograph of the defect and the order identifier. Send the case for human support review before deciding replacement eligibility."
+    },
+    {
+      "id": "store-hours",
+      "text": "The store opens at nine in the morning and closes at five in the evening from Monday to Friday. It is closed on Sunday."
+    },
+    {
+      "id": "store-pickup",
+      "text": "For store pickup, bring the order confirmation and photo identification to the collection counter. Wait until the ready-for-collection notification before visiting."
+    },
+    {
+      "id": "payment-receipt",
+      "text": "A duplicate payment receipt can be requested using the order identifier and purchase date. Support verifies the purchase before sending a receipt. Never request a card PIN or password."
+    },
+    {
+      "id": "exchange-size",
+      "text": "Size exchanges require unworn merchandise, original tags and a purchase receipt. The requested size must be available. If the size is unavailable, a support agent reviews alternatives."
+    },
+    {
+      "id": "privacy-request",
+      "text": "A customer may request correction or deletion of account information through the privacy team. Identity verification is required before processing. Support must not disclose another customer account."
+    }
+  ],
+  "queries": [
+    {
+      "id": "01-1",
+      "group": "returns-window",
+      "question": "What is the time limit for returning unworn clothing?",
+      "relevant_id": "returns-window"
+    },
+    {
+      "id": "01-2",
+      "group": "returns-window",
+      "question": "Which proof of purchase is needed for a refund?",
+      "relevant_id": "returns-window"
+    },
+    {
+      "id": "01-3",
+      "group": "returns-window",
+      "question": "Do returned clothes need their original tags?",
+      "relevant_id": "returns-window"
+    },
+    {
+      "id": "01-4",
+      "group": "returns-window",
+      "question": "Can I return clothing within thirty days?",
+      "relevant_id": "returns-window"
+    },
+    {
+      "id": "01-5",
+      "group": "returns-window",
+      "question": "Must clothing be unworn to qualify for a return?",
+      "relevant_id": "returns-window"
+    },
+    {
+      "id": "02-1",
+      "group": "delivery-tracking",
+      "question": "Where is the shipment tracking reference?",
+      "relevant_id": "delivery-tracking"
+    },
+    {
+      "id": "02-2",
+      "group": "delivery-tracking",
+      "question": "Who provides tracking for a shipped order?",
+      "relevant_id": "delivery-tracking"
+    },
+    {
+      "id": "02-3",
+      "group": "delivery-tracking",
+      "question": "Where can I see the estimated delivery date?",
+      "relevant_id": "delivery-tracking"
+    },
+    {
+      "id": "02-4",
+      "group": "delivery-tracking",
+      "question": "How can I look up shipment status?",
+      "relevant_id": "delivery-tracking"
+    },
+    {
+      "id": "02-5",
+      "group": "delivery-tracking",
+      "question": "Which page shows order delivery estimates?",
+      "relevant_id": "delivery-tracking"
+    },
+    {
+      "id": "03-1",
+      "group": "stock-replenishment",
+      "question": "When should replenishment be reviewed?",
+      "relevant_id": "stock-replenishment"
+    },
+    {
+      "id": "03-2",
+      "group": "stock-replenishment",
+      "question": "Does supplier lead time matter for reorder quantity?",
+      "relevant_id": "stock-replenishment"
+    },
+    {
+      "id": "03-3",
+      "group": "stock-replenishment",
+      "question": "Should forecast demand be considered before replenishment?",
+      "relevant_id": "stock-replenishment"
+    },
+    {
+      "id": "03-4",
+      "group": "stock-replenishment",
+      "question": "What stock threshold triggers a purchase review?",
+      "relevant_id": "stock-replenishment"
+    },
+    {
+      "id": "03-5",
+      "group": "stock-replenishment",
+      "question": "Is safety stock relevant when choosing an order quantity?",
+      "relevant_id": "stock-replenishment"
+    },
+    {
+      "id": "04-1",
+      "group": "promotion-rules",
+      "question": "Which dates control whether a promotional discount applies?",
+      "relevant_id": "promotion-rules"
+    },
+    {
+      "id": "04-2",
+      "group": "promotion-rules",
+      "question": "Does a promotion require available stock?",
+      "relevant_id": "promotion-rules"
+    },
+    {
+      "id": "04-3",
+      "group": "promotion-rules",
+      "question": "Must the item be eligible for the promotion?",
+      "relevant_id": "promotion-rules"
+    },
+    {
+      "id": "04-4",
+      "group": "promotion-rules",
+      "question": "Does the minimum profit margin constrain promotions?",
+      "relevant_id": "promotion-rules"
+    },
+    {
+      "id": "04-5",
+      "group": "promotion-rules",
+      "question": "What conditions must a promotional item satisfy?",
+      "relevant_id": "promotion-rules"
+    },
+    {
+      "id": "05-1",
+      "group": "damaged-items",
+      "question": "What evidence is needed for a damaged product?",
+      "relevant_id": "damaged-items"
+    },
+    {
+      "id": "05-2",
+      "group": "damaged-items",
+      "question": "Should a person review a defective product replacement?",
+      "relevant_id": "damaged-items"
+    },
+    {
+      "id": "05-3",
+      "group": "damaged-items",
+      "question": "Is an order identifier needed for a damaged item case?",
+      "relevant_id": "damaged-items"
+    },
+    {
+      "id": "05-4",
+      "group": "damaged-items",
+      "question": "Should support collect a photo of the defect?",
+      "relevant_id": "damaged-items"
+    },
+    {
+      "id": "05-5",
+      "group": "damaged-items",
+      "question": "Who reviews replacement eligibility for damaged goods?",
+      "relevant_id": "damaged-items"
+    },
+    {
+      "id": "06-1",
+      "group": "store-hours",
+      "question": "At what time does the store open on weekdays?",
+      "relevant_id": "store-hours"
+    },
+    {
+      "id": "06-2",
+      "group": "store-hours",
+      "question": "When does the store close on Friday?",
+      "relevant_id": "store-hours"
+    },
+    {
+      "id": "06-3",
+      "group": "store-hours",
+      "question": "Is the store open on Sunday?",
+      "relevant_id": "store-hours"
+    },
+    {
+      "id": "06-4",
+      "group": "store-hours",
+      "question": "Which weekdays follow the nine-to-five schedule?",
+      "relevant_id": "store-hours"
+    },
+    {
+      "id": "06-5",
+      "group": "store-hours",
+      "question": "Does the shop close at five in the evening?",
+      "relevant_id": "store-hours"
+    },
+    {
+      "id": "07-1",
+      "group": "store-pickup",
+      "question": "What should I bring for store pickup?",
+      "relevant_id": "store-pickup"
+    },
+    {
+      "id": "07-2",
+      "group": "store-pickup",
+      "question": "Is photo identification required at collection?",
+      "relevant_id": "store-pickup"
+    },
+    {
+      "id": "07-3",
+      "group": "store-pickup",
+      "question": "Where do I collect a pickup order?",
+      "relevant_id": "store-pickup"
+    },
+    {
+      "id": "07-4",
+      "group": "store-pickup",
+      "question": "Should I wait for the ready-for-collection message?",
+      "relevant_id": "store-pickup"
+    },
+    {
+      "id": "07-5",
+      "group": "store-pickup",
+      "question": "Is an order confirmation needed for pickup?",
+      "relevant_id": "store-pickup"
+    },
+    {
+      "id": "08-1",
+      "group": "payment-receipt",
+      "question": "How can I request a duplicate payment receipt?",
+      "relevant_id": "payment-receipt"
+    },
+    {
+      "id": "08-2",
+      "group": "payment-receipt",
+      "question": "Which purchase details are needed for another receipt?",
+      "relevant_id": "payment-receipt"
+    },
+    {
+      "id": "08-3",
+      "group": "payment-receipt",
+      "question": "Does support verify a purchase before sending a receipt?",
+      "relevant_id": "payment-receipt"
+    },
+    {
+      "id": "08-4",
+      "group": "payment-receipt",
+      "question": "Should support request my card PIN?",
+      "relevant_id": "payment-receipt"
+    },
+    {
+      "id": "08-5",
+      "group": "payment-receipt",
+      "question": "Is a password required when requesting a duplicate receipt?",
+      "relevant_id": "payment-receipt"
+    },
+    {
+      "id": "09-1",
+      "group": "exchange-size",
+      "question": "What condition must an item be in for a size exchange?",
+      "relevant_id": "exchange-size"
+    },
+    {
+      "id": "09-2",
+      "group": "exchange-size",
+      "question": "Are tags needed for exchanging a size?",
+      "relevant_id": "exchange-size"
+    },
+    {
+      "id": "09-3",
+      "group": "exchange-size",
+      "question": "What happens if the requested size is unavailable?",
+      "relevant_id": "exchange-size"
+    },
+    {
+      "id": "09-4",
+      "group": "exchange-size",
+      "question": "Who reviews alternatives when an exchange size is missing?",
+      "relevant_id": "exchange-size"
+    },
+    {
+      "id": "09-5",
+      "group": "exchange-size",
+      "question": "Does a size exchange require a receipt?",
+      "relevant_id": "exchange-size"
+    },
+    {
+      "id": "10-1",
+      "group": "privacy-request",
+      "question": "Where should an account deletion request go?",
+      "relevant_id": "privacy-request"
+    },
+    {
+      "id": "10-2",
+      "group": "privacy-request",
+      "question": "Can I request correction of account information?",
+      "relevant_id": "privacy-request"
+    },
+    {
+      "id": "10-3",
+      "group": "privacy-request",
+      "question": "Is identity verification needed for privacy requests?",
+      "relevant_id": "privacy-request"
+    },
+    {
+      "id": "10-4",
+      "group": "privacy-request",
+      "question": "May support disclose another customer account?",
+      "relevant_id": "privacy-request"
+    },
+    {
+      "id": "10-5",
+      "group": "privacy-request",
+      "question": "Which team processes deletion of account information?",
+      "relevant_id": "privacy-request"
+    }
+  ],
+  "unanswerable": [
+    "What is the exact refund processing fee?",
+    "What is the store manager personal phone number?",
+    "What is my current order tracking number?",
+    "How many blue shirts are in stock right now?",
+    "What are the store opening hours on Saturday?",
+    "What is the exact price of size medium jeans?",
+    "What is the maximum monetary value of a refund?",
+    "Which courier has my parcel today?",
+    "What is the employee salary for this month?",
+    "Will a supplier shipment arrive tomorrow?",
+    "What is the support account password?",
+    "What is the customer card PIN?",
+    "How many days does account deletion take?",
+    "Can I combine three discount coupons?",
+    "What is the address of the pickup counter?"
+  ]
+}

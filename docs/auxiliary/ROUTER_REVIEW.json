@@ -1,0 +1,1806 @@
+{
+  "human_reviewed": false,
+  "purpose": "Agent-authored review queue. Two surface variants per group; not independent natural queries. Draft labels require human correction.",
+  "cases": [
+    {
+      "id": "inventory-01-1",
+      "group": "inventory-01",
+      "split": "train",
+      "text": "Show current inventory",
+      "draft_label": "INVENTORY",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "inventory-01-2",
+      "group": "inventory-01",
+      "split": "train",
+      "text": "Show current inventory. Please.",
+      "draft_label": "INVENTORY",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "inventory-02-1",
+      "group": "inventory-02",
+      "split": "test",
+      "text": "Which products have low stock",
+      "draft_label": "INVENTORY",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "inventory-02-2",
+      "group": "inventory-02",
+      "split": "test",
+      "text": "Which products have low stock. Please.",
+      "draft_label": "INVENTORY",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "inventory-03-1",
+      "group": "inventory-03",
+      "split": "test",
+      "text": "List products below the reorder point",
+      "draft_label": "INVENTORY",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "inventory-03-2",
+      "group": "inventory-03",
+      "split": "test",
+      "text": "List products below the reorder point. Please.",
+      "draft_label": "INVENTORY",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "inventory-04-1",
+      "group": "inventory-04",
+      "split": "validation",
+      "text": "Which items need replenishment",
+      "draft_label": "INVENTORY",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "inventory-04-2",
+      "group": "inventory-04",
+      "split": "validation",
+      "text": "Which items need replenishment. Please.",
+      "draft_label": "INVENTORY",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "inventory-05-1",
+      "group": "inventory-05",
+      "split": "test",
+      "text": "Show overstocked products",
+      "draft_label": "INVENTORY",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "inventory-05-2",
+      "group": "inventory-05",
+      "split": "test",
+      "text": "Show overstocked products. Please.",
+      "draft_label": "INVENTORY",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "inventory-06-1",
+      "group": "inventory-06",
+      "split": "test",
+      "text": "How many units are left",
+      "draft_label": "INVENTORY",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "inventory-06-2",
+      "group": "inventory-06",
+      "split": "test",
+      "text": "How many units are left. Please.",
+      "draft_label": "INVENTORY",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "inventory-07-1",
+      "group": "inventory-07",
+      "split": "train",
+      "text": "Find products that have run out",
+      "draft_label": "INVENTORY",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "inventory-07-2",
+      "group": "inventory-07",
+      "split": "train",
+      "text": "Find products that have run out. Please.",
+      "draft_label": "INVENTORY",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "inventory-08-1",
+      "group": "inventory-08",
+      "split": "train",
+      "text": "Review stock levels for this store",
+      "draft_label": "INVENTORY",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "inventory-08-2",
+      "group": "inventory-08",
+      "split": "train",
+      "text": "Review stock levels for this store. Please.",
+      "draft_label": "INVENTORY",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "inventory-09-1",
+      "group": "inventory-09",
+      "split": "train",
+      "text": "Identify stockout risk",
+      "draft_label": "INVENTORY",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "inventory-09-2",
+      "group": "inventory-09",
+      "split": "train",
+      "text": "Identify stockout risk. Please.",
+      "draft_label": "INVENTORY",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "inventory-10-1",
+      "group": "inventory-10",
+      "split": "train",
+      "text": "Show restocking needs",
+      "draft_label": "INVENTORY",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "inventory-10-2",
+      "group": "inventory-10",
+      "split": "train",
+      "text": "Show restocking needs. Please.",
+      "draft_label": "INVENTORY",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "demand-01-1",
+      "group": "demand-01",
+      "split": "test",
+      "text": "Forecast demand for next week",
+      "draft_label": "DEMAND",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "demand-01-2",
+      "group": "demand-01",
+      "split": "test",
+      "text": "Forecast demand for next week. Please.",
+      "draft_label": "DEMAND",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "demand-02-1",
+      "group": "demand-02",
+      "split": "train",
+      "text": "Predict demand for shirts",
+      "draft_label": "DEMAND",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "demand-02-2",
+      "group": "demand-02",
+      "split": "train",
+      "text": "Predict demand for shirts. Please.",
+      "draft_label": "DEMAND",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "demand-03-1",
+      "group": "demand-03",
+      "split": "test",
+      "text": "Show the sales trend",
+      "draft_label": "DEMAND",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "demand-03-2",
+      "group": "demand-03",
+      "split": "test",
+      "text": "Show the sales trend. Please.",
+      "draft_label": "DEMAND",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "demand-04-1",
+      "group": "demand-04",
+      "split": "train",
+      "text": "Estimate demand for the coming month",
+      "draft_label": "DEMAND",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "demand-04-2",
+      "group": "demand-04",
+      "split": "train",
+      "text": "Estimate demand for the coming month. Please.",
+      "draft_label": "DEMAND",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "demand-05-1",
+      "group": "demand-05",
+      "split": "train",
+      "text": "Forecast units for tomorrow",
+      "draft_label": "DEMAND",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "demand-05-2",
+      "group": "demand-05",
+      "split": "train",
+      "text": "Forecast units for tomorrow. Please.",
+      "draft_label": "DEMAND",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "demand-06-1",
+      "group": "demand-06",
+      "split": "train",
+      "text": "Show demand projections for dresses",
+      "draft_label": "DEMAND",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "demand-06-2",
+      "group": "demand-06",
+      "split": "train",
+      "text": "Show demand projections for dresses. Please.",
+      "draft_label": "DEMAND",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "demand-07-1",
+      "group": "demand-07",
+      "split": "train",
+      "text": "Compare demand forecasts",
+      "draft_label": "DEMAND",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "demand-07-2",
+      "group": "demand-07",
+      "split": "train",
+      "text": "Compare demand forecasts. Please.",
+      "draft_label": "DEMAND",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "demand-08-1",
+      "group": "demand-08",
+      "split": "validation",
+      "text": "Explain the forecast uncertainty",
+      "draft_label": "DEMAND",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "demand-08-2",
+      "group": "demand-08",
+      "split": "validation",
+      "text": "Explain the forecast uncertainty. Please.",
+      "draft_label": "DEMAND",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "demand-09-1",
+      "group": "demand-09",
+      "split": "validation",
+      "text": "Predict demand for jackets",
+      "draft_label": "DEMAND",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "demand-09-2",
+      "group": "demand-09",
+      "split": "validation",
+      "text": "Predict demand for jackets. Please.",
+      "draft_label": "DEMAND",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "demand-10-1",
+      "group": "demand-10",
+      "split": "train",
+      "text": "Show weekly demand patterns",
+      "draft_label": "DEMAND",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "demand-10-2",
+      "group": "demand-10",
+      "split": "train",
+      "text": "Show weekly demand patterns. Please.",
+      "draft_label": "DEMAND",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "pricing-01-1",
+      "group": "pricing-01",
+      "split": "validation",
+      "text": "Review current prices",
+      "draft_label": "PRICING",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "pricing-01-2",
+      "group": "pricing-01",
+      "split": "validation",
+      "text": "Review current prices. Please.",
+      "draft_label": "PRICING",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "pricing-02-1",
+      "group": "pricing-02",
+      "split": "train",
+      "text": "Which discounts apply",
+      "draft_label": "PRICING",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "pricing-02-2",
+      "group": "pricing-02",
+      "split": "train",
+      "text": "Which discounts apply. Please.",
+      "draft_label": "PRICING",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "pricing-03-1",
+      "group": "pricing-03",
+      "split": "validation",
+      "text": "Compare our prices",
+      "draft_label": "PRICING",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "pricing-03-2",
+      "group": "pricing-03",
+      "split": "validation",
+      "text": "Compare our prices. Please.",
+      "draft_label": "PRICING",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "pricing-04-1",
+      "group": "pricing-04",
+      "split": "train",
+      "text": "Show active promotions",
+      "draft_label": "PRICING",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "pricing-04-2",
+      "group": "pricing-04",
+      "split": "train",
+      "text": "Show active promotions. Please.",
+      "draft_label": "PRICING",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "pricing-05-1",
+      "group": "pricing-05",
+      "split": "train",
+      "text": "Check coupon eligibility",
+      "draft_label": "PRICING",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "pricing-05-2",
+      "group": "pricing-05",
+      "split": "train",
+      "text": "Check coupon eligibility. Please.",
+      "draft_label": "PRICING",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "pricing-06-1",
+      "group": "pricing-06",
+      "split": "train",
+      "text": "Recommend pricing for shirts",
+      "draft_label": "PRICING",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "pricing-06-2",
+      "group": "pricing-06",
+      "split": "train",
+      "text": "Recommend pricing for shirts. Please.",
+      "draft_label": "PRICING",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "pricing-07-1",
+      "group": "pricing-07",
+      "split": "validation",
+      "text": "Review price matching",
+      "draft_label": "PRICING",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "pricing-07-2",
+      "group": "pricing-07",
+      "split": "validation",
+      "text": "Review price matching. Please.",
+      "draft_label": "PRICING",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "pricing-08-1",
+      "group": "pricing-08",
+      "split": "train",
+      "text": "Find promotion end dates",
+      "draft_label": "PRICING",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "pricing-08-2",
+      "group": "pricing-08",
+      "split": "train",
+      "text": "Find promotion end dates. Please.",
+      "draft_label": "PRICING",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "pricing-09-1",
+      "group": "pricing-09",
+      "split": "train",
+      "text": "Explain discount limits",
+      "draft_label": "PRICING",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "pricing-09-2",
+      "group": "pricing-09",
+      "split": "train",
+      "text": "Explain discount limits. Please.",
+      "draft_label": "PRICING",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "pricing-10-1",
+      "group": "pricing-10",
+      "split": "train",
+      "text": "Show the price of jeans",
+      "draft_label": "PRICING",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "pricing-10-2",
+      "group": "pricing-10",
+      "split": "train",
+      "text": "Show the price of jeans. Please.",
+      "draft_label": "PRICING",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "order-01-1",
+      "group": "order-01",
+      "split": "train",
+      "text": "Track my order",
+      "draft_label": "ORDER",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "order-01-2",
+      "group": "order-01",
+      "split": "train",
+      "text": "Track my order. Please.",
+      "draft_label": "ORDER",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "order-02-1",
+      "group": "order-02",
+      "split": "train",
+      "text": "Show order status",
+      "draft_label": "ORDER",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "order-02-2",
+      "group": "order-02",
+      "split": "train",
+      "text": "Show order status. Please.",
+      "draft_label": "ORDER",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "order-03-1",
+      "group": "order-03",
+      "split": "train",
+      "text": "Where is my order",
+      "draft_label": "ORDER",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "order-03-2",
+      "group": "order-03",
+      "split": "train",
+      "text": "Where is my order. Please.",
+      "draft_label": "ORDER",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "order-04-1",
+      "group": "order-04",
+      "split": "train",
+      "text": "Review shipping status",
+      "draft_label": "ORDER",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "order-04-2",
+      "group": "order-04",
+      "split": "train",
+      "text": "Review shipping status. Please.",
+      "draft_label": "ORDER",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "order-05-1",
+      "group": "order-05",
+      "split": "train",
+      "text": "Show delayed deliveries",
+      "draft_label": "ORDER",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "order-05-2",
+      "group": "order-05",
+      "split": "train",
+      "text": "Show delayed deliveries. Please.",
+      "draft_label": "ORDER",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "order-06-1",
+      "group": "order-06",
+      "split": "validation",
+      "text": "Find shipments due today",
+      "draft_label": "ORDER",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "order-06-2",
+      "group": "order-06",
+      "split": "validation",
+      "text": "Find shipments due today. Please.",
+      "draft_label": "ORDER",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "order-07-1",
+      "group": "order-07",
+      "split": "validation",
+      "text": "Explain fulfillment status",
+      "draft_label": "ORDER",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "order-07-2",
+      "group": "order-07",
+      "split": "validation",
+      "text": "Explain fulfillment status. Please.",
+      "draft_label": "ORDER",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "order-08-1",
+      "group": "order-08",
+      "split": "train",
+      "text": "Review delivery performance",
+      "draft_label": "ORDER",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "order-08-2",
+      "group": "order-08",
+      "split": "train",
+      "text": "Review delivery performance. Please.",
+      "draft_label": "ORDER",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "order-09-1",
+      "group": "order-09",
+      "split": "train",
+      "text": "Check the delivery SLA",
+      "draft_label": "ORDER",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "order-09-2",
+      "group": "order-09",
+      "split": "train",
+      "text": "Check the delivery SLA. Please.",
+      "draft_label": "ORDER",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "order-10-1",
+      "group": "order-10",
+      "split": "train",
+      "text": "Show order tracking details",
+      "draft_label": "ORDER",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "order-10-2",
+      "group": "order-10",
+      "split": "train",
+      "text": "Show order tracking details. Please.",
+      "draft_label": "ORDER",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "supply_chain-01-1",
+      "group": "supply_chain-01",
+      "split": "test",
+      "text": "Compare supplier lead times",
+      "draft_label": "SUPPLY_CHAIN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "supply_chain-01-2",
+      "group": "supply_chain-01",
+      "split": "test",
+      "text": "Compare supplier lead times. Please.",
+      "draft_label": "SUPPLY_CHAIN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "supply_chain-02-1",
+      "group": "supply_chain-02",
+      "split": "test",
+      "text": "Review vendor performance",
+      "draft_label": "SUPPLY_CHAIN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "supply_chain-02-2",
+      "group": "supply_chain-02",
+      "split": "test",
+      "text": "Review vendor performance. Please.",
+      "draft_label": "SUPPLY_CHAIN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "supply_chain-03-1",
+      "group": "supply_chain-03",
+      "split": "train",
+      "text": "Identify supply chain disruptions",
+      "draft_label": "SUPPLY_CHAIN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "supply_chain-03-2",
+      "group": "supply_chain-03",
+      "split": "train",
+      "text": "Identify supply chain disruptions. Please.",
+      "draft_label": "SUPPLY_CHAIN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "supply_chain-04-1",
+      "group": "supply_chain-04",
+      "split": "train",
+      "text": "Show logistics risks",
+      "draft_label": "SUPPLY_CHAIN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "supply_chain-04-2",
+      "group": "supply_chain-04",
+      "split": "train",
+      "text": "Show logistics risks. Please.",
+      "draft_label": "SUPPLY_CHAIN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "supply_chain-05-1",
+      "group": "supply_chain-05",
+      "split": "train",
+      "text": "Review supplier reliability",
+      "draft_label": "SUPPLY_CHAIN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "supply_chain-05-2",
+      "group": "supply_chain-05",
+      "split": "train",
+      "text": "Review supplier reliability. Please.",
+      "draft_label": "SUPPLY_CHAIN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "supply_chain-06-1",
+      "group": "supply_chain-06",
+      "split": "validation",
+      "text": "Compare vendors",
+      "draft_label": "SUPPLY_CHAIN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "supply_chain-06-2",
+      "group": "supply_chain-06",
+      "split": "validation",
+      "text": "Compare vendors. Please.",
+      "draft_label": "SUPPLY_CHAIN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "supply_chain-07-1",
+      "group": "supply_chain-07",
+      "split": "train",
+      "text": "Explain replenishment lead times",
+      "draft_label": "SUPPLY_CHAIN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "supply_chain-07-2",
+      "group": "supply_chain-07",
+      "split": "train",
+      "text": "Explain replenishment lead times. Please.",
+      "draft_label": "SUPPLY_CHAIN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "supply_chain-08-1",
+      "group": "supply_chain-08",
+      "split": "train",
+      "text": "Review vendor negotiation options",
+      "draft_label": "SUPPLY_CHAIN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "supply_chain-08-2",
+      "group": "supply_chain-08",
+      "split": "train",
+      "text": "Review vendor negotiation options. Please.",
+      "draft_label": "SUPPLY_CHAIN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "supply_chain-09-1",
+      "group": "supply_chain-09",
+      "split": "train",
+      "text": "Identify supplier delays",
+      "draft_label": "SUPPLY_CHAIN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "supply_chain-09-2",
+      "group": "supply_chain-09",
+      "split": "train",
+      "text": "Identify supplier delays. Please.",
+      "draft_label": "SUPPLY_CHAIN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "supply_chain-10-1",
+      "group": "supply_chain-10",
+      "split": "train",
+      "text": "Show supply chain constraints",
+      "draft_label": "SUPPLY_CHAIN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "supply_chain-10-2",
+      "group": "supply_chain-10",
+      "split": "train",
+      "text": "Show supply chain constraints. Please.",
+      "draft_label": "SUPPLY_CHAIN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "customer_support-01-1",
+      "group": "customer_support-01",
+      "split": "train",
+      "text": "I have a complaint",
+      "draft_label": "CUSTOMER_SUPPORT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "customer_support-01-2",
+      "group": "customer_support-01",
+      "split": "train",
+      "text": "I have a complaint. Please.",
+      "draft_label": "CUSTOMER_SUPPORT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "customer_support-02-1",
+      "group": "customer_support-02",
+      "split": "train",
+      "text": "Contact customer support",
+      "draft_label": "CUSTOMER_SUPPORT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "customer_support-02-2",
+      "group": "customer_support-02",
+      "split": "train",
+      "text": "Contact customer support. Please.",
+      "draft_label": "CUSTOMER_SUPPORT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "customer_support-03-1",
+      "group": "customer_support-03",
+      "split": "validation",
+      "text": "Open a support ticket",
+      "draft_label": "CUSTOMER_SUPPORT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "customer_support-03-2",
+      "group": "customer_support-03",
+      "split": "validation",
+      "text": "Open a support ticket. Please.",
+      "draft_label": "CUSTOMER_SUPPORT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "customer_support-04-1",
+      "group": "customer_support-04",
+      "split": "test",
+      "text": "Show customer service guidance",
+      "draft_label": "CUSTOMER_SUPPORT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "customer_support-04-2",
+      "group": "customer_support-04",
+      "split": "test",
+      "text": "Show customer service guidance. Please.",
+      "draft_label": "CUSTOMER_SUPPORT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "customer_support-05-1",
+      "group": "customer_support-05",
+      "split": "train",
+      "text": "Review unresolved complaints",
+      "draft_label": "CUSTOMER_SUPPORT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "customer_support-05-2",
+      "group": "customer_support-05",
+      "split": "train",
+      "text": "Review unresolved complaints. Please.",
+      "draft_label": "CUSTOMER_SUPPORT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "customer_support-06-1",
+      "group": "customer_support-06",
+      "split": "test",
+      "text": "A shopper is unhappy",
+      "draft_label": "CUSTOMER_SUPPORT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "customer_support-06-2",
+      "group": "customer_support-06",
+      "split": "test",
+      "text": "A shopper is unhappy. Please.",
+      "draft_label": "CUSTOMER_SUPPORT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "customer_support-07-1",
+      "group": "customer_support-07",
+      "split": "test",
+      "text": "How should we handle an angry customer",
+      "draft_label": "CUSTOMER_SUPPORT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "customer_support-07-2",
+      "group": "customer_support-07",
+      "split": "test",
+      "text": "How should we handle an angry customer. Please.",
+      "draft_label": "CUSTOMER_SUPPORT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "customer_support-08-1",
+      "group": "customer_support-08",
+      "split": "test",
+      "text": "Explain the customer FAQ",
+      "draft_label": "CUSTOMER_SUPPORT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "customer_support-08-2",
+      "group": "customer_support-08",
+      "split": "test",
+      "text": "Explain the customer FAQ. Please.",
+      "draft_label": "CUSTOMER_SUPPORT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "customer_support-09-1",
+      "group": "customer_support-09",
+      "split": "train",
+      "text": "Escalate this customer complaint",
+      "draft_label": "CUSTOMER_SUPPORT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "customer_support-09-2",
+      "group": "customer_support-09",
+      "split": "train",
+      "text": "Escalate this customer complaint. Please.",
+      "draft_label": "CUSTOMER_SUPPORT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "customer_support-10-1",
+      "group": "customer_support-10",
+      "split": "train",
+      "text": "Help a frustrated shopper",
+      "draft_label": "CUSTOMER_SUPPORT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "customer_support-10-2",
+      "group": "customer_support-10",
+      "split": "train",
+      "text": "Help a frustrated shopper. Please.",
+      "draft_label": "CUSTOMER_SUPPORT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "returns-01-1",
+      "group": "returns-01",
+      "split": "train",
+      "text": "Check return eligibility",
+      "draft_label": "RETURNS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "returns-01-2",
+      "group": "returns-01",
+      "split": "train",
+      "text": "Check return eligibility. Please.",
+      "draft_label": "RETURNS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "returns-02-1",
+      "group": "returns-02",
+      "split": "train",
+      "text": "Review refund status",
+      "draft_label": "RETURNS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "returns-02-2",
+      "group": "returns-02",
+      "split": "train",
+      "text": "Review refund status. Please.",
+      "draft_label": "RETURNS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "returns-03-1",
+      "group": "returns-03",
+      "split": "train",
+      "text": "Explain the returns policy",
+      "draft_label": "RETURNS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "returns-03-2",
+      "group": "returns-03",
+      "split": "train",
+      "text": "Explain the returns policy. Please.",
+      "draft_label": "RETURNS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "returns-04-1",
+      "group": "returns-04",
+      "split": "train",
+      "text": "A customer received a defective item",
+      "draft_label": "RETURNS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "returns-04-2",
+      "group": "returns-04",
+      "split": "train",
+      "text": "A customer received a defective item. Please.",
+      "draft_label": "RETURNS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "returns-05-1",
+      "group": "returns-05",
+      "split": "train",
+      "text": "Process a wrong item case",
+      "draft_label": "RETURNS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "returns-05-2",
+      "group": "returns-05",
+      "split": "train",
+      "text": "Process a wrong item case. Please.",
+      "draft_label": "RETURNS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "returns-06-1",
+      "group": "returns-06",
+      "split": "train",
+      "text": "Show refund requirements",
+      "draft_label": "RETURNS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "returns-06-2",
+      "group": "returns-06",
+      "split": "train",
+      "text": "Show refund requirements. Please.",
+      "draft_label": "RETURNS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "returns-07-1",
+      "group": "returns-07",
+      "split": "test",
+      "text": "Review return reasons",
+      "draft_label": "RETURNS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "returns-07-2",
+      "group": "returns-07",
+      "split": "test",
+      "text": "Review return reasons. Please.",
+      "draft_label": "RETURNS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "returns-08-1",
+      "group": "returns-08",
+      "split": "test",
+      "text": "Can unworn clothes be returned",
+      "draft_label": "RETURNS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "returns-08-2",
+      "group": "returns-08",
+      "split": "test",
+      "text": "Can unworn clothes be returned. Please.",
+      "draft_label": "RETURNS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "returns-09-1",
+      "group": "returns-09",
+      "split": "train",
+      "text": "Check replacement for a defective product",
+      "draft_label": "RETURNS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "returns-09-2",
+      "group": "returns-09",
+      "split": "train",
+      "text": "Check replacement for a defective product. Please.",
+      "draft_label": "RETURNS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "returns-10-1",
+      "group": "returns-10",
+      "split": "test",
+      "text": "Explain a refused refund",
+      "draft_label": "RETURNS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "returns-10-2",
+      "group": "returns-10",
+      "split": "test",
+      "text": "Explain a refused refund. Please.",
+      "draft_label": "RETURNS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "analytics-01-1",
+      "group": "analytics-01",
+      "split": "test",
+      "text": "Show total sales",
+      "draft_label": "ANALYTICS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "analytics-01-2",
+      "group": "analytics-01",
+      "split": "test",
+      "text": "Show total sales. Please.",
+      "draft_label": "ANALYTICS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "analytics-02-1",
+      "group": "analytics-02",
+      "split": "test",
+      "text": "Compare sales by store",
+      "draft_label": "ANALYTICS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "analytics-02-2",
+      "group": "analytics-02",
+      "split": "test",
+      "text": "Compare sales by store. Please.",
+      "draft_label": "ANALYTICS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "analytics-03-1",
+      "group": "analytics-03",
+      "split": "train",
+      "text": "List top selling products",
+      "draft_label": "ANALYTICS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "analytics-03-2",
+      "group": "analytics-03",
+      "split": "train",
+      "text": "List top selling products. Please.",
+      "draft_label": "ANALYTICS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "analytics-04-1",
+      "group": "analytics-04",
+      "split": "test",
+      "text": "Show units sold yesterday",
+      "draft_label": "ANALYTICS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "analytics-04-2",
+      "group": "analytics-04",
+      "split": "test",
+      "text": "Show units sold yesterday. Please.",
+      "draft_label": "ANALYTICS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "analytics-05-1",
+      "group": "analytics-05",
+      "split": "validation",
+      "text": "Create a sales summary",
+      "draft_label": "ANALYTICS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "analytics-05-2",
+      "group": "analytics-05",
+      "split": "validation",
+      "text": "Create a sales summary. Please.",
+      "draft_label": "ANALYTICS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "analytics-06-1",
+      "group": "analytics-06",
+      "split": "train",
+      "text": "Review store KPIs",
+      "draft_label": "ANALYTICS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "analytics-06-2",
+      "group": "analytics-06",
+      "split": "train",
+      "text": "Review store KPIs. Please.",
+      "draft_label": "ANALYTICS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "analytics-07-1",
+      "group": "analytics-07",
+      "split": "train",
+      "text": "Find slow moving products",
+      "draft_label": "ANALYTICS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "analytics-07-2",
+      "group": "analytics-07",
+      "split": "train",
+      "text": "Find slow moving products. Please.",
+      "draft_label": "ANALYTICS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "analytics-08-1",
+      "group": "analytics-08",
+      "split": "train",
+      "text": "Show inventory turnover",
+      "draft_label": "ANALYTICS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "analytics-08-2",
+      "group": "analytics-08",
+      "split": "train",
+      "text": "Show inventory turnover. Please.",
+      "draft_label": "ANALYTICS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "analytics-09-1",
+      "group": "analytics-09",
+      "split": "train",
+      "text": "Compare stores by revenue",
+      "draft_label": "ANALYTICS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "analytics-09-2",
+      "group": "analytics-09",
+      "split": "train",
+      "text": "Compare stores by revenue. Please.",
+      "draft_label": "ANALYTICS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "analytics-10-1",
+      "group": "analytics-10",
+      "split": "validation",
+      "text": "Create a performance report",
+      "draft_label": "ANALYTICS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "analytics-10-2",
+      "group": "analytics-10",
+      "split": "validation",
+      "text": "Create a performance report. Please.",
+      "draft_label": "ANALYTICS",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "multi_agent-01-1",
+      "group": "multi_agent-01",
+      "split": "train",
+      "text": "Show inventory and forecast demand",
+      "draft_label": "MULTI_AGENT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "multi_agent-01-2",
+      "group": "multi_agent-01",
+      "split": "train",
+      "text": "Show inventory and forecast demand. Please.",
+      "draft_label": "MULTI_AGENT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "multi_agent-02-1",
+      "group": "multi_agent-02",
+      "split": "train",
+      "text": "Review prices and refunds",
+      "draft_label": "MULTI_AGENT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "multi_agent-02-2",
+      "group": "multi_agent-02",
+      "split": "train",
+      "text": "Review prices and refunds. Please.",
+      "draft_label": "MULTI_AGENT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "multi_agent-03-1",
+      "group": "multi_agent-03",
+      "split": "train",
+      "text": "Track delivery and compare vendors",
+      "draft_label": "MULTI_AGENT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "multi_agent-03-2",
+      "group": "multi_agent-03",
+      "split": "train",
+      "text": "Track delivery and compare vendors. Please.",
+      "draft_label": "MULTI_AGENT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "multi_agent-04-1",
+      "group": "multi_agent-04",
+      "split": "test",
+      "text": "Show total sales and active promotions",
+      "draft_label": "MULTI_AGENT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "multi_agent-04-2",
+      "group": "multi_agent-04",
+      "split": "test",
+      "text": "Show total sales and active promotions. Please.",
+      "draft_label": "MULTI_AGENT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "multi_agent-05-1",
+      "group": "multi_agent-05",
+      "split": "train",
+      "text": "Review complaints and return eligibility",
+      "draft_label": "MULTI_AGENT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "multi_agent-05-2",
+      "group": "multi_agent-05",
+      "split": "train",
+      "text": "Review complaints and return eligibility. Please.",
+      "draft_label": "MULTI_AGENT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "multi_agent-06-1",
+      "group": "multi_agent-06",
+      "split": "validation",
+      "text": "Forecast demand and compare supplier lead times",
+      "draft_label": "MULTI_AGENT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "multi_agent-06-2",
+      "group": "multi_agent-06",
+      "split": "validation",
+      "text": "Forecast demand and compare supplier lead times. Please.",
+      "draft_label": "MULTI_AGENT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "multi_agent-07-1",
+      "group": "multi_agent-07",
+      "split": "train",
+      "text": "Show stock levels and order status",
+      "draft_label": "MULTI_AGENT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "multi_agent-07-2",
+      "group": "multi_agent-07",
+      "split": "train",
+      "text": "Show stock levels and order status. Please.",
+      "draft_label": "MULTI_AGENT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "multi_agent-08-1",
+      "group": "multi_agent-08",
+      "split": "validation",
+      "text": "Compare prices and customer complaints",
+      "draft_label": "MULTI_AGENT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "multi_agent-08-2",
+      "group": "multi_agent-08",
+      "split": "validation",
+      "text": "Compare prices and customer complaints. Please.",
+      "draft_label": "MULTI_AGENT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "multi_agent-09-1",
+      "group": "multi_agent-09",
+      "split": "train",
+      "text": "Review refunds and supply chain disruptions",
+      "draft_label": "MULTI_AGENT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "multi_agent-09-2",
+      "group": "multi_agent-09",
+      "split": "train",
+      "text": "Review refunds and supply chain disruptions. Please.",
+      "draft_label": "MULTI_AGENT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "multi_agent-10-1",
+      "group": "multi_agent-10",
+      "split": "test",
+      "text": "Show analytics and forecast demand",
+      "draft_label": "MULTI_AGENT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "multi_agent-10-2",
+      "group": "multi_agent-10",
+      "split": "test",
+      "text": "Show analytics and forecast demand. Please.",
+      "draft_label": "MULTI_AGENT",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "unknown-01-1",
+      "group": "unknown-01",
+      "split": "train",
+      "text": "Hello there",
+      "draft_label": "UNKNOWN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "unknown-01-2",
+      "group": "unknown-01",
+      "split": "train",
+      "text": "Hello there. Please.",
+      "draft_label": "UNKNOWN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "unknown-02-1",
+      "group": "unknown-02",
+      "split": "validation",
+      "text": "What is the weather",
+      "draft_label": "UNKNOWN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "unknown-02-2",
+      "group": "unknown-02",
+      "split": "validation",
+      "text": "What is the weather. Please.",
+      "draft_label": "UNKNOWN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "unknown-03-1",
+      "group": "unknown-03",
+      "split": "test",
+      "text": "Show inventory and write a poem",
+      "draft_label": "UNKNOWN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "unknown-03-2",
+      "group": "unknown-03",
+      "split": "test",
+      "text": "Show inventory and write a poem. Please.",
+      "draft_label": "UNKNOWN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "unknown-04-1",
+      "group": "unknown-04",
+      "split": "train",
+      "text": "Do not refund this order",
+      "draft_label": "UNKNOWN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "unknown-04-2",
+      "group": "unknown-04",
+      "split": "train",
+      "text": "Do not refund this order. Please.",
+      "draft_label": "UNKNOWN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "unknown-05-1",
+      "group": "unknown-05",
+      "split": "train",
+      "text": "Either inventory or pricing",
+      "draft_label": "UNKNOWN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "unknown-05-2",
+      "group": "unknown-05",
+      "split": "train",
+      "text": "Either inventory or pricing. Please.",
+      "draft_label": "UNKNOWN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "unknown-06-1",
+      "group": "unknown-06",
+      "split": "validation",
+      "text": "What is the stock market price",
+      "draft_label": "UNKNOWN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "unknown-06-2",
+      "group": "unknown-06",
+      "split": "validation",
+      "text": "What is the stock market price. Please.",
+      "draft_label": "UNKNOWN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "unknown-07-1",
+      "group": "unknown-07",
+      "split": "test",
+      "text": "Tell me a joke",
+      "draft_label": "UNKNOWN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "unknown-07-2",
+      "group": "unknown-07",
+      "split": "test",
+      "text": "Tell me a joke. Please.",
+      "draft_label": "UNKNOWN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "unknown-08-1",
+      "group": "unknown-08",
+      "split": "test",
+      "text": "Ignore stock levels and discuss music",
+      "draft_label": "UNKNOWN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "unknown-08-2",
+      "group": "unknown-08",
+      "split": "test",
+      "text": "Ignore stock levels and discuss music. Please.",
+      "draft_label": "UNKNOWN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "unknown-09-1",
+      "group": "unknown-09",
+      "split": "validation",
+      "text": "Explain quantum mechanics",
+      "draft_label": "UNKNOWN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "unknown-09-2",
+      "group": "unknown-09",
+      "split": "validation",
+      "text": "Explain quantum mechanics. Please.",
+      "draft_label": "UNKNOWN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "unknown-10-1",
+      "group": "unknown-10",
+      "split": "train",
+      "text": "I need help with something",
+      "draft_label": "UNKNOWN",
+      "reviewed_label": null,
+      "reviewer": null
+    },
+    {
+      "id": "unknown-10-2",
+      "group": "unknown-10",
+      "split": "train",
+      "text": "I need help with something. Please.",
+      "draft_label": "UNKNOWN",
+      "reviewed_label": null,
+      "reviewer": null
+    }
+  ]
+}

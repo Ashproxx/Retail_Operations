@@ -1,0 +1,2615 @@
+{
+  "human_reviewed": false,
+  "labels": [
+    "INVENTORY",
+    "DEMAND",
+    "PRICING",
+    "ORDER",
+    "SUPPLY_CHAIN",
+    "CUSTOMER_SUPPORT",
+    "RETURNS",
+    "ANALYTICS",
+    "MULTI_AGENT",
+    "UNKNOWN"
+  ],
+  "summaries": {
+    "all": {
+      "cases": 200,
+      "groups": 100,
+      "accuracy": 0.51,
+      "macro_f1_all_ten": 0.5871133702523155,
+      "label_counts": {
+        "INVENTORY": 20,
+        "DEMAND": 20,
+        "PRICING": 20,
+        "ORDER": 20,
+        "SUPPLY_CHAIN": 20,
+        "CUSTOMER_SUPPORT": 20,
+        "RETURNS": 20,
+        "ANALYTICS": 20,
+        "MULTI_AGENT": 20,
+        "UNKNOWN": 20
+      },
+      "confusion_matrix": [
+        [
+          9,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          11
+        ],
+        [
+          0,
+          10,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          10
+        ],
+        [
+          0,
+          0,
+          10,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          10
+        ],
+        [
+          0,
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          12
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          9,
+          0,
+          0,
+          0,
+          1,
+          10
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          10,
+          0,
+          0,
+          0,
+          10
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          9,
+          0,
+          0,
+          11
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          7,
+          1,
+          12
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          10,
+          10
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          20
+        ]
+      ],
+      "abstentions": 116
+    },
+    "train": {
+      "cases": 120,
+      "groups": 60,
+      "accuracy": 0.48333333333333334,
+      "macro_f1_all_ten": 0.5622647527910685,
+      "label_counts": {
+        "INVENTORY": 10,
+        "DEMAND": 12,
+        "PRICING": 14,
+        "ORDER": 16,
+        "SUPPLY_CHAIN": 14,
+        "CUSTOMER_SUPPORT": 10,
+        "RETURNS": 14,
+        "ANALYTICS": 10,
+        "MULTI_AGENT": 12,
+        "UNKNOWN": 8
+      },
+      "confusion_matrix": [
+        [
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5
+        ],
+        [
+          0,
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          6
+        ],
+        [
+          0,
+          0,
+          7,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          7
+        ],
+        [
+          0,
+          0,
+          0,
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          10
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          6,
+          0,
+          0,
+          0,
+          1,
+          7
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0,
+          5
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          7,
+          0,
+          0,
+          7
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          1,
+          7
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          6,
+          6
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          8
+        ]
+      ],
+      "abstentions": 68
+    },
+    "validation": {
+      "cases": 34,
+      "groups": 17,
+      "accuracy": 0.5882352941176471,
+      "macro_f1_all_ten": 0.5794871794871794,
+      "label_counts": {
+        "INVENTORY": 2,
+        "DEMAND": 4,
+        "PRICING": 6,
+        "ORDER": 4,
+        "SUPPLY_CHAIN": 2,
+        "CUSTOMER_SUPPORT": 2,
+        "ANALYTICS": 4,
+        "MULTI_AGENT": 4,
+        "UNKNOWN": 6
+      },
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          6
+        ]
+      ],
+      "abstentions": 20
+    },
+    "test": {
+      "cases": 46,
+      "groups": 23,
+      "accuracy": 0.5217391304347826,
+      "macro_f1_all_ten": 0.4731729055258467,
+      "label_counts": {
+        "INVENTORY": 8,
+        "DEMAND": 4,
+        "SUPPLY_CHAIN": 4,
+        "CUSTOMER_SUPPORT": 8,
+        "RETURNS": 6,
+        "ANALYTICS": 6,
+        "MULTI_AGENT": 4,
+        "UNKNOWN": 6
+      },
+      "confusion_matrix": [
+        [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          4
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          4
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          3
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          6
+        ]
+      ],
+      "abstentions": 28
+    }
+  },
+  "heuristic_score_bins_not_calibration": [
+    {
+      "heuristic_score": 0.0,
+      "cases": 18,
+      "decision_accuracy": 0.4444444444444444,
+      "abstentions": 18
+    },
+    {
+      "heuristic_score": 0.4,
+      "cases": 96,
+      "decision_accuracy": 0.11458333333333333,
+      "abstentions": 96
+    },
+    {
+      "heuristic_score": 0.45,
+      "cases": 2,
+      "decision_accuracy": 0.5,
+      "abstentions": 2
+    },
+    {
+      "heuristic_score": 0.82,
+      "cases": 84,
+      "decision_accuracy": 0.9761904761904762,
+      "abstentions": 0
+    }
+  ],
+  "rows": [
+    {
+      "id": "inventory-01-1",
+      "group": "inventory-01",
+      "split": "train",
+      "expected": "INVENTORY",
+      "predicted": "INVENTORY",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "inventory-01-2",
+      "group": "inventory-01",
+      "split": "train",
+      "expected": "INVENTORY",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "inventory-02-1",
+      "group": "inventory-02",
+      "split": "test",
+      "expected": "INVENTORY",
+      "predicted": "INVENTORY",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "inventory-02-2",
+      "group": "inventory-02",
+      "split": "test",
+      "expected": "INVENTORY",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "inventory-03-1",
+      "group": "inventory-03",
+      "split": "test",
+      "expected": "INVENTORY",
+      "predicted": "INVENTORY",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "inventory-03-2",
+      "group": "inventory-03",
+      "split": "test",
+      "expected": "INVENTORY",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "inventory-04-1",
+      "group": "inventory-04",
+      "split": "validation",
+      "expected": "INVENTORY",
+      "predicted": "INVENTORY",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "inventory-04-2",
+      "group": "inventory-04",
+      "split": "validation",
+      "expected": "INVENTORY",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "inventory-05-1",
+      "group": "inventory-05",
+      "split": "test",
+      "expected": "INVENTORY",
+      "predicted": "INVENTORY",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "inventory-05-2",
+      "group": "inventory-05",
+      "split": "test",
+      "expected": "INVENTORY",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "inventory-06-1",
+      "group": "inventory-06",
+      "split": "test",
+      "expected": "INVENTORY",
+      "predicted": "UNKNOWN",
+      "score": 0.0,
+      "abstained": true,
+      "reason": "unknown_intent"
+    },
+    {
+      "id": "inventory-06-2",
+      "group": "inventory-06",
+      "split": "test",
+      "expected": "INVENTORY",
+      "predicted": "UNKNOWN",
+      "score": 0.0,
+      "abstained": true,
+      "reason": "unknown_intent"
+    },
+    {
+      "id": "inventory-07-1",
+      "group": "inventory-07",
+      "split": "train",
+      "expected": "INVENTORY",
+      "predicted": "INVENTORY",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "inventory-07-2",
+      "group": "inventory-07",
+      "split": "train",
+      "expected": "INVENTORY",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "inventory-08-1",
+      "group": "inventory-08",
+      "split": "train",
+      "expected": "INVENTORY",
+      "predicted": "INVENTORY",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "inventory-08-2",
+      "group": "inventory-08",
+      "split": "train",
+      "expected": "INVENTORY",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "inventory-09-1",
+      "group": "inventory-09",
+      "split": "train",
+      "expected": "INVENTORY",
+      "predicted": "INVENTORY",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "inventory-09-2",
+      "group": "inventory-09",
+      "split": "train",
+      "expected": "INVENTORY",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "inventory-10-1",
+      "group": "inventory-10",
+      "split": "train",
+      "expected": "INVENTORY",
+      "predicted": "INVENTORY",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "inventory-10-2",
+      "group": "inventory-10",
+      "split": "train",
+      "expected": "INVENTORY",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "demand-01-1",
+      "group": "demand-01",
+      "split": "test",
+      "expected": "DEMAND",
+      "predicted": "DEMAND",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "demand-01-2",
+      "group": "demand-01",
+      "split": "test",
+      "expected": "DEMAND",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "demand-02-1",
+      "group": "demand-02",
+      "split": "train",
+      "expected": "DEMAND",
+      "predicted": "DEMAND",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "demand-02-2",
+      "group": "demand-02",
+      "split": "train",
+      "expected": "DEMAND",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "demand-03-1",
+      "group": "demand-03",
+      "split": "test",
+      "expected": "DEMAND",
+      "predicted": "DEMAND",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "demand-03-2",
+      "group": "demand-03",
+      "split": "test",
+      "expected": "DEMAND",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "demand-04-1",
+      "group": "demand-04",
+      "split": "train",
+      "expected": "DEMAND",
+      "predicted": "DEMAND",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "demand-04-2",
+      "group": "demand-04",
+      "split": "train",
+      "expected": "DEMAND",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "demand-05-1",
+      "group": "demand-05",
+      "split": "train",
+      "expected": "DEMAND",
+      "predicted": "DEMAND",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "demand-05-2",
+      "group": "demand-05",
+      "split": "train",
+      "expected": "DEMAND",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "demand-06-1",
+      "group": "demand-06",
+      "split": "train",
+      "expected": "DEMAND",
+      "predicted": "DEMAND",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "demand-06-2",
+      "group": "demand-06",
+      "split": "train",
+      "expected": "DEMAND",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "demand-07-1",
+      "group": "demand-07",
+      "split": "train",
+      "expected": "DEMAND",
+      "predicted": "DEMAND",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "demand-07-2",
+      "group": "demand-07",
+      "split": "train",
+      "expected": "DEMAND",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "demand-08-1",
+      "group": "demand-08",
+      "split": "validation",
+      "expected": "DEMAND",
+      "predicted": "DEMAND",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "demand-08-2",
+      "group": "demand-08",
+      "split": "validation",
+      "expected": "DEMAND",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "demand-09-1",
+      "group": "demand-09",
+      "split": "validation",
+      "expected": "DEMAND",
+      "predicted": "DEMAND",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "demand-09-2",
+      "group": "demand-09",
+      "split": "validation",
+      "expected": "DEMAND",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "demand-10-1",
+      "group": "demand-10",
+      "split": "train",
+      "expected": "DEMAND",
+      "predicted": "DEMAND",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "demand-10-2",
+      "group": "demand-10",
+      "split": "train",
+      "expected": "DEMAND",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "pricing-01-1",
+      "group": "pricing-01",
+      "split": "validation",
+      "expected": "PRICING",
+      "predicted": "PRICING",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "pricing-01-2",
+      "group": "pricing-01",
+      "split": "validation",
+      "expected": "PRICING",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "pricing-02-1",
+      "group": "pricing-02",
+      "split": "train",
+      "expected": "PRICING",
+      "predicted": "PRICING",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "pricing-02-2",
+      "group": "pricing-02",
+      "split": "train",
+      "expected": "PRICING",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "pricing-03-1",
+      "group": "pricing-03",
+      "split": "validation",
+      "expected": "PRICING",
+      "predicted": "PRICING",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "pricing-03-2",
+      "group": "pricing-03",
+      "split": "validation",
+      "expected": "PRICING",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "pricing-04-1",
+      "group": "pricing-04",
+      "split": "train",
+      "expected": "PRICING",
+      "predicted": "PRICING",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "pricing-04-2",
+      "group": "pricing-04",
+      "split": "train",
+      "expected": "PRICING",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "pricing-05-1",
+      "group": "pricing-05",
+      "split": "train",
+      "expected": "PRICING",
+      "predicted": "PRICING",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "pricing-05-2",
+      "group": "pricing-05",
+      "split": "train",
+      "expected": "PRICING",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "pricing-06-1",
+      "group": "pricing-06",
+      "split": "train",
+      "expected": "PRICING",
+      "predicted": "PRICING",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "pricing-06-2",
+      "group": "pricing-06",
+      "split": "train",
+      "expected": "PRICING",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "pricing-07-1",
+      "group": "pricing-07",
+      "split": "validation",
+      "expected": "PRICING",
+      "predicted": "PRICING",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "pricing-07-2",
+      "group": "pricing-07",
+      "split": "validation",
+      "expected": "PRICING",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "pricing-08-1",
+      "group": "pricing-08",
+      "split": "train",
+      "expected": "PRICING",
+      "predicted": "PRICING",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "pricing-08-2",
+      "group": "pricing-08",
+      "split": "train",
+      "expected": "PRICING",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "pricing-09-1",
+      "group": "pricing-09",
+      "split": "train",
+      "expected": "PRICING",
+      "predicted": "PRICING",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "pricing-09-2",
+      "group": "pricing-09",
+      "split": "train",
+      "expected": "PRICING",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "pricing-10-1",
+      "group": "pricing-10",
+      "split": "train",
+      "expected": "PRICING",
+      "predicted": "PRICING",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "pricing-10-2",
+      "group": "pricing-10",
+      "split": "train",
+      "expected": "PRICING",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "order-01-1",
+      "group": "order-01",
+      "split": "train",
+      "expected": "ORDER",
+      "predicted": "ORDER",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "order-01-2",
+      "group": "order-01",
+      "split": "train",
+      "expected": "ORDER",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "order-02-1",
+      "group": "order-02",
+      "split": "train",
+      "expected": "ORDER",
+      "predicted": "ORDER",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "order-02-2",
+      "group": "order-02",
+      "split": "train",
+      "expected": "ORDER",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "order-03-1",
+      "group": "order-03",
+      "split": "train",
+      "expected": "ORDER",
+      "predicted": "ORDER",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "order-03-2",
+      "group": "order-03",
+      "split": "train",
+      "expected": "ORDER",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "order-04-1",
+      "group": "order-04",
+      "split": "train",
+      "expected": "ORDER",
+      "predicted": "ORDER",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "order-04-2",
+      "group": "order-04",
+      "split": "train",
+      "expected": "ORDER",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "order-05-1",
+      "group": "order-05",
+      "split": "train",
+      "expected": "ORDER",
+      "predicted": "UNKNOWN",
+      "score": 0.0,
+      "abstained": true,
+      "reason": "unknown_intent"
+    },
+    {
+      "id": "order-05-2",
+      "group": "order-05",
+      "split": "train",
+      "expected": "ORDER",
+      "predicted": "UNKNOWN",
+      "score": 0.0,
+      "abstained": true,
+      "reason": "unknown_intent"
+    },
+    {
+      "id": "order-06-1",
+      "group": "order-06",
+      "split": "validation",
+      "expected": "ORDER",
+      "predicted": "ORDER",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "order-06-2",
+      "group": "order-06",
+      "split": "validation",
+      "expected": "ORDER",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "order-07-1",
+      "group": "order-07",
+      "split": "validation",
+      "expected": "ORDER",
+      "predicted": "ORDER",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "order-07-2",
+      "group": "order-07",
+      "split": "validation",
+      "expected": "ORDER",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "order-08-1",
+      "group": "order-08",
+      "split": "train",
+      "expected": "ORDER",
+      "predicted": "ORDER",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "order-08-2",
+      "group": "order-08",
+      "split": "train",
+      "expected": "ORDER",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "order-09-1",
+      "group": "order-09",
+      "split": "train",
+      "expected": "ORDER",
+      "predicted": "ORDER",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "order-09-2",
+      "group": "order-09",
+      "split": "train",
+      "expected": "ORDER",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "order-10-1",
+      "group": "order-10",
+      "split": "train",
+      "expected": "ORDER",
+      "predicted": "UNKNOWN",
+      "score": 0.45,
+      "abstained": true,
+      "reason": "low_confidence"
+    },
+    {
+      "id": "order-10-2",
+      "group": "order-10",
+      "split": "train",
+      "expected": "ORDER",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "supply_chain-01-1",
+      "group": "supply_chain-01",
+      "split": "test",
+      "expected": "SUPPLY_CHAIN",
+      "predicted": "SUPPLY_CHAIN",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "supply_chain-01-2",
+      "group": "supply_chain-01",
+      "split": "test",
+      "expected": "SUPPLY_CHAIN",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "supply_chain-02-1",
+      "group": "supply_chain-02",
+      "split": "test",
+      "expected": "SUPPLY_CHAIN",
+      "predicted": "SUPPLY_CHAIN",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "supply_chain-02-2",
+      "group": "supply_chain-02",
+      "split": "test",
+      "expected": "SUPPLY_CHAIN",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "supply_chain-03-1",
+      "group": "supply_chain-03",
+      "split": "train",
+      "expected": "SUPPLY_CHAIN",
+      "predicted": "SUPPLY_CHAIN",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "supply_chain-03-2",
+      "group": "supply_chain-03",
+      "split": "train",
+      "expected": "SUPPLY_CHAIN",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "supply_chain-04-1",
+      "group": "supply_chain-04",
+      "split": "train",
+      "expected": "SUPPLY_CHAIN",
+      "predicted": "SUPPLY_CHAIN",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "supply_chain-04-2",
+      "group": "supply_chain-04",
+      "split": "train",
+      "expected": "SUPPLY_CHAIN",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "supply_chain-05-1",
+      "group": "supply_chain-05",
+      "split": "train",
+      "expected": "SUPPLY_CHAIN",
+      "predicted": "SUPPLY_CHAIN",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "supply_chain-05-2",
+      "group": "supply_chain-05",
+      "split": "train",
+      "expected": "SUPPLY_CHAIN",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "supply_chain-06-1",
+      "group": "supply_chain-06",
+      "split": "validation",
+      "expected": "SUPPLY_CHAIN",
+      "predicted": "SUPPLY_CHAIN",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "supply_chain-06-2",
+      "group": "supply_chain-06",
+      "split": "validation",
+      "expected": "SUPPLY_CHAIN",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "supply_chain-07-1",
+      "group": "supply_chain-07",
+      "split": "train",
+      "expected": "SUPPLY_CHAIN",
+      "predicted": "MULTI_AGENT",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "supply_chain-07-2",
+      "group": "supply_chain-07",
+      "split": "train",
+      "expected": "SUPPLY_CHAIN",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "supply_chain-08-1",
+      "group": "supply_chain-08",
+      "split": "train",
+      "expected": "SUPPLY_CHAIN",
+      "predicted": "SUPPLY_CHAIN",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "supply_chain-08-2",
+      "group": "supply_chain-08",
+      "split": "train",
+      "expected": "SUPPLY_CHAIN",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "supply_chain-09-1",
+      "group": "supply_chain-09",
+      "split": "train",
+      "expected": "SUPPLY_CHAIN",
+      "predicted": "SUPPLY_CHAIN",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "supply_chain-09-2",
+      "group": "supply_chain-09",
+      "split": "train",
+      "expected": "SUPPLY_CHAIN",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "supply_chain-10-1",
+      "group": "supply_chain-10",
+      "split": "train",
+      "expected": "SUPPLY_CHAIN",
+      "predicted": "SUPPLY_CHAIN",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "supply_chain-10-2",
+      "group": "supply_chain-10",
+      "split": "train",
+      "expected": "SUPPLY_CHAIN",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "customer_support-01-1",
+      "group": "customer_support-01",
+      "split": "train",
+      "expected": "CUSTOMER_SUPPORT",
+      "predicted": "CUSTOMER_SUPPORT",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "customer_support-01-2",
+      "group": "customer_support-01",
+      "split": "train",
+      "expected": "CUSTOMER_SUPPORT",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "customer_support-02-1",
+      "group": "customer_support-02",
+      "split": "train",
+      "expected": "CUSTOMER_SUPPORT",
+      "predicted": "CUSTOMER_SUPPORT",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "customer_support-02-2",
+      "group": "customer_support-02",
+      "split": "train",
+      "expected": "CUSTOMER_SUPPORT",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "customer_support-03-1",
+      "group": "customer_support-03",
+      "split": "validation",
+      "expected": "CUSTOMER_SUPPORT",
+      "predicted": "CUSTOMER_SUPPORT",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "customer_support-03-2",
+      "group": "customer_support-03",
+      "split": "validation",
+      "expected": "CUSTOMER_SUPPORT",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "customer_support-04-1",
+      "group": "customer_support-04",
+      "split": "test",
+      "expected": "CUSTOMER_SUPPORT",
+      "predicted": "CUSTOMER_SUPPORT",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "customer_support-04-2",
+      "group": "customer_support-04",
+      "split": "test",
+      "expected": "CUSTOMER_SUPPORT",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "customer_support-05-1",
+      "group": "customer_support-05",
+      "split": "train",
+      "expected": "CUSTOMER_SUPPORT",
+      "predicted": "CUSTOMER_SUPPORT",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "customer_support-05-2",
+      "group": "customer_support-05",
+      "split": "train",
+      "expected": "CUSTOMER_SUPPORT",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "customer_support-06-1",
+      "group": "customer_support-06",
+      "split": "test",
+      "expected": "CUSTOMER_SUPPORT",
+      "predicted": "CUSTOMER_SUPPORT",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "customer_support-06-2",
+      "group": "customer_support-06",
+      "split": "test",
+      "expected": "CUSTOMER_SUPPORT",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "customer_support-07-1",
+      "group": "customer_support-07",
+      "split": "test",
+      "expected": "CUSTOMER_SUPPORT",
+      "predicted": "CUSTOMER_SUPPORT",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "customer_support-07-2",
+      "group": "customer_support-07",
+      "split": "test",
+      "expected": "CUSTOMER_SUPPORT",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "customer_support-08-1",
+      "group": "customer_support-08",
+      "split": "test",
+      "expected": "CUSTOMER_SUPPORT",
+      "predicted": "CUSTOMER_SUPPORT",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "customer_support-08-2",
+      "group": "customer_support-08",
+      "split": "test",
+      "expected": "CUSTOMER_SUPPORT",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "customer_support-09-1",
+      "group": "customer_support-09",
+      "split": "train",
+      "expected": "CUSTOMER_SUPPORT",
+      "predicted": "CUSTOMER_SUPPORT",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "customer_support-09-2",
+      "group": "customer_support-09",
+      "split": "train",
+      "expected": "CUSTOMER_SUPPORT",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "customer_support-10-1",
+      "group": "customer_support-10",
+      "split": "train",
+      "expected": "CUSTOMER_SUPPORT",
+      "predicted": "CUSTOMER_SUPPORT",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "customer_support-10-2",
+      "group": "customer_support-10",
+      "split": "train",
+      "expected": "CUSTOMER_SUPPORT",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "returns-01-1",
+      "group": "returns-01",
+      "split": "train",
+      "expected": "RETURNS",
+      "predicted": "RETURNS",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "returns-01-2",
+      "group": "returns-01",
+      "split": "train",
+      "expected": "RETURNS",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "returns-02-1",
+      "group": "returns-02",
+      "split": "train",
+      "expected": "RETURNS",
+      "predicted": "RETURNS",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "returns-02-2",
+      "group": "returns-02",
+      "split": "train",
+      "expected": "RETURNS",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "returns-03-1",
+      "group": "returns-03",
+      "split": "train",
+      "expected": "RETURNS",
+      "predicted": "RETURNS",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "returns-03-2",
+      "group": "returns-03",
+      "split": "train",
+      "expected": "RETURNS",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "returns-04-1",
+      "group": "returns-04",
+      "split": "train",
+      "expected": "RETURNS",
+      "predicted": "RETURNS",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "returns-04-2",
+      "group": "returns-04",
+      "split": "train",
+      "expected": "RETURNS",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "returns-05-1",
+      "group": "returns-05",
+      "split": "train",
+      "expected": "RETURNS",
+      "predicted": "RETURNS",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "returns-05-2",
+      "group": "returns-05",
+      "split": "train",
+      "expected": "RETURNS",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "returns-06-1",
+      "group": "returns-06",
+      "split": "train",
+      "expected": "RETURNS",
+      "predicted": "RETURNS",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "returns-06-2",
+      "group": "returns-06",
+      "split": "train",
+      "expected": "RETURNS",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "returns-07-1",
+      "group": "returns-07",
+      "split": "test",
+      "expected": "RETURNS",
+      "predicted": "RETURNS",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "returns-07-2",
+      "group": "returns-07",
+      "split": "test",
+      "expected": "RETURNS",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "returns-08-1",
+      "group": "returns-08",
+      "split": "test",
+      "expected": "RETURNS",
+      "predicted": "UNKNOWN",
+      "score": 0.0,
+      "abstained": true,
+      "reason": "unknown_intent"
+    },
+    {
+      "id": "returns-08-2",
+      "group": "returns-08",
+      "split": "test",
+      "expected": "RETURNS",
+      "predicted": "UNKNOWN",
+      "score": 0.0,
+      "abstained": true,
+      "reason": "unknown_intent"
+    },
+    {
+      "id": "returns-09-1",
+      "group": "returns-09",
+      "split": "train",
+      "expected": "RETURNS",
+      "predicted": "RETURNS",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "returns-09-2",
+      "group": "returns-09",
+      "split": "train",
+      "expected": "RETURNS",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "returns-10-1",
+      "group": "returns-10",
+      "split": "test",
+      "expected": "RETURNS",
+      "predicted": "RETURNS",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "returns-10-2",
+      "group": "returns-10",
+      "split": "test",
+      "expected": "RETURNS",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "analytics-01-1",
+      "group": "analytics-01",
+      "split": "test",
+      "expected": "ANALYTICS",
+      "predicted": "ANALYTICS",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "analytics-01-2",
+      "group": "analytics-01",
+      "split": "test",
+      "expected": "ANALYTICS",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "analytics-02-1",
+      "group": "analytics-02",
+      "split": "test",
+      "expected": "ANALYTICS",
+      "predicted": "ANALYTICS",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "analytics-02-2",
+      "group": "analytics-02",
+      "split": "test",
+      "expected": "ANALYTICS",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "analytics-03-1",
+      "group": "analytics-03",
+      "split": "train",
+      "expected": "ANALYTICS",
+      "predicted": "UNKNOWN",
+      "score": 0.0,
+      "abstained": true,
+      "reason": "unknown_intent"
+    },
+    {
+      "id": "analytics-03-2",
+      "group": "analytics-03",
+      "split": "train",
+      "expected": "ANALYTICS",
+      "predicted": "UNKNOWN",
+      "score": 0.0,
+      "abstained": true,
+      "reason": "unknown_intent"
+    },
+    {
+      "id": "analytics-04-1",
+      "group": "analytics-04",
+      "split": "test",
+      "expected": "ANALYTICS",
+      "predicted": "ANALYTICS",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "analytics-04-2",
+      "group": "analytics-04",
+      "split": "test",
+      "expected": "ANALYTICS",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "analytics-05-1",
+      "group": "analytics-05",
+      "split": "validation",
+      "expected": "ANALYTICS",
+      "predicted": "ANALYTICS",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "analytics-05-2",
+      "group": "analytics-05",
+      "split": "validation",
+      "expected": "ANALYTICS",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "analytics-06-1",
+      "group": "analytics-06",
+      "split": "train",
+      "expected": "ANALYTICS",
+      "predicted": "UNKNOWN",
+      "score": 0.0,
+      "abstained": true,
+      "reason": "unknown_intent"
+    },
+    {
+      "id": "analytics-06-2",
+      "group": "analytics-06",
+      "split": "train",
+      "expected": "ANALYTICS",
+      "predicted": "UNKNOWN",
+      "score": 0.0,
+      "abstained": true,
+      "reason": "unknown_intent"
+    },
+    {
+      "id": "analytics-07-1",
+      "group": "analytics-07",
+      "split": "train",
+      "expected": "ANALYTICS",
+      "predicted": "ANALYTICS",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "analytics-07-2",
+      "group": "analytics-07",
+      "split": "train",
+      "expected": "ANALYTICS",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "analytics-08-1",
+      "group": "analytics-08",
+      "split": "train",
+      "expected": "ANALYTICS",
+      "predicted": "MULTI_AGENT",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "analytics-08-2",
+      "group": "analytics-08",
+      "split": "train",
+      "expected": "ANALYTICS",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "analytics-09-1",
+      "group": "analytics-09",
+      "split": "train",
+      "expected": "ANALYTICS",
+      "predicted": "ANALYTICS",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "analytics-09-2",
+      "group": "analytics-09",
+      "split": "train",
+      "expected": "ANALYTICS",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "analytics-10-1",
+      "group": "analytics-10",
+      "split": "validation",
+      "expected": "ANALYTICS",
+      "predicted": "ANALYTICS",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "analytics-10-2",
+      "group": "analytics-10",
+      "split": "validation",
+      "expected": "ANALYTICS",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "multi_agent-01-1",
+      "group": "multi_agent-01",
+      "split": "train",
+      "expected": "MULTI_AGENT",
+      "predicted": "MULTI_AGENT",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "multi_agent-01-2",
+      "group": "multi_agent-01",
+      "split": "train",
+      "expected": "MULTI_AGENT",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "multi_agent-02-1",
+      "group": "multi_agent-02",
+      "split": "train",
+      "expected": "MULTI_AGENT",
+      "predicted": "MULTI_AGENT",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "multi_agent-02-2",
+      "group": "multi_agent-02",
+      "split": "train",
+      "expected": "MULTI_AGENT",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "multi_agent-03-1",
+      "group": "multi_agent-03",
+      "split": "train",
+      "expected": "MULTI_AGENT",
+      "predicted": "MULTI_AGENT",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "multi_agent-03-2",
+      "group": "multi_agent-03",
+      "split": "train",
+      "expected": "MULTI_AGENT",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "multi_agent-04-1",
+      "group": "multi_agent-04",
+      "split": "test",
+      "expected": "MULTI_AGENT",
+      "predicted": "MULTI_AGENT",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "multi_agent-04-2",
+      "group": "multi_agent-04",
+      "split": "test",
+      "expected": "MULTI_AGENT",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "multi_agent-05-1",
+      "group": "multi_agent-05",
+      "split": "train",
+      "expected": "MULTI_AGENT",
+      "predicted": "MULTI_AGENT",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "multi_agent-05-2",
+      "group": "multi_agent-05",
+      "split": "train",
+      "expected": "MULTI_AGENT",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "multi_agent-06-1",
+      "group": "multi_agent-06",
+      "split": "validation",
+      "expected": "MULTI_AGENT",
+      "predicted": "MULTI_AGENT",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "multi_agent-06-2",
+      "group": "multi_agent-06",
+      "split": "validation",
+      "expected": "MULTI_AGENT",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "multi_agent-07-1",
+      "group": "multi_agent-07",
+      "split": "train",
+      "expected": "MULTI_AGENT",
+      "predicted": "MULTI_AGENT",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "multi_agent-07-2",
+      "group": "multi_agent-07",
+      "split": "train",
+      "expected": "MULTI_AGENT",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "multi_agent-08-1",
+      "group": "multi_agent-08",
+      "split": "validation",
+      "expected": "MULTI_AGENT",
+      "predicted": "MULTI_AGENT",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "multi_agent-08-2",
+      "group": "multi_agent-08",
+      "split": "validation",
+      "expected": "MULTI_AGENT",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "multi_agent-09-1",
+      "group": "multi_agent-09",
+      "split": "train",
+      "expected": "MULTI_AGENT",
+      "predicted": "MULTI_AGENT",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "multi_agent-09-2",
+      "group": "multi_agent-09",
+      "split": "train",
+      "expected": "MULTI_AGENT",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "multi_agent-10-1",
+      "group": "multi_agent-10",
+      "split": "test",
+      "expected": "MULTI_AGENT",
+      "predicted": "MULTI_AGENT",
+      "score": 0.82,
+      "abstained": false,
+      "reason": "matched_rules"
+    },
+    {
+      "id": "multi_agent-10-2",
+      "group": "multi_agent-10",
+      "split": "test",
+      "expected": "MULTI_AGENT",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "unknown-01-1",
+      "group": "unknown-01",
+      "split": "train",
+      "expected": "UNKNOWN",
+      "predicted": "UNKNOWN",
+      "score": 0.0,
+      "abstained": true,
+      "reason": "unknown_intent"
+    },
+    {
+      "id": "unknown-01-2",
+      "group": "unknown-01",
+      "split": "train",
+      "expected": "UNKNOWN",
+      "predicted": "UNKNOWN",
+      "score": 0.0,
+      "abstained": true,
+      "reason": "unknown_intent"
+    },
+    {
+      "id": "unknown-02-1",
+      "group": "unknown-02",
+      "split": "validation",
+      "expected": "UNKNOWN",
+      "predicted": "UNKNOWN",
+      "score": 0.0,
+      "abstained": true,
+      "reason": "outside_retail_scope"
+    },
+    {
+      "id": "unknown-02-2",
+      "group": "unknown-02",
+      "split": "validation",
+      "expected": "UNKNOWN",
+      "predicted": "UNKNOWN",
+      "score": 0.0,
+      "abstained": true,
+      "reason": "outside_retail_scope"
+    },
+    {
+      "id": "unknown-03-1",
+      "group": "unknown-03",
+      "split": "test",
+      "expected": "UNKNOWN",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "unknown-03-2",
+      "group": "unknown-03",
+      "split": "test",
+      "expected": "UNKNOWN",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    },
+    {
+      "id": "unknown-04-1",
+      "group": "unknown-04",
+      "split": "train",
+      "expected": "UNKNOWN",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "ambiguous_or_negated_request"
+    },
+    {
+      "id": "unknown-04-2",
+      "group": "unknown-04",
+      "split": "train",
+      "expected": "UNKNOWN",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "ambiguous_or_negated_request"
+    },
+    {
+      "id": "unknown-05-1",
+      "group": "unknown-05",
+      "split": "train",
+      "expected": "UNKNOWN",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "ambiguous_or_negated_request"
+    },
+    {
+      "id": "unknown-05-2",
+      "group": "unknown-05",
+      "split": "train",
+      "expected": "UNKNOWN",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "ambiguous_or_negated_request"
+    },
+    {
+      "id": "unknown-06-1",
+      "group": "unknown-06",
+      "split": "validation",
+      "expected": "UNKNOWN",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "outside_retail_scope"
+    },
+    {
+      "id": "unknown-06-2",
+      "group": "unknown-06",
+      "split": "validation",
+      "expected": "UNKNOWN",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "outside_retail_scope"
+    },
+    {
+      "id": "unknown-07-1",
+      "group": "unknown-07",
+      "split": "test",
+      "expected": "UNKNOWN",
+      "predicted": "UNKNOWN",
+      "score": 0.0,
+      "abstained": true,
+      "reason": "unknown_intent"
+    },
+    {
+      "id": "unknown-07-2",
+      "group": "unknown-07",
+      "split": "test",
+      "expected": "UNKNOWN",
+      "predicted": "UNKNOWN",
+      "score": 0.0,
+      "abstained": true,
+      "reason": "unknown_intent"
+    },
+    {
+      "id": "unknown-08-1",
+      "group": "unknown-08",
+      "split": "test",
+      "expected": "UNKNOWN",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "ambiguous_or_negated_request"
+    },
+    {
+      "id": "unknown-08-2",
+      "group": "unknown-08",
+      "split": "test",
+      "expected": "UNKNOWN",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "ambiguous_or_negated_request"
+    },
+    {
+      "id": "unknown-09-1",
+      "group": "unknown-09",
+      "split": "validation",
+      "expected": "UNKNOWN",
+      "predicted": "UNKNOWN",
+      "score": 0.0,
+      "abstained": true,
+      "reason": "unknown_intent"
+    },
+    {
+      "id": "unknown-09-2",
+      "group": "unknown-09",
+      "split": "validation",
+      "expected": "UNKNOWN",
+      "predicted": "UNKNOWN",
+      "score": 0.0,
+      "abstained": true,
+      "reason": "unknown_intent"
+    },
+    {
+      "id": "unknown-10-1",
+      "group": "unknown-10",
+      "split": "train",
+      "expected": "UNKNOWN",
+      "predicted": "UNKNOWN",
+      "score": 0.45,
+      "abstained": true,
+      "reason": "low_confidence"
+    },
+    {
+      "id": "unknown-10-2",
+      "group": "unknown-10",
+      "split": "train",
+      "expected": "UNKNOWN",
+      "predicted": "UNKNOWN",
+      "score": 0.4,
+      "abstained": true,
+      "reason": "partly_unsupported_request"
+    }
+  ],
+  "fixture_sha256": "d1c0b8b3446345a36e719bccf23e45e671626c0131d100376df418b025c176c3",
+  "code_commit": "e3b60f81a923ef8b9ae29d03dce80c6defc2d3a2",
+  "status": "UNREVIEWED_DRAFT_DIAGNOSTIC",
+  "limitations": [
+    "Agent-authored paired examples; not independent natural query accuracy.",
+    "No trained classifier or threshold tuning; default original router is measured.",
+    "Heuristic score bins are descriptive and do not establish calibrated probabilities.",
+    "Human label review and independent query collection remain acceptance requirements."
+  ]
+}

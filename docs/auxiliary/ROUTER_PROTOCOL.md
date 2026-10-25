@@ -1,0 +1,9 @@
+# Router review queue and rule baseline
+
+200 agent-authored candidate queries cover all ten existing router intents. There are only 100 distinct semantic stems, each with two presentation variants. Do not present the paired count as 200 independent examples. UNKNOWN includes ambiguous, negated, partly unsupported and non-retail queries. Draft labels were assigned by intent, not generated from classifier output; they remain fallible and unreviewed.
+
+Groups are assigned deterministically to train/validation/test by a SHA-256 bucket, with both variants together. This prevents a future trained classifier from splitting paired variants across partitions. The current rule engine is not trained or tuned here; partition names do not imply independent generalization, since this fixture was authored with knowledge of the existing system. Report diagnostic accuracy, macro F1, ten-intent confusion, abstention/dispatch counts and heuristic confidence bins. Rule confidence is not a calibrated probability; no ECE or calibration acceptance is claimed.
+
+Before running, freeze this queue and evaluator. Default results use draft labels and must carry human_reviewed=false. The --reviewed mode requires every case to have a reviewed_label and reviewer, and at least 200 cases; an actual person must fill those fields. The agent must not fill them to pass this gate. Human reviewers should correct labels and add independent naturally phrased queries. Invalid/duplicate cases or groups split across partitions are rejected. Do not tune rules on draft results and claim test independence.
+
+Run `python -m scripts.evaluate_auxiliary_router`. No application source is modified; original rules and threshold .65 remain unchanged. No records are sent externally. Owned additions: app/auxiliary/routing.py, scripts/evaluate_auxiliary_router.py, tests/auxiliary/test_routing.py and these review artifacts.

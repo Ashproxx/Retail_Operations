@@ -1,0 +1,83 @@
+{
+  "status": "MEASURED_VALIDATION_INJECTED_PROXY",
+  "train_days": 184,
+  "validation_days": 56,
+  "injected_days": 5,
+  "injected_dates": [
+    "2026-05-12",
+    "2026-04-25",
+    "2026-05-06",
+    "2026-04-05",
+    "2026-05-26"
+  ],
+  "results": {
+    "stl_weekly": {
+      "roc_auc": 1.0,
+      "average_precision": 1.0,
+      "f1": 1.0,
+      "confusion_labels_0_1": [
+        [
+          51,
+          0
+        ],
+        [
+          0,
+          5
+        ]
+      ],
+      "threshold": 114.31663370903897,
+      "clean_validation_alert_rate": 0.0
+    },
+    "isolation_forest": {
+      "roc_auc": 1.0,
+      "average_precision": 1.0,
+      "f1": 1.0,
+      "confusion_labels_0_1": [
+        [
+          51,
+          0
+        ],
+        [
+          0,
+          5
+        ]
+      ],
+      "threshold": 0.5996777170050016,
+      "clean_validation_alert_rate": 0.0
+    },
+    "median_absolute_deviation": {
+      "roc_auc": 1.0,
+      "average_precision": 1.0,
+      "f1": 1.0,
+      "confusion_labels_0_1": [
+        [
+          51,
+          0
+        ],
+        [
+          0,
+          5
+        ]
+      ],
+      "threshold": 212.19999999999993,
+      "clean_validation_alert_rate": 0.0
+    }
+  },
+  "limitations": [
+    "Supplemental development validation, not a new independent final test or natural anomaly accuracy.",
+    "Thresholds use in-sample training scores, so optimistic calibration is possible.",
+    "Five large mixed-sign injected changes are an easy proxy; natural anomalies remain unlabelled.",
+    "Clean alert rate is not a false-positive rate without reviewed natural anomaly labels.",
+    "STL is fitted only on training history; its trend is held flat and final weekly component repeated.",
+    "No model selection, promotion, or change to the existing frozen final-test report."
+  ],
+  "source": "synthetic-workbook",
+  "seed": 42,
+  "code_commit": "e384d6cbd2a2b19d1f06b9e0f2f544a137c87633",
+  "aggregate_source_sha256": "f9083b369b58bc2dad1f955b90748f6eaee119a8553c0378da7a49224797e65d",
+  "versions": {
+    "numpy": "2.5.3",
+    "scikit-learn": "1.9.1",
+    "statsmodels": "0.14.6"
+  }
+}
