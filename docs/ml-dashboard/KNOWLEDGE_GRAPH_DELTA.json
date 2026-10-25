@@ -1,0 +1,30 @@
+{
+  "branch": "ui/ml-dashboard",
+  "base": "c27fef0a0c5cf7c84551a5940ef3ced8e9f00b93",
+  "nodes": [
+    "authenticated model results",
+    "scoped forecast curves",
+    "aggregate research evidence",
+    "admin-only exploratory importance panel",
+    "scoped imported observation coverage"
+  ],
+  "edges": [
+    [
+      "pinned local report exports",
+      "authorized dashboard API"
+    ],
+    [
+      "authorized dashboard API",
+      "accessible charts and tables"
+    ],
+    [
+      "pinned M17 supplement",
+      "admin-only exploratory importance panel"
+    ],
+    [
+      "existing authorized retail SQL filters",
+      "scoped imported observation coverage"
+    ]
+  ],
+  "production_integration": false
+}
