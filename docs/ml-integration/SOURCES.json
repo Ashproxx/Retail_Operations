@@ -1,0 +1,13 @@
+{
+  "approved": true,
+  "base": "c27fef0a0c5cf7c84551a5940ef3ced8e9f00b93",
+  "sources": {
+    "docs/ml-methodology": "e8f8280caa98d4a8f1bb504b64bc864699c9e7ed",
+    "platform/ml-core": "ca22a9f755504de656093eba1f026c6aee620efa",
+    "platform/realtime-data": "c944c3edb03eb98fcbb451096a47bb5d5bbc34f9",
+    "ml/forecasting-models": "c35c0cab0d4df2742ce4b39cb53f833cbfef9b9e",
+    "ml/auxiliary-models": "aa9bdd0c538af7a80eb99522d2f826930138f8f9",
+    "ui/ml-dashboard": "30586c66973d2737853c30805031b8ecee917529"
+  },
+  "authorization": "User approved the exact integration plan and future development branch work; main still requires approval."
+}

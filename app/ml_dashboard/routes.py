@@ -60,7 +60,8 @@ def install(api, reports=Path('validation-output/ml-dashboard')):
                 data['supplement'] = evidence(reports, 'supplement.json') if ctx.role == Role.ADMIN else None
             except (OSError, ValueError, KeyError, TypeError):
                 raise HTTPException(503, 'Verified research reports are unavailable. Export the pinned evidence locally.') from None
-            data['live'] = {'status': 'unavailable', 'message': 'Live feed is not connected on this isolated review branch.'}
+            data['live'] = {'connected': hasattr(request.app.state, 'realtime'),
+                            'message': 'Live observations are separate from frozen research results.'}
             data['data_quality'] = observation_coverage(request.app.state.runtime.repository.database, ctx)
             status = 'success'
             return JSONResponse(data, headers={'Cache-Control': 'no-store'})

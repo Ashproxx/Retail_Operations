@@ -1,0 +1,110 @@
+{
+  "branch": "platform/ml-core",
+  "status": "framework only; no test accuracy claim",
+  "node_types": [
+    "ml_model",
+    "experiment",
+    "data_source",
+    "stream_event"
+  ],
+  "edge_types": [
+    "trains_on",
+    "evaluated_on",
+    "consumes_feed",
+    "serves"
+  ],
+  "nodes": [
+    {
+      "id": "app/ml/__init__.py",
+      "type": "file"
+    },
+    {
+      "id": "app/ml/evaluation.py",
+      "type": "file"
+    },
+    {
+      "id": "app/ml/explain.py",
+      "type": "file"
+    },
+    {
+      "id": "app/ml/features.py",
+      "type": "file"
+    },
+    {
+      "id": "app/ml/models.py",
+      "type": "file"
+    },
+    {
+      "id": "app/ml/monitor.py",
+      "type": "file"
+    },
+    {
+      "id": "app/ml/registry.py",
+      "type": "file"
+    },
+    {
+      "id": "scripts/ml_report.py",
+      "type": "file"
+    },
+    {
+      "id": "scripts/ml_run.py",
+      "type": "file"
+    },
+    {
+      "id": "tests/ml/test_core.py",
+      "type": "file"
+    }
+  ],
+  "edges": [
+    {
+      "source": "platform/ml-core",
+      "target": "app/ml/__init__.py",
+      "type": "owns"
+    },
+    {
+      "source": "platform/ml-core",
+      "target": "app/ml/evaluation.py",
+      "type": "owns"
+    },
+    {
+      "source": "platform/ml-core",
+      "target": "app/ml/explain.py",
+      "type": "owns"
+    },
+    {
+      "source": "platform/ml-core",
+      "target": "app/ml/features.py",
+      "type": "owns"
+    },
+    {
+      "source": "platform/ml-core",
+      "target": "app/ml/models.py",
+      "type": "owns"
+    },
+    {
+      "source": "platform/ml-core",
+      "target": "app/ml/monitor.py",
+      "type": "owns"
+    },
+    {
+      "source": "platform/ml-core",
+      "target": "app/ml/registry.py",
+      "type": "owns"
+    },
+    {
+      "source": "platform/ml-core",
+      "target": "scripts/ml_report.py",
+      "type": "owns"
+    },
+    {
+      "source": "platform/ml-core",
+      "target": "scripts/ml_run.py",
+      "type": "owns"
+    },
+    {
+      "source": "platform/ml-core",
+      "target": "tests/ml/test_core.py",
+      "type": "owns"
+    }
+  ]
+}

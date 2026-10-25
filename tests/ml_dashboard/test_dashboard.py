@@ -30,6 +30,9 @@ def dashboard(tmp_path):
         manifest[name]={'sha256':hashlib.sha256(raw).hexdigest()}
     (tmp_path/'manifest.json').write_text(json.dumps(manifest))
     install(app,tmp_path)
+    from app.realtime.service import install as install_realtime
+    from app.realtime.config import RealtimeSettings
+    install_realtime(app,RealtimeSettings(_env_file=None))
     with TestClient(app) as client:
         yield client,lambda role:{'Authorization':'Bearer '+tokens[role]},tmp_path
 
@@ -113,3 +116,43 @@ def test_empty_coverage_does_not_invent_zero(dashboard):
     client,headers,_=dashboard
     quality=client.get('/api/ml/results',headers=headers('STORE_MANAGER')).json()['data_quality']
     assert quality=={'status':'no_observations','start':None,'end':None,'stores':[]}
+
+
+def test_combined_live_scope_cursor_and_missingness(dashboard):
+    from datetime import datetime, timezone
+    from app.realtime.data import SalesEvent
+    client,headers,_=dashboard
+    now=datetime.now(timezone.utc).isoformat()
+    with client.app.state.database.session() as session:
+        for i in range(105):
+            session.add(SalesEvent(txn_id=str(i),store_id='S1' if i%2 else 'S2',
+                occurred_at=now,received_at=now,quantity=1,synthetic=True,
+                source='integration-fixture',digest=str(i),payload={}))
+    for role in ['STORE_MANAGER','ANALYST']:
+        response=client.get('/api/realtime/status',headers=headers(role))
+        assert response.headers['cache-control']=='no-store'
+        assert response.json()['features']['units_1hour']==52
+        assert response.json()['weather']['values'] is None
+        response=client.get('/api/stream/sales?once=true',headers=headers(role))
+        rows=[json.loads(line[6:]) for line in response.text.splitlines() if line.startswith('data: ')]
+        assert len(rows)==52 and {r['store_id'] for r in rows}=={'S1'}
+        assert client.get('/api/stream/sales?once=true&after='+str(rows[-1]['id']),headers=headers(role)).text==''
+        assert client.get('/api/ml/results',headers=headers(role)).json()['live']['connected'] is True
+    assert client.get('/api/stream/sales?once=true',headers=headers('ADMIN')).text.count('data: ')==100
+    for path in ['/api/realtime/status','/api/stream/sales?once=true']:
+        assert client.get(path,headers=headers('HR_ADMIN')).status_code==403
+        assert client.get(path).status_code==401
+
+
+@pytest.mark.parametrize('expired',[False,True])
+def test_combined_routes_recheck_revocation_and_expiry(dashboard,expired):
+    from datetime import datetime, timezone, timedelta
+    from app.security.policy import TokenAuthenticator
+    client,headers,_=dashboard
+    auth=client.app.state.runtime.auth
+    grants=list(auth._grants)
+    for grant in grants:
+        grant.expires_at=datetime.now(timezone.utc)-timedelta(seconds=1)
+    client.app.state.runtime.auth=TokenAuthenticator(grants if expired else [])
+    for path in ['/api/ml/results','/api/realtime/status','/api/stream/sales?once=true']:
+        assert client.get(path,headers=headers('STORE_MANAGER')).status_code==401

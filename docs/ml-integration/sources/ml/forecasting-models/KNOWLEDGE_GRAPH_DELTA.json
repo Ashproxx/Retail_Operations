@@ -1,0 +1,191 @@
+{
+  "branch": "ml/forecasting-models",
+  "status": "framework only; no test accuracy claim",
+  "node_types": [
+    "ml_model",
+    "experiment",
+    "data_source",
+    "stream_event"
+  ],
+  "edge_types": [
+    "trains_on",
+    "evaluated_on",
+    "consumes_feed",
+    "serves"
+  ],
+  "nodes": [
+    {
+      "id": "app/ml/__init__.py",
+      "type": "file"
+    },
+    {
+      "id": "app/ml/evaluation.py",
+      "type": "file"
+    },
+    {
+      "id": "app/ml/explain.py",
+      "type": "file"
+    },
+    {
+      "id": "app/ml/features.py",
+      "type": "file"
+    },
+    {
+      "id": "app/ml/forecasting.py",
+      "type": "file"
+    },
+    {
+      "id": "app/ml/intermittent.py",
+      "type": "file"
+    },
+    {
+      "id": "app/ml/intervals.py",
+      "type": "file"
+    },
+    {
+      "id": "app/ml/models.py",
+      "type": "file"
+    },
+    {
+      "id": "app/ml/monitor.py",
+      "type": "file"
+    },
+    {
+      "id": "app/ml/pooled.py",
+      "type": "file"
+    },
+    {
+      "id": "app/ml/registry.py",
+      "type": "file"
+    },
+    {
+      "id": "app/ml/supplement.py",
+      "type": "file"
+    },
+    {
+      "id": "scripts/ml_report.py",
+      "type": "file"
+    },
+    {
+      "id": "scripts/ml_run.py",
+      "type": "file"
+    },
+    {
+      "id": "tests/ml/test_core.py",
+      "type": "file"
+    },
+    {
+      "id": "tests/ml/test_forecasting_adapters.py",
+      "type": "file"
+    },
+    {
+      "id": "tests/ml/test_forecasting_extensions.py",
+      "type": "file"
+    },
+    {
+      "id": "tests/ml/test_pooled.py",
+      "type": "file"
+    },
+    {
+      "id": "tests/ml/test_supplement.py",
+      "type": "file"
+    }
+  ],
+  "edges": [
+    {
+      "source": "ml/forecasting-models",
+      "target": "app/ml/__init__.py",
+      "type": "owns"
+    },
+    {
+      "source": "ml/forecasting-models",
+      "target": "app/ml/evaluation.py",
+      "type": "owns"
+    },
+    {
+      "source": "ml/forecasting-models",
+      "target": "app/ml/explain.py",
+      "type": "owns"
+    },
+    {
+      "source": "ml/forecasting-models",
+      "target": "app/ml/features.py",
+      "type": "owns"
+    },
+    {
+      "source": "ml/forecasting-models",
+      "target": "app/ml/forecasting.py",
+      "type": "owns"
+    },
+    {
+      "source": "ml/forecasting-models",
+      "target": "app/ml/intermittent.py",
+      "type": "owns"
+    },
+    {
+      "source": "ml/forecasting-models",
+      "target": "app/ml/intervals.py",
+      "type": "owns"
+    },
+    {
+      "source": "ml/forecasting-models",
+      "target": "app/ml/models.py",
+      "type": "owns"
+    },
+    {
+      "source": "ml/forecasting-models",
+      "target": "app/ml/monitor.py",
+      "type": "owns"
+    },
+    {
+      "source": "ml/forecasting-models",
+      "target": "app/ml/pooled.py",
+      "type": "owns"
+    },
+    {
+      "source": "ml/forecasting-models",
+      "target": "app/ml/registry.py",
+      "type": "owns"
+    },
+    {
+      "source": "ml/forecasting-models",
+      "target": "app/ml/supplement.py",
+      "type": "owns"
+    },
+    {
+      "source": "ml/forecasting-models",
+      "target": "scripts/ml_report.py",
+      "type": "owns"
+    },
+    {
+      "source": "ml/forecasting-models",
+      "target": "scripts/ml_run.py",
+      "type": "owns"
+    },
+    {
+      "source": "ml/forecasting-models",
+      "target": "tests/ml/test_core.py",
+      "type": "owns"
+    },
+    {
+      "source": "ml/forecasting-models",
+      "target": "tests/ml/test_forecasting_adapters.py",
+      "type": "owns"
+    },
+    {
+      "source": "ml/forecasting-models",
+      "target": "tests/ml/test_forecasting_extensions.py",
+      "type": "owns"
+    },
+    {
+      "source": "ml/forecasting-models",
+      "target": "tests/ml/test_pooled.py",
+      "type": "owns"
+    },
+    {
+      "source": "ml/forecasting-models",
+      "target": "tests/ml/test_supplement.py",
+      "type": "owns"
+    }
+  ]
+}

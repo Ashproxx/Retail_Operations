@@ -1,6 +1,6 @@
 {
-  "branch": "ml/forecasting-models",
-  "status": "framework only; no test accuracy claim",
+  "branch": "integration/ml-realtime-candidate",
+  "status": "approved assembly; research acceptance gaps remain",
   "node_types": [
     "ml_model",
     "experiment",
@@ -187,5 +187,6 @@
       "target": "tests/ml/test_supplement.py",
       "type": "owns"
     }
-  ]
+  ],
+  "integration_sources": "docs/ml-integration/SOURCES.json"
 }

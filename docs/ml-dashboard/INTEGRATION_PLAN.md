@@ -1,3 +1,7 @@
+# M20 integration plan - approved and assembled
+
+The user approved development-branch integration on October 25, 2026. Current execution, exact approved sources and remaining limitations are recorded in [the integration runbook](../ml-integration/README.md) and [source manifest](../ml-integration/SOURCES.json). Main remains unchanged and requires separate approval. The historical proposal below is retained for context; it is superseded by that manifest.
+
 # M20 integration plan - NOT AUTHORIZED / NOT EXECUTED
 
 Do not create or merge the integration candidate until the human approves exact source commits and the base. Main and integration/dual-model-retailops remain protected. This plan is not an approval request during the unattended window and is not evidence of acceptance.

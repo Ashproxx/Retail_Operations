@@ -2,7 +2,7 @@ import asyncio
 from datetime import datetime,timezone
 import hashlib,hmac,json
 from fastapi import APIRouter,Request,HTTPException,Query
-from fastapi.responses import StreamingResponse
+from fastapi.responses import StreamingResponse, JSONResponse
 from pydantic import ValidationError
 from app.integration.routes import context,audit_operation
 from app.realtime.stream.ingest import Event
@@ -15,7 +15,7 @@ def status(request:Request):
     ctx=context(request,'realtime-status')
     result=request.app.state.realtime.status(ctx)
     audit_operation(request.app.state.runtime,ctx,'realtime.status')
-    return result
+    return JSONResponse(result,headers={'Cache-Control':'no-store'})
 
 
 @router.post('/stream/ingest')

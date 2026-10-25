@@ -1,0 +1,78 @@
+{
+  "scope": "branch-only M14 delta",
+  "base_sha": "c27fef0a0c5cf7c84551a5940ef3ced8e9f00b93",
+  "nodes": [
+    {
+      "id": "docs/ml-methodology",
+      "type": "branch",
+      "base_sha": "c27fef0a0c5cf7c84551a5940ef3ced8e9f00b93"
+    },
+    {
+      "id": "M14",
+      "type": "milestone",
+      "status": "DOCUMENTATION_READY_UNIVERSAL_GATES_PENDING"
+    },
+    {
+      "id": "docs/ml/METHODOLOGY.md",
+      "type": "document"
+    },
+    {
+      "id": "docs/ml/DATA_CARD.md",
+      "type": "document"
+    },
+    {
+      "id": "docs/ml/FEATURES.md",
+      "type": "document"
+    },
+    {
+      "id": "docs/ml/DATA_AUDIT.json",
+      "type": "document"
+    },
+    {
+      "id": "docs/ml/MILESTONES.md",
+      "type": "document"
+    },
+    {
+      "id": "docs/ml/VALIDATION.md",
+      "type": "document"
+    }
+  ],
+  "edges": [
+    {
+      "source": "docs/ml-methodology",
+      "target": "M14",
+      "type": "documents"
+    },
+    {
+      "source": "M14",
+      "target": "docs/ml/METHODOLOGY.md",
+      "type": "evidenced_by"
+    },
+    {
+      "source": "M14",
+      "target": "docs/ml/DATA_CARD.md",
+      "type": "evidenced_by"
+    },
+    {
+      "source": "M14",
+      "target": "docs/ml/FEATURES.md",
+      "type": "evidenced_by"
+    },
+    {
+      "source": "M14",
+      "target": "docs/ml/DATA_AUDIT.json",
+      "type": "evidenced_by"
+    },
+    {
+      "source": "M14",
+      "target": "docs/ml/MILESTONES.md",
+      "type": "evidenced_by"
+    },
+    {
+      "source": "M14",
+      "target": "docs/ml/VALIDATION.md",
+      "type": "evidenced_by"
+    }
+  ],
+  "deferred": "Global ML/experiment/feed node types and update_knowledge_graph.py integration belong to M15/M20; no trained model nodes fabricated."
+}
