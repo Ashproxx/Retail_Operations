@@ -1,0 +1,84 @@
+{
+  "branch": "platform/realtime-data",
+  "base": "c27fef0a0c5cf7c84551a5940ef3ced8e9f00b93",
+  "nodes": [
+    {
+      "id": "app/realtime/config.py",
+      "type": "file"
+    },
+    {
+      "id": "app/realtime/data.py",
+      "type": "file"
+    },
+    {
+      "id": "app/realtime/features_online.py",
+      "type": "file"
+    },
+    {
+      "id": "app/realtime/freshness.py",
+      "type": "file"
+    },
+    {
+      "id": "app/realtime/launch.py",
+      "type": "file"
+    },
+    {
+      "id": "app/realtime/routes.py",
+      "type": "file"
+    },
+    {
+      "id": "app/realtime/service.py",
+      "type": "file"
+    },
+    {
+      "id": "app/realtime/__init__.py",
+      "type": "file"
+    },
+    {
+      "id": "app/realtime/connectors/open_meteo.py",
+      "type": "file"
+    },
+    {
+      "id": "app/realtime/connectors/__init__.py",
+      "type": "file"
+    },
+    {
+      "id": "app/realtime/stream/ingest.py",
+      "type": "file"
+    },
+    {
+      "id": "app/realtime/stream/simulator.py",
+      "type": "file"
+    },
+    {
+      "id": "app/realtime/stream/__init__.py",
+      "type": "file"
+    },
+    {
+      "id": "tests/realtime/test_realtime.py",
+      "type": "file"
+    },
+    {
+      "id": "open-meteo",
+      "type": "data_source",
+      "synthetic": false
+    },
+    {
+      "id": "sales_events",
+      "type": "stream_event",
+      "synthetic": "per-row"
+    }
+  ],
+  "edges": [
+    {
+      "source": "app/realtime/connectors/open_meteo.py",
+      "target": "open-meteo",
+      "type": "consumes_feed"
+    },
+    {
+      "source": "app/realtime/routes.py",
+      "target": "sales_events",
+      "type": "serves"
+    }
+  ]
+}
