@@ -18,3 +18,5 @@ data/raw/*
 secrets/
 models/
 validation-output/
+
+experiments/log.jsonl

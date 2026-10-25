@@ -1,0 +1,93 @@
+{
+  "status": "EXPLORATORY_PRETEST_VALIDATION",
+  "origin": "2026-03-31",
+  "targets": [
+    "2026-04-15",
+    "2026-04-16",
+    "2026-04-17",
+    "2026-04-18",
+    "2026-04-19",
+    "2026-04-20",
+    "2026-04-21",
+    "2026-04-22",
+    "2026-04-23",
+    "2026-04-24",
+    "2026-04-25",
+    "2026-04-26",
+    "2026-04-27",
+    "2026-04-28"
+  ],
+  "observations": 14,
+  "horizon": 14,
+  "embargo_days": 14,
+  "quantile_raw_pinball": {
+    "0.1": 4.814885392470971,
+    "0.5": 9.76293959030768,
+    "0.9": 8.639152174730699
+  },
+  "quantile_ordered_pinball": {
+    "0.1": 4.814885392470971,
+    "0.5": 9.76293959030768,
+    "0.9": 8.639152174730699
+  },
+  "quantile_crossing_dates": 0,
+  "quantile_ordered_80": {
+    "coverage": 1.0,
+    "mean_width": 134.54037567201672,
+    "n": 14
+  },
+  "baseline_conformal_80": {
+    "coverage": 1.0,
+    "mean_width": 139.0,
+    "n": 14
+  },
+  "baseline_point_metrics": {
+    "mae": 22.5,
+    "rmse": 25.87625083243044,
+    "bias": 19.75,
+    "wape": 0.10174418604651163,
+    "mase": 0.37899695470118006,
+    "n": 14
+  },
+  "quantile_median_metrics": {
+    "mae": 19.52587918061536,
+    "rmse": 23.770631738610092,
+    "bias": -1.577604243386381,
+    "wape": 0.08829531929218831,
+    "mase": 0.32889994432517305,
+    "n": 14
+  },
+  "importance": {
+    "baseline_mae": 38.33840851185964,
+    "increase_in_mae": {
+      "weekday_sin": 25.061892812827306,
+      "weekday_cos": 2.277866531122348,
+      "month_sin": 0.0,
+      "month_cos": 0.0,
+      "lag_1": -11.73999172922584,
+      "lag_7": -2.0915318777399237,
+      "lag_14": -1.0408159706799822,
+      "lag_28": -4.241205256560559,
+      "mean_7": -2.212642087946223,
+      "mean_28": -0.09971282701172726,
+      "std_7": -1.2735477355550429
+    },
+    "warning": "Predictive association, not causal importance; correlated features can mask each other."
+  },
+  "limitations": [
+    "One chain origin and fourteen validation observations; not independent final-test accuracy.",
+    "Each quantile adapter recursively feeds its own predictions; multi-step quantile calibration is not guaranteed.",
+    "Per-date sorting repairs quantile crossing before scoring; both raw and repaired losses are reported.",
+    "Baseline conformal residuals come from a February fit predicting March; pooled leads and distribution shift limit coverage.",
+    "Importance permutes fixed recursive feature rows, not complete forecast trajectories; correlated features may mask each other.",
+    "No retraining on validation labels, hyperparameter search, model promotion or change to frozen test evidence."
+  ],
+  "source": "synthetic-workbook",
+  "seed": 42,
+  "code_commit": "4e175581183a33c7818849df6f7c4d7105fd6a93",
+  "source_sha256": "303e8d4574c8fc4f5c82a7bda19f94f914d8747b45d822ce71c99ae293e5c65c",
+  "versions": {
+    "scikit-learn": "1.9.1",
+    "numpy": "2.5.3"
+  }
+}

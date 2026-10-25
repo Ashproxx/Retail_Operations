@@ -6,6 +6,23 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 
 def main():
+    import argparse
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--ml-delta',action='store_true',help='Write only the current ML branch delta')
+    args=parser.parse_args()
+    if args.ml_delta:
+        import subprocess
+        branch=subprocess.check_output(['git','branch','--show-current'],text=True).strip()
+        paths=sorted([*ROOT.glob('app/ml/*.py'),*ROOT.glob('tests/ml/*.py'),*ROOT.glob('scripts/ml_*.py')])
+        nodes=[{'id':p.relative_to(ROOT).as_posix(),'type':'file'} for p in paths]
+        payload={'branch':branch,'status':'framework only; no test accuracy claim',
+                 'node_types':['ml_model','experiment','data_source','stream_event'],
+                 'edge_types':['trains_on','evaluated_on','consumes_feed','serves'],
+                 'nodes':nodes,'edges':[{'source':branch,'target':n['id'],'type':'owns'} for n in nodes]}
+        folder=ROOT/'docs/ml';folder.mkdir(exist_ok=True)
+        (folder/'KNOWLEDGE_GRAPH_DELTA.json').write_text(json.dumps(payload,indent=2)+'\n')
+        print('Wrote isolated ML branch delta; inherited graphs unchanged')
+        return
     nodes={};edges=[]
     def node(id,kind,**meta):nodes[id]={'id':id,'type':kind,**meta}
     def edge(a,b,kind):edges.append({'source':a,'target':b,'type':kind})

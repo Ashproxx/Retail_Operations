@@ -1,0 +1,11 @@
+{
+  "database": ".retailops/phase3/retailops.db",
+  "cutoff": "2026-08-04",
+  "test_start": "2026-08-05",
+  "origins": ["2026-03-31", "2026-04-21", "2026-05-12", "2026-06-09"],
+  "horizons": [1, 7, 14, 28],
+  "level": "chain",
+  "seed": 42,
+  "output": "validation-output/ml/baseline.json",
+  "registry": "models/registry"
+}

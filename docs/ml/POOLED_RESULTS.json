@@ -1,0 +1,592 @@
+{
+  "source": "synthetic-workbook",
+  "code_commit": "22156f08d0cbc3e1baacc9eaee08464a8b96faa3",
+  "versions": {
+    "numpy": "2.5.3",
+    "scikit-learn": "1.9.1"
+  },
+  "source_sha256": "cc0e243dde6e3ca6628675951d3d416a09a86042ab9a155202afc8a1fada04e1",
+  "store": {
+    "status": "EXPLORATORY_DEVELOPMENT_COMPARISON",
+    "origin": "2026-03-31",
+    "training_days_per_series": 56,
+    "embargo_days": 14,
+    "targets": [
+      "2026-04-15",
+      "2026-04-16",
+      "2026-04-17",
+      "2026-04-18",
+      "2026-04-19",
+      "2026-04-20",
+      "2026-04-21",
+      "2026-04-22",
+      "2026-04-23",
+      "2026-04-24",
+      "2026-04-25",
+      "2026-04-26",
+      "2026-04-27",
+      "2026-04-28"
+    ],
+    "eligible_series": 13,
+    "excluded": {
+      "('ST02',)": "missing training or scoring dates; not zero-filled",
+      "('ST06',)": "missing training or scoring dates; not zero-filled",
+      "('ST16',)": "missing training or scoring dates; not zero-filled",
+      "('ST17',)": "missing training or scoring dates; not zero-filled",
+      "('ST18',)": "missing training or scoring dates; not zero-filled",
+      "('ST19',)": "missing training or scoring dates; not zero-filled",
+      "('ST20',)": "missing training or scoring dates; not zero-filled"
+    },
+    "results": [
+      {
+        "series": [
+          "ST01"
+        ],
+        "observations": 14,
+        "metrics": {
+          "pooled_hist_gradient": {
+            "mae": 6.283419875980041,
+            "rmse": 7.771520075463566,
+            "bias": 5.359244614713853,
+            "wape": 0.5114411526960498,
+            "mase": 0.8389307191362998,
+            "n": 14
+          },
+          "local_hist_gradient": {
+            "mae": 5.417209734148987,
+            "rmse": 7.560624471928237,
+            "bias": 4.879054507432775,
+            "wape": 0.4409356760353827,
+            "mase": 0.7232786838509546,
+            "n": 14
+          },
+          "weekday_mean_28": {
+            "mae": 6.178571428571429,
+            "rmse": 7.4731662824879175,
+            "bias": 4.25,
+            "wape": 0.502906976744186,
+            "mase": 0.8249318801089919,
+            "n": 14
+          }
+        }
+      },
+      {
+        "series": [
+          "ST03"
+        ],
+        "observations": 14,
+        "metrics": {
+          "pooled_hist_gradient": {
+            "mae": 2.917631145497151,
+            "rmse": 3.8621953577188033,
+            "bias": 0.6153949183694564,
+            "wape": 0.4439873482278273,
+            "mase": 0.8311856170311651,
+            "n": 14
+          },
+          "local_hist_gradient": {
+            "mae": 2.9495972958901113,
+            "rmse": 4.286802136074564,
+            "bias": 0.7022186582927284,
+            "wape": 0.4488517624180604,
+            "mase": 0.8402922528989271,
+            "n": 14
+          },
+          "weekday_mean_28": {
+            "mae": 2.8214285714285716,
+            "rmse": 3.462812647050289,
+            "bias": 0.6071428571428571,
+            "wape": 0.42934782608695654,
+            "mase": 0.803779069767442,
+            "n": 14
+          }
+        }
+      },
+      {
+        "series": [
+          "ST04"
+        ],
+        "observations": 14,
+        "metrics": {
+          "pooled_hist_gradient": {
+            "mae": 3.0755799808057653,
+            "rmse": 4.090597905709872,
+            "bias": -0.16986011434429013,
+            "wape": 0.27959818007325143,
+            "mase": 0.45806510352426294,
+            "n": 14
+          },
+          "local_hist_gradient": {
+            "mae": 6.256006640424312,
+            "rmse": 7.939609998516658,
+            "bias": 5.388023256752684,
+            "wape": 0.5687278764022101,
+            "mase": 0.9317456698504294,
+            "n": 14
+          },
+          "weekday_mean_28": {
+            "mae": 5.464285714285714,
+            "rmse": 6.472469168938323,
+            "bias": 1.2857142857142858,
+            "wape": 0.4967532467532468,
+            "mase": 0.8138297872340425,
+            "n": 14
+          }
+        }
+      },
+      {
+        "series": [
+          "ST05"
+        ],
+        "observations": 14,
+        "metrics": {
+          "pooled_hist_gradient": {
+            "mae": 5.310933960444351,
+            "rmse": 6.188471069612848,
+            "bias": 2.1214765552649864,
+            "wape": 0.3379685247555496,
+            "mase": 0.7393061479027648,
+            "n": 14
+          },
+          "local_hist_gradient": {
+            "mae": 3.721680507636207,
+            "rmse": 4.159086934961145,
+            "bias": 0.5826684731767305,
+            "wape": 0.23683421412230407,
+            "mase": 0.5180748433925402,
+            "n": 14
+          },
+          "weekday_mean_28": {
+            "mae": 3.5357142857142856,
+            "rmse": 3.959617586152914,
+            "bias": 1.3571428571428572,
+            "wape": 0.225,
+            "mase": 0.4921875,
+            "n": 14
+          }
+        }
+      },
+      {
+        "series": [
+          "ST07"
+        ],
+        "observations": 14,
+        "metrics": {
+          "pooled_hist_gradient": {
+            "mae": 3.6836672235536327,
+            "rmse": 4.3867661241035485,
+            "bias": 0.7651390491264735,
+            "wape": 0.3631784586602173,
+            "mase": 0.593748993270158,
+            "n": 14
+          },
+          "local_hist_gradient": {
+            "mae": 5.85136908927417,
+            "rmse": 6.979340833593648,
+            "bias": 4.939722999518416,
+            "wape": 0.5768955440129463,
+            "mase": 0.9431483071527446,
+            "n": 14
+          },
+          "weekday_mean_28": {
+            "mae": 4.214285714285714,
+            "rmse": 5.219297982350828,
+            "bias": 3.1785714285714284,
+            "wape": 0.4154929577464789,
+            "mase": 0.6792763157894738,
+            "n": 14
+          }
+        }
+      },
+      {
+        "series": [
+          "ST08"
+        ],
+        "observations": 14,
+        "metrics": {
+          "pooled_hist_gradient": {
+            "mae": 4.215581339533263,
+            "rmse": 6.010642009768553,
+            "bias": -2.7720007304910896,
+            "wape": 0.21002896353546507,
+            "mase": 0.5552781871965857,
+            "n": 14
+          },
+          "local_hist_gradient": {
+            "mae": 6.251678458028232,
+            "rmse": 7.6811300075232305,
+            "bias": -0.3560042479711968,
+            "wape": 0.31147152459927135,
+            "mase": 0.8234737753854392,
+            "n": 14
+          },
+          "weekday_mean_28": {
+            "mae": 5.0,
+            "rmse": 6.193314367698676,
+            "bias": -0.5,
+            "wape": 0.2491103202846975,
+            "mase": 0.6586021505376344,
+            "n": 14
+          }
+        }
+      },
+      {
+        "series": [
+          "ST09"
+        ],
+        "observations": 14,
+        "metrics": {
+          "pooled_hist_gradient": {
+            "mae": 6.992392949839656,
+            "rmse": 8.088432730291524,
+            "bias": 1.7759700742463869,
+            "wape": 0.6042808722083653,
+            "mase": 0.9989132785485223,
+            "n": 14
+          },
+          "local_hist_gradient": {
+            "mae": 6.57629771408199,
+            "rmse": 7.684027926977631,
+            "bias": 1.9686180566651497,
+            "wape": 0.5683220246737523,
+            "mase": 0.9394711020117129,
+            "n": 14
+          },
+          "weekday_mean_28": {
+            "mae": 7.571428571428571,
+            "rmse": 9.16515138991168,
+            "bias": 1.5,
+            "wape": 0.654320987654321,
+            "mase": 1.0816326530612244,
+            "n": 14
+          }
+        }
+      },
+      {
+        "series": [
+          "ST10"
+        ],
+        "observations": 14,
+        "metrics": {
+          "pooled_hist_gradient": {
+            "mae": 4.938286035169709,
+            "rmse": 6.210841483950111,
+            "bias": 1.7097444606841539,
+            "wape": 0.5486984483521898,
+            "mase": 0.9717912278044808,
+            "n": 14
+          },
+          "local_hist_gradient": {
+            "mae": 5.390551294807214,
+            "rmse": 6.491253682986319,
+            "bias": 1.4737548495110946,
+            "wape": 0.5989501438674683,
+            "mase": 1.0607912186568411,
+            "n": 14
+          },
+          "weekday_mean_28": {
+            "mae": 5.464285714285714,
+            "rmse": 7.022921654940241,
+            "bias": 1.8571428571428572,
+            "wape": 0.6071428571428571,
+            "mase": 1.0753012048192772,
+            "n": 14
+          }
+        }
+      },
+      {
+        "series": [
+          "ST11"
+        ],
+        "observations": 14,
+        "metrics": {
+          "pooled_hist_gradient": {
+            "mae": 5.853714455659274,
+            "rmse": 8.241633799651424,
+            "bias": 0.048924248597231844,
+            "wape": 0.35477057307025905,
+            "mase": 0.7836940118232362,
+            "n": 14
+          },
+          "local_hist_gradient": {
+            "mae": 6.755921856614717,
+            "rmse": 9.026996079467384,
+            "bias": 1.1504581542181538,
+            "wape": 0.409449809491801,
+            "mase": 0.9044813414593473,
+            "n": 14
+          },
+          "weekday_mean_28": {
+            "mae": 4.821428571428571,
+            "rmse": 6.002975452699626,
+            "bias": 0.7857142857142857,
+            "wape": 0.2922077922077922,
+            "mase": 0.6454918032786885,
+            "n": 14
+          }
+        }
+      },
+      {
+        "series": [
+          "ST12"
+        ],
+        "observations": 14,
+        "metrics": {
+          "pooled_hist_gradient": {
+            "mae": 7.281377100642351,
+            "rmse": 8.996005716488131,
+            "bias": 6.627511940478816,
+            "wape": 0.5996428200528995,
+            "mase": 1.1114874701915116,
+            "n": 14
+          },
+          "local_hist_gradient": {
+            "mae": 7.821090584925666,
+            "rmse": 9.135263563258933,
+            "bias": 7.308469881949565,
+            "wape": 0.6440898128762313,
+            "mase": 1.1938736406895876,
+            "n": 14
+          },
+          "weekday_mean_28": {
+            "mae": 5.5,
+            "rmse": 6.201238355591337,
+            "bias": 3.107142857142857,
+            "wape": 0.45294117647058824,
+            "mase": 0.839563862928349,
+            "n": 14
+          }
+        }
+      },
+      {
+        "series": [
+          "ST13"
+        ],
+        "observations": 14,
+        "metrics": {
+          "pooled_hist_gradient": {
+            "mae": 4.939247134395391,
+            "rmse": 6.508262647972117,
+            "bias": -0.5629775754684679,
+            "wape": 0.3799420872611839,
+            "mase": 0.9528468881313943,
+            "n": 14
+          },
+          "local_hist_gradient": {
+            "mae": 6.680689987865446,
+            "rmse": 7.9146890943104395,
+            "bias": 3.205201171798954,
+            "wape": 0.5138992298358036,
+            "mase": 1.2887945252181372,
+            "n": 14
+          },
+          "weekday_mean_28": {
+            "mae": 4.035714285714286,
+            "rmse": 5.87594977125279,
+            "bias": -0.8214285714285714,
+            "wape": 0.31043956043956045,
+            "mase": 0.7785433070866141,
+            "n": 14
+          }
+        }
+      },
+      {
+        "series": [
+          "ST14"
+        ],
+        "observations": 14,
+        "metrics": {
+          "pooled_hist_gradient": {
+            "mae": 5.26451772624859,
+            "rmse": 6.23256499059681,
+            "bias": 2.4781237622381984,
+            "wape": 0.304558876725125,
+            "mase": 0.653066755914382,
+            "n": 14
+          },
+          "local_hist_gradient": {
+            "mae": 6.469103165356486,
+            "rmse": 7.181289573164126,
+            "bias": 3.015878089370348,
+            "wape": 0.37424563766525126,
+            "mase": 0.8024963420315641,
+            "n": 14
+          },
+          "weekday_mean_28": {
+            "mae": 5.892857142857143,
+            "rmse": 7.336308920119747,
+            "bias": 1.8571428571428572,
+            "wape": 0.3409090909090909,
+            "mase": 0.7310126582278481,
+            "n": 14
+          }
+        }
+      },
+      {
+        "series": [
+          "ST15"
+        ],
+        "observations": 14,
+        "metrics": {
+          "pooled_hist_gradient": {
+            "mae": 3.301605123732208,
+            "rmse": 3.61905314237524,
+            "bias": -1.1303772702614359,
+            "wape": 0.2853238995817957,
+            "mase": 0.7595241833937942,
+            "n": 14
+          },
+          "local_hist_gradient": {
+            "mae": 3.3694290804001343,
+            "rmse": 4.1533444308314005,
+            "bias": -2.3548455425138948,
+            "wape": 0.291185229170382,
+            "mase": 0.7751268776507351,
+            "n": 14
+          },
+          "weekday_mean_28": {
+            "mae": 3.0357142857142856,
+            "rmse": 3.969751701483176,
+            "bias": -1.3214285714285714,
+            "wape": 0.2623456790123457,
+            "mase": 0.698356807511737,
+            "n": 14
+          }
+        }
+      }
+    ]
+  },
+  "store_category": {
+    "status": "UNVERIFIED",
+    "reason": "Fewer than two eligible observed series",
+    "excluded": {
+      "('ST01', 'Dresses')": "missing training or scoring dates; not zero-filled",
+      "('ST01', 'Ethnic')": "missing training or scoring dates; not zero-filled",
+      "('ST01', 'Jackets')": "missing training or scoring dates; not zero-filled",
+      "('ST01', 'Jeans')": "missing training or scoring dates; not zero-filled",
+      "('ST01', 'Shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST01', 'T-shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST02', 'Dresses')": "missing training or scoring dates; not zero-filled",
+      "('ST02', 'Ethnic')": "missing training or scoring dates; not zero-filled",
+      "('ST02', 'Jackets')": "missing training or scoring dates; not zero-filled",
+      "('ST02', 'Jeans')": "missing training or scoring dates; not zero-filled",
+      "('ST02', 'Shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST02', 'T-shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST03', 'Dresses')": "missing training or scoring dates; not zero-filled",
+      "('ST03', 'Ethnic')": "missing training or scoring dates; not zero-filled",
+      "('ST03', 'Jackets')": "missing training or scoring dates; not zero-filled",
+      "('ST03', 'Jeans')": "missing training or scoring dates; not zero-filled",
+      "('ST03', 'Shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST03', 'T-shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST04', 'Dresses')": "missing training or scoring dates; not zero-filled",
+      "('ST04', 'Ethnic')": "missing training or scoring dates; not zero-filled",
+      "('ST04', 'Jackets')": "missing training or scoring dates; not zero-filled",
+      "('ST04', 'Jeans')": "missing training or scoring dates; not zero-filled",
+      "('ST04', 'Shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST04', 'T-shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST05', 'Dresses')": "missing training or scoring dates; not zero-filled",
+      "('ST05', 'Ethnic')": "missing training or scoring dates; not zero-filled",
+      "('ST05', 'Jackets')": "missing training or scoring dates; not zero-filled",
+      "('ST05', 'Jeans')": "missing training or scoring dates; not zero-filled",
+      "('ST05', 'Shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST05', 'T-shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST06', 'Dresses')": "missing training or scoring dates; not zero-filled",
+      "('ST06', 'Ethnic')": "missing training or scoring dates; not zero-filled",
+      "('ST06', 'Jackets')": "missing training or scoring dates; not zero-filled",
+      "('ST06', 'Jeans')": "missing training or scoring dates; not zero-filled",
+      "('ST06', 'Shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST06', 'T-shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST07', 'Dresses')": "missing training or scoring dates; not zero-filled",
+      "('ST07', 'Ethnic')": "missing training or scoring dates; not zero-filled",
+      "('ST07', 'Jackets')": "missing training or scoring dates; not zero-filled",
+      "('ST07', 'Jeans')": "missing training or scoring dates; not zero-filled",
+      "('ST07', 'Shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST07', 'T-shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST08', 'Dresses')": "missing training or scoring dates; not zero-filled",
+      "('ST08', 'Ethnic')": "missing training or scoring dates; not zero-filled",
+      "('ST08', 'Jackets')": "missing training or scoring dates; not zero-filled",
+      "('ST08', 'Jeans')": "missing training or scoring dates; not zero-filled",
+      "('ST08', 'Shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST08', 'T-shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST09', 'Dresses')": "missing training or scoring dates; not zero-filled",
+      "('ST09', 'Ethnic')": "missing training or scoring dates; not zero-filled",
+      "('ST09', 'Jackets')": "missing training or scoring dates; not zero-filled",
+      "('ST09', 'Jeans')": "missing training or scoring dates; not zero-filled",
+      "('ST09', 'Shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST09', 'T-shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST10', 'Dresses')": "missing training or scoring dates; not zero-filled",
+      "('ST10', 'Ethnic')": "missing training or scoring dates; not zero-filled",
+      "('ST10', 'Jackets')": "missing training or scoring dates; not zero-filled",
+      "('ST10', 'Jeans')": "missing training or scoring dates; not zero-filled",
+      "('ST10', 'Shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST10', 'T-shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST11', 'Dresses')": "missing training or scoring dates; not zero-filled",
+      "('ST11', 'Ethnic')": "missing training or scoring dates; not zero-filled",
+      "('ST11', 'Jackets')": "missing training or scoring dates; not zero-filled",
+      "('ST11', 'Jeans')": "missing training or scoring dates; not zero-filled",
+      "('ST11', 'Shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST11', 'T-shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST12', 'Dresses')": "missing training or scoring dates; not zero-filled",
+      "('ST12', 'Ethnic')": "missing training or scoring dates; not zero-filled",
+      "('ST12', 'Jackets')": "missing training or scoring dates; not zero-filled",
+      "('ST12', 'Jeans')": "missing training or scoring dates; not zero-filled",
+      "('ST12', 'Shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST12', 'T-shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST13', 'Dresses')": "missing training or scoring dates; not zero-filled",
+      "('ST13', 'Ethnic')": "missing training or scoring dates; not zero-filled",
+      "('ST13', 'Jackets')": "missing training or scoring dates; not zero-filled",
+      "('ST13', 'Jeans')": "missing training or scoring dates; not zero-filled",
+      "('ST13', 'Shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST13', 'T-shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST14', 'Dresses')": "missing training or scoring dates; not zero-filled",
+      "('ST14', 'Ethnic')": "missing training or scoring dates; not zero-filled",
+      "('ST14', 'Jackets')": "missing training or scoring dates; not zero-filled",
+      "('ST14', 'Jeans')": "missing training or scoring dates; not zero-filled",
+      "('ST14', 'Shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST14', 'T-shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST15', 'Dresses')": "missing training or scoring dates; not zero-filled",
+      "('ST15', 'Ethnic')": "missing training or scoring dates; not zero-filled",
+      "('ST15', 'Jackets')": "missing training or scoring dates; not zero-filled",
+      "('ST15', 'Jeans')": "missing training or scoring dates; not zero-filled",
+      "('ST15', 'Shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST15', 'T-shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST16', 'Dresses')": "missing training or scoring dates; not zero-filled",
+      "('ST16', 'Ethnic')": "missing training or scoring dates; not zero-filled",
+      "('ST16', 'Jackets')": "missing training or scoring dates; not zero-filled",
+      "('ST16', 'Jeans')": "missing training or scoring dates; not zero-filled",
+      "('ST16', 'Shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST16', 'T-shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST17', 'Dresses')": "missing training or scoring dates; not zero-filled",
+      "('ST17', 'Ethnic')": "missing training or scoring dates; not zero-filled",
+      "('ST17', 'Jackets')": "missing training or scoring dates; not zero-filled",
+      "('ST17', 'Jeans')": "missing training or scoring dates; not zero-filled",
+      "('ST17', 'Shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST17', 'T-shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST18', 'Dresses')": "missing training or scoring dates; not zero-filled",
+      "('ST18', 'Ethnic')": "missing training or scoring dates; not zero-filled",
+      "('ST18', 'Jackets')": "missing training or scoring dates; not zero-filled",
+      "('ST18', 'Jeans')": "missing training or scoring dates; not zero-filled",
+      "('ST18', 'Shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST18', 'T-shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST19', 'Dresses')": "missing training or scoring dates; not zero-filled",
+      "('ST19', 'Ethnic')": "missing training or scoring dates; not zero-filled",
+      "('ST19', 'Jackets')": "missing training or scoring dates; not zero-filled",
+      "('ST19', 'Jeans')": "missing training or scoring dates; not zero-filled",
+      "('ST19', 'Shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST19', 'T-shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST20', 'Dresses')": "missing training or scoring dates; not zero-filled",
+      "('ST20', 'Ethnic')": "missing training or scoring dates; not zero-filled",
+      "('ST20', 'Jackets')": "missing training or scoring dates; not zero-filled",
+      "('ST20', 'Jeans')": "missing training or scoring dates; not zero-filled",
+      "('ST20', 'Shirts')": "missing training or scoring dates; not zero-filled",
+      "('ST20', 'T-shirts')": "missing training or scoring dates; not zero-filled"
+    }
+  },
+  "limitations": [
+    "One development origin; prior primary test has already been opened. No independent accuracy claim.",
+    "Fixed 56-day windows and one-hot series identity; unseen series are unsupported.",
+    "Coverage-based eligibility excludes sparse series; missing dates are never assumed zero.",
+    "No hyperparameter search, final-test reuse, model promotion, causal interpretation or runtime integration.",
+    "Point comparison only; pooled intervals and independent calibration are unverified."
+  ]
+}
