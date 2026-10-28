@@ -7,8 +7,9 @@
   let emailLogin=false;
   let token='', model='models', busy=false, generation=0, session=crypto.randomUUID();
   let charts=[];
+  const datasetTimers={},datasetRequests={};
   const titles={models:'Home',retail:'Retail Operations',employees:'Employee 360','employee-work':'Work & Efficiency',management:'Management',datasets:'Datasets'};
-  function clear(){ window.demoWorkspace?.stop(); charts.forEach(([chart,observer])=>{observer.disconnect();chart.dispose();});charts=[]; ['conversation','overview','context','search-results','dataset-products','dataset-employees'].forEach(id=>$(id).replaceChildren());$('search-name').value='';$('message').value='';session=crypto.randomUUID(); }
+  function clear(){ Object.values(datasetTimers).forEach(clearTimeout);window.demoWorkspace?.stop(); charts.forEach(([chart,observer])=>{observer.disconnect();chart.dispose();});charts=[]; ['conversation','overview','context','search-results','dataset-products','dataset-employees'].forEach(id=>$(id).replaceChildren());$('search-name').value='';$('message').value='';session=crypto.randomUUID(); }
   function button(text, fn, parent, description){const b=el('button',text);b.type='button';b.onclick=fn;if(description)b.append(el('small',description));parent.append(b);return b;}
   function metric(parent, metrics){const wrap=parent.classList.contains('metrics')?parent:el('div',null,'metrics');for(const [k,v] of Object.entries(metrics||{})){const card=el('div',null,'metric');card.append(el('small',k),el('strong',display(v)));wrap.append(card);}if(wrap!==parent)parent.append(wrap);}
   function table(parent,rows,title){if(!rows?.length)return;const wrap=el('div',null,'table-wrap'),t=el('table');t.append(el('caption',title));const keys=Object.keys(rows[0]),head=el('thead'),tr=el('tr');keys.forEach(k=>{const th=el('th',label(k));th.scope='col';tr.append(th);});head.append(tr);t.append(head);const body=el('tbody');rows.forEach(row=>{const tr=el('tr');keys.forEach(k=>tr.append(el('td',display(row[k]))));body.append(tr);});t.append(body);wrap.append(t);parent.append(wrap);}
@@ -29,13 +30,16 @@
   async function ask(message,extra={},shown=message){if(busy)return;if(!token){$('connection').showModal();return;}const epoch=generation,workspace=model;busy=true;$('send').disabled=true;$('send').textContent='…';try{const data=await api(workspace+'/chat',{session_id:session,message,...extra});if(epoch===generation)render(data,shown);}catch(e){if(epoch===generation)render({summary:e.message},shown);}finally{busy=false;$('send').disabled=false;$('send').textContent='↑';}}
   async function loadDataset(kind,offset=0){
     const epoch=generation,box=$('dataset-'+kind);
+    clearTimeout(datasetTimers[kind]);const request=datasetRequests[kind]=(datasetRequests[kind]||0)+1;
+    let delay=30000,live=false;
     const heading=kind==='products'?'Product catalog':'Employees';
     box.setAttribute('aria-busy','true');
     try{
       const data=await api('datasets/'+kind+'?offset='+offset);
-      if(epoch!==generation)return;
+      if(epoch!==generation||request!==datasetRequests[kind])return;
+      live=!!data.live;
       charts=charts.filter(([c,o])=>{if(box.contains(c.getDom())){o.disconnect();c.dispose();return false;}return true;});
-      box.replaceChildren(el('h3',heading),el('p',data.source+' · SYNTHETIC','answer-label'));
+      box.replaceChildren(el('h3',data.title||heading),el('p',data.source+' · SYNTHETIC','answer-label'));
       metric(box,data.metrics);box.append(el('p',data.note,'finding'));
       const entries=Object.entries(data.groups);
       if(entries.length){chart(box,{type:'pie',title:data.chart_title,labels:entries.map(([k])=>k),datasets:[{values:entries.map(([,v])=>v)}],interpretation:data.chart_title});
@@ -46,8 +50,8 @@
         pager.append(el('span',start+'–'+(data.offset+data.rows.length)+' of '+data.total));
         const prev=button('Previous',()=>loadDataset(kind,Math.max(0,offset-data.limit)),pager);prev.disabled=offset===0;
         const next=button('Next',()=>loadDataset(kind,offset+data.limit),pager);next.disabled=offset+data.limit>=data.total;box.append(pager);}
-    }catch(e){if(epoch===generation)box.replaceChildren(el('h3',heading),el('p',e.message,'fine'));}
-    finally{if(epoch===generation)box.removeAttribute('aria-busy');}
+    }catch(e){if(epoch===generation&&request===datasetRequests[kind]){box.replaceChildren(el('h3',heading),el('p',e.message+' Data could not be refreshed.','fine'));delay=60000;live=true;}}
+    finally{if(epoch===generation&&request===datasetRequests[kind]){box.removeAttribute('aria-busy');if(live&&token)datasetTimers[kind]=setTimeout(()=>loadDataset(kind,offset),delay);}}
   }
   async function loadDatasets(){
     await Promise.all(['products','employees'].map(kind=>loadDataset(kind)));

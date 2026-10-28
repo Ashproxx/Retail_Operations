@@ -4,6 +4,8 @@ This is an opt-in local demonstration. Every generated sale, inventory movement 
 
 Run commands from the repository root with the existing virtual environment. The original database is opened read-only and copied through SQLite's backup API into memory; only catalog, stores and sales are imported. Credentials, sessions and staff are not copied. Use a new destination path. The source database and the ordinary launcher are unchanged.
 
+`docs/live-demo/.env.example` contains optional non-secret web settings. Merge only the desired settings into your local `.env`; do not overwrite existing credentials or commit that local file. Database and worker options remain explicit command arguments.
+
 ## Initialize and build history
 
 ```powershell
@@ -26,6 +28,8 @@ Run the web server and worker in separate terminals after initialization/backfil
 Open `http://127.0.0.1:8003/models` and enter the eight-hour token printed in the server terminal. Keep the token private. Scoped roles require, for example, `--role STORE_MANAGER --stores DEMO1`; HR roles expose staff only according to existing role permissions. This launcher is localhost-only, does not send email and does not change the normal authentication setup.
 
 Daily operations is added to the existing retail, models, datasets and employee pages. It shows source labels, freshness, filters, daily/monthly totals and inventory from signed movements. Today is compared with yesterday through the same local time. Missing opening balances stay unknown. Only the generated store/product subset has simulated stock; copied sales do not establish historical inventory. HR views distinguish planned shifts from recorded attendance. Exports contain the displayed authorized page; use the API cursor to request subsequent pages. The ledger's arrival cutoff supports historical knowledge snapshots.
+
+In demo mode the home/datasets cards show available units by category and current recorded attendance. Inventory rows are store/SKU balances, including unknown balances. Current staff details and attendance counts require ADMIN/HR_ADMIN/HR_USER; scoped HR users see only their stores. These cards refresh every 30 seconds, retain the selected page, and reject late responses after navigation/disconnect. The ordinary non-demo catalog/snapshot view remains unchanged.
 
 The worker wakes every 30 seconds but generates hourly slots, not continuous real sales. Stopping it retains history. The website marks a stopped/stale worker. Local generation cannot continue while the laptop is off. A production host would need a persistent disk and a separately supervised worker; no hosting has been deployed.
 

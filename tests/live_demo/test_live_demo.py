@@ -206,6 +206,7 @@ def client(demo,tmp_path,monkeypatch):
     from app.security.policy import Grant
     from app.live_demo.routes import install
     monkeypatch.setattr('app.live_demo.routes.now_utc',lambda:NOW)
+    monkeypatch.setattr('app.live_demo.datasets.now_utc',lambda:NOW)
     run_once(demo,now=NOW)
     tokens={r:r+'x'*40 for r in ['ADMIN','ANALYST','STORE_MANAGER','HR_ADMIN','HR_USER']}
     grants=[Grant(token_sha256=hashlib.sha256(t.encode()).hexdigest(),principal_id=r,role=r,store_ids=['outside'] if r=='STORE_MANAGER' else ['DEMO1']) for r,t in tokens.items()]
@@ -239,3 +240,27 @@ def test_arrival_cutoff_excludes_later_correction(client,demo):
     correct(demo,sale,reason='Late correction',actor='test',now=NOW+timedelta(hours=1))
     data=client.get('/api/demo/events?limit=100&known_at='+NOW.isoformat().replace('+','%2B'),headers=headers('ADMIN')).json()
     assert all(r['kind']!='reversal' for r in data['rows'])
+
+
+def test_landing_inventory_uses_movements_and_hr_attendance(client,demo,monkeypatch):
+    client,headers=client
+    response=client.get('/api/datasets/products',headers=headers('ADMIN'))
+    assert response.status_code==200 and response.headers['cache-control']=='no-store'
+    data=response.json()
+    with connect(demo) as db: expected=balance(db,'DEMO1','DEMO-SKU',NOW.isoformat())
+    assert data['metrics']['Known available units']==expected==sum(data['groups'].values())
+    assert data['rows'][0]['available_units']==expected
+    assert client.get('/api/datasets/products',headers=headers('STORE_MANAGER')).json()['rows']==[]
+    assert client.get('/api/datasets/products',headers=headers('HR_USER')).status_code==403
+    assert client.get('/api/datasets/employees',headers=headers('ANALYST')).status_code==403
+    assert client.get('/api/datasets/employees',headers=headers('STORE_MANAGER')).status_code==403
+    # Historical clock-outs already in storage must not change an earlier on-duty view.
+    midday=instant(DAY,12)
+    monkeypatch.setattr('app.live_demo.datasets.now_utc',lambda:midday)
+    staff=client.get('/api/datasets/employees',headers=headers('HR_USER')).json()
+    with connect(demo) as db:
+        expected=db.execute("SELECT COUNT(*) FROM demo_attendance a JOIN demo_shifts s ON s.id=a.shift_id WHERE s.business_date=? AND a.status='clock_in' AND a.occurred_at<=?",(str(DAY),midday.isoformat())).fetchone()[0]
+    assert staff['metrics']['On duty']==expected
+    assert sum(staff['groups'].values())==staff['metrics']['Employees']
+    assert all(r['store_id']=='DEMO1' for r in staff['rows'])
+    assert not any(r['current_status']=='Finished' for r in staff['rows'])

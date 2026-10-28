@@ -1,7 +1,7 @@
 """Separate authenticated data APIs and public, data-free workspace shells."""
 from pathlib import Path
 from fastapi import APIRouter,Request,HTTPException,Query
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse,JSONResponse
 from fastapi.staticfiles import StaticFiles
 from app.integration.routes import context,audit_operation
 from app.enterprise.contracts import WorkspaceTurn
@@ -34,7 +34,13 @@ def dataset(request:Request,kind:Literal['products','employees'],offset:int=Quer
     ctx=context(request,'dataset-browser');runtime=request.app.state.runtime
     subjects=[];fields=[];status='denied'
     try:
-        if kind=='products':
+        demo_path=getattr(request.app.state.retail,'live_demo_path',None)
+        if demo_path:
+            from app.live_demo.datasets import dataset as live_dataset
+            result=live_dataset(demo_path,ctx,kind,offset,limit)
+            fields=list(result['rows'][0]) if result['rows'] else []
+            subjects=[r['employee_id'] for r in result['rows']] if kind=='employees' else []
+        elif kind=='products':
             clauses=filters(ctx,{})
             with request.app.state.database.session() as s:
                 records=list(s.scalars(select(Product).where(Product.sku_id.in_(select(Sale.sku_id).where(*clauses))).order_by(Product.sku_id)))
@@ -58,7 +64,7 @@ def dataset(request:Request,kind:Literal['products','employees'],offset:int=Quer
                     'note':'Recorded employment status from the supplied HR snapshot, not live attendance or who is on duty.' + (' Your role allows aggregates only.' if ctx.role==Role.ANALYST else ''),
                     'chart_title':'Staff by recorded employment status','source':'POC Navi Mumbai Employee Dataset'}
         status='success'
-        return {**result,'offset':offset,'limit':limit,'synthetic':True}
+        return JSONResponse({**result,'offset':offset,'limit':limit,'synthetic':True},headers={'Cache-Control':'no-store'})
     finally:
         audit(runtime,ctx,'dataset.'+kind,status,subjects,fields if status=='success' else [])
 
