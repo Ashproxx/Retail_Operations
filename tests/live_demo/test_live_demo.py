@@ -88,6 +88,35 @@ def test_backdated_second_opening_cannot_inflate_stock(demo,tmp_path):
     assert event_rows(demo)==before
 
 
+def test_independent_processes_catch_up_month_with_different_hash_seeds(demo,tmp_path):
+    import os
+    import subprocess
+    import sys
+    end=instant(DAY+timedelta(days=30),20)
+    code='''
+import sys
+from datetime import datetime
+from app.live_demo.worker import run_once
+while run_once(sys.argv[1],now=datetime.fromisoformat(sys.argv[2]),max_slots=7)['slots']:
+    pass
+'''
+    processes=[subprocess.Popen([sys.executable,'-c',code,str(demo),end.isoformat()],
+                               env={**os.environ,'PYTHONHASHSEED':str(seed)},stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+               for seed in [3,29,97]]
+    for process in processes:
+        _,error=process.communicate(timeout=60)
+        assert process.returncode==0,error.decode()
+    reference=tmp_path/'reference.db'
+    initialize(reference,config=Config(start_date=DAY,opening_units=3,reorder_at=2,delivery_units=5),now=end)
+    run_once(reference,now=end,max_slots=1000)
+    assert event_rows(demo)==event_rows(reference)
+    with connect(demo) as db:
+        assert db.execute('SELECT COUNT(*) FROM demo_checkpoints').fetchone()[0]==310
+        assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
+        assert not db.execute('PRAGMA foreign_key_check').fetchall()
+        assert db.execute("SELECT MIN(stock) FROM (SELECT SUM(stock_delta) OVER(ORDER BY occurred_at,rowid) stock FROM demo_events)").fetchone()[0]>=0
+
+
 def test_kolkata_midnight_and_no_future_completion(demo):
     now=instant(DAY,11)+timedelta(minutes=30)
     run_once(demo,now=now)

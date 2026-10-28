@@ -32,7 +32,7 @@ window.demoWorkspace = (() => {
     const summary=el('div'),history=el('div');root.append(summary,history);
     const pager=el('button','Next records'),exportButton=el('button','Export displayed records'),runs=el('button','Run / import history');
     root.append(pager,exportButton);if(model!=='employees')root.append(runs);
-    let cursor=model==='employees'?'':0,rows=[],params='',loadedOptions=false;
+    let cursor=model==='employees'?'':0,rows=[],params='',loadedOptions=false,pageRequest=0;
     const dateString=d=>d.toISOString().slice(0,10);
     function range() {
       if(preset.value==='custom')return;
@@ -45,9 +45,11 @@ window.demoWorkspace = (() => {
     range();preset.onchange=range;
     function query(){return new URLSearchParams({start:from.value,end:to.value,store:store.value,category:category.value,source:source.value,sku:sku.value}).toString();}
     async function page(current) {
+      const request=++pageRequest;pager.disabled=true;exportButton.disabled=true;
       const data=await api('demo/'+(model==='employees'?'staff':'events')+'?'+params+'&after='+encodeURIComponent(cursor));
-      if(stopped||current!==epoch)return;
+      if(stopped||current!==epoch||request!==pageRequest)return;
       rows=data.rows;cursor=data.next;history.replaceChildren();table(history,rows,model==='employees'?'Shift and attendance details':'Transactions and stock movements');
+      exportButton.disabled=false;
       pager.disabled=rows.length<50;
       if(data.page_summary)summary.append(el('p','Displayed shift status counts: '+JSON.stringify(data.page_summary)));
     }
@@ -61,6 +63,7 @@ window.demoWorkspace = (() => {
     }
     async function refresh() {
       clearTimeout(timer);const current=++epoch;params=query();cursor=model==='employees'?'':0;
+      pageRequest++;rows=[];pager.disabled=true;exportButton.disabled=true;
       status.textContent='Reading committed records…';
       try {
         if(model!=='employees') {
@@ -82,7 +85,7 @@ window.demoWorkspace = (() => {
       } catch(error) {if(!stopped&&current===epoch){status.textContent=error.message+' Display may be stale.';delay=Math.min(delay*2,300000);}}
       finally {if(!stopped&&current===epoch)timer=setTimeout(refresh,delay);}
     }
-    form.onsubmit=e=>{e.preventDefault();refresh();};pager.onclick=()=>{clearTimeout(timer);page(epoch).catch(e=>status.textContent=e.message);};
+    form.onsubmit=e=>{e.preventDefault();refresh();};pager.onclick=async()=>{clearTimeout(timer);const current=epoch;try{await page(current);}catch(e){if(!stopped&&current===epoch)status.textContent=e.message+' Display may be stale.';}finally{if(!stopped&&current===epoch)timer=setTimeout(refresh,delay);}};
     runs.onclick=async()=>{try{const data=await api('demo/runs');if(!stopped)table(history,data.rows,'Run/import history — first 50, API cursor available');}catch(e){if(!stopped)status.textContent=e.message;}};
     exportButton.onclick=()=>{const blob=new Blob([JSON.stringify(rows,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob),a=el('a');a.href=url;a.download='simulated-demo-records.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
     const resize=()=>charts.forEach(c=>c.resize());window.addEventListener('resize',resize);
