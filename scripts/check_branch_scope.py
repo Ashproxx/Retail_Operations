@@ -10,7 +10,7 @@ def main():
     parser=argparse.ArgumentParser();parser.add_argument('--ci',action='store_true');args=parser.parse_args()
     branch=git('branch','--show-current')
     # SHARED DELTA (M15): recognize the seven isolated AIML extension branches.
-    ml_branches={'docs/ml-methodology','platform/ml-core','platform/realtime-data','ml/forecasting-models','ml/auxiliary-models','ui/ml-dashboard','integration/ml-realtime-candidate'}
+    ml_branches={'codex/live-seasonal-dataset','docs/ml-methodology','platform/ml-core','platform/realtime-data','ml/forecasting-models','ml/auxiliary-models','ui/ml-dashboard','integration/ml-realtime-candidate'}
     if branch not in ml_branches | {'integration/release-candidate', 'integration/conversational-retailops', 'integration/dual-model-retailops'} and not (args.ci and branch==''):
         raise SystemExit('FAIL: run on the approved integration candidate only')
     manifest=json.loads(Path('docs/integration/APPROVED_SOURCES.json').read_text())

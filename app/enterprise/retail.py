@@ -54,7 +54,8 @@ class RetailService:
             products=[{'value':r.sku_id,'label':' · '.join(str(r.payload.get(k) or '') for k in ['style_name','gender','color','size'])} for r in s.scalars(select(Product).where(Product.sku_id.in_(select(Sale.sku_id).where(*clauses))).order_by(Product.sku_id))]
             competitors=list(s.scalars(select(CompetitorSale.competitor).where(*filters(ctx,{},CompetitorSale)).distinct()))
         return {'locations':[{'label':n,'value':i} for i,n in stores],'dimensions':dimensions,'products':products,'date_range':list(bounds),
-            'competitors':competitors,'source':'POC Navi Mumbai Sales Dataset','synthetic':True,'inventory_available':False}
+            'competitors':competitors,'source':'SIMULATED DEMO DATA / copied source provenance unverified' if hasattr(self,'live_demo_path') else 'POC Navi Mumbai Sales Dataset',
+            'synthetic':True,'inventory_available':hasattr(self,'live_demo_path')}
 
     def run(self,turn,ctx):
         response=None
@@ -85,7 +86,11 @@ class RetailService:
         elif re.search(r'compet|price position|expensive',text) or any(key(n) in text for n in opts['competitors']):state['intent']='competition'
         elif re.search(r'delivery|shipment|shipping|delays',text):state['intent']='delivery'
         elif re.search(r'\b(sales?|revenue|sold|perform|selling|doing|lowest|highest|least|most|best|worst|top|bottom|products?|units?)\b',text):state['intent']='sales'
-        if state['intent']=='inventory':return finish({'status':'unavailable','summary':'Current stock data is unavailable. This sales workbook contains no measured on-hand, opening or closing inventory. Sales are not stock balances.','actions':[{'label':'Sales analysis','action':'sales'}]})
+        if state['intent']=='inventory':
+            if hasattr(self,'live_demo_path'):
+                from app.live_demo.routes import inventory
+                return finish(inventory(self.live_demo_path,ctx,state))
+            return finish({'status':'unavailable','summary':'Current stock data is unavailable. This sales workbook contains no measured on-hand, opening or closing inventory. Sales are not stock balances.','actions':[{'label':'Sales analysis','action':'sales'}]})
         if turn.action=='location':state.pop('location',None);state.pop('store_id',None)
         if turn.action=='period':state.pop('period',None)
         matches=[p for p in opts['locations'] if re.search(r'(?<!\w)'+re.escape(key(p['label']))+r'(?!\w)',text)]
