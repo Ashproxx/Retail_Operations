@@ -57,6 +57,37 @@ def test_two_workers_do_not_duplicate_slots(demo):
         assert db.execute('SELECT COUNT(*) FROM demo_checkpoints').fetchone()[0]==40
 
 
+def test_backup_restore_resumes_without_duplicate_facts(demo,tmp_path):
+    import subprocess
+    import sys
+    run_once(demo,now=NOW,max_slots=10)
+    backup=tmp_path/'backup.db'
+    command=[sys.executable,'-m','app.live_demo','backup','--database',str(demo),'--output',str(backup)]
+    subprocess.run(command,check=True,capture_output=True)
+    before=backup.read_bytes()
+    assert subprocess.run(command,capture_output=True).returncode!=0
+    assert backup.read_bytes()==before
+    assert event_rows(backup)==event_rows(demo)
+    # Resume the restored file and the original independently from the same committed checkpoint.
+    run_once(backup,now=NOW);run_once(demo,now=NOW)
+    assert event_rows(backup)==event_rows(demo)
+    with connect(backup) as db:
+        assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
+        assert not db.execute('PRAGMA foreign_key_check').fetchall()
+        assert db.execute('SELECT COUNT(*) FROM demo_checkpoints').fetchone()[0]==40
+
+
+def test_backdated_second_opening_cannot_inflate_stock(demo,tmp_path):
+    run_once(demo,now=NOW)
+    before=event_rows(demo)
+    file=tmp_path/'earlier-opening.json'
+    file.write_text(json.dumps([{'identity':'earlier-opening','store':'DEMO1','sku':'DEMO-SKU',
+                                'kind':'opening','quantity':100,'stock':100,
+                                'at':instant(DAY-timedelta(days=1),10).isoformat()}]))
+    with pytest.raises(ValueError,match='Opening balance already exists'): import_records(demo,file)
+    assert event_rows(demo)==before
+
+
 def test_kolkata_midnight_and_no_future_completion(demo):
     now=instant(DAY,11)+timedelta(minutes=30)
     run_once(demo,now=now)

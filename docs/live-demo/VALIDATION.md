@@ -12,6 +12,8 @@ This is an engineering checkpoint, not complete acceptance of either PDF and not
 
 ## Remaining acceptance work
 
+Recovery follow-up: the real backup CLI was exercised against a partially generated temporary database, an overwrite attempt was refused without changing backup bytes, and both restored/original databases resumed to identical event identities, amounts and stock movements. Restored integrity/foreign-key checks passed with 40 distinct checkpoints. A backdated second opening could previously bypass the as-of check and inflate stock; opening validation now rejects any existing opening for that store/SKU, including later-dated ones, within the serialized writer transaction. Regression covers rollback and unchanged facts. Focused demo suite: **15 passed in 8.23 seconds**. The prior full-suite count above predates these two added tests; it was not rerun for this isolated change.
+
 - Finish detailed PDF-to-implementation coverage review, including UI race/pagination automated checks, end-to-end backup/restore and prolonged concurrency. Existing Python tests cover crash rollback, restart equivalence, two workers, source preservation, scope, historical arrival cutoffs, immutable stock and invalid returns.
 - Review the existing catalog/employee overview labels for the demo context: they still describe snapshot provenance and catalog counts. The new Daily operations panel contains live signed inventory and actual simulated attendance; do not call the catalog pie an on-hand inventory pie.
 - Complete visual chart/keyboard checks, staff-page interaction and export verification. No hosted service has been deployed. Local worker/server availability depends on this computer remaining on.

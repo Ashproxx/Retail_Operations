@@ -73,7 +73,8 @@ def append(db,*,run_id,source,identity,store,sku,kind,quantity,unit=0,discount=0
         return previous['id'],False
     event_id=digest([source,identity])
     if kind=='opening':
-        if balance(db,store,sku,body['occurred_at']) is not None: raise ValueError('Opening balance already exists')
+        if db.execute("SELECT 1 FROM demo_events WHERE store_id=? AND sku_id=? AND kind='opening'",(store,sku)).fetchone():
+            raise ValueError('Opening balance already exists')
         if stock!=quantity: raise ValueError('Opening stock mismatch')
     elif stock is not None:
         available=balance(db,store,sku,body['occurred_at'])
