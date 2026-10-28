@@ -101,6 +101,10 @@ def correct(path,event_id,*,reason,actor,replacement_units=None,now=None):
         with connect(path,write=True) as db:
             original=db.execute("SELECT * FROM demo_events WHERE id=? AND kind='sale'",(event_id,)).fetchone()
             if not original: raise ValueError('Only generated sales can be corrected here')
+            reversal=db.execute("SELECT 1 FROM demo_events WHERE original_id=? AND kind='reversal'",(event_id,)).fetchone()
+            replacement=db.execute("SELECT 1 FROM demo_events WHERE original_id=? AND kind='sale'",(event_id,)).fetchone()
+            if reversal and bool(replacement)!=(replacement_units is not None):
+                raise ValueError('Existing correction has different replacement content')
             kwargs=dict(run_id=run,source='correction',store=original['store_id'],sku=original['sku_id'],
                         at=datetime.fromisoformat(original['occurred_at']),received=now,original=event_id,reason=reason,actor=actor)
             _,inserted=append(db,identity='reverse:'+event_id,kind='reversal',quantity=-original['quantity'],net=-original['net_paise'],

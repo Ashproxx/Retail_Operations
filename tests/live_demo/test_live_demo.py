@@ -159,6 +159,19 @@ def test_correction_retains_original_and_reconciles(demo):
     with connect(demo) as db:
         result=db.execute('SELECT accepted,skipped FROM demo_runs WHERE id=?',(replay['run_id'],)).fetchone()
         assert tuple(result)==(0,1)
+    with pytest.raises(ValueError,match='different replacement'):
+        correct(demo,sale['id'],reason='Test reversal',actor='test',replacement_units=1,now=NOW)
+
+
+def test_replacement_correction_cannot_be_replayed_as_reversal_only(demo):
+    run_once(demo,now=NOW)
+    with connect(demo) as db:
+        sale=db.execute("SELECT s.* FROM demo_events s WHERE kind='sale' AND NOT EXISTS(SELECT 1 FROM demo_events r WHERE r.original_id=s.id) LIMIT 1").fetchone()
+    correct(demo,sale['id'],reason='Correction',actor='test',replacement_units=sale['quantity'],now=NOW)
+    before=event_rows(demo)
+    with pytest.raises(ValueError,match='different replacement'):
+        correct(demo,sale['id'],reason='Correction',actor='test',now=NOW)
+    assert event_rows(demo)==before
 
 
 def test_fresh_process_initializes_website_schema_before_writer(tmp_path):
