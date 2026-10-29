@@ -33,7 +33,7 @@ window.demoWorkspace = (() => {
     add('Period',preset);add('From',from);add('Through',to);
     if(model!=='employees'){add('Store',store);add('Category',category);add('Source',source);add('SKU (optional)',sku);}
     const apply=el('button','Apply / refresh');form.append(apply);form.className='demo-filters';root.append(form);
-    const summary=el('div'),history=el('div');root.append(summary,history);
+    const summary=el('div'),history=el('div'),auditHistory=el('div');root.append(summary,history,auditHistory);
     const pager=el('button','Next records'),exportButton=el('button','Export displayed records'),runs=el('button','Run / import history');
     root.append(pager,exportButton);if(model!=='employees')root.append(runs);
     let cursor=model==='employees'?'':0,rows=[],params='',loadedOptions=false,pageRequest=0;
@@ -90,7 +90,7 @@ window.demoWorkspace = (() => {
       finally {if(!stopped&&current===epoch)timer=setTimeout(refresh,delay);}
     }
     form.onsubmit=e=>{e.preventDefault();refresh();};pager.onclick=async()=>{clearTimeout(timer);const current=epoch;try{await page(current);}catch(e){if(!stopped&&current===epoch)status.textContent=e.message+' Display may be stale.';}finally{if(!stopped&&current===epoch)timer=setTimeout(refresh,delay);}};
-    runs.onclick=async()=>{try{const data=await api('demo/runs');if(!stopped)table(history,data.rows,'Run/import history — first 50, API cursor available');}catch(e){if(!stopped)status.textContent=e.message;}};
+    runs.onclick=async()=>{try{const data=await api('demo/runs');if(!stopped){auditHistory.replaceChildren();table(auditHistory,data.rows,'Run/import history — first 50, API cursor available');}}catch(e){if(!stopped)status.textContent=e.message;}};
     exportButton.onclick=()=>{const blob=new Blob([JSON.stringify(rows,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob),a=el('a');a.href=url;a.download='simulated-demo-records.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
     const resize=()=>charts.forEach(c=>c.resize());window.addEventListener('resize',resize);
     const previousStop=stop;stop=()=>{previousStop();window.removeEventListener('resize',resize);};
