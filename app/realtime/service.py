@@ -53,7 +53,9 @@ class Realtime:
     async def run(self):
         settings=self.settings;ctx=RequestContext(session_id='simulator',principal_id='local-simulator',role='ADMIN')
         sequence=None
+        self.task_status='disabled' if settings.stream_mode=='off' else 'waiting_for_events'
         if settings.stream_mode=='simulator':
+            self.task_status='no_source_rows'
             with self.db.session() as session:source=list(session.scalars(select(Sale.payload).order_by(Sale.txn_id)))
             if source:
                 # Timestamp spacing and arrival rate scale together; provenance stays synthetic.
@@ -64,10 +66,13 @@ class Realtime:
                 if settings.weather_enabled:
                     result=await self.weather.fetch();store_weather(self.db,result)
                 if sequence is not None:
-                    event=next(sequence,None)
-                    if event:self.ingestor.ingest(event,ctx)
+                    try:event=next(sequence,None)
+                    except ValueError:
+                        sequence=None
+                        raise
+                    if event:
+                        self.ingestor.ingest(event,ctx);self.task_status='running'
                     else:sequence=None;self.task_status='simulator_exhausted'
-                self.task_status='running'
             except (ValueError,RuntimeError):
                 self.task_status='failed_iteration'
             await asyncio.sleep(1/settings.stream_speed if sequence else 60)

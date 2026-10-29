@@ -85,3 +85,23 @@ def test_api_signatures_and_scoped_stream(database,tmp_path):
         assert 'pos-webhook' in client.get('/api/stream/sales?once=true',headers=headers).text
         assert 'pos-webhook' not in client.get('/api/stream/sales?once=true',headers={'Authorization':'Bearer '+other}).text
         assert client.get('/api/realtime/status',headers={'Authorization':'Bearer '+other}).json()['latest_event'] is None
+
+
+def test_incomplete_simulator_payload_reports_failure_without_task_crash(database, monkeypatch):
+    from app.enterprise.data import Sale
+    from app.realtime.service import Realtime
+    from sqlalchemy import select
+    with database.session() as session:
+        for row in session.scalars(select(Sale)):
+            row.payload = {'sale_date': '2026-01-01'}
+    service = Realtime(database, RealtimeSettings(_env_file=None, stream_mode='simulator'))
+    calls = []
+    async def stop_after_two_iterations(delay):
+        calls.append(service.task_status)
+        if len(calls) == 2:
+            raise asyncio.CancelledError()
+    monkeypatch.setattr('app.realtime.service.asyncio.sleep', stop_after_two_iterations)
+    with pytest.raises(asyncio.CancelledError):
+        asyncio.run(service.run())
+    assert calls == ['failed_iteration', 'failed_iteration']
+    assert service.rows(RequestContext(session_id='test', principal_id='test', role='ADMIN'), 0) == []

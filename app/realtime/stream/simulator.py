@@ -12,6 +12,8 @@ def events(rows: list[dict], *, seed: int, start, count: int, step_seconds: floa
     rng=random.Random(seed)
     for i in range(count):
         row=deepcopy(rng.choice(rows));stamp=(start+timedelta(seconds=i*step_seconds)).astimezone(ZoneInfo('Asia/Kolkata'))
+        if not {'sale_date','promised_delivery_date','actual_delivery_date'} <= row.keys():
+            raise ValueError('Simulator requires complete imported transaction payloads')
         shift=stamp.date()-date.fromisoformat(str(row['sale_date'])[:10])
         for field in ('promised_delivery_date','actual_delivery_date'):
             if row[field] is not None:row[field]=(date.fromisoformat(str(row[field])[:10])+shift).isoformat()
