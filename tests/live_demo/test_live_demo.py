@@ -284,6 +284,36 @@ def test_arrival_cutoff_excludes_later_correction(client,demo):
     assert all(r['kind']!='reversal' for r in data['rows'])
 
 
+def test_operator_correction_updates_readouts_and_replays_without_new_facts(client,demo,monkeypatch):
+    client,headers=client
+    monkeypatch.setattr('app.live_demo.worker.now_utc',lambda:NOW)
+    with connect(demo) as db:
+        sale=dict(db.execute("SELECT s.* FROM demo_events s WHERE kind='sale' AND NOT EXISTS(SELECT 1 FROM demo_events r WHERE r.original_id=s.id) LIMIT 1").fetchone())
+    url=f'/api/demo/summary?start={DAY}&end={NOW.astimezone(TZ).date()}'
+    before=client.get(url,headers=headers('ADMIN')).json()
+    body={'event_id':sale['id'],'reason':'Acceptance correction'}
+    assert client.post('/api/demo/correct',json=body,headers=headers('ANALYST')).status_code==403
+    response=client.post('/api/demo/correct',json=body,headers=headers('ADMIN'))
+    assert response.status_code==200
+    after=client.get(url,headers=headers('ADMIN')).json()
+    assert after['totals']['units']==before['totals']['units']-sale['quantity']
+    assert after['totals']['net_paise']==before['totals']['net_paise']-sale['net_paise']
+    assert after['stock_summary']['known_units']==before['stock_summary']['known_units']-sale['stock_delta']
+    assert sum(r['units'] for r in after['daily'])==after['totals']['units']
+    assert sum(r['net_paise'] for r in after['monthly'])==after['totals']['net_paise']
+    with connect(demo) as db:
+        assert dict(db.execute('SELECT * FROM demo_events WHERE id=?',(sale['id'],)).fetchone())==sale
+        reversal=db.execute("SELECT * FROM demo_events WHERE original_id=? AND kind='reversal'",(sale['id'],)).fetchone()
+        assert reversal['actor']=='ADMIN' and reversal['reason']==body['reason']
+    retained=event_rows(demo)
+    assert client.post('/api/demo/correct',json=body,headers=headers('ADMIN')).status_code==200
+    assert run_once(demo,now=NOW)['accepted']==0
+    assert event_rows(demo)==retained
+    runs=client.get('/api/demo/runs?limit=100',headers=headers('ADMIN')).json()['rows']
+    correction_runs=[r for r in runs if r['id']==response.json()['run_id']]
+    assert len(correction_runs)==1 and correction_runs[0]['accepted']==1 and correction_runs[0]['status']=='success'
+
+
 def test_landing_inventory_uses_movements_and_hr_attendance(client,demo,monkeypatch):
     client,headers=client
     response=client.get('/api/datasets/products',headers=headers('ADMIN'))

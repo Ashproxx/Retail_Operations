@@ -19,6 +19,10 @@ window.demoWorkspace = (() => {
     if(!['models','retail','employees','datasets'].includes(model))return;
     try { enabled ??= (await fetch('/api/demo/enabled',{cache:'no-store'})).ok; } catch {return;}
     if(stopped||!enabled)return;
+    if(model==='retail'||model==='employees'){
+      document.getElementById('source-label').textContent=model==='retail'?'SIMULATED DEMO · copied source provenance unverified':'SIMULATED DEMO · synthetic staff';
+      document.getElementById('workspace-description').textContent=model==='retail'?'Explore retained sales history and simulated operations. Daily operations shows current stock and freshness.':'Explore synthetic staff records. Daily operations shows dated shifts and recorded attendance.';
+    }
     document.getElementById('main').append(root);
     const form=el('form'),preset=el('select'),from=el('input'),to=el('input'),store=el('select'),category=el('select'),source=el('select'),sku=el('input');
     from.type=to.type='date';
