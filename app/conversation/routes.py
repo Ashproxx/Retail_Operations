@@ -14,6 +14,18 @@ router = APIRouter(prefix='/api/conversation')
 @router.post('')
 async def conversation(body: Turn, request: Request):
     principal = context(request, body.session_id)
+    if hasattr(request.app.state, 'ml_reports') and body.message and body.action is None:
+        from app.ml_dashboard.answers import question_index, answer
+        index = question_index(body.message)
+        if index is not None:
+            status = 'error'
+            try:
+                result = answer(request.app, principal, index)
+                result['request_id'] = str(principal.request_id)
+                status = 'success'
+                return result
+            finally:
+                audit_operation(request.app.state.runtime, principal, 'ml.answer', status)
     if not hasattr(request.app.state, 'conversation'):
         request.app.state.conversation = ConversationService(request.app.state.runtime)
     try:

@@ -39,6 +39,7 @@ def scoped_report(report, ctx):
 
 def install(api, reports=Path('validation-output/ml-dashboard')):
     reports = Path(reports)
+    api.state.ml_reports = reports
     api.mount('/ml-assets', StaticFiles(directory=ASSETS), name='ml-assets')
     @api.get('/ml', include_in_schema=False)
     def page():
@@ -63,6 +64,8 @@ def install(api, reports=Path('validation-output/ml-dashboard')):
             data['live'] = {'connected': hasattr(request.app.state, 'realtime'),
                             'message': 'Live observations are separate from frozen research results.'}
             data['data_quality'] = observation_coverage(request.app.state.runtime.repository.database, ctx)
+            from app.ml_dashboard.answers import answer, QUESTIONS
+            data['review_answers'] = [answer(request.app, ctx, i) for i in range(len(QUESTIONS))]
             status = 'success'
             return JSONResponse(data, headers={'Cache-Control': 'no-store'})
         finally:

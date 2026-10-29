@@ -156,3 +156,55 @@ def test_combined_routes_recheck_revocation_and_expiry(dashboard,expired):
     client.app.state.runtime.auth=TokenAuthenticator(grants if expired else [])
     for path in ['/api/ml/results','/api/realtime/status','/api/stream/sales?once=true']:
         assert client.get(path,headers=headers('STORE_MANAGER')).status_code==401
+
+
+def test_review_questions_share_scoped_evidence_with_assistant(dashboard):
+    from app.ml_dashboard.answers import QUESTIONS
+    client, headers, _ = dashboard
+    answers = client.get('/api/ml/results', headers=headers('STORE_MANAGER')).json()['review_answers']
+    assert len(answers) == 6
+    for i, question in enumerate(QUESTIONS):
+        response = client.post('/api/conversation', headers=headers('STORE_MANAGER'),
+                               json={'session_id': 'ml-review', 'message': question})
+        assert response.status_code == 200
+        result = response.json()
+        assert result['summary'] == answers[i]['summary']
+        assert result['warnings'] and result['model'] and result['interval']
+        assert result['operational_write_performed'] is False
+        assert 'S2' not in response.text and 'private' not in response.text
+        denied = client.post('/api/conversation', headers=headers('HR_ADMIN'),
+                             json={'session_id': 'ml-review', 'message': question})
+        assert denied.status_code == 403
+    assert 'unknown' in answers[2]['summary']
+    assert answers[2]['evidence']['features']['units_1hour'] is None
+    assert 'causal' in answers[1]['summary']
+    assert 'did not beat' in answers[4]['summary']
+
+
+def test_review_answer_fails_closed_for_missing_evidence(dashboard):
+    from app.ml_dashboard.answers import QUESTIONS
+    client, headers, root = dashboard
+    (root/'forecast.json').write_text('{}')
+    result = client.post('/api/conversation', headers=headers('ADMIN'),
+                         json={'session_id': 'ml-review', 'message': QUESTIONS[0]})
+    assert result.status_code == 503
+    assert client.post('/api/conversation', json={'session_id': 'x', 'message': QUESTIONS[0]}).status_code == 401
+
+
+def test_review_answer_uses_scoped_frozen_comparison(dashboard):
+    from app.ml_dashboard.answers import QUESTIONS
+    client, headers, root = dashboard
+    report = json.loads((root/'forecast.json').read_text())
+    report['decisions'] = [dict(series=['store', store], horizon=28, candidate='candidate',
+                               baseline='baseline', test_wape=.2, baseline_test_wape=.1)
+                           for store in ['S1', 'S2']]
+    raw = json.dumps(report).encode()
+    (root/'forecast.json').write_bytes(raw)
+    manifest = json.loads((root/'manifest.json').read_text())
+    manifest['forecast.json']['sha256'] = hashlib.sha256(raw).hexdigest()
+    (root/'manifest.json').write_text(json.dumps(manifest))
+    result = client.post('/api/conversation', headers=headers('STORE_MANAGER'),
+                         json={'session_id': 'comparison', 'message': QUESTIONS[0]}).json()
+    assert '20.0000%' in result['summary'] and '+10.0000' in result['summary']
+    assert len(result['evidence']['store_comparisons']) == 1
+    assert 'S2' not in json.dumps(result)
