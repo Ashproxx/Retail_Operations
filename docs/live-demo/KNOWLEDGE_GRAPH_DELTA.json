@@ -1,0 +1,56 @@
+{
+  "branch": "codex/live-seasonal-dataset",
+  "base": "d554f3967e14f9cb720f8caf3915af83419ec8be",
+  "status": "local engineering delivered; research and Linux acceptance gated",
+  "nodes": [
+    {
+      "id": "app/live_demo",
+      "type": "component"
+    },
+    {
+      "id": "app/ml_dashboard/answers.py",
+      "type": "component"
+    },
+    {
+      "id": "app/realtime",
+      "type": "component"
+    },
+    {
+      "id": "simulated-seasonal-ledger",
+      "type": "data_source"
+    },
+    {
+      "id": "synthetic-stream",
+      "type": "stream_event"
+    },
+    {
+      "id": "frozen-forecast-results",
+      "type": "experiment"
+    }
+  ],
+  "edges": [
+    {
+      "source": "app/live_demo",
+      "target": "simulated-seasonal-ledger",
+      "type": "writes"
+    },
+    {
+      "source": "app/realtime",
+      "target": "synthetic-stream",
+      "type": "serves"
+    },
+    {
+      "source": "app/ml_dashboard/answers.py",
+      "target": "frozen-forecast-results",
+      "type": "reads"
+    },
+    {
+      "source": "app/ml_dashboard/answers.py",
+      "target": "app/realtime",
+      "type": "consumes_feed"
+    }
+  ],
+  "source_graphs": "docs/ml-integration/sources (unchanged)",
+  "validation": "docs/live-demo/VALIDATION.md",
+  "limitations": "docs/live-demo/HANDOFF.md"
+}

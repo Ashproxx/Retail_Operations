@@ -1,75 +1,158 @@
 # Live seasonal checkpoint — 2026-10-28
 
+
+
 This is an engineering checkpoint, not complete acceptance of either PDF and not real-world ML evidence.
 
+
+
 - Full regression: **283 passed**, 69 upstream warnings, 53.42 seconds. Focused demo suite: 13 tests, including fresh-process website schema registration and correction replay counts. Source/branch preservation guard passed.
+
 - Fixed missing website observation-table registration during initialization, preventing new databases from needing that DDL when a worker already holds a write lock. Existing development database startup was verified with the worker stopped, then the worker was started successfully.
+
 - Moved worker heartbeat writes inside the same retry handling as generation so a contending writer does not terminate the worker before its retry path.
+
 - Corrections now report actually inserted versus replayed rows in run history. Repeated corrections preserve the original and add no duplicate reversal.
+
 - Local retained database before catch-up: 88,407 sales facts, 88,670 ledger rows, 12 synthetic staff, 4,011 shifts and 7,806 attendance records. Imported coverage is 2025-09-29 through 2026-09-29; synthetic history begins 2024-10-01 and deliberately skips that imported interval.
+
 - Real local worker catch-up committed **16 slots / 40 events** with run ID `4949e3c52d274facbab3ab75e22625f9`. Website status changed from worker-stopped/stale to running/fresh. Today displayed 17 simulated net units and INR 22,150.35; known inventory changed from 709 to 671 units across 24 pairs. These are demo values, not accuracy measurements.
+
 - Browser sign-in, committed updates, 30-day selection and disconnect were exercised. Thirty-day selection displayed 1,100 net units / INR 1,287,190.62. The live panel was removed on disconnect. At requested viewport widths 390 and 1440, document scroll width equalled client width (375 and 1425 after scrollbar allocation). This verifies no document horizontal overflow, not complete visual/accessibility acceptance.
+
+
 
 ## Remaining acceptance work
 
+
+
 Recovery follow-up: the real backup CLI was exercised against a partially generated temporary database, an overwrite attempt was refused without changing backup bytes, and both restored/original databases resumed to identical event identities, amounts and stock movements. Restored integrity/foreign-key checks passed with 40 distinct checkpoints. A backdated second opening could previously bypass the as-of check and inflate stock; opening validation now rejects any existing opening for that store/SKU, including later-dated ones, within the serialized writer transaction. Regression covers rollback and unchanged facts. Focused demo suite: **15 passed in 8.23 seconds**. The prior full-suite count above predates these two added tests; it was not rerun for this isolated change.
+
+
 
 Landing-card follow-up: demo home/datasets now use signed available units by category and current attendance, with unknown balances/attendance explicitly separated. HR details require ADMIN/HR_ADMIN/HR_USER and store scopes remain enforced. Cards poll every 30 seconds, retain the selected page and reject stale requests/errors after newer requests or disconnect. The original non-demo snapshot behavior is preserved. Full Python regression: **286 passed**, 69 warnings, 40.76 seconds; focused demo suite **16 passed**. `node tests/live_demo/dataset-refresh.test.cjs` passed real-function request-interleaving, page-preserving polling, disconnect and stale-error checks. Branch/source guard passed.
 
+
+
 Browser verification after server restart while the existing worker remained running: home showed 653 known stock units across 24 balances, 1,676 unknown balances, and 12 synthetic staff with zero currently on duty at the evening observation time. Employee workspace exposed eleven dated shift records (ten finished, one absent); the remaining employee had no recorded shift and remained unknown in the home card. Expanding attendance showed distinct clock-in/out occurrence and receipt timestamps. The actual export download contained eleven records, all with synthetic profile flags, source and business dates. This is local demo acceptance evidence, not real employee data. Optional non-secret `.env.example` was added.
 
+
+
 - Complete the final PDF-to-implementation coverage review. Backup/restore and bounded multiprocess catch-up are verified below; this is not a production soak test.
+
 - Landing inventory/attendance cards are now implemented and locally verified as described above. Some surrounding workspace copy still describes the original catalog/snapshot context; review that copy without changing ordinary non-demo behavior.
+
 - Complete visual chart/keyboard checks, staff-page interaction and export verification. No hosted service has been deployed. Local worker/server availability depends on this computer remaining on.
+
 - The calendar is deliberately empty: named festival dates are not verified. Missing years omit effects with a visible warning. Source catalog and sales provenance remains unverified.
+
 - Earlier M17/M18 research reports remain frozen; human labels, genuine independent benchmarks and historical weather-forecast vintages remain evidence gates. Synthetic seasonal data must not be used to erase those limitations.
+
+
 
 Development remains on `codex/live-seasonal-dataset`; main and the original showcase branch are unchanged. See README for initialization, worker, correction and recovery commands. Local databases and temporary tokens are not committed.
 
+
+
 ## Concurrency and browser-request follow-up
+
+
 
 Three independent Python processes with different `PYTHONHASHSEED` values caught up the same 31-day temporary scenario in seven-slot batches. All completed successfully; exactly 310 checkpoints and event contents matched a single-process reference with a different batch size. SQLite integrity and foreign-key checks passed, and cumulative signed stock never became negative. Focused suite: **17 passed in 13.45 seconds**. This verifies bounded overlapping processes and deterministic recovery, not unlimited load.
 
+
+
 Daily operations now disables exports while filters refresh or a refresh fails, ignores obsolete page responses, and restores polling after pagination. This prevents a downloaded old page being mistaken for newly selected filters. Both `node tests/live_demo/demo-refresh.test.cjs` and `node tests/live_demo/dataset-refresh.test.cjs` passed. Checks exercise actual frontend functions under controlled asynchronous ordering: cursor reset, page preservation, stale responses/errors, export freshness, retry backoff and disconnect cleanup. JavaScript syntax check passed. Full Python regression remains the 286-pass run above; the latest additional multiprocess test was run in the focused suite.
+
+
 
 Correction review found another replay edge case: adding a replacement to an already completed reversal-only correction (or omitting an existing replacement) could appear to succeed under the same reason/actor. The correction operation now rejects a changed replacement shape before appending anything. Both directions have regression coverage; unchanged exact replays still succeed without duplicate facts. Focused suite: **18 passed in 12.09 seconds**. See COVERAGE.md for the remaining concrete PDF acceptance items and research evidence gates.
 
+
+
 ## Combined regression — 2026-10-29
+
+
 
 Implementation `4ff01cb0b8b0aebd5447d0833014c99434062c66`: full Python regression **288 passed**, 69 existing dependency warnings, 57.39 seconds. Both live-demo JavaScript request-ordering suites and both ML-dashboard JavaScript suites passed (chart missingness/window separation and SSE/authentication/reconnect). Source/branch guard passed. These are local checks; current hosted CI success is not established. No frozen evaluation was rerun or model retuned. Scorecard documentation now distinguishes completed development supplements from human-dependent evidence gates. The combined interactive acceptance sequence and final visual/keyboard review remain pending.
 
+
+
 Correction readout acceptance now exercises the authenticated API in one sequence: analyst correction denied; ADMIN reversal retains the exact original row and actor/reason; net units/revenue and available stock change by the signed original amounts; daily/monthly chart totals agree with KPIs; operator run history records success; repeat correction and catch-up add no facts. Each operation opens fresh database connections. Focused suite **19 passed in 13.46 seconds**. This is API acceptance, not a browser restart claim. Demo retail/employee workspace copy now explicitly identifies copied-unverified sales and synthetic staff instead of the ordinary POC dataset labels. JavaScript syntax and request-ordering checks passed. No demo server or worker process was running at this wake; no duplicate was started. Final browser/keyboard/restart acceptance remains pending.
+
+
 
 ## Persistent restart acceptance — 2026-10-29
 
+
+
 At implementation `5f1d210`, the retained seasonal database completed two real subprocess run-once/website launch/termination cycles on localhost:8003. Each launch used a new temporary token; authenticated summaries and operator history loaded successfully. Both generator runs found no due slots at the morning observation time and accepted zero events. After both cycles, counts remained exactly 88,465 sales facts, 88,728 ledger rows, 12 staff, 4,031 shifts, 7,845 attendance rows and 7,580 checkpoints. Audit/run records intentionally append; they are not counted as duplicate business facts.
+
+
 
 September 30–October 28 summary, daily/monthly arrays and stock summary matched across restarts: 976 net units, 115,674,386 paise, 653 known stock units across 24 known pairs, two low-stock pairs. The other 1,676 catalog pairs remain unknown. Source database SHA-256 stayed `a0d0ccc2e77d29a68a959fbd9ff2d494354d742cc0339177c345095d49f32f2e` throughout. Both verification servers were stopped after checks. This establishes persistent local process restart and source preservation, not browser visual acceptance or continuous service while the computer is off. Final chart/keyboard and category-selection browser checks remain pending.
 
+
+
 ## Browser follow-up — 2026-10-29
+
+
 
 Real browser selection of Last 30 days / Jackets, submitted with Enter, displayed 155 net units, INR 287,742.05, and 93 known stock units across four pairs; 196 pairs remained unknown. Daily/monthly charts rendered, and keyboard Enter opened their accessible value tables and the labelled monthly simulation-factor table. Tab from Apply reached the daily values disclosure with visible focus. At requested 390/1440 widths, settled document widths equalled scroll widths (375/1425); initial resizing briefly retained the old canvas width before the resize event settled. Mobile chart labels and desktop monthly bars were visually inspected. Morning/paused generation correctly displayed unknown current sales and worker-stopped/stale, not fabricated zeros.
 
+
+
 Operator history loaded actual bootstrap/generator audit rows. Review exposed polling removing the open history disclosure with the transaction page. The fix separates operator history into a retained container and replaces it on an explicit history request, preventing duplicate disclosures. The real-function JavaScript test now verifies history survives a successful refresh and repeated history requests replace it. Syntax and test checks passed. A browser reload still exhibited the old removal behavior despite the HTTP asset containing the fix; fresh-asset browser verification remains required before declaring this issue accepted. No claim of complete browser acceptance is made.
+
+
 
 Fresh-asset follow-up resolved the discrepancy: the browser was still using the unversioned demo script. The shell now requests `demo.js?v=990ecc5`. Browser inspection confirmed that URL; opening audit history with Enter and refreshing preserved exactly one expanded history disclosure and its rows. Disconnect then removed the protected panel. This closes the history polling regression's browser check. No audit records were modified by this check.
 
+
+
 ## Recovered full regression and PDF query review — 2026-10-29
+
+
 
 The full regression started after the history fix completed successfully: **289 passed**, 69 dependency warnings, 56.19 seconds (process exit 0). The pending shell change versions the already tested demo asset; it changes no Python behavior.
 
+
+
 A fresh read of Astra pages 16–18 confirms that six added demo questions must work in both the assistant and model-review page. A local authenticated smoke against the existing seasonal launcher on port 8003 found a remaining integration gap: questions 1 and 5 returned generic intent clarification; questions 2, 3, 4 and 6 returned generic no-observations responses. These are not accepted answers to the added ML questions. Correction from direct launcher inspection: the seasonal launcher already installs model-review routes, but has no separate real-time event service. The conversational router did not connect these questions to the frozen evidence/live-status services. No private answer rows were exported. This is independent implementation work, not a human-label gate, so the heartbeat must continue. Existing ML dashboard API/scoping tests do not establish this assistant acceptance.
 
-## Shared research-question answers � 2026-10-29
+
+
+## Shared research-question answers — 2026-10-29
+
+
 
 The model-review install now enables a shared, read-only answer path for the six Astra demo questions. The assistant and dashboard use the same checksum-verified, role/store-scoped evidence. A single authorized store receives the frozen 28-day candidate/baseline WAPE comparison and signed percentage-point difference when present. Multiple-store scopes are directed to the existing series/horizon selector rather than receiving a misleading global winner. Rain adjustments, delivery rankings and causal forecast explanations explicitly report insufficient evidence. Live questions use the scoped status service when installed; the seasonal launcher explicitly reports that this separate service is unavailable. Seasonal sales are not silently substituted for real-time events.
 
+
+
 Dashboard disclosures label scope, snapshot timing, model/source/interval and limitations; disconnect clears them. The six assistant questions have role-denial, missing-evidence, source/missingness and shared-answer API checks, plus a numerical scoped comparison check: focused dashboard suite **14 passed in 4.48 seconds**. The existing launcher already composed model-review routes; the previous note claiming otherwise was corrected after reading its implementation. Browser acceptance of these new disclosures and the assistant UI remains pending. No source observations, model fits, frozen metrics or labels were changed.
+
+
 
 Full regression for the shared-answer implementation before the final comparison-only test addition: **291 passed**, 69 warnings, 79.53 seconds. The added numerical comparison test passed in the focused 14-test dashboard run above. JavaScript syntax and both ML-dashboard logic suites passed. This is local verification, not hosted Linux CI or new browser acceptance.
 
+
+
 ## Browser research-answer acceptance and stream failure handling
+
+
 
 At 6377a78, restarted the existing seasonal server on port 8003 and verified all six research disclosures in the actual browser. Enter opens disclosures with visible focus. Model-review document widths matched scroll widths at requested 390/1440 viewports (375/1425 content pixels); mobile and desktop answer layouts were visually inspected. Disconnect cleared all six disclosures. All six questions were then submitted through the assistant UI and completed with labelled evidence-limited answers, rather than generic intent/no-data responses. The assistant also had no horizontal document overflow at requested 390 pixels. Temporary viewport settings were reset.
 
+
+
 A distinct combined ML launcher on port 8002 was tested against the seasonal database, with the stream simulator enabled and weather calls disabled. Frozen evidence loaded, but stream observations remained unknown. This revealed that generated seasonal payloads are not complete original-import transaction payloads: the resampling generator could raise an uncaught missing-field error, leaving task status misleadingly idle. The generator now rejects this input with a validation error; the service retains failed_iteration without fabricating events or later reporting running/exhausted. The temporary port-8002 process was stopped. A two-iteration regression proves the failure status persists and no event is written; realtime plus dashboard tests: **18 passed in 4.78 seconds**. A normal imported-source copy is still required for a successful end-to-end resampling demonstration; that acceptance remains pending. No source database or frozen model evidence was changed.
+
+
+## Final local verification - 2026-10-30
+
+Implementation `f50bc4d5c4fde9aa9215bd922531ce7ec5fba147`: **293 passed**, 69 dependency warnings, 62.36 seconds. All four JavaScript suites passed (live-demo request ordering, dataset polling, ML chart missingness/windows, live SSE/auth/reconnect). The approved source/branch guard passed.
+
+Created a new consistent SQLite backup of the original import under `.retailops/stream-acceptance-20261030/` and launched the combined ML simulator on port 8002. Status returned running with synthetic-stream provenance, fresh event timestamps and bounded SSE records. The browser displayed green freshness, running state, 78 observed units at one sample and exactly 20 retained rows. The connection-time research answer displayed its earlier 46-unit snapshot and unknown same-hour-last-week coverage, explicitly labelled as a request-time snapshot. Disconnect removed all event rows. These transient counts demonstrate plumbing, not accuracy or a fixed benchmark. Source SHA-256 remained `a0d0ccc2e77d29a68a959fbd9ff2d494354d742cc0339177c345095d49f32f2e`.
+
+Weather was disabled (`not_requested`); no external weather/data request was made during this acceptance. Existing tests cover offline weather/cache failure. The temporary stream server was stopped; the user's seasonal website on port 8003 was retained. WSL reports not installed, and no current Linux CI result exists for this branch. See HANDOFF.md for remaining external/human gates.

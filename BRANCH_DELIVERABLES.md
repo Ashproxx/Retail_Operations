@@ -1,8 +1,8 @@
-# Integration deliverables
+# Development delivery
 
-- All six approved source checkpoints are ancestors of this candidate.
-- One local launcher composes dashboard, scoped live status and bounded event streaming with the existing retail/employee application.
-- Terminal access token, eight-hour expiry, default feed off, optional simulator/webhook and public weather.
-- Frozen results remain independent of live observations; no retraining or model promotion.
-- Role/store, expiry/revocation, missingness, event cursor and browser reconnect checks.
-- See docs/ml-integration/VALIDATION.md for evidence and limitations. Main and the original showcase branch are unchanged.
+- All six approved ML checkpoints and original agent implementations/archives retained.
+- Isolated seasonal ledger, stock and synthetic attendance; scoped summaries/exports, audited idempotence/corrections, backup/restore and restart/catch-up.
+- Shared assistant/dashboard research answers with source/model/interval limits; scoped realtime service in the ML launcher.
+- 293-test full local regression, four JavaScript suites, browser desktop/mobile/keyboard and bounded multiprocess/recovery evidence in docs/live-demo/VALIDATION.md.
+- Human labels, independent benchmark/weather vintages, original universal criteria and current Linux CI remain acceptance gates. No main merge, deployment, causal claim or promotion.
+- Operator commands and limits: docs/live-demo/HANDOFF.md.

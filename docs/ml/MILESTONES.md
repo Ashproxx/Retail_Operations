@@ -1,5 +1,23 @@
 # AIML extension milestone ledger
 
+## Current integrated state - 2026-10-30
+
+The historical ledger below records the initial methodology branch and is superseded for implementation status by this table. Original Phase 3 acceptance is unchanged; no new fully verified extension percentage is asserted while inherited universal criteria and Linux CI remain unverified.
+
+| Gate | Current evidence | Acceptance limit |
+|---|---|---|
+| M14 | Methodology, data card, feature contract delivered | Referenced original universal criteria unavailable |
+| M15 | ML framework, leakage/registry tests and frozen reports integrated | Inherited acceptance/runner gates |
+| M16 | Weather backfill, offline connector tests, scoped live stream implemented | Current Linux/network acceptance not newly certified |
+| M17 | Frozen forecasts and bounded development supplements delivered | Independent benchmark, weather vintages and independent review |
+| M18 | Reproducible auxiliary evaluations and scorecard delivered | Human labels, real policies, natural anomalies and operational outcomes |
+| M19 | Dashboard and six assistant questions verified in browser; responsive disclosures and source labels | Research evidence limits remain visible |
+| M20 | Authorized assembly, 293 local tests, source guard and isolated stream demo passed | Linux CI and original universal criteria outstanding; main untouched |
+
+See [delivery handoff](../live-demo/HANDOFF.md), [coverage](../live-demo/COVERAGE.md) and [validation](../live-demo/VALIDATION.md). No real-world accuracy, causal effect or model promotion follows from engineering delivery.
+
+## Historical initial checkpoint
+
 Recorded 2026-10-23. Existing Phase 3 supplied-synthetic-POC acceptance remains **100%**, as recorded in `docs/phase3/MILESTONES.md`; older M13 real-data validation remains historically incomplete. These measures are not interchangeable.
 
 | Gate | Weight | Status |
